@@ -114,7 +114,7 @@ export default function ContactForm() {
 
               <Button
                 type="submit"
-                className="w-full bg-stone-700 hover:bg-stone-800 text-white py-4 rounded-lg font-medium tracking-wide"
+                className="w-full bg-green-900 hover:bg-green-800 text-white py-4 rounded-lg font-medium tracking-wide"
                 size="lg"
               >
                 Submit Form
@@ -142,27 +142,27 @@ export default function ContactForm() {
         {/* Contact Information */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
-            <div className="w-16 h-16 bg-stone-700 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
               <MapPin className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-medium text-stone-800 mb-2">Our Address</h3>
-            <p className="text-stone-600">7198 O'Connell Rue, Aiden, Washington</p>
+            <h3 className="text-xl font-medium text-green-900 mb-2">Our Address</h3>
+            <p className="text-stone-600">POINT DE DRAGON PK 28. 73000</p>
           </div>
 
           <div className="text-center">
-            <div className="w-16 h-16 bg-stone-700 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
               <Phone className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-medium text-stone-800 mb-2">Phone Number</h3>
-            <p className="text-stone-600">+1 (234) 567 890 00</p>
+            <h3 className="text-xl font-medium text-green-900 mb-2">Phone Number</h3>
+            <p className="text-stone-600">+212 652-881921</p>
           </div>
 
           <div className="text-center">
-            <div className="w-16 h-16 bg-stone-700 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
               <Mail className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-medium text-stone-800 mb-2">Our Email</h3>
-            <p className="text-stone-600">femelle.info@mail.com</p>
+            <h3 className="text-xl font-medium text-green-900 mb-2">Our Email</h3>
+            <p className="text-stone-600">reservation@dakhlaclub.com</p>
           </div>
         </div>
       </div>

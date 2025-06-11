@@ -1,53 +1,91 @@
-"use client"
+"use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import Image from "next/image";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Phone } from "lucide-react"; // Optional: any icon you like
 
 export default function FAQSection() {
   const faqs = [
     {
-      question: "Qu'est-ce qui est inclus dans les séjours thalasso ?",
+      question: "Depuis combien de temps votre centre existe-t-il ?",
       answer:
-        "Nos séjours incluent l'hébergement, la pension complète, l'accès aux espaces thalasso, tous les soins mentionnés dans le programme, et l'accompagnement par notre équipe de professionnels.",
+        "Notre centre existe depuis plus de 10 ans à Dakhla, avec des milliers de clients satisfaits ayant bénéficié de nos soins holistiques.",
     },
     {
-      question: "À partir de quel âge peut-on profiter des soins thalasso ?",
+      question: "Quel est le tarif pour un soin ?",
       answer:
-        "Les soins thalasso sont recommandés à partir de 16 ans. Pour les mineurs, une autorisation parentale est requise.",
+        "Nos séjours incluent l’ensemble des soins. Pour un soin individuel, les tarifs commencent à partir de 400 MAD.",
     },
     {
-      question: "Y a-t-il des contre-indications aux soins thalasso ?",
+      question: "Combien de personnes travaillent dans votre équipe ?",
       answer:
-        "Certaines pathologies peuvent être incompatibles. Nous recommandons de consulter votre médecin avant votre séjour.",
+        "Nous avons une équipe de 15 thérapeutes certifiés, spécialistes en soins marins et rituels ancestraux.",
     },
     {
-      question: "Peut-on personnaliser son programme de soins ?",
+      question: "Avez-vous des offres d’emploi en cours ?",
       answer:
-        "Absolument ! Nos programmes sont modulables selon vos besoins. Un entretien avec notre équipe permet d'adapter votre programme.",
+        "Nous recrutons régulièrement. Consultez la section Carrières ou contactez-nous directement.",
     },
-  ]
+    {
+      question: "Comment prendre rendez-vous avec Femellé ?",
+      answer:
+        "Vous pouvez réserver en ligne ou nous contacter via le formulaire en bas de page.",
+    },
+    {
+      question: "Quel type de contrats proposez-vous ?",
+      answer:
+        "Nous proposons des séjours à durée courte (3-5 jours) avec ou sans hébergement inclus.",
+    },
+  ];
 
   return (
-    <section className="py-20 bg-stone-50">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
-            Questions
-            <br />
-            <span className="text-teal-600">Fréquemment Posées</span>
-          </h2>
+    <section className="bg-[#f9f8f4] py-20">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-start">
+        {/* Left - Image with Contact Box */}
+        <div className="relative">
+          <div className="overflow-hidden rounded-xl">
+            <Image
+              src="/images/sauna_ritual.png"
+              alt="Femme dans l’eau à Dakhla"
+              width={700}
+              height={700}
+              className="object-cover w-full h-auto"
+            />
+          </div>
+
+          <div className="absolute bottom-4 left-4 bg-white p-4 pr-6 rounded-xl shadow-md flex items-start gap-4 w-fit max-w-xs">
+            <div className="w-10 h-10 bg-green-900 text-white flex items-center justify-center rounded-full">
+              <Phone className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="font-semibold text-sm">Contactez-nous</p>
+              <p className="text-xs text-gray-500">Réponse rapide par téléphone ou email.</p>
+            </div>
+          </div>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg shadow-sm border-0 px-6">
-              <AccordionTrigger className="text-left font-semibold text-gray-900 hover:text-teal-600 py-6">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 pb-6 leading-relaxed">{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {/* Right - FAQ */}
+        <div>
+          <h2 className="text-2xl font-trajan text-green-900 mb-4">FAQ</h2>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-white rounded-md px-4 py-1 shadow-sm"
+              >
+                <AccordionTrigger className="text-left font-medium text-base text-green-900 hover:text-teal-600">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-gray-600 pt-2 leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
-  )
+  );
 }

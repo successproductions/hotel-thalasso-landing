@@ -35,30 +35,30 @@ const services = [
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <div className="relative h-[500px] md:h-[600px] lg:h-[700px] overflow-hidden">
+      <div className="relative h-[700px] md:h-[600px] lg:h-[800px] overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3 h-full">
           {/* Left Image */}
           <div className="hidden md:block relative">
-            <Image src="/placeholder.svg?height=700&width=400" alt="Spa oil treatment" fill className="object-cover" />
+            <Image src="/images/hydro_massage.png" alt="Spa oil treatment" fill className="object-cover" />
           </div>
 
           {/* Center Content */}
-          <div className="flex flex-col items-center justify-center px-6 py-12 bg-stone-100 text-center">
+          <div className="flex flex-col items-center justify-center px-6 py-12 bg-[#eeede7] text-center">
             <div className="max-w-md space-y-6">
               <div className="space-y-2">
-                <p className="text-sm tracking-widest text-stone-600 uppercase">Welcome to Kavaya Spa</p>
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-stone-800 leading-tight">
-                  A SERENITY OF RELAXATION
-                </h1>
+<p className="text-sm font-trajan tracking-widest text-stone-600 uppercase">
+  🌿 Évasion Holistique
+</p>
+<h1 className="text-3xl md:text-4xl lg:text-5xl font-trajan text-stone-800 leading-tight">
+  3 Jours pour Ressourcer Corps & Esprit 
+</h1>
               </div>
-
-              <p className="text-stone-600 leading-relaxed text-sm md:text-base">
-                Kavaya Spa is a sanctuary of wellness, where guests can relax, rejuvenate, and enhance their overall
-                well-being through a variety of therapeutic treatments.
-              </p>
+<p className="text-stone-600 leading-relaxed text-sm md:text-base mt-4">
+  Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?
+</p>
 
               <Button
-                className="bg-stone-600 hover:bg-stone-700 text-white px-8 py-3 rounded-none font-medium tracking-wide"
+                className="bg-green-900 hover:bg-green-800 text-white px-8 py-3 rounded-none font-medium tracking-wide"
                 size="lg"
               >
                 Book An Appointment
@@ -68,7 +68,7 @@ const services = [
 
           {/* Right Image */}
           <div className="hidden md:block relative">
-            <Image src="/placeholder.svg?height=700&width=400" alt="Hot stone therapy" fill className="object-cover" />
+            <Image src="/images/hero-image-1.png" alt="Hot stone therapy" fill className="object-cover" />
           </div>
         </div>
 
