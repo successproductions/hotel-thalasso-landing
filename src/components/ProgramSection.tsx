@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Calendar, Droplets, Waves, Sparkles, Leaf, ArrowRight, Star } from 'lucide-react';
+import { Droplets, Waves, Sparkles, Leaf, ArrowRight, Star } from 'lucide-react';
 import Image from 'next/image';
 
 interface ProgramDay {
@@ -88,10 +88,7 @@ export default function HotelProgram() {
         {/* Enhanced Header */}
         <div className="text-center mb-20 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="p-3 bg-gradient-to-r from-primary to-blue-600 rounded-full">
-              <Calendar className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 ">
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 ">
               Le Programme
             </h2>
           </div>

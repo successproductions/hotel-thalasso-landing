@@ -6,31 +6,14 @@ import { Button } from "@/components/ui/button";
 export function Hero() {
 
 const services = [
-    {
-      name: "MASSAGE THERAPY",
-      icon: "🌿",
-    },
-    {
-      name: "SPECIAL BATH",
-      icon: "🛁",
-    },
-    {
-      name: "FACIAL TREATMENTS",
-      icon: "✨",
-    },
-    {
-      name: "HYDROTHERAPY",
-      icon: "💧",
-    },
-    {
-      name: "GROUP TREATMENTS",
-      icon: "👥",
-    },
-    {
-      name: "REFLEXOLOGY",
-      icon: "🦶",
-    },
-  ]
+  { name: "Bol d’Air Jacquier", icon: "🌬️" },
+  { name: "Bain hydromassant", icon: "💦" },
+  { name: "Enveloppement aux algues", icon: "🪻" },
+  { name: "Massage à affusion", icon: "💧" },
+  { name: "Hammam traditionnel", icon: "🧖‍♀️" },
+  { name: "Cupping thérapie", icon: "🫙" },
+]
+
 
   return (
     <div className="w-full">
@@ -43,26 +26,28 @@ const services = [
           </div>
 
           {/* Center Content */}
-          <div className="flex flex-col items-center justify-center px-6 py-12 bg-[#eeede7] text-center">
+          <div className="flex flex-col items-center justify-center px-6 py-12 bg-[#eeede7] dark:bg-[#090b11] text-center">
             <div className="max-w-md space-y-6">
               <div className="space-y-2">
-<p className="text-sm font-trajan tracking-widest text-stone-600 uppercase">
+<p className="text-sm font-trajan tracking-widest text-stone-600 uppercase dark:text-stone-200">
   🌿 Évasion Holistique
 </p>
-<h1 className="text-3xl md:text-4xl lg:text-5xl font-trajan text-stone-800 leading-tight">
+<h1 className="text-3xl md:text-4xl lg:text-5xl font-trajan text-stone-800 leading-tight dark:text-stone-200">
   3 Jours pour Ressourcer Corps & Esprit 
 </h1>
               </div>
-<p className="text-stone-600 leading-relaxed text-sm md:text-base mt-4">
+<p className="text-stone-600 leading-relaxed text-sm md:text-base mt-4 dark:text-stone-200">
   Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?
 </p>
 
-              <Button
-                className="bg-green-900 hover:bg-green-800 text-white px-8 py-3 rounded-none font-medium tracking-wide"
-                size="lg"
-              >
-                Book An Appointment
-              </Button>
+  <Button
+  className="relative overflow-hidden px-8 py-3 bg-green-900 text-white font-semibold tracking-wide rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-green-800 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+  size="lg"
+>
+  <span className="z-10 relative">Réserver Maintenant</span>
+  <span className="absolute inset-0 bg-white opacity-10 blur-md scale-110 group-hover:opacity-20 transition-opacity duration-500" />
+</Button>
+
             </div>
           </div>
 
@@ -83,23 +68,36 @@ const services = [
         </div>
       </div>
 
-      {/* Services Section */}
-      <div className="bg-stone-50 py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12">
-            {services.map((service, index) => (
-              <div key={index} className="flex flex-col items-center text-center space-y-4">
-                <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white rounded-full shadow-sm">
-                  <span className="text-2xl md:text-3xl opacity-60">{service.icon}</span>
-                </div>
-                <h3 className="text-xs md:text-sm font-medium text-stone-700 tracking-wide uppercase">
-                  {service.name}
-                </h3>
-              </div>
-            ))}
-          </div>
+{/* Services Section */}
+<div className=" py-11 px-6 transition-colors dark:bg-[#090b11]">
+  <div className="max-w-6xl mx-auto text-center mb-12">
+    <h2 className="text-2xl md:text-3xl font-trajan text-stone-800 dark:text-stone-100">
+       Nos Soins Signature
+    </h2>
+    <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm">
+      Découvrez une palette de soins pensés pour votre bien-être physique et mental
+    </p>
+  </div>
+
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+    {services.map((service, index) => (
+      <div
+        key={index}
+        className="bg-white dark:bg-gray-900 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group"
+      >
+        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-green-50 dark:bg-green-900/20 shadow-inner group-hover:scale-110 transition-transform duration-300">
+          <span className="text-2xl group-hover:rotate-6 transition-transform">{service.icon}</span>
         </div>
+        <h3 className="mt-4 text-xs font-semibold text-stone-700 dark:text-stone-100 uppercase tracking-wide">
+          {service.name}
+        </h3>
       </div>
+    ))}
+  </div>
+</div>
+
+        </div>
     </div>
     );
     }

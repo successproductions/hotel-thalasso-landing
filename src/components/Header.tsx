@@ -38,7 +38,7 @@ export default function Header() {
   className={`fixed top-0 w-full z-50 transition-all duration-300 ${
   scrolled
     ? "bg-white/90 dark:bg-[#0f0f0f]/90 shadow backdrop-blur-sm py-2"
-    : "bg-[#f9f8f4] dark:bg-[#121212] py-4"
+    : "bg-[#f9f8f4] dark:bg-[#0f0f0f] py-4"
 }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">

@@ -12,6 +12,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <title>Évasion Holistique à Dakhla – Cure Détox et Bien-Être 3 Jours entre Désert et Océan</title>
+        <meta name="description" content="Offrez-vous 3 jours de bien-être au centre DC Thermes à Dakhla. Cure détox, soins thalasso, spa entre désert et océan. Vitalité, clarté et énergie retrouvée."/>
+        <meta name="keywords" content="séjour bien-être Dakhla, cure détox Maroc, spa haut de gamme Maroc, centre thalasso Dakhla, reset corps et esprit, soins detox corps et esprit, spa désert et océan"/>
+      </head>
+      
       <body className="antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}

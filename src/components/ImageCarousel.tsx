@@ -16,7 +16,7 @@ const images = [
     title: "Piscine thermale",
   },
   {
-    src: "/placeholder.svg?height=600&width=1200",
+    src: "/images/Salle-de-massage.png",
     alt: "Salle de massage et soins thalasso",
     title: "Espace soins",
   },
