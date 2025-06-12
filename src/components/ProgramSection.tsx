@@ -1,23 +1,27 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const days = [
   {
-title: "Jour 1 – Arrivée & Préparation",
-description: [
-  "Accueil personnalisé",
-  "Infusion détox",
-  "Installation dans votre bungalow avec vue sur nature ou océan",
-  "Bol d’Air Jacquier",
-  "Accès piscine thermale",
-  "🎯 Objectif : Ancrage, respiration, ouverture du corps et de l’esprit."
-],
-  icon: "🌅",
-    image: "/images/day1.jpg", // replace with your image path
+    title: "Jour 1 – Arrivée & Préparation",
+    icon: "🌅",
+    image: "/images/Arrival.png",
+    description: [
+      "Accueil personnalisé",
+      "Infusion détox",
+      "Installation dans votre bungalow avec vue sur nature ou océan",
+      "Bol d’Air Jacquier",
+      "Accès piscine thermale",
+      "🎯 Objectif : Ancrage, respiration, ouverture du corps et de l’esprit."
+    ],
   },
   {
     title: "Jour 2 – Spa Apaisement & Relâchement",
     icon: "💆‍♀️",
+    image: "/images/day2.jpg",
     description: [
       "Bol d’Air Jacquier",
       "Piscine thermale",
@@ -25,73 +29,88 @@ description: [
       "Bain hydromassant",
       "Enveloppement aux algues",
       "Modelage sous douche à affusion",
-      "🌬️ Objectif : Lâcher-prise, oxygénation cellulaire, déblocage des tensions",
+      "🌬️ Objectif : Lâcher-prise, oxygénation cellulaire, déblocage des tensions"
     ],
-    image: "/images/day2.jpg",
   },
   {
     title: "Jour 3 – Spa Régénération & Vitalité",
     icon: "⚡",
+    image: "/images/day3.jpg",
     description: [
       "Piscine thermale",
       "Douche à jet",
       "Bain au magnésium",
       "Cupping thérapie",
-      "⚡ Objectif : Circulation relancée, silhouette désengorgée et boost naturel",
+      "⚡ Objectif : Circulation relancée, silhouette désengorgée et boost naturel"
     ],
-    image: "/images/day3.jpg",
   },
   {
     title: "Jour 4 – Spa Purification & Relaxation",
     icon: "🧘‍♀️",
+    image: "/images/day4.jpg",
     description: [
       "Bol d’Air Jacquier",
       "Piscine thermale",
       "Hammam Secret du Désert",
       "Massage relaxant",
-      "🌿 Objectif : Évacuation des toxines, relâchement profond, peau régénérée",
+      "🌿 Objectif : Évacuation des toxines, relâchement profond, peau régénérée"
     ],
-    image: "/images/day4.jpg",
   },
 ];
 
 export default function ProgramSection() {
   return (
-    <section className="bg-[#f9f8f4] py-20 px-6" id="programme">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <section className="bg-[#f9f8f4] py-24 px-6" id="programme">
+      <div className="max-w-6xl mx-auto space-y-24">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-stone-800">
+          <motion.h2
+            className="text-4xl font-trajan text-green-900 leading-tight"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             🗓️ Le Programme – 3 Jours, 3 Énergies, 3 Transformations
-          </h2>
+          </motion.h2>
         </div>
 
         {days.map((day, i) => (
-          <div
+          <motion.div
             key={i}
-            className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white rounded-xl shadow-md overflow-hidden p-6"
+            className={`flex flex-col-reverse md:grid md:grid-cols-2 gap-12 items-center group ${
+              i % 2 === 1 ? "md:flex-row-reverse" : ""
+            }`}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: i * 0.2 }}
+            viewport={{ once: true }}
           >
-            {/* Text Section */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-teal-700 flex items-center gap-2">
-                <span className="text-2xl">{day.icon}</span> {day.title}
+            <motion.div className="space-y-5 md:pr-6">
+              <h3 className="text-2xl font-semibold text-green-800 flex items-center gap-3">
+                <span className="text-3xl">{day.icon}</span>
+                {day.title}
               </h3>
-              <ul className="list-disc list-inside text-stone-700 space-y-1 pl-4">
+              <ul className="list-disc list-inside text-gray-700 space-y-2 text-base pl-2">
                 {day.description.map((item, idx) => (
-                  <li key={idx} className="text-sm leading-relaxed">{item}</li>
+                  <li key={idx} className="leading-relaxed">
+                    {item}
+                  </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
 
-            {/* Image Section */}
-            <div className="w-full h-72 relative rounded-lg overflow-hidden shadow">
+            <motion.div
+              className="w-full h-80 relative rounded-2xl overflow-hidden shadow-xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
               <Image
                 src={day.image}
                 alt={day.title}
-                layout="fill"
-                objectFit="cover"
+                fill
+                className="object-cover"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </section>

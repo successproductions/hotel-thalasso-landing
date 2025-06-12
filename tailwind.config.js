@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
   	extend: {
+		transitionProperty: {
+  DEFAULT: 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+},
   		colors: {
   			blue: {
   				'50': '#f0f9ff',
@@ -63,9 +66,9 @@ module.exports = {
   			}
   		},
   		fontFamily: {
-  			sans: [
-  				'var(--font-inter)'
-  			]
+  			montserrat: ['Montserrat', 'sans-serif'],
+        trajan: ['"Trajan Pro"', 'serif'],
+
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

@@ -31,13 +31,14 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="w-full bg-stone-50 py-16 px-6">
+    <div className="w-full bg-stone-50 dark:bg-[#111827] pt-16 pb-32 px-6 text-gray-800 dark:text-gray-100 transition-colors">
+
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <p className="text-sm tracking-widest text-stone-600 uppercase mb-4">Appointment</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-stone-800 mb-6">Get In Touch With Femelle</h2>
-          <p className="text-stone-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm tracking-widest text-stone-600 uppercase mb-4 dark:text-gray-300">Appointment</p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-stone-800 mb-6 dark:text-gray-300">Get In Touch With Femelle</h2>
+          <p className="text-stone-600 max-w-2xl mx-auto leading-relaxed dark:text-gray-300">
             Quisque et aliquet diam, id faucibus metus. Fusce ante est, condimentum vitae ultrices sed.
           </p>
         </div>
@@ -45,10 +46,10 @@ export default function ContactForm() {
         {/* Form and Map Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-lg shadow-sm">
+          <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-sm transition-colors">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-stone-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-stone-700 dark:text-gray-300 mb-2">
                   Your Name *
                 </label>
                 <Input
@@ -65,7 +66,7 @@ export default function ContactForm() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-stone-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-stone-700 dark:text-gray-300 mb-2">
                     Phone *
                   </label>
                   <Input
@@ -81,7 +82,7 @@ export default function ContactForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-stone-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-stone-700 dark:text-gray-300 mb-2">
                     Email *
                   </label>
                   <Input
@@ -98,7 +99,7 @@ export default function ContactForm() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-stone-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-stone-700 dark:text-gray-300 mb-2">
                   Message
                 </label>
                 <Textarea
@@ -117,7 +118,7 @@ export default function ContactForm() {
                 className="w-full bg-green-900 hover:bg-green-800 text-white py-4 rounded-lg font-medium tracking-wide"
                 size="lg"
               >
-                Submit Form
+                SOUMETTRE
               </Button>
             </form>
           </div>
@@ -145,24 +146,24 @@ export default function ContactForm() {
             <div className="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
               <MapPin className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-medium text-green-900 mb-2">Our Address</h3>
-            <p className="text-stone-600">POINT DE DRAGON PK 28. 73000</p>
+            <h3 className="text-xl font-medium text-green-900 mb-2">Address</h3>
+            <p className="text-stone-600 dark:text-gray-300">POINT DE DRAGON PK 28. 73000</p>
           </div>
 
           <div className="text-center">
             <div className="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
               <Phone className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-medium text-green-900 mb-2">Phone Number</h3>
-            <p className="text-stone-600">+212 652-881921</p>
+            <h3 className="text-xl font-medium text-green-900 mb-2">numéro de téléphone</h3>
+            <p className="text-stone-600 dark:text-gray-300">+212 652-881921</p>
           </div>
 
           <div className="text-center">
             <div className="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
               <Mail className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-medium text-green-900 mb-2">Our Email</h3>
-            <p className="text-stone-600">reservation@dakhlaclub.com</p>
+            <h3 className="text-xl font-medium text-green-900 mb-2">Notre email</h3>
+            <p className="text-stone-600 dark:text-gray-300">reservation@dakhlaclub.com</p>
           </div>
         </div>
       </div>

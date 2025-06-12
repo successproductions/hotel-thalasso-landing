@@ -11,7 +11,7 @@ const images = [
     title: "Vue sur l'océan",
   },
   {
-    src: "/placeholder.svg?height=600&width=1200",
+    src: "/images/Piscine_thermale.jpeg",
     alt: "Piscine thermale avec vue sur mer",
     title: "Piscine thermale",
   },
@@ -26,7 +26,7 @@ const images = [
     title: "Espace détente",
   },
   {
-    src: "/placeholder.svg?height=600&width=1200",
+    src: "/images/Restaurant.jpg?height=600&width=1200",
     alt: "Restaurant gastronomique de l'hôtel",
     title: "Restaurant",
   },

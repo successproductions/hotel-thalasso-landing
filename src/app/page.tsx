@@ -15,7 +15,7 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background text-foreground transition-colors duration-500">
       <Header />
       <Hero />
       <CopySection />

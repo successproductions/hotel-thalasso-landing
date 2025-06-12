@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="md:col-span-1 space-y-3">
-            <h3 className="text-3xl font-trajan italic">Femellé</h3>
+            <h3 className="text-3xl font-trajan italic">DakhlaClub</h3>
             <p className="text-sm text-gray-400">© 2025 Dakhla Club</p>
           </div>
 

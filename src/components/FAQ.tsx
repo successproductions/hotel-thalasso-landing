@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Phone } from "lucide-react"; // Optional: any icon you like
-
+import { Phone } from "lucide-react";
 export default function FAQSection() {
   const faqs = [
     {
@@ -39,7 +38,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="bg-[#f9f8f4] py-20">
+    <section className="bg-[#f9f8f4] dark:bg-[#111827] py-20 text-gray-900 dark:text-gray-100 transition-colors">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-start">
         {/* Left - Image with Contact Box */}
         <div className="relative">
@@ -53,7 +52,7 @@ export default function FAQSection() {
             />
           </div>
 
-          <div className="absolute bottom-4 left-4 bg-white p-4 pr-6 rounded-xl shadow-md flex items-start gap-4 w-fit max-w-xs">
+          <div className="absolute bottom-4 left-4 bg-white dark:bg-gray-900 p-4 pr-6 rounded-xl shadow-md transition-colors">
             <div className="w-10 h-10 bg-green-900 text-white flex items-center justify-center rounded-full">
               <Phone className="w-5 h-5" />
             </div>
@@ -73,7 +72,7 @@ export default function FAQSection() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-white rounded-md px-4 py-1 shadow-sm"
+                className="bg-white dark:bg-gray-900 rounded-md px-4 py-1 shadow-sm transition-colors"
               >
                 <AccordionTrigger className="text-left font-medium text-base text-green-900 hover:text-teal-600">
                   {faq.question}
