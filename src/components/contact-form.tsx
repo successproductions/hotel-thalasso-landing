@@ -31,7 +31,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="w-full bg-stone-50 dark:bg-[#111827] pt-16 pb-32 px-6 text-gray-800 dark:text-gray-100 transition-colors">
+    <div className="w-full bg-stone-50 dark:bg-[#080b12] pt-16 pb-32 px-6 text-gray-800 dark:text-gray-100 transition-colors">
 
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
@@ -127,7 +127,8 @@ export default function ContactForm() {
           <div className="bg-white rounded-lg shadow-sm overflow-hidden">
             <div className="w-full h-full min-h-[400px] bg-stone-200 flex items-center justify-center">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.540943654408!2d-0.12768908422918447!3d51.50735397963401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2slondon%20eye!5e0!3m2!1sen!2suk!4v1234567890123"
+              
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.701890833086!2d-15.771637423230148!3d23.90018747856852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc23ad5afd1c1481%3A0xc28dd166fe5df19a!2sDakhla%20Club%20Hotel%20%26%20Spa!5e0!3m2!1sfr!2sma!4v1749717076479!5m2!1sfr!2sma"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
@@ -147,7 +148,7 @@ export default function ContactForm() {
               <MapPin className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-xl font-medium text-green-900 mb-2">Address</h3>
-            <p className="text-stone-600 dark:text-gray-300">POINT DE DRAGON PK 28. 73000</p>
+            <p className="text-stone-600 dark:text-gray-300">POINT DE DRAGON PK 28. 73000 dakhla.</p>
           </div>
 
           <div className="text-center">
@@ -170,3 +171,4 @@ export default function ContactForm() {
     </div>
   )
 }
+

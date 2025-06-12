@@ -38,7 +38,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="bg-[#f9f8f4] dark:bg-[#111827] py-20 text-gray-900 dark:text-gray-100 transition-colors">
+    <section className="bg-[#f9f8f4] dark:bg-[#080b12] py-20 text-gray-900 dark:text-gray-100 transition-colors">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-start">
         {/* Left - Image with Contact Box */}
         <div className="relative">
@@ -58,14 +58,14 @@ export default function FAQSection() {
             </div>
             <div>
               <p className="font-semibold text-sm">Contactez-nous</p>
-              <p className="text-xs text-gray-500">Réponse rapide par téléphone ou email.</p>
+              <p className="text-xs text-gray-500 dark:text-gray-300">Réponse rapide par téléphone ou email.</p>
             </div>
           </div>
         </div>
 
         {/* Right - FAQ */}
         <div>
-          <h2 className="text-2xl font-trajan text-green-900 mb-4">FAQ</h2>
+          <h2 className="text-2xl font-trajan text-green-900 dark:text-green-600 mb-4">FAQ</h2>
 
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
@@ -74,10 +74,10 @@ export default function FAQSection() {
                 value={`item-${index}`}
                 className="bg-white dark:bg-gray-900 rounded-md px-4 py-1 shadow-sm transition-colors"
               >
-                <AccordionTrigger className="text-left font-medium text-base text-green-900 hover:text-teal-600">
+                <AccordionTrigger className="text-left font-medium text-base text-green-900 dark:text-green-600 hover:text-teal-400">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-gray-600 pt-2 leading-relaxed">
+                <AccordionContent className="text-sm text-gray-600 pt-2 leading-relaxed dark:text-gray-300">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

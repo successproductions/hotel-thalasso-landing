@@ -50,7 +50,7 @@ export default function Header() {
         </div>
 
         {/* Left Nav (hidden on mobile) */}
-        <nav className="hidden md:flex flex-1 justify-start space-x-6 text-sm font-medium text-gray-700">
+        <nav className="hidden md:flex flex-1 justify-start space-x-6 text-1xl font-medium text-gray-700  dark:text-gray-200">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href} className="hover:text-teal-700">
               {link.name}
@@ -82,7 +82,7 @@ export default function Header() {
     <Link
       key={link.name}
       href={link.href}
-      className="hover:text-teal-700 dark:hover:text-teal-400"
+      className="hover:text-teal-700 dark:hover:text-teal-400 "
     >
       {link.name}
     </Link>

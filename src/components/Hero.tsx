@@ -68,7 +68,7 @@ const services = [
 
           {/* Right Image */}
           <div className="hidden md:block relative">
-            <Image src="/images/hero-image-1.png" alt="Hot stone therapy" fill className="object-cover" />
+            <Image src="/images/Piscine_thermale.jpeg" alt="Hot stone therapy" fill className="object-cover" />
           </div>
         </div>
 
