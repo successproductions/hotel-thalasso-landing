@@ -70,13 +70,7 @@ const programData: ProgramDay[] = [
   }
 ];
 
-const mainCTAs = [
-  "Oui, je choisis de me régénérer à Dakhla",
-  "J'active mon séjour revitalisant", 
-  "Entrer dans l'univers holistique du Dakhla Club",
-  "Je réclame ma bulle de calme et d'énergie",
-  "Débuter mes 5 jours de reconnexion"
-];
+
 
 export default function HotelProgram() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -121,7 +115,7 @@ export default function HotelProgram() {
             >
               {/* Background Image with Enhanced Overlay */}    
               <div className="absolute inset-0 z-0">
-                <img 
+                <Image 
                   src={program.image} 
                   alt={program.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-125"

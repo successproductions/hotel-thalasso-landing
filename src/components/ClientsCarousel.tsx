@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/carousel';
 import { Star, Quote } from 'lucide-react';
 import Autoplay from 'embla-carousel-autoplay';
+import Image from 'next/image';
 
 interface Client {
   id: number;
@@ -28,7 +29,7 @@ const clientsData: Client[] = [
     title: "Directrice Marketing",
     company: "Wellness Corp",
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    testimonial: "Une expérience transformatrice au Dakhla Club. Les soins sont exceptionnels et l'équipe est d'une bienveillance remarquable.",
+    testimonial: "Une expérience transformatrice au Dakhla Club. Les soins sont exceptionnels et l&apos;équipe est d&apos;une bienveillance remarquable.",
     rating: 5
   },
   {
@@ -105,7 +106,7 @@ export default function ClientsCarousel() {
           <div className="flex items-center justify-center gap-3 mb-6">
             <Quote className="w-8 h-8 text-primary" />
             <h2 className="text-4xl md:text-5xl font-bold dark:text-gray-200 text-gray-950">
-              NOS CLIENTS TÉMOIGNENT
+              NOS CLIENTS T&Eacute;MOIGNENT
             </h2>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -153,9 +154,11 @@ export default function ClientsCarousel() {
                       {/* Client Info */}
                       <div className="flex items-center gap-4">
                         <div className="relative">
-                          <img
+                          <Image
                             src={client.image}
                             alt={client.name}
+                            width={64}
+                            height={64}
                             className="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md group-hover:scale-110 transition-transform duration-300"
                           />
                           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
