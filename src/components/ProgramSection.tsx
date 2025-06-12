@@ -29,8 +29,8 @@ const programData: ProgramDay[] = [
     objective: "Ancrage, respiration, ouverture du corps et de l'esprit.",
     icon: <Leaf className="w-6 h-6" />,
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    ctaText: "Je choisis de me régénérer à Dakhla"
+    image: "/images/Piscine_thermale.jpeg",
+    ctaText: "JE CHOISIS DE ME RÉGÉNÉRER "
   },
   {
     day: 2,
@@ -42,7 +42,7 @@ const programData: ProgramDay[] = [
     icon: <Waves className="w-6 h-6" />,
     gradient: "from-blue-500 via-indigo-500 to-purple-500",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    ctaText: "Entrer dans l’univers holistique "
+    ctaText: "ENTRER DANS L’UNIVERS "
   },
   {
     day: 3,
@@ -54,7 +54,7 @@ const programData: ProgramDay[] = [
     icon: <Sparkles className="w-6 h-6" />,
     gradient: "from-violet-500 via-pink-500 to-rose-500",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    ctaText: "Je veux vivre l'expérience"
+    ctaText: "JE VEUX VIVRE L'EXPÉRIENCE"
   },
   {
     day: 4,
@@ -65,8 +65,8 @@ const programData: ProgramDay[] = [
     objective: "Évacuation des toxines, apaisement mental, peau régénérée.",
     icon: <Droplets className="w-6 h-6" />,
     gradient: "from-orange-500 via-amber-500 to-yellow-500",
-    image: "https://images.unsplash.com/photo-1596178060810-7973739eaa5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    ctaText: "J'accède à mon séjour Sérénité Marine"
+    image: "/images/sauna_ritual.png",
+    ctaText: "J'ACCÈDE À MON SÉJOUR "
   }
 ];
 
@@ -88,15 +88,15 @@ export default function HotelProgram() {
         {/* Enhanced Header */}
         <div className="text-center mb-20 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-gray-100 ">
-              Le Programme
+            <h2 className="text-5xl md:text-6xl  text-gray-900 dark:text-gray-100 ">
+              LE PROGRAMME
             </h2>
           </div>
           <div className="max-w-4xl mx-auto space-y-4">
-            <p className="text-2xl font-semibold text-primary">
+            <p className="text-2xl font-montserrat text-primary">
               3 Jours, 3 Énergies, 3 Transformations
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground font-montserrat">
               Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla
             </p>
           </div>
@@ -185,7 +185,7 @@ export default function HotelProgram() {
                 {/* CTA Button */}
                 <CardContent className="pt-0 pb-6">
                   <Button 
-                    className="w-full bg-white/20 p-0 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-gray-900 font-semibold"
+                    className="w-full bg-white/20 p-0 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-gray-900 font-trajan"
                     size="sm"
                   >
                     {program.ctaText}

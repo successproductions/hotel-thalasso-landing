@@ -85,24 +85,27 @@ export default function ClientsCarousel() {
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
-      <Star
-        key={index}
-        className={`w-4 h-4 ${
-          index < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
-        }`}
-      />
+<Star
+  key={index}
+  className={`w-4 h-4 ${
+    index < rating
+      ? 'text-yellow-400 fill-yellow-400'
+      : 'text-gray-300 dark:text-gray-600'
+  }`}
+/>
+
     ));
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <section className="py-20 px-4  dark:bg-[#090b11] ">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Quote className="w-8 h-8 text-primary" />
-            <h2 className="text-4xl md:text-5xl font-bold  text-gray-950">
-              Nos Clients Témoignent
+            <h2 className="text-4xl md:text-5xl font-bold dark:text-gray-200 text-gray-950">
+              NOS CLIENTS TÉMOIGNENT
             </h2>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -125,7 +128,10 @@ export default function ClientsCarousel() {
             <CarouselContent className="-ml-4">
               {clientsData.map((client) => (
                 <CarouselItem key={client.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="group relative overflow-hidden bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <Card className="group relative overflow-hidden 
+  bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl 
+  transition-all duration-500 hover:-translate-y-2 
+  dark:bg-[#1c1c1c]/90 dark:backdrop-blur-md">
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
@@ -138,9 +144,10 @@ export default function ClientsCarousel() {
                       {/* Testimonial */}
                       <div className="relative mb-6">
                         <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/20" />
-                        <p className="text-muted-foreground leading-relaxed italic pl-6 text-sm">
-                          "{client.testimonial}"
-                        </p>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed italic pl-6 text-sm">
+  "{client.testimonial}"
+</p>
+
                       </div>
 
                       {/* Client Info */}
@@ -154,15 +161,16 @@ export default function ClientsCarousel() {
                           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
                         <div className="flex-1">
-                          <h4 className="font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-                            {client.name}
-                          </h4>
-                          <p className="text-sm text-muted-foreground font-medium">
-                            {client.title}
-                          </p>
-                          <p className="text-xs text-muted-foreground">
-                            {client.company}
-                          </p>
+                          <h4 className="font-bold text-gray-800 dark:text-white group-hover:text-primary transition-colors duration-300">
+  {client.name}
+</h4>
+<p className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+  {client.title}
+</p>
+<p className="text-xs text-gray-400 dark:text-gray-500">
+  {client.company}
+</p>
+
                         </div>
                       </div>
 
@@ -175,8 +183,25 @@ export default function ClientsCarousel() {
             </CarouselContent>
             
             {/* Navigation Buttons */}
-            <CarouselPrevious className="absolute -left-12 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border-2 border-primary/20 hover:border-primary/40 text-primary hover:text-primary shadow-lg" />
-            <CarouselNext className="absolute -right-12 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border-2 border-primary/20 hover:border-primary/40 text-primary hover:text-primary shadow-lg" />
+<CarouselPrevious
+  className="absolute left-2 md:-left-12 top-1/2 -translate-y-1/2 
+  z-10 dark:bg-[#1c1c1c] dark:hover:bg-[#2a2a2a] 
+  border-2 border-primary/20 hover:border-primary/40 
+  text-black dark:text-white hover:text-primary 
+  shadow-lg transition-all duration-300 
+  w-9 h-9 rounded-full flex items-center justify-center"
+/>
+
+<CarouselNext
+  className="absolute right-2 md:-right-12 top-1/2 -translate-y-1/2 
+  z-10 dark:bg-[#1c1c1c] dark:hover:bg-[#2a2a2a]
+  border-2 border-primary/20 hover:border-primary/40 
+   text-black dark:text-white hover:text-primary 
+  shadow-lg transition-all duration-300 
+  w-9 h-9 rounded-full flex items-center justify-center"
+/>
+
+
           </Carousel>
         </div>
 

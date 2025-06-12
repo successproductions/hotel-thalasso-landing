@@ -65,7 +65,7 @@ export default function FAQSection() {
 
         {/* Right - FAQ */}
         <div>
-          <h2 className="text-2xl font-trajan text-green-900 dark:text-green-600 mb-4">FAQ</h2>
+          <h2 className="text-2xl font-trajan  dark:text-green-600 mb-4">FAQ</h2>
 
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (

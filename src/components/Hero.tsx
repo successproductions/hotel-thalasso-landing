@@ -1,7 +1,9 @@
-
+'use client';
+import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
+
 
 export function Hero() {
 
@@ -28,25 +30,48 @@ const services = [
           {/* Center Content */}
           <div className="flex flex-col items-center justify-center px-6 py-12 bg-[#eeede7] dark:bg-[#090b11] text-center">
             <div className="max-w-md space-y-6">
-              <div className="space-y-2">
-<p className="text-sm font-trajan tracking-widest text-stone-600 uppercase dark:text-stone-200">
-  🌿 Évasion Holistique
-</p>
-<h1 className="text-3xl md:text-4xl lg:text-5xl font-trajan text-stone-800 leading-tight dark:text-stone-200">
-  3 Jours pour Ressourcer Corps & Esprit 
-</h1>
-              </div>
-<p className="text-stone-600 leading-relaxed text-sm md:text-base mt-4 dark:text-stone-200">
-  Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?
-</p>
+<div className="space-y-2">
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+    className="text-sm font-trajan tracking-widest text-stone-600 uppercase dark:text-stone-200"
+  >
+    🌿 Évasion Holistique
+  </motion.p>
 
-  <Button
-  className="relative overflow-hidden px-8 py-3 bg-green-900 text-white font-semibold tracking-wide rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-green-800 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-  size="lg"
+  <motion.h1
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+    className="text-3xl md:text-4xl lg:text-5xl font-trajan text-stone-800 leading-tight dark:text-stone-200"
+  >
+    3 JOURS POUR RESSOURCER CORPS & ESPRIT
+  </motion.h1>
+</div>
+
+<motion.p
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
+  className="text-stone-600 leading-relaxed text-sm md:text-base mt-4 dark:text-stone-200"
 >
-  <span className="z-10 relative">Réserver Maintenant</span>
-  <span className="absolute inset-0 bg-white opacity-10 blur-md scale-110 group-hover:opacity-20 transition-opacity duration-500" />
-</Button>
+  Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries?
+</motion.p>
+
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.8, duration: 0.6 }}
+>
+  <Button
+    className="relative overflow-hidden px-8 py-3 bg-green-900 text-white font-semibold tracking-wide rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-green-800 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+    size="lg"
+  >
+    <span className="z-10 relative">Réserver Maintenant</span>
+    <span className="absolute inset-0 bg-white opacity-10 blur-md scale-110 group-hover:opacity-20 transition-opacity duration-500" />
+  </Button>
+</motion.div>
 
             </div>
           </div>
@@ -72,8 +97,8 @@ const services = [
 {/* Services Section */}
 <div className=" py-11 px-6 transition-colors dark:bg-[#090b11]">
   <div className="max-w-6xl mx-auto text-center mb-12">
-    <h2 className="text-2xl md:text-3xl font-trajan text-stone-800 dark:text-stone-100">
-       Nos Soins Signature
+    <h2 className="text-2xl md:text-4xl font-trajan text-stone-800 dark:text-stone-100">
+       NOS SOINS SIGNATURE
     </h2>
     <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm">
       Découvrez une palette de soins pensés pour votre bien-être physique et mental

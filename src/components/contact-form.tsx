@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail } from "lucide-react"
+import Swal from 'sweetalert2'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -24,33 +25,61 @@ export default function ContactForm() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Handle form submission here
-  }
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault()
+
+  const { name, phone, email } = formData
+
+  if (!name || !phone || !email) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Champs requis manquants',
+        text: 'Veuillez remplir tous les champs obligatoires.',
+        confirmButtonColor: '#166534',
+      });
+      return;
+    }
+
+
+    setTimeout(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Message envoyé !',
+        text: 'Nous vous contacterons très bientôt.',
+        confirmButtonColor: '#166534',
+      });
+      setFormData({ name: '', phone: '', email: '', message: '' });
+    }, 800);
+}
 
   return (
-    <div className="w-full bg-stone-50 dark:bg-[#080b12] pt-16 pb-32 px-6 text-gray-800 dark:text-gray-100 transition-colors">
+    <div className="w-full bg-stone-50 dark:bg-[#080b12] pt-16 pb-16 px-6 text-gray-800 dark:text-gray-100 transition-colors">
 
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <p className="text-sm tracking-widest text-stone-600 uppercase mb-4 dark:text-gray-300">Appointment</p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-stone-800 mb-6 dark:text-gray-300">Get In Touch With Femelle</h2>
-          <p className="text-stone-600 max-w-2xl mx-auto leading-relaxed dark:text-gray-300">
-            Quisque et aliquet diam, id faucibus metus. Fusce ante est, condimentum vitae ultrices sed.
-          </p>
-        </div>
+       <div className="text-center mb-12">
+  <p className="text-sm tracking-widest text-stone-600 uppercase mb-4 dark:text-gray-400">
+    Prendre rendez-vous
+  </p>
+  <h2 className="text-4xl md:text-5xl lg:text-5xl  text-stone-900 dark:text-white mb-6 leading-tight">
+    RECONNECTEZ-VOUS À VOTRE BIEN-ÊTRE
+  </h2>
+  <p className="text-stone-600 dark:text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+    Notre équipe est à votre écoute pour vous accompagner dans votre expérience thalasso à Dakhla. 
+    Remplissez le formulaire et offrez-vous une parenthèse hors du temps.
+  </p>
+</div>
+
 
         {/* Form and Map Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className="animate-fade-in-up transition-all duration-1000">
           {/* Contact Form */}
           <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-sm transition-colors">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-stone-700 dark:text-gray-300 mb-2">
-                  Your Name *
+                  Nom complet *
                 </label>
                 <Input
                   id="name"
@@ -67,7 +96,7 @@ export default function ContactForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-stone-700 dark:text-gray-300 mb-2">
-                    Phone *
+                    Téléphone *
                   </label>
                   <Input
                     id="phone"
@@ -114,13 +143,14 @@ export default function ContactForm() {
               </div>
 
               <Button
-                type="submit"
-                className="w-full bg-green-900 hover:bg-green-800 text-white py-4 rounded-lg font-medium tracking-wide"
-                size="lg"
-              >
-                SOUMETTRE
-              </Button>
+  type="submit"
+  className="w-full bg-green-900 hover:bg-green-700 transition-all duration-300 text-white py-4 rounded-lg font-semibold tracking-wide shadow hover:shadow-lg transform hover:-translate-y-1"
+  size="lg"
+>
+  Envoyer
+</Button>
             </form>
+          </div>
           </div>
 
           {/* Map Section */}

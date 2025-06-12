@@ -18,7 +18,7 @@ export default function IntroductionSection() {
           <p className="text-teal-700 dark:text-teal-400 text-sm uppercase font-medium tracking-widest mb-4">
             Pourquoi cette cure ?
           </p>
-          <h2 className="text-3xl md:text-4xl font-trajan font-semibold text-gray-800 dark:text-white leading-snug mb-6">
+          <h2 className="text-3xl md:text-4xl font-trajan  text-gray-800 dark:text-white  mb-6">
             Une reconnexion à soi<br /> dans un cadre naturel exceptionnel
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-relaxed">

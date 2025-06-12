@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+
 
 
 export default function Header() {
@@ -26,13 +28,13 @@ export default function Header() {
     target?.scrollIntoView({ behavior: "smooth" });
   };
 
+
   const navLinks = [
     { name: "Accueil", href: "#accueil" },
     { name: "À propos", href: "#about" },
     { name: "Séjours", href: "#services" },
     { name: "Contact", href: "#contact" },
   ];
-
   return (
     <header
   className={`fixed top-0 w-full z-50 transition-all duration-300 ${

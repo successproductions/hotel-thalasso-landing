@@ -8,12 +8,12 @@ const images = [
   {
     src: "/placeholder.svg?height=600&width=1200",
     alt: "Vue panoramique de l'hôtel thalasso face à la mer",
-    title: "Vue sur l'océan",
+    title: "VUE SUR L'OCÉAN",
   },
   {
     src: "/images/Piscine_thermale.jpeg",
     alt: "Piscine thermale avec vue sur mer",
-    title: "Piscine thermale",
+    title: "PISCINE THERMALE",
   },
   {
     src: "/images/Salle-de-massage.png",
@@ -23,12 +23,12 @@ const images = [
   {
     src: "/placeholder.svg?height=600&width=1200",
     alt: "Sauna et hammam de l'hôtel",
-    title: "Espace détente",
+    title: "ESPACE SOINS",
   },
   {
     src: "/images/Restaurant.jpg?height=600&width=1200",
     alt: "Restaurant gastronomique de l'hôtel",
-    title: "Restaurant",
+    title: "RESTAURANT",
   },
 ]
 

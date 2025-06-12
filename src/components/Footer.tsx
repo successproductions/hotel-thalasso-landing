@@ -2,12 +2,12 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0c1b11] text-white pt-40 relative">
+    <footer className="bg-[#0c1b11] text-white pt-32 mt-6 relative">
       {/* CTA Banner */}
       <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-cover bg-center bg-black/40 rounded-xl overflow-hidden shadow-lg">
         <div className="p-10 text-center space-y-4 backdrop-blur-sm bg-black/30">
           <p className="text-sm uppercase tracking-widest text-gray-300">Appointment</p>
-          <h2 className="text-3xl md:text-4xl font-trajan">Élevez votre expérience bien-être</h2>
+          <h2 className="text-3xl md:text-4xl font-trajan">ÉLEVEZ VOTRE EXPÉRIENCE BIEN-ÊTRE</h2>
           <p className="max-w-xl mx-auto text-gray-300">
             3 jours de soins holistiques, de rituels ancestraux et de reconnexion à vous-même dans un sanctuaire entre
             désert et océan.
@@ -24,18 +24,18 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-1 space-y-3">
             <h3 className="text-3xl font-trajan italic">DakhlaClub</h3>
-            <p className="text-sm text-gray-400">© 2025 Dakhla Club</p>
+            <p className="text-sm text-gray-400">© 2025 DakhlaClub</p>
           </div>
 
           {/* Contact */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <p className="text-sm text-gray-400">
-              DC Thermes – Dakhla Club
+              POINT DE DRAGON PK 28. 73000 DAKHLA.
               <br />
-              Tél: +212 6 12 34 56 78
+              Tél: +212 652-881921
               <br />
-              E: contact@femelle-spa.ma
+              E: reservation@dakhlaclub.com
             </p>
           </div>
 
@@ -44,7 +44,6 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Pages</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li><Link href="#about" className="hover:text-white">À propos</Link></li>
-              <li><Link href="#services" className="hover:text-white">Séjours</Link></li>
               <li><Link href="#pricing" className="hover:text-white">Programme</Link></li>
               <li><Link href="#contact" className="hover:text-white">Réserver</Link></li>
             </ul>
@@ -55,7 +54,6 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Ressources</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li><Link href="#faq" className="hover:text-white">FAQs</Link></li>
-              <li><Link href="#" className="hover:text-white">Mentions Légales</Link></li>
               <li><Link href="#" className="hover:text-white">Politique de confidentialité</Link></li>
             </ul>
           </div>

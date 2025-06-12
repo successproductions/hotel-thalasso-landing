@@ -1,3 +1,4 @@
+'use client';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Hero } from '@/components/Hero';
@@ -7,7 +8,8 @@ import ImageCarousel from '@/components/ImageCarousel';
 import ProgramSection from '@/components/ProgramSection';
 import ClientsCarousel from '@/components/ClientsCarousel';
 import IntroductionSection from '@/components/IntroductionSection';
-
+import ScrollToTop from '@/components/ScrollToTop';
+import RewardsSection from '@/components/RewardsSection';
 
 
 
@@ -16,6 +18,7 @@ export default function Home() {
 
 
   return (
+
     <main className="min-h-screen bg-background text-foreground transition-colors duration-500">
       <Header />
       <Hero />
@@ -26,7 +29,9 @@ export default function Home() {
       <ClientsCarousel />
 <FAQSection/>
 <ContactForm/>
+<RewardsSection/>
       <Footer />
+      <ScrollToTop/>
     </main>
   );
 } 
