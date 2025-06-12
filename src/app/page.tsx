@@ -6,6 +6,7 @@ import ContactForm from '@/components/contact-form';
 import ImageCarousel from '@/components/ImageCarousel';
 import CopySection from '@/components/CopySection';
 import ProgramSection from '@/components/ProgramSection';
+import ClientsCarousel from '@/components/ClientsCarousel';
 
 
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <CopySection />
       <ProgramSection/>
+      <ClientsCarousel />
 
       <ImageCarousel />
       

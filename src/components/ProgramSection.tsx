@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, Droplets, Waves, Sparkles, Leaf, ArrowRight, Star } from 'lucide-react';
+import Image from 'next/image';
 
 interface ProgramDay {
   day: number;
@@ -29,7 +30,7 @@ const programData: ProgramDay[] = [
     icon: <Leaf className="w-6 h-6" />,
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    ctaText: "Commencer mon voyage de transformation"
+    ctaText: "Je choisis de me régénérer à Dakhla"
   },
   {
     day: 2,
@@ -41,7 +42,7 @@ const programData: ProgramDay[] = [
     icon: <Waves className="w-6 h-6" />,
     gradient: "from-blue-500 via-indigo-500 to-purple-500",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    ctaText: "Je m'offre cette parenthèse de bien-être"
+    ctaText: "Entrer dans l’univers holistique "
   },
   {
     day: 3,
@@ -90,7 +91,7 @@ export default function HotelProgram() {
             <div className="p-3 bg-gradient-to-r from-primary to-blue-600 rounded-full">
               <Calendar className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-800 via-blue-700 to-indigo-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 ">
               Le Programme
             </h2>
           </div>
@@ -121,7 +122,7 @@ export default function HotelProgram() {
                 animationDelay: `${index * 200}ms`
               }}
             >
-              {/* Background Image with Enhanced Overlay */}
+              {/* Background Image with Enhanced Overlay */}    
               <div className="absolute inset-0 z-0">
                 <img 
                   src={program.image} 
@@ -187,11 +188,11 @@ export default function HotelProgram() {
                 {/* CTA Button */}
                 <CardContent className="pt-0 pb-6">
                   <Button 
-                    className="w-full bg-white/20 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-gray-900 font-semibold"
+                    className="w-full bg-white/20 p-0 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-gray-900 font-semibold"
                     size="sm"
                   >
                     {program.ctaText}
-                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-4 h-4 ml-0 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </CardContent>
               </div>
