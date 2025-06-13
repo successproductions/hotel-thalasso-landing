@@ -31,19 +31,19 @@ export default function HotelProgram() {
   
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br dark:bg-[#080b12] transition-colors">
+    <section id="program" className="py-20 px-4 bg-gradient-to-br dark:bg-[#080b12] transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="flex items-center justify-center gap-3 mb-2">
             <h2 className="text-5xl md:text-6xl text-gray-900 dark:text-gray-100">
               {t('header.title')}
             </h2>
           </div>
           <div className="max-w-4xl mx-auto space-y-4">
-            <p className="text-2xl font-montserrat text-primary">
+            {/* <p className="text-2xl font-montserrat text-primary">
               {t('header.subheading')}
-            </p>
+            </p> */}
             <p className="text-lg text-muted-foreground font-montserrat">
               {t('header.description')}
             </p>
@@ -78,6 +78,7 @@ export default function HotelProgram() {
                 onMouseLeave={() => setHoveredCard(null)}
                 onClick={() => setSelectedDay(selectedDay === meta.day ? null : meta.day)}
                 style={{ animationDelay: `${idx * 200}ms` }}
+                
               >
                 {/* Background */}
                 <div className="absolute inset-0 z-0">
@@ -88,7 +89,8 @@ export default function HotelProgram() {
 
                 {/* Content */}
                 <div className="relative z-20 h-full flex flex-col">
-                  <CardHeader className="text-white pb-4 flex-1">
+                  <CardHeader className="text-white pb-4 flex-1"
+                  >
                     <div className="flex items-center justify-between mb-4">
                       <Badge variant="secondary" className="bg-white/25 text-white border-white/40 font-bold text-sm backdrop-blur-md px-3 py-1">
                         {t('header.jour')} {meta.day}
@@ -131,6 +133,7 @@ export default function HotelProgram() {
                     <Button
                       className="w-full bg-white/20 p-0 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-gray-900 font-trajan"
                       size="sm"
+                      
                     >
                       {ctaText} <ArrowRight className="w-4 h-4 ml-0 transition-transform group-hover:translate-x-1"/>
                     </Button>

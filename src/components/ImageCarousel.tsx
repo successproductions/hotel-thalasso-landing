@@ -5,6 +5,7 @@ import { useState, useEffect }            from "react";
 import { ChevronLeft, ChevronRight }       from "lucide-react";
 import { Button }                          from "@/components/ui/button";
 import { useTranslations }                 from "next-intl";
+import Image from "next/image";
 
 const carouselImages = [
   { src: "/images/IMG_2150 (1).JPG", id: "oceanView" },
@@ -54,7 +55,7 @@ export default function ImageCarousel() {
               idx === currentIndex ? "opacity-100 scale-100" : "opacity-0 scale-110"
             }`}
           >
-            <img
+            <Image
               src={image.src}
               alt={tImg(`${image.id}.alt`)}
               className="w-full h-full object-cover"

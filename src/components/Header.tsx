@@ -85,9 +85,16 @@ export default function Header() {
             <Globe className="w-4 h-4" />{otherLocale.toUpperCase()}
           </Link>
 
-          <Button size="sm" className="bg-green-900 font-trajan px-5 hover:bg-green-800 hover:scale-105 hover:shadow-xl">
-            {t("button.book")}
-          </Button>
+          <Button
+           size="sm"
+           className="bg-green-900 font-trajan px-5 hover:bg-green-800 hover:scale-105 hover:shadow-xl"
+           onClick={() => {
+             const el = document.getElementById('contact');
+             el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+           }}
+         >
+           {t("button.book")}
+         </Button>
         </div>
       </div>
 
