@@ -1,4 +1,4 @@
-// src/components/FAQ.tsx
+
 'use client';
 
 import React from 'react';
@@ -9,7 +9,6 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@/components/ui/accordion';
-import { Phone } from 'lucide-react';
 import { useTranslations, useMessages } from 'next-intl';
 
 export default function FAQSection() {

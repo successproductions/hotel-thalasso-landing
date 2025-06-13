@@ -17,7 +17,7 @@ export default async function LocaleLayout({
   const { locale } = params;     
   
   const messages = (await import(`../../messages/${locale}.json`))
-    .default as Record<string, any>;
+    .default as Record<string, string>;
 
   return (
     <html lang={locale} suppressHydrationWarning>
