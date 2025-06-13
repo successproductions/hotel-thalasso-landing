@@ -42,7 +42,7 @@ export default function ImageCarousel() {
     setIsAutoPlaying(false);
   };
 
-  const { src, id } = carouselImages[currentIndex];
+ const { id } = carouselImages[currentIndex];
 
   return (
     <section className="relative h-[70vh] overflow-hidden bg-gray-900">
@@ -56,7 +56,8 @@ export default function ImageCarousel() {
             }`}
           >
             <Image
-              src={image.src}
+
+              src={carouselImages[currentIndex].src}
               alt={tImg(`${image.id}.alt`)}
               className="w-full h-full object-cover"
             />
