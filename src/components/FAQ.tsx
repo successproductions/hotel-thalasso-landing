@@ -1,18 +1,36 @@
+"use client";
 
-'use client';
-
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger
-} from '@/components/ui/accordion';
-import { useTranslations, useMessages } from 'next-intl';
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Phone } from "lucide-react";
+import { useTranslations, useMessages } from "next-intl";
+
+// Define types for your FAQ messages
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+// interface FAQMessages {
+//   faq: {
+//     title: string;
+//     contact: {
+//       label: string;
+//       subtext: string;
+//       alt: string;
+//     };
+//     items: FAQItem[];
+//   };
+// }
 
 export default function FAQSection() {
-  const t        = useTranslations('faq');
+  const t = useTranslations("faq");
   const messages = useMessages();
 
   const { contact, items } = messages.faq;
@@ -32,27 +50,33 @@ export default function FAQSection() {
             />
           </div>
 
-          
+          <div className="absolute bottom-4 left-4 bg-white dark:bg-gray-900 p-4 pr-6 rounded-xl shadow-md transition-colors">
+            <div className="w-10 h-10 bg-green-900 text-white flex items-center justify-center rounded-full">
+              <Phone className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="font-semibold text-sm">{contact.label}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-300">{contact.subtext}</p>
+            </div>
+          </div>
         </div>
 
         {/* Right - FAQ */}
         <div>
-          <h2 className="text-2xl font-trajan dark:text-green-600 mb-4">
-            {t('title')}
-          </h2>
+          <h2 className="text-2xl font-trajan dark:text-green-600 mb-4">{t("title")}</h2>
 
           <Accordion type="single" collapsible className="space-y-4">
-            {items.map((faq, index) => (
+            {items.map((item: FAQItem, index: number) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
                 className="bg-white dark:bg-gray-900 rounded-md px-4 py-1 shadow-sm transition-colors"
               >
                 <AccordionTrigger className="text-left font-medium text-base text-green-900 dark:text-green-600 hover:text-teal-400">
-                  {faq.question}
+                  {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-sm text-gray-600 pt-2 leading-relaxed dark:text-gray-300">
-                  {faq.answer}
+                  {item.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
