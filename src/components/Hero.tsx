@@ -3,18 +3,22 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 
 export function Hero() {
 
 const services = [
-  { name: "Bol d’Air Jacquier", icon: "🌬️" },
-  { name: "Bain hydromassant", icon: "💦" },
-  { name: "Enveloppement aux algues", icon: "🪻" },
-  { name: "Massage à affusion", icon: "💧" },
-  { name: "Hammam traditionnel", icon: "🧖‍♀️" },
-  { name: "Cupping thérapie", icon: "🫙" },
-]
+   { id: 'bolDAirJacquier',  icon: '🌬️' },
+   { id: 'hydroMassageBath',  icon: '💦' },
+   { id: 'seaweedWrap',       icon: '🪻' },
+   { id: 'affusionMassage',   icon: '💧' },
+   { id: 'traditionalHammam', icon: '🧖‍♀️' },
+   { id: 'cuppingTherapy',    icon: '🫙' }
+ ];
+
+const tHero    = useTranslations('hero');
+ const tService = useTranslations('servicesSection');
 
 
   return (
@@ -37,7 +41,7 @@ const services = [
     transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
     className="text-sm font-trajan tracking-widest text-stone-600 uppercase dark:text-stone-200"
   >
-    🌿 Évasion Holistique
+    {tHero('tagline')}
   </motion.p>
 
   <motion.h1
@@ -46,7 +50,7 @@ const services = [
     transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
     className="text-3xl md:text-4xl lg:text-5xl font-trajan text-stone-800 leading-tight dark:text-stone-200"
   >
-    3 JOURS POUR RESSOURCER CORPS & ESPRIT
+    {tHero('headline')}
   </motion.h1>
 </div>
 
@@ -56,7 +60,7 @@ const services = [
   transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
   className="text-stone-600 leading-relaxed text-sm md:text-base mt-4 dark:text-stone-200"
 >
-  Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries?
+  {tHero('description')}
 </motion.p>
 
 <motion.div
@@ -65,10 +69,10 @@ const services = [
   transition={{ delay: 0.8, duration: 0.6 }}
 >
   <Button
-    className="relative overflow-hidden px-8 py-3 bg-green-900 text-white font-semibold tracking-wide rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-green-800 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+    className="relative overflow-hidden px-8 py-3 bg-green-900 text-white font-trajan tracking-wide rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-green-800 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
     size="lg"
   >
-    <span className="z-10 relative">Réserver Maintenant</span>
+    <span className="z-10 relative">{tHero('cta')}</span>
     <span className="absolute inset-0 bg-white opacity-10 blur-md scale-110 group-hover:opacity-20 transition-opacity duration-500" />
   </Button>
 </motion.div>
@@ -98,28 +102,30 @@ const services = [
 <div className=" py-11 px-6 transition-colors dark:bg-[#090b11]">
   <div className="max-w-6xl mx-auto text-center mb-12">
     <h2 className="text-2xl md:text-4xl font-trajan text-stone-800 dark:text-stone-100">
-       NOS SOINS SIGNATURE
+       {tService('title')}
     </h2>
     <p className="mt-2 text-gray-600 dark:text-gray-300 text-sm">
-      Découvrez une palette de soins pensés pour votre bien-être physique et mental
+      {tService('description')}
     </p>
   </div>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-    {services.map((service, index) => (
-      <div
-        key={index}
-        className="bg-white dark:bg-gray-900 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group"
-      >
-        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-green-50 dark:bg-green-900/20 shadow-inner group-hover:scale-110 transition-transform duration-300">
-          <span className="text-2xl group-hover:rotate-6 transition-transform">{service.icon}</span>
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 max-w-6xl mx-auto">
+          {services.map(({ id, icon }, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-900 rounded-xl p-4 shadow-md transition-all duration-300 hover:-translate-y-1 group"
+            >
+              <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full group-hover:scale-110 transition-transform duration-300">
+                <span className="text-2xl group-hover:rotate-6 transition-transform">
+                  {icon}
+                </span>
+              </div>
+              <h3 className="mt-4 text-xs font-semibold text-stone-700 dark:text-stone-100 uppercase tracking-wide">
+                {tHero(`services.${id}`)}
+              </h3>
+            </div>
+          ))}
         </div>
-        <h3 className="mt-4 text-xs font-semibold text-stone-700 dark:text-stone-100 uppercase tracking-wide">
-          {service.name}
-        </h3>
-      </div>
-    ))}
-  </div>
 </div>
 
         </div>

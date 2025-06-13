@@ -1,0 +1,254 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Séjours",
+    "contact": "Contact",
+    "button": {
+    "book": "RÉSERVER"
+  }
+  },
+  
+  "home": {
+    "title": "Bienvenue à Dakhla Club",
+    "description": "Profitez de 3 jours de détente et de soins"
+  },
+   "hero": {
+    "tagline":     "🌿 Holistic Escape",
+    "headline":    "3 DAYS TO REJUVENATE BODY & MIND",
+    "description": "Dakhla is calling… Are you ready to recharge your batteries?",
+    "cta":         "RÉSERVEZ VOTRE ÉVASION HOLISTIQUE",
+    "services": {
+      "bolDAirJacquier":   "Jacquier Air Bath",
+      "hydroMassageBath":   "Hydro-Massage Bath",
+      "seaweedWrap":        "Seaweed Wrap",
+      "affusionMassage":    "Affusion Massage",
+      "traditionalHammam":  "Traditional Hammam",
+      "cuppingTherapy":     "Cupping Therapy"
+    }
+  },
+  "servicesSection": {
+    "title":       "OUR SIGNATURE TREATMENTS",
+    "description": "Discover a range of treatments designed for your physical and mental well-being"
+  },
+  
+  "programSection": {
+    "header": {
+      "title":             "LE PROGRAMME",
+      "subheading":        "3 Jours, 3 Énergies, 3 Transformations",
+      "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
+      "jour":              "Jour",
+      "activitiesTitle":   "Activités incluses :"
+    },
+    "days": {
+      "1": {
+        "title":        "Arrivée & Préparation",
+        "subtitle":     "Ancrage et Ouverture",
+        "description":  "Accueil personnalisé, infusion détox, installation dans votre bungalow avec vue sur la nature ou l'océan. En fin d'après-midi : Bol d'Air Jacquier + accès piscine thermale pour initier le lâcher-prise.",
+        "activities":   ["Accueil personnalisé","Infusion détox","Installation bungalow","Bol d'Air Jacquier","Piscine thermale"],
+        "objective":    "Ancrage, respiration, ouverture du corps et de l'esprit.",
+        "ctaText":      "JE CHOISIS DE ME RÉGÉNÉRER"
+      },
+      "2": {
+        "title":        "Apaisement & Relâchement",
+        "subtitle":     "Lâcher-prise Profond",
+        "description":  "Une journée complète dédiée au relâchement profond avec une combinaison de soins aquatiques et de thérapies naturelles.",
+        "activities":   ["Bol d'Air Jacquier","Piscine thermale","Sauna purifiant","Bain hydromassant","Enveloppement aux algues","Modelage sous affusion"],
+        "objective":    "Lâcher-prise profond, oxygénation cellulaire, relâchement musculaire.",
+        "ctaText":      "ENTRER DANS L’UNIVERS"
+      },
+      "3": {
+        "title":        "Régénération & Vitalité",
+        "subtitle":     "Recharge Énergétique",
+        "description":  "Focus sur la régénération cellulaire et le boost d'énergie avec des soins ciblés pour relancer votre vitalité naturelle.",
+        "activities":   ["Piscine thermale","Douche à jet","Bain au magnésium","Cupping thérapie"],
+        "objective":    "Relancer la circulation, affiner la silhouette, recharge énergétique.",
+        "ctaText":      "JE VEUX VIVRE L'EXPÉRIENCE"
+      },
+      "4": {
+        "title":        "Purification & Clôture",
+        "subtitle":     "Régénération Finale",
+        "description":  "La journée de clôture parfaite pour éliminer les dernières toxines et repartir avec une peau rayonnante et un esprit apaisé.",
+        "activities":   ["Bol d'Air Jacquier","Piscine thermale","Hammam Secret du Désert","Massage relaxant"],
+        "objective":    "Évacuation des toxines, apaisement mental, peau régénérée.",
+        "ctaText":      "J'ACCÈDE À MON SÉJOUR"
+      }
+    }
+  },
+  "carousel": {
+    "overlay": {
+      "description": "Découvrez nos espaces d'exception dédiés à votre bien-être et à votre détente",
+      "pause":       "⏸️ Pause",
+      "play":        "▶️ Lecture"
+    },
+    "images": {
+      "oceanView": {
+        "alt":   "Vue panoramique de l'hôtel thalasso face à la mer",
+        "title": "VUE SUR L'OCÉAN"
+      },
+      "thermalPool": {
+        "alt":   "Piscine thermale avec vue sur mer",
+        "title": "PISCINE THERMALE"
+      },
+      "spaRoom": {
+        "alt":   "Salle de massage et soins thalasso",
+        "title": "ESPACE SOINS"
+      },
+      "saunaHammam": {
+        "alt":   "Sauna et hammam de l'hôtel",
+        "title": "SAUNA & HAMMAM"
+      },
+      "restaurant": {
+        "alt":   "Restaurant gastronomique de l'hôtel",
+        "title": "RESTAURANT"
+      }
+    }
+  },
+  
+  "faq": {
+    "title": "FAQ",
+    "contact": {
+      "label": "Contactez-nous",
+      "subtext": "Réponse rapide par téléphone ou email.",
+      "alt": "Femme dans l’eau à Dakhla"
+    },
+    "items": [
+      {
+        "question": "Depuis combien de temps votre centre existe-t-il ?",
+        "answer": "Notre centre existe depuis plus de 10 ans à Dakhla, avec des milliers de clients satisfaits ayant bénéficié de nos soins holistiques."
+      },
+      {
+        "question": "Quel est le tarif pour un soin ?",
+        "answer": "Nos séjours incluent l’ensemble des soins. Pour un soin individuel, les tarifs commencent à partir de 400 MAD."
+      },
+      {
+        "question": "Combien de personnes travaillent dans votre équipe ?",
+        "answer": "Nous avons une équipe de 15 thérapeutes certifiés, spécialistes en soins marins et rituels ancestraux."
+      },
+      {
+        "question": "Avez-vous des offres d’emploi en cours ?",
+        "answer": "Nous recrutons régulièrement. Consultez la section Carrières ou contactez-nous directement."
+      },
+      {
+        "question": "Comment prendre rendez-vous avec Femellé ?",
+        "answer": "Vous pouvez réserver en ligne ou nous contacter via le formulaire en bas de page."
+      },
+      {
+        "question": "Quel type de contrats proposez-vous ?",
+        "answer": "Nous proposons des séjours à durée courte (3–5 jours) avec ou sans hébergement inclus."
+      }
+    ]
+  },
+  "contactForm": {
+    "header": {
+      "small":    "PRENDRE RENDEZ-VOUS",
+      "title":    "RECONNECTEZ-VOUS À VOTRE BIEN-ÊTRE",
+      "subtitle": "Notre équipe vous accompagne dans votre expérience thalasso. Remplissez le formulaire et offrez-vous une parenthèse hors du temps."
+    },
+    "fields": {
+      "name": {
+        "label":      "Nom complet",
+        "placeholder":"Mohamed Daali"
+      },
+      "countryCode": {
+        "label":      "Pays"
+      },
+      "phone": {
+        "label":      "Téléphone",
+        "placeholder":"+212 652-881921"
+      },
+      "email": {
+        "label":      "Email",
+        "placeholder":"exemple@mail.com"
+      },
+      "date": {
+        "label":      "Date souhaitée",
+        "placeholder":"Sélectionnez une date"
+      },
+      "message": {
+        "label":      "Message",
+        "placeholder":"Bonjour !"
+      }
+    },
+    "submit": "ENVOYER",
+    "errors": {
+      "missingTitle":"Champs requis manquants",
+      "missingText": "Veuillez remplir tous les champs obligatoires."
+    },
+    "success": {
+      "title": "Message envoyé !",
+      "text":  "Nous vous contacterons très bientôt."
+    },
+    "info": {
+      "address": {
+        "title":"Adresse",
+        "text": "POINT DE DRAGON PK 28, 73000 Dakhla"
+      },
+      "phone": {
+        "title":"Numéro de téléphone",
+        "text":  "+212 652-881921"
+      },
+      "email": {
+        "title":"Email",
+        "text":  "reservation@dakhlaclub.com"
+      }
+    }
+  },
+  "introduction": {
+    "whyTitle":        "Pourquoi cette cure ?",
+    "headlineLine1":   "Une reconnexion à soi",
+    "headlineLine2":   "dans un cadre naturel exceptionnel",
+    "description":     "Une escapade de 3 jours pensée pour vous reconnecter à votre corps, relancer votre énergie vitale et retrouver votre clarté mentale. Une bulle de douceur dans un cadre naturel unique entre désert et océan…",
+    "imageAlt":        "Femme en détente au spa à Dakhla"
+  },
+  
+  "rewards": {
+    "title": "NOUS AVONS ÉTÉ PRIMÉS PAR",
+    "logos": {
+      "tripadvisor": { "alt": "TripAdvisor" },
+      "tripdotcom":  { "alt": "Trip.com" },
+      "spaAward":    { "alt": "Spa Award" },
+      "kayakBadge":  { "alt": "Badge Kayak" }
+    }
+  },
+  "footer": {
+    "cta": {
+      "bannerText":  "DAKHLA APPELLE…",
+      "headline":    "ÊTES-VOUS PRÊT(E) À RECHARGER VOS BATTERIES ?",
+      "description": "3 jours de soins holistiques, rituels ancestraux et reconnexion à soi dans un sanctuaire entre désert et océan.",
+      "button":      "RÉSERVEZ MAINTENANT"
+    },
+    "brand": {
+      "name":        "DakhlaClub",
+      "copy":        "© 2025 DakhlaClub"
+    },
+    "contact": {
+      "title":       "Contact",
+      "address":     "POINT DE DRAGON PK 28. 73000 Dakhla",
+      "phone":       "Tél : +212 652-881921",
+      "email":       "E : reservation@dakhlaclub.com"
+    },
+    "pages": {
+      "title":       "Pages",
+      "about":       "À propos",
+      "program":     "Programme",
+      "book":        "Réserver"
+    },
+    "resources": {
+      "title":       "Ressources",
+      "faq":         "FAQs",
+      "privacy":     "Politique de confidentialité"
+    },
+    "socials": {
+      "title":       "Suivez-nous",
+      "instagram":   "Instagram",
+      "facebook":    "Facebook",
+      "youtube":     "YouTube"
+    }
+  }
+
+
+
+
+}
+

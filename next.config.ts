@@ -1,18 +1,11 @@
-import { NextConfig } from 'next';
+// next.config.ts
+import withNextIntl from 'next-intl/plugin';
+import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  // tell Next.js which external hosts you're pulling images from
   images: {
-    domains: [
-      'images.unsplash.com',
-      // any other domains you use...
-    ],
-  },
-  eslint: {
-    // (optional) skip ESLint errors during Vercel builds
-    ignoreDuringBuilds: true,
-  },
+    remotePatterns: [{protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**'}]
+  }
 };
 
-export default nextConfig;
+export default withNextIntl('./next-intl.config.ts')(nextConfig);
