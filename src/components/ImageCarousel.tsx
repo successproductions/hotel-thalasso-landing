@@ -54,9 +54,8 @@ export default function ImageCarousel() {
             className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
               idx === currentIndex ? "opacity-100 scale-100" : "opacity-0 scale-110"
             }`}
-          >
+          > 
             <Image
-
               src={carouselImages[currentIndex].src}
               alt={tImg(`${image.id}.alt`)}
               className="w-full h-full object-cover"

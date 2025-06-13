@@ -36,7 +36,7 @@ export default function Header() {
     <header
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-all",
-        scrolled ? "bg-white/90 backdrop-blur-sm shadow py-2" :
+        scrolled ? "bg-white/90 backdrop-blur-sm shadow py-2 dark:bg-[#131212]" :
                   "bg-[#f9f8f4] dark:bg-[#0f0f0f] py-4"
       )}
     >
@@ -87,7 +87,7 @@ export default function Header() {
 
           <Button
            size="sm"
-           className="bg-green-900 font-trajan px-5 hover:bg-green-800 hover:scale-105 hover:shadow-xl"
+           className="bg-green-900 font-trajan px-5 dark:text-white hover:bg-green-800 hover:scale-105 hover:shadow-xl"
            onClick={() => {
              const el = document.getElementById('contact');
              el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
