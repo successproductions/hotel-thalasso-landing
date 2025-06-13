@@ -18,11 +18,11 @@ export default async function LocaleLayout(
   params: Promise<{ locale: 'fr' | 'en' }>;
 }
 ) {
-  // await your params to get the real locale
-  const { locale } = await params;
 
-  const messages = (await import(`../../messages/${locale}.json`))
-    .default as Record<string, any>;
+
+  const { locale } = await params;
+const messages = (await import(`../../messages/${locale}.json`)).default;
+
 
   return (
     <html lang={locale} suppressHydrationWarning>
