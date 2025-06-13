@@ -1,8 +1,6 @@
-// src/app/[locale]/layout.tsx
-import '../globals.css';          // 👈  make Tailwind CSS available
+import '../globals.css';          
 import {NextIntlClientProvider, useMessages} from 'next-intl';
-import {ThemeProvider} from 'next-themes';   // if you still need dark-mode
-// (optional) import the fonts the old root layout had
+import {ThemeProvider} from 'next-themes';   
 import {Geist, Geist_Mono} from 'next/font/google';
 
 const geistSans = Geist({variable: '--font-geist-sans', subsets: ['latin']});

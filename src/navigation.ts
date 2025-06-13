@@ -1,13 +1,12 @@
-// src/navigation.ts
-import {createLocalizedPathnamesNavigation} from "next-intl/navigation";
+import {createLocalizedPathnamesNavigation} from 'next-intl/navigation';
 
 export const {
-  Link,          // i18n-aware <Link>
-  redirect,      // i18n-aware redirect()
-  usePathname,   // current pathname *without* locale prefix
-  useLocale,     // "en" | "fr"
-  useTranslations
+  Link,          // locale-aware <Link>
+  redirect,      // locale-aware redirect()
+  usePathname,   // pathname WITHOUT locale prefix
+  useLocale      // current locale string
 } = createLocalizedPathnamesNavigation({
-  locales: ["fr", "en"],       // keep in sync with next-intl.config.ts
-  localePrefix: "as-needed"    // remove if you use "always"
+  locales: ['fr', 'en'],
+  defaultLocale: 'fr',
+  localePrefix: 'as-needed'
 });
