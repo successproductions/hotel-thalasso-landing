@@ -115,7 +115,7 @@ export default function HotelProgram() {
             >
               {/* Background Image with Enhanced Overlay */}    
               <div className="absolute inset-0 z-0">
-                <Image 
+                <img 
                   src={program.image} 
                   alt={program.title}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-125"

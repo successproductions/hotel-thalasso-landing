@@ -6,14 +6,14 @@ const Footer = () => {
       {/* CTA Banner */}
       <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-cover bg-center bg-black/40 rounded-xl overflow-hidden shadow-lg">
         <div className="p-10 text-center space-y-4 backdrop-blur-sm bg-black/30">
-          <p className="text-sm uppercase tracking-widest text-gray-300">Appointment</p>
-          <h2 className="text-3xl md:text-4xl font-trajan">ÉLEVEZ VOTRE EXPÉRIENCE BIEN-ÊTRE</h2>
+          <p className="text-sm uppercase tracking-widest text-gray-300">DAKHLA IS CALLING… </p>
+          <h2 className="text-3xl md:text-4xl font-trajan">ÊTES-VOUS PRÊT(E) À RECHARGER VOS BATTERIES ?</h2>
           <p className="max-w-xl mx-auto text-gray-300">
             3 jours de soins holistiques, de rituels ancestraux et de reconnexion à vous-même dans un sanctuaire entre
             désert et océan.
           </p>
           <button className="mt-4 bg-white text-black px-6 py-2 rounded-full hover:bg-gray-100 transition">
-            Réservez maintenant →
+            RÉSERVEZ MAINTENANT →
           </button>
         </div>
       </div>
