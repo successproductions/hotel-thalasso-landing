@@ -7,10 +7,9 @@ import { Button }                          from "@/components/ui/button";
 import { useTranslations }                 from "next-intl";
 
 const carouselImages = [
-  { src: "/placeholder.svg?height=600&width=1200", id: "oceanView" },
+  { src: "/images/IMG_2150 (1).JPG", id: "oceanView" },
   { src: "/images/Piscine_thermale.jpeg",         id: "thermalPool" },
   { src: "/images/Salle-de-massage.png",          id: "spaRoom" },
-  { src: "/placeholder.svg?height=600&width=1200", id: "saunaHammam" },
   { src: "/images/Restaurant.jpg?height=600&width=1200", id: "restaurant" },
 ];
 
@@ -67,7 +66,7 @@ export default function ImageCarousel() {
 
       {/* Overlay Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 animate-fade-in-up">
+        <h3 className="text-3xl md:text-5xl font-trajan text-white mb-4 animate-fade-in-up">
           {tImg(`${id}.title`)}
         </h3>
         <p className="text-lg md:text-xl text-white/90 max-w-2xl animate-fade-in-up">

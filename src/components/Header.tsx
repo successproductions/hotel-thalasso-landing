@@ -1,15 +1,16 @@
 "use client";
-import {useEffect, useState}      from "react";
-import {Menu, X, Globe}           from "lucide-react";
-import clsx                       from "clsx";
 
-import {ThemeToggle}              from "@/components/ui/theme-toggle";
-import {Button}                   from "@/components/ui/button";
-  // helper file
- import { Link, usePathname } from '@/i18n/navigation';
- import { useTranslations, useLocale } from 'next-intl';
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Menu, X, Globe } from "lucide-react";
+import clsx from "clsx";
+
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Button } from "@/components/ui/button";
+import { Link, usePathname } from '@/i18n/navigation';
+import { useTranslations, useLocale } from 'next-intl';
+
 export default function Header() {
-  /* --- scroll shadow ---------------------------------------------------- */
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -17,86 +18,86 @@ export default function Header() {
     return () => removeEventListener("scroll", onScroll);
   }, []);
 
-  /* --- mobile drawer ---------------------------------------------------- */
   const [open, setOpen] = useState(false);
 
-  /* --- i18n ------------------------------------------------------------- */
-    
- const pathname = usePathname();
-  const locale   = useLocale();       
-const t = useTranslations('nav');
-
-   const otherLocale = locale === 'fr' ? 'en' : 'fr';
+  const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations('nav');
+  const otherLocale = locale === 'fr' ? 'en' : 'fr';
 
   const links = [
-    {name: t("home"),     href: "#accueil"},
-    {name: t("about"),    href: "#about"},
-    {name: t("services"), href: "#services"},
-    {name: t("contact"),  href: "#contact"}
+    { name: t("home"), href: "#accueil" },
+    { name: t("about"), href: "#about" },
+    { name: t("services"), href: "#services" },
+    { name: t("contact"), href: "#contact" }
   ];
 
-  /* --------------------------- JSX -------------------------------------- */
   return (
     <header
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-all",
-        scrolled ? "bg-white/90 backdrop-blur-sm shadow py-2"
-                 : "bg-[#f9f8f4] dark:bg-[#0f0f0f] py-4"
+        scrolled ? "bg-white/90 backdrop-blur-sm shadow py-2" :
+                  "bg-[#f9f8f4] dark:bg-[#0f0f0f] py-4"
       )}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between px-4">
 
-        {/* mobile burger */}
+        {/* Mobile Burger */}
         <button
           className="md:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X className="w-6 h-6"/> : <Menu className="w-6 h-6"/>}
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
 
-        {/* desktop nav */}
-        <nav className="hidden md:flex flex-1 gap-6 text-sm">
-          {links.map(l => (
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex flex-1 gap-6 text-base  text-gray-800 dark:text-gray-200">
+          {links.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-teal-700 font-trajan">
               {l.name}
             </a>
           ))}
         </nav>
 
-        {/* logo */}
-        <span className="flex-1 text-center font-serif italic text-2xl text-green-900 dark:text-green-200">
-          DakhlaClub
-        </span>
+        {/* Logo */}
+        <div className="flex-1 text-center">
+          <Link href="/">
+            <Image
+              src="/images/LogoDakhla.png"
+              alt="DakhlaClub Logo"
+              width={120}
+              height={40}
+              className="mx-auto"
+            />
+          </Link>
+        </div>
 
-        {/* utilities */}
+        {/* Utilities */}
         <div className="flex-1 flex items-center justify-end gap-4">
-          <ThemeToggle/>
+          <ThemeToggle />
 
-          {/* language switch */}
           <Link
-            href={pathname}          
-            locale={otherLocale}     
-            className="hidden md:flex items-center gap-1 rounded-full border px-3 py-1 text-xs hover:bg-gray-100 dark:hover:bg-gray-800"
+            href={pathname}
+            locale={otherLocale}
+            className="hidden md:flex items-center gap-1 rounded-full border px-3 py-1  hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <Globe className="w-4 h-4"/>{otherLocale.toUpperCase()}
+            <Globe className="w-4 h-4" />{otherLocale.toUpperCase()}
           </Link>
 
-          <Button size="sm" className="bg-green-900 font-trajan px-5">
+          <Button size="sm" className="bg-green-900 font-trajan px-5 hover:bg-green-800 hover:scale-105 hover:shadow-xl">
             {t("button.book")}
           </Button>
         </div>
       </div>
 
-      {/* mobile drawer */}
+      {/* Mobile Drawer */}
       {open && (
         <>
-          {/* backdrop */}
           <div
             className="fixed inset-0 z-40 bg-black/40 md:hidden"
             onClick={() => setOpen(false)}
           />
-          {/* panel */}
           <div
             className={clsx(
               "fixed right-0 top-0 z-50 h-full w-64 bg-white dark:bg-[#0f0f0f] p-6",
@@ -105,7 +106,7 @@ const t = useTranslations('nav');
             )}
           >
             <nav className="flex flex-col gap-6">
-              {links.map(l => (
+              {links.map((l) => (
                 <a
                   key={l.href}
                   href={l.href}
@@ -117,13 +118,13 @@ const t = useTranslations('nav');
               ))}
 
               <div className="mt-4 flex gap-4 border-t pt-4">
-                <ThemeToggle/>
+                <ThemeToggle />
                 <Link
                   href={pathname}
                   locale={otherLocale}
                   className="flex items-center gap-1 rounded-full border px-3 py-1 text-xs"
                 >
-                  <Globe className="w-4 h-4"/>{otherLocale.toUpperCase()}
+                  <Globe className="w-4 h-4" />{otherLocale.toUpperCase()}
                 </Link>
               </div>
             </nav>

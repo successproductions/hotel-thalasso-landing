@@ -69,7 +69,7 @@ const tHero    = useTranslations('hero');
   transition={{ delay: 0.8, duration: 0.6 }}
 >
   <Button
-    className="relative overflow-hidden px-8 py-3 bg-green-900 text-white font-semibold tracking-wide rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-green-800 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+    className="relative overflow-hidden px-8 py-3 bg-green-900 text-white font-trajan tracking-wide rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-green-800 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
     size="lg"
   >
     <span className="z-10 relative">{tHero('cta')}</span>

@@ -33,17 +33,7 @@ export default function FAQSection() {
             />
           </div>
 
-          <div className="absolute bottom-4 left-4 bg-white dark:bg-gray-900 p-4 pr-6 rounded-xl shadow-md transition-colors">
-            <div className="w-10 h-10 bg-green-900 text-white flex items-center justify-center rounded-full">
-              <Phone className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="font-semibold text-sm">{contact.label}</p>
-              <p className="text-xs text-gray-500 dark:text-gray-300">
-                {contact.subtext}
-              </p>
-            </div>
-          </div>
+          
         </div>
 
         {/* Right - FAQ */}

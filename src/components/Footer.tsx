@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const Footer = () => {
   const t = useTranslations('footer');
@@ -27,11 +28,19 @@ const Footer = () => {
       </div>
 
       {/* Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 py-20">
+      <div className="max-w-7xl mx-auto px-4 pt-10 pb-20">
         <div className="grid md:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="md:col-span-1 space-y-3">
-            <h3 className="text-3xl font-trajan italic">{t('brand.name')}</h3>
+            <Link href="/">
+                        <Image
+                          src="/images/LogoDakhla.png"
+                          alt="DakhlaClub Logo"
+                          width={180}
+                          height={140}
+                          className=""
+                        />
+                      </Link>
             <p className="text-sm text-gray-400">{t('brand.copy')}</p>
           </div>
 

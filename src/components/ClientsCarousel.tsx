@@ -105,7 +105,7 @@ export default function ClientsCarousel() {
         <div className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Quote className="w-8 h-8 text-primary" />
-            <h2 className="text-4xl md:text-5xl font-bold dark:text-gray-200 text-gray-950">
+            <h2 className="text-4xl md:text-5xl font-trajan dark:text-gray-200 text-gray-950">
               NOS CLIENTS T&Eacute;MOIGNENT
             </h2>
           </div>
