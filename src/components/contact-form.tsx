@@ -198,7 +198,7 @@ const t = useTranslations('contactForm');
                 {/* Submit */}
                 <Button
                   type="submit"
-                  className="w-full bg-green-900 hover:bg-green-700 transition-all duration-300 text-white py-4 rounded-lg font-semibold tracking-wide shadow hover:shadow-lg transform hover:-translate-y-1"
+                  className="w-full bg-green-900 hover:bg-green-700 transition-all duration-300 text-white py-4 rounded-lg font-trajan tracking-wide shadow hover:shadow-lg transform hover:-translate-y-1"
                   size="lg"
                 >
                  {t('submit')}
