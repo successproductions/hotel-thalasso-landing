@@ -1,91 +1,78 @@
-"use client"
 
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+"use client";
 
-const images = [
-  {
-    src: "/placeholder.svg?height=600&width=1200",
-    alt: "Vue panoramique de l'hôtel thalasso face à la mer",
-    title: "VUE SUR L'OCÉAN",
-  },
-  {
-    src: "/images/Piscine_thermale.jpeg",
-    alt: "Piscine thermale avec vue sur mer",
-    title: "PISCINE THERMALE",
-  },
-  {
-    src: "/images/Salle-de-massage.png",
-    alt: "Salle de massage et soins thalasso",
-    title: "Espace soins",
-  },
-  {
-    src: "/placeholder.svg?height=600&width=1200",
-    alt: "Sauna et hammam de l'hôtel",
-    title: "ESPACE SOINS",
-  },
-  {
-    src: "/images/Restaurant.jpg?height=600&width=1200",
-    alt: "Restaurant gastronomique de l'hôtel",
-    title: "RESTAURANT",
-  },
-]
+import { useState, useEffect }            from "react";
+import { ChevronLeft, ChevronRight }       from "lucide-react";
+import { Button }                          from "@/components/ui/button";
+import { useTranslations }                 from "next-intl";
+
+const carouselImages = [
+  { src: "/placeholder.svg?height=600&width=1200", id: "oceanView" },
+  { src: "/images/Piscine_thermale.jpeg",         id: "thermalPool" },
+  { src: "/images/Salle-de-massage.png",          id: "spaRoom" },
+  { src: "/placeholder.svg?height=600&width=1200", id: "saunaHammam" },
+  { src: "/images/Restaurant.jpg?height=600&width=1200", id: "restaurant" },
+];
 
 export default function ImageCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const t     = useTranslations("carousel");
+  const tImg  = useTranslations("carousel.images");
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
-    if (!isAutoPlaying) return
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 4000)
-
-    return () => clearInterval(interval)
-  }, [isAutoPlaying])
+    if (!isAutoPlaying) return;
+    const iv = setInterval(() => {
+      setCurrentIndex((i) => (i + 1) % carouselImages.length);
+    }, 4000);
+    return () => clearInterval(iv);
+  }, [isAutoPlaying]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-    setIsAutoPlaying(false)
-  }
-
+    setCurrentIndex((i) => (i - 1 + carouselImages.length) % carouselImages.length);
+    setIsAutoPlaying(false);
+  };
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    setIsAutoPlaying(false)
-  }
+    setCurrentIndex((i) => (i + 1) % carouselImages.length);
+    setIsAutoPlaying(false);
+  };
+  const goToSlide = (idx: number) => {
+    setCurrentIndex(idx);
+    setIsAutoPlaying(false);
+  };
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-    setIsAutoPlaying(false)
-  }
+  const { src, id } = carouselImages[currentIndex];
 
   return (
     <section className="relative h-[70vh] overflow-hidden bg-gray-900">
       {/* Images */}
       <div className="relative h-full">
-        {images.map((image, index) => (
+        {carouselImages.map((image, idx) => (
           <div
-            key={index}
+            key={idx}
             className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === currentIndex ? "opacity-100 scale-100" : "opacity-0 scale-110"
+              idx === currentIndex ? "opacity-100 scale-100" : "opacity-0 scale-110"
             }`}
           >
-            <img src={image.src || "/placeholder.svg"} alt={image.alt} className="w-full h-full object-cover" />
+            <img
+              src={image.src}
+              alt={tImg(`${image.id}.alt`)}
+              className="w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-black/30"></div>
           </div>
         ))}
       </div>
 
       {/* Overlay Content */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center text-white animate-fade-in-up">
-          <h3 className="text-3xl md:text-5xl font-bold mb-4">{images[currentIndex].title}</h3>
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto px-4">
-            Découvrez nos espaces d'exception dédiés à votre bien-être et à votre détente
-          </p>
-        </div>
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 animate-fade-in-up">
+          {tImg(`${id}.title`)}
+        </h3>
+        <p className="text-lg md:text-xl text-white/90 max-w-2xl animate-fade-in-up">
+          {t("overlay.description")}
+        </p>
       </div>
 
       {/* Navigation Arrows */}
@@ -108,23 +95,26 @@ export default function ImageCarousel() {
 
       {/* Dots Indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
-        {images.map((_, index) => (
+        {carouselImages.map((_, idx) => (
           <button
-            key={index}
+            key={idx}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
+              idx === currentIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
             }`}
-            onClick={() => goToSlide(index)}
+            onClick={() => goToSlide(idx)}
           />
         ))}
       </div>
 
       {/* Auto-play indicator */}
       <div className="absolute top-4 right-4">
-        <button onClick={() => setIsAutoPlaying(!isAutoPlaying)} className="text-white/70 hover:text-white text-sm">
-          {isAutoPlaying ? "⏸️ Pause" : "▶️ Play"}
+        <button
+          onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+          className="text-white/70 hover:text-white text-sm"
+        >
+          {isAutoPlaying ? t("overlay.pause") : t("overlay.play")}
         </button>
       </div>
     </section>
-  )
+  );
 }

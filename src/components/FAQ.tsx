@@ -1,41 +1,22 @@
-"use client";
+// src/components/FAQ.tsx
+'use client';
 
-import Image from "next/image";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Phone } from "lucide-react";
+import React from 'react';
+import Image from 'next/image';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@/components/ui/accordion';
+import { Phone } from 'lucide-react';
+import { useTranslations, useMessages } from 'next-intl';
+
 export default function FAQSection() {
-  const faqs = [
-    {
-      question: "Depuis combien de temps votre centre existe-t-il ?",
-      answer:
-        "Notre centre existe depuis plus de 10 ans à Dakhla, avec des milliers de clients satisfaits ayant bénéficié de nos soins holistiques.",
-    },
-    {
-      question: "Quel est le tarif pour un soin ?",
-      answer:
-        "Nos séjours incluent l’ensemble des soins. Pour un soin individuel, les tarifs commencent à partir de 400 MAD.",
-    },
-    {
-      question: "Combien de personnes travaillent dans votre équipe ?",
-      answer:
-        "Nous avons une équipe de 15 thérapeutes certifiés, spécialistes en soins marins et rituels ancestraux.",
-    },
-    {
-      question: "Avez-vous des offres d’emploi en cours ?",
-      answer:
-        "Nous recrutons régulièrement. Consultez la section Carrières ou contactez-nous directement.",
-    },
-    {
-      question: "Comment prendre rendez-vous avec Femellé ?",
-      answer:
-        "Vous pouvez réserver en ligne ou nous contacter via le formulaire en bas de page.",
-    },
-    {
-      question: "Quel type de contrats proposez-vous ?",
-      answer:
-        "Nous proposons des séjours à durée courte (3-5 jours) avec ou sans hébergement inclus.",
-    },
-  ];
+  const t        = useTranslations('faq');
+  const messages = useMessages();
+
+  const { contact, items } = messages.faq;
 
   return (
     <section className="bg-[#f9f8f4] dark:bg-[#080b12] py-20 text-gray-900 dark:text-gray-100 transition-colors">
@@ -45,7 +26,7 @@ export default function FAQSection() {
           <div className="overflow-hidden rounded-xl">
             <Image
               src="/images/sauna_ritual.png"
-              alt="Femme dans l’eau à Dakhla"
+              alt={contact.alt}
               width={700}
               height={700}
               className="object-cover w-full h-auto"
@@ -57,18 +38,22 @@ export default function FAQSection() {
               <Phone className="w-5 h-5" />
             </div>
             <div>
-              <p className="font-semibold text-sm">Contactez-nous</p>
-              <p className="text-xs text-gray-500 dark:text-gray-300">Réponse rapide par téléphone ou email.</p>
+              <p className="font-semibold text-sm">{contact.label}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-300">
+                {contact.subtext}
+              </p>
             </div>
           </div>
         </div>
 
         {/* Right - FAQ */}
         <div>
-          <h2 className="text-2xl font-trajan  dark:text-green-600 mb-4">FAQ</h2>
+          <h2 className="text-2xl font-trajan dark:text-green-600 mb-4">
+            {t('title')}
+          </h2>
 
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
+            {items.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}

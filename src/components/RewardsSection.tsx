@@ -2,32 +2,34 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+
 
 const logos = [
-  { src: "/images/TripAdvisor.jpeg", alt: "TripAdvisor" },
-  { src: "/images/trip.jpg", alt: "Trip.com" },
-  { src: "/images/AWARDS.png", alt: "Spa Award" },
-  { src: "/images/kayak-badge.png", alt: "Kayak badge" },
+  { id: 'tripadvisor', src: "/images/TripAdvisor.jpeg" },
+  { id: 'tripdotcom', src: "/images/trip.jpg" },
+  { id: 'spaAward', src: "/images/AWARDS.png" },
+  { id: 'kayakBadge', src: "/images/kayak-badge.png" },
 ];
 
 export default function RewardsSection() {
+  const t = useTranslations('rewards');
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Show animation after mount
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <section className=" dark:bg-[#090b11] py-20 pb-32">
+    <section className="dark:bg-[#090b11] py-20 pb-32">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2
           className={`text-3xl md:text-4xl font-serif mb-12 transition-opacity duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           } text-gray-900 dark:text-white`}
         >
-          ​NOUS AVONS ÉTÉ PRIMÉS PAR
+          {t('title')}
         </h2>
 
         <div
@@ -43,7 +45,7 @@ export default function RewardsSection() {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-white/0 via-green-200/20 to-white/0 blur-sm opacity-0 group-hover:opacity-100 transition duration-500" />
               <Image
                 src={logo.src}
-                alt={logo.alt}
+                alt={t(`logos.${logo.id}.alt`)}
                 width={140}
                 height={70}
                 className="object-contain grayscale group-hover:grayscale-0 transition-all duration-700 drop-shadow-xl"

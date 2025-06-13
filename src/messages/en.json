@@ -28,7 +28,223 @@
     }
   },
   "servicesSection": {
-    "title":       "NOS SOINS SIGNATURE",
-    "description": "Découvrez une palette de soins pensés pour votre bien-être physique et mental"
+    "title":       "OUR SIGNATURE TREATMENTS",
+    "description": "Discover a range of treatments designed for your physical and mental well-being"
+  },
+  
+  "programSection": {
+    "header": {
+      "title":             "THE PROGRAM",
+      "subheading":        "3 Days, 3 Energies, 3 Transformations",
+      "description":       "A holistic journey to your complete well-being in the unique universe of Dakhla",
+      "jour":              "Day",
+      "activitiesTitle":   "Included Activities:"
+    },
+    "days": {
+      "1": {
+        "title":        "Arrival & Preparation",
+        "subtitle":     "Grounding & Opening",
+        "description":  "Personalized welcome, detox infusion, settling into your bungalow with nature or ocean view. Late afternoon: Jacquier Air Bath + thermal pool access to start letting go.",
+        "activities":   ["Personalized welcome","Detox infusion","Bungalow setup","Jacquier Air Bath","Thermal pool"],
+        "objective":    "Grounding, breathwork, opening body & mind.",
+        "ctaText":      "I CHOOSE TO REGENERATE"
+      },
+      "2": {
+        "title":        "Soothing & Release",
+        "subtitle":     "Deep Letting Go",
+        "description":  "A full day dedicated to deep release with a blend of aquatic treatments and natural therapies.",
+        "activities":   ["Jacquier Air Bath","Thermal pool","Purifying sauna","Hydro-massage bath","Seaweed wrap","Affusion massage"],
+        "objective":    "Deep release, cellular oxygenation, muscle relaxation.",
+        "ctaText":      "ENTER THE EXPERIENCE"
+      },
+      "3": {
+        "title":        "Regeneration & Vitality",
+        "subtitle":     "Energy Recharge",
+        "description":  "Focus on cellular regeneration and energy boost with targeted treatments to reignite your natural vitality.",
+        "activities":   ["Thermal pool","Jet shower","Magnesium bath","Cupping therapy"],
+        "objective":    "Boost circulation, refine silhouette, energy recharge.",
+        "ctaText":      "I WANT THE EXPERIENCE"
+      },
+      "4": {
+        "title":        "Purification & Closure",
+        "subtitle":     "Final Regeneration",
+        "description":  "The perfect closing day to flush out remaining toxins and depart with radiant skin and a calm mind.",
+        "activities":   ["Jacquier Air Bath","Thermal pool","Desert secret hammam","Relaxing massage"],
+        "objective":    "Toxin elimination, mental calm, regenerated skin.",
+        "ctaText":      "ACCESS MY STAY"
+      }
+    }
+  },
+
+  "carousel": {
+    "overlay": {
+      "description": "Discover our exceptional spaces dedicated to your well-being and relaxation",
+      "pause":       "⏸️ Pause",
+      "play":        "▶️ Play"
+    },
+    "images": {
+      "oceanView": {
+        "alt":   "Panoramic view of the thalasso hotel facing the sea",
+        "title": "OCEAN VIEW"
+      },
+      "thermalPool": {
+        "alt":   "Thermal pool with sea view",
+        "title": "THERMAL POOL"
+      },
+      "spaRoom": {
+        "alt":   "Massage room and thalasso treatments",
+        "title": "SPA ROOM"
+      },
+      "saunaHammam": {
+        "alt":   "Sauna and hammam of the hotel",
+        "title": "SAUNA & HAMMAM"
+      },
+      "restaurant": {
+        "alt":   "Hotel gourmet restaurant",
+        "title": "RESTAURANT"
+      }
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "contact": {
+      "label": "Contact us",
+      "subtext": "Quick response by phone or email.",
+      "alt": "Woman in water at Dakhla"
+    },
+    "items": [
+      {
+        "question": "How long has your center been operating?",
+        "answer": "Our center has been operating for over 10 years in Dakhla, with thousands of satisfied clients who have benefited from our holistic treatments."
+      },
+      {
+        "question": "What is the price for a treatment?",
+        "answer": "Our stays include all treatments. For an individual treatment, prices start at 400 MAD."
+      },
+      {
+        "question": "How many people work on your team?",
+        "answer": "We have a team of 15 certified therapists, specialists in marine treatments and ancient rituals."
+      },
+      {
+        "question": "Do you have any job openings?",
+        "answer": "We regularly recruit. Check the Careers section or contact us directly."
+      },
+      {
+        "question": "How can I book an appointment with Femellé?",
+        "answer": "You can book online or contact us via the form at the bottom of the page."
+      },
+      {
+        "question": "What types of packages do you offer?",
+        "answer": "We offer short stays (3–5 days) with or without accommodation included."
+      }
+    ]
+  },
+  "contactForm": {
+    "header": {
+      "small":    "BOOK A DATE",
+      "title":    "RECONNECT WITH YOUR WELL-BEING",
+      "subtitle": "We’re here to guide your thalasso experience. Fill out the form and treat yourself to a moment off time."
+    },
+    "fields": {
+      "name": {
+        "label":      "Full Name",
+        "placeholder":"John Doe"
+      },
+      "countryCode": {
+        "label":      "Country"
+      },
+      "phone": {
+        "label":      "Phone",
+        "placeholder":"+1 (234) 567-890"
+      },
+      "email": {
+        "label":      "Email",
+        "placeholder":"example@mail.com"
+      },
+      "date": {
+        "label":      "Preferred Date",
+        "placeholder":"Select a date"
+      },
+      "message": {
+        "label":      "Message",
+        "placeholder":"Hello there!"
+      }
+    },
+    "submit": "SEND",
+    "errors": {
+      "missingTitle":"Required fields missing",
+      "missingText": "Please fill in all required fields."
+    },
+    "success": {
+      "title": "Message sent!",
+      "text":  "We’ll get back to you very soon."
+    },
+    "info": {
+      "address": {
+        "title":"Address",
+        "text": "POINT DE DRAGON PK 28, 73000 Dakhla"
+      },
+      "phone": {
+        "title":"Phone Number",
+        "text":  "+212 652-881921"
+      },
+      "email": {
+        "title":"Email",
+        "text":  "reservation@dakhlaclub.com"
+      }
+    }
+  },
+  "introduction": {
+    "whyTitle":        "Why this retreat?",
+    "headlineLine1":   "A reconnection to self",
+    "headlineLine2":   "in an exceptional natural setting",
+    "description":     "A 3-day escape designed to reconnect you with your body, boost your vital energy, and restore mental clarity. A bubble of softness in a unique natural setting between desert and ocean…",
+    "imageAlt":        "Woman relaxing at the spa in Dakhla"
+  },
+  "rewards": {
+    "title": "WE HAVE BEEN AWARDED BY",
+    "logos": {
+      "tripadvisor": { "alt": "TripAdvisor" },
+      "tripdotcom":  { "alt": "Trip.com" },
+      "spaAward":    { "alt": "Spa Award" },
+      "kayakBadge":  { "alt": "Kayak badge" }
+    }
+  },
+  "footer": {
+    "cta": {
+      "bannerText":  "DAKHLA IS CALLING…",
+      "headline":    "ARE YOU READY TO RECHARGE YOUR BATTERIES?",
+      "description": "3 days of holistic treatments, ancient rituals, and self-reconnection in a sanctuary between desert and ocean.",
+      "button":      "BOOK NOW"
+    },
+    "brand": {
+      "name":        "DakhlaClub",
+      "copy":        "© 2025 DakhlaClub"
+    },
+    "contact": {
+      "title":       "Contact",
+      "address":     "POINT DE DRAGON PK 28. 73000 Dakhla",
+      "phone":       "Tel: +212 652-881921",
+      "email":       "E: reservation@dakhlaclub.com"
+    },
+    "pages": {
+      "title":       "Pages",
+      "about":       "About",
+      "program":     "Program",
+      "book":        "Book"
+    },
+    "resources": {
+      "title":       "Resources",
+      "faq":         "FAQs",
+      "privacy":     "Privacy Policy"
+    },
+    "socials": {
+      "title":       "Follow Us",
+      "instagram":   "Instagram",
+      "facebook":    "Facebook",
+      "youtube":     "YouTube"
+    }
   }
+
+
 }
