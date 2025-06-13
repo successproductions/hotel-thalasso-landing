@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Séjours",
+    "contact": "Contact",
+    "button": {
+    "book": "Réserver"
+  }
+  },
+  
+  "home": {
+    "title": "Bienvenue à Dakhla Club",
+    "description": "Profitez de 3 jours de détente et de soins"
+  }
+}
+
