@@ -58,7 +58,7 @@ const t = useTranslations('nav');
         {/* desktop nav */}
         <nav className="hidden md:flex flex-1 gap-6 text-sm">
           {links.map(l => (
-            <a key={l.href} href={l.href} className="hover:text-teal-700">
+            <a key={l.href} href={l.href} className="hover:text-teal-700 font-trajan">
               {l.name}
             </a>
           ))}
@@ -77,12 +77,12 @@ const t = useTranslations('nav');
           <Link
             href={pathname}          
             locale={otherLocale}     
-            className="flex items-center gap-1 rounded-full border px-3 py-1 text-xs hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="hidden md:flex items-center gap-1 rounded-full border px-3 py-1 text-xs hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <Globe className="w-4 h-4"/>{otherLocale.toUpperCase()}
           </Link>
 
-          <Button size="sm" className="bg-green-900 px-5">
+          <Button size="sm" className="bg-green-900 font-trajan px-5">
             {t("button.book")}
           </Button>
         </div>

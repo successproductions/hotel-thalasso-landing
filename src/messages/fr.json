@@ -5,13 +5,31 @@
     "services": "Séjours",
     "contact": "Contact",
     "button": {
-    "book": "Réserver"
+    "book": "RÉSERVER"
   }
   },
   
   "home": {
     "title": "Bienvenue à Dakhla Club",
     "description": "Profitez de 3 jours de détente et de soins"
+  },
+   "hero": {
+    "tagline":     "🌿 Holistic Escape",
+    "headline":    "3 DAYS TO REJUVENATE BODY & MIND",
+    "description": "Dakhla is calling… Are you ready to recharge your batteries?",
+    "cta":         "BOOK NOW",
+    "services": {
+      "bolDAirJacquier":   "Jacquier Air Bath",
+      "hydroMassageBath":   "Hydro-Massage Bath",
+      "seaweedWrap":        "Seaweed Wrap",
+      "affusionMassage":    "Affusion Massage",
+      "traditionalHammam":  "Traditional Hammam",
+      "cuppingTherapy":     "Cupping Therapy"
+    }
+  },
+  "servicesSection": {
+    "title":       "OUR SIGNATURE TREATMENTS",
+    "description": "Discover a range of treatments designed for your physical and mental well-being"
   }
 }
 

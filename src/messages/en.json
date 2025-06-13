@@ -5,12 +5,30 @@
     "services": "Retreats",
     "contact": "Contact",
     "button": {
-    "book": "Book now"
+    "book": "BOOK NOW"
   }
   },
   
   "home": {
     "title": "Welcome to Dakhla Club",
     "description": "Enjoy a 3-day wellness escape"
+  },
+   "hero": {
+    "tagline":     "🌿 Évasion Holistique",
+    "headline":    "3 JOURS POUR RESSOURCER CORPS & ESPRIT",
+    "description": "Dakhla appelle… Êtes-vous prêt(e) à recharger vos batteries ?",
+    "cta":         "RÉSERVER MAINTENANT",
+    "services": {
+      "bolDAirJacquier":   "Bol d’Air Jacquier",
+      "hydroMassageBath":   "Bain hydromassant",
+      "seaweedWrap":        "Enveloppement aux algues",
+      "affusionMassage":    "Massage à affusion",
+      "traditionalHammam":  "Hammam traditionnel",
+      "cuppingTherapy":     "Cupping thérapie"
+    }
+  },
+  "servicesSection": {
+    "title":       "NOS SOINS SIGNATURE",
+    "description": "Découvrez une palette de soins pensés pour votre bien-être physique et mental"
   }
 }
