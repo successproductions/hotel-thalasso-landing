@@ -146,7 +146,7 @@ export default function ClientsCarousel() {
                       <div className="relative mb-6">
                         <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/20" />
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed italic pl-6 text-sm">
-  "{client.testimonial}"
+  &quot;{client.testimonial}&quot;
 </p>
 
                       </div>
