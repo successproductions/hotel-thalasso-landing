@@ -1,5 +1,4 @@
 "use client";
-import Link                        from "next/link";
 import {useEffect, useState}      from "react";
 import {Menu, X, Globe}           from "lucide-react";
 import clsx                       from "clsx";
@@ -7,9 +6,8 @@ import clsx                       from "clsx";
 import {ThemeToggle}              from "@/components/ui/theme-toggle";
 import {Button}                   from "@/components/ui/button";
   // helper file
-import {useTranslations, useLocale} from "next-intl";
-import { usePathname } from 'next/navigation'
-
+ import { Link, usePathname } from '@/i18n/navigation';
+ import { useTranslations, useLocale } from 'next-intl';
 export default function Header() {
   /* --- scroll shadow ---------------------------------------------------- */
   const [scrolled, setScrolled] = useState(false);
@@ -23,11 +21,12 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   /* --- i18n ------------------------------------------------------------- */
-  const pathname = usePathname();     
+    
+ const pathname = usePathname();
   const locale   = useLocale();       
-  const t        = useTranslations("nav");
+const t = useTranslations('nav');
 
-  const otherLocale = locale === "fr" ? "en" : "fr";
+   const otherLocale = locale === 'fr' ? 'en' : 'fr';
 
   const links = [
     {name: t("home"),     href: "#accueil"},
@@ -76,8 +75,8 @@ export default function Header() {
 
           {/* language switch */}
           <Link
-            href={pathname}          // current page
-            locale={otherLocale}     // flip “fr”⇄“en”
+            href={pathname}          
+            locale={otherLocale}     
             className="flex items-center gap-1 rounded-full border px-3 py-1 text-xs hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <Globe className="w-4 h-4"/>{otherLocale.toUpperCase()}

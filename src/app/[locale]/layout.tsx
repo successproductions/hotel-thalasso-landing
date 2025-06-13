@@ -1,24 +1,29 @@
-import '../globals.css';          
-import {NextIntlClientProvider, useMessages} from 'next-intl';
-import {ThemeProvider} from 'next-themes';   
-import {Geist, Geist_Mono} from 'next/font/google';
 
-const geistSans = Geist({variable: '--font-geist-sans', subsets: ['latin']});
-const geistMono = Geist_Mono({variable: '--font-geist-mono', subsets: ['latin']});
+import '../globals.css';
+import { NextIntlClientProvider } from 'next-intl';
+import { ThemeProvider }          from 'next-themes';
 
-export default function LocaleLayout({
+export async function generateStaticParams() {
+  return [{ locale: 'fr' }, { locale: 'en' }] as const;
+}
+
+export default async function LocaleLayout({
   children,
-  params: {locale}
+  params,                
 }: {
   children: React.ReactNode;
-  params: {locale: string};
+  params: { locale: 'fr' | 'en' };
 }) {
-  const messages = useMessages();
+  const { locale } = params;     
+  
+  const messages = (await import(`../../messages/${locale}.json`))
+    .default as Record<string, any>;
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        
           <NextIntlClientProvider locale={locale} messages={messages}>
             {children}
           </NextIntlClientProvider>

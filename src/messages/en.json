@@ -3,11 +3,12 @@
     "home": "Home",
     "about": "About",
     "services": "Retreats",
-    "contact": "Contact"
-  },
-  "button": {
+    "contact": "Contact",
+    "button": {
     "book": "Book now"
+  }
   },
+  
   "home": {
     "title": "Welcome to Dakhla Club",
     "description": "Enjoy a 3-day wellness escape"
