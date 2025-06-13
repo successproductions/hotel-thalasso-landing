@@ -8,7 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Phone } from "lucide-react";
 import { useTranslations, useMessages } from "next-intl";
 
 // Define types for your FAQ messages
@@ -42,23 +41,15 @@ export default function FAQSection() {
         <div className="relative">
           <div className="overflow-hidden rounded-xl">
             <Image
-              src="/images/sauna_ritual.png"
+              src="/images/6 (1).png"
               alt={contact.alt}
               width={700}
-              height={700}
-              className="object-cover w-full h-auto"
+              height={500}
+              className="object-cover w-full h-[560px]"
             />
           </div>
 
-          <div className="absolute bottom-4 left-4 bg-white dark:bg-gray-900 p-4 pr-6 rounded-xl shadow-md transition-colors">
-            <div className="w-10 h-10 bg-green-900 text-white flex items-center justify-center rounded-full">
-              <Phone className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="font-semibold text-sm">{contact.label}</p>
-              <p className="text-xs text-gray-500 dark:text-gray-300">{contact.subtext}</p>
-            </div>
-          </div>
+          
         </div>
 
         {/* Right - FAQ */}
