@@ -26,9 +26,11 @@ export default function ContactForm() {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  
 const t = useTranslations('contactForm');
 
-  const handleSubmit = (e: React.FormEvent) => {
+const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const { name, phone, email, date } = formData;
 
@@ -51,6 +53,32 @@ const t = useTranslations('contactForm');
       });
       setFormData({ name: '', country: '', phone: '', email: '', date: '', message: '' });
     }, 800);
+    try {
+const res = await fetch('/api/reservation', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData),
+  });
+      const payload = await res.json();
+      if (res.ok && payload.status === 'success') {
+        Swal.fire({
+          icon: 'success',
+          title: 'Réservé !',
+          text:  'Votre demande a bien été envoyée.',
+          confirmButtonColor: '#166534',
+        });
+        setFormData({ name: '', country: '', phone: '', email: '', date: '', message: '' });
+      } else {
+        throw new Error(payload.error || 'Erreur serveur');
+      }
+    } catch (err: any) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Erreur',
+        text:  err.message || 'Impossible d’envoyer la requête.',
+        confirmButtonColor: '#166534',
+      });
+    }
   };
 
   return (
