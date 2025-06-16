@@ -54,17 +54,17 @@ const t = useTranslations('contactForm');
   };
 
   return (
-    <section id="contact" className="w-full bg-stone-50 dark:bg-[#080b12] pt-16 pb-16 px-6 text-gray-800 dark:text-gray-100 transition-colors">
+    <section id="contact" className="w-full bg-stone-50 dark:bg-[#080b12] pt-6 md:pt-16 pb-16 px-6 text-gray-800 dark:text-gray-100 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <p className="text-sm tracking-widest text-stone-600 uppercase mb-4 dark:text-gray-400">
            {t('header.small')}
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-5xl text-stone-900 dark:text-white mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-5xl text-stone-900 dark:text-white md:mb-4 mb-1 leading-tight">
             {t('header.title')}
           </h2>
-          <p className="text-stone-600 dark:text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-stone-600 dark:text-gray-300 max-w-2xl mx-auto text-1xl leading-relaxed">
            {t('header.subtitle')}
           </p>
         </div>

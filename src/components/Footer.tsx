@@ -11,14 +11,14 @@ const Footer = () => {
     <footer className="bg-[#0c1b11] text-white pt-32 mt-6 relative">
       {/* CTA Banner */}
       <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-cover bg-center bg-black/40 rounded-xl overflow-hidden shadow-lg">
-        <div className="p-5 md:p-10 text-center space-y-4 backdrop-blur-sm bg-black/30">
+        <div className="p-4 md:p-10 text-center space-y-4 backdrop-blur-sm bg-black/30">
           <p className="text-sm uppercase tracking-widest text-gray-300">
             {t('cta.bannerText')}
           </p>
-          <h2 className="text-3xl md:text-4xl font-trajan">
+          <h2 className="text-2xl md:text-4xl font-trajan">
             {t('cta.headline')}
           </h2>
-          <p className="max-w-xl mx-auto text-gray-300">
+          <p className="max-w-xl mx-auto text-1xl text-gray-300">
             {t('cta.description')}
           </p>
           <button className="mt-4 bg-white text-black px-6 py-2 rounded-full hover:bg-gray-100 transition"
@@ -42,7 +42,7 @@ const Footer = () => {
                           alt="DakhlaClub Logo"
                           width={180}
                           height={140}
-                          className=""
+                          className="mt-3"
                         />
                       </Link>
             <p className="text-sm text-gray-400">{t('brand.copy')}</p>

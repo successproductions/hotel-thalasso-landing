@@ -29,13 +29,13 @@ export default function ProgramSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section id="services" className="py-20 px-4 bg-gradient-to-br dark:bg-[#080b12] transition-colors">
+    <section id="services" className="md:py-20 py-6 px-4 bg-gradient-to-br dark:bg-[#080b12] transition-colors">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl text-gray-900 dark:text-gray-100 mb-6">
+        <div className="text-center mb-0">
+          <h2 className="text-4xl md:text-6xl text-gray-900 dark:text-gray-100 mb-2 md:mb-4 ">
             {t('header.title')}
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-1xl text-gray-600 dark:text-gray-300 mb-5">
             {t('header.subheading')}
           </p>
         </div>
@@ -56,12 +56,6 @@ export default function ProgramSection() {
                 className="relative group cursor-pointer transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 border-0 overflow-hidden bg-white/10 backdrop-blur-sm"
                 onMouseEnter={() => setHoveredCard(meta.day)}
                 onMouseLeave={() => setHoveredCard(null)}
-                // onClick={() => setSelectedDay(selectedDay === meta.day ? null : meta.day)}
-                            onClick={() => {
-             const el = document.getElementById('contact');
-             el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-           }}
-                
                 style={{ animationDelay: `${idx * 200}ms` }}
                 
               >
@@ -105,14 +99,23 @@ export default function ProgramSection() {
 
                   <CardContent className="pt-0 pb-6">
                     <Button
-            
+             onClick={() => {
+             const el = document.getElementById('contact');
+             el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+           }}
                      className="w-full bg-white/20 p-0 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-gray-900 font-trajan" size="sm">
                       {ctaText} <ArrowRight className="w-4 h-4 ml-0 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </CardContent>
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30" />
+               <div
+   className="absolute inset-0
+              bg-gradient-to-t from-white/10 to-transparent
+              opacity-0 group-hover:opacity-100
+              transition-opacity duration-500 z-30
+              pointer-events-none"
+ />
               </Card>
             );
           })}
