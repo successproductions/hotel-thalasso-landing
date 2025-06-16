@@ -36,7 +36,7 @@ export default function IntroductionSection() {
           className="relative rounded-2xl overflow-hidden shadow-xl"
         >
           <Image
-  src="/images/DJi_0070.png"
+  src="/images/0070.png"
   alt={t("imageAlt")}
   width={600}
   height={500}
