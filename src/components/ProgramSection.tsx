@@ -30,7 +30,7 @@ export default function ProgramSection() {
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br dark:bg-[#080b12] transition-colors">
+    <section id="services" className="py-20 px-4 bg-gradient-to-br dark:bg-[#080b12] transition-colors">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl text-gray-900 dark:text-gray-100 mb-6">
@@ -57,8 +57,14 @@ export default function ProgramSection() {
                 className="relative group cursor-pointer transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 border-0 overflow-hidden bg-white/10 backdrop-blur-sm"
                 onMouseEnter={() => setHoveredCard(meta.day)}
                 onMouseLeave={() => setHoveredCard(null)}
-                onClick={() => setSelectedDay(selectedDay === meta.day ? null : meta.day)}
+                // onClick={() => setSelectedDay(selectedDay === meta.day ? null : meta.day)}
+                            onClick={() => {
+             const el = document.getElementById('contact-form');
+             el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+           }}
+                
                 style={{ animationDelay: `${idx * 200}ms` }}
+                
               >
                 <div className="absolute inset-0 z-0">
                   <Image src={meta.image} alt={title} fill className="object-cover transition-transform duration-1000 group-hover:scale-125" />
@@ -100,7 +106,9 @@ export default function ProgramSection() {
                   </CardHeader>
 
                   <CardContent className="pt-0 pb-6">
-                    <Button className="w-full bg-white/20 p-0 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-gray-900 font-trajan" size="sm">
+                    <Button
+            
+                     className="w-full bg-white/20 p-0 hover:bg-white/30 text-white border border-white/40 backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-gray-900 font-trajan" size="sm">
                       {ctaText} <ArrowRight className="w-4 h-4 ml-0 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </CardContent>

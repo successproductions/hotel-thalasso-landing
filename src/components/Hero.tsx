@@ -22,7 +22,7 @@ const tHero    = useTranslations('hero');
 
 
   return (
-    <div className="w-full">
+    <div className="w-full" id="accueil">
       {/* Hero Section */}
       <div className="relative h-[700px] md:h-[600px] lg:h-[800px] overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3 h-full">
@@ -72,7 +72,7 @@ const tHero    = useTranslations('hero');
     className="relative overflow-hidden px-8 py-3 bg-green-900 text-white font-trajan tracking-wide rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-green-800 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
     size="lg"
     onClick={() => {
-             const el = document.getElementById('program');
+             const el = document.getElementById('services');
              el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
            }}
   >

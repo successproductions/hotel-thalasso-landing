@@ -8,7 +8,7 @@ export default function IntroductionSection() {
   const t = useTranslations("introduction")
 
   return (
-    <section className="bg-[#fdfaf7] dark:bg-[#090b11] py-24 transition-colors duration-500">
+    <section id="about"  className="bg-[#fdfaf7] dark:bg-[#090b11] py-24 transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 items-center gap-16">
         
         {/* Text Block */}
