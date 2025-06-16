@@ -48,7 +48,7 @@ export default function RewardsSection() {
                 alt={t(`logos.${logo.id}.alt`)}
                 width={140}
                 height={70}
-                className="object-contain grayscale group-hover:grayscale-0 transition-all duration-700 drop-shadow-xl"
+                className="object-contain md:mb-10 grayscale group-hover:grayscale-0 transition-all duration-700 drop-shadow-xl"
               />
             </div>
           ))}
