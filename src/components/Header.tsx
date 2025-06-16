@@ -19,7 +19,6 @@ export default function Header() {
   }, []);
 
   const [open, setOpen] = useState(false);
-
   const pathname = usePathname();
   const locale = useLocale();
   const t = useTranslations('nav');
@@ -37,7 +36,7 @@ export default function Header() {
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-all",
         scrolled ? "bg-white shadow py-2 dark:bg-[#131212]"
-      : "bg-white py-4 dark:bg-[#0f0f0f]"
+                : "bg-white py-4 dark:bg-[#0f0f0f]"
       )}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between px-4">
@@ -52,9 +51,9 @@ export default function Header() {
         </button>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex flex-1 gap-6 text-base  text-gray-800 dark:text-gray-200">
+        <nav className="hidden md:flex flex-1 gap-6 text-base text-gray-800 dark:text-gray-200">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-teal-700  font-medium">
+            <a key={l.href} href={l.href} className="hover:text-teal-700 font-medium">
               {l.name}
             </a>
           ))}
@@ -73,28 +72,30 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Utilities */}
+        {/* Utilities (hide toggle on mobile) */}
         <div className="flex-1 flex items-center justify-end gap-4">
-          <ThemeToggle />
+          <div className="hidden md:flex">
+            <ThemeToggle />
+          </div>
 
           <Link
             href={pathname}
             locale={otherLocale}
-            className="hidden md:flex items-center gap-1 rounded-full border px-3 py-1  hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="hidden md:flex items-center gap-1 rounded-full border px-3 py-1 hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <Globe className="w-4 h-4" />{otherLocale.toUpperCase()}
           </Link>
 
           <Button
-           size="sm"
-           className="bg-green-900 font-trajan px-5 dark:text-white hover:bg-green-800 hover:scale-105 hover:shadow-xl"
-           onClick={() => {
-             const el = document.getElementById('contact');
-             el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-           }}
-         >
-           {t("button.book")}
-         </Button>
+            size="sm"
+            className="bg-green-900 font-trajan px-5 dark:text-white hover:bg-green-800 hover:scale-105 hover:shadow-xl"
+            onClick={() => {
+              const el = document.getElementById('contact');
+              el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+          >
+            {t("button.book")}
+          </Button>
         </div>
       </div>
 
@@ -107,8 +108,7 @@ export default function Header() {
           />
           <div
             className={clsx(
-              "fixed right-0 top-0 z-50 h-full w-64 bg-white dark:bg-[#0f0f0f] p-6",
-              "transform transition-transform duration-300",
+              "fixed right-0 top-0 z-50 h-full w-64 bg-white dark:bg-[#0f0f0f] p-6 transform transition-transform duration-300",
               open ? "translate-x-0" : "translate-x-full"
             )}
           >
