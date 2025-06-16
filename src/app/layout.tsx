@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Dakhla Club – Spa & Thalasso",
   },
   description:
-    "Offrez-vous 3 jours de bien‑être au centre DC Thermes à Dakhla. Cure détox, soins thalasso et spa entre désert et océan pour vitalité, clarté et énergie retrouvée.",
+    "3 jours de bien-être au centre DC Thermes à Dakhla : cure détox, soins thalasso & spa entre désert et océan. Vitalité, clarté et énergie retrouvée.",
   keywords: [
     "séjour bien‑être Dakhla",
     "cure détox Maroc",

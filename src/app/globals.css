@@ -123,3 +123,7 @@ footer {
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out;
 }
+
+@media (max-width: 768px){
+  .price-overlay{font-size:18px;padding:14px 24px;}
+}
