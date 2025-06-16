@@ -41,7 +41,7 @@ export default function FAQSection() {
         <div className="relative">
           <div className="overflow-hidden rounded-xl">
             <Image
-              src="/images/6 (1).png"
+              src="/images/centrethalassoDakhla.jpg"
               alt={contact.alt}
               width={700}
               height={500}

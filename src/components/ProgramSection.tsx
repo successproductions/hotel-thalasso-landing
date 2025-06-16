@@ -27,7 +27,6 @@ export default function ProgramSection() {
   const messages = useMessages();
 
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [selectedDay, setSelectedDay] = useState<number | null>(null);
 
   return (
     <section id="services" className="py-20 px-4 bg-gradient-to-br dark:bg-[#080b12] transition-colors">
@@ -59,7 +58,7 @@ export default function ProgramSection() {
                 onMouseLeave={() => setHoveredCard(null)}
                 // onClick={() => setSelectedDay(selectedDay === meta.day ? null : meta.day)}
                             onClick={() => {
-             const el = document.getElementById('contact-form');
+             const el = document.getElementById('contact');
              el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
            }}
                 
@@ -86,7 +85,7 @@ export default function ProgramSection() {
                     <p className="text-white/95 text-sm font-semibold mb-3">{subtitle}</p>
                     <p className="text-sm text-white/90 leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">{desc}</p>
 
-                    <div className={`space-y-3 mt-4 transition-all duration-500 ${hoveredCard===meta.day||selectedDay===meta.day ? 'opacity-100 max-h-96' : 'opacity-0 max-h-0 overflow-hidden'}`}>  
+                    <div className={`space-y-3 mt-4 transition-all duration-500 ${hoveredCard===meta.day ? 'opacity-100 max-h-96' : 'opacity-0 max-h-0 overflow-hidden'}`}>  
                       <h4 className="font-bold text-sm text-white/95 border-b border-white/30 pb-1">
                         {t('header.activitiesTitle')}
                       </h4>
@@ -99,7 +98,6 @@ export default function ProgramSection() {
                         ))}
                       </ul>
                     </div>
-
                     <div className="mt-4 pt-3 border-t border-white/30">
                       <p className="text-xs text-white/90 font-medium italic">🎯 {objective}</p>
                     </div>

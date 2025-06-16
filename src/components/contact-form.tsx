@@ -54,7 +54,7 @@ const t = useTranslations('contactForm');
   };
 
   return (
-    <section id="contact-form" className="w-full bg-stone-50 dark:bg-[#080b12] pt-16 pb-16 px-6 text-gray-800 dark:text-gray-100 transition-colors">
+    <section id="contact" className="w-full bg-stone-50 dark:bg-[#080b12] pt-16 pb-16 px-6 text-gray-800 dark:text-gray-100 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
