@@ -36,12 +36,12 @@ export default function IntroductionSection() {
           className="relative rounded-2xl overflow-hidden shadow-xl"
         >
           <Image
-            src="/images/DJi_0070.png"
-            alt={t("imageAlt")}
-            width={600}
-            height={500}
-            className="object-cover w-full h-full rounded-2xl"
-          />
+  src="/images/DJi_0070.png"
+  alt={t("imageAlt")}
+  width={600}
+  height={500}
+  className="object-cover w-full h-full rounded-2xl"
+/>
         </motion.div>
       </div>
     </section>
