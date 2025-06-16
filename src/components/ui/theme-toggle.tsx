@@ -22,7 +22,7 @@ export function ThemeToggle() {
   return (
     <div className="flex items-center space-x-2">
       <Sun
-        className={`w-5 h-5 ${
+        className={`w-4 h-4 ${
           theme === "dark" ? "text-gray-400 scale-75 rotate-12" : "text-black scale-100"
         }`}
       />

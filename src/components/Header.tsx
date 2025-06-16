@@ -36,8 +36,8 @@ export default function Header() {
     <header
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-all",
-        scrolled ? "bg-white/90 backdrop-blur-sm shadow py-2 dark:bg-[#131212]" :
-                  "bg-[#f9f8f4] dark:bg-[#0f0f0f] py-4"
+        scrolled ? "bg-white shadow py-2 dark:bg-[#131212]"
+      : "bg-white py-4 dark:bg-[#0f0f0f]"
       )}
     >
       <div className="mx-auto max-w-7xl flex items-center justify-between px-4">
