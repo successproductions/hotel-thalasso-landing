@@ -71,11 +71,15 @@ const res = await fetch('/api/reservation', {
       } else {
         throw new Error(payload.error || 'Erreur serveur');
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
+      let message = 'Impossible d’envoyer la requête.';
+      if (err instanceof Error) {
+        message = err.message;
+      }
       Swal.fire({
         icon: 'error',
         title: 'Erreur',
-        text:  err.message || 'Impossible d’envoyer la requête.',
+        text:  message,
         confirmButtonColor: '#166534',
       });
     }
