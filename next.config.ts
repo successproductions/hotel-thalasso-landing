@@ -1,12 +1,23 @@
-
 import withNextIntl from 'next-intl/plugin';
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [{protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**'}]
+    remotePatterns: [
+      { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' }
+    ]
   },
-  // unoptinised: true,
+
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.offer.dakhlaclub.com' }],
+        destination: 'https://offer.dakhlaclub.com/:path*',
+        permanent: true
+      }
+    ];
+  }
 };
 
-export default withNextIntl('./next-intl.config.ts')(nextConfig);
+export default withNextIntl('./next-intl.config.ts')(nextConfig);  // unchanged

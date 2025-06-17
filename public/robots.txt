@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://offer.dakhlaclub.com/sitemap_index.xml

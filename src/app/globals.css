@@ -125,5 +125,5 @@ footer {
 }
 
 @media (max-width: 768px){
-  .price-overlay{font-size:18px;padding:14px 24px;}
+ .seo-ping{display:none} 
 }

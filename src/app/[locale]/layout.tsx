@@ -17,7 +17,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   const messages   = (await import(`../../messages/${locale}.json`)).default;
 
-  
+  /* ——— Schema already in place ——— */
   const schema = {
     "@context": "https://schema.org",
     "@type": "HealthAndBeautyBusiness",
@@ -37,10 +37,18 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+       
         <script
           type="application/ld+json"
           suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+
+        
+        <meta
+          property="og:updated_time"
+          content={new Date().toISOString()}
+          suppressHydrationWarning
         />
       </head>
 

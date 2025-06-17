@@ -35,7 +35,7 @@ export default function FAQSection() {
   const { contact, items } = messages.faq;
 
   return (
-    <section id="faq" className="bg-[#f9f8f4] dark:bg-[#080b12] py-20 text-gray-900 dark:text-gray-100 transition-colors">
+    <section id="faq" className="bg-[#f9f8f4] dark:bg-[#080b12] py-20 text-gray-900 dark:text-gray-100 transition-colors seo-ping">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-start">
         {/* Left - Image with Contact Box */}
         <div className="relative">
