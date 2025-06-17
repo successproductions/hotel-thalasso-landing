@@ -38,7 +38,7 @@ const clientsData: Client[] = [
     title: "Consultante",
     company: "Harmony Solutions",
     image: "/images/Isabelle.jpeg",
-    testimonial: "AFTER KITING, IT'S SO RELAXING",
+    testimonial: "AFTER KITING,        IT'S SO RELAXING",
     rating: 5
   },
   {
@@ -56,7 +56,7 @@ const clientsData: Client[] = [
     title: "Journaliste",
     company: "Lifestyle Magazine",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    testimonial: "Dakhla offre un cadre unique pour se reconnecter avec soi-même. Les soins holistiques sont d'une qualité exceptionnelle.",
+    testimonial: "Dakhla offre un cadre unique pour se reconnecter avec soi-même.",
     rating: 5
   },
   {
