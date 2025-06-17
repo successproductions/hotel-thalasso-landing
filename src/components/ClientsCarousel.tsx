@@ -29,7 +29,7 @@ const clientsData: Client[] = [
     title: "CEO",
     company: "TechVision",
     image: "/images/Marc.jpeg",
-    testimonial: "Le programme de régénération m'a permis de retrouver un équilibre parfait entre corps et esprit. Absolument recommandé !",
+    testimonial: "JAI TESTÉ LES ICE BATHS ET J'AI ADORÉ",
     rating: 5
   },
   {
@@ -38,7 +38,7 @@ const clientsData: Client[] = [
     title: "Consultante",
     company: "Harmony Solutions",
     image: "/images/Isabelle.jpeg",
-    testimonial: "Les 4 jours à Dakhla ont été magiques. Chaque soin était pensé pour mon bien-être. Une parenthèse de pur bonheur.",
+    testimonial: "AFTER KITING, IT'S SO RELAXING",
     rating: 5
   },
   {
@@ -47,7 +47,7 @@ const clientsData: Client[] = [
     title: "Architecte",
     company: "Design Studio",
     image: "/images/Sophie.jpeg",
-    testimonial: "L'équipe du Dakhla Club comprend vraiment les besoins de détente et de ressourcement. Service impeccable !",
+    testimonial: "LE MEILLEUR SPA QUE J'AIE FAITDE TOUTE MA VIE",
     rating: 5
   },
   {
@@ -65,7 +65,7 @@ const clientsData: Client[] = [
     title: "Consultant Senior",
     company: "Business Partners",
     image: "/images/Thomas.jpeg",
-    testimonial: "Une expérience inoubliable ! L'approche holistique du bien-être m'a permis de repartir complètement régénéré.",
+    testimonial: "JE SENS QUE MA PEAU EST BIEN HYDRATÉE",
     rating: 5
   }
 ];
