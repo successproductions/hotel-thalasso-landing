@@ -93,7 +93,9 @@ const tHero    = useTranslations('hero');
         {/* Mobile Hero Image */}
         <div className="md:hidden absolute inset-0 -z-10">
           <Image
-            src="/Piscine_thermale.jpeg?height=600&width=800"
+            src="/Piscine_thermale.jpeg"
+            width={800}
+            height={600}
             alt="piscine thermale"
             fill
             className="object-cover opacity-20"

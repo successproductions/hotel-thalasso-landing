@@ -84,8 +84,7 @@ export async function generateMetadata({
     // Verification (add your actual verification codes)
     verification: {
       google: 'your-google-verification-code',
-      // yandex: 'your-yandex-verification-code',
-      // bing: 'your-bing-verification-code',
+
     },
   };
 }
@@ -184,7 +183,15 @@ export default async function LocaleLayout({
           suppressHydrationWarning
         />
 
-        {/* Remove the dummy CSS that's causing issues */}
+        <style  id="seo-media-query"
+    suppressHydrationWarning
+    dangerouslySetInnerHTML={{
+      __html: `
+        @media (max-width: 768px){Add commentMore actions
+          .rm-dummy-class{display:none}
+        }`
+    }}
+  />
       </head>
 
       <body>
