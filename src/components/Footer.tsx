@@ -72,7 +72,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">{t('resources.title')}</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="faq" className="hover:text-white">{t('resources.faq')}</Link></li>
+              <li><a href="#faq" className="hover:text-white">{t('resources.faq')}</a></li>
               
             </ul>
           </div>
