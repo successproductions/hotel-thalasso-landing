@@ -59,7 +59,7 @@ export default function ImageCarousel() {
               src={carouselImages[currentIndex].src}
               alt={tImg(`${image.id}.alt`)}
               className="w-full h-full object-cover"
-              unoptimized
+              
             />
             <div className="absolute inset-0 bg-black/30"></div>
           </div>
