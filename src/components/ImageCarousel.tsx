@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const carouselImages = [
   { src: "/images/IMG_2150 (1).png", id: "oceanView" },
-  { src: "/images/Piscine_thermale.jpeg",         id: "thermalPool" },
+  { src: "/images/Piscine_thermale.png",         id: "thermalPool" },
   { src: "/images/Salle-de-massage.png",          id: "spaRoom" },
   { src: "/images/Restaurant.jpg?height=600&width=1200", id: "restaurant" },
 ];

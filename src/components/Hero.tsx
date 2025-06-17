@@ -86,14 +86,14 @@ const tHero    = useTranslations('hero');
 
           {/* Right Image */}
           <div className="hidden md:block relative">
-            <Image src="/images/Piscine_thermale.jpeg"   alt="Hot stone therapy" fill className="object-cover" />
+            <Image src="/images/Piscine_thermale.png"   alt="Hot stone therapy" fill className="object-cover" />
           </div>
         </div>
 
         {/* Mobile Hero Image */}
         <div className="md:hidden absolute inset-0 -z-10">
           <Image
-            src="/Piscine_thermale.jpeg"
+            src="/Piscine_thermale.png"
             width={800}
             height={600}
             alt="piscine thermale"

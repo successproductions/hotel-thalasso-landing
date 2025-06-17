@@ -16,7 +16,7 @@ interface ProgramMeta {
 }
 
 const programMeta: ProgramMeta[] = [
-  { day: 1, icon: <Leaf className="w-6 h-6"/>,        gradient: 'from-emerald-500 via-teal-500 to-cyan-500', image: '/images/Piscine_thermale.jpeg' },
+  { day: 1, icon: <Leaf className="w-6 h-6"/>,        gradient: 'from-emerald-500 via-teal-500 to-cyan-500', image: '/images/Piscine_thermale.png' },
   { day: 2, icon: <Waves className="w-6 h-6"/>,       gradient: 'from-blue-500 via-indigo-500 to-purple-500',  image: '/images/sauna_ritual.png' },
   { day: 3, icon: <Sparkles className="w-6 h-6"/>,    gradient: 'from-violet-500 via-pink-500 to-rose-500',  image: '/images/modelage.jpg' },
   { day: 4, icon: <Droplets className="w-6 h-6"/>,    gradient: 'from-orange-500 via-amber-500 to-yellow-500', image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?...' }
