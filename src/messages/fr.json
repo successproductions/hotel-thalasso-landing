@@ -198,6 +198,14 @@
       }
     }
   },
+"clientsCarousel":{
+  "testimonial1" :"JAI TESTÉ LES ICE BATHS ET J'AI ADORÉ !",
+  "testimonial2" :"AFTER KITING,        IT'S SO RELAXING",
+  "testimonial3" :"LE MEILLEUR SPA QUE J'AIE FAITDE TOUTE MA VIE",
+  "testimonial4" :"Dakhla offre un cadre unique pour se reconnecter avec soi-même.",
+  "testimonial5" :"JE SENS QUE MA PEAU EST BIEN HYDRATÉE"
+},
+  
   "introduction": {
     "whyTitle":        "Pourquoi cette cure ?",
     "headlineLine1":   "Une reconnexion à soi",

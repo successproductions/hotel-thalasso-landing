@@ -11,6 +11,7 @@ import {
 import { Star, Quote } from 'lucide-react';
 import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface Client {
   id: number;
@@ -22,14 +23,24 @@ interface Client {
   rating: number;
 }
 
-const clientsData: Client[] = [
+
+
+
+export default function ClientsCarousel() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
+  const t = useTranslations('clientsCarousel');
+
+  const clientsData: Client[] = [
   {
     id: 2,
     name: "Marc Lefebvre",
     title: "CEO",
     company: "TechVision",
     image: "/images/Marc.jpeg",
-    testimonial: "JAI TESTÉ LES ICE BATHS ET J'AI ADORÉ",
+    testimonial: t('testimonial1'),
     rating: 5
   },
   {
@@ -38,7 +49,7 @@ const clientsData: Client[] = [
     title: "Consultante",
     company: "Harmony Solutions",
     image: "/images/Isabelle.jpeg",
-    testimonial: "AFTER KITING,        IT'S SO RELAXING",
+    testimonial: t('testimonial2'),
     rating: 5
   },
   {
@@ -47,7 +58,7 @@ const clientsData: Client[] = [
     title: "Architecte",
     company: "Design Studio",
     image: "/images/Sophie.jpeg",
-    testimonial: "LE MEILLEUR SPA QUE J'AIE FAITDE TOUTE MA VIE",
+    testimonial: t('testimonial3'),
     rating: 5
   },
   {
@@ -56,7 +67,7 @@ const clientsData: Client[] = [
     title: "Journaliste",
     company: "Lifestyle Magazine",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    testimonial: "Dakhla offre un cadre unique pour se reconnecter avec soi-même.",
+    testimonial: t('testimonial4'),
     rating: 5
   },
   {
@@ -65,15 +76,10 @@ const clientsData: Client[] = [
     title: "Consultant Senior",
     company: "Business Partners",
     image: "/images/Thomas.jpeg",
-    testimonial: "JE SENS QUE MA PEAU EST BIEN HYDRATÉE",
+    testimonial: t('testimonial5'),
     rating: 5
   }
 ];
-
-export default function ClientsCarousel() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
-  );
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
