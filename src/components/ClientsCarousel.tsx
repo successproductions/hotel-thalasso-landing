@@ -62,15 +62,6 @@ export default function ClientsCarousel() {
     rating: 5
   },
   {
-    id: 5,
-    name: "Caroline Blanc",
-    title: "Journaliste",
-    company: "Lifestyle Magazine",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    testimonial: t('testimonial4'),
-    rating: 5
-  },
-  {
     id: 6,
     name: "Thomas Moreau",
     title: "Consultant Senior",
