@@ -28,7 +28,7 @@ const clientsData: Client[] = [
     name: "Sophie Dubois",
     title: "Directrice Marketing",
     company: "Wellness Corp",
-    image: "/images/Shphie.jpeg",
+    image: "/images/Sophie.jpeg",
     testimonial: "Une expérience transformatrice au Dakhla Club. Les soins sont exceptionnels et l&apos;équipe est d&apos;une bienveillance remarquable.",
     rating: 5
   },
