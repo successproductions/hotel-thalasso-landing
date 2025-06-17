@@ -28,7 +28,7 @@ const clientsData: Client[] = [
     name: "Sophie Dubois",
     title: "Directrice Marketing",
     company: "Wellness Corp",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image: "@/images/Shphie.jpeg",
     testimonial: "Une expérience transformatrice au Dakhla Club. Les soins sont exceptionnels et l&apos;équipe est d&apos;une bienveillance remarquable.",
     rating: 5
   },
@@ -37,7 +37,7 @@ const clientsData: Client[] = [
     name: "Marc Lefebvre",
     title: "CEO",
     company: "TechVision",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image: "@/images/Marc.jpeg",
     testimonial: "Le programme de régénération m'a permis de retrouver un équilibre parfait entre corps et esprit. Absolument recommandé !",
     rating: 5
   },
@@ -46,7 +46,7 @@ const clientsData: Client[] = [
     name: "Isabelle Martin",
     title: "Consultante",
     company: "Harmony Solutions",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image: "@/images/Isabelle.jpeg",
     testimonial: "Les 4 jours à Dakhla ont été magiques. Chaque soin était pensé pour mon bien-être. Une parenthèse de pur bonheur.",
     rating: 5
   },
@@ -73,7 +73,7 @@ const clientsData: Client[] = [
     name: "Thomas Moreau",
     title: "Consultant Senior",
     company: "Business Partners",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image: "@/images/Thomas.jpeg",
     testimonial: "Une expérience inoubliable ! L'approche holistique du bien-être m'a permis de repartir complètement régénéré.",
     rating: 5
   }
