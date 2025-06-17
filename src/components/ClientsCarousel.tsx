@@ -24,15 +24,6 @@ interface Client {
 
 const clientsData: Client[] = [
   {
-    id: 1,
-    name: "Sophie Dubois",
-    title: "Directrice Marketing",
-    company: "Wellness Corp",
-    image: "/images/Sophie.jpeg",
-    testimonial: "Une expérience transformatrice au Dakhla Club. Les soins sont exceptionnels et l&apos;équipe est d&apos;une bienveillance remarquable.",
-    rating: 5
-  },
-  {
     id: 2,
     name: "Marc Lefebvre",
     title: "CEO",
@@ -52,10 +43,10 @@ const clientsData: Client[] = [
   },
   {
     id: 4,
-    name: "Pierre Rousseau",
+    name: "Sophie Dubois",
     title: "Architecte",
     company: "Design Studio",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    image: "/images/Sophie.jpeg&auto=format&fit=crop&w=400&q=80",
     testimonial: "L'équipe du Dakhla Club comprend vraiment les besoins de détente et de ressourcement. Service impeccable !",
     rating: 5
   },
