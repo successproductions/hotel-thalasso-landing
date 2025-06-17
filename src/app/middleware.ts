@@ -10,4 +10,4 @@ export function middleware(request: NextRequest) {
   url.pathname = `/fr${request.nextUrl.pathname}`
   return NextResponse.redirect(url)
 }
-export const config = { matcher: ['/((?!_next|favicon.ico).*)'] }
+export const config = { matcher: ['/((?!_next).*)'] }
