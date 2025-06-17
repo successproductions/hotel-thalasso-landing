@@ -46,7 +46,7 @@ const clientsData: Client[] = [
     name: "Sophie Dubois",
     title: "Architecte",
     company: "Design Studio",
-    image: "/images/Sophie.jpeg&auto=format&fit=crop&w=400&q=80",
+    image: "/images/Sophie.jpeg",
     testimonial: "L'équipe du Dakhla Club comprend vraiment les besoins de détente et de ressourcement. Service impeccable !",
     rating: 5
   },
