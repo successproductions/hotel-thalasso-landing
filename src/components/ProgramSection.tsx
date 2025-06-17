@@ -60,7 +60,7 @@ export default function ProgramSection() {
                 
               >
                 <div className="absolute inset-0 z-0">
-                  <Image src={meta.image} alt={title} fill className="object-cover transition-transform duration-1000 group-hover:scale-125" />
+                  <Image src={meta.image} alt={title} unoptimized fill className="object-cover transition-transform duration-1000 group-hover:scale-125" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/90 group-hover:via-black/50 transition-all duration-500" />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br ${meta.gradient} opacity-60 group-hover:opacity-75 transition-all duration-500 z-10 mix-blend-overlay" />
