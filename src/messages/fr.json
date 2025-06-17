@@ -49,7 +49,7 @@
         "title":        "Arrivée & Préparation",
         "subtitle":     "Arrivée & Préparation",
         "description":  "Installation en douceur pour commencer votre parenthèse bien-être. Prenez le temps de vous détendre et de vous recentrer, loin du rythme quotidien.",
-        "activities":   [""],
+        "activities":   [],
         "objective":    "Ancrage, respiration, ouverture du corps et de l'esprit.",
         "ctaText":      "JE CHOISIS DE ME RÉGÉNÉRER"
       },
@@ -73,7 +73,7 @@
         "title":        "Départ & Sérénité retrouvée",
         "subtitle":     "Régénération Finale",
         "description":  "Le séjour touche à sa fin, mais les effets se prolongent bien au-delà de ces quelques jours. Vous repartez avec un esprit plus clair, un corps détendu, et une énergie rééquilibrée.",
-        "activities":   [""],
+        "activities":   [],
         "objective":    "Évacuation des toxines, apaisement mental, peau régénérée.",
         "ctaText":      "J'ACCÈDE À MON SÉJOUR"
       }

@@ -50,7 +50,7 @@
         "title":        "Arrival & Preparation",
         "subtitle":     "Grounding & Opening",
         "description":  "PA gentle start to your wellness getaway. Take the time to settle in, unwind, and reconnect with yourself—far from the stress of everyday life.",
-        "activities":   [""],
+        "activities":   [],
         "objective":    "Grounding, breathwork, opening body & mind.",
         "ctaText":      "I CHOOSE TO REGENERATE"
       },
@@ -74,7 +74,7 @@
         "title":        "Departure & Lasting Serenity",
         "subtitle":     "Final Regeneration",
         "description":  "Your retreat comes to an end, but the benefits linger. You leave with a clearer mind, a deeply relaxed body, and renewed inner balance.",
-        "activities":   [""],
+        "activities":   [],
         "objective":    "Toxin elimination, mental calm, regenerated skin.",
         "ctaText":      "ACCESS MY STAY"
       }
