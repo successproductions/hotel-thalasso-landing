@@ -132,7 +132,7 @@ export default function ClientsCarousel() {
 
                       {/* Testimonial */}
                       <div className="relative mb-6">
-                        <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/20" />
+                        <Quote className="absolute -top-2 -left-2 w-8 h-8 md:pr-2 text-primary/20" />
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed italic pl-6 text-sm">
   &quot;{client.testimonial}&quot;
 </p>

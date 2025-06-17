@@ -47,9 +47,9 @@
     "days": {
       "1": {
         "title":        "Arrivée & Préparation",
-        "subtitle":     "Ancrage et Ouverture",
+        "subtitle":     "Arrivée & Préparation",
         "description":  "Installation en douceur pour commencer votre parenthèse bien-être. Prenez le temps de vous détendre et de vous recentrer, loin du rythme quotidien.",
-        "activities":   ["Accueil personnalisé","Infusion détox","Installation bungalow","Bol d'Air Jacquier","Piscine thermale"],
+        "activities":   [""],
         "objective":    "Ancrage, respiration, ouverture du corps et de l'esprit.",
         "ctaText":      "JE CHOISIS DE ME RÉGÉNÉRER"
       },
@@ -70,10 +70,10 @@
         "ctaText":      "JE VEUX VIVRE L'EXPÉRIENCE"
       },
       "4": {
-        "title":        "Purification & Clôture",
+        "title":        "Départ & Sérénité retrouvée",
         "subtitle":     "Régénération Finale",
         "description":  "Le séjour touche à sa fin, mais les effets se prolongent bien au-delà de ces quelques jours. Vous repartez avec un esprit plus clair, un corps détendu, et une énergie rééquilibrée.",
-        "activities":   ["Bol d'Air Jacquier","Piscine thermale","Hammam Secret du Désert","Massage relaxant"],
+        "activities":   [""],
         "objective":    "Évacuation des toxines, apaisement mental, peau régénérée.",
         "ctaText":      "J'ACCÈDE À MON SÉJOUR"
       }
