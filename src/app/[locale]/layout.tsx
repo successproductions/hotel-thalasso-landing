@@ -50,6 +50,17 @@ export default async function LocaleLayout({
           content={new Date().toISOString()}
           suppressHydrationWarning
         />
+        <style
+    id="seo-media-query"
+    
+    suppressHydrationWarning
+    dangerouslySetInnerHTML={{
+      __html: `
+        @media (max-width: 768px){
+          .rm-dummy-class{display:none}
+        }`
+    }}
+  />
       </head>
 
       <body>
