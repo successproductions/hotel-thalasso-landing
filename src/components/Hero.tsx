@@ -99,6 +99,7 @@ const tHero    = useTranslations('hero');
             alt="piscine thermale"
             fill
             className="object-cover opacity-20"
+            unoptimized
           />
         </div>
       </div>
