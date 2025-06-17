@@ -1,4 +1,11 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/
+Disallow: /admin/
 
-Sitemap: https://offer.dakhlaclub.com/sitemap_index.xml
+# Host
+Host: https://offer.dakhlaclub.com
+
+# Sitemaps
+Sitemap: https://offer.dakhlaclub.com/sitemap.xml
