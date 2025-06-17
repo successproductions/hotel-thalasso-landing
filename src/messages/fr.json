@@ -152,7 +152,7 @@
     "fields": {
       "name": {
         "label":      "Nom complet",
-        "placeholder":"Mohamed Daali"
+        "placeholder":"John Doe"
       },
       "countryCode": {
         "label":      "Pays"
