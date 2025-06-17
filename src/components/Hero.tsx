@@ -86,7 +86,7 @@ const tHero    = useTranslations('hero');
 
           {/* Right Image */}
           <div className="hidden md:block relative">
-            <Image src="/images/Piscine_thermale.jpeg" alt="Hot stone therapy" fill className="object-cover" />
+            <Image src="/images/Piscine_thermale.jpeg"  unoptimized alt="Hot stone therapy" fill className="object-cover" />
           </div>
         </div>
 
