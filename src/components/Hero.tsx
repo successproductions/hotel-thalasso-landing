@@ -56,14 +56,11 @@ const tHero    = useTranslations('hero');
     {tHero('tagline')}
   </motion.p>
 
-  <motion.h1
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+  <h1
     className="text-3xl md:text-4xl lg:text-5xl font-trajan text-stone-800 leading-tight dark:text-stone-200"
   >
     {tHero('headline')}
-  </motion.h1>
+  </h1>
 </div>
 
 <motion.p
