@@ -79,19 +79,32 @@ export default function ProgramSection() {
                     <p className="text-white/95 text-sm font-semibold mb-3">{subtitle}</p>
                     <p className="text-sm text-white/90 leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">{desc}</p>
 
-                    <div className={`space-y-3 mt-4 transition-all duration-500 ${hoveredCard===meta.day ? 'opacity-100 max-h-96' : 'opacity-0 max-h-0 overflow-hidden'}`}>  
-                      <h4 className="font-bold text-sm text-white/95 border-b border-white/30 pb-1">
-                        {t('header.activitiesTitle')}
-                      </h4>
-                      <ul className="space-y-2">
-                        {activities.map((act: string, i: number) => (
-                          <li key={i} className="text-xs text-white/85 flex items-center gap-2" style={{ animationDelay: `${i*100}ms` }}>
-                            <Star className="w-3 h-3 text-yellow-300 fill-current" />
-                            {act}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {activities.length > 0 && (
+  <div
+    className={`space-y-3 mt-4 transition-all duration-500 ${
+      hoveredCard === meta.day
+        ? 'opacity-100 max-h-96'
+        : 'opacity-0 max-h-0 overflow-hidden'
+    }`}
+  >
+    <h4 className="font-bold text-sm text-white/95 border-b border-white/30 pb-1">
+      {t('header.activitiesTitle')}
+    </h4>
+    <ul className="space-y-2">
+      {activities.map((act: string, i: number) => (
+        <li
+          key={i}
+          className="text-xs text-white/85 flex items-center gap-2"
+          style={{ animationDelay: `${i * 100}ms` }}
+        >
+          <Star className="w-3 h-3 text-yellow-300 fill-current" />
+          {act}
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
                     <div className="mt-4 pt-3 border-t border-white/30">
                       <p className="text-xs text-white/90 font-medium italic">🎯 {objective}</p>
                     </div>
