@@ -26,6 +26,11 @@ export async function generateMetadata({
   return {
     title: messages.meta.title,
     description: messages.meta.description,
+      icons: {
+    
+    icon: [{ url: '/images/LogoDakhla.png', type: 'image/png', sizes: 'any' }],
+    apple: '/images/LogoDakhla.png'
+  },
     
     // Open Graph
     openGraph: {
