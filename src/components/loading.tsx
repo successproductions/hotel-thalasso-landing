@@ -20,7 +20,7 @@ export default function Loading() {
         }}
       >
         <Image
-          src="/LogoIcone.png"
+          src="/Logo-Dakhla-Club-colors.png"
           alt="logo loading"
           width={128}
           height={128}

@@ -12,6 +12,7 @@ import IntroductionSection from '@/components/IntroductionSection';
 import ScrollToTop from '@/components/ScrollToTop';
 import RewardsSection from '@/components/RewardsSection';
 import ClientsCarousel from '@/components/ClientsCarousel';
+import ExclusiveOfferSection from '@/components/ExclusiveOfferSection';
 
 export default function Home() {
 
@@ -24,6 +25,7 @@ export default function Home() {
       <ProgramSection />
       <ImageCarousel />
       <ClientsCarousel />
+      <ExclusiveOfferSection />
       <FAQSection />
       <ContactForm />
       <RewardsSection />
