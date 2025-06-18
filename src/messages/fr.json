@@ -20,7 +20,7 @@
    "hero": {
     "tagline":     "Évasion Holistique",
     "headline":    "3 JOURS POUR RESSOURCER CORPS & ESPRIT",
-    "description": "Dakhla appelle… Êtes-vous prêt(e) à recharger vos batteries ?",
+    "description": "Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?",
     "cta":         "RÉSERVER MAINTENANT",
     "services": {
       "bolDAirJacquier":   "Bol d’Air Jacquier",
@@ -79,6 +79,11 @@
       }
     }
   },
+  "exclusiveOffer": {
+    "title": "⏳ Offre exclusive – 10 places par session",
+    "description": "Pour préserver la qualité et l’intimité de l’expérience, nous limitons chaque retraite à 10 personnes.",
+    "nextSession": "📅 Prochaine session : 15 au 18 juillet 2025"
+  },
   "carousel": {
     "overlay": {
       "description": "Découvrez nos espaces d'exception dédiés à votre bien-être et à votre détente",
@@ -118,28 +123,24 @@
     },
     "items": [
       {
-        "question": "Depuis combien de temps votre centre existe-t-il ?",
-        "answer": "Notre centre existe depuis plus de 10 ans à Dakhla, avec des milliers de clients satisfaits ayant bénéficié de nos soins holistiques."
+        "question": "Qu’est-ce que je vais vivre pendant ces 3 jours au Dakhla Club ?",
+        "answer": "Vous allez vivre une véritable reconnexion à vous-même grâce à une combinaison de soins relaxants, d’expériences sensorielles et d’un cadre naturel exceptionnel entre désert et océan."
       },
       {
-        "question": "Quel est le tarif pour un soin ?",
-        "answer": "Nos séjours incluent l’ensemble des soins. Pour un soin individuel, les tarifs commencent à partir de 400 MAD."
+        "question": "Quels types de soins vais-je recevoir pendant le séjour ?",
+        "answer": "Vous profiterez de soins holistiques comme le bain hydromassant, l’enveloppement aux algues, la cupping thérapie ou encore le massage sous affusion, pour revitaliser à la fois le corps et l’esprit."
       },
       {
-        "question": "Combien de personnes travaillent dans votre équipe ?",
-        "answer": "Nous avons une équipe de 15 thérapeutes certifiés, spécialistes en soins marins et rituels ancestraux."
+        "question": "Est-ce que ce programme est adapté si je n’ai jamais fait de spa ou de cure bien-être ?",
+        "answer": "Oui, ce programme est idéal pour une première fois : il a été pensé pour être doux, accessible et encadré par des professionnels à votre écoute."
       },
       {
-        "question": "Avez-vous des offres d’emploi en cours ?",
-        "answer": "Nous recrutons régulièrement. Consultez la section Carrières ou contactez-nous directement."
+        "question": "Pourquoi faut-il réserver rapidement ?",
+        "answer": "Les places sont limitées afin de garantir un cadre paisible et une attention personnalisée à chaque participant, c’est pourquoi il est conseillé de réserver sans tarder."
       },
       {
-        "question": "Comment prendre rendez-vous avec Femellé ?",
-        "answer": "Vous pouvez réserver en ligne ou nous contacter via le formulaire en bas de page."
-      },
-      {
-        "question": "Quel type de contrats proposez-vous ?",
-        "answer": "Nous proposons des séjours à durée courte (3–5 jours) avec ou sans hébergement inclus."
+        "question": "Où vais-je loger pendant le séjour ?",
+        "answer": "Vous serez hébergé(e) directement au Dakhla Club Hotel & Spa, dans un environnement apaisant qui prolonge naturellement les bienfaits des soins."
       }
     ]
   },

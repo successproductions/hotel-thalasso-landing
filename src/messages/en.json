@@ -80,6 +80,11 @@
       }
     }
   },
+  "exclusiveOffer": {
+    "title": "⏳ Exclusive offer — 10 places per session",
+    "description": "To preserve the quality and intimacy of the experience, each retreat is limited to 10 participants.",
+    "nextSession": "📅 Next session: 15–18 July 2025"
+  },
 
   "carousel": {
     "overlay": {
@@ -119,28 +124,24 @@
     },
     "items": [
       {
-        "question": "How long has your center been operating?",
-        "answer": "Our center has been operating for over 10 years in Dakhla, with thousands of satisfied clients who have benefited from our holistic treatments."
+        "question": "What can I expect during these 3 days at Dakhla Club?",
+        "answer": "You’ll experience a true reconnection with yourself through a blend of relaxing treatments, sensory rituals, and a stunning natural setting between the desert and the ocean."
       },
       {
-        "question": "What is the price for a treatment?",
-        "answer": "Our stays include all treatments. For an individual treatment, prices start at 400 MAD."
+        "question": "What types of treatments are included in the program?",
+        "answer": "You’ll enjoy a range of holistic therapies such as hydromassage baths, seaweed wraps, cupping therapy, and affusion massages — all designed to deeply relax and recharge your body and mind."
       },
       {
-        "question": "How many people work on your team?",
-        "answer": "We have a team of 15 certified therapists, specialists in marine treatments and ancient rituals."
+        "question": "Is this program suitable if I’ve never done a spa or wellness retreat before?",
+        "answer": "Absolutely — it’s the perfect introduction, carefully designed to be gentle, welcoming, and fully guided by wellness professionals."
       },
       {
-        "question": "Do you have any job openings?",
-        "answer": "We regularly recruit. Check the Careers section or contact us directly."
+        "question": "Why should I book quickly?",
+        "answer": "Availability is limited to ensure a calm, personalized experience for every guest, so early booking is highly recommended."
       },
       {
-        "question": "How can I book an appointment with Femellé?",
-        "answer": "You can book online or contact us via the form at the bottom of the page."
-      },
-      {
-        "question": "What types of packages do you offer?",
-        "answer": "We offer short stays (3–5 days) with or without accommodation included."
+        "question": "Where will I stay during the retreat?",
+        "answer": "You’ll be staying right at the Dakhla Club Hotel & Spa, in a serene setting that perfectly complements and enhances the benefits of your treatments."
       }
     ]
   },

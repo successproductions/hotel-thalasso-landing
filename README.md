@@ -34,7 +34,7 @@ A fast, multilingual (FR/EN) landing page for **Dakhla Club’s spa & wellness o
 ```bash
 git clone https://github.com/successproductions/hotel-thalasso-landing.git
 cd hotel-thalasso-landing
-pnpm install        # or npm install / yarn
+npm install        # or npm install / yarn
 
 
 src/
