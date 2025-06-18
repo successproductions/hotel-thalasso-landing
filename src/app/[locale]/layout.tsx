@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import LoadingWrapper from '@/components/LoadingWrapper';
 
 
 export async function generateStaticParams() {
@@ -193,7 +194,7 @@ export default async function LocaleLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <NextIntlClientProvider locale={locale} messages={messages}>
 
-            {children}
+            <LoadingWrapper>{children}</LoadingWrapper>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

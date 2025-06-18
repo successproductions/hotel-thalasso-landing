@@ -9,9 +9,9 @@ export default function Loading() {
       <motion.div
         className="w-32 h-32 drop-shadow-lg"
         animate={{
-          y: [0, -24, 0, -12, 0],        // bounce sequence
-          rotate: [0, 5, -5, 3, 0],      // little swing
-          opacity: [1, 0.8, 1, 0.8, 1],  // subtle fade
+          y: [0, -24, 0, -12, 0],       
+          rotate: [0, 5, -5, 3, 0],      
+          opacity: [1, 0.8, 1, 0.8, 1],  
         }}
         transition={{
           duration: 2,
