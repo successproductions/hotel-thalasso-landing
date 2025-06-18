@@ -4,9 +4,21 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 
 export function Hero() {
+   const [showIndicator, setShowIndicator] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => {
+      // hide as soon as you scroll 50px
+      setShowIndicator(window.scrollY < 50);
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
 const services = [
    { id: 'bolDAirJacquier',  icon: '🌬️' },
@@ -136,6 +148,16 @@ const tHero    = useTranslations('hero');
 </div>
 
         </div>
+            {showIndicator && (
+        <motion.div
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ y: [0, 8, 0], opacity: [1, 0.5, 1] }}
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:block"
+        >
+          <ChevronDown className="w-6 h-6 text-stone-600 dark:text-stone-300" />
+        </motion.div>
+      )}
     </div>
     );
     }
