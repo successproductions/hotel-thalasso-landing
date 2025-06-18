@@ -3,6 +3,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import Loading from '../loading';
+import { Suspense } from 'react';
+import ClientMountGuard from '../ClientMountGuard';
 
 export async function generateStaticParams() {
   return [{ locale: 'fr' }, { locale: 'en' }];
@@ -188,11 +191,15 @@ export default async function LocaleLayout({
       </head>
 
       <body>
+         <ClientMountGuard>
+        <Suspense fallback={<Loading />}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <NextIntlClientProvider locale={locale} messages={messages}>
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>
+        </Suspense>
+        </ClientMountGuard>
       </body>
     </html>
   );
