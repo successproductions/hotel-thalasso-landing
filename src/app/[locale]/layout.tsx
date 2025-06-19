@@ -70,7 +70,7 @@ export async function generateMetadata({
 
     // Additional meta tags
     keywords: locale === 'fr' 
-      ? 'thalasso, Dakhla, spa, bien-être, détox, cure, Maroc, océan, désert'
+      ? 'séjour bien-être Dakhla, cure détox Maroc, spa haut de gamme Maroc, cure, Maroc, océan, désert'
       : 'thalasso, Dakhla, spa, wellness, detox, treatment, Morocco, ocean, desert',
     
     authors: [{ name: 'Dakhla Club' }],
