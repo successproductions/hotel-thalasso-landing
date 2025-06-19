@@ -9,8 +9,8 @@ import Image from "next/image";
 
 const carouselImages = [
   { src: "/images/IMG_2150 (1).png", id: "oceanView" },
-  { src: "/images/Piscine_thermale.png",         id: "Thermal pool with ocean view at DC Thermes Dakhla" },
-  { src: "/images/Salle-de-massage.png",          id: "sMassage under affusion shower – holistic detox" },
+  { src: "/images/Piscine_thermale.png",         id: "thermalPool" },
+  { src: "/images/Salle-de-massage.png",          id: "spaRoom" },
   { src: "/images/Restaurant.jpg?height=600&width=1200", id: "restaurant" },
 ];
 
@@ -59,6 +59,8 @@ export default function ImageCarousel() {
               src={carouselImages[currentIndex].src}
               alt={tImg(`${image.id}.alt`)}
               className="w-full h-full object-cover"
+              width={1200}
+              height={600}
               
             />
             <div className="absolute inset-0 bg-black/30"></div>
