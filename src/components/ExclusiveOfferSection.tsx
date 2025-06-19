@@ -13,7 +13,7 @@ export default function ExclusiveOfferSection() {
   return (
     <section className="w-full py-12 md:py-16 px-4 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 dark:from-gray-900 dark:via-teal-900/20 dark:to-cyan-900/20" />
+      <div className="absolute inset-0  dark:bg-[#090b11] dark:via-teal-900/20 dark:to-cyan-900/20" />
 
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -98,7 +98,7 @@ export default function ExclusiveOfferSection() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="space-y-4"
                 >
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-trajan bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent leading-tight">
                     {t("title")}
                   </h2>
 
