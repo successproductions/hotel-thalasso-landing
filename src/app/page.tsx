@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
 export default function Page() {
-    redirect('/fr');
+    redirect('/fr/sejour-serenite-5-jours');
     return null;
 }

@@ -200,9 +200,10 @@
     }
   },
 "clientsCarousel":{
-  "testimonial1" :"J'ai testé les ice baths et j'ai adoré !",
+  "title": "NOS CLIENTS TÉMOIGNENT",
+  "testimonial1" :"J'ai testé kiting et j'ai adoré !",
   "testimonial2" :"Après avoir fait du cerf-volant, c’est tellement relaxant",
-  "testimonial3" :"Le meilleur spa que j'aie faitde toute ma vie",
+  "testimonial3" :"Le meilleur spa que j'aie fait de toute ma vie",
   "testimonial4" :"Dakhla offre un cadre unique pour se reconnecter avec soi-même.",
   "testimonial5" :"Je sens que ma peau est bien hydratée"
 },
@@ -259,10 +260,119 @@
       "youtube":     "YouTube",
       "tiktok":     "TikTok"
     }
+  },
+
+
+
+"offer5": {
+     "hero": {
+      "overline": "Bienvenue à DC Thermes",
+      "title": "Où luxe et sérénité convergent pour l’âme",
+      "ctaPrimary": "Commencer l’aventure",
+      "alt": {
+        "hero": "Image du spa DC Thermes"
+      },
+      "tagline": "Nous, au DC Thermes, transformons votre rituel spa en une expérience sensorielle",
+   "social": {
+     "fb": "https://facebook.com/DCthermes",
+     "ig": "https://instagram.com/DCthermes",
+     "yt": "https://youtube.com/DCthermes",
+     "ln": "https://linkedin.com/company/DCthermes"
+   }
+    },
+    "jumbotron": {
+   "headline": "REFINEMENT POUR LE CORPS ET L’ESPRIT.",
+   "subtext":  "Laissez-vous emporter par une journée hors du temps…"
+ },
+  "stats": {
+   "yearsExperience": "Années d’expérience",
+   "yearlyCustomer": "Clients annuels",
+   "experiencedStaffs": "Personnel expérimenté",
+   "positiveReviews": "Avis positifs"
+ },
+    "program": {
+      "heading": "Programme du séjour",
+      "day1": {
+        "label": "Jour 1",
+        "activities": [
+          "Accueil, infusion d’ancrage, installation dans votre bungalow. Un début tout en douceur, dans un environnement pur et naturel."
+        ]
+      },
+      "day2": {
+        "label": "Jour 2",
+        "activities": [
+          "Yoga doux au lever du soleil",
+          "Sauna sec pour commencer à évacuer les toxines",
+          "Piscine thermale chauffée pour la relaxation articulaire et musculaire",
+          "Gommage au sel de l’Himalaya pour stimuler la circulation lymphatique",
+          "Massage détox au sel pour entamer un nettoyage profond du corps"
+        ]
+      },
+      "day3": {
+        "label": "Jour 3",
+        "activities": [
+          "Yoga respiration & énergie",
+          "Bol d’Air Jacquier : boost d’oxygénation cellulaire",
+          "Douche à jet pour réactiver la circulation sanguine et lymphatique",
+          "Bain hydromassant pour détendre les tensions enfouies",
+          "Enveloppement aux algues : minéraux, fermeté, peau lumineuse",
+          "Modelage sous affusion : sensation de reset total"
+        ]
+      },
+      "day4": {
+        "label": "Jour 4",
+        "activities": [
+          "Yoga méditatif",
+          "Bol d’Air Jacquier",
+          "Sauna + piscine thermale",
+          "Bain au magnésium pour la récupération musculaire et l’apaisement mental",
+          "Massage traditionnel profond pour une harmonisation énergétique"
+        ]
+      },
+      "day5": {
+        "label": "Jour 5",
+        "activities": [
+          "Yoga dynamisant",
+          "Bol d’Air Jacquier",
+          "Soin visage à la spiruline (effet lissant, antioxydant)",
+          "Cupping thérapie + serviette de feu : stimulation circulatoire et énergétique"
+        ]
+      },
+      "day6": {
+        "label": "Jour 6",
+        "activities": [
+          "Yoga d’intégration",
+          "Bol d’Air Jacquier",
+          "Douche à jet",
+          "Piscine thermale",
+          "Hammam Mille et Une Nuits",
+          "Massage relaxant"
+        ]
+      },
+      "day7": {
+        "label": "Jour 7",
+        "activities": [
+          "Conseils de prolongation, rituel de clôture, carnet de bien-être à emporter."
+        ]
+      }
+    },
+    "about": {
+      "title": "Pourquoi choisir DC Thermes à Dakhla Club ?",
+      "points": [
+        "Centre unique entre désert, océan et lagon",
+        "Soins marins Thalgo & technologies holistiques",
+        "Équipe de thérapeutes certifiées",
+        "Atmosphère zen, élégante et confidentielle"
+      ],
+      "alt": {
+        "image": "Centre DC Thermes à Dakhla, entre désert et lagon"
+      }
+    },
+    "faq": {
+      "heading": "Foire aux questions",
+      "items": []
+    }
   }
-
-
-
 
 }
 

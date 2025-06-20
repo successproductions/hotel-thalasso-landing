@@ -201,6 +201,7 @@
     }
   },
   "clientsCarousel":{
+    "title": "WHAT OUR GUESTS SAY",
     "testimonial1": "I tried the ice baths and loved it!",
     "testimonial2": "After kiting, it's so relaxing",
     "testimonial3": "The best spa i've ever been to in my life",
@@ -257,6 +258,118 @@
       "facebook":    "Facebook",
       "youtube":     "YouTube",
       "tiktok":     "TikTok"
+    }
+  },
+
+
+
+  "offer5": {
+     "hero": {
+      "overline": "Welcome to DC Thermes",
+      "title": "Where luxury and serenity converge the soul",
+      "ctaPrimary": "Get Started",
+      "alt": {
+        "hero": "Image of DC Thermes spa"
+      },
+      "tagline": "At DC Thermes, we turn your spa ritual into an unforgettable sensory journey.",
+  "social": {
+    "fb": "https://facebook.com/DCthermes",
+    "ig": "https://instagram.com/DCthermes",
+    "yt": "https://youtube.com/DCthermes",
+    "ln": "https://linkedin.com/company/DCthermes"
+  }
+    },
+    "jumbotron": {
+   "headline": "REFINEMENT FOR THE BODY AND MIND.",
+   "subtext":  "Vivamus interdum aliquet gravida. Quisque in nibh tempor, sodales orci nec."
+ },
+  "stats": {
+   "yearsExperience": "Years of Experience",
+   "yearlyCustomer": "Yearly Customers",
+   "experiencedStaffs": "Experienced Staffs",
+   "positiveReviews": "Positive Reviews"
+ },
+    "program": {
+      "heading": "Retreat Programme",
+      "day1": {
+        "label": "Day 1",
+        "activities": [
+          "Arrival at Dakhla Club: welcome, grounding tea, check-in to your bungalow. A gentle start in a pure natural setting."
+        ]
+      },
+      "day2": {
+        "label": "Day 2",
+        "activities": [
+          "Gentle sunrise yoga",
+          "Dry sauna to begin toxin release",
+          "Heated thermal pool for joint and muscle relaxation",
+          "Himalayan salt scrub to stimulate lymphatic circulation",
+          "Salt detox massage for deep body cleansing"
+        ]
+      },
+      "day3": {
+        "label": "Day 3",
+        "activities": [
+          "Breathwork & energizing yoga",
+          "Bol d’Air Jacquier for cellular oxygenation",
+          "Jet shower to boost blood and lymph circulation",
+          "Hydromassage bath to release deep tension",
+          "Algae wrap for minerals, firmness, and radiance",
+          "Affusion massage for a total reset sensation"
+        ]
+      },
+      "day4": {
+        "label": "Day 4",
+        "activities": [
+          "Meditative yoga",
+          "Bol d’Air Jacquier",
+          "Sauna & thermal pool",
+          "Magnesium bath for muscle recovery and mental calm",
+          "Deep traditional massage for energetic alignment"
+        ]
+      },
+      "day5": {
+        "label": "Day 5",
+        "activities": [
+          "Energizing yoga",
+          "Bol d’Air Jacquier",
+          "Spirulina facial (smoothing & antioxidant)",
+          "Cupping therapy + fire towel for deep energy and circulation"
+        ]
+      },
+      "day6": {
+        "label": "Day 6",
+        "activities": [
+          "Integration yoga",
+          "Bol d’Air Jacquier",
+          "Jet shower",
+          "Thermal pool",
+          "“Thousand and One Nights” hammam",
+          "Relaxing massage"
+        ]
+      },
+      "day7": {
+        "label": "Day 7",
+        "activities": [
+          "Departure: closing ritual, take-home wellness journal."
+        ]
+      }
+    },
+    "about": {
+      "title": "Why choose DC Thermes at Dakhla Club?",
+      "points": [
+        "Unique center between desert, ocean, and lagoon",
+        "Marine Thalgo treatments & holistic technologies",
+        "Team of certified therapists",
+        "Zen, elegant, and confidential atmosphere"
+      ],
+      "alt": {
+        "image": "DC Thermes at Dakhla Club, between desert and lagoon"
+      }
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": []
     }
   }
 

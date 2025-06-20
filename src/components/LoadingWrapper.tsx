@@ -9,7 +9,7 @@ export default function LoadingWrapper({ children }: Props) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // hide the overlay after 2 s
+    
     const t = setTimeout(() => setVisible(false), 1400);
     return () => clearTimeout(t);
   }, []);
