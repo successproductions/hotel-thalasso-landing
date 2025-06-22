@@ -64,17 +64,29 @@ export default function Header() {
             </a>
           ))}
           <DropdownMenu>
-  <DropdownMenuTrigger className="px-4 py-2">Offres</DropdownMenuTrigger>
-  <DropdownMenuContent className="bg-white dark:bg-stone-900">
-    <DropdownMenuItem asChild>
-      <Link href="/evasion-holistique-3-jours">Évasion 3 Jours</Link>
-    </DropdownMenuItem>
-    <DropdownMenuItem asChild>
-      <Link href="/sejour-serenite-5-jours">Sérénité 5 Jours</Link>
-    </DropdownMenuItem>
-  </DropdownMenuContent>
-</DropdownMenu>
+            <DropdownMenuTrigger
+              className="relative font-medium transition hover:text-teal-700"
+            >
+              {t("offers")}
+            </DropdownMenuTrigger>
 
+            <DropdownMenuContent
+              side="bottom"
+              align="start"
+              className="bg-white dark:bg-[#131212] rounded-md shadow-lg"
+            >
+              <DropdownMenuItem asChild>
+                <a href="/evasion-holistique-3-jours" className="px-4 py-2 block">
+                  Évasion 3 Jours
+                </a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a href="/sejour-serenite-5-jours" className="px-4 py-2 block">
+                  Sérénité 5 Jours
+                </a>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         {/* Logo */}

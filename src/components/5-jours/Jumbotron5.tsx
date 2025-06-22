@@ -16,10 +16,10 @@ export default function Jumbotron5() {
   ]
 
   return (
-    <section ref={ref} className=" bg-stone-50 h-[35vh] dark:bg-[#080b12] relative px-12 md:px-20 lg:px-64 ">
+    <section ref={ref} className=" bg-stone-50 lg:h-[50vh] xl:h[35vh] dark:bg-[#080b12] relative px-12 md:px-20 lg:px-64 ">
       {/* Main Headline - Left Side */}
-      <div className="max-w-6xl pt-16 md:pt-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
+      <div className="max-w-6xl pt-16 md:pt-8">
+        <h1 className="text-3xl md:text-3xl lg:text-5xl xl:text-6xl leading-tight">
           <span className="text-stone-900 dark:text-gray-50 font-trajan">{t('jumbotron.headline')}</span>{" "}
           <span className="text-stone-500 dark:text-stone-400 font-trajan ">
             {t('jumbotron.subtext')}
