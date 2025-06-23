@@ -75,7 +75,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         Swal.fire({
           icon: "success",
           title: t("success.title"),
-          text:  t("success.message"),
+          text:  t("success.text"),
           confirmButtonColor: "#166534",
         });
         setFormData({ name: "", country: "MA", phone: "", email: "", date: "", message: "" });
@@ -95,7 +95,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     }
   }
 
-  
+
   return (
     <section id="contact" className="w-full bg-stone-50 dark:bg-[#080b12] pt-6 md:pt-16 pb-16 px-6 text-gray-800 dark:text-gray-100 transition-colors">
       <div className="max-w-7xl mx-auto">

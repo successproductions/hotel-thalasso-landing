@@ -177,14 +177,15 @@
       }
     },
     "submit": "ENVOYER",
-    "errors": {
-      "missingTitle":"Champs requis manquants",
-      "missingText": "Veuillez remplir tous les champs obligatoires."
-    },
-    "success": {
-      "title": "Message envoyé !",
-      "text":  "Nous vous contacterons très bientôt."
-    },
+"errors": {
+    "missingFields": "Veuillez remplir tous les champs obligatoires.",
+    "server":        "Erreur serveur",
+    "unknown":       "Une erreur inconnue est survenue"
+  },
+  "success": {
+    "title":   "Message envoyé !",
+    "message": "Nous vous contacterons très bientôt."
+  },
     "info": {
       "address": {
         "title":"Adresse",

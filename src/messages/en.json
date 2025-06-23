@@ -178,13 +178,14 @@
     },
     "submit": "SEND",
     "errors": {
-      "missingTitle":"Required fields missing",
-      "missingText": "Please fill in all required fields."
-    },
-    "success": {
-      "title": "Message sent!",
-      "text":  "We’ll get back to you very soon."
-    },
+    "missingFields": "Please fill in all required fields.",
+    "server":        "Server error",
+    "unknown":       "An unknown error occurred"
+  },
+  "success": {
+    "title":   "Message sent!",
+    "message": "We’ll be in touch soon."
+  },
     "info": {
       "address": {
         "title":"Address",
