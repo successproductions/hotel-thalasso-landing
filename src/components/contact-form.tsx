@@ -9,6 +9,7 @@ import { Textarea }     from "@/components/ui/textarea";
 import { MapPin, Phone, Mail } from "lucide-react";
 import Swal             from 'sweetalert2';
 import { useTranslations } from 'next-intl';
+import { usePathname } from "next/navigation";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,11 @@ export default function ContactForm() {
     date:        "",      
     message:     "",
   });
+
+  const pathname = usePathname();
+  const is3 = pathname?.includes("evasion-holistique-3-jours");
+  const is5 = pathname?.includes("sejour-serenite-5-jours");
+  const status = is3 ? "3 jours" : is5 ? "5 jours" : "";
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -54,12 +60,14 @@ const handleSubmit = async (e: React.FormEvent) => {
       setFormData({ name: '', country: '', phone: '', email: '', date: '', message: '' });
     }, 800);
     try {
-const res = await fetch('/api/reservation', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData),
+const payload = { ...formData, status };
+     const res = await fetch("/api/reservation", {
+       method: "POST",
+       headers: { "Content-Type": "application/json" },
+       body: JSON.stringify(payload),
+
   });
-      const payload = await res.json();
+      const json = await res.json();
       if (res.ok && payload.status === 'success') {
         Swal.fire({
           icon: 'success',
@@ -69,7 +77,7 @@ const res = await fetch('/api/reservation', {
         });
         setFormData({ name: '', country: '', phone: '', email: '', date: '', message: '' });
       } else {
-        throw new Error(payload.error || 'Erreur serveur');
+        throw new Error(json.error || 'Erreur serveur');
       }
     } catch (err: unknown) {
       let message = 'Impossible d’envoyer la requête.';

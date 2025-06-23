@@ -24,20 +24,35 @@ export default function FeaturesWithImagesSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative w-full lg:w-1/2"
         >
-          <Image
-            src="/images/IMG_2150 (1).png"
-            alt={t("imageAlt1")}
-            width={600}
-            height={400}
-            className="rounded-2xl shadow-lg"
-          />
-          <Image
-            src="/images/6 (1).png"
-            alt={t("imageAlt2")}
-            width={320}
-            height={240}
-            className="absolute -top-8 -left-8 rounded-2xl shadow-lg border-4 border-white dark:border-gray-800"
-          />
+          {/* Main image with responsive aspect ratio */}
+          <div className="relative w-full aspect-[4/3] rounded-2xl shadow-lg overflow-hidden">
+            <Image
+              src="/images/IMG_2150 (1).png"
+              alt={t("imageAlt1")}
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Overlay image: smaller on mobile, offset less, clamps width */}
+          <div
+            className="
+              absolute
+              top-[-1.5rem] left-4
+              sm:top-[-2rem] sm:left-8
+              w-2/3 sm:w-1/2
+              aspect-[4/3]
+              rounded-2xl shadow-lg border-4 border-white dark:border-gray-800
+              overflow-hidden
+            "
+          >
+            <Image
+              src="/images/6 (1).png"
+              alt={t("imageAlt2")}
+              fill
+              className="object-cover"
+            />
+          </div>
         </motion.div>
 
         {/* Right: features list & WhatsApp CTA */}
