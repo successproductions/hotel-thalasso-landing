@@ -226,10 +226,24 @@
   },
   "footer": {
     "cta": {
-      "bannerText":  "DAKHLA IS CALLING…",
-      "headline":    "ARE YOU READY TO RECHARGE YOUR BATTERIES?",
-      "description": "3 days of holistic treatments, ancient rituals, and self-reconnection in a sanctuary between desert and ocean.",
-      "button":      "BOOK NOW"
+      "default": {
+      "bannerText": "Need a wellness break?",
+      "headline":   "BOOK YOUR PERFECT RETREAT",
+      "description":"Tailor-made stay between desert and ocean.",
+      "button":     "Book now"
+    },
+    "to3": {
+      "bannerText": "Looking for a quick getaway?",
+      "headline":   "CHECK OUT OUR 3-DAY ESCAPE",
+      "description":"An express detox to refresh body & mind.",
+      "button":     "View 3-Day Offer"
+    },
+    "to5": {
+      "bannerText": "Want more time to rejuvenate?",
+      "headline":   "DISCOVER OUR 5-DAY SERENITY RETREAT",
+      "description":"A full-reset experience for lasting wellness.",
+      "button":     "View 5-Day Retreat"
+    }
     },
     "brand": {
       "name":        "DakhlaClub",

@@ -47,7 +47,7 @@
     },
     "days": {
       "1": {
-        "title":        "Arrivée & Préparation",
+        "title":        "Accueil personnalisé",
         "subtitle":     "Arrivée & Préparation",
         "description":  "Installation en douceur pour commencer votre parenthèse bien-être. Prenez le temps de vous détendre et de vous recentrer, loin du rythme quotidien.",
         "activities":   [],
@@ -228,10 +228,24 @@
   },
   "footer": {
     "cta": {
-      "bannerText":  "DAKHLA IS CALLING…",
-      "headline":    "ÊTES-VOUS PRÊT(E) À RECHARGER VOS BATTERIES ?",
-      "description": "3 jours de soins holistiques, rituels ancestraux et reconnexion à soi dans un sanctuaire entre désert et océan.",
-      "button":      "RÉSERVEZ MAINTENANT"
+      "default": {
+      "bannerText": "Besoin d’un coup de boost ?",
+      "headline":   "RÉSERVEZ VOTRE PARENTHÈSE BIEN-ÊTRE",
+      "description":"Profitez d’un séjour sur-mesure entre désert et océan.",
+      "button":     "Réserver maintenant"
+    },
+    "to3": {
+      "bannerText": "Envie d’un week-end express ?",
+      "headline":   "DÉCOUVREZ NOTRE ÉVASION 3 JOURS",
+      "description":"Une cure détox rapide pour purifier corps et esprit.",
+      "button":     "Voir l’offre 3 Jours"
+    },
+    "to5": {
+      "bannerText": "Vous voulez aller plus loin ?",
+      "headline":   "EXPLOREZ LE SÉJOUR SÉRÉNITÉ 5 JOURS",
+      "description":"Un reset complet pour un bien-être durable.",
+      "button":     "Voir l’offre 5 Jours"
+    }
     },
     "brand": {
       "name":        "DakhlaClub",
