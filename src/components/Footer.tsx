@@ -1,36 +1,68 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import Image from "next/image";
 
 const Footer = () => {
   const t = useTranslations('footer');
+   const locale = useLocale();
+  const path   = usePathname();
+
+    const is5 = path.includes('sejour-serenite-5-jours');
+  const is3 = path.includes('evasion-holistique-3-jours');
+  const key = is5 ? 'to3' : is3 ? 'to5' : 'default';
+
+   const { bannerText, headline, description, button } = t.raw(`cta.${key}`) as {
+    bannerText: string;
+    headline:   string;
+    description:string;
+    button:     string;
+  };
+    const targetRoute = is5
+    ? `/${locale}/evasion-holistique-3-jours`
+    : is3
+    ? `/${locale}/sejour-serenite-5-jours`
+    : null;
 
   return (
     <footer className="bg-[#0c1b11] text-white pt-32 mt-6 relative">
       {/* CTA Banner */}
       <div className="absolute -top-32 left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 bg-cover bg-center bg-black/40 rounded-xl overflow-hidden shadow-lg">
-        <div className="p-4 md:p-10 text-center space-y-4 backdrop-blur-sm bg-black/30">
+        <div className="p-4 md:p-6 text-center space-y-4 backdrop-blur-sm bg-black/30">
           <p className="text-sm uppercase tracking-widest text-gray-300">
-            {t('cta.bannerText')}
+            {bannerText}
           </p>
           <h2 className="text-2xl md:text-4xl font-trajan">
-            {t('cta.headline')}
+            {headline}
           </h2>
           <p className="max-w-xl mx-auto text-1xl text-gray-300">
-            {t('cta.description')}
+            {description}
           </p>
-          <button className="mt-4 bg-white text-black px-6 py-2 rounded-full hover:bg-gray-100 transition"
-           onClick={() => {
-             const ell = document.getElementById('contact');
-             ell?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-           }}>
-            {t('cta.button')} →
-          </button>
+
+          {targetRoute ? (
+            <Link href={targetRoute}>
+              <button
+                className="mt-4 bg-white text-black px-6 py-2 rounded-full hover:bg-gray-100 transition"
+              >
+                {button} →
+              </button>
+            </Link>
+          ) : (
+            <button
+              className="mt-4 bg-white text-black px-6 py-2 rounded-full hover:bg-gray-100 transition"
+              onClick={() => {
+                document
+                  .getElementById('contact')
+                  ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              {button} →
+            </button>
+          )}
         </div>
       </div>
-
       {/* Footer Content */}
       <div className="max-w-7xl mx-auto px-4 pt-10 pb-20">
         <div className="grid md:grid-cols-5 gap-10">

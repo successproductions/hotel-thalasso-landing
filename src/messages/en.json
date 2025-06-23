@@ -201,6 +201,7 @@
     }
   },
   "clientsCarousel":{
+    "title": "WHAT OUR GUESTS SAY",
     "testimonial1": "I tried the ice baths and loved it!",
     "testimonial2": "After kiting, it's so relaxing",
     "testimonial3": "The best spa i've ever been to in my life",
@@ -225,10 +226,24 @@
   },
   "footer": {
     "cta": {
-      "bannerText":  "DAKHLA IS CALLING…",
-      "headline":    "ARE YOU READY TO RECHARGE YOUR BATTERIES?",
-      "description": "3 days of holistic treatments, ancient rituals, and self-reconnection in a sanctuary between desert and ocean.",
-      "button":      "BOOK NOW"
+      "default": {
+      "bannerText": "Need a wellness break?",
+      "headline":   "BOOK YOUR PERFECT RETREAT",
+      "description":"Tailor-made stay between desert and ocean.",
+      "button":     "Book now"
+    },
+    "to3": {
+      "bannerText": "Looking for a quick getaway?",
+      "headline":   "CHECK OUT OUR 3-DAY ESCAPE",
+      "description":"An express detox to refresh body & mind.",
+      "button":     "View 3-Day Offer"
+    },
+    "to5": {
+      "bannerText": "Want more time to rejuvenate?",
+      "headline":   "DISCOVER OUR 5-DAY SERENITY RETREAT",
+      "description":"A full-reset experience for lasting wellness.",
+      "button":     "View 5-Day Retreat"
+    }
     },
     "brand": {
       "name":        "DakhlaClub",
@@ -258,7 +273,144 @@
       "youtube":     "YouTube",
       "tiktok":     "TikTok"
     }
+  },
+
+
+
+  "offer5": {
+     "hero": {
+      "overline": "A PREMIUM RETREAT BY THE ATLANTIC OCEAN",  
+   "title":    "FOR THOSE READY TO FEEL BETTER…",  
+   "ctaPrimary": "BOOK YOUR MARINE SERENITY RETREAT",  
+      "alt": {
+        "hero": "Image of DC Thermes spa"
+      },
+      "tagline":  "Feeling heavy in your body, cluttered in your thoughts, and drained in your energy?"  ,
+  "social": {
+    "fb": "https://facebook.com/DCthermes",
+    "ig": "https://instagram.com/DCthermes",
+    "yt": "https://youtube.com/DCthermes",
+    "ln": "https://linkedin.com/company/DCthermes"
   }
-
-
+    },
+    "jumbotron": {
+   "headline": "A powerful and progressive retreat, created for deep renewal", 
+   "subtext":  "Set in a wild and pure environment between ocean, desert, and light"
+ },
+  "stats": {
+   "yearsExperience": "Years of Experience",
+   "yearlyCustomer": "Yearly Customers",
+   "experiencedStaffs": "Experienced Staffs",
+   "positiveReviews": "Positive Reviews"
+ },
+    "program": {
+      "heading": "Retreat Programme",
+      "day1": {
+        "label": "Day 1",
+        "activities": [
+          "Arrival at Dakhla Club: welcome, grounding tea, check-in to your bungalow. A gentle start in a pure natural setting."
+        ]
+      },
+      "day2": {
+        "label": "Day 2",
+        "activities": [
+          "Gentle sunrise yoga",
+          "Dry sauna to begin toxin release",
+          "Heated thermal pool for joint and muscle relaxation",
+          "Himalayan salt scrub to stimulate lymphatic circulation",
+          "Salt detox massage for deep body cleansing"
+        ]
+      },
+      "day3": {
+        "label": "Day 3",
+        "activities": [
+          "Breathwork & energizing yoga",
+          "Bol d’Air Jacquier for cellular oxygenation",
+          "Jet shower to boost blood and lymph circulation",
+          "Hydromassage bath to release deep tension",
+          "Algae wrap for minerals, firmness, and radiance",
+          "Affusion massage for a total reset sensation"
+        ]
+      },
+      "day4": {
+        "label": "Day 4",
+        "activities": [
+          "Meditative yoga",
+          "Bol d’Air Jacquier",
+          "Sauna & thermal pool",
+          "Magnesium bath for muscle recovery and mental calm",
+          "Deep traditional massage for energetic alignment"
+        ]
+      },
+      "day5": {
+        "label": "Day 5",
+        "activities": [
+          "Energizing yoga",
+          "Bol d’Air Jacquier",
+          "Spirulina facial (smoothing & antioxidant)",
+          "Cupping therapy + fire towel for deep energy and circulation"
+        ]
+      },
+      "day6": {
+        "label": "Day 6",
+        "activities": [
+          "Integration yoga",
+          "Bol d’Air Jacquier",
+          "Jet shower",
+          "Thermal pool",
+          "“Thousand and One Nights” hammam",
+          "Relaxing massage"
+        ]
+      },
+      "day7": {
+        "label": "Day 7",
+        "activities": [
+          "Departure: closing ritual, take-home wellness journal."
+        ]
+      }
+    },
+    "about": {
+      "title": "Why choose DC Thermes at Dakhla Club?",
+      "points": [
+        "Unique center between desert, ocean, and lagoon",
+        "Marine Thalgo treatments & holistic technologies",
+        "Team of certified therapists",
+        "Zen, elegant, and confidential atmosphere"
+      ],
+      "alt": {
+        "image": "DC Thermes at Dakhla Club, between desert and lagoon"
+      }
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": []
+    },
+       "introduction": {
+  "whyTitle":      "Who is this retreat for?",
+  "headlineLine1": "Those feeling chronic fatigue despite rest",
+  "description":   "This 6-day program blends targeted yoga, sauna, thermal baths, and thalasso treatments to deeply rebalance your body and mind.",
+  "imageAlt":      "Yoga session by the ocean"
+ },
+  "exclusiveOffer5": {
+    "title":       "⏳ Limited Edition – 10 participants maximum",
+    "description": "To guarantee an intimate space, we only open 10 seats per session",
+    "nextSession": "📅 The next session will close soon"
+    },  
+"imagesSection": {
+  "heading": "Our Methodological Approach",
+  "features": [
+    "Progressive intensity build-up",
+    "Synergy of manual therapies & tech",
+    "Targeted yoga practices",
+    "Chronobiology & physiological goals",
+    "Holistic & sensory treatments"
+  ],
+  "ctaReserve": "Reserve your spot",
+  "ctaWhatsApp": "WhatsApp Booking",
+  "imageAlt1": "Thermal pool with ocean view",
+  "imageAlt2": "Sunrise yoga session"
+}
+  
+}
+   
 }

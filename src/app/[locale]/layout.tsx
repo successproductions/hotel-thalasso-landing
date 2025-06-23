@@ -11,7 +11,6 @@ export async function generateStaticParams() {
   return [{ locale: 'fr' }, { locale: 'en' }];
 }
 
-// Generate metadata for each locale
 export async function generateMetadata({
   params,
 }: {

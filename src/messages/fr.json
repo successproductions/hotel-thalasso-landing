@@ -8,6 +8,7 @@
     "about": "À propos",
     "services": "Séjours",
     "contact": "Contact",
+    "offers":"Offres",
     "button": {
     "book": "RÉSERVER"
   }
@@ -46,7 +47,7 @@
     },
     "days": {
       "1": {
-        "title":        "Arrivée & Préparation",
+        "title":        "Accueil personnalisé",
         "subtitle":     "Arrivée & Préparation",
         "description":  "Installation en douceur pour commencer votre parenthèse bien-être. Prenez le temps de vous détendre et de vous recentrer, loin du rythme quotidien.",
         "activities":   [],
@@ -200,9 +201,10 @@
     }
   },
 "clientsCarousel":{
-  "testimonial1" :"J'ai testé les ice baths et j'ai adoré !",
+  "title": "NOS CLIENTS TÉMOIGNENT",
+  "testimonial1" :"J'ai testé kiting et j'ai adoré !",
   "testimonial2" :"Après avoir fait du cerf-volant, c’est tellement relaxant",
-  "testimonial3" :"Le meilleur spa que j'aie faitde toute ma vie",
+  "testimonial3" :"Le meilleur spa que j'aie fait de toute ma vie",
   "testimonial4" :"Dakhla offre un cadre unique pour se reconnecter avec soi-même.",
   "testimonial5" :"Je sens que ma peau est bien hydratée"
 },
@@ -226,10 +228,24 @@
   },
   "footer": {
     "cta": {
-      "bannerText":  "DAKHLA IS CALLING…",
-      "headline":    "ÊTES-VOUS PRÊT(E) À RECHARGER VOS BATTERIES ?",
-      "description": "3 jours de soins holistiques, rituels ancestraux et reconnexion à soi dans un sanctuaire entre désert et océan.",
-      "button":      "RÉSERVEZ MAINTENANT"
+      "default": {
+      "bannerText": "Besoin d’un coup de boost ?",
+      "headline":   "RÉSERVEZ VOTRE PARENTHÈSE BIEN-ÊTRE",
+      "description":"Profitez d’un séjour sur-mesure entre désert et océan.",
+      "button":     "Réserver maintenant"
+    },
+    "to3": {
+      "bannerText": "Envie d’un week-end express ?",
+      "headline":   "DÉCOUVREZ NOTRE ÉVASION 3 JOURS",
+      "description":"Une cure détox rapide pour purifier corps et esprit.",
+      "button":     "Voir l’offre 3 Jours"
+    },
+    "to5": {
+      "bannerText": "Vous voulez aller plus loin ?",
+      "headline":   "EXPLOREZ LE SÉJOUR SÉRÉNITÉ 5 JOURS",
+      "description":"Un reset complet pour un bien-être durable.",
+      "button":     "Voir l’offre 5 Jours"
+    }
     },
     "brand": {
       "name":        "DakhlaClub",
@@ -259,10 +275,147 @@
       "youtube":     "YouTube",
       "tiktok":     "TikTok"
     }
+  },
+
+
+
+"offer5": {
+     "hero": {
+      "overline": "UNE CURE PREMIUM AU BORD DE L’ATLANTIQUE",
+      "title":    "POUR CELLES ET CEUX QUI VEULENT ALLER MIEUX… ", 
+      "ctaPrimary": "RÉSERVEZ VOTRE CURE SÉRÉNITÉ MARINE",  
+      "alt": {
+        "hero": "Image du spa DC Thermes"
+      },
+      "tagline":  "Vous sentez votre corps lourd, vos pensées encombrées, votre énergie épuisée ?",
+   "social": {
+     "fb": "https://facebook.com/DCthermes",
+     "ig": "https://instagram.com/DCthermes",
+     "yt": "https://youtube.com/DCthermes",
+     "ln": "https://linkedin.com/company/DCthermes"
+   }
+    },
+    "jumbotron": {
+   "headline": "Une cure puissante et progressive, conçue pour un reset profond",  
+  "subtext":  "Dans un cadre sauvage et pur, entre mer, désert et lumière"  
+ },
+  "stats": {
+   "yearsExperience": "Années d’expérience",
+   "yearlyCustomer": "Clients annuels",
+   "experiencedStaffs": "Personnel expérimenté",
+   "positiveReviews": "Avis positifs"
+ },
+    "program": {
+      "heading": "PROGRAMME DU SÉJOUR",
+      "day1": {
+        "label": "Jour 1",
+        "activities": [
+          "Accueil, infusion d’ancrage, installation dans votre bungalow. Un début tout en douceur, dans un environnement pur et naturel."
+        ]
+      },
+      "day2": {
+        "label": "Jour 2",
+        
+        "activities": [
+          "Yoga doux au lever du soleil",
+          "Sauna sec pour commencer à évacuer les toxines",
+          "Piscine thermale chauffée pour la relaxation articulaire et musculaire",
+          "Gommage au sel de l’Himalaya pour stimuler la circulation lymphatique",
+          "Massage détox au sel pour entamer un nettoyage profond du corps"
+        ]
+      },
+      "day3": {
+        "label": "Jour 3",
+        "activities": [
+          "Yoga respiration & énergie",
+          "Bol d’Air Jacquier : boost d’oxygénation cellulaire",
+          "Douche à jet pour réactiver la circulation sanguine et lymphatique",
+          "Bain hydromassant pour détendre les tensions enfouies",
+          "Enveloppement aux algues : minéraux, fermeté, peau lumineuse",
+          "Modelage sous affusion : sensation de reset total"
+        ]
+      },
+      "day4": {
+        "label": "Jour 4",
+        "activities": [
+          "Yoga méditatif",
+          "Bol d’Air Jacquier",
+          "Sauna + piscine thermale",
+          "Bain au magnésium pour la récupération musculaire et l’apaisement mental",
+          "Massage traditionnel profond pour une harmonisation énergétique"
+        ]
+      },
+      "day5": {
+        "label": "Jour 5",
+        "activities": [
+          "Yoga dynamisant",
+          "Bol d’Air Jacquier",
+          "Soin visage à la spiruline (effet lissant, antioxydant)",
+          "Cupping thérapie + serviette de feu : stimulation circulatoire et énergétique"
+        ]
+      },
+      "day6": {
+        "label": "Jour 6",
+        "activities": [
+          "Yoga d’intégration",
+          "Bol d’Air Jacquier",
+          "Douche à jet",
+          "Piscine thermale",
+          "Hammam Mille et Une Nuits",
+          "Massage relaxant"
+        ]
+      },
+      "day7": {
+        "label": "Jour 7",
+        "activities": [
+          "Conseils de prolongation, rituel de clôture, carnet de bien-être à emporter."
+        ]
+      }
+    },
+    "about": {
+      "title": "Pourquoi choisir DC Thermes à Dakhla Club ?",
+      "points": [
+        "Centre unique entre désert, océan et lagon",
+        "Soins marins Thalgo & technologies holistiques",
+        "Équipe de thérapeutes certifiées",
+        "Atmosphère zen, élégante et confidentielle"
+      ],
+      "alt": {
+        "image": "Centre DC Thermes à Dakhla, entre désert et lagon"
+      }
+    },
+
+    "introduction": {
+  "whyTitle":      "Pour qui est ce séjour ?",
+  "headlineLine1": "Pour ceux qui ressentent une fatigue chronique malgré le repos",
+  "description":   "Ce programme de 6 jours combine yoga ciblé, sauna, piscines thermales et soins thalasso pour rééquilibrer profondément votre corps et votre esprit.",
+  "imageAlt":      "Séance de yoga au bord de l’océan"
+ },
+    "faq": {
+      "heading": "Foire aux questions",
+      "items": []
+    },
+    "exclusiveOffer5": {
+    "title":       "⏳ Édition limitée – 10 participants maximum",
+    "description": "Pour garantir un espace intime, nous ouvrons uniquement 10 places par session",
+    "nextSession": "📅 Prochaine session fermera bientôt ses portes"
+  },
+   "imagesSection": {
+  "heading": "Notre approche méthodologique",
+  "features": [
+    "Montée progressive en intensité",
+    "Synergie entre soins manuels et technologies",
+    "Pratiques de yoga ciblées",
+    "Chronobiologie et objectifs physiologiques",
+    "Soins holistiques et sensoriels"
+  ],
+  "ctaReserve": "Réservez votre place",
+  "ctaWhatsApp": "Réservation WhatsApp",
+  "imageAlt1": "Piscine thermale avec vue sur l'océan",
+  "imageAlt2": "Séance de yoga au lever du soleil"
+}
   }
-
-
-
+ 
 
 }
 
