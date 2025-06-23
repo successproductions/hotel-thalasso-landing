@@ -376,15 +376,27 @@
   "headlineLine1": "Those feeling chronic fatigue despite rest",
   "description":   "This 6-day program blends targeted yoga, sauna, thermal baths, and thalasso treatments to deeply rebalance your body and mind.",
   "imageAlt":      "Yoga session by the ocean"
- }
-  },
-    "exclusiveOffer5": {
-       "title": "...",
-       "description": "...",
-       "nextSession": "..."
-    }
+ },
+  "exclusiveOffer5": {
+    "title":       "⏳ Limited Edition – 10 participants maximum",
+    "description": "To guarantee an intimate space, we only open 10 seats per session",
+    "nextSession": "📅 The next session will close soon"
+    },  
+"imagesSection": {
+  "heading": "Our Methodological Approach",
+  "features": [
+    "Progressive intensity build-up",
+    "Synergy of manual therapies & tech",
+    "Targeted yoga practices",
+    "Chronobiology & physiological goals",
+    "Holistic & sensory treatments"
+  ],
+  "ctaReserve": "Reserve your spot",
+  "ctaWhatsApp": "WhatsApp Booking",
+  "imageAlt1": "Thermal pool with ocean view",
+  "imageAlt2": "Sunrise yoga session"
+}
   
-  
-
-
+}
+   
 }

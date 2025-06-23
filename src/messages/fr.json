@@ -384,8 +384,23 @@
     "title":       "⏳ Édition limitée – 10 participants maximum",
     "description": "Pour garantir un espace intime, nous ouvrons uniquement 10 places par session",
     "nextSession": "📅 Prochaine session fermera bientôt ses portes"
+  },
+   "imagesSection": {
+  "heading": "Notre approche méthodologique",
+  "features": [
+    "Montée progressive en intensité",
+    "Synergie entre soins manuels et technologies",
+    "Pratiques de yoga ciblées",
+    "Chronobiologie et objectifs physiologiques",
+    "Soins holistiques et sensoriels"
+  ],
+  "ctaReserve": "Réservez votre place",
+  "ctaWhatsApp": "Réservation WhatsApp",
+  "imageAlt1": "Piscine thermale avec vue sur l'océan",
+  "imageAlt2": "Séance de yoga au lever du soleil"
+}
   }
-  }
+ 
 
 }
 

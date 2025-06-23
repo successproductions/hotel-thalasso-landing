@@ -58,9 +58,17 @@ export default function Hero5() {
           {t("title")}
         </h1>
         <div className='mt-8'>
-          <Button asChild>
-            <a href='#reservation'>{t("ctaPrimary")} &rarr;</a>
-          </Button>
+          <Button
+              className="relative overflow-hidden px-8 py-3 bg-green-900 text-white font-trajan tracking-wide rounded-full shadow-md transition-all duration-300 ease-in-out hover:bg-green-800 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              size="lg"
+              onClick={() => {
+                       const el = document.getElementById('programme');
+                       el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                     }}
+            >
+              <span className="z-10 relative">{t("ctaPrimary")}</span>
+              <span className="absolute inset-0 bg-white opacity-10 blur-md scale-110 group-hover:opacity-20 transition-opacity duration-500" />
+            </Button>
         </div>
       </div>
 
@@ -71,17 +79,17 @@ export default function Hero5() {
 
       {/* Bottom-right socials */}
       <div className='absolute bottom-4 right-4 flex space-x-4 text-white/80 text-sm'>
-        <a href={t("social.fb")} target='_blank' rel='noopener'>
+        <a href="https://www.facebook.com/DakhlaClub/" target='_blank' rel='noopener'>
           FB
         </a>
-        <a href={t("social.ig")} target='_blank' rel='noopener'>
+        <a href="https://www.instagram.com/hoteldakhlaclub/" target='_blank' rel='noopener'>
           IG
         </a>
-        <a href={t("social.yt")} target='_blank' rel='noopener'>
+        <a href="https://youtube.com/@dakhlaclub1745?si=D_TKjBar-WzAMcnY" target='_blank' rel='noopener'>
           YT
         </a>
-        <a href={t("social.ln")} target='_blank' rel='noopener'>
-          LN
+        <a href="https://www.tiktok.com/@dakhlaclubhotel?_r=1&_d=eec80jahcl3m4g&sec_uid=MS4wLjABAAAADARMZsKCuqIf7jXLvKH9cUwpN_XYQepPD2WVmf-o43PiQv2KCVp9jL4qzuc4Sil4&share_author_id=7205863435829543941&sharer_language=fr&source=h5_m&u_code=e6ih6ce9mg3kj5&ug_btm=b8727,b0&social_share_type=4&utm_source=copy&sec_user_id=MS4wLjABAAAADARMZsKCuqIf7jXLvKH9cUwpN_XYQepPD2WVmf-o43PiQv2KCVp9jL4qzuc4Sil4&tt_from=copy&utm_medium=ios&utm_campaign=client_share&enable_checksum=1&user_id=7205863435829543941&share_link_id=080768DC-CD71-466C-B232-9A202D618A60&share_app_id=1233" target='_blank' rel='noopener'>
+          TK
         </a>
       </div>
     </section>

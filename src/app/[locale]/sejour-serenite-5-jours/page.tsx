@@ -11,6 +11,7 @@ import Footer from '@/components/Footer';
 import RewardsSection from '@/components/RewardsSection';
 import LimitedEditionSection from '@/components/5-jours/LimitedEditionSection';
 import ClientsCarousel from '@/components/ClientsCarousel';
+import MethodologySection5 from '@/components/5-jours/MethodologySection5';
 
 
 
@@ -25,6 +26,7 @@ export default function Page() {
       <Jumbotron5 />
       <Program5 />
       <IntroductionSection5/>
+      <MethodologySection5/>
       <LimitedEditionSection/>
       <ClientsCarousel/>
       <FAQSection />
