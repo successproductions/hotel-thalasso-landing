@@ -267,13 +267,13 @@
 
 "offer5": {
      "hero": {
-      "overline": "Bienvenue à DC Thermes",
-      "title": "Où luxe et sérénité convergent pour l’âme",
-      "ctaPrimary": "Commencer l’aventure",
+      "overline": "Une cure premium au bord de l’Atlantique",
+      "title":    "Pour celles et ceux qui veulent aller mieux… durablement", 
+      "ctaPrimary": "Réservez votre cure Sérénité Marine",  
       "alt": {
         "hero": "Image du spa DC Thermes"
       },
-      "tagline": "Nous, au DC Thermes, transformons votre rituel spa en une expérience sensorielle",
+      "tagline":  "Vous sentez votre corps lourd, vos pensées encombrées, votre énergie épuisée ?",
    "social": {
      "fb": "https://facebook.com/DCthermes",
      "ig": "https://instagram.com/DCthermes",
@@ -282,8 +282,8 @@
    }
     },
     "jumbotron": {
-   "headline": "REFINEMENT POUR LE CORPS ET L’ESPRIT.",
-   "subtext":  "Laissez-vous emporter par une journée hors du temps…"
+   "headline": "Une cure puissante et progressive, conçue pour un reset profond",  
+  "subtext":  "Dans un cadre sauvage et pur, entre mer, désert et lumière"  
  },
   "stats": {
    "yearsExperience": "Années d’expérience",
@@ -292,7 +292,7 @@
    "positiveReviews": "Avis positifs"
  },
     "program": {
-      "heading": "Programme du séjour",
+      "heading": "PROGRAMME DU SÉJOUR",
       "day1": {
         "label": "Jour 1",
         "activities": [
@@ -369,10 +369,22 @@
         "image": "Centre DC Thermes à Dakhla, entre désert et lagon"
       }
     },
+
+    "introduction": {
+  "whyTitle":      "Pour qui est ce séjour ?",
+  "headlineLine1": "Pour ceux qui ressentent une fatigue chronique malgré le repos",
+  "description":   "Ce programme de 6 jours combine yoga ciblé, sauna, piscines thermales et soins thalasso pour rééquilibrer profondément votre corps et votre esprit.",
+  "imageAlt":      "Séance de yoga au bord de l’océan"
+ },
     "faq": {
       "heading": "Foire aux questions",
       "items": []
-    }
+    },
+    "exclusiveOffer5": {
+    "title":       "⏳ Édition limitée – 10 participants maximum",
+    "description": "Pour garantir un espace intime, nous ouvrons uniquement 10 places par session",
+    "nextSession": "📅 Prochaine session fermera bientôt ses portes"
+  }
   }
 
 }

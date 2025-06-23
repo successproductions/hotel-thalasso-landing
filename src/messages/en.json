@@ -265,13 +265,13 @@
 
   "offer5": {
      "hero": {
-      "overline": "Welcome to DC Thermes",
-      "title": "Where luxury and serenity converge the soul",
-      "ctaPrimary": "Get Started",
+      "overline": "A premium retreat by the Atlantic Ocean",  
+   "title":    "For those ready to feel better… for good",  
+   "ctaPrimary": "Book your Marine Serenity Retreat",  
       "alt": {
         "hero": "Image of DC Thermes spa"
       },
-      "tagline": "At DC Thermes, we turn your spa ritual into an unforgettable sensory journey.",
+      "tagline":  "Feeling heavy in your body, cluttered in your thoughts, and drained in your energy?"  ,
   "social": {
     "fb": "https://facebook.com/DCthermes",
     "ig": "https://instagram.com/DCthermes",
@@ -280,8 +280,8 @@
   }
     },
     "jumbotron": {
-   "headline": "REFINEMENT FOR THE BODY AND MIND.",
-   "subtext":  "Vivamus interdum aliquet gravida. Quisque in nibh tempor, sodales orci nec."
+   "headline": "A powerful and progressive retreat, created for deep renewal", 
+   "subtext":  "Set in a wild and pure environment between ocean, desert, and light"
  },
   "stats": {
    "yearsExperience": "Years of Experience",
@@ -370,8 +370,21 @@
     "faq": {
       "heading": "Frequently Asked Questions",
       "items": []
+    },
+       "introduction": {
+  "whyTitle":      "Who is this retreat for?",
+  "headlineLine1": "Those feeling chronic fatigue despite rest",
+  "description":   "This 6-day program blends targeted yoga, sauna, thermal baths, and thalasso treatments to deeply rebalance your body and mind.",
+  "imageAlt":      "Yoga session by the ocean"
+ }
+  },
+    "exclusiveOffer5": {
+       "title": "...",
+       "description": "...",
+       "nextSession": "..."
     }
-  }
+  
+  
 
 
 }

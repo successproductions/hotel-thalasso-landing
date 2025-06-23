@@ -6,9 +6,13 @@ import ContactForm from '@/components/contact-form';
 import Jumbotron5 from '@/components/5-jours/Jumbotron5';
 import { metadata } from './metadata';  
 import Header from '@/components/Header';
-import IntroductionSection from '@/components/IntroductionSection';
+import IntroductionSection5 from '@/components/5-jours/IntroductionSection5';
 import Footer from '@/components/Footer';
 import RewardsSection from '@/components/RewardsSection';
+import LimitedEditionSection from '@/components/5-jours/LimitedEditionSection';
+import ClientsCarousel from '@/components/ClientsCarousel';
+
+
 
 
 export { metadata };
@@ -20,7 +24,9 @@ export default function Page() {
       <Hero5 />
       <Jumbotron5 />
       <Program5 />
-      <IntroductionSection/>
+      <IntroductionSection5/>
+      <LimitedEditionSection/>
+      <ClientsCarousel/>
       <FAQSection />
       <ContactForm />
       <RewardsSection />
