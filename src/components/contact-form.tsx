@@ -60,39 +60,42 @@ const handleSubmit = async (e: React.FormEvent) => {
       setFormData({ name: '', country: '', phone: '', email: '', date: '', message: '' });
     }, 800);
     try {
-const payload = { ...formData, status };
-     const res = await fetch("/api/reservation", {
-       method: "POST",
-       headers: { "Content-Type": "application/json" },
-       body: JSON.stringify(payload),
+      // 2️⃣ Build payload including status
+      const payload = { ...formData, status };
 
-  });
+      const res = await fetch("/api/reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
       const json = await res.json();
-      if (res.ok && payload.status === 'success') {
+
+      // 3️⃣ Only treat it as success when the API & Sheets both succeed
+      if (res.ok && json.status === "success") {
         Swal.fire({
-          icon: 'success',
-          title: 'Réservé !',
-          text:  'Votre demande a bien été envoyée.',
-          confirmButtonColor: '#166534',
+          icon: "success",
+          title: t("success.title"),
+          text:  t("success.message"),
+          confirmButtonColor: "#166534",
         });
-        setFormData({ name: '', country: '', phone: '', email: '', date: '', message: '' });
+        setFormData({ name: "", country: "MA", phone: "", email: "", date: "", message: "" });
       } else {
-        throw new Error(json.error || 'Erreur serveur');
+        throw new Error(json.error || "Erreur serveur");
       }
     } catch (err: unknown) {
-      let message = 'Impossible d’envoyer la requête.';
-      if (err instanceof Error) {
-        message = err.message;
-      }
       Swal.fire({
-        icon: 'error',
-        title: 'Erreur',
-        text:  message,
-        confirmButtonColor: '#166534',
+        icon: "error",
+        title: t("errors.server"),
+        text:
+          err instanceof Error
+            ? err.message
+            : t("errors.unknown"),
+        confirmButtonColor: "#166534",
       });
     }
-  };
+  }
 
+  
   return (
     <section id="contact" className="w-full bg-stone-50 dark:bg-[#080b12] pt-6 md:pt-16 pb-16 px-6 text-gray-800 dark:text-gray-100 transition-colors">
       <div className="max-w-7xl mx-auto">
