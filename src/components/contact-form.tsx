@@ -75,7 +75,7 @@ const handleSubmit = async (e: React.FormEvent) => {
         Swal.fire({
           icon: "success",
           title: t("success.title"),
-          text:  t("success.text"),
+          text:  t("success.message"),
           confirmButtonColor: "#166534",
         });
         setFormData({ name: "", country: "MA", phone: "", email: "", date: "", message: "" });
