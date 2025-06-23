@@ -82,9 +82,8 @@ export default function WellnessProgramEnhanced({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                onClick={() =>
-              setHoveredCard((prev) => (prev === index ? null : index))
-           }
+                onClick={() => setHoveredCard((prev) => (prev === index ? null : index))
+            }
               >
                 <Card className="relative overflow-hidden cursor-pointer h-64 group">
                   {/* Background Image */}
