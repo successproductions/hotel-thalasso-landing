@@ -25,14 +25,14 @@ export default function FeaturesWithImagesSection() {
           className="relative w-full lg:w-1/2"
         >
           <Image
-            src="/images/serenite5/pool-view.jpg"
+            src="/images/IMG_2150 (1).png"
             alt={t("imageAlt1")}
             width={600}
             height={400}
             className="rounded-2xl shadow-lg"
           />
           <Image
-            src="/images/serenite5/yoga-session.jpg"
+            src="/images/6 (1).png"
             alt={t("imageAlt2")}
             width={320}
             height={240}

@@ -17,11 +17,11 @@ const dayIcons = [Calendar, Sunrise, Wind, Heart, Sparkles, Waves, Sun]
 const defaultImages = [
   "/images/DJI_0070.png",
   "/images/centrethalassoDakhla.jpg",
-  "/images/IMG_2150 (1).png",
-  "/images/IMG_2150 (1).png",
-  "/images/IMG_2150 (1).png",
-  "/images/IMG_2150 (1).png",
-  "/images/IMG_2150 (1).png",
+  "/images/Piscine_thermale.png",
+  "/images/sauna_ritual.png",
+  "/images/Salle-de-massage.png",
+  "/images/modelage.jpg",
+  "/images/hydro_massage.png",
 ]
 
 const objectives = [

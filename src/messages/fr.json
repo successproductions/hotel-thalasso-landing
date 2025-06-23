@@ -267,9 +267,9 @@
 
 "offer5": {
      "hero": {
-      "overline": "Une cure premium au bord de l’Atlantique",
-      "title":    "Pour celles et ceux qui veulent aller mieux… durablement", 
-      "ctaPrimary": "Réservez votre cure Sérénité Marine",  
+      "overline": "UNE CURE PREMIUM AU BORD DE L’ATLANTIQUE",
+      "title":    "POUR CELLES ET CEUX QUI VEULENT ALLER MIEUX… ", 
+      "ctaPrimary": "RÉSERVEZ VOTRE CURE SÉRÉNITÉ MARINE",  
       "alt": {
         "hero": "Image du spa DC Thermes"
       },
@@ -301,6 +301,7 @@
       },
       "day2": {
         "label": "Jour 2",
+        
         "activities": [
           "Yoga doux au lever du soleil",
           "Sauna sec pour commencer à évacuer les toxines",

@@ -19,4 +19,4 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default withNextIntl('./next-intl.config.ts')(nextConfig);  // unchanged
+export default withNextIntl('./next-intl.config.ts')(nextConfig);  

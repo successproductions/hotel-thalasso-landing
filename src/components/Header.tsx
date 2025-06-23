@@ -76,14 +76,14 @@ export default function Header() {
               className="bg-white dark:bg-[#131212] rounded-md shadow-lg"
             >
               <DropdownMenuItem asChild>
-                <a href="/evasion-holistique-3-jours" className="px-4 py-2 block">
+                <Link href="/evasion-holistique-3-jours" locale="fr" className="px-4 py-2 block">
                   Évasion 3 Jours
-                </a>
+                </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <a href="/sejour-serenite-5-jours" className="px-4 py-2 block">
+                <Link href="/sejour-serenite-5-jours" locale="fr" className="px-4 py-2 block">
                   Sérénité 5 Jours
-                </a>
+                </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

@@ -54,7 +54,7 @@ export default function Hero5() {
         <p className='text-sm uppercase text-white/80 tracking-widest mb-2'>
           {t("overline")}
         </p>
-        <h1 className='font-trajan text-4xl md:text-6xl lg:text-7xl text-white drop-shadow-lg leading-tight max-w-3xl'>
+        <h1 className='font-trajan text-2xl md:text-3xl lg:text-7xl text-white drop-shadow-lg leading-tight max-w-3xl'>
           {t("title")}
         </h1>
         <div className='mt-8'>
