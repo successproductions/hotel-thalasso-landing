@@ -99,7 +99,7 @@ export default function Hero5() {
 
           {/* Main title with responsive sizing */}
           <motion.h1
-            className="font-trajan text-xl sm:text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-white leading-tight mb-6 sm:mb-8"
+            className="font-trajan text-xl sm:text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-white leading-tight mb-6 sm:mb-4"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.8 }}
