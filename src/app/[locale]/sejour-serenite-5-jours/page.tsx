@@ -5,7 +5,7 @@ import FAQSection from '@/components/FAQ';
 import ContactForm from '@/components/contact-form';
 import Jumbotron5 from '@/components/5-jours/Jumbotron5';
 import { metadata } from './metadata';  
-import Header from '@/components/Header';
+import Header5 from '@/components/5-jours/Header5';
 import IntroductionSection5 from '@/components/5-jours/IntroductionSection5';
 import Footer from '@/components/Footer';
 import RewardsSection from '@/components/RewardsSection';
@@ -21,7 +21,7 @@ export { metadata };
 export default function Page() {
   return (
     <>
-    <Header/>
+    <Header5/>
       <Hero5 />
       <Jumbotron5 />
       <Program5 />
