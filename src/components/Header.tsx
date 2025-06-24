@@ -9,12 +9,7 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations, useLocale } from 'next-intl';
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
+
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -63,30 +58,6 @@ export default function Header() {
               {l.name}
             </a>
           ))}
-          <DropdownMenu>
-            <DropdownMenuTrigger
-              className="relative font-medium transition hover:text-teal-700"
-            >
-              {t("offers")}
-            </DropdownMenuTrigger>
-
-            <DropdownMenuContent
-              side="bottom"
-              align="start"
-              className="bg-white dark:bg-[#131212] rounded-md shadow-lg"
-            >
-              <DropdownMenuItem asChild>
-                <Link href="/evasion-holistique-3-jours" locale="fr" className="px-4 py-2 block">
-                  Évasion 3 Jours
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/sejour-serenite-5-jours" locale="fr" className="px-4 py-2 block">
-                  Sérénité 5 Jours
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
         </nav>
 
         {/* Logo */}
