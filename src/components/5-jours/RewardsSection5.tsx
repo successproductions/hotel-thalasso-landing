@@ -28,7 +28,7 @@ export default function RewardsSection5() {
   return (
     <section
       ref={ref}
-      className="relative  bg-gradient-to-br from-[#ebf6fe] via-white to-[#f0f9ff] dark:from-[#090b11] dark:via-[#0f1419] dark:to-[#1a1f2e] py-20 overflow-hidden"
+      className="relative bg-gradient-to-br from-[#ebf6fe] via-white to-[#f0f9ff] dark:from-[#090b11] dark:via-[#0f1419] dark:to-[#1a1f2e] py-20 overflow-hidden"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 ">

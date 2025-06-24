@@ -12,7 +12,7 @@ const Footer5 = () => {
 
 
   return (
-    <footer className="relative mt-6 overflow-hidden">
+    <footer className="relative  overflow-hidden">
       {/* Floating CTA Card */}
       <div className="absolute -top-24 left-1/2 transform -translate-x-1/2 w-11/12 md:w-3/4 max-w-4xl z-10">
 
