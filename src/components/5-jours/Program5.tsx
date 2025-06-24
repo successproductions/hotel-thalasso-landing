@@ -52,7 +52,7 @@ export default function WellnessProgramEnhanced({
 
 
   return (
-    <section id="programme" className={`py-16 px-4 bg-stone-50 dark:bg-[#090b11] text-stone-900 ${className}`}>
+    <section id="services" className={`py-16 px-4 bg-stone-50 dark:bg-[#090b11] text-stone-900 ${className}`}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
