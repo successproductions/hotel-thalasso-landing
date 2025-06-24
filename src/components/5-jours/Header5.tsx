@@ -37,7 +37,7 @@ export default function Header5() {
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-in-out",
         scrolled 
-          ? "bg-white/95 backdrop-blur-lg shadow-lg py-3 dark:bg-gray-900/95 border-b border-gray-200/20 dark:border-gray-700/30"
+          ? "bg-white/95 backdrop-blur-lg shadow-lg py-3  border-b border-gray-200/20 dark:bg-gray-900/95 dark:border-gray-700/30"
           : "bg-gradient-to-r from-white/90 to-gray-50/90 backdrop-blur-sm py-5 dark:from-gray-900/90 dark:to-gray-800/90"
       )}
     >

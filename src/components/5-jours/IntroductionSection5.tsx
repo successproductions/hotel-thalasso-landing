@@ -8,7 +8,7 @@ export default function IntroductionSection() {
   const t = useTranslations("offer5.introduction")
 
   return (
-    <section id="about" className="relative bg-gradient-to-br from-gray-50 via-white to-teal-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-teal-900/20 py-32 transition-all duration-700 overflow-hidden">
+    <section id="about" className="relative bg-gradient-to-br from-gray-50 via-white to-teal-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-teal-900/10 py-32 transition-all duration-700 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500 rounded-full blur-3xl"></div>
