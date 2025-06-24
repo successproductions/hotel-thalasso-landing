@@ -15,7 +15,7 @@ export default function FeaturesWithImagesSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 bg-gray-50 dark:bg-[#090b11]">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4">
         {/* Left: overlapping images */}
         <motion.div
