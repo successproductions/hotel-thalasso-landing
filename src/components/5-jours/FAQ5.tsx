@@ -3,10 +3,10 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslations, useMessages } from "next-intl"
-import { Plus, Phone, Mail } from "lucide-react"
+import { Phone, Mail } from "lucide-react"
 import { useState } from "react"
 
-// Define types for your FAQ messages
+
 interface FAQItem {
   question: string
   answer: string
@@ -15,7 +15,9 @@ interface FAQItem {
 export default function FAQSection() {
   const t = useTranslations("faq")
   const messages = useMessages()
-  const [openItem, setOpenItem] = useState<string | null>(null)
+  const [openItem, setOpenItem] = useState<string | undefined>(undefined)
+  const PHONE_NUMBER = "+21265288192";
+  const EMAIL_ADDRESS = "reservation@dakhlaclub.com";
 
   const { contact, items } = messages.faq
 
@@ -31,31 +33,19 @@ export default function FAQSection() {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   }
 
   const imageVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: "easeOut",
-      },
-    },
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
   }
 
+
+
   return (
-    <section id="faq" className="min-h-screen bg-slate-50 dark:bg-[#090b11] py-24 transition-colors duration-500">
+    <section id="faq" className=" bg-slate-50 dark:bg-[#090b11] py-12 md:py-14 transition-colors duration-500">
       <motion.div
         className="max-w-6xl mx-auto px-6"
         variants={containerVariants}
@@ -105,22 +95,26 @@ export default function FAQSection() {
                 <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-4 text-lg">{contact.label}</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-4 text-sm leading-relaxed">{contact.subtext}</p>
                 <div className="flex gap-3">
-                  <motion.button
-                    className="flex items-center gap-2 px-4 py-2 bg-slate-800 dark:bg-slate-100 text-white dark:text-slate-800 rounded-lg text-sm font-medium"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Phone className="w-4 h-4" />
-                    Call
-                  </motion.button>
-                  <motion.button
-                    className="flex items-center gap-2 px-4 py-2 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Mail className="w-4 h-4" />
-                    Email
-                  </motion.button>
+                   <motion.a
+        href={`tel:${PHONE_NUMBER}`}
+        className="flex items-center gap-2 px-4 py-2 bg-slate-800 dark:bg-slate-100 text-white dark:text-slate-800 rounded-lg text-sm font-medium"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Phone className="w-4 h-4" />
+        Call
+      </motion.a>
+
+      {/* Email Link */}
+      <motion.a
+        href={`mailto:${EMAIL_ADDRESS}`}
+        className="flex items-center gap-2 px-4 py-2 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Mail className="w-4 h-4" />
+        Email
+      </motion.a>
                 </div>
               </motion.div>
             </div>
