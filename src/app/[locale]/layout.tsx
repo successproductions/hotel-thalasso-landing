@@ -154,10 +154,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
 
-        {/* Hreflang tags */}
-        <link rel="alternate" hrefLang="fr" href="https://offer.dakhlaclub.com/fr" />
-        <link rel="alternate" hrefLang="en" href="https://offer.dakhlaclub.com/en" />
-        <link rel="alternate" hrefLang="x-default" href="https://offer.dakhlaclub.com/fr" />
+        
 
         {/* Additional meta tags */}
         <meta name="format-detection" content="telephone=no" />

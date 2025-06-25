@@ -62,7 +62,7 @@ export default function Header() {
 
         {/* Logo */}
         <div className="flex-1 text-center">
-          <Link href="/">
+          <Link href="#">
             <Image
               src="/images/LogoDakhla.png"
               alt="DakhlaClub Logo"
