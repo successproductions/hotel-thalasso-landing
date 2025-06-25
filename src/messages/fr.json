@@ -44,6 +44,7 @@
       "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
       "jour":              "Jour",
       "activitiesTitle":   "Activités incluses :"
+
     },
     "days": {
       "1": {
@@ -308,6 +309,7 @@
  },
     "program": {
       "heading": "PROGRAMME DU SÉJOUR",
+      "activities": "Activités",
       "day1": {
         "label": "Jour 1",
         "activities": [
@@ -385,17 +387,42 @@
         "image": "Centre DC Thermes à Dakhla, entre désert et lagon"
       }
     },
-
+    "faq": {
+    "title": "FAQ",
+    "contact": {
+      "label": "Contactez-nous",
+      "subtext": "Réponse rapide par téléphone ou email.",
+      "alt": "centre thalasso Dakhla"
+    },
+    "items": [
+      {
+        "question": "Qu’est-ce que je vais vivre pendant ces 5 jours au Dakhla Club ?",
+        "answer": "Vous allez vivre une véritable reconnexion à vous-même grâce à une combinaison de soins relaxants, d’expériences sensorielles et d’un cadre naturel exceptionnel entre désert et océan."
+      },
+      {
+        "question": "Quels types de soins vais-je recevoir pendant le séjour ?",
+        "answer": "Vous profiterez de soins holistiques comme le bain hydromassant, l’enveloppement aux algues, la cupping thérapie ou encore le massage sous affusion, pour revitaliser à la fois le corps et l’esprit."
+      },
+      {
+        "question": "Est-ce que ce programme est adapté si je n’ai jamais fait de spa ou de cure bien-être ?",
+        "answer": "Oui, ce programme est idéal pour une première fois : il a été pensé pour être doux, accessible et encadré par des professionnels à votre écoute."
+      },
+      {
+        "question": "Pourquoi faut-il réserver rapidement ?",
+        "answer": "Les places sont limitées afin de garantir un cadre paisible et une attention personnalisée à chaque participant, c’est pourquoi il est conseillé de réserver sans tarder."
+      },
+      {
+        "question": "Où vais-je loger pendant le séjour ?",
+        "answer": "Vous serez hébergé(e) directement au Dakhla Club Hotel & Spa, dans un environnement apaisant qui prolonge naturellement les bienfaits des soins."
+      }
+    ]
+  },
     "introduction": {
   "whyTitle":      "Pour qui est ce séjour ?",
   "headlineLine1": "Pour ceux qui ressentent une fatigue chronique malgré le repos",
   "description":   "Ce programme de 6 jours combine yoga ciblé, sauna, piscines thermales et soins thalasso pour rééquilibrer profondément votre corps et votre esprit.",
   "imageAlt":      "Séance de yoga au bord de l’océan"
  },
-    "faq": {
-      "heading": "Foire aux questions",
-      "items": []
-    },
     "exclusiveOffer5": {
     "title":       "⏳ Édition limitée – 10 participants maximum",
     "description": "Pour garantir un espace intime, nous ouvrons uniquement 10 places par session",

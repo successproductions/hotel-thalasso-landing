@@ -45,6 +45,7 @@
       "description":       "A holistic journey to your complete well-being in the unique universe of Dakhla",
       "jour":              "Day",
       "activitiesTitle":   "Included Activities:"
+      
     },
     "days": {
       "1": {
@@ -307,6 +308,7 @@
  },
     "program": {
       "heading": "RETREAT PROGRAMME",
+      "activities": "Activities",
       "day1": {
         "label": "Day 1",
         "activities": [
@@ -383,10 +385,36 @@
         "image": "DC Thermes at Dakhla Club, between desert and lagoon"
       }
     },
-    "faq": {
-      "heading": "Frequently Asked Questions",
-      "items": []
+      "faq": {
+    "title": "FAQ",
+    "contact": {
+      "label": "Contact us",
+      "subtext": "Quick response by phone or email.",
+      "alt": "Woman in water at Dakhla"
     },
+    "items": [
+      {
+        "question": "What can I expect during these 5 days at Dakhla Club?",
+        "answer": "You’ll experience a true reconnection with yourself through a blend of relaxing treatments, sensory rituals, and a stunning natural setting between the desert and the ocean."
+      },
+      {
+        "question": "What types of treatments are included in the program?",
+        "answer": "You’ll enjoy a range of holistic therapies such as hydromassage baths, seaweed wraps, cupping therapy, and affusion massages — all designed to deeply relax and recharge your body and mind."
+      },
+      {
+        "question": "Is this program suitable if I’ve never done a spa or wellness retreat before?",
+        "answer": "Absolutely — it’s the perfect introduction, carefully designed to be gentle, welcoming, and fully guided by wellness professionals."
+      },
+      {
+        "question": "Why should I book quickly?",
+        "answer": "Availability is limited to ensure a calm, personalized experience for every guest, so early booking is highly recommended."
+      },
+      {
+        "question": "Where will I stay during the retreat?",
+        "answer": "You’ll be staying right at the Dakhla Club Hotel & Spa, in a serene setting that perfectly complements and enhances the benefits of your treatments."
+      }
+    ]
+  },
        "introduction": {
   "whyTitle":      "Who is this retreat for?",
   "headlineLine1": "Those feeling chronic fatigue despite rest",

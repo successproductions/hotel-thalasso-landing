@@ -13,13 +13,13 @@ interface FAQItem {
 }
 
 export default function FAQSection() {
-  const t = useTranslations("faq")
+  const t = useTranslations("offer5.faq")
   const messages = useMessages()
   const [openItem, setOpenItem] = useState<string | undefined>(undefined)
   const PHONE_NUMBER = "+21265288192";
   const EMAIL_ADDRESS = "reservation@dakhlaclub.com";
 
-  const { contact, items } = messages.faq
+  const { contact, items } = messages.offer5.faq
 
   const containerVariants = {
     hidden: { opacity: 0 },

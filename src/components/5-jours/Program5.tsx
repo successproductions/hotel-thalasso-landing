@@ -140,7 +140,7 @@ export default function WellnessProgramEnhanced({
                       className="bg-black/30 backdrop-blur-sm rounded-lg p-3"
                     >
                       <h3 className="text-lg font-bold mb-1">{t(`${day}.label`)}</h3>
-                      <div className="text-sm opacity-90">{activities.length} activités</div>
+                      <div className="text-sm opacity-90">{activities.length} {t("activities")}</div>
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: isHovered ? "100%" : "50%" }}

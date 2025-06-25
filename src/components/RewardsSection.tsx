@@ -23,9 +23,9 @@ export default function RewardsSection() {
 
   return (
     <section className="dark:bg-[#090b11] py-6 md:py-20 pb-32">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="max-w-5xl mx-auto px-6 text-center">
         <h2
-          className={`text-2xl md:text-4xl font-trajan mb-6 md:mb-12 transition-opacity duration-1000 ${
+          className={`text-2xl md:text-3xl font-trajan mb-6 md:mb-12 transition-opacity duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           } text-gray-900 dark:text-white`}
         >
