@@ -49,14 +49,6 @@ export async function generateMetadata({
       ],
     },
 
-    // Twitter Card
-    twitter: {
-      card: 'summary_large_image',
-      title: messages.meta.title,
-      description: messages.meta.description,
-      images: [`${baseUrl}/images/og-image-${locale}.jpg`],
-    },
-
     // Canonical and alternates
     alternates: {
       canonical: currentUrl,
@@ -88,11 +80,7 @@ export async function generateMetadata({
       },
     },
 
-    // Verification (add your actual verification codes)
-    verification: {
-      google: 'your-google-verification-code',
 
-    },
   };
 }
 
