@@ -23,10 +23,12 @@ export const metadata = {
     locale: "fr_FR",
     type:   "website"
   },
-  alternates: {
-    canonical: "/fr/sejour-serenite-5-jours",
+   alternates: {
+
+    canonical: "https://offer.dakhlaclub.com/fr/sejour-serenite-5-jours",
     languages: {
-      en: "/en/sejour-serenite-5-jours"
+      fr: "https://offer.dakhlaclub.com/fr/sejour-serenite-5-jours",
+      en: "https://offer.dakhlaclub.com/en/sejour-serenite-5-jours"
     }
   }
 };
