@@ -184,7 +184,7 @@ export default async function LocaleLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <NextIntlClientProvider locale={locale} messages={messages}>
             {children}          
-            <PageLoader />   
+            {/* <PageLoader />    */}
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
