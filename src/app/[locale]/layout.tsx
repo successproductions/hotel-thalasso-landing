@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import PageLoader from '@/components/PageLoader';
+
 
 
 

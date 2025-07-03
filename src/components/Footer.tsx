@@ -1,76 +1,96 @@
-"use client";
 
-import Link from "next/link";
-import { useTranslations } from 'next-intl';
+import React from "react";
 import Image from "next/image";
+import { Facebook, Instagram } from "lucide-react";
 
-const Footer = () => {
-  const t = useTranslations('footer');
-   
-
+export function Footer() {
   return (
-    <footer className="bg-[#0c1b11] text-white pt-32 mt-6 relative">
- 
-      {/* Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 pt-10 pb-20">
-        <div className="grid md:grid-cols-5 gap-10">
-          {/* Brand */}
-          <div className="md:col-span-1 space-y-3">
-            <Link href="/">
-                        <Image
-                          src="/images/LogoDakhla.png"
-                          alt="DakhlaClub Logo"
-                          width={180}
-                          height={140}
-                          className="mt-3"
-                        />
-                      </Link>
-            <p className="text-sm text-gray-400">{t('brand.copy')}</p>
-          </div>
+    <footer className="bg-gray-100 text-gray-700">
+      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-5 gap-8">
+        {/* Column 1 */}
+        <div>
+          <h3 className="text-sm font-semibold uppercase mb-4">DakhlaClub</h3>
+          <ul className="space-y-2">
+            {["About", "Contact Us", "Careers"].map((item) => (
+              <li key={item} className="hover:underline cursor-pointer">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{t('contact.title')}</h4>
-            <p className="text-sm text-gray-400">
-              {t('contact.address')}<br />
-              {t('contact.phone')}<br />
-              {t('contact.email')}
-            </p>
-          </div>
+        {/* Column 2 */}
+        <div>
+          <h3 className="text-sm font-semibold uppercase mb-4">Noteworthy</h3>
+          <ul className="space-y-2">
+            {["Awards & Press", "Newsletters", "FAQ"].map((item) => (
+              <li key={item} className="hover:underline cursor-pointer">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          {/* Pages */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{t('pages.title')}</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#about" className="hover:text-white">{t('pages.about')}</a></li>
-              <li><a href="#services" className="hover:text-white">{t('pages.program')}</a></li>
-              <li><a href="#contact" className="hover:text-white">{t('pages.book')}</a></li>
-            </ul>
-          </div>
+        {/* Column 3 */}
+        <div>
+          <h3 className="text-sm font-semibold uppercase mb-4">Legal</h3>
+          <ul className="space-y-2">
+            {["Privacy Policy", "Terms of Use"].map((item) => (
+              <li key={item} className="hover:underline cursor-pointer">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
 
-          {/* Resources */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{t('resources.title')}</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="#faq" className="hover:text-white">{t('resources.faq')}</a></li>
-              
-            </ul>
+        {/* Column 4 */}
+        <div>
+          <h3 className="text-sm font-semibold uppercase mb-4">Follow Us</h3>
+          <div className="flex space-x-4">
+            <a href="#" aria-label="Facebook" className="hover:text-gray-900">
+              <Facebook size={20} />
+            </a>
+            <a href="#" aria-label="Instagram" className="hover:text-gray-900">
+              <Instagram size={20} />
+            </a>
           </div>
+        </div>
 
-          {/* Socials */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{t('socials.title')}</h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li><a href="https://www.instagram.com/hoteldakhlaclub/" className="hover:text-white">{t('socials.instagram')}</a></li>
-              <li><a href="https://www.facebook.com/DakhlaClub/" className="hover:text-white">{t('socials.facebook')}</a></li>
-              <li><a href="https://youtube.com/@dakhlaclub1745?si=D_TKjBar-WzAMcnY" className="hover:text-white">{t('socials.youtube')}</a></li>
-              <li><a href="https://www.tiktok.com/@dakhlaclubhotel?_r=1&_d=eec80jahcl3m4g&sec_uid=MS4wLjABAAAADARMZsKCuqIf7jXLvKH9cUwpN_XYQepPD2WVmf-o43PiQv2KCVp9jL4qzuc4Sil4&share_author_id=7205863435829543941&sharer_language=fr&source=h5_m&u_code=e6ih6ce9mg3kj5&ug_btm=b8727,b0&social_share_type=4&utm_source=copy&sec_user_id=MS4wLjABAAAADARMZsKCuqIf7jXLvKH9cUwpN_XYQepPD2WVmf-o43PiQv2KCVp9jL4qzuc4Sil4&tt_from=copy&utm_medium=ios&utm_campaign=client_share&enable_checksum=1&user_id=7205863435829543941&share_link_id=080768DC-CD71-466C-B232-9A202D618A60&share_app_id=1233" className="hover:text-white">{t('socials.tiktok')}</a></li>
-            </ul>
+        {/* Column 5: Badges */}
+        <div className="flex flex-col md:flex-row items-center md:justify-end space-y-4 md:space-y-0 md:space-x-6">
+          <div className="w-24 h-12 relative">
+            <Image
+              src="/images/Virtuoso.png"
+              alt="Virtuoso Preferred"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="w-24 h-12 relative">
+            <Image
+              src="/images/WITT.png"
+              alt="WITT"
+              fill
+              className="object-contain"
+            />
           </div>
         </div>
       </div>
+
+      {/* Divider + center logo */}
+      <div className="border-t border-gray-300 relative">
+        <div className="absolute inset-x-0 top-0 flex justify-center -mt-4">
+          <div className="bg-gray-100 px-3">
+            {/* Replace with your R logo */}
+            <span className="text-2xl font-serif font-bold">DC</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="text-center py-6 text-sm text-gray-600">
+        © 2025 DakhlaClub and its Associated Subsidiaries | Luxury Fitness, Health & Wellness Vacation Retreat
+      </div>
     </footer>
   );
-};
-
-export default Footer;
+}

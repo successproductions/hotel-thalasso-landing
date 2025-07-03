@@ -1,35 +1,36 @@
-
-
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import  HeroTest  from '@/components/HeroTest';
+import { HealthPrograms } from '@/components/HealthPrograms';
+import Hero from '@/components/Hero';
+import { About } from '@/components/About';
+import { ProgramsSection } from '@/components/ProgramsSection';
+import { ServicesTable } from '@/components/ServicesTable';
+import { ProgrammeFonctionne } from '@/components/ProgrammeFonctionne';
+import { ObjectivesSection } from '@/components/ObjectivesSection';
+import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import FAQSection from '@/components/FAQ';
-import ContactForm from '@/components/contact-form';
-import ImageCarousel from '@/components/ImageCarousel';
-import ProgramSection from '@/components/ProgramSection';
-import IntroductionSection from '@/components/IntroductionSection';
-import ScrollToTop from '@/components/ScrollToTop';
-import RewardsSection from '@/components/RewardsSection';
-import ClientsCarousel from '@/components/ClientsCarousel';
-import ExclusiveOfferSection from '@/components/ExclusiveOfferSection';
+import { RewardsSection } from '@/components/RewardsSection';
+import { Footer } from '@/components/Footer';
+import { NewsletterSection } from '@/components/NewsletterSection';
+
 
 export default function Home() {
 
 
   return (
-    <main className="min-screen bg-background text-foreground transition-colors duration-500">
+    <main >
       <Header />
-      <HeroTest />
-      <IntroductionSection />
-      <ProgramSection />
-      <ImageCarousel />
-      <ClientsCarousel />
-      <ExclusiveOfferSection />
-      <FAQSection />
-      <ContactForm />
-      <RewardsSection />
-      <Footer />
-      <ScrollToTop />
+      <Hero />
+      <HealthPrograms />
+      <About />
+      <ProgramsSection />
+      <ServicesTable/>
+      <ProgrammeFonctionne/>
+      <ObjectivesSection/>
+      <TestimonialsCarousel/>
+      <RewardsSection/>
+      <FAQSection/>
+      <NewsletterSection/>
+      <Footer/>
     </main>
   );
-}
+} 
