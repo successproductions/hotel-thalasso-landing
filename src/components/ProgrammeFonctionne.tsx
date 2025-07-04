@@ -8,6 +8,13 @@ export function ProgrammeFonctionne() {
     "Enchaînement conçu sur une logique physiologique & émotionnelle",
     "Thérapeutes certifiés et attentionnés",
     "Un environnement qui soigne à lui seul",
+    "Oxygénation intérieure & peau rayonnante",
+    "Corps léger, tensions relâchées",
+    "Détente musculaire & sommeil retrouvé",
+    "Peau lissée, dégonflée, reminéralisée",
+    "Silhouette affinée et drainée naturellement",
+    "Clarté mentale & énergie stable"
+
   ];
 
   return (
@@ -25,8 +32,8 @@ export function ProgrammeFonctionne() {
 
         {/* Text Column */}
         <div className="space-y-6">
-          <h2 className="text-3xl md:text-4xl pt-6  font-semibold text-gray-800">
-            Pourquoi ce programme fonctionne
+          <h2 className="text-3xl md:text-4xl pt-6 md:pt-14  font-semibold text-gray-800">
+          Ce que vous allez vraiment ressentir
           </h2>
           <ul className="list-disc pl-5 space-y-3 text-gray-600 text-base md:text-lg leading-relaxed">
             {points.map((point, i) => (

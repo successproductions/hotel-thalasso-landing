@@ -6,13 +6,13 @@ import React from "react";
 export function ObjectivesSection() {
   const cards = [
     {
-      image: "/images/Restaurant.jpg",
+      image: "https://shawellness.com/wp-content/uploads/2023/10/lopff2.png",
       alt: "Objectif 1",
       text:
         "You are exposed to a high degree of activity, effort, stress, decision-making, continuous travel, etc., and seek to monitor and care for your health, improving your overall performance and productivity.",
     },
     {
-      image: "/images/Restaurant.jpg", 
+      image: "https://shawellness.com/wp-content/uploads/2023/10/lpobj1.png", 
       alt: "Objectif 2",
       text:
         "Achieve and maintain optimal health in the face of high levels of activity, exertion, and stress, with substantial improvement in both your performance and productive capacity.",
