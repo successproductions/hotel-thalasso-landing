@@ -169,6 +169,34 @@ export function ProgramsSection() {
           </div>
         );
       })}
+    {/* 
+      <div className="flex justify-center mt-10">
+        <a
+          href="#contact"
+          className="inline-block px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-400 text-white text-lg font-semibold rounded-full shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-teal-300"
+        >
+          Entrer dans l’univers holistique du Dakhla Club
+        </a>
+      </div>
+    */}
+    <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+      <a
+        href="#contact"
+        style={{
+          padding: "12px 32px",
+          background: "#14b8a6",
+          color: "#fff",
+          fontSize: "1.325rem",
+          fontWeight: 600,
+          borderRadius: "9999px",
+          textDecoration: "none",
+          boxShadow: "0 2px 8px rgba(20,184,166,0.15)"
+        }}
+      >
+        Entrer dans l’univers holistique du Dakhla Club
+      </a>
+    </div>
+
     </section>
   );
 }

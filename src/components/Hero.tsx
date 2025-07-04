@@ -14,7 +14,7 @@ export default function Hero() {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-[92vh] object-cover"
-        src="https://www.w3schools.com/html/mov_bbb.mp4"
+        src="https://rancholapuerta.com/wp-content/themes/rancho/assets/images/homepage.mp4"
         autoPlay
         loop
         muted
@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="bg-white/90 backdrop-blur-sm rounded-3xl px-6 py-4 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 shadow-lg">
           {/* 1) Program title */}
           <div className="flex-1 text-center md:text-left">
-            <span className="text-lg md:text-xl font-medium text-gray-800">
+            <span className="text-lg md:text-3xl font-medium text-gray-800">
             Dakhla is Calling…
             </span>
           </div>

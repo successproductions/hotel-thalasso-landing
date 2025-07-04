@@ -128,9 +128,9 @@ export default function Header() {
           <Button
             size="sm"
             className={clsx(
-              "font-trajan px-5 transition-transform",
+              " px-5 transition-transform",
               active
-                ? "bg-green-900 text-white hover:bg-green-800 hover:scale-105 hover:shadow-xl"
+                ? "bg-[#139584] text-white hover:bg-green-700 hover:scale-105 hover:shadow-xl"
                 : "bg-white text-green-900 hover:bg-gray-100 dark:bg-gray-800 dark:text-white"
             )}
             onClick={() => {

@@ -1,7 +1,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Facebook, Instagram } from "lucide-react";
+import { Facebook, Instagram, Youtube  } from "lucide-react";
 
 export function Footer() {
   return (
@@ -47,12 +47,16 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold uppercase mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="#" aria-label="Facebook" className="hover:text-gray-900">
+            <a href="https://facebook.com/DCthermes" aria-label="Facebook" className="hover:text-gray-900">
               <Facebook size={20} />
             </a>
-            <a href="#" aria-label="Instagram" className="hover:text-gray-900">
+            <a href="https://instagram.com/DCthermes" aria-label="Instagram" className="hover:text-gray-900">
               <Instagram size={20} />
             </a>
+            <a href="https://youtube.com/DCthermes" aria-label="Youtube" className="hover:text-gray-900">
+            <Youtube />
+            </a>
+            
           </div>
         </div>
 
