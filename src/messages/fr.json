@@ -22,19 +22,18 @@
     "tagline":     "Évasion Holistique",
     "headline":    "3 JOURS POUR RESSOURCER CORPS & ESPRIT",
     "description": "Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?",
-    "cta":         "RÉSERVER MAINTENANT",
-    "services": {
-      "bolDAirJacquier":   "Bol d’Air Jacquier",
-      "hydroMassageBath":   "Bain hydromassant",
-      "seaweedWrap":        "Enveloppement aux algues",
-      "affusionMassage":    "Massage à affusion",
-      "traditionalHammam":  "Hammam traditionnel",
-      "cuppingTherapy":     "Cupping thérapie"
-    }
+    "cta":         "RÉSERVER MAINTENANT"
   },
-  "servicesSection": {
-    "title":       "NOS SOINS SIGNATURE",
-    "description": "Découvrez une palette de soins pensés pour votre bien-être physique et mental"
+  "health": {
+    "title":       "Un sanctuaire entre désert doré, lagune turquoise et lumière sacrée",
+    "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne.",
+    "description2": "Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante."
+  },
+  "about":{
+"title":       "Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?",
+    "description1": " Vous courez après le temps, vos pensées tournent en boucle",
+    "description2": "Et votre corps vous envoie des signaux d’alerte ? Et si vous arrêtiez tout, juste 3 jours, pour vous reconnecter à vous-même ? Trois jours, c’est court. Mais bien accompagnés, ils peuvent tout changer."
+ 
   },
   
   "programSection": {
@@ -85,6 +84,9 @@
     "title": "⏳ Offre exclusive – 10 places par session",
     "description": "Pour préserver la qualité et l’intimité de l’expérience, nous limitons chaque retraite à 10 personnes.",
     "nextSession": "📅 Prochaine session : 15 au 18 juillet 2025"
+  },
+  "test":{
+
   },
   "carousel": {
     "overlay": {

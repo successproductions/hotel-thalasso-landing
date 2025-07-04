@@ -48,7 +48,6 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPlaying, setIsPlaying] = useState<number | null>(null)
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1))
@@ -60,10 +59,6 @@ export default function TestimonialsCarousel() {
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index)
-  }
-
-  const handlePlayVideo = (id: number) => {
-    setIsPlaying(id)
   }
 
   return (
@@ -82,7 +77,7 @@ export default function TestimonialsCarousel() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-16">
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-[0.2em] mb-4">TESTIMONIALS</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-[0.1em] mb-4">TESTIMONIALS</h2>
         </div>
 
         {/* Carousel Container */}
@@ -133,7 +128,6 @@ export default function TestimonialsCarousel() {
                           variant="ghost"
                           size="icon"
                           className="w-16 h-16 rounded-full bg-white/20 hover:bg-white/30 text-white border-2 border-white/50 hover:border-white/70 transition-all duration-300 group-hover:scale-110"
-                          onClick={() => handlePlayVideo(testimonial.id)}
                         >
                           <Play className="w-8 h-8 ml-1" fill="currentColor" />
                         </Button>

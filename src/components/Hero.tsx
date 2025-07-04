@@ -13,19 +13,19 @@ export default function Hero() {
     <section id="accueil" className="relative h-screen w-full overflow-hidden">
       {/* Background Video */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-[92vh] object-cover"
         src="https://www.w3schools.com/html/mov_bbb.mp4"
         autoPlay
         loop
         muted
         playsInline
       />
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 " />
 
       {/* animated two-line headline */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4 space-y-4">
         {/* Line 1: big italic serif */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif italic leading-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal  ">
           <WavyText text={t("title")} />
         </h1>
 
@@ -41,7 +41,7 @@ export default function Hero() {
           {/* 1) Program title */}
           <div className="flex-1 text-center md:text-left">
             <span className="text-lg md:text-xl font-medium text-gray-800">
-              Intensive Detox &amp; Optimal Weight
+            Dakhla is Calling…
             </span>
           </div>
 
@@ -54,23 +54,13 @@ export default function Hero() {
               Durée
             </span>
             <span className="font-semibold text-gray-800">
-              À partir de 7 nuits
+            3 Jours 
             </span>
           </div>
 
           <div className="hidden md:block h-8 border-l border-gray-300" />
 
-          {/* 3) Price */}
-          <div className="flex flex-col items-center md:items-start text-sm">
-            <span className="uppercase text-gray-500 tracking-wider">
-              À partir de
-            </span>
-            <span className="font-semibold text-gray-800">
-              6 000 € / 7 000 USD
-            </span>
-          </div>
-
-          <div className="hidden md:block h-8 border-l border-gray-300" />
+          
 
           {/* 4) CTA */}
           <button
@@ -81,7 +71,7 @@ export default function Hero() {
             }
             className="px-5 py-2 border border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition"
           >
-            Réserver programme
+            Je veux vivre  l’expérience
           </button>
         </div>
       </div>

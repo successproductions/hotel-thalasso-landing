@@ -13,13 +13,13 @@ interface FAQItem {
 }
 
 export default function FAQSection() {
-  const t = useTranslations("offer5.faq")
+  const t = useTranslations("faq")
   const messages = useMessages()
   const [openItem, setOpenItem] = useState<string | undefined>(undefined)
   const PHONE_NUMBER = "+21265288192";
   const EMAIL_ADDRESS = "reservation@dakhlaclub.com";
 
-  const { contact, items } = messages.offer5.faq
+  const { contact, items } = messages.faq
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -60,7 +60,7 @@ export default function FAQSection() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h2 className="text-5xl md:text-6xl font-trajan text-slate-800 dark:text-slate-100 mb-4 tracking-tight">
+            <h2 className="text-5xl md:text-6xl font-medium text-slate-800 dark:text-slate-100 mb-4 tracking-tight">
               {t("title")}
             </h2>
             <div className="w-24 h-1 bg-slate-800 dark:bg-slate-100 mx-auto rounded-full"></div>
@@ -92,7 +92,7 @@ export default function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
               >
-                <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-4 text-lg">{contact.label}</h3>
+                <h3 className="font-medium text-slate-800 dark:text-slate-100 mb-4 text-lg">{contact.label}</h3>
                 <p className="text-slate-600 dark:text-slate-300 mb-4 text-sm leading-relaxed">{contact.subtext}</p>
                 <div className="flex gap-3">
                    <motion.a

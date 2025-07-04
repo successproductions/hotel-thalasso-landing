@@ -3,9 +3,14 @@ import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import { Lora } from 'next/font/google';
 
-
-
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-lora',
+});
 
 export async function generateStaticParams() {
   return [{ locale: 'fr' }, { locale: 'en' }];
@@ -154,8 +159,6 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
 
-        
-
         {/* Additional meta tags */}
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#0ea5e9" />
@@ -179,7 +182,7 @@ export default async function LocaleLayout({
   />
       </head>
 
-      <body>
+      <body className={lora.className}>
 
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <NextIntlClientProvider locale={locale} messages={messages}>

@@ -1,53 +1,48 @@
-// components/ProgramsSection.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-
-interface Program {
-  title: string;
-  description: string;
-  image: string;
-}
+import { useTranslations } from 'next-intl';
 
 export function ProgramsSection() {
-  const programs: Program[] = [
-    {
-      title: "Programme Détox",
-      description:
-        "Reprenez le contrôle de votre énergie grâce à des traitements ciblés et un plan nutritionnel sur mesure.",
-      image: "/images/program-detox.jpg",
-    },
-    {
-      title: "Programme Sérénité",
-      description:
-        "Apprenez des techniques de relaxation profonde et profitez de soins apaisants pour l’esprit et le corps.",
-      image: "/images/program-serenite.jpg",
-    },
-    {
-      title: "Programme Forme",
-      description:
-        "Boostez votre performance physique avec des séances de coaching sportif et des massages dynamiques.",
-      image: "/images/program-forme.jpg",
-    },
-    {
-      title: "Programme Beauté",
-      description:
-        "Restaurez l’éclat de votre peau et revitalisez vos sens avec des rituels exclusifs SPA.",
-      image: "/images/program-beaute.jpg",
-    },
-  ];
+  const t = useTranslations('programSection');
 
-  // Fade + slide up each text block
-  const textAnim = {
-    hidden: { opacity: 0, y: 20 },
-    show:  { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
-  };
+  const days = ['1', '2', '3', '4'];
+  
+  const dayImages = [
+    '/images/6 (1).png',     
+    '/images/Piscine_thermale.png',        
+    '/images/modelage.jpg',     
+    '/images/Salle-de-massage.png'   
+  ];
+  
+  const programs = days.map((dayNum, index) => {
+    const dayData = {
+      title: t(`days.${dayNum}.title`),
+      subtitle: t(`days.${dayNum}.subtitle`),
+      description: t(`days.${dayNum}.description`),
+      activities: t.raw(`days.${dayNum}.activities`) || [],
+      objective: t(`days.${dayNum}.objective`),
+      ctaText: t(`days.${dayNum}.ctaText`),
+      dayNumber: dayNum
+    };
+
+    return {
+      ...dayData,
+      image: dayImages[index],
+    };
+  });
+
+  // // Fade + slide up each text block
+  // const textAnim = {
+  //   hidden: { opacity: 0, y: 20 },
+  //   show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } },
+  // };
 
   // Background slide variants
   const bgVariant = (fromLeft: boolean) => ({
     hidden: { x: fromLeft ? "-100%" : "100%" },
-    show:  { 
+    show: { 
       x: "0%", 
       transition: { duration: 3, ease: "easeOut" } 
     },
@@ -55,19 +50,40 @@ export function ProgramsSection() {
 
   return (
     <section className="overflow-hidden">
-      {programs.map((p, i) => {
+      {/* Header Section */}
+      <div className="max-w-6xl mx-auto px-4 py-8 text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] } },
+          }}
+        >
+          <h2 className="text-3xl md:text-4xl font-medium text-gray-800 mb-4">
+            {t('header.title')}
+          </h2>
+          <h3 className="text-xl md:text-2xl  font-light text-teal-600 ">
+            {t('header.subheading')}
+          </h3>
+        </motion.div>
+      </div>
+
+      {/* Days Programs */}
+      {programs.map((program, i) => {
         const fromLeft = i % 2 === 0;   
-        const isOdd    = i % 2 === 1;
+        const isOdd = i % 2 === 1;
 
         return (
-          <div key={p.title} className="relative py-24">
+          <div key={program.dayNumber} className="relative py-24">
             {/* full-width, pale-green bg sliding in */}
             <motion.div
               className="absolute inset-x-0 inset-y-0 bg-[#f4f4f4]"
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              variants={bgVariant(fromLeft)}
+              variants={bgVariant(fromLeft) as Variants}
             />
 
             {/* content sits above the bg */}
@@ -84,8 +100,8 @@ export function ProgramsSection() {
               {/* Image */}
               <div className={isOdd ? "md:col-start-2" : ""}>
                 <Image
-                  src={p.image}
-                  alt={p.title}
+                  src={program.image}
+                  alt={`${t('header.jour')} ${program.dayNumber} - ${program.title}`}
                   width={600}
                   height={400}
                   className="rounded-lg object-cover w-full shadow-lg"
@@ -98,14 +114,56 @@ export function ProgramsSection() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
-                variants={textAnim}
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  show: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
+                  }
+                }}
               >
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-800">
-                  {p.title}
+                <div className="mb-2">
+                  <span className="text-teal-600 font-semibold text-sm uppercase tracking-wide">
+                    {t('header.jour')} {program.dayNumber}
+                  </span>
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
+                  {program.title}
                 </h3>
-                <p className="mt-2 text-gray-600 leading-relaxed">
-                  {p.description}
+                
+                <h4 className="text-lg text-teal-600 font-medium mb-4">
+                  {program.subtitle}
+                </h4>
+                
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  {program.description}
                 </p>
+
+                {/* Activities - only show if activities exist */}
+                {program.activities && program.activities.length > 0 && (
+                  <div className="mb-6">
+                    <h5 className="font-semibold text-gray-800 mb-3">
+                      {t('header.activitiesTitle')}
+                    </h5>
+                    <ul className="space-y-2">
+                      {program.activities.map((activity: string, idx: number) => (
+                        <li key={idx} className="flex items-start">
+                          <span className="text-teal-600 mr-2">•</span>
+                          <span className="text-gray-600">{activity}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Objective */}
+                <div className="mb-6">
+                  <p className="text-gray-700 font-medium italic">
+                    {program.objective}
+                  </p>
+                </div>
               </motion.div>
             </div>
           </div>

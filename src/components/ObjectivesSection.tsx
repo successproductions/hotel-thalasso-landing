@@ -21,7 +21,7 @@ export function ObjectivesSection() {
   return (
     <section id="objectifs" className="py-16 bg-gray-50">
       {/* Section Title */}
-      <h2 className="text-4xl font-serif font-semibold text-gray-800 text-center">
+      <h2 className="text-4xl font-semibold text-gray-800 text-center">
         Objectifs
       </h2>
 
