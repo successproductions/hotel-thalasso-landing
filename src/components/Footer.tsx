@@ -84,14 +84,6 @@ export function Footer() {
               className="object-contain"
             />
           </div>
-          <div className="w-24 h-12 relative">
-            <Image
-              src="/images/WITT.png"
-              alt="WITT"
-              fill
-              className="object-contain"
-            />
-          </div>
         </div>
       </div>
 
