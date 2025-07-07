@@ -16,7 +16,10 @@
   
   "home": {
     "title": "Welcome to Dakhla Club",
-    "description": "Enjoy a 3-day wellness escape"
+    "description": "Enjoy a 3-day wellness escape",
+    "duration":"Duration",
+    "days": "3 Days",
+    "callButton":" I Want To Live The Experience"
   },
   "hero": {
     "tagline":     "Holistic Escape",
@@ -32,6 +35,17 @@
       "cuppingTherapy":     "Cupping Therapy"
     }
   },
+  "health": {
+    "title":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
+    "description1": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual",
+    "description2": "Here, silence heals. The sun warms from within. Our certified therapists welcome you for an immersive and deeply regenerative experience."
+  },
+  "about":{
+"title":       "Dakhla is calling… Are you ready to refuel your energy ?",
+    "description1": " You’re chasing time, your thoughts are racing, and your body is sending warning signs?",
+    "description2": "What if you paused everything for just 3 days—to reconnect with yourself ? Three days is short. But with the right guidance, it can change everything."
+ 
+  },
 
   "servicesSection": {
     "title":       "OUR SIGNATURE TREATMENTS",
@@ -44,7 +58,8 @@
       "subheading":        "3 Days, 3 Energies, 3 Transformations",
       "description":       "A holistic journey to your complete well-being in the unique universe of Dakhla",
       "jour":              "Day",
-      "activitiesTitle":   "Included Activities:"
+      "activitiesTitle":   "Included Activities:",
+      "callButton": " Enter the holistic universe of the Dakhla Club"
       
     },
     "days": {
@@ -85,7 +100,8 @@
   "exclusiveOffer": {
     "title": "⏳ Exclusive offer — 10 places per session",
     "description": "To preserve the quality and intimacy of the experience, each retreat is limited to 10 participants.",
-    "nextSession": "📅 Next session: 15–18 July 2025"
+    "nextSession": "📅 Next session: 15–18 July 2025",
+    "callButton": "I Reserve My Place"
   },
 
   "carousel": {
@@ -204,7 +220,7 @@
     }
   },
   "clientsCarousel":{
-    "title": "WHAT OUR GUESTS SAY",
+    "title": "What They Say ",
     "testimonial1": "I tried the ice baths and loved it!",
     "testimonial2": "After kiting, it's so relaxing",
     "testimonial3": "The best spa i've ever been to in my life",
@@ -227,57 +243,118 @@
       "kayakBadge":  { "alt": "Kayak badge" }
     }
   },
-  "footer": {
-    "cta": {
-      "default": {
-      "bannerText": "Need a wellness break?",
-      "headline":   "BOOK YOUR PERFECT RETREAT",
-      "description":"Tailor-made stay between desert and ocean.",
-      "button":     "Book now"
+"footer": {
+    "column1": "Navigate",
+    "footerNav": {
+      "home":     "Home",
+      "about":    "About",
+      "services": "Stays",
+      "contact":  "Contact"
     },
-    "to3": {
-      "bannerText": "Looking for a quick getaway?",
-      "headline":   "CHECK OUT OUR 3-DAY ESCAPE",
-      "description":"An express detox to refresh body & mind.",
-      "button":     "View 3-Day Offer"
+    "column2": "Support",
+    "support": {
+      "faq":        "FAQ",
+      "contactUs":  "Contact Us",
+      "terms":      "Terms of Use"
     },
-    "to5": {
-      "bannerText": "Want more time to rejuvenate?",
-      "headline":   "DISCOVER OUR 5-DAY SERENITY RETREAT",
-      "description":"A full-reset experience for lasting wellness.",
-      "button":     "View 5-Day Retreat"
-    }
+    "column3": "Company",
+    "company": {
+      "aboutUs": "About",
+      "careers": "Careers",
+      "news":    "News"
     },
-    "brand": {
-      "name":        "DakhlaClub",
-      "copy":        "© 2025 DakhlaClub"
+    "column4": "Legal",
+    "legal": {
+      "privacy":   "Privacy Policy",
+      "cookies":   "Cookie Policy",
+      "sitemap":   "Sitemap"
     },
-    "contact": {
-      "title":       "Contact",
-      "address":     "POINT DE DRAGON PK 28. 73000 Dakhla",
-      "phone":       "Tel: +212 652-881921",
-      "email":       "E: reservation@dakhlaclub.com"
-    },
-    "pages": {
-      "title":       "Pages",
-      "about":       "About",
-      "program":     "Program",
-      "book":        "Book"
-    },
-    "resources": {
-      "title":       "Resources",
-      "faq":         "FAQs",
-      "privacy":     "Privacy Policy"
-    },
-    "socials": {
-      "title":       "Follow Us",
-      "instagram":   "Instagram",
-      "facebook":    "Facebook",
-      "youtube":     "YouTube",
-      "tiktok":     "TikTok"
-    }
+    "copyright": "© 2025 DakhlaClub and its Associated Subsidiaries | Luxury Fitness, Health & Wellness Vacation Retreat."
   },
-
+"servicesTable": {
+    "header": "HOLISTIC ESCAPE PROGRAM – DAKHLA",
+    "servicesLabel": "Services",
+    "programs": [
+      "Day 1",
+      "Day 2",
+      "Day 3",
+      "Day 4"
+    ],
+    "services": [
+      { "title": "Personalized Welcome" },
+      { "title": "Detox Infusion" },
+      { "title": "Bungalow with Nature/Ocean View" },
+      { "title": "Bol d’Air Jacquier" },
+      { "title": "Thermal Pool Access" },
+      { "title": "Purifying Sauna" },
+      { "title": "Hydro-Massage Bath" },
+      { "title": "Seaweed Body Wrap" },
+      { "title": "Affusion Massage" },
+      { "title": "Jet Shower" },
+      { "title": "Magnesium Bath" },
+      { "title": "Cupping Therapy" },
+      { "title": "Desert Secret Hammam" },
+      { "title": "Relaxing Massage" },
+      {
+        "title": "Therapeutic Objectives",
+        "subItems": [
+          "Grounding, breathing, body & mind opening",
+          "Deep letting-go, cellular oxygenation, muscle release",
+          "Circulation boost, silhouette refining, energy recharge",
+          "Toxin elimination, mental calm, skin regeneration"
+        ]
+      },
+      {
+        "title": "Expected Benefits",
+        "subItems": [
+          "Inner oxygenation & glowing skin",
+          "Light body, tension relief",
+          "Muscular relaxation & better sleep",
+          "Smooth, de-puffed, remineralized skin",
+          "Naturally refined and drained silhouette",
+          "Mental clarity & stable energy"
+        ]
+      }
+    ],
+    "availability": {
+      "Personalized Welcome":        [1,0,0,0],
+      "Detox Infusion":              [1,0,0,0],
+      "Bungalow with Nature/Ocean View": [1,0,0,0],
+      "Bol d’Air Jacquier":          [1,1,0,1],
+      "Thermal Pool Access":         [1,1,1,1],
+      "Purifying Sauna":             [0,1,0,0],
+      "Hydro-Massage Bath":          [0,1,0,0],
+      "Seaweed Body Wrap":           [0,1,0,0],
+      "Affusion Massage":            [0,1,0,0],
+      "Jet Shower":                  [0,0,1,0],
+      "Magnesium Bath":              [0,0,1,0],
+      "Cupping Therapy":             [0,0,1,0],
+      "Desert Secret Hammam":        [0,0,0,1],
+      "Relaxing Massage":            [0,0,0,1],
+      "Therapeutic Objectives":      [1,1,1,1],
+      "Expected Benefits":           [1,1,1,1]
+    }
+    
+  },
+  "ProgrammeFonctionne":{
+    "title": "Why This Program Works",
+  "points":[
+    "Inner oxygenation & glowing skin",
+    "Light body, released tensions",
+    "Muscular relaxation & restful sleep",
+    "Smooth, de-puffed, remineralized skin",
+    "Naturally refined and drained silhouette",
+    "Mental clarity & stable energy"
+  ],
+  "points1": [
+      "Certified and caring therapists",
+      "An environment that heals all by itself"
+    ],
+    "points2": [
+      "Synergy between modern treatments & ancient rituals",
+      "A sequence designed around physiological & emotional logic"
+    ]
+},
 
 
   "offer5": {

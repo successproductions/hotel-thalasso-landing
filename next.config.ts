@@ -1,29 +1,36 @@
 
-module.exports = {
-  // … your existing config …
+import withNextIntl from 'next-intl/plugin';
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  // 1️⃣ Turn on Next.js’s built-in minifier
+  swcMinify: true,
+
+  images: {
+    unoptimized: true,
+    domains: ['images.unsplash.com'],
+  },
+
+  // 2️⃣ Add both redirects here
   async redirects() {
     return [
-      // Redirect all www.* traffic to the non-www root
+      // ——————————————————————————————
+      // Redirect root → your FR landing page
       {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.offer.dakhlaclub.com",
-          },
-        ],
+        source: '/',
+        destination: '/fr/evasion-holistique-3-jours',
         permanent: true,
-        destination: "https://offer.dakhlaclub.com/:path*",
       },
-      // Redirect bare "/" to "/fr" (if you chose Option A above)
+      // ——————————————————————————————
+      // Redirect any www host → non-www (preserving path)
       {
-        source: "/",
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.offer.dakhlaclub.com' }],
+        destination: 'https://offer.dakhlaclub.com/:path*',
         permanent: true,
-        destination: "/fr/sejour-serenite-5-jours",
       },
     ];
   },
-
-  // ensure production JS is minified
-  swcMinify: true,
 };
+
+export default withNextIntl('./next-intl.config.ts')(nextConfig);

@@ -15,26 +15,28 @@
   },
   
   "home": {
-    "title": "Bienvenue à Dakhla Club",
-    "description": "Profitez de 3 jours de détente et de soins"
+    "title": "Évasion Holistique à Dakhla",
+    "description": "3 Jours pour Ressourcer Corps & Esprit",
+    "duration":"Durée",
+    "days": "3 Jours",
+    "callButton":" Je veux vivre  l’expérience"
   },
    "hero": {
     "tagline":     "Évasion Holistique",
     "headline":    "3 JOURS POUR RESSOURCER CORPS & ESPRIT",
     "description": "Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?",
-    "cta":         "RÉSERVER MAINTENANT",
-    "services": {
-      "bolDAirJacquier":   "Bol d’Air Jacquier",
-      "hydroMassageBath":   "Bain hydromassant",
-      "seaweedWrap":        "Enveloppement aux algues",
-      "affusionMassage":    "Massage à affusion",
-      "traditionalHammam":  "Hammam traditionnel",
-      "cuppingTherapy":     "Cupping thérapie"
-    }
+    "cta":         "RÉSERVER MAINTENANT"
   },
-  "servicesSection": {
-    "title":       "NOS SOINS SIGNATURE",
-    "description": "Découvrez une palette de soins pensés pour votre bien-être physique et mental"
+  "health": {
+    "title":       "Un sanctuaire entre désert doré, lagune turquoise et lumière sacrée",
+    "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne.",
+    "description2": "Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante."
+  },
+  "about":{
+"title":       "Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?",
+    "description1": " Vous courez après le temps, vos pensées tournent en boucle",
+    "description2": "Et votre corps vous envoie des signaux d’alerte ? Et si vous arrêtiez tout, juste 3 jours, pour vous reconnecter à vous-même ? Trois jours, c’est court. Mais bien accompagnés, ils peuvent tout changer."
+ 
   },
   
   "programSection": {
@@ -43,7 +45,8 @@
       "subheading":        "3 Jours, 3 Énergies, 3 Transformations",
       "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
       "jour":              "Jour",
-      "activitiesTitle":   "Activités incluses :"
+      "activitiesTitle":   "Activités incluses :",
+      "callButton": " Entrer dans l’univers holistique du Dakhla Club"
 
     },
     "days": {
@@ -84,7 +87,11 @@
   "exclusiveOffer": {
     "title": "⏳ Offre exclusive – 10 places par session",
     "description": "Pour préserver la qualité et l’intimité de l’expérience, nous limitons chaque retraite à 10 personnes.",
-    "nextSession": "📅 Prochaine session : 15 au 18 juillet 2025"
+    "nextSession": "📅 Prochaine session : 15 au 18 juillet 2025",
+    "callButton": "Je Réserve ma Place"
+  },
+  "test":{
+
   },
   "carousel": {
     "overlay": {
@@ -203,7 +210,7 @@
     }
   },
 "clientsCarousel":{
-  "title": "NOS CLIENTS TÉMOIGNENT",
+  "title": "Elles En Parlent",
   "testimonial1" :"J'ai testé kiting et j'ai adoré !",
   "testimonial2" :"Après avoir fait du cerf-volant, c’est tellement relaxant",
   "testimonial3" :"Le meilleur spa que j'aie fait de toute ma vie",
@@ -229,53 +236,115 @@
     }
   },
   "footer": {
-    "cta": {
-      "default": {
-      "bannerText": "Besoin d’un coup de boost ?",
-      "headline":   "RÉSERVEZ VOTRE PARENTHÈSE BIEN-ÊTRE",
-      "description":"Profitez d’un séjour sur-mesure entre désert et océan.",
-      "button":     "Réserver maintenant"
+    "column1": "Navigation",
+    "footerNav": {
+      "home":     "Accueil",
+      "about":    "À propos",
+      "services": "Séjours",
+      "contact":  "Contact"
     },
-    "to3": {
-      "bannerText": "Envie d’un week-end express ?",
-      "headline":   "DÉCOUVREZ NOTRE ÉVASION 3 JOURS",
-      "description":"Une cure détox rapide pour purifier corps et esprit.",
-      "button":     "Voir l’offre 3 Jours"
+    "column2": "Support",
+    "support": {
+      "faq":        "FAQ",
+      "Awards":  "Récompenses",
+      "terms":      "Conditions d'utilisation"
     },
-    "to5": {
-      "bannerText": "Vous voulez aller plus loin ?",
-      "headline":   "EXPLOREZ LE SÉJOUR SÉRÉNITÉ 5 JOURS",
-      "description":"Un reset complet pour un bien-être durable.",
-      "button":     "Voir l’offre 5 Jours"
-    }
+    "column3": "Société",
+    "company": {
+      "aboutUs": "À propos",
+      "careers": "Carrières",
+      "news":    "Actualités"
     },
-    "brand": {
-      "name":        "DakhlaClub",
-      "copy":        "© 2025 DakhlaClub"
+    "column4": "Légal",
+    "legal": {
+      "privacy":   "Politique de confidentialité",
+      "cookies":   "Politique de cookies",
+      "sitemap":   "Plan du site"
     },
-    "contact": {
-      "title":       "Contact",
-      "address":     "POINT DE DRAGON PK 28. 73000 Dakhla",
-      "phone":       "Tél : +212 652-881921",
-      "email":       "E : reservation@dakhlaclub.com"
-    },
-    "pages": {
-      "title":       "Pages",
-      "about":       "À propos",
-      "program":     "Programme",
-      "book":        "Réserver"
-    },
-    "resources": {
-      "title":       "Ressources",
-      "faq":         "FAQs",
-      "privacy":     "Politique de confidentialité"
-    },
-    "socials": {
-      "title":       "Suivez-nous",
-      "instagram":   "Instagram",
-      "facebook":    "Facebook",
-      "youtube":     "YouTube",
-      "tiktok":     "TikTok"
+    "copyright": "DakhlaClub et ses filiales associées | Luxury Fitness, Health & Wellness Vacation Retreat."
+  },
+"ProgrammeFonctionne":{
+  "points":[
+
+    "Oxygénation intérieure & peau rayonnante",
+    "Corps léger, tensions relâchées",
+    "Détente musculaire & sommeil retrouvé",
+    "Peau lissée, dégonflée, reminéralisée",
+    "Silhouette affinée et drainée naturellement",
+    "Clarté mentale & énergie stable"
+  ],
+  "points1":[
+    "Thérapeutes certifiés et attentionnés",
+    "Un environnement qui soigne à lui seul"
+  ],
+  "points2":[
+    "Synergie entre soins modernes & rituels ancestraux",
+    "Enchaînement conçu sur une logique physiologique & émotionnelle"
+
+  ]
+},
+  "servicesTable": {
+    "header": "PROGRAMME ÉVASION HOLISTIQUE – DAKHLA",
+    "servicesLabel": "Prestations",
+    "programs": [
+      "Jour 1",
+      "Jour 2",
+      "Jour 3",
+      "Jour 4"
+    ],
+    "services": [
+      { "title": "Accueil personnalisé" },
+      { "title": "Infusion détox" },
+      { "title": "Installation bungalow vue nature/océan" },
+      { "title": "Bol d’Air Jacquier" },
+      { "title": "Piscine thermale" },
+      { "title": "Sauna purifiant" },
+      { "title": "Bain hydromassant" },
+      { "title": "Enveloppement aux algues" },
+      { "title": "Modelage sous affusion" },
+      { "title": "Douche à jet" },
+      { "title": "Bain au magnésium" },
+      { "title": "Cupping thérapie" },
+      { "title": "Hammam Secret du Désert" },
+      { "title": "Massage relaxant" },
+      {
+        "title": "Objectifs thérapeutiques",
+        "subItems": [
+          "Ancrage, respiration, ouverture du corps et de l’esprit",
+          "Lâcher-prise profond, oxygénation cellulaire, relâchement musculaire",
+          "Relancer la circulation, affiner la silhouette, recharge énergétique",
+          "Évacuation des toxines, apaisement mental, peau régénérée"
+        ]
+      },
+      {
+        "title": "Bénéfices attendus",
+        "subItems": [
+          "Oxygénation intérieure & peau rayonnante",
+          "Corps léger, tensions relâchées",
+          "Détente musculaire & sommeil retrouvé",
+          "Peau lissée, dégonflée, reminéralisée",
+          "Silhouette affinée et drainée naturellement",
+          "Clarté mentale & énergie stable"
+        ]
+      }
+    ],
+    "availability": {
+      "Accueil personnalisé":           [1,0,0,0],
+      "Infusion détox":                  [1,0,0,0],
+      "Installation bungalow vue nature/océan": [1,0,0,0],
+      "Bol d’Air Jacquier":              [1,1,0,1],
+      "Piscine thermale":                [1,1,1,1],
+      "Sauna purifiant":                 [0,1,0,0],
+      "Bain hydromassant":               [0,1,0,0],
+      "Enveloppement aux algues":        [0,1,0,0],
+      "Modelage sous affusion":          [0,1,0,0],
+      "Douche à jet":                    [0,0,1,0],
+      "Bain au magnésium":               [0,0,1,0],
+      "Cupping thérapie":                [0,0,1,0],
+      "Hammam Secret du Désert":         [0,0,0,1],
+      "Massage relaxant":                [0,0,0,1],
+      "Objectifs thérapeutiques":        [1,1,1,1],
+      "Bénéfices attendus":              [1,1,1,1]
     }
   },
 
