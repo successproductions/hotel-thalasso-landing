@@ -1,19 +1,20 @@
+
 import { useTranslations } from "next-intl";
 import React from "react";
 
 export function HealthPrograms() {
-  const t   = useTranslations('health');
+  const t   = useTranslations('health')
   return (
     <section  id="about"  className="pb-12 bg-white">
       <div className="mx-auto max-w-4xl px-4 text-center">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-semibold  text-gray-800">
-        {t('title')}
+        {t('title2')}
         </h2>
 
         {/* Description */}
         <p className="mt-4 text-gray-600 text-base md:text-lg font-light leading-relaxed">
-         {t('description1')}
+         {t('description12')}
         </p>
 
         {/* Note */}

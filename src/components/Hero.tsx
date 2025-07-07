@@ -10,10 +10,10 @@ export default function Hero() {
  
 
   return (
-    <section id="accueil" className="relative h-screen w-full overflow-hidden">
+    <section id="accueil" className="relative h-[70vh] md:h-screen w-screen overflow-hidden">
       {/* Background Video */}
       <video
-        className="absolute inset-0 w-full h-[92vh] object-cover"
+        className="absolute inset-0 w-full h-[57vh] md:h-[92vh] object-cover"
         src="https://rancholapuerta.com/wp-content/themes/rancho/assets/images/homepage.mp4"
         autoPlay
         loop
@@ -69,7 +69,7 @@ export default function Hero() {
                 .getElementById("contact")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-5 py-2 border border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition"
+            className="px-5 py-2 border text-center border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition"
           >
             {t('callButton')}
           </button>

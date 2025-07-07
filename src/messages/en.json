@@ -25,19 +25,11 @@
     "tagline":     "Holistic Escape",
     "headline":    "3 DAYS TO REJUVENATE BODY & MIND",
     "description": "Dakhla is calling… Are you ready to recharge your batteries?",
-    "cta":         "BOOK YOUR HOLISTIC ESCAPE",
-    "services": {
-      "bolDAirJacquier":   "Jacquier Air Bath",
-      "hydroMassageBath":   "Hydro-Massage Bath",
-      "seaweedWrap":        "Seaweed Wrap",
-      "affusionMassage":    "Affusion Massage",
-      "traditionalHammam":  "Traditional Hammam",
-      "cuppingTherapy":     "Cupping Therapy"
-    }
+    "cta":         "BOOK YOUR HOLISTIC ESCAPE"
   },
   "health": {
-    "title":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
-    "description1": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual",
+    "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
+    "description12": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual",
     "description2": "Here, silence heals. The sun warms from within. Our certified therapists welcome you for an immersive and deeply regenerative experience."
   },
   "about":{

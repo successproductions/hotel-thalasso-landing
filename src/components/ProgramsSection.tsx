@@ -179,7 +179,7 @@ export function ProgramsSection() {
         </a>
       </div>
     */}
-    <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+    <div  className="md:px-0 px-4 text-center" style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}>
       <a
         href="#contact"
         style={{
