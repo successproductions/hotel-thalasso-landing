@@ -8,7 +8,7 @@ export function HealthPrograms() {
     <section  id="about"  className="pb-12 bg-white">
       <div className="mx-auto max-w-4xl px-4 text-center">
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-semibold  text-gray-800">
+        <h2 className="text-3xl md:text-4xl font-medium  text-gray-800">
         {t('title2')}
         </h2>
 

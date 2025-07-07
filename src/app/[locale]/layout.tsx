@@ -3,14 +3,13 @@ import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Lora } from 'next/font/google';
+import { Playfair_Display } from 'next/font/google';
 
-const lora = Lora({
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-lora',
-});
+  weight: ['400','700'],
+  display: 'swap'
+})
 
 export async function generateStaticParams() {
   return [{ locale: 'fr' }, { locale: 'en' }];
@@ -182,7 +181,7 @@ export default async function LocaleLayout({
   />
       </head>
 
-      <body className={lora.className}>
+      <body className={playfair.className}>
 
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <NextIntlClientProvider locale={locale} messages={messages}>

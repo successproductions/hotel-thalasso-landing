@@ -60,7 +60,7 @@ export default function FAQSection() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <h2 className="text-5xl md:text-6xl font-medium text-slate-800 dark:text-slate-100 mb-4 tracking-tight">
+            <h2 className="text-5xl md:text-5xl font-medium text-slate-800 dark:text-slate-100 mb-4 tracking-tight">
               {t("title")}
             </h2>
             <div className="w-24 h-1 bg-slate-800 dark:bg-slate-100 mx-auto rounded-full"></div>
@@ -135,7 +135,7 @@ export default function FAQSection() {
                         }}
                         transition={{ duration: 0.2 }}
                       >
-                        <AccordionTrigger className="px-6 py-5 text-left font-semibold text-slate-800 dark:text-slate-100 dark:hover:bg-slate-600  transition-colors duration-200">
+                        <AccordionTrigger className="px-6 py-5 text-left font-bold text-slate-800 dark:text-slate-100 dark:hover:bg-slate-600  transition-colors duration-200">
                           <div className="flex items-center justify-between w-full dark:hover:bg-slate-600">
                             <span className="text-base md:text-lg pr-4">{item.question}</span>
                             <motion.div

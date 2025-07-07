@@ -27,7 +27,7 @@ export function ObjectivesSection() {
     <section id="fonctionnement" className="py-16 bg-white">
       <div className="mx-auto max-w-6xl px-4 text-center">
         {/* Section title */}
-        <h2 className="text-3xl md:text-4xl text-gray-800 font-semibold mb-12">
+        <h2 className="text-3xl md:text-4xl text-gray-800 font-medium mb-12">
           {t('title')}
         </h2>
 

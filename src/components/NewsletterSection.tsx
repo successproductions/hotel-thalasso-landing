@@ -40,7 +40,7 @@ export function NewsletterSection() {
           background: "#14b8a6",
           color: "#fff",
           fontSize: "1.325rem",
-          fontWeight: 600,
+          fontWeight: 400,
           borderRadius: "9999px",
           textDecoration: "none",
           boxShadow: "0 2px 8px rgba(20,184,166,0.15)"
