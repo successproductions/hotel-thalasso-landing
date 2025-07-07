@@ -86,7 +86,6 @@ export function Footer() {
                 className="object-contain"
               />
             </div>
-            <p className="text-xs text-gray-500 mt-1">Download Brochure</p>
           </div>
         </div>
       </div>
