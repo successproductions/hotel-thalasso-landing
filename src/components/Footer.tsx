@@ -79,8 +79,8 @@ export function Footer() {
           <div className="text-center">
             <p className="text-xs text-gray-600 mb-2">Scan to download our brochure</p>
             <div className="w-24 h-24 relative bg-white p-2 rounded-lg shadow-md">
-              <Image
-                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://dakhlaclub.com/brochure/BROCHURE_CH_NUMERIQUE_FR_compressed.pdf"
+            <Image
+                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://hotel-thalasso-landing-git-dev-successproductions-projects.vercel.app/brochure/BROCHURE_CH_NUMERIQUE_FR_compressed.pdf"
                 alt="QR Code - Download Brochure"
                 fill
                 className="object-contain"
