@@ -1,21 +1,11 @@
 // components/PourquoiProgrammeFonctionne.tsx
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 
 export function ProgrammeFonctionne() {
-  const points = [
-    "Synergie entre soins modernes & rituels ancestraux",
-    "Enchaînement conçu sur une logique physiologique & émotionnelle",
-    "Thérapeutes certifiés et attentionnés",
-    "Un environnement qui soigne à lui seul",
-    "Oxygénation intérieure & peau rayonnante",
-    "Corps léger, tensions relâchées",
-    "Détente musculaire & sommeil retrouvé",
-    "Peau lissée, dégonflée, reminéralisée",
-    "Silhouette affinée et drainée naturellement",
-    "Clarté mentale & énergie stable"
-
-  ];
+  const t = useTranslations('ProgrammeFonctionne.points')
+ 
 
   return (
     <section id="pourquoi" className="py-16 bg-white">
@@ -36,9 +26,10 @@ export function ProgrammeFonctionne() {
           Ce que vous allez vraiment ressentir
           </h2>
           <ul className="list-disc pl-5 space-y-3 text-gray-600 text-base md:text-lg leading-relaxed">
-            {points.map((point, i) => (
-              <li key={i}>{point}</li>
-            ))}
+            {[0, 1, 2, 3, 4, 5].map((i) => {
+              const point = t(`${i}`);
+              return <li key={i}>{point}</li>;
+            })}
           </ul>
         </div>
       </div>

@@ -1,56 +1,63 @@
 
 
-import Image from "next/image";
-import React from "react";
+
+'use client';
+
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 export function ObjectivesSection() {
-  const cards = [
+  const t = useTranslations('ProgrammeFonctionne');
+
+  const images = [
     {
       image: "https://shawellness.com/wp-content/uploads/2023/10/lopff2.png",
-      alt: "Objectif 1",
-      text:
-        "You are exposed to a high degree of activity, effort, stress, decision-making, continuous travel, etc., and seek to monitor and care for your health, improving your overall performance and productivity.",
+      alt: "spa entre désert et océan",
     },
     {
       image: "https://shawellness.com/wp-content/uploads/2023/10/lpobj1.png", 
-      alt: "Objectif 2",
-      text:
-        "Achieve and maintain optimal health in the face of high levels of activity, exertion, and stress, with substantial improvement in both your performance and productive capacity.",
+      alt: "retraite spirituelle Maroc",
     },
-  ];
+  ]
+  // pull in your two arrays of points
+  const card1 = t.raw('points1') as string[];
+  const card2 = t.raw('points2') as string[];
 
   return (
-    <section id="objectifs" className="py-16 bg-gray-50">
-      {/* Section Title */}
-      <h2 className="text-4xl font-semibold text-gray-800 text-center mb-12">
-      Pourquoi Ce Programme Fonctionne
-      </h2>
+    <section id="fonctionnement" className="py-16 bg-white">
+      <div className="mx-auto max-w-6xl px-4 text-center">
+        {/* Section title */}
+        <h2 className="text-3xl md:text-4xl text-gray-800 font-semibold mb-12">
+          {t('title')}
+        </h2>
 
-      {/* Cards Container */}
-      <div className="flex flex-col lg:flex-row justify-center items-stretch gap-8 px-4 max-w-6xl mx-auto">
-        {cards.map((card, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-lg shadow-md overflow-hidden flex-1 max-w-2xl"
-          >
-            {/* Golden/Beige Background Section */}
-            <div className="relative h-48 w-full">
-              <Image
-                src={card.image}
-                alt={card.alt}
-                fill
-                className="object-cover"
-              />
+        {/* Two-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[card1, card2].map((points, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+            >
+              {/* replace these with your actual images or remove entirely */}
+              <div className="h-48 w-full relative">
+                <Image
+                  src={images[idx].image}
+                  alt={images[idx].alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="p-6 space-y-3">
+                {points.map((text, i) => (
+                  <p key={i} className="text-gray-700 p-0">
+                    {text}
+                  </p>
+                ))}
+              </div>
             </div>
-            
-            {/* Content Section */}
-            <div className="p-8">
-              <p className="text-gray-600 text-base leading-relaxed text-center">
-                {card.text}
-              </p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

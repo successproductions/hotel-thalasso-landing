@@ -7,10 +7,10 @@ export function About() {
   const t   = useTranslations('about');
 
   return (
-    <section id="about" className="  bg-white">
+    <section  className="  bg-white">
       <div className="mx-auto  grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Text Column */}
-        <div className="space-y-4 px-28">
+        <div className="space-y-4 px-4 md:px-28">
           <p className="text-sm uppercase tracking-widest font-light text-gray-500">
           {t('title')}
           </p>

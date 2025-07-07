@@ -49,7 +49,7 @@ export function ProgramsSection() {
   });
 
   return (
-    <section className="overflow-hidden">
+    <section id="services" className="overflow-hidden">
       {/* Header Section */}
       <div className="max-w-6xl mx-auto px-4 py-8 text-center">
         <motion.div
@@ -193,7 +193,7 @@ export function ProgramsSection() {
           boxShadow: "0 2px 8px rgba(20,184,166,0.15)"
         }}
       >
-        Entrer dans l’univers holistique du Dakhla Club
+        {t('header.callButton')}
       </a>
     </div>
 

@@ -1,6 +1,12 @@
+// components/NewsletterSection.tsx
+"use client";
+
 import React from "react";
+import { useTranslations } from "next-intl";
 
 export function NewsletterSection() {
+  const t = useTranslations("exclusiveOffer");
+
   return (
     <section
       className="relative h-[400px] md:h-[500px] bg-center bg-cover"
@@ -9,28 +15,41 @@ export function NewsletterSection() {
       {/* dark overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center space-y-4">
+        {/* Title */}
         <h2 className="text-3xl md:text-4xl font-serif text-white">
-          Join Our Newsletter
+          {t("title")}
         </h2>
-        <p className="mt-2 text-sm md:text-base text-white/80 uppercase tracking-wide">
-          Add your name to our mailing list for news and updates from DakhlaClub
+
+        {/* Description */}
+        <p className="text-sm md:text-base text-white/80 uppercase tracking-wide">
+          {t("description")}
         </p>
 
-        {/* form */}
-        <form className="mt-6 w-full max-w-md flex">
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="flex-1 px-4 py-2 rounded-l-md focus:outline-none"
-          />
-          <button
-            type="submit"
-            className="bg-white text-gray-800 px-6 py-2 rounded-r-md font-medium hover:bg-gray-100 transition"
-          >
-            Submit
-          </button>
-        </form>
+        {/* Next session */}
+        <p className="text-sm md:text-base text-white/90">
+          {t("nextSession")}
+        </p>
+
+        {/* Just the button, no email input */}
+        <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+      <a
+        href="#contact"
+        style={{
+          padding: "12px 32px",
+          background: "#14b8a6",
+          color: "#fff",
+          fontSize: "1.325rem",
+          fontWeight: 600,
+          borderRadius: "9999px",
+          textDecoration: "none",
+          boxShadow: "0 2px 8px rgba(20,184,166,0.15)"
+        }}
+      >
+{t('callButton')}
+      </a>
+    </div>
+
       </div>
     </section>
   );

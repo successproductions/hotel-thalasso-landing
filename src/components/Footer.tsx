@@ -2,8 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import { Facebook, Instagram, Youtube  } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations('footer')
   return (
     <footer className="bg-gray-100 text-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-5 gap-8">
@@ -11,35 +13,47 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold uppercase mb-4">DakhlaClub</h3>
           <ul className="space-y-2">
-            {["About", "Contact Us", "Careers"].map((item) => (
-              <li key={item} className="hover:underline cursor-pointer">
-                {item}
-              </li>
-            ))}
+          <li className="hover:underline cursor-pointer">
+              <a href="">{t('footerNav.home')}</a>
+            </li>
+            <li className="hover:underline cursor-pointer">
+              <a href="#about">{t('footerNav.about')}</a>
+            </li>
+            <li className="hover:underline cursor-pointer">
+              <a href="#services">{t('footerNav.services')}</a>
+            </li>
           </ul>
         </div>
 
         {/* Column 2 */}
         <div>
-          <h3 className="text-sm font-semibold uppercase mb-4">Noteworthy</h3>
+          <h3 className="text-sm font-semibold uppercase mb-4">{t('column2')}</h3>
           <ul className="space-y-2">
-            {["Awards & Press", "Newsletters", "FAQ"].map((item) => (
-              <li key={item} className="hover:underline cursor-pointer">
-                {item}
-              </li>
-            ))}
+          <li className="hover:underline cursor-pointer">
+              <a href="#faq">{t('support.faq')}</a>
+            </li>
+            <li className="hover:underline cursor-pointer">
+              <a href="#awards">{t('support.Awards')}</a>
+            </li>
+            <li className="hover:underline cursor-pointer">
+              <a href="">{t('support.terms')}</a>
+            </li>
           </ul>
         </div>
 
         {/* Column 3 */}
         <div>
-          <h3 className="text-sm font-semibold uppercase mb-4">Legal</h3>
+          <h3 className="text-sm font-semibold uppercase mb-4">{t('column4')}</h3>
           <ul className="space-y-2">
-            {["Privacy Policy", "Terms of Use"].map((item) => (
-              <li key={item} className="hover:underline cursor-pointer">
-                {item}
-              </li>
-            ))}
+          <li className="hover:underline cursor-pointer">
+              <a href="">{t('legal.privacy')}</a>
+            </li>
+            <li className="hover:underline cursor-pointer">
+              <a href="">{t('legal.cookies')}</a>
+            </li>
+            <li className="hover:underline cursor-pointer">
+              <a href="">{t('legal.sitemap')}</a>
+            </li>
           </ul>
         </div>
 

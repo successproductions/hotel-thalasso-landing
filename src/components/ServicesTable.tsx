@@ -1,113 +1,86 @@
-import React from "react";
+'use client';
+import React from 'react';
+import { useMessages, useTranslations } from 'next-intl';
 
 type Service = {
   title: string;
   subItems?: string[];
 };
 
-export function ServicesTable() {
-  const programs = ["Jour 1", "Jour 2", "Jour 3", "Jour 4"];
-  const services: Service[] = [
-    { title: "Accueil personnalisé" },
-    { title: "Infusion détox" },
-    { title: "Installation bungalow vue nature/océan" },
-    { title: "Bol d'Air Jacquier" },
-    { title: "Piscine thermale" },
-    { title: "Sauna purifiant" },
-    { title: "Bain hydromassant" },
-    { title: "Enveloppement aux algues" },
-    { title: "Modelage sous affusion" },
-    { title: "Douche à jet" },
-    { title: "Bain au magnésium" },
-    { title: "Cupping thérapie" },
-    { title: "Hammam Secret du Désert" },
-    { title: "Massage relaxant" },
-    {
-      title: "Objectifs thérapeutiques",
-      subItems: [
-        "Ancrage, respiration, ouverture du corps et de l'esprit",
-        "Lâcher-prise profond, oxygénation cellulaire, relâchement musculaire",
-        "Relancer la circulation, affiner la silhouette, recharge énergétique",
-        "Évacuation des toxines, apaisement mental, peau régénérée",
-      ],
-    },
-    {
-      title: "Bénéfices attendus",
-      subItems: [
-        "Oxygénation intérieure & peau rayonnante",
-        "Corps léger, tensions relâchées",
-        "Détente musculaire & sommeil retrouvé",
-        "Peau lissée, dégonflée, reminéralisée",
-        "Silhouette affinée et drainée naturellement",
-        "Clarté mentale & énergie stable",
-      ],
-    },
-  ];
-
-  const serviceAvailability: Record<string, number[]> = {
-    "Accueil personnalisé": [1, 0, 0, 0],
-    "Infusion détox": [1, 0, 0, 0],
-    "Installation bungalow vue nature/océan": [1, 0, 0, 0],
-    "Bol d'Air Jacquier": [1, 1, 0, 1],
-    "Piscine thermale": [1, 1, 1, 1],
-    "Sauna purifiant": [0, 1, 0, 0],
-    "Bain hydromassant": [0, 1, 0, 0],
-    "Enveloppement aux algues": [0, 1, 0, 0],
-    "Modelage sous affusion": [0, 1, 0, 0],
-    "Douche à jet": [0, 0, 1, 0],
-    "Bain au magnésium": [0, 0, 1, 0],
-    "Cupping thérapie": [0, 0, 1, 0],
-    "Hammam Secret du Désert": [0, 0, 0, 1],
-    "Massage relaxant": [0, 0, 0, 1],
-    "Objectifs thérapeutiques": [1, 1, 1, 1],
-    "Bénéfices attendus": [1, 1, 1, 1],
+type Messages = {
+  servicesTable: {
+    header: string;
+    programs: string[];
+    services: Service[];
+    availability: Record<string, number[]>;
   };
+};
+
+export function ServicesTable() {
+  // grab the raw JSON object under "servicesTable"
+  const msg = useMessages() as { servicesTable: Messages['servicesTable'] };
+  const table = msg.servicesTable;
+
+  // translations hook—for any one-off strings if you prefer live locale switching
+  const t = useTranslations('servicesTable');
 
   return (
     <div className="overflow-x-auto py-12">
-      <div className=" mx-36">
+      <div className="mx-12 lg:mx-36">
         <table className="w-full table-auto border-collapse">
           <thead>
+            {/* main header */}
             <tr>
               <th
-                colSpan={1 + programs.length}
+                colSpan={1 + table.programs.length}
                 className="text-left text-lg font-semibold uppercase pb-2 border-b border-gray-300"
               >
-                PROGRAMME ÉVASION HOLISTIQUE - DAKHLA
+                {table.header}
               </th>
             </tr>
+            {/* column headings: Services + each Day */}
             <tr>
               <th className="text-left text-sm font-medium text-gray-600 px-4 py-2">
-                Services
+                {t('servicesLabel') /* you can add this key if you want to translate "Services" */}
               </th>
-              {programs.map((day, index) => (
-                <th key={index} className="text-center text-sm font-medium text-gray-600 px-4 py-2">
+              {table.programs.map((day, i) => (
+                <th
+                  key={i}
+                  className="text-center text-sm font-medium text-gray-600 px-4 py-2"
+                >
                   {day}
                 </th>
               ))}
             </tr>
           </thead>
+
           <tbody className="divide-y divide-gray-200">
-            {services.map((svc, idx) => (
+            {table.services.map((svc, idx) => (
               <tr key={idx} className="bg-white">
+                {/* Service title + sub-items */}
                 <td className="align-top px-4 py-4">
                   <div className="font-medium text-gray-800">{svc.title}</div>
                   {svc.subItems && (
                     <ul className="mt-2 ml-4 list-disc text-sm text-gray-600 space-y-1">
-                      {svc.subItems.map((line, i) => (
-                        <li key={i}>{line}</li>
+                      {svc.subItems.map((item, j) => (
+                        <li key={j}>{item}</li>
                       ))}
                     </ul>
                   )}
                 </td>
-                {programs.map((_, i) => (
-                  <td
-                    key={i}
-                    className="px-4 py-4 text-center font-medium text-gray-700"
-                  >
-                    {serviceAvailability[svc.title] ? (serviceAvailability[svc.title][i] ? "✓" : "") : "✓"}
-                  </td>
-                ))}
+
+                {/* ✓ or blank for each program column */}
+                {table.programs.map((_, colIdx) => {
+                  const avail = table.availability[svc.title]?.[colIdx];
+                  return (
+                    <td
+                      key={colIdx}
+                      className="px-4 py-4 text-center font-medium text-gray-700"
+                    >
+                      {avail === 1 ? '✓' : ''}
+                    </td>
+                  );
+                })}
               </tr>
             ))}
           </tbody>

@@ -25,7 +25,7 @@ export default function Hero() {
       {/* animated two-line headline */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4 space-y-4">
         {/* Line 1: big italic serif */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal  ">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal  ">
           <WavyText text={t("title")} />
         </h1>
 
@@ -51,10 +51,10 @@ export default function Hero() {
           {/* 2) Duration */}
           <div className="flex flex-col items-center md:items-start text-sm">
             <span className="uppercase text-gray-500 tracking-wider">
-              Durée
+              {t('duration')}
             </span>
             <span className="font-semibold text-gray-800">
-            3 Jours 
+            {t("days")}
             </span>
           </div>
 
@@ -71,7 +71,7 @@ export default function Hero() {
             }
             className="px-5 py-2 border border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition"
           >
-            Je veux vivre  l’expérience
+            {t('callButton')}
           </button>
         </div>
       </div>
