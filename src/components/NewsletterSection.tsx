@@ -1,12 +1,17 @@
-// components/NewsletterSection.tsx
+
 "use client";
 
-import React from "react";
+
+import React, { useState } from "react";
 import { useTranslations } from "next-intl";
+import { PaymentModal } from "./Payment/PaymentModal";
 
 export function NewsletterSection() {
   const t = useTranslations("exclusiveOffer");
+  const [showModal, setShowModal] = useState(false)
+  const amount = 9500
 
+  
   return (
     <section
       className="relative h-[400px] md:h-[500px] bg-center bg-cover"
@@ -33,8 +38,8 @@ export function NewsletterSection() {
 
         {/* Just the button, no email input */}
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
-      <a
-        href="#contact"
+      <button
+      onClick={() => setShowModal(true)}
         style={{
           padding: "12px 32px",
           background: "#14b8a6",
@@ -47,10 +52,15 @@ export function NewsletterSection() {
         }}
       >
 {t('callButton')}
-      </a>
+      </button>
     </div>
 
       </div>
+      <PaymentModal
+      isOpen={showModal}
+      amount={amount}
+      onClose={() => setShowModal(false)}
+    />
     </section>
   );
 }
