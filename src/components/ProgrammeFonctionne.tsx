@@ -22,7 +22,7 @@ export function ProgrammeFonctionne() {
 
         {/* Text Column */}
         <div className="space-y-6">
-          <h2 className="text-3xl md:text-4xl pt-6 md:pt-14  font-semibold text-gray-800">
+          <h2 className="text-3xl md:text-4xl pt-6 md:pt-14  font-medium text-gray-800">
           Ce que vous allez vraiment ressentir
           </h2>
           <ul className="list-disc pl-5 space-y-3 text-gray-600 text-base md:text-lg leading-relaxed">

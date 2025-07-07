@@ -14,7 +14,7 @@ export function About() {
           <p className="text-sm uppercase tracking-widest font-light text-gray-500">
           {t('title')}
           </p>
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-800">
+          <h2 className="text-3xl md:text-5xl font-medium text-gray-800">
          {t('description1')}
           </h2>
           <p className="text-gray-600 leading-relaxed font-normal text-base md:text-lg">

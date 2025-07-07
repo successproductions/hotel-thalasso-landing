@@ -179,7 +179,7 @@ export function ProgramsSection() {
         </a>
       </div>
     */}
-    <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+    <div  className="md:px-0 px-4 text-center" style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}>
       <a
         href="#contact"
         style={{
@@ -187,7 +187,7 @@ export function ProgramsSection() {
           background: "#14b8a6",
           color: "#fff",
           fontSize: "1.325rem",
-          fontWeight: 600,
+          fontWeight: 500,
           borderRadius: "9999px",
           textDecoration: "none",
           boxShadow: "0 2px 8px rgba(20,184,166,0.15)"
