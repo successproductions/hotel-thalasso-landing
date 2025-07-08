@@ -14,7 +14,7 @@ export default function Hero() {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-[57vh] md:h-[92vh] object-cover"
-        src="https://rancholapuerta.com/wp-content/themes/rancho/assets/images/homepage.mp4"
+        src="/videos/DC-Thermes.mov"
         autoPlay
         loop
         muted
