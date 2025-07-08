@@ -1,4 +1,4 @@
-// pages/api/payment-request.ts
+
 import { NextApiRequest, NextApiResponse } from 'next';
 import crypto from 'crypto';
 
