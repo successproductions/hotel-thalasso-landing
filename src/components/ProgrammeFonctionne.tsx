@@ -1,10 +1,12 @@
-// components/PourquoiProgrammeFonctionne.tsx
+'use client'
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 
 export function ProgrammeFonctionne() {
   const t = useTranslations('ProgrammeFonctionne.points')
+  const te = useTranslations('ProgrammeFonctionne')
+
  
 
   return (
@@ -23,7 +25,7 @@ export function ProgrammeFonctionne() {
         {/* Text Column */}
         <div className="space-y-6">
           <h2 className="text-3xl md:text-4xl pt-6 md:pt-14  font-medium text-gray-800">
-          Ce que vous allez vraiment ressentir
+          {te('title')}
           </h2>
           <ul className="list-disc pl-5 space-y-3 text-gray-600 text-base md:text-lg leading-relaxed">
             {[0, 1, 2, 3, 4, 5].map((i) => {
