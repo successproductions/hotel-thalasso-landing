@@ -7,7 +7,6 @@
     "home": "Home",
     "about": "About",
     "services": "Retreats",
-    "contact": "Contact",
     "offers":"offers",
     "button": {
     "book": "BOOK NOW"
@@ -27,13 +26,13 @@
     "description": "Dakhla is calling… Are you ready to recharge your batteries?",
     "cta":         "BOOK YOUR HOLISTIC ESCAPE"
   },
-  "health": {
+  "healthProgram": {
     "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
     "description12": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual",
     "description2": "Here, silence heals. The sun warms from within. Our certified therapists welcome you for an immersive and deeply regenerative experience."
   },
   "about":{
-"title":       "Dakhla is calling… Are you ready to refuel your energy ?",
+  "title":       "Dakhla is calling… Are you ready to refuel your energy ?",
     "description1": " You’re chasing time, your thoughts are racing, and your body is sending warning signs?",
     "description2": "What if you paused everything for just 3 days—to reconnect with yourself ? Three days is short. But with the right guidance, it can change everything."
  
