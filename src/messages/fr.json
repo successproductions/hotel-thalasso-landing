@@ -7,7 +7,6 @@
     "home": "Accueil",
     "about": "À propos",
     "services": "Séjours",
-    "contact": "Contact",
     "offers":"Offres",
     "button": {
     "book": "RÉSERVER"
@@ -27,7 +26,7 @@
     "description": "Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?",
     "cta":         "RÉSERVER MAINTENANT"
   },
-  "health": {
+  "healthProgram": {
     "title2":       "Un sanctuaire entre désert doré, lagune turquoise et lumière sacrée",
     "description12": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne.",
     "description2": "Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante."

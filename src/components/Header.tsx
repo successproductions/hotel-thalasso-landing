@@ -31,8 +31,7 @@ export default function Header() {
   const links = [
     { name: t("home"), href: "#accueil" },
     { name: t("about"), href: "#about" },
-    { name: t("services"), href: "#services" },
-    { name: t("contact"), href: "#contact" },
+    { name: t("services"), href: "#services" }
   ];
 
   return (

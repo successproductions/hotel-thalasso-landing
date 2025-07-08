@@ -1,9 +1,10 @@
 
+'use client'
 import { useTranslations } from "next-intl";
 import React from "react";
 
 export function HealthPrograms() {
-  const t   = useTranslations('health')
+  const t   = useTranslations('healthProgram')
   return (
     <section  id="about"  className="pb-12 bg-white">
       <div className="mx-auto max-w-4xl px-4 text-center">
