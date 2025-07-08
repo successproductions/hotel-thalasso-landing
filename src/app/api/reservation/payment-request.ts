@@ -1,31 +1,38 @@
 // pages/api/payment-request.ts
-import { NextApiRequest, NextApiResponse } from 'next'
-import crypto from 'crypto'
+import { NextApiRequest, NextApiResponse } from 'next';
+import crypto from 'crypto';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') return res.status(405).end()
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') return res.status(405).end();
 
-  const { amount } = req.body as { amount: number }
-  const merchantId  = process.env.CMI_MERCHANT_ID!
-  const secretKey   = process.env.CMI_SECRET_KEY!
-  const invoiceId   = Date.now().toString()
-  const callbackUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/payment-callback`
+  const { amount } = req.body as { amount: number };   // centimes
+  const MID      = process.env.CMI_MID!;
+  const ORDERID  = 'CMD_' + Date.now();
+  const CURRENCY = process.env.CMI_CURRENCY!;
+  const KEY      = process.env.CMI_SHA1!;
+  const SUCCESS  = process.env.SUCCESS_URL!;
+  const FAILURE  = process.env.FAIL_URL!;
 
-  // replicate PHP’s signature logic: merchantId|invoiceId|amount|currency
-  const raw = `${merchantId}|${invoiceId}|${amount}|MAD`
+  // ➜ signature SHA-1 (pas HMAC)
   const signature = crypto
-    .createHmac('sha256', secretKey)
-    .update(raw)
-    .digest('hex')
+    .createHash('sha1')
+    .update(MID + ORDERID + amount + CURRENCY + KEY)
+    .digest('hex');
 
-  // build the payment request URL
-  const paymentUrl = new URL('https://test.cmi.co.ma/portail/payment_request')
-  paymentUrl.searchParams.set('merchant_id',   merchantId)
-  paymentUrl.searchParams.set('invoice_id',    invoiceId)
-  paymentUrl.searchParams.set('amount',        amount.toString())
-  paymentUrl.searchParams.set('currency',      'MAD')
-  paymentUrl.searchParams.set('callback_url',  callbackUrl)
-  paymentUrl.searchParams.set('signature',     signature)
+  const params = new URLSearchParams({
+    MID: MID,
+    ORDERID: ORDERID,
+    AMOUNT: String(amount),
+    CURRENCY: CURRENCY,
+    LANGUAGE: 'fr',
+    EMAIL: 'test@example.com',
+    SIGNATURE: signature,
+    URLOK: SUCCESS,
+    URLKO: FAILURE,
+  });
 
-  return res.status(200).json({ paymentUrl: paymentUrl.toString() })
+  // On renvoie l’URL finale
+  res.status(200).json({
+    paymentUrl: `${process.env.CMI_GATE}?${params.toString()}`
+  });
 }

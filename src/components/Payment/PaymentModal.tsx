@@ -1,52 +1,54 @@
-// components/PaymentModal.tsx
-'use client'
+'use client';
+import { useState } from 'react';
 
-import React, { useEffect, useState } from 'react'
+type Props = {
+  open: boolean;
+  onClose: () => void;
+  amount: number;   // en centimes
+};
+export default function PaymentModal({ open, onClose, amount }: Props) {
+  const [loading, setLoading] = useState(false);
 
-interface PaymentModalProps {
-  isOpen: boolean
-  amount: number
-  onClose: () => void
-}
+  if (!open) return null;
 
-export function PaymentModal({ isOpen, amount, onClose }: PaymentModalProps) {
-  const [paymentUrl, setPaymentUrl] = useState<string>('')
-
-  useEffect(() => {
-    if (!isOpen) return
-    // call our Next.js API route to generate the CMI payment URL
-    fetch('/api/payment-request', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount }),
-    })
-      .then((res) => res.json())
-      .then((data) => setPaymentUrl(data.paymentUrl))
-      .catch(console.error)
-  }, [isOpen, amount])
-
-  if (!isOpen) return null
+  async function pay() {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/payment-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount }),
+      });
+      const { paymentUrl } = await res.json();
+      window.location.href = paymentUrl;            // redirection CMI
+    } catch (e) {
+      console.error(e);
+      alert('Erreur de paiement.');                 // à personnaliser
+      setLoading(false);
+    }
+  }
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 w-[90%] max-w-lg relative">
+    <div className="fixed inset-0 grid place-items-center bg-black/50 z-50">
+      <div className="bg-white p-8 rounded shadow-md max-w-md w-full">
+        <h2 className="text-xl font-semibold mb-4">Paiement sécurisé CMI</h2>
+
+        <p className="mb-6">Montant : {(amount / 100).toFixed(2)} MAD</p>
+
         <button
-          onClick={onClose}
-          className="absolute top-2 right-2 text-2xl leading-none"
-        >
-          &times;
+          onClick={pay}
+          disabled={loading}
+          className="w-full bg-amber-700 text-white py-3 rounded disabled:opacity-50">
+          {loading ? 'Redirection…' : 'Payer maintenant'}
         </button>
 
-        {!paymentUrl ? (
-          <p>Loading payment...</p>
-        ) : (
-          <iframe
-            src={paymentUrl}
-            className="w-full h-80 border-none"
-            title="CMI Payment"
-          />
-        )}
+        <button
+          onClick={onClose}
+          disabled={loading}
+          className="mt-4 w-full text-sm underline">
+          Annuler
+        </button>
       </div>
     </div>
-  )
+  );
 }
