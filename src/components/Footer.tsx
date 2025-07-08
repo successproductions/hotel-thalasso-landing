@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import { Facebook, Instagram, Youtube  } from "lucide-react";
@@ -74,16 +75,30 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Column 5: QR Code for PDF Download */}
-        <div className="flex flex-col items-center md:justify-end space-y-4">
-          <div className="text-center">
-            <p className="text-xs text-gray-600 mb-2">Scan to download our brochure</p>
-            <div className="w-24 h-24 relative bg-white  rounded-lg shadow-md">
-            <Image
+       
+               <div className="flex flex-col items-center md:justify-end space-y-4">
+         <div className="text-center mr-auto md:mx-auto">
+           <p className="text-xs text-gray-600 mb-2">
+             {t('scanBrochure')} 
+           </p>
+           <div
+             className="
+                w-32        
+                sm:w-28     
+               md:w-24     
+                aspect-square  
+                relative
+                bg-white
+                rounded-lg
+                shadow-md
+                overflow-hidden
+              "
+            >
+              <Image
                 src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://offer.dakhlaclub.com/brochure/BROCHURE_CH_NUMERIQUE_FR_compressed.pdf"
-                alt="QR Code - Download Brochure"
+                alt={t('qrAlt')} 
                 fill
-                className="object-contain"
+                className="object-cover p-1"
               />
             </div>
           </div>

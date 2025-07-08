@@ -235,6 +235,8 @@
     }
   },
   "footer": {
+     "scanBrochure": "Télécharger notre brochure",
+    "qrAlt": "Code QR – Télécharger la brochure",
     "column1": "Navigation",
     "footerNav": {
       "home":     "Accueil",
