@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="absolute inset-0 " />
 
       {/* animated two-line headline */}
-      <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center px-4 space-y-4">
+      <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center pb-12 md:pb-0 px-4 space-y-4">
         {/* Line 1: big italic serif */}
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal  ">
           <WavyText text={t("title")} />
