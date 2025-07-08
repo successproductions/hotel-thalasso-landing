@@ -1,23 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 
+/**
+ *  GET  /api/payment-callback   (appelé par CMI)
+ *  Vérifie la signature, redirige /success ou /failure
+ */
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
+  const sp = new URL(req.url).searchParams;
 
-  const MID        = searchParams.get('MID')!;
-  const ORDERID    = searchParams.get('ORDERID')!;
-  const AMOUNT     = searchParams.get('AMOUNT')!;
-  const CURRENCY   = searchParams.get('CURRENCY')!;
-  const SIGNATURE  = searchParams.get('SIGNATURE')!;
-  const RESPONSE   = searchParams.get('RESPONSECODE')!; // "00" = OK
+  const MID   = sp.get('MID')!;
+  const ORDER = sp.get('ORDERID')!;
+  const AMT   = sp.get('AMOUNT')!;
+  const CURR  = sp.get('CURRENCY')!;
+  const SIGN  = sp.get('SIGNATURE')!;
+  const RESP  = sp.get('RESPONSECODE')!;     
 
   const expected = crypto
     .createHash('sha1')
-    .update(MID + ORDERID + AMOUNT + CURRENCY + process.env.CMI_SHA1!)
+    .update(MID + ORDER + AMT + CURR + process.env.CMI_SHA1!)
     .digest('hex');
 
-  const ok = expected === SIGNATURE && RESPONSE === '00';
+  const ok = expected === SIGN && RESP === '00';
   const target = ok ? process.env.SUCCESS_URL! : process.env.FAIL_URL!;
-
-  return NextResponse.redirect(`${target}?order=${ORDERID}`, 302);
+  return NextResponse.redirect(`${target}?order=${ORDER}`, 302);
 }
