@@ -48,7 +48,8 @@ function verifyCMIHash(params: Record<string, string>, storeKey: string): boolea
   console.log('Hash verification:', {
     received: receivedHash,
     expected: expectedHash,
-    isValid
+    isValid,
+    storeKey: storeKey ? 'Present' : 'Missing'
   });
   
   return isValid;
@@ -68,13 +69,18 @@ export async function POST(req: NextRequest) {
       params[key] = value.toString();
     }
 
-    console.log('CMI Callback received:', params);
+    console.log('🔄 CMI Callback received:', params);
 
-    const storeKey = process.env.CMI_STORE_KEY!;
+    const storeKey = process.env.CMI_STORE_KEY;
     
+    if (!storeKey) {
+      console.error('❌ CMI_STORE_KEY not found in environment');
+      return new Response('FAILURE', { status: 200 });
+    }
+
     // Verify hash
     if (!verifyCMIHash(params, storeKey)) {
-      console.error('CMI callback hash verification failed');
+      console.error('❌ CMI callback hash verification failed');
       return new Response('FAILURE', { status: 200 });
     }
 
@@ -84,7 +90,7 @@ export async function POST(req: NextRequest) {
     const response = params.Response;
 
     // Log transaction details
-    console.log('Transaction details:', {
+    console.log('📊 Transaction details:', {
       orderId,
       amount,
       procReturnCode,
@@ -108,6 +114,7 @@ export async function POST(req: NextRequest) {
       // });
 
       // Respond with ACTION=POSTAUTH to auto-capture the payment
+      console.log('✅ Responding with ACTION=POSTAUTH');
       return new Response('ACTION=POSTAUTH', { status: 200 });
     } else {
       // Payment failed
@@ -125,11 +132,49 @@ export async function POST(req: NextRequest) {
       // });
 
       // Acknowledge the callback
+      console.log('✅ Responding with APPROVED');
       return new Response('APPROVED', { status: 200 });
     }
 
   } catch (error) {
     console.error('❌ CMI callback error:', error);
     return new Response('FAILURE', { status: 200 });
+  }
+}
+
+/**
+ * GET /api/payment/callback
+ * Handle CMI redirect callback (for testing)
+ */
+export async function GET(req: NextRequest) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const params: Record<string, string> = {};
+    
+    // Convert URL params to object
+    for (const [key, value] of searchParams.entries()) {
+      params[key] = value;
+    }
+
+    console.log('🔄 CMI GET callback received:', params);
+
+    // For GET requests, we don't need to verify hash, just redirect
+    const procReturnCode = params.ProcReturnCode;
+    const response = params.Response;
+
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+    if (procReturnCode === '00' && response === 'Approved') {
+      // Redirect to success page
+      return Response.redirect(`${baseUrl}/fr/payment/success?${searchParams.toString()}`);
+    } else {
+      // Redirect to failure page
+      return Response.redirect(`${baseUrl}/fr/payment/failure?${searchParams.toString()}`);
+    }
+
+  } catch (error) {
+    console.error('❌ CMI GET callback error:', error);
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+    return Response.redirect(`${baseUrl}/fr/payment/failure?error=callback_error`);
   }
 }
