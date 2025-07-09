@@ -14,7 +14,7 @@ export default function Hero() {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-[57vh] md:h-[92vh] object-cover"
-        src="/videos/DC-Thermes-1.mov"
+        src="/videos/DC-Thermes.mov"
         autoPlay
         loop
         muted
