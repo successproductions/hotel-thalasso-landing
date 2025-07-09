@@ -50,10 +50,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link
               href="#"
-              className={clsx(
-                "transition-filter",
-                !active && "invert"
-              )}
+              className="transition-filter"
             >
               <Image
                 src="/images/LogoDakhla.png"

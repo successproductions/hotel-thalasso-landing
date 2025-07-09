@@ -2,8 +2,8 @@
 import { useState } from 'react';
 
 interface PaymentModalProps {
-  open: boolean;           // affiche / masque le modal
-  amount: number;          // en centimes (ex. 10000 = 100 MAD)
+  open: boolean;           
+  amount: number;          
   onClose: () => void;
 }
 
@@ -102,7 +102,7 @@ export default function PaymentModal({ open, amount, onClose }: PaymentModalProp
     <div className="fixed inset-0 grid place-items-center bg-black/50 z-50">
       <div className="bg-white rounded-lg p-8 shadow-lg max-w-md w-full mx-4">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-semibold">Paiement sécurisé CMI</h2>
+          <h2 className="text-xl font-medium">Paiement sécurisé CMI</h2>
           <button
             onClick={onClose}
             disabled={loading}
