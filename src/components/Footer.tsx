@@ -53,7 +53,7 @@ export function Footer() {
               <a href="">{t('legal.cookies')}</a>
             </li>
             <li className="hover:underline cursor-pointer">
-              <a href="">{t('legal.sitemap')}</a>
+              <a href="/fr/terms-of-sale">{t('legal.sitemap')}</a>
             </li>
           </ul>
         </div>

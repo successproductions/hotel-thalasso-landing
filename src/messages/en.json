@@ -260,7 +260,7 @@
     "legal": {
       "privacy":   "Privacy Policy",
       "cookies":   "Cookie Policy",
-      "sitemap":   "Sitemap"
+      "sitemap":   "Terms-of-sale"
     },
     "copyright": "© 2025 DakhlaClub and its Associated Subsidiaries | Luxury Fitness, Health & Wellness Vacation Retreat."
   },
@@ -511,6 +511,74 @@
   "imageAlt2": "Sunrise yoga session"
 }
   
-}
+},
+
+
+"terms": {
+    "meta": {
+      "title": "Terms of Sale - Dakhla Club",
+      "description": "Online terms and conditions for Dakhla Club stays"
+    },
+    "header": {
+      "title": "Online Terms of Sale",
+      "subtitle": "Dakhla Club - Holistic Escape",
+      "intro": "We invite you to read these online terms and conditions of sale for the Dakhla Club website.",
+      "acceptance": "Validation of your online transaction form is considered as irrevocable acceptance of these terms."
+    },
+    "sections": {
+      "preamble": {
+        "title": "1. Preamble",
+        "content": "The following online sales terms govern all transactions established through the Dakhla Club website. Any transaction processed through this website assumes the unconditional and irrevocable acceptance of these conditions by the customer."
+      },
+      "purpose": {
+        "title": "2. Purpose",
+        "content": "These terms are intended to define the rights and obligations of the parties in the context of online sales made via the Dakhla Club website."
+      },
+      "sales": {
+        "title": "3. Sales Process",
+        "content": "The customer connects to the Dakhla Club website and selects the services they wish to book. They then fill in their identity information, accept the terms and click on the \"Pay\" button. The customer is then redirected to the Centre Monétique Interbancaire secure payment platform where they complete their payment information and validate the payment."
+      },
+      "payment": {
+        "title": "4. Payment Methods",
+        "content": "To pay on the Internet by credit card, the customer is asked to enter their payment card details on the secure payment page. When the transaction is accepted by the bank, the settlement to debit their account is made on the working day following the date of transaction confirmation. Online payment with credit cards is secured by the Centre Monétique Interbancaire which provides a fully secure payment service."
+      },
+      "guarantee": {
+        "title": "5. Customer Guarantee",
+        "content": "The customer guarantees to Dakhla Club that they have sufficient funds required when using the payment method chosen by them during payment validation."
+      },
+      "privacy": {
+        "title": "6. Data Privacy",
+        "content": "The information requested from the customer during online payment is necessary to process the online transaction. It is treated confidentially. The customer has the right to consult or rectify their personal data by sending a request by postal mail to the following address: Dakhla Club, POINT DE DRAGON PK 28, 73000 Dakhla, or by email to the following address: reservation@dakhlaclub.com"
+      },
+      "proof": {
+        "title": "7. Proof of Payment",
+        "content": "Data stored on the Centre Monétique Interbancaire online platform for Dakhla Club's account is considered as proof of payment for the online transaction made by the customer."
+      },
+      "services": {
+        "title": "8. Services Offered",
+        "content": "Dakhla Club offers holistic escape stays including accommodation, meals, wellness activities and excursions. Specific details of each package are described during booking."
+      },
+      "cancellation": {
+        "title": "9. Cancellation Policy",
+        "content": "Cancellations must be made at least 7 days before the arrival date for a full refund. Cancellations made less than 7 days before arrival are subject to cancellation fees of 50% of the total amount."
+      },
+      "liability": {
+        "title": "10. Liability",
+        "content": "Dakhla Club strives to provide quality services. However, our liability is limited to the amount paid for the booked services."
+      },
+      "law": {
+        "title": "11. Applicable Law",
+        "content": "These terms of sale are governed by Moroccan law. Any dispute will be submitted to the jurisdiction of the courts of Dakhla, Morocco."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "POINT DE DRAGON PK 28, 73000 Dakhla",
+      "email": "reservation@dakhlaclub.com",
+      "phone": "+212 652-881921"
+    },
+    "lastUpdated": "Last updated: July 2025",
+    "backToHome": "Back to Home"
+  }
    
 }

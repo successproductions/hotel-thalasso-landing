@@ -260,7 +260,7 @@
     "legal": {
       "privacy":   "Politique de confidentialité",
       "cookies":   "Politique de cookies",
-      "sitemap":   "Plan du site"
+      "sitemap":   "Terms-of-sale"
     },
     "copyright": "DakhlaClub et ses filiales associées | Luxury Fitness, Health & Wellness Vacation Retreat."
   },
@@ -513,8 +513,78 @@
   "imageAlt1": "Piscine thermale avec vue sur l'océan",
   "imageAlt2": "Séance de yoga au lever du soleil"
 }
-  }
+  },
  
+
+
+
+
+  "terms": {
+    "meta": {
+      "title": "Conditions de Vente - Dakhla Club",
+      "description": "Conditions générales de vente en ligne pour les séjours Dakhla Club"
+    },
+    "header": {
+      "title": "Conditions de Vente en Ligne",
+      "subtitle": "Dakhla Club - Évasion Holistique",
+      "intro": "Nous vous invitons à lire ces conditions générales de vente en ligne du site web Dakhla Club.",
+      "acceptance": "La validation de votre formulaire de transaction en ligne est considérée comme une acceptation irrévocable de ces conditions."
+    },
+    "sections": {
+      "preamble": {
+        "title": "1. Préambule",
+        "content": "Les présentes conditions de vente en ligne régissent toutes les transactions établies via le site web Dakhla Club. Toute transaction effectuée via ce site web suppose l'acceptation inconditionnelle et irrévocable de ces conditions par le client."
+      },
+      "purpose": {
+        "title": "2. Objet", 
+        "content": "Ces conditions ont pour objet de définir les droits et obligations des parties dans le cadre des ventes en ligne effectuées via le site web Dakhla Club."
+      },
+      "sales": {
+        "title": "3. Processus de Vente",
+        "content": "Le client se connecte au site web Dakhla Club et sélectionne les services qu'il souhaite réserver. Il remplit ensuite ses informations d'identité, accepte les conditions et clique sur le bouton \"Payer\". Le client est alors redirigé vers la plateforme de paiement sécurisé du Centre Monétique Interbancaire où il complète ses informations de paiement et valide le paiement."
+      },
+      "payment": {
+        "title": "4. Modes de Paiement",
+        "content": "Pour payer sur Internet par carte de crédit, le client est appelé à saisir les coordonnées de sa carte de paiement sur la page de paiement sécurisé. Lorsque la transaction est acceptée par la banque, le règlement pour débiter son compte est effectué dans le jour ouvrable suivant la date de confirmation de la transaction. Le paiement en ligne par cartes de crédit est sécurisé par le Centre Monétique Interbancaire qui fournit un service de paiement entièrement sécurisé."
+      },
+      "guarantee": {
+        "title": "5. Garantie du Client", 
+        "content": "Le client garantit à Dakhla Club qu'il dispose des fonds suffisants requis lors de l'utilisation du mode de paiement choisi par lui lors de la validation du paiement."
+      },
+      "privacy": {
+        "title": "6. Confidentialité des Données",
+        "content": "Les informations demandées au client lors du paiement en ligne sont nécessaires au traitement de la transaction en ligne. Elles sont traitées confidentiellement. Le client a le droit de consulter ou de rectifier ses données personnelles en envoyant une demande par courrier postal à l'adresse suivante : Dakhla Club, POINT DE DRAGON PK 28, 73000 Dakhla, ou par courrier électronique à l'adresse suivante : reservation@dakhlaclub.com"
+      },
+      "proof": {
+        "title": "7. Preuve de Paiement",
+        "content": "Les données stockées sur la plateforme en ligne du Centre Monétique Interbancaire pour le compte de Dakhla Club sont considérées comme preuve de paiement pour la transaction en ligne effectuée par le client."
+      },
+      "services": {
+        "title": "8. Services Proposés",
+        "content": "Dakhla Club propose des séjours d'évasion holistique incluant l'hébergement, les repas, les activités de bien-être et les excursions. Les détails spécifiques de chaque forfait sont décrits lors de la réservation."
+      },
+      "cancellation": {
+        "title": "9. Politique d'Annulation",
+        "content": "Les annulations doivent être effectuées au moins 7 jours avant la date d'arrivée pour un remboursement complet. Les annulations effectuées moins de 7 jours avant l'arrivée sont soumises à des frais d'annulation de 50% du montant total."
+      },
+      "liability": {
+        "title": "10. Responsabilité",
+        "content": "Dakhla Club s'efforce de fournir des services de qualité. Cependant, notre responsabilité est limitée au montant payé pour les services réservés."
+      },
+      "law": {
+        "title": "11. Droit Applicable",
+        "content": "Ces conditions de vente sont régies par le droit marocain. Tout litige sera soumis à la juridiction des tribunaux de Dakhla, Maroc."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "address": "POINT DE DRAGON PK 28, 73000 Dakhla",
+      "email": "reservation@dakhlaclub.com", 
+      "phone": "+212 652-881921"
+    },
+    "lastUpdated": "Dernière mise à jour : Juillet 2025",
+    "backToHome": "Retour à l'accueil"
+  }
 
 }
 
