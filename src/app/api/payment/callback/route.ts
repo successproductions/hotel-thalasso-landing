@@ -161,7 +161,6 @@ export async function GET(req: NextRequest) {
     // For GET requests, we don't need to verify hash, just redirect
     const procReturnCode = params.ProcReturnCode;
     const response = params.Response;
-
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
     if (procReturnCode === '00' && response === 'Approved') {
