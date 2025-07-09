@@ -4,12 +4,12 @@
 
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
-import { PaymentModal } from "./Payment/PaymentModal";
+import PaymentModal from "./Payment/PaymentModal";
+
 
 export function NewsletterSection() {
   const t = useTranslations("exclusiveOffer");
-  const [showModal, setShowModal] = useState(false)
-  const amount = 9500
+  const [open, setOpen] = useState(false);
 
   
   return (
@@ -39,7 +39,7 @@ export function NewsletterSection() {
         {/* Just the button, no email input */}
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
       <button
-      onClick={() => setShowModal(true)}
+       onClick={() => setOpen(true)}
         style={{
           padding: "12px 32px",
           background: "#14b8a6",
@@ -56,11 +56,7 @@ export function NewsletterSection() {
     </div>
 
       </div>
-      <PaymentModal
-      isOpen={showModal}
-      amount={amount}
-      onClose={() => setShowModal(false)}
-    />
+      <PaymentModal open={open} onClose={() => setOpen(false)} amount={10000} />
     </section>
   );
 }
