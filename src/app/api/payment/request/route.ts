@@ -58,10 +58,10 @@ export async function POST(req: NextRequest) {
     }
 
     // CMI Configuration using your environment variables
-    const clientId = process.env.CMI_CLIENT_ID!; // 600000294
-    const storeKey = process.env.CMI_STORE_KEY!; // Dakhl@2025Test
-    const currency = process.env.CMI_CURRENCY!; // 504
-    const gateway = process.env.CMI_GATEWAY!; // https://testpayment.cmi.co.ma/fim/est3Dgate
+    const clientId = process.env.CMI_CLIENT_ID!; 
+    const storeKey = process.env.CMI_STORE_KEY!; 
+    const currency = process.env.CMI_CURRENCY!; 
+    const gateway = process.env.CMI_GATEWAY!; 
     
     // Generate unique order ID
     const orderId = `HOTEL_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
@@ -80,8 +80,8 @@ export async function POST(req: NextRequest) {
       currency: currency,
       oid: orderId,
       // Use callback route for both success and failure to handle redirects properly
-      okUrl: `${baseUrl}/api/payment/callback/success`,
-      failUrl: `${baseUrl}/api/payment/callback/failure`,
+      okUrl: `${baseUrl}/fr/payment/success-redirect`,
+      failUrl: `${baseUrl}/fr/payment/failure-redirect`,
       lang: 'fr',
       email: body.customerInfo?.email || 'test@example.com',
       BillToName: body.customerInfo?.name || 'Client Test',
