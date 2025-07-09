@@ -56,7 +56,7 @@ export function NewsletterSection() {
     </div>
 
       </div>
-      <PaymentModal open={open} onClose={() => setOpen(false)} amount={10000} />
+      <PaymentModal open={open} onClose={() => setOpen(false)} amount={100000} />
     </section>
   );
 }

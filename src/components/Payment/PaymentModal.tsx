@@ -114,7 +114,7 @@ export default function PaymentModal({ open, amount, onClose }: PaymentModalProp
 
         <div className="mb-6 p-4 bg-gray-50 rounded-lg">
           <p className="text-lg">
-            Montant : <strong className="text-teal-600">{(amount / 100).toFixed(2)} MAD</strong>
+            Montant : <strong className="text-teal-600">{(amount / 10).toFixed(2)} MAD</strong>
           </p>
         </div>
 
@@ -175,7 +175,7 @@ export default function PaymentModal({ open, amount, onClose }: PaymentModalProp
           disabled={loading}
           className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-md font-medium disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {loading ? 'Redirection vers le paiement...' : `Payer ${(amount / 100).toFixed(2)} MAD`}
+          {loading ? 'Redirection vers le paiement...' : `Payer ${(amount / 10).toFixed(2)} MAD`}
         </button>
 
         <button
