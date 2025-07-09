@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 
 interface PaymentRequestBody {
-  amount: number; 
+  amount: number; // in centimes (e.g., 10000 = 100.00 MAD)
   customerInfo?: {
     email: string;
     name: string;
@@ -79,8 +79,9 @@ export async function POST(req: NextRequest) {
       amount: (body.amount / 100).toFixed(2), // Convert centimes to MAD
       currency: currency,
       oid: orderId,
-      okUrl: process.env.SUCCESS_URL!, // Use direct SUCCESS_URL
-      failUrl: process.env.FAIL_URL!, // Use direct FAIL_URL
+      // Use callback route for both success and failure to handle redirects properly
+      okUrl: `${baseUrl}/api/payment/callback/success`,
+      failUrl: `${baseUrl}/api/payment/callback/failure`,
       lang: 'fr',
       email: body.customerInfo?.email || 'test@example.com',
       BillToName: body.customerInfo?.name || 'Client Test',
