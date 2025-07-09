@@ -133,7 +133,7 @@ function PaymentSuccessContent() {
 
               {/* Action Button */}
               <Link
-                href="/fr"
+                href="https://offer.dakhlaclub.com/fr/evasion-holistique-3-jours"
                 className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 px-4 rounded-lg font-medium transition-colors flex items-center justify-center space-x-2"
               >
                 <span>Retour à l accueil</span>
@@ -145,7 +145,7 @@ function PaymentSuccessContent() {
                 Aucun détail de paiement trouvé.
               </p>
               <Link
-                href="/fr"
+                href="https://offer.dakhlaclub.com/fr/evasion-holistique-3-jours"
                 className="inline-flex items-center space-x-2 text-teal-600 hover:text-teal-700"
               >
                 <span>Retour à l accueil</span>
