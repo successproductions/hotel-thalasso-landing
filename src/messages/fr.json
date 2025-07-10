@@ -14,7 +14,7 @@
   },
   
   "home": {
-    "title": "ÉVASION HOLISTIQUE À DAKHLA",
+    "title": "ÉVASION HOLISTIQUE À DAKHLA ",
     "description": "3 Jours pour Ressourcer Corps & Esprit",
     "duration":"Durée",
     "days": "3 Jours",
@@ -31,8 +31,15 @@
     "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne. Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante."
   },
   "about":{
-"title":       "Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?",
-    "description1": " Vous courez après le temps, vos pensées tournent en boucle Et votre corps vous envoie des signaux d’alerte ? Et si vous arrêtiez tout, juste 3 jours, pour vous reconnecter à vous-même ? Trois jours, c’est court. Mais bien accompagnés, ils peuvent tout changer."
+"title":       "Pour qui est ce séjour ?",
+    "description1": [
+      "Vous êtes mentalement et physiquement épuisé(e)",
+      "Vous cherchez une pause sans partir loin ni trop longtemps",
+      "Vous avez accumulé des tensions, de la fatigue, du stress",
+      "Vous voulez vivre une cure courte mais puissante",
+      "Vous avez besoin de revenir à vous, à votre souffle, à l’essentiel",
+      "Vous voulez vous offrir un soin holistique complet sans culpabilité"
+    ]
  
   },
   
@@ -42,14 +49,14 @@
       "subheading":        "3 Jours, 3 Énergies, 3 Transformations",
       "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
       "jour":              "Jour",
-      "activitiesTitle":   "Activités incluses :",
-      "callButton": " Entrer dans l’univers holistique du Dakhla Club"
+      "activitiesTitle":   "Soins incluses :",
+      "callButton": " Entrer dans l’univers holistique du Dakhla Club",
+      "objectiveTitle": "Objectif :"
 
     },
     "days": {
       "1": {
         "title":        "Accueil personnalisé",
-        "subtitle":     "Arrivée & Préparation",
         "description":  "Installation en douceur pour commencer votre parenthèse bien-être. Prenez le temps de vous détendre et de vous recentrer, loin du rythme quotidien.",
         "activities":   [],
         "objective":    "Ancrage, respiration, ouverture du corps et de l'esprit.",
@@ -57,24 +64,21 @@
       },
       "2": {
         "title":        "Vitalité & Détente sensorielle",
-        "subtitle":     "Lâcher-prise Profond",
-        "description":  "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins.",
+                "description":  "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins.",
         "activities":   ["Bol d'Air Jacquier","Piscine thermale","Sauna purifiant","Bain hydromassant","Enveloppement aux algues","Modelage sous affusion"],
         "objective":    "Lâcher-prise profond, oxygénation cellulaire, relâchement musculaire.",
         "ctaText":      "ENTRER DANS L’UNIVERS"
       },
       "3": {
         "title":        "Régénération & Équilibre",
-        "subtitle":     "Recharge Énergétique",
-        "description":  "Aujourd’hui, le corps se régénère en profondeur. Les soins ciblés relâchent les tensions et rééquilibrent l’énergie pour une détente totale.",
+                "description":  "Aujourd’hui, le corps se régénère en profondeur. Les soins ciblés relâchent les tensions et rééquilibrent l’énergie pour une détente totale.",
         "activities":   ["Piscine thermale","Douche à jet","Bain au magnésium","Cupping thérapie","Massage relaxant"],
         "objective":    "Relancer la circulation, affiner la silhouette, recharge énergétique.",
         "ctaText":      "JE VEUX VIVRE L'EXPÉRIENCE"
       },
       "4": {
         "title":        "Départ & Sérénité retrouvée",
-        "subtitle":     "Régénération Finale",
-        "description":  "Le séjour touche à sa fin, mais les effets se prolongent bien au-delà de ces quelques jours. Vous repartez avec un esprit plus clair, un corps détendu, et une énergie rééquilibrée.",
+               "description":  "Le séjour touche à sa fin, mais les effets se prolongent bien au-delà de ces quelques jours. Vous repartez avec un esprit plus clair, un corps détendu, et une énergie rééquilibrée.",
         "activities":   [],
         "objective":    "Évacuation des toxines, apaisement mental, peau régénérée.",
         "ctaText":      "J'ACCÈDE À MON SÉJOUR"
@@ -207,7 +211,8 @@
     }
   },
 "clientsCarousel":{
-  "title": "Elles En Parlent",
+  
+  "title": "Elles parlent de nous",
   "testimonial1" :"J'ai testé kiting et j'ai adoré !",
   "testimonial2" :"Après avoir fait du cerf-volant, c’est tellement relaxant",
   "testimonial3" :"Le meilleur spa que j'aie fait de toute ma vie",
@@ -307,27 +312,7 @@
       { "title": "Bain au magnésium" },
       { "title": "Cupping thérapie" },
       { "title": "Hammam Secret du Désert" },
-      { "title": "Massage relaxant" },
-      {
-        "title": "Objectifs thérapeutiques",
-        "subItems": [
-          "Ancrage, respiration, ouverture du corps et de l’esprit",
-          "Lâcher-prise profond, oxygénation cellulaire, relâchement musculaire",
-          "Relancer la circulation, affiner la silhouette, recharge énergétique",
-          "Évacuation des toxines, apaisement mental, peau régénérée"
-        ]
-      },
-      {
-        "title": "Bénéfices attendus",
-        "subItems": [
-          "Oxygénation intérieure & peau rayonnante",
-          "Corps léger, tensions relâchées",
-          "Détente musculaire & sommeil retrouvé",
-          "Peau lissée, dégonflée, reminéralisée",
-          "Silhouette affinée et drainée naturellement",
-          "Clarté mentale & énergie stable"
-        ]
-      }
+      { "title": "Massage relaxant" }
     ],
     "availability": {
       "Accueil personnalisé":           [1,0,0,0],

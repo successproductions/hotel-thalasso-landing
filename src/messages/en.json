@@ -30,9 +30,15 @@
     "description1": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual Here, silence heals. The sun warms from within. Our certified therapists welcome you for an immersive and deeply regenerative experience."
   },
   "about":{
-  "title":       "Dakhla is calling… Are you ready to refuel your energy ?",
-    "description1": " You’re chasing time, your thoughts are racing, and your body is sending warning signs? What if you paused everything for just 3 days—to reconnect with yourself ? Three days is short. But with the right guidance, it can change everything."
- 
+  "title":       "Is this retreat for you?",
+    "description1": [
+      "You feel mentally and physically drained",
+      "You need a break without going far or too long",
+      "You’ve built up tension, fatigue, and stress",
+      "You want a short but powerful wellness reset",
+      "You need to reconnect with your breath and what truly matters",
+      "You want to enjoy a full holistic treatment—guilt-free"
+    ]
   },
 
   "servicesSection": {
@@ -46,14 +52,14 @@
       "subheading":        "3 Days, 3 Energies, 3 Transformations",
       "description":       "A holistic journey to your complete well-being in the unique universe of Dakhla",
       "jour":              "Day",
-      "activitiesTitle":   "Included Activities:",
-      "callButton": " Enter the holistic universe of the Dakhla Club"
+      "activitiesTitle":   "Care included :",
+      "callButton": " Enter the holistic universe of the Dakhla Club",
+      "objectiveTitle": "objective :"
       
     },
     "days": {
       "1": {
         "title":        "Arrival & Preparation",
-        "subtitle":     "Grounding & Opening",
         "description":  "PA gentle start to your wellness getaway. Take the time to settle in, unwind, and reconnect with yourself—far from the stress of everyday life.",
         "activities":   [],
         "objective":    "Grounding, breathwork, opening body & mind.",
@@ -61,7 +67,6 @@
       },
       "2": {
         "title":        "Vitality & Sensory Relaxation",
-        "subtitle":     "Deep Letting Go",
         "description":  "A day devoted to awakening the senses and revitalizing the body. Breathe, let go, and allow yourself to be carried by the soothing power of water and therapeutic care.",
         "activities":   ["Jacquier Air Bowl","Thermal pool","Purifying Sauna","Hydromassage Bath","Seaweed Wrap","Affusion Shower Massage"],
         "objective":    "Deep release, cellular oxygenation, muscle relaxation.",
@@ -69,7 +74,6 @@
       },
       "3": {
         "title":        "Regeneration & Balance",
-        "subtitle":     "Energy Recharge",
         "description":  "Today is all about deep regeneration. Targeted treatments release built-up tension and rebalance your energy for complete relaxation.",
         "activities":   ["Thermal pool","Jet shower","Magnesium bath","Cupping therapy","Relaxation Massage"],
         "objective":    "Boost circulation, refine silhouette, energy recharge.",
@@ -77,7 +81,6 @@
       },
       "4": {
         "title":        "Departure & Lasting Serenity",
-        "subtitle":     "Final Regeneration",
         "description":  "Your retreat comes to an end, but the benefits linger. You leave with a clearer mind, a deeply relaxed body, and renewed inner balance.",
         "activities":   [],
         "objective":    "Toxin elimination, mental calm, regenerated skin.",
@@ -284,27 +287,8 @@
       { "title": "Magnesium Bath" },
       { "title": "Cupping Therapy" },
       { "title": "Desert Secret Hammam" },
-      { "title": "Relaxing Massage" },
-      {
-        "title": "Therapeutic Objectives",
-        "subItems": [
-          "Grounding, breathing, body & mind opening",
-          "Deep letting-go, cellular oxygenation, muscle release",
-          "Circulation boost, silhouette refining, energy recharge",
-          "Toxin elimination, mental calm, skin regeneration"
-        ]
-      },
-      {
-        "title": "Expected Benefits",
-        "subItems": [
-          "Inner oxygenation & glowing skin",
-          "Light body, tension relief",
-          "Muscular relaxation & better sleep",
-          "Smooth, de-puffed, remineralized skin",
-          "Naturally refined and drained silhouette",
-          "Mental clarity & stable energy"
-        ]
-      }
+      { "title": "Relaxing Massage" }
+      
     ],
     "availability": {
       "Personalized Welcome":        [1,0,0,0],

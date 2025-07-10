@@ -19,7 +19,6 @@ export function ProgramsSection() {
   const programs = days.map((dayNum, index) => {
     const dayData = {
       title: t(`days.${dayNum}.title`),
-      subtitle: t(`days.${dayNum}.subtitle`),
       description: t(`days.${dayNum}.description`),
       activities: t.raw(`days.${dayNum}.activities`) || [],
       objective: t(`days.${dayNum}.objective`),
@@ -130,12 +129,8 @@ export function ProgramsSection() {
                 </div>
                 
                 <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
-                  {program.title}
+                  {program.title.toUpperCase()}
                 </h3>
-                
-                <h4 className="text-lg text-teal-600 font-medium mb-4">
-                  {program.subtitle}
-                </h4>
                 
                 <p className="text-gray-600 leading-relaxed mb-6">
                   {program.description}
@@ -160,6 +155,9 @@ export function ProgramsSection() {
 
                 {/* Objective */}
                 <div className="mb-6">
+                <h5 className="font-semibold text-gray-800 mb-3">
+                      {t('header.objectiveTitle')}
+                    </h5>
                   <p className="text-gray-700 font-medium italic">
                     {program.objective}
                   </p>

@@ -13,7 +13,7 @@ export default function Hero() {
     <section id="accueil" className="relative h-[70vh] md:h-screen w-screen overflow-hidden">
       {/* Background Video */}
       <video
-        className="absolute inset-0 w-full h-[57vh] md:h-[92vh] object-cover"
+        className="absolute inset-0 w-full h-[57vh] lg:h-[80vh] xl:h-[92vh] object-cover"
         src="/videos/DC-Thermes.mov"
         autoPlay
         loop
@@ -36,8 +36,8 @@ export default function Hero() {
       </div>
 
       {/* Bottom Info Panel */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20 w-[90%] md:w-auto">
-        <div className="bg-white/90 backdrop-blur-sm rounded-3xl px-6 py-4 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 shadow-lg">
+      <div className="absolute bottom-12 lg:buttom-1 left-1/2 transform -translate-x-1/2 z-20 w-[90%]  md:w-auto">
+        <div className="bg-white/90 lg:p-6 backdrop-blur-sm rounded-3xl px-8 py-4 md:px-12 md:py-8 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 shadow-lg">
           {/* 1) Program title */}
           <div className="flex-1 text-center md:text-left">
             <span className="text-lg md:text-3xl font-medium text-gray-800">

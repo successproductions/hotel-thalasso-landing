@@ -1,22 +1,26 @@
 'use client'
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useMessages } from "next-intl";
 
 export function About() {
 
-  const t   = useTranslations('about');
+  const msg = useMessages();
+  const descriptionList = msg.about.description1 as string[];
 
   return (
     <section  className="  bg-white">
       <div className="mx-auto  grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Text Column */}
-        <div className="space-y-4 px-4 md:px-28">
-          <h2 className="text-3xl md:text-5xl font-medium text-gray-800">
-          {t('title')}
+        <div className="space-y-4 px-4 xl:px-28">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-800">
+           {msg.about.title.toUpperCase()}
           </h2>
-          <p className="text-gray-600 leading-relaxed font-normal text-base md:text-lg">
-          {t('description1')}
-          </p>
+          
+          <ul className="list-disc pl-6 space-y-2">
+      {descriptionList.map((item, idx) => (
+        <li key={idx}>{item}</li>
+      ))}
+    </ul>
         </div>
 
         {/* Image Column */}
