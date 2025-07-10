@@ -6,14 +6,14 @@
   "nav": {
     "home": "HOME",
     "about": "ABOUT",
-    "services": "RETREATS",
+    "services": "RETREAT",
     "offers": "OFFERS",
     "button": {
       "book": "BOOK NOW"
     }
   },
   "home": {
-    "title": "WELCOME TO DAKHLA CLUB",
+    "title": "WELCOME TO DAKHLACLUB",
     "description": "Enjoy a 3-day wellness escape",
     "duration":"Duration",
     "days": "3 Days",

@@ -6,7 +6,7 @@
   "nav": {
     "home": "ACCUEIL",
     "about": "À PROPOS",
-    "services": "SÉJOURS",
+    "services": "SÉJOUR",
     "offers": "OFFRES",
     "button": {
     "book": "RÉSERVER"
@@ -14,7 +14,7 @@
   },
   
   "home": {
-    "title": "ÉVASION HOLISTIQUE À DAKHLA ",
+    "title": "ÉVASION HOLISTIQUE À DAKHLACLUB",
     "description": "3 Jours pour Ressourcer Corps & Esprit",
     "duration":"Durée",
     "days": "3 Jours",
@@ -49,11 +49,11 @@
       "subheading":        "3 Jours, 3 Énergies, 3 Transformations",
       "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
       "jour":              "Jour",
-      "activitiesTitle":   "Soins incluses :",
+      "activitiesTitle":   "Soins inclus :",
       "callButton": " Entrer dans l’univers holistique du Dakhla Club",
       "objectiveTitle": "Objectif :"
 
-    },
+    },      
     "days": {
       "1": {
         "title":        "Accueil personnalisé",

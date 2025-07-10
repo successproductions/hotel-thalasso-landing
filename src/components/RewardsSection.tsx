@@ -17,7 +17,7 @@ export function RewardsSection() {
     <section id="rewards" className="md:py-12 py-8 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4">
         {/* Top row (2 logos) */}
-        <div className="grid grid-cols-2  justify-items-center items-center">
+        <div className="flex justify-center items-center gap-20 flex-wrap">
           {topLogos.map((logo) => (
             <div key={logo.id} className="w-72 h-36 relative">
               <Image
@@ -37,7 +37,7 @@ export function RewardsSection() {
         </div>
 
         {/* Bottom row (2 logos) */}
-        <div className="grid grid-cols-2 justify-items-center items-center">
+        <div className="flex justify-center items-center gap-20 flex-wrap">
           {bottomLogos.map((logo) => (
             <div key={logo.id} className="w-72 h-36 relative">
               <Image

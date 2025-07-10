@@ -11,11 +11,11 @@ export function ObjectivesSection() {
 
   const images = [
     {
-      image: "https://shawellness.com/wp-content/uploads/2023/10/lopff2.png",
+      image: "/images/cure-détox-Maroc.jpeg",
       alt: "spa entre désert et océan",
     },
     {
-      image: "https://shawellness.com/wp-content/uploads/2023/10/lpobj1.png", 
+      image: "/images/séjour-bien-être Dakhla.jpeg", 
       alt: "retraite spirituelle Maroc",
     },
   ]

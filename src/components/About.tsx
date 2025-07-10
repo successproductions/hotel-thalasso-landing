@@ -26,7 +26,7 @@ export function About() {
         {/* Image Column */}
         <div className="relative w-full h-64 md:h-auto md:min-h-[60vh]">
           <Image
-            src="https://shawellness.com/wp-content/uploads/2024/12/well-being.jpg"   
+            src="/images/about.png"   
             alt="Illustration scientifique"
             fill
             className="object-cover"
