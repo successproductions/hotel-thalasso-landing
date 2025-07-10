@@ -1,15 +1,12 @@
 
 "use client";
 
-
-import React, { useState } from "react";
 import { useTranslations } from "next-intl";
-import PaymentModal from "./Payment/PaymentModal";
+
 
 
 export function NewsletterSection() {
   const t = useTranslations("exclusiveOffer");
-  const [open, setOpen] = useState(false);
 
   
   return (
@@ -38,8 +35,7 @@ export function NewsletterSection() {
 
         {/* Just the button, no email input */}
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
-      <button
-       onClick={() => setOpen(true)}
+      <a href="#accueil"
         style={{
           padding: "12px 32px",
           background: "#14b8a6",
@@ -52,11 +48,11 @@ export function NewsletterSection() {
         }}
       >
 {t('callButton')}
-      </button>
+      </a>
     </div>
 
       </div>
-      <PaymentModal open={open} onClose={() => setOpen(false)} amount={100000} />
+      
     </section>
   );
 }
