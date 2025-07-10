@@ -146,8 +146,11 @@ export default function Hero() {
       {/* animated two-line headline */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center pb-12 md:pb-0 px-4 space-y-4">
         {/* Line 1: big italic serif */}
-        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
+        <h1 className="hidden md:block text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
           <WavyText text={t("title")} />
+        </h1>
+        <h1 className="block md:hidden text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
+          <WavyText text={t("title2")} />
         </h1>
 
         {/* Line 2: uppercase tracking-wide */}

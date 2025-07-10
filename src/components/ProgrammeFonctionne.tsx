@@ -10,7 +10,7 @@ export function ProgrammeFonctionne() {
  
 
   return (
-    <section id="pourquoi" className="py-16 bg-white">
+    <section id="pourquoi" className="md:py-16 bg-white">
       <div className="max-w-8xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-44 ">
         {/* Image Column */}
         <div className="w-full h-64 md:h-[48rem] relative overflow-hidden rounded-lg shadow-lg">
@@ -24,7 +24,10 @@ export function ProgrammeFonctionne() {
 
         {/* Text Column */}
         <div className="space-y-6">
-          <h2 className="text-3xl md:text-4xl pt-6 md:pt-14  font-medium text-gray-800">
+          <h2 className="  block md:hidden text-3xl md:text-4xl pt-6 md:pt-14 text-center font-medium text-gray-800">
+          {te('title2')}
+          </h2>
+          <h2 className="text-3xl hidden md:block  md:text-4xl pt-6 md:pt-14  font-medium text-gray-800">
           {te('title2')}
           </h2>
           <ul className="list-disc pl-5 space-y-3 text-gray-600 text-base md:text-lg leading-relaxed">
