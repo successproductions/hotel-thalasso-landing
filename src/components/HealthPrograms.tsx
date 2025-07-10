@@ -12,15 +12,9 @@ export function HealthPrograms() {
         <h2 className="text-3xl md:text-4xl font-medium  text-gray-800">
         {t('title2')}
         </h2>
-
-        {/* Description */}
-        <p className="mt-4 text-gray-600 text-base md:text-lg font-light leading-relaxed">
-         {t('description12')}
-        </p>
-
         {/* Note */}
         <p className="mt-2 text-gray-500 text-sm md:text-base font-light italic leading-snug">
-        {t('description2')}
+        {t('description1')}
         </p>
       </div>
     </section>

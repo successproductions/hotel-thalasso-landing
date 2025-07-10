@@ -110,7 +110,13 @@ export function Footer() {
         <div className="absolute inset-x-0 top-0 flex justify-center -mt-4">
           <div className="bg-gray-100 px-3">
             {/* Replace with your R logo */}
-            <span className="text-2xl font-serif font-bold">DC</span>
+            <Image
+              src="/images/LogoDakhla.png"
+              alt="Dakhla Club Logo"
+              width={78}
+              height={228}
+              className="object-contain"
+            />
           </div>
         </div>
       </div>

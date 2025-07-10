@@ -4,17 +4,17 @@
     "description": "Profitez d’une parenthèse thalasso de 3 jours à Dakhla : détox à l’eau de mer, rituels bien-être et excursions dans le désert."
   },
   "nav": {
-    "home": "Accueil",
-    "about": "À propos",
-    "services": "Séjours",
-    "offers":"Offres",
+    "home": "ACCUEIL",
+    "about": "À PROPOS",
+    "services": "SÉJOURS",
+    "offers": "OFFRES",
     "button": {
     "book": "RÉSERVER"
   }
   },
   
   "home": {
-    "title": "Évasion Holistique à Dakhla",
+    "title": "ÉVASION HOLISTIQUE À DAKHLA",
     "description": "3 Jours pour Ressourcer Corps & Esprit",
     "duration":"Durée",
     "days": "3 Jours",
@@ -28,13 +28,11 @@
   },
   "healthProgram": {
     "title2":       "Un sanctuaire entre désert doré, lagune turquoise et lumière sacrée",
-    "description12": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne.",
-    "description2": "Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante."
+    "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne. Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante."
   },
   "about":{
 "title":       "Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?",
-    "description1": " Vous courez après le temps, vos pensées tournent en boucle",
-    "description2": "Et votre corps vous envoie des signaux d’alerte ? Et si vous arrêtiez tout, juste 3 jours, pour vous reconnecter à vous-même ? Trois jours, c’est court. Mais bien accompagnés, ils peuvent tout changer."
+    "description1": " Vous courez après le temps, vos pensées tournent en boucle Et votre corps vous envoie des signaux d’alerte ? Et si vous arrêtiez tout, juste 3 jours, pour vous reconnecter à vous-même ? Trois jours, c’est court. Mais bien accompagnés, ils peuvent tout changer."
  
   },
   
@@ -266,6 +264,7 @@
   },
 "ProgrammeFonctionne":{
   "title": " Pourquoi ce programme fonctionne",
+  "title2": " Ce que vous allez vraiment ressentir",
   "points":[
 
     "Oxygénation intérieure & peau rayonnante",

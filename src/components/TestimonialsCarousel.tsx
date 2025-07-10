@@ -78,22 +78,15 @@ export default function TestimonialsCarousel() {
 
   return (
     <section className="relative flex items-center justify-center overflow-hidden min-h-[60vh]">
-      {/* YouTube Background Video */}
-      <div className="absolute inset-0 w-full h-full">
-        <iframe
-          src="https://www.youtube.com/embed/5mb6Ho9Gdjs?autoplay=1&mute=1&loop=1&playlist=5mb6Ho9Gdjs&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
-          title="Background Video"
-          className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-          style={{ minWidth: "100vw", minHeight: "100vh" }}
-          allow="autoplay; encrypted-media"
-          allowFullScreen={false}
-        />
-        <div className="absolute inset-0 bg-black/50" />
-      </div>
+      {/* Solid color background instead of YouTube video */}
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{ backgroundColor: "#faf9f5" }}
+      />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900">
             {t("title")}
           </h2>
         </div>
@@ -103,7 +96,7 @@ export default function TestimonialsCarousel() {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/20 text-white border-white/30 rounded-full w-12 h-12"
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#faf9f5] text-gray-800 border-gray-300 shadow-md rounded-full w-12 h-12 hover:bg-gray-200"
             onClick={prevSlide}
           >
             <ChevronLeft className="w-6 h-6" />
@@ -111,7 +104,7 @@ export default function TestimonialsCarousel() {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/20 text-white border-white/30 rounded-full w-12 h-12"
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#faf9f5] text-gray-800 border-gray-300 shadow-md rounded-full w-12 h-12 hover:bg-gray-200"
             onClick={nextSlide}
           >
             <ChevronRight className="w-6 h-6" />

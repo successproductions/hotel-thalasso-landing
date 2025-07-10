@@ -14,7 +14,7 @@ export function RewardsSection() {
   const bottomLogos = logos.slice(2);
 
   return (
-    <section id="rewards" className="py-16 bg-gray-50">
+    <section id="rewards" className="md:py-12 py-8 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4">
         {/* Top row (2 logos) */}
         <div className="grid grid-cols-2  justify-items-center items-center">
@@ -31,7 +31,7 @@ export function RewardsSection() {
         </div>
 
         {/* Heading + divider */}
-        <div className="flex items-center my-8">
+        <div className="flex items-center ">
           <h2 className="text-3xl font-serif text-gray-800">Affiliations</h2>
           <div className="flex-grow h-px bg-gray-300 ml-4" />
         </div>

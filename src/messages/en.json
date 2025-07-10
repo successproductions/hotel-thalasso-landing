@@ -4,17 +4,16 @@
     "description": "Enjoy a 3-day thalasso break in Dakhla: sea-water detox, wellness rituals and desert excursions."
   },
   "nav": {
-    "home": "Home",
-    "about": "About",
-    "services": "Retreats",
-    "offers":"offers",
+    "home": "HOME",
+    "about": "ABOUT",
+    "services": "RETREATS",
+    "offers": "OFFERS",
     "button": {
-    "book": "BOOK NOW"
-  }
+      "book": "BOOK NOW"
+    }
   },
-  
   "home": {
-    "title": "Welcome to Dakhla Club",
+    "title": "WELCOME TO DAKHLA CLUB",
     "description": "Enjoy a 3-day wellness escape",
     "duration":"Duration",
     "days": "3 Days",
@@ -28,13 +27,11 @@
   },
   "healthProgram": {
     "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
-    "description12": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual",
-    "description2": "Here, silence heals. The sun warms from within. Our certified therapists welcome you for an immersive and deeply regenerative experience."
+    "description1": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual Here, silence heals. The sun warms from within. Our certified therapists welcome you for an immersive and deeply regenerative experience."
   },
   "about":{
   "title":       "Dakhla is calling… Are you ready to refuel your energy ?",
-    "description1": " You’re chasing time, your thoughts are racing, and your body is sending warning signs?",
-    "description2": "What if you paused everything for just 3 days—to reconnect with yourself ? Three days is short. But with the right guidance, it can change everything."
+    "description1": " You’re chasing time, your thoughts are racing, and your body is sending warning signs? What if you paused everything for just 3 days—to reconnect with yourself ? Three days is short. But with the right guidance, it can change everything."
  
   },
 
@@ -331,6 +328,7 @@
   },
   "ProgrammeFonctionne":{
     "title": "Why This Program Works",
+    "title2": "What You’ll Truly Feel ",
   "points":[
     "Inner oxygenation & glowing skin",
     "Light body, released tensions",

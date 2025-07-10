@@ -11,14 +11,11 @@ export function About() {
       <div className="mx-auto  grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Text Column */}
         <div className="space-y-4 px-4 md:px-28">
-          <p className="text-sm uppercase tracking-widest font-light text-gray-500">
-          {t('title')}
-          </p>
           <h2 className="text-3xl md:text-5xl font-medium text-gray-800">
-         {t('description1')}
+          {t('title')}
           </h2>
           <p className="text-gray-600 leading-relaxed font-normal text-base md:text-lg">
-          {t('description2')}
+          {t('description1')}
           </p>
         </div>
 
