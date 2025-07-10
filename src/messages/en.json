@@ -17,7 +17,12 @@
     "description": "Enjoy a 3-day wellness escape",
     "duration":"Duration",
     "days": "3 Days",
-    "callButton":" I Want To Live The Experience"
+    "callButton":" I Want To Live The Experience",
+    "bookingValidation": {
+      "invalidDurationTitle": "Invalid Stay Duration",
+      "invalidDurationText": "Your stay must be exactly 4 days. Please adjust your dates.",
+      "confirmButton": "OK"
+    }
   },
   "hero": {
     "tagline":     "Holistic Escape",

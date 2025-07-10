@@ -18,7 +18,12 @@
     "description": "3 Jours pour Ressourcer Corps & Esprit",
     "duration":"Durée",
     "days": "3 Jours",
-    "callButton":" Je veux vivre  l’expérience"
+    "callButton":" Je veux vivre  l’expérience",
+    "bookingValidation": {
+      "invalidDurationTitle": "Durée de séjour invalide",
+      "invalidDurationText": "Votre séjour doit être exactement de 4 jours. Veuillez ajuster vos dates.",
+      "confirmButton": "OK"
+    }
   },
    "hero": {
     "tagline":     "Évasion Holistique",

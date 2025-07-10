@@ -65,15 +65,14 @@ export default function Hero() {
         newErrors.checkOutDate = 'Check-out date must be after check-in date';
       }
 
-      // Check if the stay is exactly 4 days
       const numberOfDays = calculateDays(bookingData.checkInDate, bookingData.checkOutDate);
       if (numberOfDays !== 4) {
-        // Show SweetAlert2 warning
+        // Show SweetAlert2 warning with translated messages
         Swal.fire({
           icon: 'warning',
-          title: 'Invalid Stay Duration',
-          text: 'Your stay must be exactly 4 days. Please adjust your dates.',
-          confirmButtonText: 'OK',
+          title: t('bookingValidation.invalidDurationTitle'),
+          text: t('bookingValidation.invalidDurationText'),
+          confirmButtonText: t('bookingValidation.confirmButton'),
           confirmButtonColor: '#f59e0b'
         });
         return false;
