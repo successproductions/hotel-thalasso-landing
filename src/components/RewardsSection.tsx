@@ -32,7 +32,7 @@ export function RewardsSection() {
 
         {/* Heading + divider */}
         <div className="flex items-center ">
-          <h2 className="text-3xl font-serif text-gray-800">Affiliations</h2>
+          <h2 className="text-3xl font-serif text-gray-800">Latest Awards</h2>
           <div className="flex-grow h-px bg-gray-300 ml-4" />
         </div>
 
