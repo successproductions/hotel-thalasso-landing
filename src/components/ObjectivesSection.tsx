@@ -45,7 +45,8 @@ export function ObjectivesSection() {
                   alt={images[idx].alt}
                   fill
                   className="object-cover"
-                />
+                  unoptimized
+                                  />
               </div>
 
               <div className="p-6 space-y-3">

@@ -148,7 +148,7 @@ export default function Header() {
             href="#"
             className={clsx(
               "transition-filter flex-shrink-0 mx-2",
-              !active && "invert"
+              !active && "transition-filter"
             )}
           >
             <Image

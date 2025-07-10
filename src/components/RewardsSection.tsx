@@ -14,10 +14,13 @@ export function RewardsSection() {
   const bottomLogos = logos.slice(2);
 
   return (
-    <section id="rewards" className="md:py-12 py-8 bg-gray-50">
+    <section id="rewards" className="md:py-12 py-1 bg-gray-50">
       <div className="max-w-5xl mx-auto px-4">
+
+          <h2 className=" block md:hidden text-4xl text-center pb-4 text-gray-800">Latest Awards</h2>
+
         {/* Top row (2 logos) */}
-        <div className="flex justify-center items-center gap-20 flex-wrap">
+        <div className="flex justify-center items-center gap-4 md:gap-20 flex-wrap">
           {topLogos.map((logo) => (
             <div key={logo.id} className="w-72 h-36 relative">
               <Image
@@ -31,13 +34,13 @@ export function RewardsSection() {
         </div>
 
         {/* Heading + divider */}
-        <div className="flex items-center ">
+        <div className="hidden md:flex items-center ">
           <h2 className="text-3xl font-serif text-gray-800">Latest Awards</h2>
           <div className="flex-grow h-px bg-gray-300 ml-4" />
         </div>
 
         {/* Bottom row (2 logos) */}
-        <div className="flex justify-center items-center gap-20 flex-wrap">
+        <div className="flex justify-center pt-4 md:pt-0 items-center gap-4 md:gap-20 flex-wrap">
           {bottomLogos.map((logo) => (
             <div key={logo.id} className="w-72 h-36 relative">
               <Image

@@ -146,7 +146,7 @@ export default function Hero() {
       {/* animated two-line headline */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center pb-12 md:pb-0 px-4 space-y-4">
         {/* Line 1: big italic serif */}
-        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-normal">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
           <WavyText text={t("title")} />
         </h1>
 
@@ -159,15 +159,6 @@ export default function Hero() {
       {/* Bottom Info Panel */}
       <div className="absolute bottom-12 lg:buttom-1 left-1/2 transform -translate-x-1/2 z-20 w-[90%]  md:w-auto">
         <div className="bg-white/90 lg:p-6 backdrop-blur-sm rounded-3xl px-8 py-4 md:px-12 md:py-8 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 shadow-lg">
-          {/* 1) Program title */}
-          <div className="flex-1 text-center md:text-left">
-            <span className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-medium text-gray-800 whitespace-nowrap">
-              Dakhla is Calling…
-            </span>
-          </div>
-
-          {/* Divider */}
-          <div className="hidden md:block h-8 border-l border-gray-300" />
 
           {/* 2) Check-in Date */}
           <div className="flex flex-col items-center md:items-start text-sm min-w-0">
