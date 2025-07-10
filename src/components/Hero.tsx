@@ -180,7 +180,7 @@ export default function Hero() {
               min={today}
               value={bookingData.checkInDate}
               onChange={(e) => handleInputChange('checkInDate', e.target.value)}
-              className="mt-1 px-2 py-1 border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+              className="mt-1 px-2 py-1 font-trajan border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
             />
           </div>
 
@@ -196,7 +196,7 @@ export default function Hero() {
               min={bookingData.checkInDate || today}
               value={bookingData.checkOutDate}
               onChange={(e) => handleInputChange('checkOutDate', e.target.value)}
-              className="mt-1 px-2 py-1 border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+              className="mt-1 font-trajan px-2 py-1 border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
             />
           </div>
 
@@ -210,7 +210,7 @@ export default function Hero() {
             <select
               value={bookingData.adults}
               onChange={(e) => handleInputChange('adults', parseInt(e.target.value))}
-              className="mt-1 px-2 py-1 border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+              className="mt-1 px-1 xl:px-2  py-1 font-trajan border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
             >
               {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                 <option key={num} value={num}>{num}</option>
