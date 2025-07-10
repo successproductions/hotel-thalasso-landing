@@ -97,7 +97,7 @@ export function ProgramsSection() {
               `}
             >
               {/* Image */}
-              <div className={isOdd ? "md:col-start-2" : ""}>
+              <div className={isOdd ? "md:col-start-2 " : ""}>
                 <Image
                   src={program.image}
                   alt={`${t('header.jour')} ${program.dayNumber} - ${program.title}`}
