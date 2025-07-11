@@ -12,20 +12,27 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
 
   async redirects() {
     return [
-      // Root redirect
-      {
-        source: '/',
-        destination: '/fr/evasion-holistique-3-jours',
-        permanent: true,
-      },
-      // WWW to non-WWW redirect
+      // WWW to non-WWW redirect (CRITICAL FIX)
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.offer.dakhlaclub.com' }],
         destination: 'https://offer.dakhlaclub.com/:path*',
+        permanent: true,
+      },
+      // Root redirect
+      {
+        source: '/',
+        destination: '/fr/evasion-holistique-3-jours',
         permanent: true,
       },
       // Handle old URLs
@@ -136,12 +143,7 @@ const nextConfig: NextConfig = {
   },
   
   // Ensure trailing slash consistency
-  trailingSlash: false,
-  
-  // Enable experimental features for better performance
-  experimental: {
-    optimizePackageImports: ['lucide-react'],
-  },
+  trailingSlash: false
 };
 
 export default withNextIntl('./next-intl.config.ts')(nextConfig);

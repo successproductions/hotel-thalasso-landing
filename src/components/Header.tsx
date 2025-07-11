@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -31,7 +30,7 @@ export default function Header() {
   const links = [
     { name: t("home"), href: "#accueil" },
     { name: t("about"), href: "#about" },
-    { name: t("services"), href: "#services" }
+    { name: t("services"), href: "#services" }    
   ];
 
   return (
@@ -49,12 +48,12 @@ export default function Header() {
           {/* Left: Logo */}
           <div className="flex items-center">
             <Link
-              href="#"
+              href="#accueil"  // UPDATED: Make logo a proper internal link
               className="transition-filter"
             >
               <Image
                 src="/images/LogoDakhla.png"
-                alt="Logo"
+                alt="Dakhla Club - Retour à l'accueil"
                 width={120}
                 height={40}
               />
@@ -64,7 +63,7 @@ export default function Header() {
           {/* Center: Navigation */}
           <nav
             className={clsx(
-              "flex justify-center gap-6 font-medium transition-colors",
+              "flex justify-center gap-4 font-medium transition-colors", // UPDATED: reduced gap for more links
               active ? "text-gray-800 dark:text-gray-200" : "text-white"
             )}
           >
@@ -73,7 +72,7 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 className={clsx(
-                  "relative group px-3 py-2 transition-colors",
+                  "relative group px-2 py-2 transition-colors text-sm", // UPDATED: smaller padding and text
                   active ? "hover:text-teal-700" : "hover:text-white/80"
                 )}
               >
@@ -145,7 +144,7 @@ export default function Header() {
 
           {/* Center: Logo */}
           <Link
-            href="#"
+            href="#accueil"  // UPDATED: Make mobile logo a proper internal link
             className={clsx(
               "transition-filter flex-shrink-0 mx-2",
               !active && "transition-filter"
@@ -153,7 +152,7 @@ export default function Header() {
           >
             <Image
               src="/images/LogoDakhla.png"
-              alt="Logo"
+              alt="Dakhla Club - Accueil"
               width={80}
               height={28}
               className="max-w-full h-auto"
