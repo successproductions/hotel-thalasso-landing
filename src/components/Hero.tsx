@@ -176,7 +176,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Info Panel */}
-      <div className="absolute bottom-12 lg:bottom-9 xl:bottom-4 left-1/2 transform -translate-x-1/2 z-20 w-[90%] md:w-auto">
+      <div className="absolute bottom-12 lg:bottom-9 xl:bottom-8 left-1/2 transform -translate-x-1/2 z-20 w-[90%] md:w-auto">
         <div className="bg-white/90 lg:p-6 backdrop-blur-sm rounded-3xl px-4 py-4 md:px-12 md:py-8 shadow-lg">
           
           {/* Mobile Layout: All fields in one row, button below */}
