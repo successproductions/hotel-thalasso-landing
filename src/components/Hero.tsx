@@ -161,65 +161,128 @@ export default function Hero() {
 
       {/* Bottom Info Panel */}
       <div className="absolute bottom-12 lg:buttom-1 left-1/2 transform -translate-x-1/2 z-20 w-[90%]  md:w-auto">
-        <div className="bg-white/90 lg:p-6 backdrop-blur-sm rounded-3xl px-8 py-4 md:px-12 md:py-8 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 shadow-lg">
+        <div className="bg-white/90 lg:p-6 backdrop-blur-sm rounded-3xl px-4 py-4 md:px-12 md:py-8 shadow-lg">
+          
+          {/* Mobile Layout: All fields in one row, button below */}
+          <div className="md:hidden">
+            {/* Fields row */}
+            <div className="flex items-center space-x-2 mb-4">
+              {/* Check-in Date */}
+              <div className="flex-1 min-w-0">
+                <span className="block text-xs text-gray-500 tracking-wider mb-1">
+                  Check-in
+                </span>
+                <input
+                  type="date"
+                  min={today}
+                  value={bookingData.checkInDate}
+                  onChange={(e) => handleInputChange('checkInDate', e.target.value)}
+                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
 
-          {/* 2) Check-in Date */}
-          <div className="flex flex-col items-center md:items-start text-sm min-w-0">
-            <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
-              Check-in Date
-            </span>
-            <input
-              type="date"
-              min={today}
-              value={bookingData.checkInDate}
-              onChange={(e) => handleInputChange('checkInDate', e.target.value)}
-              className="mt-1 px-2 py-1 font-trajan border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
-            />
+              {/* Check-out Date */}
+              <div className="flex-1 min-w-0">
+                <span className="block text-xs text-gray-500 tracking-wider mb-1">
+                  Check-out
+                </span>
+                <input
+                  type="date"
+                  min={bookingData.checkInDate || today}
+                  value={bookingData.checkOutDate}
+                  onChange={(e) => handleInputChange('checkOutDate', e.target.value)}
+                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+
+              {/* Adults */}
+              <div className="w-16">
+                <span className="block text-xs text-gray-500 tracking-wider mb-1">
+                  Adults
+                </span>
+                <select
+                  value={bookingData.adults}
+                  onChange={(e) => handleInputChange('adults', parseInt(e.target.value))}
+                  className="w-full px-1 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                >
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+                    <option key={num} value={num}>{num}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Button row */}
+            <div className="text-center">
+              <button
+                onClick={handleBookingSubmit}
+                className="w-full px-5 py-2 border border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition text-sm"
+              >
+                {t('callButton')}
+              </button>
+            </div>
           </div>
 
-          <div className="hidden md:block h-8 border-l border-gray-300" />
+          {/* Desktop Layout: Original horizontal layout */}
+          <div className="hidden md:flex items-center space-x-8">
+            {/* Check-in Date */}
+            <div className="flex flex-col items-start text-sm min-w-0">
+              <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
+                Check-in Date
+              </span>
+              <input
+                type="date"
+                min={today}
+                value={bookingData.checkInDate}
+                onChange={(e) => handleInputChange('checkInDate', e.target.value)}
+                className="mt-1 px-2 py-1 font-trajan border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+              />
+            </div>
 
-          {/* 3) Check-out Date */}
-          <div className="flex flex-col items-center md:items-start text-sm min-w-0">
-            <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
-              Check-out Date
-            </span>
-            <input
-              type="date"
-              min={bookingData.checkInDate || today}
-              value={bookingData.checkOutDate}
-              onChange={(e) => handleInputChange('checkOutDate', e.target.value)}
-              className="mt-1 font-trajan px-2 py-1 border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
-            />
-          </div>
+            <div className="h-8 border-l border-gray-300" />
 
-          <div className="hidden md:block h-8 border-l border-gray-300" />
+            {/* Check-out Date */}
+            <div className="flex flex-col items-start text-sm min-w-0">
+              <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
+                Check-out Date
+              </span>
+              <input
+                type="date"
+                min={bookingData.checkInDate || today}
+                value={bookingData.checkOutDate}
+                onChange={(e) => handleInputChange('checkOutDate', e.target.value)}
+                className="mt-1 font-trajan px-2 py-1 border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+              />
+            </div>
 
-          {/* 4) Adults */}
-          <div className="flex flex-col items-center md:items-start text-sm min-w-0">
-            <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
-              Adults
-            </span>
-            <select
-              value={bookingData.adults}
-              onChange={(e) => handleInputChange('adults', parseInt(e.target.value))}
-              className="mt-1 px-1 xl:px-2  py-1 font-trajan border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+            <div className="h-8 border-l border-gray-300" />
+
+            {/* Adults */}
+            <div className="flex flex-col items-start text-sm min-w-0">
+              <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
+                Adults
+              </span>
+              <select
+                value={bookingData.adults}
+                onChange={(e) => handleInputChange('adults', parseInt(e.target.value))}
+                className="mt-1 px-1 xl:px-2 py-1 font-trajan border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+                  <option key={num} value={num}>{num}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="h-8 border-l border-gray-300" />
+
+            {/* CTA Button */}
+            <button
+              onClick={handleBookingSubmit}
+              className="px-5 py-2 border text-center border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition"
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
-                <option key={num} value={num}>{num}</option>
-              ))}
-            </select>
+              {t('callButton')}
+            </button>
           </div>
-
-          <div className="hidden md:block h-8 border-l border-gray-300" />
-
-          {/* 5) CTA */}
-          <button
-            onClick={handleBookingSubmit}
-            className="px-5 py-2 border text-center border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition"
-          >
-            {t('callButton')}
-          </button>
         </div>
       </div>
     </section>
