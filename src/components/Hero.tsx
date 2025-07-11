@@ -39,6 +39,14 @@ export default function Hero() {
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   };
 
+  // Auto-calculate check-out date (3 nights after check-in)
+  const calculateCheckoutDate = (checkInDate: string): string => {
+    if (!checkInDate) return '';
+    const checkIn = new Date(checkInDate);
+    checkIn.setDate(checkIn.getDate() + 3); // Add 3 days for 3 nights
+    return checkIn.toISOString().split('T')[0];
+  };
+
   // Validation function
   const validateForm = (): boolean => {
     const newErrors: ValidationErrors = {};
@@ -53,25 +61,20 @@ export default function Hero() {
     
     if (bookingData.checkInDate && bookingData.checkOutDate) {
       const checkIn = new Date(bookingData.checkInDate);
-      const checkOut = new Date(bookingData.checkOutDate);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
       
       if (checkIn < today) {
         newErrors.checkInDate = 'Check-in date cannot be in the past';
       }
-      
-      if (checkOut <= checkIn) {
-        newErrors.checkOutDate = 'Check-out date must be after check-in date';
-      }
 
       const numberOfDays = calculateDays(bookingData.checkInDate, bookingData.checkOutDate);
-      if (numberOfDays !== 4) {
+      if (numberOfDays !== 3) {
         // Show SweetAlert2 warning with translated messages
         Swal.fire({
           icon: 'warning',
           title: t('bookingValidation.invalidDurationTitle'),
-          text: t('bookingValidation.invalidDurationText'),
+          text: 'Your stay must be exactly 3 nights. Please adjust your dates.',
           confirmButtonText: t('bookingValidation.confirmButton'),
           confirmButtonColor: '#f59e0b'
         });
@@ -113,10 +116,21 @@ export default function Hero() {
   };
 
   const handleInputChange = (field: keyof BookingData, value: string | number) => {
-    setBookingData(prev => ({
-      ...prev,
-      [field]: value
-    }));
+    if (field === 'checkInDate') {
+      // Auto-calculate check-out date when check-in changes
+      const checkOutDate = calculateCheckoutDate(value as string);
+      setBookingData(prev => ({
+        ...prev,
+        checkInDate: value as string,
+        checkOutDate: checkOutDate
+      }));
+    } else if (field !== 'checkOutDate') {
+      // Allow changes to other fields except checkOutDate
+      setBookingData(prev => ({
+        ...prev,
+        [field]: value
+      }));
+    }
     
     // Clear error when user starts typing
     if (errors[field as keyof ValidationErrors]) {
@@ -160,7 +174,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Info Panel */}
-      <div className="absolute bottom-12 lg:buttom-1 left-1/2 transform -translate-x-1/2 z-20 w-[90%]  md:w-auto">
+      <div className="absolute bottom-12 lg:bottom-1 xl:bottom-4 left-1/2 transform -translate-x-1/2 z-20 w-[90%] md:w-auto">
         <div className="bg-white/90 lg:p-6 backdrop-blur-sm rounded-3xl px-4 py-4 md:px-12 md:py-8 shadow-lg">
           
           {/* Mobile Layout: All fields in one row, button below */}
@@ -177,22 +191,24 @@ export default function Hero() {
                   min={today}
                   value={bookingData.checkInDate}
                   onChange={(e) => handleInputChange('checkInDate', e.target.value)}
-                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full font-trajan px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
               {/* Check-out Date */}
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 relative">
                 <span className="block text-xs text-gray-500 tracking-wider mb-1">
                   Check-out
                 </span>
                 <input
                   type="date"
-                  min={bookingData.checkInDate || today}
                   value={bookingData.checkOutDate}
-                  onChange={(e) => handleInputChange('checkOutDate', e.target.value)}
-                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  readOnly
+                  className="w-full font-trajan px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 bg-gray-50 cursor-not-allowed"
+                  title="Check-out date is automatically set to 3 nights after check-in"
                 />
+                {/* Forbidden icon overlay */}
+                
               </div>
 
               {/* Adults */}
@@ -203,7 +219,7 @@ export default function Hero() {
                 <select
                   value={bookingData.adults}
                   onChange={(e) => handleInputChange('adults', parseInt(e.target.value))}
-                  className="w-full px-1 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full font-trajan px-1 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                     <option key={num} value={num}>{num}</option>
@@ -224,7 +240,7 @@ export default function Hero() {
           </div>
 
           {/* Desktop Layout: Original horizontal layout */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center py-6 px-6  space-x-8">
             {/* Check-in Date */}
             <div className="flex flex-col items-start text-sm min-w-0">
               <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
@@ -242,17 +258,19 @@ export default function Hero() {
             <div className="h-8 border-l border-gray-300" />
 
             {/* Check-out Date */}
-            <div className="flex flex-col items-start text-sm min-w-0">
+            <div className="flex flex-col items-start text-sm min-w-0 relative">
               <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
                 Check-out Date
               </span>
               <input
                 type="date"
-                min={bookingData.checkInDate || today}
                 value={bookingData.checkOutDate}
-                onChange={(e) => handleInputChange('checkOutDate', e.target.value)}
-                className="mt-1 font-trajan px-2 py-1 border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+                readOnly
+                className="mt-1 font-trajan px-2 py-1 border border-gray-300 rounded text-gray-800 text-sm w-full bg-gray-50 cursor-not-allowed"
+                title="Check-out date is automatically set to 3 nights after check-in"
               />
+              {/* Forbidden icon overlay */}
+              
             </div>
 
             <div className="h-8 border-l border-gray-300" />
