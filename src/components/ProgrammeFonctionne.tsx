@@ -10,10 +10,10 @@ export function ProgrammeFonctionne() {
  
 
   return (
-    <section id="pourquoi" className="md:py-16 bg-white">
-      <div className="max-w-8xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-44 ">
+    <section id="pourquoi" className="md:py-12 bg-white">
+      <div className="max-w-8xl  mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-44 ">
         {/* Image Column */}
-        <div className="w-full h-64 md:h-[48rem] relative overflow-hidden rounded-lg shadow-lg">
+        <div className="w-full h-56 md:h-[30rem] xl:h-[38rem] relative overflow-hidden rounded-lg shadow-lg">
           <Image
             src="/images/DJI_0070.png"    
             alt="Pourquoi ce programme fonctionne"

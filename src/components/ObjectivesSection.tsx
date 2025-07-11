@@ -22,10 +22,10 @@ export function ObjectivesSection() {
   const card2 = t.raw('points2') as string[];
 
   return (
-    <section id="fonctionnement" className="md:pt-6 pt-2 bg-white">
+    <section id="fonctionnement" className="md:pt-6 py-2 pb-4 bg-white">
       <div className="mx-auto max-w-6xl px-4 text-center">
         {/* Section title */}
-        <h2 className="text-3xl md:text-4xl text-gray-800 font-medium mb-12">
+        <h2 className="text-3xl md:text-4xl text-gray-800 font-medium my-6 md:mb-8">
           {t('title')}
         </h2>
 

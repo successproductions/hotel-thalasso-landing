@@ -12,7 +12,7 @@ export function About() {
       <div className="mx-auto  grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Text Column */}
         <div className="space-y-4 px-4 xl:px-28">
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-800">
+          <h2 className="text-3xl md:text-4xl font-medium text-gray-800">
            {msg.about.title.toUpperCase()}
           </h2>
           
