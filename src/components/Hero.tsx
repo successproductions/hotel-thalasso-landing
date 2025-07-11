@@ -160,11 +160,13 @@ export default function Hero() {
       {/* animated two-line headline */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center pb-12 md:pb-0 px-4 space-y-4">
         {/* Line 1: big italic serif */}
-        <h1 className="hidden md:block text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
-          <WavyText text={t("title")} />
-        </h1>
-        <h1 className="block md:hidden text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
-          <WavyText text={t("title2")} />
+        <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
+          <span className="hidden md:block">
+            <WavyText text={t("title")} />
+          </span>
+          <span className="block md:hidden">
+            <WavyText text={t("title2")} />
+          </span>
         </h1>
 
         {/* Line 2: uppercase tracking-wide */}
@@ -191,7 +193,7 @@ export default function Hero() {
                   min={today}
                   value={bookingData.checkInDate}
                   onChange={(e) => handleInputChange('checkInDate', e.target.value)}
-                  className="w-full font-trajan px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
@@ -204,11 +206,19 @@ export default function Hero() {
                   type="date"
                   value={bookingData.checkOutDate}
                   readOnly
-                  className="w-full font-trajan px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 bg-gray-50 cursor-not-allowed"
+                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 bg-gray-50 cursor-not-allowed"
                   title="Check-out date is automatically set to 3 nights after check-in"
                 />
                 {/* Forbidden icon overlay */}
-                
+                <div className="absolute inset-0 flex items-center justify-end pr-2 pointer-events-none">
+                  <svg 
+                    className="w-3 h-3 text-gray-400" 
+                    fill="currentColor" 
+                    viewBox="0 0 20 20"
+                  >
+                    <path fillRule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
               </div>
 
               {/* Adults */}
@@ -219,7 +229,7 @@ export default function Hero() {
                 <select
                   value={bookingData.adults}
                   onChange={(e) => handleInputChange('adults', parseInt(e.target.value))}
-                  className="w-full font-trajan px-1 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-1 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                     <option key={num} value={num}>{num}</option>
@@ -240,7 +250,7 @@ export default function Hero() {
           </div>
 
           {/* Desktop Layout: Original horizontal layout */}
-          <div className="hidden md:flex items-center py-6 px-6  space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {/* Check-in Date */}
             <div className="flex flex-col items-start text-sm min-w-0">
               <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
@@ -270,7 +280,15 @@ export default function Hero() {
                 title="Check-out date is automatically set to 3 nights after check-in"
               />
               {/* Forbidden icon overlay */}
-              
+              <div className="absolute top-8 right-2 pointer-events-none">
+                <svg 
+                  className="w-4 h-4 text-gray-400" 
+                  fill="currentColor" 
+                  viewBox="0 0 20 20"
+                >
+                  <path fillRule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clipRule="evenodd" />
+                </svg>
+              </div>
             </div>
 
             <div className="h-8 border-l border-gray-300" />
