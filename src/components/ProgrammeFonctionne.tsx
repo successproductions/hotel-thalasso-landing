@@ -28,7 +28,7 @@ export function ProgrammeFonctionne() {
           {te('title2')}
           </h2>
           <h2 className="text-3xl hidden md:block  md:text-4xl pt-6 md:pt-14  font-medium text-gray-800">
-          {te('title2')}
+          {te('title2').toUpperCase()}
           </h2>
           <ul className="list-disc pl-5 space-y-3 text-gray-600 text-base md:text-lg leading-relaxed">
             {[0, 1, 2, 3, 4, 5].map((i) => {

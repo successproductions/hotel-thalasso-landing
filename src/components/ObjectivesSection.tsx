@@ -26,7 +26,7 @@ export function ObjectivesSection() {
       <div className="mx-auto max-w-6xl px-4 text-center">
         {/* Section title */}
         <h2 className="text-3xl md:text-4xl text-gray-800 font-medium my-6 md:mb-8">
-          {t('title')}
+          {t('title').toUpperCase()}
         </h2>
 
         {/* Two-column grid */}
