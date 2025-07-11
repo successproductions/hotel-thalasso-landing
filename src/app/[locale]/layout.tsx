@@ -1,20 +1,19 @@
+import '../globals.css';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { ReactNode } from 'react';
 import { ThemeProvider } from 'next-themes';
+import type { ReactNode } from 'react';
+import type { Metadata } from 'next';
 import { Playfair_Display } from 'next/font/google';
-import type { Metadata, Viewport } from 'next';
 
-const playfair = Playfair_Display({ subsets: ['latin'] });
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400','700'],
+  display: 'swap'
+})
 
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  themeColor: '#0ea5e9',
-};
+export async function generateStaticParams() {
+  return [{ locale: 'fr' }, { locale: 'en' }];
+}
 
 export async function generateMetadata({
   params,
@@ -24,35 +23,57 @@ export async function generateMetadata({
   const { locale } = await params;
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
-  return {
-    // FIXED: Add metadataBase and canonical for WWW canonicalization
-    metadataBase: new URL('https://offer.dakhlaclub.com'),
-    alternates: {
-      canonical: `https://offer.dakhlaclub.com${locale === 'en' ? '/en' : '/fr'}/evasion-holistique-3-jours`,
-      languages: {
-        'fr': '/fr/evasion-holistique-3-jours',
-        'en': '/en/evasion-holistique-3-jours',
-      },
-    },
+  const baseUrl = 'https://offer.dakhlaclub.com';
+  // Fix: Ensure proper canonical URLs
+  const currentUrl = locale === 'en' 
+    ? `${baseUrl}/en/evasion-holistique-3-jours` 
+    : `${baseUrl}/fr/evasion-holistique-3-jours`;
 
+  return {
     title: messages.meta.title,
     description: messages.meta.description,
+    
+    // Fix: Proper viewport meta
+    viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
+    
+    // Fix: Enhanced icons
+    icons: {
+      icon: [
+        { url: '/images/LogoDakhla.png', type: 'image/png', sizes: '32x32' },
+        { url: '/images/LogoDakhla.png', type: 'image/png', sizes: '16x16' }
+      ],
+      apple: [
+        { url: '/images/LogoDakhla.png', sizes: '180x180', type: 'image/png' }
+      ],
+      shortcut: '/images/LogoDakhla.png'
+    },
+    
+    // Fix: Proper manifest
+    manifest: '/manifest.json',
     
     // Enhanced Open Graph
     openGraph: {
       title: messages.meta.title,
       description: messages.meta.description,
-      url: locale === "en" ? "https://offer.dakhlaclub.com/en/evasion-holistique-3-jours" : "https://offer.dakhlaclub.com/fr/evasion-holistique-3-jours",
-      siteName: 'Dakhla Club',
-      locale: locale === 'en' ? 'en_US' : 'fr_FR',
+      url: currentUrl,
+      siteName: 'Dakhla Club - Évasion Holistique',
+      locale: locale === 'fr' ? 'fr_FR' : 'en_US',
       type: 'website',
       images: [
         {
-          url: 'https://offer.dakhlaclub.com/images/cure-detox-maroc.jpg',
+          url: `${baseUrl}/images/og-image-${locale}.jpg`,
           width: 1200,
           height: 630,
           alt: messages.meta.description,
+          type: 'image/jpeg'
         },
+        {
+          url: `${baseUrl}/images/cure-detox-maroc.jpg`,
+          width: 800,
+          height: 600,
+          alt: 'Dakhla Club wellness spa treatments',
+          type: 'image/jpeg'
+        }
       ],
     },
 
@@ -61,7 +82,27 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: messages.meta.title,
       description: messages.meta.description,
-      images: ['https://offer.dakhlaclub.com/images/cure-detox-maroc.jpg'],
+      images: [`${baseUrl}/images/og-image-${locale}.jpg`],
+      creator: '@dakhlaclub',
+      site: '@dakhlaclub'
+    },
+
+    // Fix: Proper canonical and alternates
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        'fr-FR': `${baseUrl}/fr/evasion-holistique-3-jours`,
+        'en-US': `${baseUrl}/en/evasion-holistique-3-jours`,
+        'x-default': `${baseUrl}/fr/evasion-holistique-3-jours`
+      },
+      types: {
+        'application/rss+xml': [
+          { 
+            url: `${baseUrl}/feed.xml`, 
+            title: 'Dakhla Club Wellness Blog RSS Feed' 
+          }
+        ]
+      }
     },
 
     // Enhanced keywords
@@ -96,8 +137,11 @@ export async function generateMetadata({
     category: 'Wellness & Spa',
     classification: 'Health & Beauty Business',
     
+    
+
     // Performance and other meta
     other: {
+      'theme-color': '#0ea5e9',
       'msapplication-TileColor': '#0ea5e9',
       'msapplication-config': '/browserconfig.xml',
       'apple-mobile-web-app-capable': 'yes',
@@ -108,6 +152,7 @@ export async function generateMetadata({
   };
 }
 
+
 export default async function LocaleLayout({
   children,
   params,
@@ -116,11 +161,11 @@ export default async function LocaleLayout({
   params: Promise<{ locale: 'fr' | 'en' }>;
 }) {
   const { locale } = await params;
-  const messages = await getMessages();
+  const messages = (await import(`../../messages/${locale}.json`)).default;
 
-  // FIXED: Complete schemas with proper address field
+  // Enhanced JSON-LD Schema with multiple schemas
   const schemas = [
-    // 1. Main Business Schema with COMPLETE address
+    // 1. Main Business Schema
     {
       "@context": "https://schema.org",
       "@type": "HealthAndBeautyBusiness",
@@ -141,7 +186,6 @@ export default async function LocaleLayout({
         "https://www.youtube.com/@dakhlaclub"
       ],
       "openingHours": "Mo-Su 09:00-19:00",
-      // CRITICAL FIX: Complete address object with all required fields
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "POINT DE DRAGON PK 28",
@@ -169,7 +213,31 @@ export default async function LocaleLayout({
       }
     },
     
-    // 2. Website Schema
+    // 2. Service Schema
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Holistic Wellness Retreat",
+      "provider": {
+        "@type": "HealthAndBeautyBusiness",
+        "name": "Dakhla Club",
+        "@id": "https://offer.dakhlaclub.com"
+      },
+      "name": locale === 'en' ? "3-Day Holistic Escape" : "Évasion Holistique 3 Jours",
+      "description": messages.meta.description,
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "MAD",
+        "category": "Wellness Retreat",
+        "validFrom": new Date().toISOString(),
+        "validThrough": "2025-12-31T23:59:59Z"
+      },
+      "duration": "P3D",
+      "category": ["Wellness", "Spa", "Thalasso", "Holistic Therapy"]
+    },
+
+    // 3. Website Schema
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -177,7 +245,35 @@ export default async function LocaleLayout({
       "url": "https://offer.dakhlaclub.com",
       "name": "Dakhla Club - Holistic Wellness Retreat",
       "description": messages.meta.description,
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://offer.dakhlaclub.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
       "inLanguage": [locale === 'en' ? "en-US" : "fr-FR"]
+    },
+
+    // 4. Breadcrumb Schema
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://offer.dakhlaclub.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": locale === 'en' ? "Holistic Escape" : "Évasion Holistique",
+          "item": locale === "en" ? "https://offer.dakhlaclub.com/en/evasion-holistique-3-jours" : "https://offer.dakhlaclub.com/fr/evasion-holistique-3-jours"
+        }
+      ]
     }
   ];
 
@@ -194,10 +290,28 @@ export default async function LocaleLayout({
           />
         ))}
 
+        {/* Performance and SEO meta tags */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="theme-color" content="#0ea5e9" />
+        <meta name="color-scheme" content="light dark" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Dakhla Club" />
+        
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://api.qrserver.com" />
+        
+        {/* DNS prefetch for performance */}
+        <link rel="dns-prefetch" href="https://direct-book.com" />
+        
+        {/* Updated time for SEO */}
+        <meta
+          property="og:updated_time"
+          content={new Date().toISOString()}
+          suppressHydrationWarning
+        />
       </head>
 
       <body className={playfair.className}>

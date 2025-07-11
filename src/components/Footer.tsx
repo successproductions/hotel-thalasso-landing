@@ -99,7 +99,6 @@ export function Footer() {
                  overflow-hidden
                "
              >
-               {/* UPDATED: Dynamic QR code based on locale */}
                <Image
                  src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(brochureUrl)}`}
                  alt={t('qrAlt')} 
