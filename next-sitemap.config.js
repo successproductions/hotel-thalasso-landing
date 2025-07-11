@@ -3,12 +3,12 @@ module.exports = {
   siteUrl: 'https://offer.dakhlaclub.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  exclude: ['/api/*'],
+  exclude: ['/api/*', '/admin/*', '/_next/*'],
   
-  // Transform function to handle multilingual URLs
+  // Enhanced transform function
   transform: async (config, path) => {
-    // Handle locale-specific paths
-    if (path === '/fr' || path === '/en') {
+    // Handle locale-specific paths with proper priority
+    if (path === '/fr/evasion-holistique-3-jours' || path === '/en/evasion-holistique-3-jours') {
       return {
         loc: path,
         changefreq: 'weekly',
@@ -16,25 +16,25 @@ module.exports = {
         lastmod: new Date().toISOString(),
         alternateRefs: [
           {
-            href: `${config.siteUrl}/fr`,
+            href: `${config.siteUrl}/fr/evasion-holistique-3-jours`,
             hreflang: 'fr',
           },
           {
-            href: `${config.siteUrl}/en`,
+            href: `${config.siteUrl}/en/evasion-holistique-3-jours`,
             hreflang: 'en',
           },
           {
-            href: `${config.siteUrl}/fr`,
+            href: `${config.siteUrl}/fr/evasion-holistique-3-jours`,
             hreflang: 'x-default',
           },
         ],
       }
     }
 
-    // Default transform
+    // Default transform with proper priorities
     return {
       loc: path,
-      changefreq: 'weekly',
+      changefreq: 'monthly',
       priority: 0.8,
       lastmod: new Date().toISOString(),
     }
@@ -45,7 +45,7 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/']
+        disallow: ['/api/', '/admin/', '/_next/', '/private/']
       }
     ],
     additionalSitemaps: [

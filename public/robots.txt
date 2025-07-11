@@ -1,11 +1,23 @@
-# *
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
+
+# Block admin and API routes
 Disallow: /api/
 Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
 
-# Host
-Host: https://offer.dakhlaclub.com
+# Allow specific crawling
+Allow: /images/
+Allow: /videos/
 
-# Sitemaps
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://offer.dakhlaclub.com/sitemap.xml
+Sitemap: https://offer.dakhlaclub.com/sitemap-0.xml
+
+# Host directive
+Host: https://offer.dakhlaclub.com
