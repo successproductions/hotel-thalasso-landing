@@ -2,27 +2,32 @@ import withNextIntl from 'next-intl/plugin';
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // Basic optimizations only
+  compress: true,
+  poweredByHeader: false,
+
+  // Simple webpack optimization
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
+  },
+
   images: {
-    // Remove unoptimized for better SEO
     formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     domains: ['images.unsplash.com', 'api.qrserver.com'],
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
-  },
 
   async redirects() {
     return [
-      // WWW to non-WWW redirect (CRITICAL FIX)
+      // CRITICAL FIX: WWW to non-WWW redirect
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.offer.dakhlaclub.com' }],
@@ -77,10 +82,6 @@ const nextConfig: NextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
-          },
         ],
       },
       // Cache headers for static assets
@@ -93,57 +94,9 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      {
-        source: '/videos/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
     ];
   },
-
-  // Enable compression and optimization
-  compress: true,
-  poweredByHeader: false,
-  reactStrictMode: true,
-  swcMinify: true,
-  
-  // Webpack optimization for better performance
-  webpack: (config, { dev, isServer }) => {
-    // Production optimizations
-    if (!dev && !isServer) {
-      config.optimization = {
-        ...config.optimization,
-        minimize: true,
-        sideEffects: false,
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            default: {
-              minChunks: 2,
-              reuseExistingChunk: true,
-            },
-          },
-        },
-      };
-    }
-    
-    // Add bundle analyzer in development
-    if (dev) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@': './src',
-      };
-    }
-    
-    return config;
-  },
-  
-  // Ensure trailing slash consistency
-  trailingSlash: false
 };
 
+// FIXED: Use the correct path to your next-intl config file
 export default withNextIntl('./next-intl.config.ts')(nextConfig);
