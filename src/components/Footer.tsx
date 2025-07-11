@@ -2,10 +2,15 @@
 import React from "react";
 import Image from "next/image";
 import { Facebook, Instagram, Youtube  } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations , useLocale} from "next-intl";
 
 export function Footer() {
   const t = useTranslations('footer')
+  const locale = useLocale();
+
+  const brochureUrl = locale === 'en' 
+    ? 'https://offer.dakhlaclub.com/brochure/BROCHURE-EN.pdf'
+    : 'https://offer.dakhlaclub.com/brochure/BROCHURE_CH_NUMERIQUE_FR_compressed.pdf';
   
   return (
     <footer className="bg-gray-100 text-gray-700">
@@ -76,33 +81,34 @@ export function Footer() {
         </div>
 
        
-               <div className="flex flex-col items-center md:justify-end space-y-4">
-         <div className="text-center mr-auto md:mx-auto">
-           <p className="text-xs text-gray-600 mb-2">
-             {t('scanBrochure')} 
-           </p>
-           <div
-             className="
-                w-32        
-                sm:w-28     
-               md:w-24     
-                aspect-square  
-                relative
-                bg-white
-                rounded-lg
-                shadow-md
-                overflow-hidden
-              "
-            >
-              <Image
-                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://offer.dakhlaclub.com/brochure/BROCHURE_CH_NUMERIQUE_FR_compressed.pdf"
-                alt={t('qrAlt')} 
-                fill
-                className="object-cover p-1"
-              />
-            </div>
-          </div>
-        </div>
+        <div className="flex flex-col items-center md:justify-end space-y-4">
+          <div className="text-center mr-auto md:mx-auto">
+            <p className="text-xs text-gray-600 mb-2">
+              {t('scanBrochure')} 
+            </p>
+            <div
+              className="
+                 w-32        
+                 sm:w-28     
+                md:w-24     
+                 aspect-square  
+                 relative
+                 bg-white
+                 rounded-lg
+                 shadow-md
+                 overflow-hidden
+               "
+             >
+               {/* UPDATED: Dynamic QR code based on locale */}
+               <Image
+                 src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(brochureUrl)}`}
+                 alt={t('qrAlt')} 
+                 fill
+                 className="object-cover p-1"
+               />
+             </div>
+           </div>
+         </div>
       </div>
 
       {/* Divider + center logo */}
