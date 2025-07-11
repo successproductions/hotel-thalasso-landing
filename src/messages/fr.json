@@ -14,9 +14,9 @@
   },
   
   "home": {
-    "title": "ÉVASION HOLISTIQUE À DAKHLACLUB",
+    "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
     "title2": "ÉVASION HOLISTIQUE À DAKHLA",
-    "description": "3 Jours pour Ressourcer Corps & Esprit",
+    "description": "3 Nuits pour Ressourcer Corps & Esprit",
     "duration":"Durée",
     "days": "3 Jours",
     "callButton":" Je veux vivre  l’expérience",
@@ -33,6 +33,7 @@
     "cta":         "RÉSERVER MAINTENANT"
   },
   "healthProgram": {
+    "title": "Dakhla is calling… Êtes-vous prêt(e) à recharger vos batteries ?",
     "title2":       "Un sanctuaire entre désert doré, lagune turquoise et lumière sacrée",
     "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne. Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante."
   },
@@ -52,7 +53,7 @@
   "programSection": {
     "header": {
       "title":             "LE PROGRAMME",
-      "subheading":        "3 Jours, 3 Énergies, 3 Transformations",
+      "subheading":        "3 Nuits, 3 Énergies, 3 Transformations",
       "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
       "jour":              "Jour",
       "activitiesTitle":   "Soins inclus :",

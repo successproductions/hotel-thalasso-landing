@@ -25,7 +25,7 @@ export function ServicesTable() {
   const t = useTranslations('servicesTable');
 
   return (
-    <div className="overflow-x-auto py-12">
+    <div className="overflow-x-auto py-4 md:py-8">
       <div className="mx-4 lg:mx-36">
         <table className="w-full table-auto border-collapse">
           <thead>

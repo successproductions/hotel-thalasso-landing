@@ -13,9 +13,9 @@
     }
   },
   "home": {
-    "title": "WELCOME TO DAKHLACLUB",
+    "title": "WELCOME TO DAKHLA CLUB",
     "title2": "WELCOME TO DAKHLACLUB",
-    "description": "Enjoy a 3-day wellness escape",
+    "description": "Enjoy a 3 Nights wellness escape",
     "duration":"Duration",
     "days": "3 Days",
     "callButton":" I Want To Live The Experience",
@@ -32,6 +32,7 @@
     "cta":         "BOOK YOUR HOLISTIC ESCAPE"
   },
   "healthProgram": {
+    "title": "Dakhla is calling… Are you ready to refuel your energy?",
     "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
     "description1": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual Here, silence heals. The sun warms from within. Our certified therapists welcome you for an immersive and deeply regenerative experience."
   },
@@ -55,7 +56,7 @@
   "programSection": {
     "header": {
       "title":             "THE PROGRAM",
-      "subheading":        "3 Days, 3 Energies, 3 Transformations",
+      "subheading":        "3 Nights, 3 Energies, 3 Transformations",
       "description":       "A holistic journey to your complete well-being in the unique universe of Dakhla",
       "jour":              "Day",
       "activitiesTitle":   "Care included :",

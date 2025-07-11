@@ -50,7 +50,7 @@ export function ProgramsSection() {
   return (
     <section id="services" className="overflow-hidden">
       {/* Header Section */}
-      <div className="max-w-6xl mx-auto px-4 py-8 text-center">
+      <div className="max-w-6xl mx-auto px-4 py-1 md:py-8 text-center">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -75,7 +75,7 @@ export function ProgramsSection() {
         const isOdd = i % 2 === 1;
 
         return (
-          <div key={program.dayNumber} className="relative py-24">
+          <div key={program.dayNumber} className="relative py-2 md:py-6 xl:py-8">
             {/* full-width, pale-green bg sliding in */}
             <motion.div
               className="absolute inset-x-0 inset-y-0 bg-[#f4f4f4]"

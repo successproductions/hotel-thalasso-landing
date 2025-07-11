@@ -77,14 +77,14 @@ export default function TestimonialsCarousel() {
     setCurrentIndex(Math.max(0, Math.min(i, maxIndex)));
 
   return (
-    <section className="relative flex items-center justify-center overflow-hidden min-h-[60vh]">
+    <section className="relative flex items-center justify-center overflow-hidden min-h-[50vh]">
       {/* Solid color background instead of YouTube video */}
       <div
         className="absolute inset-0 w-full h-full"
         style={{ backgroundColor: "#faf9f5" }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-4 md:py-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900">
             {t("title")}
