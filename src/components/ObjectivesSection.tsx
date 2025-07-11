@@ -1,6 +1,3 @@
-
-
-
 'use client';
 
 import Image from 'next/image';
@@ -11,14 +8,15 @@ export function ObjectivesSection() {
 
   const images = [
     {
-      image: "/images/cure-détox-Maroc.jpeg",
+      image: "/images/cure-detox-maroc.jpg",
       alt: "spa entre désert et océan",
     },
     {
-      image: "/images/séjour-bien-être Dakhla.jpeg", 
+      image: "/images/sejour-bien-etre-dakhla.jpg", 
       alt: "retraite spirituelle Maroc",
     },
   ]
+  
   // pull in your two arrays of points
   const card1 = t.raw('points1') as string[];
   const card2 = t.raw('points2') as string[];
@@ -38,14 +36,32 @@ export function ObjectivesSection() {
               key={idx}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              {/* replace these with your actual images or remove entirely */}
-              <div className="h-48 w-full relative">
+              {/* Image with error handling and fallback */}
+              <div className="h-48 w-full relative bg-gray-200">
                 <Image
                   src={images[idx].image}
                   alt={images[idx].alt}
                   fill
                   className="object-cover"
-                                  />
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority={idx === 0}
+                  onError={(e) => {
+                    console.error('Image failed to load:', images[idx].image);
+                    // Fallback to a placeholder or hide the image
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+                {/* Fallback content in case image fails */}
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-teal-100 to-blue-100">
+                  <div className="text-center p-4">
+                    <div className="w-12 h-12 mx-auto mb-2 bg-teal-200 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </div>
+                    <p className="text-sm text-teal-700 font-medium">{images[idx].alt}</p>
+                  </div>
+                </div>
               </div>
 
               <div className="p-6 space-y-3">
