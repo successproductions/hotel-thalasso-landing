@@ -210,15 +210,7 @@ export default function Hero() {
                   title="Check-out date is automatically set to 3 nights after check-in"
                 />
                 {/* Forbidden icon overlay */}
-                <div className="absolute inset-0 flex items-center justify-end pr-2 pointer-events-none">
-                  <svg 
-                    className="w-3 h-3 text-gray-400" 
-                    fill="currentColor" 
-                    viewBox="0 0 20 20"
-                  >
-                    <path fillRule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clipRule="evenodd" />
-                  </svg>
-                </div>
+                
               </div>
 
               {/* Adults */}
@@ -279,16 +271,7 @@ export default function Hero() {
                 className="mt-1 font-trajan px-2 py-1 border border-gray-300 rounded text-gray-800 text-sm w-full bg-gray-50 cursor-not-allowed"
                 title="Check-out date is automatically set to 3 nights after check-in"
               />
-              {/* Forbidden icon overlay */}
-              <div className="absolute top-8 right-2 pointer-events-none">
-                <svg 
-                  className="w-4 h-4 text-gray-400" 
-                  fill="currentColor" 
-                  viewBox="0 0 20 20"
-                >
-                  <path fillRule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clipRule="evenodd" />
-                </svg>
-              </div>
+              
             </div>
 
             <div className="h-8 border-l border-gray-300" />
