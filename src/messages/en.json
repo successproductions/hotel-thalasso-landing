@@ -19,6 +19,8 @@
     "duration":"Duration",
     "days": "3 Days",
     "callButton":" I Want To Live The Experience",
+    "Check-in":"Check-in",
+    "Check-out":"Check-out",
     "bookingValidation": {
       "invalidDurationTitle": "Invalid Stay Duration",
       "invalidDurationText": "Your stay must be exactly 4 days. Please adjust your dates.",

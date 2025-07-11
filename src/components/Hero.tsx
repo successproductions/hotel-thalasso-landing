@@ -186,7 +186,7 @@ export default function Hero() {
               {/* Check-in Date */}
               <div className="flex-1 min-w-0">
                 <span className="block text-xs text-gray-500 tracking-wider mb-1">
-                  Check-in
+                  {t('Check-in')}
                 </span>
                 <input
                   type="date"
@@ -200,7 +200,7 @@ export default function Hero() {
               {/* Check-out Date */}
               <div className="flex-1 min-w-0 relative">
                 <span className="block text-xs text-gray-500 tracking-wider mb-1">
-                  Check-out
+                  {t('Check-out')}
                 </span>
                 <input
                   type="date"
@@ -246,7 +246,7 @@ export default function Hero() {
             {/* Check-in Date */}
             <div className="flex flex-col items-start text-sm min-w-0">
               <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
-                Check-in Date
+              {t('Check-in')}
               </span>
               <input
                 type="date"
@@ -262,7 +262,7 @@ export default function Hero() {
             {/* Check-out Date */}
             <div className="flex flex-col items-start text-sm min-w-0 relative">
               <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
-                Check-out Date
+              {t('Check-out')}
               </span>
               <input
                 type="date"
