@@ -1,3 +1,4 @@
+// next.config.ts - FIXED WWW Canonicalization
 import withNextIntl from 'next-intl/plugin';
 import type { NextConfig } from 'next';
 
@@ -6,13 +7,22 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
 
-  // Simple webpack optimization
+  // FIXED: Enhanced webpack optimization for minification
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,
       };
+      
+      // Enable production optimizations
+      if (config.mode === 'production') {
+        config.optimization = {
+          ...config.optimization,
+          minimize: true,
+          sideEffects: false,
+        };
+      }
     }
     return config;
   },
@@ -27,10 +37,19 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // CRITICAL FIX: WWW to non-WWW redirect
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.offer.dakhlaclub.com' }],
+        destination: 'https://offer.dakhlaclub.com/:path*',
+        permanent: true,
+      },
+      // Handle HTTP to HTTPS redirect for www
+      {
+        source: '/:path*',
+        has: [
+          { type: 'header', key: 'x-forwarded-proto', value: 'http' },
+          { type: 'host', value: 'www.offer.dakhlaclub.com' }
+        ],
         destination: 'https://offer.dakhlaclub.com/:path*',
         permanent: true,
       },
@@ -65,9 +84,15 @@ const nextConfig: NextConfig = {
       {
         source: '/:path*',
         headers: [
+          // FIXED: Enhanced SEO headers
           {
             key: 'X-Robots-Tag',
             value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+          },
+          // ADDED: Canonical enforcement
+          {
+            key: 'Link',
+            value: '<https://offer.dakhlaclub.com>; rel="canonical"',
           },
           // Security headers
           {
@@ -82,9 +107,14 @@ const nextConfig: NextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
+          // ADDED: Performance headers
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
+          },
         ],
       },
-      // Cache headers for static assets
+      // ENHANCED: Cache headers for static assets with compression
       {
         source: '/images/:path*',
         headers: [
@@ -92,11 +122,34 @@ const nextConfig: NextConfig = {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
           },
+          {
+            key: 'Vary',
+            value: 'Accept-Encoding',
+          },
+        ],
+      },
+      // ADDED: Cache headers for JS/CSS files
+      {
+        source: '/static/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Vary',
+            value: 'Accept-Encoding',
+          },
         ],
       },
     ];
   },
+
+  // ADDED: Experimental features for better performance
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
 };
 
-// FIXED: Use the correct path to your next-intl config file
 export default withNextIntl('./next-intl.config.ts')(nextConfig);

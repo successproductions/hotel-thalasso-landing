@@ -1,3 +1,4 @@
+// src/app/[locale]/layout.tsx - ENHANCED SEO
 import '../globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
@@ -24,7 +25,7 @@ export async function generateMetadata({
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
   const baseUrl = 'https://offer.dakhlaclub.com';
-  // Fix: Ensure proper canonical URLs
+  // FIXED: Ensure proper canonical URLs without www
   const currentUrl = locale === 'en' 
     ? `${baseUrl}/en/evasion-holistique-3-jours` 
     : `${baseUrl}/fr/evasion-holistique-3-jours`;
@@ -33,10 +34,10 @@ export async function generateMetadata({
     title: messages.meta.title,
     description: messages.meta.description,
     
-    // Fix: Proper viewport meta
+    // FIXED: Proper viewport meta
     viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
     
-    // Fix: Enhanced icons
+    // Enhanced icons
     icons: {
       icon: [
         { url: '/images/LogoDakhla.png', type: 'image/png', sizes: '32x32' },
@@ -48,10 +49,9 @@ export async function generateMetadata({
       shortcut: '/images/LogoDakhla.png'
     },
     
-    // Fix: Proper manifest
     manifest: '/manifest.json',
     
-    // Enhanced Open Graph
+    // ENHANCED: Open Graph with better image handling
     openGraph: {
       title: messages.meta.title,
       description: messages.meta.description,
@@ -87,7 +87,7 @@ export async function generateMetadata({
       site: '@dakhlaclub'
     },
 
-    // Fix: Proper canonical and alternates
+    // ENHANCED: Proper canonical and alternates without www
     alternates: {
       canonical: currentUrl,
       languages: {
@@ -105,12 +105,11 @@ export async function generateMetadata({
       }
     },
 
-    // Enhanced keywords
+    // ENHANCED: Better keywords targeting
     keywords: locale === 'fr' 
-      ? 'évasion holistique Dakhla, cure détox Maroc, spa thalasso, 3 nuits bien-être, retraite wellness Maroc, soins holistiques, Dakhla Club spa, détox eau de mer, massage thérapeutique, méditation désert'
-      : 'holistic escape Dakhla, detox spa Morocco, thalasso wellness, 3 nights retreat, holistic treatments, Dakhla Club spa, seawater therapy, therapeutic massage, desert meditation',
+      ? 'évasion holistique Dakhla, cure détox Maroc, spa thalasso, retraite bien-être 3 jours, soins holistiques Dakhla, centre thalasso Maroc, détox eau de mer, massage thérapeutique, méditation désert, spa haut de gamme Maroc'
+      : 'holistic escape Dakhla, detox spa Morocco, thalasso wellness, 3-day wellness retreat, holistic treatments Morocco, Dakhla spa center, seawater therapy, therapeutic massage, desert meditation, luxury spa Morocco',
     
-    // Enhanced authors and meta
     authors: [{ name: 'Dakhla Club', url: 'https://offer.dakhlaclub.com' }],
     creator: 'Dakhla Club',
     publisher: 'Dakhla Club',
@@ -118,7 +117,7 @@ export async function generateMetadata({
     generator: 'Next.js',
     referrer: 'origin-when-cross-origin',
     
-    // Enhanced robots
+    // ENHANCED: Better robots configuration
     robots: {
       index: true,
       follow: true,
@@ -133,13 +132,10 @@ export async function generateMetadata({
       },
     },
 
-    // Additional meta for SEO
     category: 'Wellness & Spa',
     classification: 'Health & Beauty Business',
     
-    
-
-    // Performance and other meta
+    // ENHANCED: Performance and other meta
     other: {
       'theme-color': '#0ea5e9',
       'msapplication-TileColor': '#0ea5e9',
@@ -147,11 +143,15 @@ export async function generateMetadata({
       'apple-mobile-web-app-capable': 'yes',
       'apple-mobile-web-app-status-bar-style': 'default',
       'format-detection': 'telephone=no',
-      'mobile-web-app-capable': 'yes'
+      'mobile-web-app-capable': 'yes',
+      // ADDED: Better SEO meta
+      'geo.region': 'MA-15',
+      'geo.placename': 'Dakhla',
+      'geo.position': '23.7185;-15.9333',
+      'ICBM': '23.7185, -15.9333'
     },
   };
 }
-
 
 export default async function LocaleLayout({
   children,
@@ -163,7 +163,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
-  // Enhanced JSON-LD Schema with multiple schemas
+  // ENHANCED: Better structured data with more comprehensive schemas
   const schemas = [
     // 1. Main Business Schema
     {
@@ -201,7 +201,7 @@ export default async function LocaleLayout({
       },
       "telephone": "+212652881921",
       "email": "reservation@dakhlaclub.com",
-      "priceRange": "$$",
+      "priceRange": "$",
       "currenciesAccepted": "MAD, EUR, USD",
       "paymentAccepted": "Credit Card, Bank Transfer",
       "aggregateRating": {
@@ -280,7 +280,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
-        {/* Enhanced Structured Data */}
+        {/* ENHANCED: Structured Data */}
         {schemas.map((schema, index) => (
           <script
             key={index}
@@ -290,13 +290,18 @@ export default async function LocaleLayout({
           />
         ))}
 
-        {/* Performance and SEO meta tags */}
+        {/* ENHANCED: Performance and SEO meta tags */}
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#0ea5e9" />
         <meta name="color-scheme" content="light dark" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Dakhla Club" />
+        
+        {/* ADDED: Canonical link enforcement */}
+        <link rel="canonical" href={locale === 'en' 
+          ? 'https://offer.dakhlaclub.com/en/evasion-holistique-3-jours'
+          : 'https://offer.dakhlaclub.com/fr/evasion-holistique-3-jours'} />
         
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -305,6 +310,11 @@ export default async function LocaleLayout({
         
         {/* DNS prefetch for performance */}
         <link rel="dns-prefetch" href="https://direct-book.com" />
+        
+        {/* ADDED: Alternate language links */}
+        <link rel="alternate" hrefLang="fr-FR" href="https://offer.dakhlaclub.com/fr/evasion-holistique-3-jours" />
+        <link rel="alternate" hrefLang="en-US" href="https://offer.dakhlaclub.com/en/evasion-holistique-3-jours" />
+        <link rel="alternate" hrefLang="x-default" href="https://offer.dakhlaclub.com/fr/evasion-holistique-3-jours" />
         
         {/* Updated time for SEO */}
         <meta

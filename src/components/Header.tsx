@@ -27,10 +27,12 @@ export default function Header() {
   const t = useTranslations("nav");
   const otherLocale = locale === "fr" ? "en" : "fr";
 
+
   const links = [
     { name: t("home"), href: "#accueil" },
     { name: t("about"), href: "#about" },
-    { name: t("services"), href: "#services" }    
+    { name: t("services"), href: "#services" },
+    { name: "FAQ", href: "#faq" }, // Added internal link
   ];
 
   return (
@@ -48,7 +50,7 @@ export default function Header() {
           {/* Left: Logo */}
           <div className="flex items-center">
             <Link
-              href="#accueil"  // UPDATED: Make logo a proper internal link
+              href="#accueil"
               className="transition-filter"
             >
               <Image
@@ -60,10 +62,10 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Center: Navigation */}
+          {/* Center: Navigation - UPDATED with more internal links */}
           <nav
             className={clsx(
-              "flex justify-center gap-4 font-medium transition-colors", // UPDATED: reduced gap for more links
+              "flex justify-center gap-2 font-medium transition-colors", // Reduced gap for more links
               active ? "text-gray-800 dark:text-gray-200" : "text-white"
             )}
           >
@@ -72,12 +74,11 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 className={clsx(
-                  "relative group px-2 py-2 transition-colors text-sm", // UPDATED: smaller padding and text
+                  "relative group px-2 py-2 transition-colors text-xs", // Smaller text for more links
                   active ? "hover:text-teal-700" : "hover:text-white/80"
                 )}
               >
                 {l.name}
-                {/* underline span */}
                 <span
                   className="
                     absolute bottom-0 left-0
@@ -127,10 +128,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Layout */}
+      {/* Mobile Layout - UPDATED with more links */}
       <div className="md:hidden w-full px-2 sm:px-4">
         <div className="flex items-center justify-between gap-2 max-w-full">
-          {/* Left: Burger Menu */}
           <button
             className={clsx(
               "transition-colors flex-shrink-0 p-1",
@@ -142,9 +142,8 @@ export default function Header() {
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
 
-          {/* Center: Logo */}
           <Link
-            href="#accueil"  // UPDATED: Make mobile logo a proper internal link
+            href="#accueil"
             className={clsx(
               "transition-filter flex-shrink-0 mx-2",
               !active && "transition-filter"
@@ -159,7 +158,6 @@ export default function Header() {
             />
           </Link>
 
-          {/* Right: Book Now Button */}
           <Button
             size="sm"
             className={clsx(

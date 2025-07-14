@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && npm run minify",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "minify": "terser .next/static/chunks/*.js --compress --mangle --output-dir .next/static/chunks/ --source-map",
+    "analyze": "ANALYZE=true npm run build",
+    "seo-check": "npm run build && npm run postbuild"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
@@ -50,6 +53,7 @@
     "next-sitemap": "^4.2.3",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "terser": "^5.19.2"
   }
 }
