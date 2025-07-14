@@ -20,7 +20,7 @@ export function Footer() {
           <h3 className="text-sm font-semibold uppercase mb-4">DakhlaClub</h3>
           <ul className="space-y-2">
           <li className="hover:underline cursor-pointer">
-              <a href="">{t('footerNav.home')}</a>
+              <a href="#">{t('footerNav.home')}</a>
             </li>
             <li className="hover:underline cursor-pointer">
               <a href="#about">{t('footerNav.about')}</a>
@@ -42,7 +42,7 @@ export function Footer() {
               <a href="#awards">{t('support.Awards')}</a>
             </li>
             <li className="hover:underline cursor-pointer">
-              <a href="">{t('support.terms')}</a>
+              <a href="#">{t('support.terms')}</a>
             </li>
           </ul>
         </div>
@@ -52,13 +52,13 @@ export function Footer() {
           <h3 className="text-sm font-semibold uppercase mb-4">{t('column4')}</h3>
           <ul className="space-y-2">
           <li className="hover:underline cursor-pointer">
-              <a href="">{t('legal.privacy')}</a>
+              <a href="#">{t('legal.privacy')}</a>
             </li>
             <li className="hover:underline cursor-pointer">
-              <a href="">{t('legal.cookies')}</a>
+              <a href="#">{t('legal.cookies')}</a>
             </li>
             <li className="hover:underline cursor-pointer">
-              <a href="">{t('legal.sitemap')}</a>
+              <a href="#">{t('legal.sitemap')}</a>
             </li>
           </ul>
         </div>
