@@ -583,39 +583,39 @@
       "menu": {
         "title": "Perfect! How can I help you today?",
         "options": {
-          "program": "🌿 Discover the 3-day program",
-          "booking": "📅 Reserve my spot",
-          "info": "📍 Practical information"
+          "program": " Discover the 3-day program",
+          "booking": " Reserve my spot",
+          "info": " Practical information"
         }
       },
       "program": {
-        "title": "🗓️ Our Holistic Escape - 3 days of pure regeneration:",
+        "title": " Our Holistic Escape - 3 days of pure regeneration:",
         "day1": {
           "title": "**Day 1** - Arrival & Grounding",
-          "activities": "🫁 Bol d'Air Jacquier + Thermal pool",
-          "objective": "🎯 Objective: Breathing, opening body & mind"
+          "activities": " Bol d'Air Jacquier + Thermal pool",
+          "objective": " Objective: Breathing, opening body & mind"
         },
         "day2": {
           "title": "**Day 2** - Deep Soothing",
-          "activities": "🌊 Sauna + Hydromassage bath + Seaweed wrap + Affusion massage",
-          "objective": "🎯 Objective: Deep release, cellular oxygenation"
+          "activities": " Sauna + Hydromassage bath + Seaweed wrap + Affusion massage",
+          "objective": " Objective: Deep release, cellular oxygenation"
         },
         "day3": {
           "title": "**Day 3** - Regeneration & Vitality",
-          "activities": "⚡ Jet shower + Magnesium bath + Cupping therapy",
-          "objective": "🎯 Objective: Circulation, silhouette, energy recharge"
+          "activities": " Jet shower + Magnesium bath + Cupping therapy",
+          "objective": " Objective: Circulation, silhouette, energy recharge"
         },
         "day4": {
           "title": "**Day 4** - Purification & Closure",
-          "activities": "✨ Desert Secret Hammam + Relaxing massage",
-          "objective": "🎯 Objective: Detox, mental calm, regenerated skin"
+          "activities": " Desert Secret Hammam + Relaxing massage",
+          "objective": " Objective: Detox, mental calm, regenerated skin"
         },
         "followUp": "What else would you like to know?"
       },
       "booking": {
-        "decision": "🎉 Excellent decision! Your body will thank you.",
+        "decision": " Excellent decision! Your body will thank you.",
         "needInfo": "To book your stay, I need some information:",
-        "askDate": "📅 **When would you like to arrive?**",
+        "askDate": " **When would you like to arrive?**",
         "dateFormat": "Please choose your arrival date (format: YYYY-MM-DD)",
         "example": "Example:",
         "note": "Note: Your stay will automatically be 3 nights 🌙",
@@ -665,10 +665,10 @@
         "ready": "Ready for your escape? 😊"
       },
       "benefits": {
-        "title": "🎯 **Benefits of your Holistic Escape**:",
-        "physical": "✨ **Physical**:\n• Deep cellular oxygenation\n• Complete muscle relaxation\n• Smooth and remineralized skin\n• Naturally refined silhouette\n• Deeply restorative sleep",
-        "mental": "🧠 **Mental**:\n• Regained mental clarity\n• Stress permanently evacuated\n• Stable and balanced energy\n• Reconnection with yourself\n• Renewed confidence",
-        "lasting": "💫 **Lasting**:\n• Acquired breathing techniques\n• Integrated wellness habits\n• Increased motivation\n• New perspective on health",
+        "title": " **Benefits of your Holistic Escape**:",
+        "physical": " **Physical**:\n• Deep cellular oxygenation\n• Complete muscle relaxation\n• Smooth and remineralized skin\n• Naturally refined silhouette\n• Deeply restorative sleep",
+        "mental": " **Mental**:\n• Regained mental clarity\n• Stress permanently evacuated\n• Stable and balanced energy\n• Reconnection with yourself\n• Renewed confidence",
+        "lasting": " **Lasting**:\n• Acquired breathing techniques\n• Integrated wellness habits\n• Increased motivation\n• New perspective on health",
         "motivated": "Do these benefits motivate you?"
       },
       "advisor": {
@@ -681,7 +681,7 @@
         "notListed": "Your question not listed?"
       },
       "confirm": {
-        "title": "🎉 **Booking in progress...**",
+        "title": " **Booking in progress...**",
         "summary": "You will be redirected to our secure booking system.\n\n📋 **Summary:**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adult(s)\n🌙 3 nights of holistic escape",
         "ready": "Ready to finalize your booking?"
       },
@@ -694,14 +694,14 @@
       "actions": {
         "call": "Call",
         "whatsapp": "WhatsApp",
-        "bookNow": "📅 Book now",
-        "backToMenu": "🔙 Back to menu",
-        "askConsultant": "📞 Ask a consultant",
-        "bookAnyway": "📅 Book anyway",
-        "seeProgram": "🌿 See program",
-        "reserve": "✅ Yes, book now",
-        "questions": "🤔 I have more questions",
-        "expert": "📱 Talk to an expert"
+        "bookNow": " Book now",
+        "backToMenu": " Back to menu",
+        "askConsultant": " Ask a consultant",
+        "bookAnyway": " Book anyway",
+        "seeProgram": " See program",
+        "reserve": " Yes, book now",
+        "questions": " I have more questions",
+        "expert": " Talk to an expert"
       },
       "messages": {
         "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 652 88 192.",

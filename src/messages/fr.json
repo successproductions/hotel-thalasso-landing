@@ -584,7 +584,7 @@
 
 
 
-  
+
     "chatbot": {
       "welcome": {
         "greeting": "Bonjour ! 🌟 Bienvenue au Dakhla Club - votre refuge de bien-être entre désert et océan.",
@@ -594,39 +594,39 @@
       "menu": {
         "title": "Parfait ! Comment puis-je vous aider aujourd'hui ?",
         "options": {
-          "program": "🌿 Découvrir le programme 3 jours",
-          "booking": "📅 Réserver ma place",
-          "info": "📍 Informations pratiques"
+          "program": " Découvrir le programme 3 jours",
+          "booking": " Réserver ma place",
+          "info": " Informations pratiques"
         }
       },
       "program": {
-        "title": "🗓️ Notre Évasion Holistique - 3 jours de pure régénération :",
+        "title": " Notre Évasion Holistique - 3 jours de pure régénération :",
         "day1": {
           "title": "**Jour 1** - Arrivée & Ancrage",
-          "activities": "🫁 Bol d'Air Jacquier + Piscine thermale",
-          "objective": "🎯 Objectif: Respiration, ouverture corps & esprit"
+          "activities": " Bol d'Air Jacquier + Piscine thermale",
+          "objective": " Objectif: Respiration, ouverture corps & esprit"
         },
         "day2": {
           "title": "**Jour 2** - Apaisement Profond",
-          "activities": "🌊 Sauna + Bain hydromassant + Enveloppement algues + Modelage affusion",
-          "objective": "🎯 Objectif: Lâcher-prise, oxygénation cellulaire"
+          "activities": " Sauna + Bain hydromassant + Enveloppement algues + Modelage affusion",
+          "objective": " Objectif: Lâcher-prise, oxygénation cellulaire"
         },
         "day3": {
           "title": "**Jour 3** - Régénération & Vitalité",
-          "activities": "⚡ Douche à jet + Bain magnésium + Cupping thérapie",
-          "objective": "🎯 Objectif: Circulation, silhouette, recharge énergétique"
+          "activities": " Douche à jet + Bain magnésium + Cupping thérapie",
+          "objective": " Objectif: Circulation, silhouette, recharge énergétique"
         },
         "day4": {
           "title": "**Jour 4** - Purification & Clôture",
-          "activities": "✨ Hammam Secret du Désert + Massage relaxant",
-          "objective": "🎯 Objectif: Détox, apaisement, peau régénérée"
+          "activities": " Hammam Secret du Désert + Massage relaxant",
+          "objective": " Objectif: Détox, apaisement, peau régénérée"
         },
         "followUp": "Que souhaitez-vous savoir d'autre ?"
       },
       "booking": {
-        "decision": "🎉 Excellente décision ! Votre corps vous remerciera.",
+        "decision": " Excellente décision ! Votre corps vous remerciera.",
         "needInfo": "Pour réserver votre séjour, j'ai besoin de quelques informations :",
-        "askDate": "📅 **Quand souhaitez-vous arriver ?**",
+        "askDate": " **Quand souhaitez-vous arriver ?**",
         "dateFormat": "Veuillez choisir votre date d'arrivée (format : AAAA-MM-JJ)",
         "example": "Exemple :",
         "note": "Note : Votre séjour sera automatiquement de 3 nuits 🌙",
@@ -676,10 +676,10 @@
         "ready": "Prêt(e) pour votre évasion ? 😊"
       },
       "benefits": {
-        "title": "🎯 **Les bénéfices de votre Évasion Holistique** :",
-        "physical": "✨ **Physiques** :\n• Oxygénation cellulaire profonde\n• Détente musculaire complète\n• Peau lissée et reminéralisée\n• Silhouette affinée naturellement\n• Sommeil profondément réparateur",
-        "mental": "🧠 **Mentaux** :\n• Clarté d'esprit retrouvée\n• Stress évacué durablement\n• Énergie stable et équilibrée\n• Reconnexion à soi-même\n• Confiance renouvelée",
-        "lasting": "💫 **Durables** :\n• Techniques de respiration acquises\n• Habitudes bien-être intégrées\n• Motivation décuplée\n• Nouveau regard sur sa santé",
+        "title": " **Les bénéfices de votre Évasion Holistique** :",
+        "physical": " **Physiques** :\n• Oxygénation cellulaire profonde\n• Détente musculaire complète\n• Peau lissée et reminéralisée\n• Silhouette affinée naturellement\n• Sommeil profondément réparateur",
+        "mental": " **Mentaux** :\n• Clarté d'esprit retrouvée\n• Stress évacué durablement\n• Énergie stable et équilibrée\n• Reconnexion à soi-même\n• Confiance renouvelée",
+        "lasting": " **Durables** :\n• Techniques de respiration acquises\n• Habitudes bien-être intégrées\n• Motivation décuplée\n• Nouveau regard sur sa santé",
         "motivated": "Ces bénéfices vous motivent ?"
       },
       "advisor": {
@@ -692,27 +692,27 @@
         "notListed": "Votre question n'y est pas ?"
       },
       "confirm": {
-        "title": "🎉 **Réservation en cours...**",
+        "title": " **Réservation en cours...**",
         "summary": "Vous allez être redirigé vers notre système de réservation sécurisé.\n\n📋 **Récapitulatif :**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adulte(s)\n🌙 3 nuits d'évasion holistique",
         "ready": "Prêt(e) à finaliser votre réservation ?"
       },
       "errors": {
         "incorrectFormat": "Format incorrect. Merci de respecter le format : Nom Prénom - Numéro de téléphone",
         "example": "Exemple : Ahmed Bennani - 0661234567",
-        "pastDate": "❌ La date d'arrivée ne peut pas être dans le passé.",
+        "pastDate": " La date d'arrivée ne peut pas être dans le passé.",
         "chooseToday": "Veuillez choisir une date à partir d'aujourd'hui."
       },
       "actions": {
         "call": "Appeler",
         "whatsapp": "WhatsApp",
-        "bookNow": "📅 Réserver maintenant",
-        "backToMenu": "🔙 Retour au menu",
-        "askConsultant": "📞 Poser ma question à un conseiller",
-        "bookAnyway": "📅 Réserver malgré tout",
-        "seeProgram": "🌿 Voir le programme",
-        "reserve": "✅ Je réserve maintenant",
-        "questions": "🤔 J'ai encore des questions",
-        "expert": "📱 Parler à un expert"
+        "bookNow": " Réserver maintenant",
+        "backToMenu": "Retour au menu",
+        "askConsultant": " Poser ma question à un conseiller",
+        "bookAnyway": " Réserver malgré tout",
+        "seeProgram": " Voir le programme",
+        "reserve": " Je réserve maintenant",
+        "questions": " J'ai encore des questions",
+        "expert": " Parler à un expert"
       },
       "messages": {
         "thankYou": "Merci pour votre message ! Un conseiller vous répondra sous peu. Pour une réponse immédiate, appelez le +212 652 88 192.",
