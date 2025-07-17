@@ -11,6 +11,7 @@ import FAQSection from '@/components/FAQ';
 import { RewardsSection } from '@/components/RewardsSection';
 import { Footer } from '@/components/Footer';
 import { NewsletterSection } from '@/components/NewsletterSection';
+import WhatsAppChatbot from '@/components/WhatsAppChatbot';
 
 
 export default function Home() {
@@ -31,6 +32,8 @@ export default function Home() {
       <FAQSection/>
       <NewsletterSection/>
       <Footer/>
+      <WhatsAppChatbot/>
+      
     </main>
   );
 } 

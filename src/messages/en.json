@@ -570,6 +570,151 @@
     },
     "lastUpdated": "Last updated: July 2025",
     "backToHome": "Back to Home"
-  }
+  },
+
+
+
+    "chatbot": {
+      "welcome": {
+        "greeting": "Hello! 🌟 Welcome to Dakhla Club - your wellness refuge between desert and ocean.",
+        "requestInfo": "To better assist you, could you please provide your name and phone number?",
+        "format": "Format: First Name Last Name - Phone Number"
+      },
+      "menu": {
+        "title": "Perfect! How can I help you today?",
+        "options": {
+          "program": "🌿 Discover the 3-day program",
+          "booking": "📅 Reserve my spot",
+          "info": "📍 Practical information"
+        }
+      },
+      "program": {
+        "title": "🗓️ Our Holistic Escape - 3 days of pure regeneration:",
+        "day1": {
+          "title": "**Day 1** - Arrival & Grounding",
+          "activities": "🫁 Bol d'Air Jacquier + Thermal pool",
+          "objective": "🎯 Objective: Breathing, opening body & mind"
+        },
+        "day2": {
+          "title": "**Day 2** - Deep Soothing",
+          "activities": "🌊 Sauna + Hydromassage bath + Seaweed wrap + Affusion massage",
+          "objective": "🎯 Objective: Deep release, cellular oxygenation"
+        },
+        "day3": {
+          "title": "**Day 3** - Regeneration & Vitality",
+          "activities": "⚡ Jet shower + Magnesium bath + Cupping therapy",
+          "objective": "🎯 Objective: Circulation, silhouette, energy recharge"
+        },
+        "day4": {
+          "title": "**Day 4** - Purification & Closure",
+          "activities": "✨ Desert Secret Hammam + Relaxing massage",
+          "objective": "🎯 Objective: Detox, mental calm, regenerated skin"
+        },
+        "followUp": "What else would you like to know?"
+      },
+      "booking": {
+        "decision": "🎉 Excellent decision! Your body will thank you.",
+        "needInfo": "To book your stay, I need some information:",
+        "askDate": "📅 **When would you like to arrive?**",
+        "dateFormat": "Please choose your arrival date (format: YYYY-MM-DD)",
+        "example": "Example:",
+        "note": "Note: Your stay will automatically be 3 nights 🌙",
+        "dateConfirmed": "✅ **Dates confirmed!**",
+        "summary": "📅 **Arrival:** {checkInDate}\n📅 **Departure:** {checkOutDate} (3 nights)\n👥 **Adults:** {adults}\n\nWould you like to modify the number of adults?",
+        "options": {
+          "perfect": "✅ Perfect, continue",
+          "changeAdults": "👥 Modify number of adults",
+          "changeDates": "📅 Change dates"
+        },
+        "redirecting": "🔄 Redirecting to the booking system...",
+        "pageOpened": "✅ The booking page has opened in a new tab.",
+        "recap": "📋 **Your booking summary:**\n👤 {name}\n📞 {phone}\n📅 Arrival: {checkInDate}\n📅 Departure: {checkOutDate}\n👥 {adults} adult(s)\n\nA consultant will contact you to confirm the details!",
+        "errorNoDates": "❌ Please choose your arrival dates first.",
+        "backToDates": "🔙 Let's go back to date selection:",
+        "chooseDates": "📅 Choose my dates"
+      },
+      "adults": {
+        "question": "👥 **How many adults will you be?**",
+        "options": {
+          "one": "1 adult",
+          "two": "2 adults", 
+          "three": "3 adults",
+          "four": "4 adults",
+          "more": "More than 4 adults"
+        },
+        "updated": "✅ **Booking updated!**",
+        "summary": "📅 **Arrival:** {checkInDate}\n📅 **Departure:** {checkOutDate}\n👥 **Adults:** {adults}\n\nIs everything perfect?",
+        "confirm": "✅ Yes, book now",
+        "modify": "👥 Modify again",
+        "moreInfo": "For more than 4 adults, please contact our team directly:",
+        "contact": "📞 **Phone:** +212 652 88 192\n📧 **Email:** reservation@dakhlaclub.com\n\nThey can offer you solutions adapted to your group!"
+      },
+      "info": {
+        "title": "📍 **DC Thermes - Dakhla Club**",
+        "details": "🗺️ **Location**: Dakhla, between desert and Atlantic Ocean\n🏨 **Accommodation**: Bungalows with ocean/nature view\n🍽️ **Dining**: Healthy and local cuisine included\n🚗 **Access**: 15min from Dakhla airport\n\n**Included in your stay**:\n✅ All scheduled treatments\n✅ 3 nights accommodation\n✅ Full organic board\n✅ Airport transfers\n✅ Detox teas & snacks\n\n**To bring**:\n• Swimsuit\n• Comfortable clothing\n• Non-slip sandals\n• Sun protection",
+        "moreInfo": "Other information needed?"
+      },
+      "testimonials": {
+        "title": "🌟 **What our clients say**:",
+        "reviews": "💬 *\"I feel like I hit reset. In 3 days, I regained my clarity, my skin, my calm. Incredible.\"*\n**- Amina, Rabat**\n\n💬 *\"The setting is magical, the treatments exceptional. I felt pampered from the first to the last day.\"*\n**- Sarah, Casablanca**\n\n💬 *\"3 days worth weeks of regular vacation. My body and mind are transformed.\"*\n**- Latifa, Marrakech**\n\n⭐ **Average rating**: 4.9/5 (147 reviews)",
+        "convinced": "Convinced? 😊"
+      },
+      "weather": {
+        "title": "🌡️ **Climate in Dakhla**:",
+        "details": "☀️ **Temperature**: 20-28°C year-round\n🌊 **Ocean**: 18-24°C depending on season\n💨 **Wind**: Refreshing ocean breeze\n🌤️ **Sunshine**: 300+ days/year\n\n**Best periods**:\n• Oct-May: Ideal temperatures\n• June-Sept: Warmer but very pleasant with the breeze\n\nDakhla's climate is perfect for thalasso treatments year-round! 🌴",
+        "ready": "Ready for your escape? 😊"
+      },
+      "benefits": {
+        "title": "🎯 **Benefits of your Holistic Escape**:",
+        "physical": "✨ **Physical**:\n• Deep cellular oxygenation\n• Complete muscle relaxation\n• Smooth and remineralized skin\n• Naturally refined silhouette\n• Deeply restorative sleep",
+        "mental": "🧠 **Mental**:\n• Regained mental clarity\n• Stress permanently evacuated\n• Stable and balanced energy\n• Reconnection with yourself\n• Renewed confidence",
+        "lasting": "💫 **Lasting**:\n• Acquired breathing techniques\n• Integrated wellness habits\n• Increased motivation\n• New perspective on health",
+        "motivated": "Do these benefits motivate you?"
+      },
+      "advisor": {
+        "title": "🤝 **Speak with a specialized consultant**",
+        "contact": "📞 **Direct line**: +212 652 88 192\n💬 **WhatsApp Business**: +212 652 88 192\n📧 **VIP Email**: concierge@dakhlaclub.com\n\n**Availability**:\n• Mon-Sun: 9am-8pm\n• WhatsApp response: < 2h\n• Email response: < 4h\n\nA wellness expert will call you back to answer all your personalized questions and assist you with your booking.\n\nYour information will be transmitted:\n👤 {name}\n📞 {phone}"
+      },
+      "faq": {
+        "title": "❓ **Frequently Asked Questions**:",
+        "content": "**Q: What should I bring?**\nA: Swimsuit, comfortable clothing, non-slip sandals, sun protection. Everything else is provided!\n\n**Q: Are there any contraindications?**\nA: Pregnancy, severe heart problems, open wounds. When in doubt, consult your doctor.\n\n**Q: Can I come alone?**\nA: Absolutely! Many of our clients come solo to reconnect with themselves.\n\n**Q: What is the cancellation policy?**\nA: Free cancellation up to 7 days before arrival.",
+        "notListed": "Your question not listed?"
+      },
+      "confirm": {
+        "title": "🎉 **Booking in progress...**",
+        "summary": "You will be redirected to our secure booking system.\n\n📋 **Summary:**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adult(s)\n🌙 3 nights of holistic escape",
+        "ready": "Ready to finalize your booking?"
+      },
+      "errors": {
+        "incorrectFormat": "Incorrect format. Please respect the format: First Name Last Name - Phone Number",
+        "example": "Example: Ahmed Bennani - 0661234567",
+        "pastDate": "❌ Arrival date cannot be in the past.",
+        "chooseToday": "Please choose a date from today onwards."
+      },
+      "actions": {
+        "call": "Call",
+        "whatsapp": "WhatsApp",
+        "bookNow": "📅 Book now",
+        "backToMenu": "🔙 Back to menu",
+        "askConsultant": "📞 Ask a consultant",
+        "bookAnyway": "📅 Book anyway",
+        "seeProgram": "🌿 See program",
+        "reserve": "✅ Yes, book now",
+        "questions": "🤔 I have more questions",
+        "expert": "📱 Talk to an expert"
+      },
+      "messages": {
+        "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 652 88 192.",
+        "whatsappRedirect": "Hello! I would like to know more about the 3-day Holistic Escape at Dakhla Club."
+      },
+      "placeholders": {
+        "typeMessage": "Type your message...",
+        "namePhone": "First Name Last Name - Phone Number"
+      },
+      "status": {
+        "online": "Online • Responds quickly"
+      }
+    }
+
    
 }
