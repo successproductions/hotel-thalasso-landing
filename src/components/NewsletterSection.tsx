@@ -29,9 +29,9 @@ export function NewsletterSection() {
         </p>
 
         {/* Next session */}
-        <p className="text-sm md:text-base text-white/90">
+        {/* <p className="text-sm md:text-base text-white/90">
           {t("nextSession")}
-        </p>
+        </p> */}
 
         {/* Just the button, no email input */}
         <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>

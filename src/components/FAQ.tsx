@@ -3,7 +3,7 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useTranslations, useMessages } from "next-intl"
-import { Phone, Mail } from "lucide-react"
+// import { Phone, Mail } from "lucide-react"
 import { useState } from "react"
 
 
@@ -16,8 +16,8 @@ export default function FAQSection() {
   const t = useTranslations("faq")
   const messages = useMessages()
   const [openItem, setOpenItem] = useState<string | undefined>(undefined)
-  const PHONE_NUMBER = "+21265288192";
-  const EMAIL_ADDRESS = "reservation@dakhlaclub.com";
+  // const PHONE_NUMBER = "+21265288192";
+  // const EMAIL_ADDRESS = "reservation@dakhlaclub.com";
 
   const { contact, items } = messages.faq
 
@@ -86,7 +86,7 @@ export default function FAQSection() {
               </motion.div>
 
               {/* Contact Info */}
-              <motion.div
+              {/* <motion.div
                 className="mt-8 p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ export default function FAQSection() {
         Call
       </motion.a>
 
-      {/* Email Link */}
+      
       <motion.a
         href={`mailto:${EMAIL_ADDRESS}`}
         className="flex items-center gap-2 px-4 py-2 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium"
@@ -116,7 +116,7 @@ export default function FAQSection() {
         Email
       </motion.a>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </motion.div>
 
