@@ -30,7 +30,63 @@ interface BookingData {
   adults: number;
 }
 
+const sendReservationToSheets = async (userInfo: UserInfo, bookingData: BookingData, sessionId: string) => {
+  try {
+    const reservationData = {
+      event: 'pageOpened',
+      status: 'reservation_confirmed',
+      userInfo: {
+        name: userInfo.name,
+        phone: userInfo.phone
+      },
+      bookingData: {
+        checkInDate: bookingData.checkInDate,
+        checkOutDate: bookingData.checkOutDate,
+        adults: bookingData.adults
+      },
+      sessionId: sessionId,
+      timestamp: new Date().toISOString()
+    };
+
+    console.log('Envoi des données de réservation:', reservationData);
+
+    // ✅ Utiliser l'API route Next.js au lieu de l'URL Google Apps Script directement
+    const response = await fetch('/api/chatbot-reservation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(reservationData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log('Données de réservation envoyées avec succès:', result);
+    return result;
+    
+  } catch (error) {
+    console.error('Erreur lors de l\'envoi des données de réservation:', error);
+    
+    // Retourner une erreur structurée au lieu de faire planter l'application
+    return { 
+      status: 'error', 
+      message: error instanceof Error ? error.message : 'Erreur inconnue' 
+    };
+  }
+};
+
+
+const generateSessionId = (): string => {
+  return `chatbot_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+};
+
+
+
 const WhatsAppChatbot: React.FC = () => {
+  const [sessionId] = useState<string>(generateSessionId());
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [currentStep, setCurrentStep] = useState<string>('welcome');
   const [messages, setMessages] = useState<Message[]>([]);
@@ -91,7 +147,7 @@ const WhatsAppChatbot: React.FC = () => {
     return checkIn.toISOString().split('T')[0];
   };
 
-  // Get today's date in YYYY-MM-DD format
+  
   const getTodayDate = (): string => {
     return new Date().toISOString().split('T')[0];
   };
@@ -168,21 +224,41 @@ const WhatsAppChatbot: React.FC = () => {
             setTimeout(() => {
               addMessage(t('booking.askDate'), false);
               addMessage(`${t('booking.dateFormat')}\n${t('booking.example')} ${getTodayDate()}\n\n${t('booking.note')}`, false);
-              // Set current step to booking so we can validate date input
+             
               setCurrentStep('booking');
             }, 1000);
           }, 1000);
           break;
           
-        case 'redirect_booking':
-          if (bookingData.checkInDate && bookingData.checkOutDate) {
-            addMessage("🔄 Redirection vers le système de réservation...", false);
+          case 'redirect_booking':
+  if (bookingData.checkInDate && bookingData.checkOutDate) {
+    addMessage("🔄 Redirection vers le système de réservation...", false);
+    setTimeout(() => {
+      const bookingUrl = generateBookingUrl(bookingData);
+      window.open(bookingUrl, '_blank');
+      addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
+      
+      // Envoyer les données de réservation via l'API route (sans CORS)
+      sendReservationToSheets(userInfo, bookingData, sessionId)
+        .then((result) => {
+          if (result.status === 'success') {
+            console.log('✅ Données sauvegardées avec succès');
+            // Optionnel: Afficher un message de confirmation
             setTimeout(() => {
-              const bookingUrl = generateBookingUrl(bookingData);
-              window.open(bookingUrl, '_blank');
-              addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
-              setTimeout(() => {
-                addMessage(`📋 **Récapitulatif de votre réservation :**
+              addMessage("📊 Vos informations ont été enregistrées avec succès!", false);
+            }, 2000);
+          } else {
+            console.error('❌ Erreur lors de la sauvegarde:', result.message);
+            // Gérer l'erreur de manière gracieuse sans interrompre l'UX
+          }
+        })
+        .catch((error) => {
+          console.error('❌ Erreur réseau:', error);
+          // Continuer sans interrompre l'expérience utilisateur
+        });
+      
+      setTimeout(() => {
+        addMessage(`📋 **Récapitulatif de votre réservation :**
 👤 ${userInfo.name}
 📞 ${userInfo.phone}
 📅 Arrivée : ${bookingData.checkInDate}
@@ -190,26 +266,20 @@ const WhatsAppChatbot: React.FC = () => {
 👥 ${bookingData.adults} adulte(s)
 
 Un conseiller vous contactera pour confirmer les détails !`, false);
-              }, 1500);
-            }, 1500);
-          } else {
-            addMessage("❌ Veuillez d'abord choisir vos dates d'arrivée.", false);
-            setTimeout(() => {
-              addMessage("🔙 Retournons à la sélection des dates :", false, true, [
-                { text: "📅 Choisir mes dates", value: "booking" }
-              ]);
-            }, 1000);
-          }
-          break;
-          
+      }, 1500);
+    }, 1500);
+  } else {
+    addMessage("❌ Veuillez d'abord choisir vos dates d'arrivée.", false);
+  }
+  break;
         case 'info':
           addMessage(t('info.title'), false);
           setTimeout(() => {
             addMessage(t('info.details'), false);
             setTimeout(() => {
               addMessage("Autres informations souhaitées ?", false, true, [
-                { text: "🌡️ Météo et climat", value: "weather" },
-                { text: "🎯 Bénéfices du programme", value: "benefits" },
+                { text: "Météo et climat", value: "weather" },
+                { text: "Bénéfices du programme", value: "benefits" },
                 { text: t('menu.options.booking'), value: "booking" }
               ]);
             }, 2000);
@@ -223,8 +293,8 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
             setTimeout(() => {
               addMessage(t('testimonials.convinced'), false, true, [
                 { text: t('actions.reserve'), value: "booking" },
-                { text: "🤔 J'ai encore des questions", value: "questions" },
-                { text: "📱 Parler à un expert", value: "advisor" }
+                { text: "J'ai encore des questions", value: "questions" },
+                { text: "Parler à un expert", value: "advisor" }
               ]);
             }, 2000);
           }, 1000);
@@ -253,8 +323,8 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
                 addMessage(t('benefits.lasting'), false);
                 setTimeout(() => {
                   addMessage(t('benefits.motivated'), false, true, [
-                    { text: "🔥 Oui, je réserve maintenant", value: "booking" },
-                    { text: "📋 Voir le programme détaillé", value: "program" }
+                    { text: "Oui, je réserve maintenant", value: "booking" },
+                    { text: "Voir le programme détaillé", value: "program" }
                   ]);
                 }, 1000);
               }, 1000);
@@ -278,9 +348,9 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
             addMessage(t('faq.content'), false);
             setTimeout(() => {
               addMessage(t('faq.notListed'), false, true, [
-                { text: "📞 Poser ma question à un conseiller", value: "advisor" },
-                { text: "📅 Réserver malgré tout", value: "booking" },
-                { text: "🔙 Retour au menu", value: "main_menu" }
+                { text: " Poser ma question à un conseiller", value: "advisor" },
+                { text: " Réserver malgré tout", value: "booking" },
+                { text: " Retour au menu", value: "main_menu" }
               ]);
             }, 2000);
           }, 1000);
@@ -338,7 +408,7 @@ Tout est parfait ?`, false, true, [
         case 'adults_more':
           addMessage("Pour plus de 4 adultes, veuillez contacter directement notre équipe :", false);
           setTimeout(() => {
-            addMessage(`📞 **Téléphone :** +212 652 88 192
+            addMessage(`📞 **Téléphone :** +21265288192
 📧 **Email :** reservation@dakhlaclub.com
 
 Ils pourront vous proposer des solutions adaptées à votre groupe !`, false);
@@ -356,12 +426,12 @@ Ils pourront vous proposer des solutions adaptées à votre groupe !`, false);
   };
 
   const handleDirectCall = (): void => {
-    window.open('tel:+21265288192', '_self');
+    window.open('tel:+212665288192', '_self');
   };
 
   const handleWhatsAppRedirect = (): void => {
     const message = encodeURIComponent(t('messages.whatsappRedirect'));
-    window.open(`https://wa.me/21265288192?text=${message}`, '_blank');
+    window.open(`https://wa.me/212665288192?text=${message}`, '_blank');
   };
 
   // Handle message sending with proper date validation

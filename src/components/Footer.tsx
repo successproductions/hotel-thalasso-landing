@@ -39,10 +39,10 @@ export function Footer() {
               <a href="#faq">{t('support.faq')}</a>
             </li>
             <li className="hover:underline cursor-pointer">
-              <a href="#awards">{t('support.Awards')}</a>
+              <a href="mailto:reservation@dakhlaclub.com">reservation@dakhlaclub.com</a>
             </li>
-            <li className="hover:underline cursor-pointer">
-              <a href="#">{t('support.terms')}</a>
+            <li className="hover:underline font-trajan cursor-pointer">
+              <a href="tel:+21265288192">+212 6652881921</a>
             </li>
           </ul>
         </div>
@@ -51,12 +51,7 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold uppercase mb-4">{t('column4')}</h3>
           <ul className="space-y-2">
-          <li className="hover:underline cursor-pointer">
-              <a href="#">{t('legal.privacy')}</a>
-            </li>
-            <li className="hover:underline cursor-pointer">
-              <a href="#">{t('legal.cookies')}</a>
-            </li>
+          
             <li className="hover:underline cursor-pointer">
               <a href="#">{t('legal.sitemap')}</a>
             </li>
