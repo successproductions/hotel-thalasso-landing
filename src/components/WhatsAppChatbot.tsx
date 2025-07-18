@@ -497,8 +497,8 @@ Souhaitez-vous modifier le nombre d'adultes ?`, false, true, [
         } else {
           // Invalid date format
           setTimeout(() => {
-            addMessage("❌ Format de date incorrect.", false);
-            addMessage(`📅 Veuillez utiliser le format: AAAA-MM-JJ`, false);
+            addMessage(" Format de date incorrect.", false);
+            addMessage(` Veuillez utiliser le format: AAAA-MM-JJ`, false);
             addMessage(`Exemple: ${getTodayDate()}`, false);
             addMessage("Merci de réessayer.", false);
           }, 1000);
