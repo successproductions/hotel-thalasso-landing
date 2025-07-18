@@ -95,10 +95,10 @@ export default function FAQSection() {
                       alt={contact.alt}
                       width={600}
                       height={400}
-                      className="object-cover w-full h-80 filter contrast-110"
+                      className="object-cover w-full h-90 filter contrast-110"
                     />
                   </div>
-                </motion.div>
+                </motion.div> 
               </div>
             </motion.div>
 
@@ -117,7 +117,7 @@ export default function FAQSection() {
                           }}
                           transition={{ duration: 0.2 }}
                         >
-                          <AccordionTrigger className="px-6 py-5 text-left font-bold text-slate-800 dark:text-slate-100 dark:hover:bg-slate-600 transition-colors duration-200">
+                          <AccordionTrigger className="px-6 py-5 text-left font-medium text-slate-800 dark:text-slate-100 dark:hover:bg-slate-600 transition-colors duration-200">
                             <div className="flex items-center justify-between w-full dark:hover:bg-slate-600">
                               <span className="text-base md:text-lg pr-4">{item.question}</span>
                               <motion.div
