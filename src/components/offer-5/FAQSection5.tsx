@@ -10,12 +10,12 @@ interface FAQItem {
   answer: string
 }
 
-export default function FAQSection5() {
+export default function FAQ5() {
   const t = useTranslations("offer5.faq")
   const messages = useMessages()
   const [openItem, setOpenItem] = useState<string | undefined>(undefined)
 
-  const { contact, items } = messages.faq
+  const { contact, items } = messages.offer5.faq
 
   const containerVariants = {
     hidden: { opacity: 0 },

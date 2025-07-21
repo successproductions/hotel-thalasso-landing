@@ -497,7 +497,194 @@
         "answer": "Vous serez hébergé(e) directement au Dakhla Club Hotel & Spa, dans un environnement apaisant qui prolonge naturellement les bienfaits des soins."
       }
     ]
+  },
+  "chatbot5": {
+    "welcome": {
+      "greeting": "👋 Bonjour ! Je suis votre assistant personnel pour l'**Évasion Holistique 5 Jours** au Dakhla Club.",
+      "requestInfo": "Pour mieux vous aider, pouvez-vous me donner votre nom et numéro de téléphone ?",
+      "format": "Format : **Nom Prénom** suivi de votre **numéro de téléphone**\nExemple : Marie Dupont - 0612345678"
+    },
+    "menu": {
+      "title": "🌟 **Que souhaitez-vous découvrir ?**",
+      "options": {
+        "program": "Programme détaillé 5 jours",
+        "booking": " Réserver maintenant",
+        "info": " Informations pratiques"
+      }
+    },
+    "program": {
+      "title": "🌟 **Programme Évasion Holistique 7 Jours**\n\nUn voyage complet de transformation corps-esprit :",
+      "day1": {
+        "title": "**🌅 Jour 1 - Arrivée au Dakhla Club**",
+        "activities": "• Accueil personnalisé\n• Infusion d'ancrage\n• Installation bungalow\n• Début en douceur dans un environnement pur",
+        "objective": "**Objectif :** Ancrage, respiration, ouverture du corps et de l'esprit"
+      },
+      "day2": {
+        "title": "**🧘‍♀️ Jour 2 - Lâcher-prise & Équilibre**",
+        "activities": "• Yoga doux au lever du soleil\n• Sauna sec\n• Piscine thermale chauffée\n• Gommage au sel de l'Himalaya\n• Massage détox au sel",
+        "objective": "**Objectif :** Libérer le système nerveux, relancer le drainage"
+      },
+      "day3": {
+        "title": "**💆‍♀️ Jour 3 - Oxygénation & Régénération**",
+        "activities": "• Yoga respiration & énergie\n• Bol d'Air Jacquier\n• Douche à jet\n• Bain hydromassant\n• Enveloppement aux algues\n• Modelage sous affusion",
+        "objective": "**Objectif :** Stimuler les cellules, détoxifier en profondeur"
+      },
+      "day4": {
+        "title": "**🌊 Jour 4 - Sérénité & Détente Profonde**",
+        "activities": "• Yoga méditatif\n• Bol d'Air Jacquier\n• Sauna + piscine thermale\n• Bain au magnésium\n• Massage traditionnel profond",
+        "objective": "**Objectif :** Sommeil réparateur, ancrage et relâchement durable"
+      },
+      "day5": {
+        "title": "**⚡ Jour 5 - Stimulation & Vitalité**",
+        "activities": "• Yoga dynamisant\n• Bol d'Air Jacquier\n• Soin visage à la spiruline\n• Cupping thérapie + serviette de feu",
+        "objective": "**Objectif :** Activation complète de la vitalité, drainage profond"
+      },
+      "day6": {
+        "title": "**✨ Jour 6 - Purification & Intégration**",
+        "activities": "• Yoga d'intégration\n• Bol d'Air Jacquier\n• Douche à jet\n• Piscine thermale\n• Hammam Mille et Une Nuits\n• Massage relaxant",
+        "objective": "**Objectif :** Ancrer les bienfaits, repartir régénéré(e)"
+      },
+      "day7": {
+        "title": "**🏡 Jour 7 - Départ du Dakhla Club**",
+        "activities": "• Rituel de clôture\n• Conseils de prolongation\n• Carnet de bien-être à emporter\n• Départ avec sérénité profonde",
+        "objective": "**Objectif :** Intégrer les bienfaits pour un retour transformé"
+      },
+      "followUp": "**✨ Résultat :** Une transformation complète en 7 jours (6 nuits) pour retrouver votre énergie et votre équilibre naturel !"
+    },
+          "booking": {
+      "decision": "🎉 **Excellente décision !** Vous vous offrez 6 nuits de transformation holistique.",
+      "needInfo": "Pour préparer votre réservation, j'ai besoin de quelques informations :",
+      "askDate": "📅 **Quelle est votre date d'arrivée souhaitée ?**",
+      "dateFormat": "**Format :** AAAA-MM-JJ",
+      "example": "**Exemple :**",
+      "note": "**Note :** Le séjour dure exactement 6 nuits consécutives (7 jours).",
+      "invalidDate": "❌ La date doit être au format AAAA-MM-JJ et ne peut pas être dans le passé.",
+      "dateSet": "✅ **Date d'arrivée confirmée :** {checkIn}\n📅 **Date de départ automatique :** {checkOut}\n🌙 **Durée :** 6 nuits d'évasion holistique (7 jours)",
+      "askAdults": "👥 **Combien d'adultes participeront à cette évasion ?**"
+    },
+    "info": {
+      "title": "ℹ️ **Informations Pratiques - Évasion 7 Jours**",
+      "details": "**📍 Lieu :** Dakhla Club, Point de Dragon PK28\n**⏰ Durée :** 7 jours / 6 nuits\n**🏠 Hébergement :** Inclus en pension complète\n**🍽️ Repas :** Cuisine santé et détox\n**👥 Capacité :** Groupes de 2 à 8 personnes\n**📞 Contact :** +212 652 881 921"
+    },
+    "testimonials": {
+      "title": "🌟 **Ce que disent nos clients :**",
+      "reviews": "**Sarah, 34 ans :** *\"Les 7 jours ont littéralement changé ma vie. Je me sens complètement régénérée !\"*\n\n**Marc, 42 ans :** *\"Un programme exceptionnel sur 6 nuits. Les thérapeutes sont d'un professionnalisme remarquable.\"*\n\n**Fatima, 38 ans :** *\"J'ai retrouvé mon énergie et ma joie de vivre. Cette semaine de transformation est magique !\"*",
+      "convinced": "**Êtes-vous convaincu(e) par ces témoignages ?**"
+    },
+    "weather": {
+      "title": "🌡️ **Météo & Climat à Dakhla**",
+      "details": "**🌞 Climat :** Subtropical aride, idéal toute l'année\n**🌡️ Températures :** 18-28°C selon la saison\n**💨 Vents :** Alizés rafraîchissants\n**☀️ Soleil :** Plus de 300 jours par an\n**🌊 Océan :** Température agréable 18-22°C\n**👕 À prévoir :** Vêtements légers + veste pour le soir",
+      "ready": "**Parfait pour votre évasion holistique !**"
+    },
+    "benefits": {
+      "title": "🌟 **Bénéfices de l'Évasion 7 Jours :**",
+      "physical": "**💪 Physique :** Détoxification profonde, regain d'énergie, amélioration du sommeil, renforcement immunitaire",
+      "mental": "**🧠 Mental :** Réduction du stress, clarté mentale, équilibre émotionnel, confiance retrouvée",
+      "lasting": "**⏳ Durable :** Nouvelles habitudes saines, outils de bien-être, suivi personnalisé post-séjour",
+      "motivated": "**Motivé(e) pour commencer cette transformation ?**"
+    },
+    "advisor": {
+      "title": "📞 **Conseil Personnalisé**",
+      "contact2": "📞 **Ligne directe** : +212 652 88 192\n💬 **WhatsApp Business** : +212 652 88 192\n📧 **Email VIP** : concierge@dakhlaclub.com\n\n**Disponibilité** :\n• Lun-Dim : 9h-20h\n• Réponse WhatsApp : < 2h\n• Réponse email : < 4h\n\nUn expert bien-être vous rappellera pour répondre à toutes vos questions personnalisées et vous accompagner dans votre réservation.\n\nVos informations seront transmises :\n👤 {name}\n📞 {phone}"
+    },
+    "faq": {
+      "title": "❓ **Questions Fréquentes :**",
+      "content": "**Q: Puis-je venir seul(e) ?**\nR: Absolument ! 40% de nos clients viennent seuls.\n\n**Q: Y a-t-il des contre-indications ?**\nR: Nous adaptons selon votre état de santé.\n\n**Q: Le transport est-il inclus ?**\nR: Navette aéroport disponible (supplément).\n\n**Q: Puis-je modifier mes dates ?**\nR: Oui, sous conditions selon disponibilités.",
+      "notListed": "**Votre question n'est pas listée ?**"
+    },
+    "actions": {
+      "reserve": "Je réserve maintenant",
+      "mainMenu": "Retour au menu principal",
+      "call": "Appeler",
+      "whatsapp": "WhatsApp"
+    },
+    "errors": {
+  "incorrectFormat": "Format incorrect. Merci de respecter le format : Nom Prénom - Numéro de téléphone",
+  "example": "Exemple : Ahmed Bennani - 0661234567",
+  "pastDate": "❌ La date d'arrivée ne peut pas être dans le passé.",
+  "chooseToday": "Veuillez choisir une date à partir d'aujourd'hui."
+},
+"messages": {
+  "thankYou": "Merci pour votre message ! Un conseiller vous répondra sous peu. Pour une réponse immédiate, appelez le +212 652 88 192.",
+  "whatsappRedirect": "Bonjour ! Je souhaite en savoir plus sur l'Évasion Holistique 7 jours au Dakhla Club."
+},
+"placeholders": {
+  "typeMessage": "Tapez votre message...",
+  "namePhone": "Nom Prénom - Numéro de téléphone"
+},
+"status": {
+  "online": "En ligne • Répond rapidement"
+}
+  },
+  "servicesTable5": {
+  "header": "PROGRAMME ÉVASION HOLISTIQUE 7 JOURS – DAKHLA",
+  "servicesLabel": "Prestations",
+  "programs": [
+    "Jour 1",
+    "Jour 2", 
+    "Jour 3",
+    "Jour 4",
+    "Jour 5",
+    "Jour 6",
+    "Jour 7"
+  ],
+  "services": [
+    { "title": "Accueil personnalisé" },
+    { "title": "Infusion d'ancrage" },
+    { "title": "Installation bungalow vue nature/océan" },
+    { "title": "Yoga doux au lever du soleil" },
+    { "title": "Sauna sec" },
+    { "title": "Piscine thermale chauffée" },
+    { "title": "Gommage au sel de l'Himalaya" },
+    { "title": "Massage détox au sel" },
+    { "title": "Yoga respiration & énergie" },
+    { "title": "Bol d'Air Jacquier" },
+    { "title": "Douche à jet" },
+    { "title": "Bain hydromassant" },
+    { "title": "Enveloppement aux algues" },
+    { "title": "Modelage sous affusion" },
+    { "title": "Yoga méditatif" },
+    { "title": "Bain au magnésium" },
+    { "title": "Massage traditionnel profond" },
+    { "title": "Yoga dynamisant" },
+    { "title": "Soin visage à la spiruline" },
+    { "title": "Cupping thérapie + serviette de feu" },
+    { "title": "Yoga d'intégration" },
+    { "title": "Hammam Mille et Une Nuits" },
+    { "title": "Massage relaxant" },
+    { "title": "Rituel de clôture" },
+    { "title": "Conseils de prolongation" },
+    { "title": "Carnet de bien-être à emporter" }
+  ],
+  "availability": {
+    "Accueil personnalisé": [1,0,0,0,0,0,0],
+    "Infusion d'ancrage": [1,0,0,0,0,0,0],
+    "Installation bungalow vue nature/océan": [1,0,0,0,0,0,0],
+    "Yoga doux au lever du soleil": [0,1,0,0,0,0,0],
+    "Sauna sec": [0,1,0,1,0,0,0],
+    "Piscine thermale chauffée": [0,1,1,1,0,1,1],
+    "Gommage au sel de l'Himalaya": [0,1,0,0,0,0,0],
+    "Massage détox au sel": [0,1,0,0,0,0,0],
+    "Yoga respiration & énergie": [0,0,1,0,0,0,0],
+    "Bol d'Air Jacquier": [0,0,1,1,1,1,0],
+    "Douche à jet": [0,0,1,0,0,1,0],
+    "Bain hydromassant": [0,0,1,0,0,0,0],
+    "Enveloppement aux algues": [0,0,1,0,0,0,0],
+    "Modelage sous affusion": [0,0,1,0,0,0,0],
+    "Yoga méditatif": [0,0,0,1,0,0,0],
+    "Bain au magnésium": [0,0,0,1,0,0,0],
+    "Massage traditionnel profond": [0,0,0,1,0,0,0],
+    "Yoga dynamisant": [0,0,0,0,1,0,0],
+    "Soin visage à la spiruline": [0,0,0,0,1,0,0],
+    "Cupping thérapie + serviette de feu": [0,0,0,0,1,0,0],
+    "Yoga d'intégration": [0,0,0,0,0,1,0],
+    "Hammam Mille et Une Nuits": [0,0,0,0,0,1,0],
+    "Massage relaxant": [0,0,0,0,0,1,0],
+    "Rituel de clôture": [0,0,0,0,0,0,1],
+    "Conseils de prolongation": [0,0,0,0,0,0,1],
+    "Carnet de bien-être à emporter": [0,0,0,0,0,0,1]
   }
+}
   
 
   },
