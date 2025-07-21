@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Facebook, Instagram, Youtube  } from "lucide-react";
 import { useTranslations , useLocale} from "next-intl";
+import Link from "next/link";
 
 export function Footer() {
   const t = useTranslations('footer')
@@ -52,15 +53,14 @@ export function Footer() {
           <h3 className="text-sm font-semibold uppercase mb-4">{t('column4')}</h3>
           <ul className="space-y-2">
           <li className="hover:underline cursor-pointer">
-              <a href="#">{t('legal.privacy')}</a>
-            </li>
-            <li className="hover:underline cursor-pointer">
-              <a href="#">{t('legal.cookies')}</a>
-            </li>
-          
-            <li className="hover:underline cursor-pointer">
-              <a href="#">{t('legal.sitemap')}</a>
-            </li>
+  <Link href="/legal/privacy">{t('legal.privacy')}</Link>
+</li>
+<li className="hover:underline cursor-pointer">
+  <Link href="/legal/cookies">{t('legal.cookies')}</Link>
+</li>
+<li className="hover:underline cursor-pointer">
+  <Link href="/legal/cgv">{t('legal.sitemap')}</Link>
+</li>
           </ul>
         </div>
 

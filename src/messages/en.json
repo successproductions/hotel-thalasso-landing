@@ -924,7 +924,194 @@
       "status": {
         "online": "Online • Responds quickly"
       }
+    },
+
+
+    "legal": {
+    "cgu": {
+      "title": "Terms of Use",
+      "lastUpdate": "Last updated: July 2025",
+      "summary": {
+        "title": "Summary",
+        "content": "These Terms of Use govern access, navigation and use of our establishment's booking site, specifying in particular intellectual property rights, collection and processing of personal data, use of cookies, publisher liability, hyperlinks, as well as the terms for modifying the Terms of Use and applicable law. They are based on law n° 53-05 relating to the electronic exchange of legal data, law n° 09-08 on the protection of personal data and law n° 31-08 relating to consumer protection in distance selling."
+      },
+      "section1": {
+        "title": "1. Purpose and scope",
+        "content1": "This document defines the Terms of Use (TOU) of the online booking site of Dakhla Club Hotel and DC Thermes, our thalassotherapy center.",
+        "content2": "Any person accessing the site is required to respect these Terms of Use, which apply to all service offers (accommodation, thalassotherapy, combined packages, etc.) presented online."
+      },
+      "section2": {
+        "title": "2. Access and navigation",
+        "content1": "The site is accessible 24/7, except for maintenance or force majeure interruptions.",
+        "content2": "The publisher implements all reasonable means to ensure continuous and secure access, without however guaranteeing the complete absence of error or interruption."
+      },
+      "section3": {
+        "title": "3. Intellectual property",
+        "content1": "All published content (texts, images, logos, videos, sounds) are protected by intellectual property law and remain the exclusive property of \"Dakhla Club Hotel\" and \"Dakhla Wellness and Health\".",
+        "content2": "Any reproduction, representation or partial or complete distribution without prior written authorization is prohibited."
+      },
+      "section4": {
+        "title": "4. Personal data",
+        "content1": "Data collected on the site is processed in accordance with law n° 09-08 relating to the protection of natural persons with regard to the processing of personal data.",
+        "content2": "Data processing is proportionate to the pursued purpose (reservation management, billing, statistics) and is subject to appropriate security measures."
+      },
+      "section5": {
+        "title": "5. Responsibility",
+        "content1": "The publisher undertakes to describe the proposed services with diligence and accuracy, but cannot guarantee the permanent accuracy of information (prices, availability).",
+        "content2": "In case of damage related to the use of the site, the publisher's liability is limited to direct and foreseeable damages.",
+        "content3": "In case of force majeure (natural disasters, regulatory acts, cyberattacks), the publisher's obligations are suspended."
+      },
+      "section6": {
+        "title": "6. Hyperlinks",
+        "content": "The site may contain links to third-party sites. The publisher exercises no control over them and disclaims any responsibility regarding their content or practices."
+      },
+      "section7": {
+        "title": "7. Modification of Terms of Use",
+        "content1": "The publisher reserves the right to modify these Terms of Use at any time. Any modification will be published on the site and the User is invited to consult them regularly.",
+        "content2": "Continuing to use the site after update constitutes acceptance of the new Terms of Use."
+      },
+      "section8": {
+        "title": "8. Applicable law and jurisdiction",
+        "content1": "These Terms of Use are governed by Moroccan law, particularly law n° 53-05 relating to electronic exchange of legal data, law n° 09-08 relating to personal data protection and law n° 31-08 on consumer protection for distance sales.",
+        "content2": "Any dispute relating to the interpretation or execution of the Terms of Use will be subject to the competent courts of the Kingdom of Morocco."
+      }
+    },
+    "cgv": {
+      "title": "Terms of Sale",
+      "lastUpdate": "Last updated: July 2025",
+      "section1": {
+        "title": "1. Purpose",
+        "content": "These Terms of Sale define the terms of distance selling of accommodation services and thalassotherapy treatments offered on the site, in accordance with law n° 31-08 on consumer protection."
+      },
+      "section2": {
+        "title": "2. Service characteristics",
+        "content": "Each offer clearly describes the services including accommodation, treatments, packages or combinations, with the main elements: description, duration and terms."
+      },
+      "section3": {
+        "title": "3. Prices and validity",
+        "content1": "Prices are expressed in Moroccan dirhams including tax, unless otherwise stated.",
+        "content2": "Each offer includes a clearly indicated validity period."
+      },
+      "section4": {
+        "title": "4. Payment methods",
+        "content": "Payment is made online by credit card."
+      },
+      "section5": {
+        "title": "5. Confirmation",
+        "content": "After payment, the client receives an email containing:",
+        "list1": "the complete reservation summary,",
+        "list2": "the establishment's contact details."
+      },
+      "section6": {
+        "title": "6. Right of withdrawal",
+        "content": "In accordance with law n° 31-08, the 7-day right of withdrawal does not apply to services performed on a specific date, e.g.: Stay or treatment date."
+      },
+      "section7": {
+        "title": "7. Cancellation, modification, no-show",
+        "content1": "No refund is provided in case of cancellation or no-show.",
+        "content2": "Date modifications can be made subject to availability."
+      },
+      "section8": {
+        "title": "8. Responsibility & force majeure",
+        "content": "The Hotel and thalassotherapy center are responsible for service execution, except in case of force majeure."
+      },
+      "section9": {
+        "title": "9. Durability & conservation",
+        "content": "The Terms of Sale are permanently accessible on the site."
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "effectiveDate": "Effective date: 18.07.2025",
+      "intro": "We attach the utmost importance to protecting your personal data. This policy describes how we collect, use, store and secure your data when you use our website and services (hotel booking, thalassotherapy, etc.).",
+      "section1": {
+        "title": "1. Legal framework",
+        "content": "This policy complies with law n° 09-08 relating to the protection of natural persons with regard to the processing of personal data, supervised by the National Commission for Data Protection Control (CNDP)."
+      },
+      "section2": {
+        "title": "2. Processing purposes",
+        "content": "The data you entrust to us is processed to:",
+        "list1": "Manage your reservations (accommodation, thalassotherapy, etc.)",
+        "list2": "Respond to your information requests or quotes",
+        "list3": "Communicate about your stay or booked services",
+        "list4": "Improve our services and user experience"
+      },
+      "section3": {
+        "title": "3. Data collected",
+        "content": "The following data may be collected:",
+        "list1": "Identity: last name, first name",
+        "list2": "Contact details: email, phone",
+        "list3": "Reservation details: stay dates, room or treatment type, number of people",
+        "list4": "Navigation data: IP address, pages viewed, cookies"
+      },
+      "section4": {
+        "title": "4. Legal basis",
+        "content": "In accordance with law 09-08, our processing is based on:",
+        "list1": "Consent (for example: receiving marketing offers)",
+        "list2": "Contract execution or client request for reservation management",
+        "list3": "Legitimacy of purposes: each data is collected transparently, proportionately and necessarily."
+      },
+      "section5": {
+        "title": "5. Data sharing",
+        "content": "Your data may be transmitted to:",
+        "list1": "Our internal teams (reception, reservation, spa)",
+        "list2": "Our technical service providers (site host, online reservation solution), located in Morocco or abroad, with contractual guarantees compliant with law 09-08 and CNDP obligations."
+      },
+      "section6": {
+        "title": "6. Data security",
+        "content": "We implement appropriate technical and organizational measures to protect your data against any loss, disclosure, alteration or unauthorized access, particularly via:",
+        "list1": "Website protection and flow encryption",
+        "list2": "Staff awareness and internal access control."
+      },
+      "section7": {
+        "title": "7. Cookies and trackers",
+        "content": "We use:",
+        "list1": "Technical cookies necessary for site operation",
+        "list2": "Analytics and marketing cookies."
+      },
+      "section8": {
+        "title": "8. Policy modification",
+        "content": "We may update this policy at any time. The online version will be modified with the update date clearly indicated. We invite you to consult it regularly."
+      }
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "lastUpdate": "Last updated: July 2025",
+      "section1": {
+        "title": "1. What is a cookie?",
+        "content": "Cookies are small text files stored on your device (computer, tablet, smartphone) when browsing our site. They allow us to collect information about your navigation to improve your user experience."
+      },
+      "section2": {
+        "title": "2. Types of cookies used:",
+        "necessary": {
+          "title": "a. Strictly necessary cookies",
+          "content": "These cookies are essential for the proper functioning of the site. They allow, for example, to remember your preferences or secure your session."
+        },
+        "analytics": {
+          "title": "b. Performance and analytics cookies",
+          "content": "They collect information about how visitors use the site, such as the most visited pages or error messages. This data helps us improve site functionality."
+        },
+        "functional": {
+          "title": "c. Functionality cookies",
+          "content": "These cookies allow the site to remember choices you make (such as your username, language or region) and provide enhanced and more personalized features."
+        },
+        "advertising": {
+          "title": "d. Targeting or advertising cookies",
+          "content": "They are used to deliver more relevant advertisements for you and your interests. They also limit the number of times you see an ad and help measure advertising campaign effectiveness."
+        }
+      },
+      "section3": {
+        "title": "3. Cookie management",
+        "content": "You can modify your cookie preferences at any time via your browser settings. Here are links to help pages of major browsers:",
+        "browsers": {
+          "chrome": "Google Chrome",
+          "firefox": "Mozilla Firefox",
+          "safari": "Safari",
+          "edge": "Microsoft Edge"
+        }
+      }
     }
+  }
 
    
 }

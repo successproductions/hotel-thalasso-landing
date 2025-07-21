@@ -906,8 +906,195 @@
       "status": {
         "online": "En ligne • Répond rapidement"
       }
-    }
+    },
   
+
+
+    "legal": {
+    "cgu": {
+      "title": "Conditions Générales d'Utilisation",
+      "lastUpdate": "Dernière mise à jour : Juillet 2025",
+      "summary": {
+        "title": "Résumé",
+        "content": "Ces CGU encadrent l'accès, la navigation et l'usage du site de réservation de notre établissement, précisant notamment les droits de propriété intellectuelle, la collecte et le traitement des données personnelles, l'utilisation des cookies, la responsabilité de l'éditeur, les liens hypertextes, ainsi que les modalités de modification des CGU et la loi applicable. Elles s'appuient sur la loi n° 53-05 relative à l'échange électronique de données juridiques, la loi n° 09-08 sur la protection des données à caractère personnel et la loi n° 31-08 relative à la protection du consommateur en matière de vente à distance."
+      },
+      "section1": {
+        "title": "1. Objet et champ d'application",
+        "content1": "Le présent document définit les Conditions Générales d'Utilisation (CGU) du site de réservation en ligne de Dakhla Club Hôtel et de DC Thermes, notre centre de thalassothérapie.",
+        "content2": "Toute personne accédant au site est tenue de respecter ces CGU, qui s'appliquent à toutes les offres de services (hébergement, thalassothérapie, packages combinés, etc.) présentées en ligne."
+      },
+      "section2": {
+        "title": "2. Accès et navigation",
+        "content1": "Le site est accessible 24 h/24 et 7 j/7, sauf interruption pour maintenance ou force majeure.",
+        "content2": "L'éditeur met en œuvre tous les moyens raisonnables pour assurer l'accès continu et sécurisé, sans toutefois garantir l'absence totale d'erreur ou d'interruption."
+      },
+      "section3": {
+        "title": "3. Propriété intellectuelle",
+        "content1": "Tous les contenus publiés (textes, images, logos, vidéos, sons) sont protégés par le Code de la propriété intellectuelle et restent la propriété exclusive de « Dakhla Club Hôtel » et de « Dakhla Wellness and Health ».",
+        "content2": "Toute reproduction, représentation ou diffusion partielle ou intégrale sans autorisation préalable écrite est prohibée."
+      },
+      "section4": {
+        "title": "4. Données personnelles",
+        "content1": "Les données collectées sur le site sont traitées conformément à la loi n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel.",
+        "content2": "Le traitement des données est proportionné à la finalité poursuivie (gestion des réservations, facturation, statistiques) et fait l'objet de mesures de sécurité adaptées."
+      },
+      "section5": {
+        "title": "5. Responsabilité",
+        "content1": "L'éditeur s'engage à décrire avec diligence et exactitude les services proposés, mais ne saurait garantir l'exactitude permanente des informations (tarifs, disponibilités).",
+        "content2": "En cas de préjudice lié à l'utilisation du site, la responsabilité de l'éditeur est limitée aux dommages directs et prévisibles.",
+        "content3": "En cas de force majeure (catastrophes naturelles, actes réglementaires, cyberattaques), les obligations de l'éditeur sont suspendues."
+      },
+      "section6": {
+        "title": "6. Liens hypertextes",
+        "content": "Le site peut contenir des liens vers des sites tiers. L'éditeur n'exerce aucun contrôle sur ces derniers et décline toute responsabilité quant à leur contenu ou leurs pratiques."
+      },
+      "section7": {
+        "title": "7. Modification des CGU",
+        "content1": "L'éditeur se réserve le droit de modifier à tout moment les présentes CGU. Toute modification sera publiée sur le site et l'Utilisateur est invité à les consulter régulièrement.",
+        "content2": "Le fait de continuer à utiliser le site après mise à jour vaut acceptation des nouvelles CGU."
+      },
+      "section8": {
+        "title": "8. Loi applicable et juridiction",
+        "content1": "Les présentes CGU sont régies par la loi marocaine, notamment la loi n° 53-05 relative à l'échange électronique de données juridiques, la loi n° 09-08 relative à la protection des données personnelles et la loi n° 31-08 sur la protection du consommateur pour les ventes à distance.",
+        "content2": "Tout litige relatif à l'interprétation ou l'exécution des CGU sera soumis aux tribunaux compétents du Royaume du Maroc."
+      }
+    },
+    "cgv": {
+      "title": "Conditions Générales de Vente",
+      "lastUpdate": "Dernière mise à jour : Juillet 2025",
+      "section1": {
+        "title": "1. Objet",
+        "content": "Ces CGV définissent les modalités de la vente à distance de services d'hébergement et prestations de thalassothérapie proposées sur le site, conformément à la loi n° 31-08 sur la protection du consommateur."
+      },
+      "section2": {
+        "title": "2. Caractéristiques des services",
+        "content": "Chaque offre décrit clairement les prestations incluant hébergement, soins, packages ou combinés, avec les principaux éléments : descriptif, durée et modalités."
+      },
+      "section3": {
+        "title": "3. Prix et validité",
+        "content1": "Les prix sont exprimés en dirhams marocains TTC, sauf mention contraire.",
+        "content2": "Chaque offre comporte une durée de validité clairement indiquée."
+      },
+      "section4": {
+        "title": "4. Modalités de paiement",
+        "content": "Le paiement est effectué en ligne par carte bancaire."
+      },
+      "section5": {
+        "title": "5. Confirmation",
+        "content": "Après paiement, le client reçoit un e-mail contenant :",
+        "list1": "le récapitulatif complet de la réservation,",
+        "list2": "les coordonnées de l'établissement."
+      },
+      "section6": {
+        "title": "6. Droit de rétractation",
+        "content": "Conformément à la loi n° 31-08, le droit de rétractation de 7 jours ne s'applique pas aux prestations exécutées à une date déterminée, ex. : Date de séjour ou de soin."
+      },
+      "section7": {
+        "title": "7. Annulation, modification, no-show",
+        "content1": "Aucun remboursement n'est prévu en cas d'annulation ou de non-présentation.",
+        "content2": "Les modifications de dates peuvent être effectuées selon les disponibilités."
+      },
+      "section8": {
+        "title": "8. Responsabilité & force majeure",
+        "content": "L'Hôtel et le centre de thalassothérapie sont responsables de l'exécution des services, sauf en cas de force majeure."
+      },
+      "section9": {
+        "title": "9. Durabilité & conservation",
+        "content": "Les CGV sont accessibles en permanence sur le site."
+      }
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "effectiveDate": "Date d'entrée en vigueur : 18.07.2025",
+      "intro": "Nous attachons la plus grande importance à la protection de vos données personnelles. Cette politique décrit les modalités de collecte, d'utilisation, de conservation et de sécurité de vos données lorsque vous utilisez notre site web et nos services (réservation hôtel, thalassothérapie,…).",
+      "section1": {
+        "title": "1. Ensemble légal",
+        "content": "Cette politique est conforme à la loi n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, supervisée par la Commission Nationale de Contrôle de la Protection des Données (CNDP)."
+      },
+      "section2": {
+        "title": "2. Finalités des traitements",
+        "content": "Les données que vous nous confiez sont traitées pour :",
+        "list1": "Gérer vos réservations (hébergement, thalassothérapie, etc.)",
+        "list2": "Répondre à vos demandes d'information ou devis",
+        "list3": "Communiquer sur votre séjour ou les services réservés",
+        "list4": "Améliorer nos services et l'expérience utilisateur"
+      },
+      "section3": {
+        "title": "3. Données collectées",
+        "content": "Les données suivantes peuvent être collectées :",
+        "list1": "Identité : nom, prénom",
+        "list2": "Coordonnées : e-mail, téléphone",
+        "list3": "Détails de réservation : dates de séjour, type de chambre ou de soin, nombre de personnes",
+        "list4": "Données de navigation : adresse IP, pages consultées, cookies"
+      },
+      "section4": {
+        "title": "4. Base juridique",
+        "content": "Conformément à la loi 09-08, nos traitements reposent sur :",
+        "list1": "Le consentement (par exemple : réception d'offres marketing)",
+        "list2": "L'exécution d'un contrat ou demande client pour la gestion des réservations",
+        "list3": "La légitimité des finalités : chaque donnée est collectée de manière transparente, proportionnée et nécessaire."
+      },
+      "section5": {
+        "title": "5. Partage des données",
+        "content": "Vos données peuvent être transmises à :",
+        "list1": "Nos équipes internes (réception, réservation, spa)",
+        "list2": "Nos prestataires techniques (hébergeur du site, solution de réservation en ligne), situés au Maroc ou à l'étranger, avec garanties contractuelles conformes à la loi 09-08 et aux obligations de la CNDP."
+      },
+      "section6": {
+        "title": "6. Sécurité des données",
+        "content": "Nous mettons en œuvre des mesures techniques et organisationnelles adaptées pour protéger vos données contre toute perte, divulgation, altération ou accès non autorisé, notamment via :",
+        "list1": "Protection du site web et cryptage des flux",
+        "list2": "Sensibilisation du personnel et contrôle d'accès interne."
+      },
+      "section7": {
+        "title": "7. Cookies et traceurs",
+        "content": "Nous utilisons :",
+        "list1": "Des cookies techniques nécessaires au fonctionnement du site",
+        "list2": "Des cookies analytiques et marketing."
+      },
+      "section8": {
+        "title": "8. Modification de la politique",
+        "content": "Nous pouvons mettre à jour cette politique à tout moment. La version en ligne sera modifiée avec la date de mise à jour clairement indiquée. Nous vous invitons à la consulter régulièrement."
+      }
+    },
+    "cookies": {
+      "title": "Politique de Cookies",
+      "lastUpdate": "Dernière mise à jour : Juillet 2025",
+      "section1": {
+        "title": "1. Qu'est-ce qu'un cookie ?",
+        "content": "Les cookies sont de petits fichiers texte enregistrés sur votre terminal (ordinateur, tablette, smartphone) lors de la consultation de notre site. Ils permettent de collecter des informations relatives à votre navigation afin d'améliorer votre expérience utilisateur."
+      },
+      "section2": {
+        "title": "2. Types de cookies utilisés :",
+        "necessary": {
+          "title": "a. Cookies strictement nécessaires",
+          "content": "Ces cookies sont essentiels au bon fonctionnement du site. Ils permettent, par exemple, de mémoriser vos préférences ou de sécuriser votre session."
+        },
+        "analytics": {
+          "title": "b. Cookies de performance et d'analyse",
+          "content": "Ils collectent des informations sur la manière dont les visiteurs utilisent le site, comme les pages les plus consultées ou les messages d'erreur. Ces données nous aident à améliorer le fonctionnement du site."
+        },
+        "functional": {
+          "title": "c. Cookies de fonctionnalité",
+          "content": "Ces cookies permettent au site de se souvenir des choix que vous faites (comme votre nom d'utilisateur, votre langue ou la région où vous vous trouvez) et fournissent des fonctionnalités améliorées et plus personnelles."
+        },
+        "advertising": {
+          "title": "d. Cookies de ciblage ou publicitaires",
+          "content": "Ils sont utilisés pour diffuser des publicités plus pertinentes pour vous et vos centres d'intérêt. Ils limitent également le nombre de fois où vous voyez une publicité et aident à mesurer l'efficacité des campagnes publicitaires."
+        }
+      },
+      "section3": {
+        "title": "3. Gestion des cookies",
+        "content": "Vous pouvez à tout moment modifier vos préférences en matière de cookies via les paramètres de votre navigateur. Voici des liens vers les pages d'aide des principaux navigateurs :",
+        "browsers": {
+          "chrome": "Google Chrome",
+          "firefox": "Mozilla Firefox",
+          "safari": "Safari",
+          "edge": "Microsoft Edge"
+        }
+      }
+    }
+  }
 
 }
 
