@@ -340,113 +340,161 @@
     ]
 },
 
-
-  "offer5": {
-     "hero": {
-      "overline": "A PREMIUM RETREAT BY THE ATLANTIC OCEAN",  
-   "title":    "FOR THOSE READY TO FEEL BETTER…",  
-   "ctaPrimary": "BOOK YOUR MARINE SERENITY RETREAT",  
-      "alt": {
-        "hero": "Image of DC Thermes spa"
-      },
-      "tagline":  "Feeling heavy in your body, cluttered in your thoughts, and drained in your energy?"  ,
-  "social": {
-    "fb": "https://facebook.com/DCthermes",
-    "ig": "https://instagram.com/DCthermes",
-    "yt": "https://youtube.com/DCthermes",
-    "ln": "https://linkedin.com/company/DCthermes"
+"offer5":{
+  "home": {
+    "title": "WELCOME TO DAKHLA CLUB",
+    "title2": "WELCOME TO DAKHLACLUB",
+    "description": "A premium retreat by the Atlantic Ocean, for those ready to feel better… for good.",
+    "duration":"Duration",
+    "days": "5 Days",
+    "callButton":" I Want To Live The Experience",
+    "Check-in":"Check-in",
+    "Check-out":"Check-out",
+    "bookingValidation": {
+      "invalidDurationTitle": "Invalid Stay Duration",
+      "invalidDurationText": "Your stay must be exactly 6 days. Please adjust your dates.",
+      "confirmButton": "OK"
+    }
+  },
+  "healthProgram": {
+    "title": "Dakhla is calling… Are you ready to refuel your energy?",
+    "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
+    "description1": "Set in a wild and pure environment between ocean, desert, and light, this 5-day journey offers far more than relaxation — it's a long-lasting reconnection with your inner vitality."
+  },
+  "about":{
+  "title":       "Who is this retreat for?",
+    "description1": [
+      "Those experiencing chronic fatigue despite rest",
+      "Anyone in need of a full physical, emotional, and mental reset",
+      "Athletes looking for smart and deep recovery",
+      "Women seeking inner alignment and full-body detox",
+      "Those suffering from poor sleep, digestion or lack of balance",
+      "Anyone who wants to care for themselves with elegance, structure, and results"
+    ]
   }
+,
+  "programSection": {
+    "header": {
+      "title": "THE PROGRAM",
+      "subheading": "Marine Serenity Retreat – 6 Days to Regenerate Your Body and Mind",
+      "description": "A holistic journey to your complete well-being in the unique universe of Dakhla",
+      "jour": "Day",
+      "activitiesTitle": "Included treatments:",
+      "callButton": " Enter the holistic world of Dakhla Club",
+      "objectiveTitle": "Objective:"
     },
-    "jumbotron": {
-   "headline": "A powerful and progressive retreat, created for deep renewal", 
-   "subtext":  "Set in a wild and pure environment between ocean, desert, and light"
- },
-  "stats": {
-   "yearsExperience": "Years of Experience",
-   "yearlyCustomer": "Yearly Customers",
-   "experiencedStaffs": "Experienced Staffs",
-   "positiveReviews": "Positive Reviews"
- },
-    "program": {
-      "heading": "RETREAT PROGRAMME",
-      "activities": "Activities",
-      "day1": {
-        "label": "Day 1",
-        "activities": [
-          "Arrival at Dakhla Club: welcome, grounding tea, check-in to your bungalow. A gentle start in a pure natural setting."
-        ]
+    "days": {
+      "1": {
+        "title": "Arrival at Dakhla Club",
+        "description": "Welcome, grounding herbal tea, and check-in to your bungalow. A gentle start in a pristine natural setting.",
+        "activities": [],
+        "objective": "Grounding, breathing, opening body and mind.",
+        "ctaText": "I CHOOSE TO REGENERATE"
       },
-      "day2": {
-        "label": "Day 2",
+      "2": {
+        "title": "Release & Balance",
+        "description": "A day dedicated to awakening the senses and revitalizing the body. Breathe, release, and let yourself be carried by the benefits of water and treatments.",
         "activities": [
           "Gentle sunrise yoga",
-          "Dry sauna to begin toxin release",
-          "Heated thermal pool for joint and muscle relaxation",
-          "Himalayan salt scrub to stimulate lymphatic circulation",
-          "Salt detox massage for deep body cleansing"
-        ]
+          "Dry sauna",
+          "Heated thermal pool",
+          "Himalayan salt scrub",
+          "Salt detox massage"
+        ],
+        "objective": "Relax the nervous system, activate drainage, and prepare for transformation.",
+        "ctaText": "ENTER THE UNIVERSE"
       },
-      "day3": {
-        "label": "Day 3",
+      "3": {
+        "title": "Oxygenation & Regeneration",
+        "description": "Today, the body regenerates deeply. Targeted treatments release tension and rebalance energy for total relaxation.",
         "activities": [
-          "Breathwork & energizing yoga",
-          "Bol d’Air Jacquier for cellular oxygenation",
-          "Jet shower to boost blood and lymph circulation",
-          "Hydromassage bath to release deep tension",
-          "Algae wrap for minerals, firmness, and radiance",
-          "Affusion massage for a total reset sensation"
-        ]
+          "Breathwork and energizing yoga",
+          "Bol d’Air Jacquier",
+          "Jet shower",
+          "Hydromassage bath",
+          "Algae wrap",
+          "Affusion massage"
+        ],
+        "objective": "Stimulate cells, detox deeply, reconnect to your body.",
+        "ctaText": "I WANT TO LIVE THE EXPERIENCE"
       },
-      "day4": {
-        "label": "Day 4",
+      "4": {
+        "title": "Serenity & Deep Relaxation",
+        "description": "The retreat is coming to an end, but the effects last well beyond these few days. You leave with a clearer mind, a relaxed body, and rebalanced energy.",
         "activities": [
           "Meditative yoga",
           "Bol d’Air Jacquier",
-          "Sauna & thermal pool",
-          "Magnesium bath for muscle recovery and mental calm",
-          "Deep traditional massage for energetic alignment"
-        ]
+          "Sauna and thermal pool",
+          "Magnesium bath",
+          "Deep traditional massage"
+        ],
+        "objective": "Restorative sleep, grounding, and lasting calm.",
+        "ctaText": "ACCESS MY RETREAT"
       },
-      "day5": {
-        "label": "Day 5",
+      "5": {
+        "title": "Stimulation & Vitality",
+        "description": "A day to activate vitality and stimulate energy. Dynamic practices and targeted treatments to boost body and mind, and feel a new inner strength.",
         "activities": [
           "Energizing yoga",
           "Bol d’Air Jacquier",
-          "Spirulina facial (smoothing & antioxidant)",
-          "Cupping therapy + fire towel for deep energy and circulation"
-        ]
+          "Spirulina facial",
+          "Cupping therapy and fire towel"
+        ],
+        "objective": "Activate full vitality and deep drainage.",
+        "ctaText": "ACCESS MY RETREAT"
       },
-      "day6": {
-        "label": "Day 6",
+      "6": {
+        "title": "Purification & Integration",
+        "description": "A day to purify the body and integrate all the benefits of the retreat. Integration practices, hammam, and treatments to leave aligned, soothed, and full of energy.",
         "activities": [
           "Integration yoga",
           "Bol d’Air Jacquier",
           "Jet shower",
           "Thermal pool",
-          "“Thousand and One Nights” hammam",
+          "“Thousand and One Nights” Hammam",
           "Relaxing massage"
-        ]
+        ],
+        "objective": "Anchor the benefits, leave regenerated and reprogrammed.",
+        "ctaText": "ACCESS MY RETREAT"
       },
-      "day7": {
-        "label": "Day 7",
-        "activities": [
-          "Departure: closing ritual, take-home wellness journal."
-        ]
+      "7": {
+        "title": "Departure",
+        "description": "It's time to leave. You go home with practical tools to prolong the benefits, renewed energy, and deep serenity.",
+        "activities": [],
+        "objective": "Closing ritual, take-home wellness journal, and integration tips.",
+        "ctaText": "ACCESS MY RETREAT"
       }
-    },
-    "about": {
-      "title": "Why choose DC Thermes at Dakhla Club?",
-      "points": [
-        "Unique center between desert, ocean, and lagoon",
-        "Marine Thalgo treatments & holistic technologies",
-        "Team of certified therapists",
-        "Zen, elegant, and confidential atmosphere"
-      ],
-      "alt": {
-        "image": "DC Thermes at Dakhla Club, between desert and lagoon"
-      }
-    },
-      "faq": {
+    }
+  },
+  "ProgrammeFonctionne":{
+  "title": " Why This Program Works",
+  "title2": " What You’ll Truly Feel",
+  "points":[
+
+    "A liberating emptiness in the head and belly",
+    "A calmed nervous system, deep sleep, grounded presence",
+    "Improved digestion, stable and available energy",
+    "Smoother skin, a relaxed and radiant face",
+    "A lighter, decongested, and unburdened body",
+    "A clear mind and a desire to come back to yourself"
+  ],
+  "points1":[
+    "Rare combination of cutting-edge treatments, ancient techniques, and powerful natural setting",
+    "All care is designed to cleanse, activate, soothe, and restart"
+  ],
+  "points2":[
+    "Each day follows a logical biological and emotional progression",
+    "Guided by certified holistic revitalization experts"
+
+  ]
+},
+"exclusiveOffer": {
+    "title": "⏳ Limited Edition – Only 10 participants per session",
+    "description": "🔒 To guarantee an intimate experience, we open only 10 spots per session.",
+    "nextSession": "📅 Prochaine session fermera bientôt ses portes",
+    "callButton": "Je Réserve Ma Place"
+  },
+  "faq": {
     "title": "FAQ",
     "contact": {
       "label": "Contact us",
@@ -455,7 +503,7 @@
     },
     "items": [
       {
-        "question": "What can I expect during these 5 days at Dakhla Club?",
+        "question": "What can I expect during these 7 Nights at Dakhla Club?",
         "answer": "You’ll experience a true reconnection with yourself through a blend of relaxing treatments, sensory rituals, and a stunning natural setting between the desert and the ocean."
       },
       {
@@ -475,34 +523,9 @@
         "answer": "You’ll be staying right at the Dakhla Club Hotel & Spa, in a serene setting that perfectly complements and enhances the benefits of your treatments."
       }
     ]
-  },
-       "introduction": {
-  "whyTitle":      "Who is this retreat for?",
-  "headlineLine1": "Those feeling chronic fatigue despite rest",
-  "description":   "This 6-day program blends targeted yoga, sauna, thermal baths, and thalasso treatments to deeply rebalance your body and mind.",
-  "imageAlt":      "Yoga session by the ocean"
- },
-  "exclusiveOffer5": {
-    "title":       "⏳ Limited Edition – 10 participants maximum",
-    "description": "To guarantee an intimate space, we only open 10 seats per session",
-    "nextSession": "📅 The next session will close soon"
-    },  
-"imagesSection": {
-  "heading": "Our Methodological Approach",
-  "features": [
-    "Progressive intensity build-up",
-    "Synergy of manual therapies & tech",
-    "Targeted yoga practices",
-    "Chronobiology & physiological goals",
-    "Holistic & sensory treatments"
-  ],
-  "ctaReserve": "Reserve your spot",
-  "ctaWhatsApp": "WhatsApp Booking",
-  "imageAlt1": "Thermal pool with ocean view",
-  "imageAlt2": "Sunrise yoga session"
-}
-  
+  }
 },
+
 
 
 "terms": {

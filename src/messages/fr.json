@@ -343,115 +343,132 @@
     }
   },
 
-
-
-"offer5": {
-     "hero": {
-      "overline": "UNE CURE PREMIUM AU BORD DE L’ATLANTIQUE",
-      "title":    "POUR CELLES ET CEUX QUI VEULENT ALLER MIEUX… ", 
-      "ctaPrimary": "RÉSERVEZ VOTRE CURE SÉRÉNITÉ MARINE",  
-      "alt": {
-        "hero": "Image du spa DC Thermes"
-      },
-      "tagline":  "Vous sentez votre corps lourd, vos pensées encombrées, votre énergie épuisée ?",
-   "social": {
-     "fb": "https://facebook.com/DCthermes",
-     "ig": "https://instagram.com/DCthermes",
-     "yt": "https://youtube.com/DCthermes",
-     "ln": "https://linkedin.com/company/DCthermes"
-   }
-    },
-    "jumbotron": {
-   "headline": "Une cure puissante et progressive, conçue pour un reset profond",  
-  "subtext":  "Dans un cadre sauvage et pur, entre mer, désert et lumière"  
- },
-  "stats": {
-   "yearsExperience": "Années d’expérience",
-   "yearlyCustomer": "Clients annuels",
-   "experiencedStaffs": "Personnel expérimenté",
-   "positiveReviews": "Avis positifs"
- },
-    "program": {
-      "heading": "PROGRAMME DU SÉJOUR",
-      "activities": "Activités",
-      "day1": {
-        "label": "Jour 1",
-        "activities": [
-          "Accueil, infusion d’ancrage, installation dans votre bungalow. Un début tout en douceur, dans un environnement pur et naturel."
-        ]
-      },
-      "day2": {
-        "label": "Jour 2",
-        
-        "activities": [
-          "Yoga doux au lever du soleil",
-          "Sauna sec pour commencer à évacuer les toxines",
-          "Piscine thermale chauffée pour la relaxation articulaire et musculaire",
-          "Gommage au sel de l’Himalaya pour stimuler la circulation lymphatique",
-          "Massage détox au sel pour entamer un nettoyage profond du corps"
-        ]
-      },
-      "day3": {
-        "label": "Jour 3",
-        "activities": [
-          "Yoga respiration & énergie",
-          "Bol d’Air Jacquier : boost d’oxygénation cellulaire",
-          "Douche à jet pour réactiver la circulation sanguine et lymphatique",
-          "Bain hydromassant pour détendre les tensions enfouies",
-          "Enveloppement aux algues : minéraux, fermeté, peau lumineuse",
-          "Modelage sous affusion : sensation de reset total"
-        ]
-      },
-      "day4": {
-        "label": "Jour 4",
-        "activities": [
-          "Yoga méditatif",
-          "Bol d’Air Jacquier",
-          "Sauna + piscine thermale",
-          "Bain au magnésium pour la récupération musculaire et l’apaisement mental",
-          "Massage traditionnel profond pour une harmonisation énergétique"
-        ]
-      },
-      "day5": {
-        "label": "Jour 5",
-        "activities": [
-          "Yoga dynamisant",
-          "Bol d’Air Jacquier",
-          "Soin visage à la spiruline (effet lissant, antioxydant)",
-          "Cupping thérapie + serviette de feu : stimulation circulatoire et énergétique"
-        ]
-      },
-      "day6": {
-        "label": "Jour 6",
-        "activities": [
-          "Yoga d’intégration",
-          "Bol d’Air Jacquier",
-          "Douche à jet",
-          "Piscine thermale",
-          "Hammam Mille et Une Nuits",
-          "Massage relaxant"
-        ]
-      },
-      "day7": {
-        "label": "Jour 7",
-        "activities": [
-          "Conseils de prolongation, rituel de clôture, carnet de bien-être à emporter."
-        ]
+  "offer5":{
+    "home": {
+      "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
+      "title2": "ÉVASION HOLISTIQUE À DAKHLA",
+      "description": "Une cure premium au bord de l’Atlantique, pour celles et ceux qui veulent aller mieux… durablement",
+      "duration":"Durée",
+      "days": "5 Jours",
+      "callButton":" Je veux vivre  l’expérience",
+      "Check-in":"Arrivée",
+      "Check-out":"Départ",
+      "bookingValidation": {
+        "invalidDurationTitle": "Durée de séjour invalide",
+        "invalidDurationText": "Votre séjour doit être exactement de 6 jours. Veuillez ajuster vos dates.",
+        "confirmButton": "OK"
       }
     },
-    "about": {
-      "title": "Pourquoi choisir DC Thermes à Dakhla Club ?",
-      "points": [
-        "Centre unique entre désert, océan et lagon",
-        "Soins marins Thalgo & technologies holistiques",
-        "Équipe de thérapeutes certifiées",
-        "Atmosphère zen, élégante et confidentielle"
-      ],
-      "alt": {
-        "image": "Centre DC Thermes à Dakhla, entre désert et lagon"
-      }
+    "healthProgram": {
+      "title": "Dakhla is calling… Êtes-vous prêts à recharger vos batteries ?",
+      "title2":       "Une cure puissante et progressive, conçue pour un reset profond",
+      "description1": "Dans un cadre sauvage et pur, entre mer, désert et lumière, nous avons conçu un parcours de 5 jours pour vous offrir bien plus qu’un simple moment de détente : une reconnexion durable à votre vitalité intérieure."
     },
-    "faq": {
+    "about":{
+"title":       "Pour qui est ce séjour ?",
+    "description1": [
+      "Pour ceux qui ressentent une fatigue chronique malgré le repos",
+      "Pour celles et ceux qui ont besoin d’un reset physique, émotionnel et mental",
+      "Pour les sportifs  qui cherchent une récupération profonde et intelligente",
+      "Pour les femmes en quête d’un alignement intérieur et d’un drainage global du corps",
+      "Pour ceux qui dorment mal, digèrent mal, ou n’arrivent plus à retrouver leur équilibre",
+      "Pour toute personne qui veut prendre soin de soi avec élégance, méthode et résultats"
+    ]
+ 
+  },
+  "programSection": {
+    "header": {
+      "title":             "LE PROGRAMME",
+      "subheading":        "Marine Serenity Retreat – 6 Days to Regenerate Your Body and Mind",
+      "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
+      "jour":              "Jour",
+      "activitiesTitle":   "Soins inclus :",
+      "callButton": " Entrer dans l’univers holistique du Dakhla Club",
+      "objectiveTitle": "Objectif :"
+
+    },      
+    "days": {
+      "1": {
+        "title":        "Arrivée au Dakhla Club",
+        "description":  "Accueil, infusion d’ancrage, installation dans votre bungalow. Un début tout en douceur, dans un environnement pur et naturel.",
+        "activities":   [],
+        "objective":    "Ancrage, respiration, ouverture du corps et de l'esprit.",
+        "ctaText":      "JE CHOISIS DE ME RÉGÉNÉRER"
+      },
+      "2": {
+        "title":        "Lâcher-prise & Équilibre",
+                "description":  "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins.",
+        "activities":   ["Yoga doux au lever du soleil","Piscine thermale","Sauna sec","Piscine thermale ","Gommage au sel de l’Himalaya ","Massage détox au sel"],
+        "objective":    "Libérer le système nerveux, relancer le drainage, préparer à la transformation.",
+        "ctaText":      "ENTRER DANS L’UNIVERS"
+      },
+      "3": {
+        "title":        "Oxygénation & Régénération",
+                "description":  "Aujourd’hui, le corps se régénère en profondeur. Les soins ciblés relâchent les tensions et rééquilibrent l’énergie pour une détente totale.",
+        "activities":   ["Yoga respiration & énergie","Bol d’Air Jacquier","Douche à jet","Bain hydromassant","Enveloppement aux algues","Modelage sous affusion"],
+        "objective":    "Stimuler les cellules, éliminer, reconnecter au corps vivant.",
+        "ctaText":      "JE VEUX VIVRE L'EXPÉRIENCE"
+      },
+      "4": {
+        "title":        "Sérénité & Détente Profonde",
+               "description":  "Le séjour touche à sa fin, mais les effets se prolongent bien au-delà de ces quelques jours. Vous repartez avec un esprit plus clair, un corps détendu, et une énergie rééquilibrée.",
+        "activities":   ["Yoga méditatif","Bol d’Air Jacquier","Sauna + piscine thermale","Bain au magnésium","Massage traditionnel profond"],
+        "objective":    "Sommeil réparateur, ancrage et relâchement durable.",
+        "ctaText":      "J'ACCÈDE À MON SÉJOUR"
+      },
+      "5": {
+        "title":        "Stimulation & Vitalité",
+          "description":  "Une journée pour activer la vitalité et stimuler l’énergie. Pratiques dynamiques et soins ciblés pour booster le corps et l’esprit, et ressentir une nouvelle force intérieure.",
+        "activities":   ["Yoga dynamisant","Bol d’Air Jacquier","Soin visage à la spiruline","Cupping thérapie + serviette de feu"],
+        "objective":    "Activation complète de la vitalité, drainage profond.",
+        "ctaText":      "J'ACCÈDE À MON SÉJOUR"
+      },
+      "6": {
+        "title":        "Purification & Intégration",
+        "description":  "Une journée pour purifier le corps et intégrer tous les bienfaits du séjour. Pratiques d’intégration, hammam et soins pour repartir aligné(e), apaisé(e) et plein(e) d’énergie.",
+        "activities":   ["Yoga d’intégration","Bol d’Air Jacquier","Douche à jet","Piscine thermale","Hammam Mille et Une Nuits","Massage relaxant"],
+        "objective":    "Ancrer les bienfaits, repartir régénéré(e), reprogrammé(e).",
+        "ctaText":      "J'ACCÈDE À MON SÉJOUR"
+      },
+      "7": {
+        "title":        "Départ du Dakhla Club",
+        "description":  "C’est le moment du départ. Vous repartez avec des outils concrets pour prolonger les bienfaits, une énergie renouvelée et une sérénité profonde.",
+        "activities":   [],
+        "objective":    "Conseils de prolongation, rituel de clôture, carnet de bien-être à emporter.",
+        "ctaText":      "J'ACCÈDE À MON SÉJOUR"
+      }
+
+    }
+  },
+  "ProgrammeFonctionne":{
+  "title": " Pourquoi ce programme fonctionne",
+  "title2": " Ce que vous allez vraiment ressentir",
+  "points":[
+
+    "Une sensation de vide libérateur dans la tête et dans le ventre",
+    "Un système nerveux apaisé, un sommeil réparateur, un retour à l’ancrage",
+    "Une digestion plus fluide, une énergie disponible et stable",
+    "Une peau lissée, un visage détendu et rayonnant",
+    "Un corps plus léger, désengorgé, décrispé",
+    "Un esprit clair, une envie de revenir à vous"
+  ],
+  "points1":[
+    "TAssociation rare entre soins de pointe, techniques ancestrales et environnement puissant",
+    "Tous nos soins visent à nettoyer, activer, apaiser, relancer"
+  ],
+  "points2":[
+    "Chaque jour suit une logique de progression biologique et émotionnelle",
+    "Vous êtes accompagné(e) par des thérapeutes certifiés et experts en revitalisation holistique"
+
+  ]
+},
+"exclusiveOffer": {
+    "title": "⏳ Édition limitée – 10 participants maximum",
+    "description": "🔒 Pour garantir un espace intime, nous ouvrons uniquement 10 places par session.",
+    "nextSession": "📅 Prochaine session fermera bientôt ses portes",
+    "callButton": "Je Réserve Ma Place"
+  },
+  "faq": {
     "title": "FAQ",
     "contact": {
       "label": "Contactez-nous",
@@ -460,7 +477,7 @@
     },
     "items": [
       {
-        "question": "Qu’est-ce que je vais vivre pendant ces 5 jours au Dakhla Club ?",
+        "question": "Qu’est-ce que je vais vivre pendant ces 7 nuits au Dakhla Club ?",
         "answer": "Vous allez vivre une véritable reconnexion à vous-même grâce à une combinaison de soins relaxants, d’expériences sensorielles et d’un cadre naturel exceptionnel entre désert et océan."
       },
       {
@@ -480,34 +497,12 @@
         "answer": "Vous serez hébergé(e) directement au Dakhla Club Hotel & Spa, dans un environnement apaisant qui prolonge naturellement les bienfaits des soins."
       }
     ]
+  }
+  
+
   },
-    "introduction": {
-  "whyTitle":      "Pour qui est ce séjour ?",
-  "headlineLine1": "Pour ceux qui ressentent une fatigue chronique malgré le repos",
-  "description":   "Ce programme de 6 jours combine yoga ciblé, sauna, piscines thermales et soins thalasso pour rééquilibrer profondément votre corps et votre esprit.",
-  "imageAlt":      "Séance de yoga au bord de l’océan"
- },
-    "exclusiveOffer5": {
-    "title":       "⏳ Édition limitée – 10 participants maximum",
-    "description": "Pour garantir un espace intime, nous ouvrons uniquement 10 places par session",
-    "nextSession": "📅 Prochaine session fermera bientôt ses portes"
-  },
-   "imagesSection": {
-  "heading": "Notre approche méthodologique",
-  "features": [
-    "Montée progressive en intensité",
-    "Synergie entre soins manuels et technologies",
-    "Pratiques de yoga ciblées",
-    "Chronobiologie et objectifs physiologiques",
-    "Soins holistiques et sensoriels"
-  ],
-  "ctaReserve": "Réservez votre place",
-  "ctaWhatsApp": "Réservation WhatsApp",
-  "imageAlt1": "Piscine thermale avec vue sur l'océan",
-  "imageAlt2": "Séance de yoga au lever du soleil"
-}
-  },
- 
+
+
 
 
 
