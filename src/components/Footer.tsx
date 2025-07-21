@@ -51,6 +51,12 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold uppercase mb-4">{t('column4')}</h3>
           <ul className="space-y-2">
+          <li className="hover:underline cursor-pointer">
+              <a href="#">{t('legal.privacy')}</a>
+            </li>
+            <li className="hover:underline cursor-pointer">
+              <a href="#">{t('legal.cookies')}</a>
+            </li>
           
             <li className="hover:underline cursor-pointer">
               <a href="#">{t('legal.sitemap')}</a>
