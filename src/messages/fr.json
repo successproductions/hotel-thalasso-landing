@@ -785,23 +785,23 @@
         "title": " Notre Évasion Holistique - 3 jours de pure régénération :",
         "day1": {
           "title": "**Jour 1** - Arrivée & Ancrage",
-          "activities": " Bol d'Air Jacquier + Piscine thermale",
+          "activities": " ",
           "objective": " Objectif: Respiration, ouverture corps & esprit"
         },
         "day2": {
           "title": "**Jour 2** - Apaisement Profond",
-          "activities": " Sauna + Bain hydromassant + Enveloppement algues + Modelage affusion",
+          "activities": " SBol d’Air Jacquier + Piscine thermale + Sauna purifiant + Bain hydromassant + Enveloppement aux algues + Modelage sous affusion",
           "objective": " Objectif: Lâcher-prise, oxygénation cellulaire"
         },
         "day3": {
           "title": "**Jour 3** - Régénération & Vitalité",
-          "activities": " Douche à jet + Bain magnésium + Cupping thérapie",
+          "activities": " Piscine thermale + Douche à jet + Bain au magnésium + Cupping thérapie + Massage relaxant",
           "objective": " Objectif: Circulation, silhouette, recharge énergétique"
         },
         "day4": {
-          "title": "**Jour 4** - Purification & Clôture",
-          "activities": " Hammam Secret du Désert + Massage relaxant",
-          "objective": " Objectif: Détox, apaisement, peau régénérée"
+          "title": "**Jour 4** - Clôture & envol",
+          "activities": " ",
+          "objective": " Objectif: Évacuation des toxines, apaisement mental, peau régénérée"
         },
         "followUp": "Que souhaitez-vous savoir d'autre ?"
       },
@@ -844,7 +844,6 @@
       },
       "info": {
         "title": " **DC Thermes - Dakhla Club**",
-        "details": "**Localisation** : Dakhla, entre désert et océan Atlantique\n🏨 **Hébergement** : Bungalows avec vue océan/nature\n🍽️ **Restauration** : Cuisine saine et locale incluse\n🚗 **Accès** : 15min de l'aéroport de Dakhla\n\n**Inclus dans votre séjour** :\n✅ Tous les soins programmés\n✅ Hébergement 3 nuits\n✅ Pension complète bio\n✅ Transferts aéroport\n✅ Thés détox & collations\n\n**À prévoir** :\n• Maillot de bain\n• Vêtements confortables\n• Sandales antidérapantes\n• Protection solaire",
         "moreInfo": "Autres informations souhaitées ?"
       },
       "testimonials": {

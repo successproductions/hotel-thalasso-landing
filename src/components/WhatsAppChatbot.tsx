@@ -210,7 +210,7 @@ const WhatsAppChatbot: React.FC = () => {
             setTimeout(() => {
               addMessage(t('program.followUp'), false, true, [
                 { text: t('actions.reserve'), value: "booking" },
-                { text: "🌟 Témoignages clients", value: "testimonials" },
+                { text: " Témoignages clients", value: "testimonials" },
                 { text: t('menu.options.info'), value: "info" }
               ]);
             }, 2000);
