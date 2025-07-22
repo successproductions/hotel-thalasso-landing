@@ -50,7 +50,7 @@ export default function Header() {
           {/* Left: Logo */}
           <div className="flex items-center">
             <Link
-              href="#accueil"
+              href="/"
               className="transition-filter"
             >
               <Image
@@ -143,7 +143,7 @@ export default function Header() {
           </button>
 
           <Link
-            href="#accueil"
+            href="/"
             className={clsx(
               "transition-filter flex-shrink-0 mx-2",
               !active && "transition-filter"
