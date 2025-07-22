@@ -36,7 +36,7 @@ export default function LegalIndexPage() {
       </div>
 
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-        <Link href="/legal/cgu" className="group">
+        {/* <Link href="/legal/cgu" className="group">
           <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl p-6 border border-teal-200 hover:border-teal-300 transition-all duration-300 hover:shadow-lg">
             <div className="w-12 h-12 bg-teal-500 rounded-lg mb-4 flex items-center justify-center">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,7 +50,7 @@ export default function LegalIndexPage() {
               {t('cgu.description')}
             </p>
           </div>
-        </Link>
+        </Link> */}
 
         <Link href="/legal/cgv" className="group">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200 hover:border-blue-300 transition-all duration-300 hover:shadow-lg">

@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { Facebook, Instagram, Youtube  } from "lucide-react";
 import { useTranslations , useLocale} from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export function Footer() {
   const t = useTranslations('footer')
