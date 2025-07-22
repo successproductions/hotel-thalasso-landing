@@ -12,11 +12,9 @@ import WhatsAppChatbot5 from "@/components/offer-5/WhatsAppChatbot5"
 import { RewardsSection } from "@/components/RewardsSection"
 import TestimonialsCarousel from "@/components/TestimonialsCarousel"
 
-// 🆕 ADD THESE IMPORTS
-import type { Metadata } from 'next';
-// import { getTranslations } from 'next-intl/server';
 
-// 🆕 ADD THIS METADATA FUNCTION
+import type { Metadata } from 'next';
+
 export async function generateMetadata({
   params,
 }: {
@@ -25,7 +23,6 @@ export async function generateMetadata({
   const { locale } = await params;
   const baseUrl = 'https://offer.dakhlaclub.com';
   
-  // 🆕 DISTINCT METADATA FOR 5-DAY OFFER
   const metadata5Days = {
     fr: {
       title: "Évasion Holistique 5 Jours à Dakhla – Transformation Profonde & Bien-être Complet",
@@ -117,7 +114,7 @@ export default function Page() {
             <Footer/>
             <WhatsAppChatbot5/>
 
-            {/* 🆕 ADD STRUCTURED DATA FOR 5-DAY OFFER */}
+            
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

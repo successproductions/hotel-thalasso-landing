@@ -4,7 +4,6 @@
 import { useTranslations } from "next-intl";
 
 
-
 export function NewsletterSection5() {
   const t = useTranslations("offer5.exclusiveOffer");
 
@@ -20,7 +19,7 @@ export function NewsletterSection5() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center space-y-4">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-serif text-white">
-          {t("title")}
+          {t("title").toUpperCase()}
         </h2>
 
         {/* Description */}

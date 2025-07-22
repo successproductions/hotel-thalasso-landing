@@ -170,8 +170,13 @@ export default function Hero5() {
         </h1>
 
         {/* Line 2: uppercase tracking-wide */}
-        <h2 className="uppercase text-sm md:text-lg tracking-widest">
-          <WavyText text={t("description")} />
+        <h2 className="uppercase text-xs md:text-lg tracking-widest">
+        <span className="hidden md:block">
+            <WavyText text={t("description")} />
+          </span>
+          <span className="block md:hidden">
+            <WavyText text={t("description2")} />
+          </span>
         </h2>
       </div>
 
