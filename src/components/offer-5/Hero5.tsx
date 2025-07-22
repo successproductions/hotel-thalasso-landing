@@ -5,7 +5,7 @@ import WavyText from "../ui/WavyText";
 import { useTranslations } from "next-intl";
 import Swal from 'sweetalert2';
 
-// TypeScript interfaces
+
 interface BookingData {
   checkInDate: string;
   checkOutDate: string;
@@ -149,7 +149,7 @@ export default function Hero5() {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-[57vh] lg:h-[80vh] xl:h-[92vh] object-cover"
-        src="/videos/DC-Thermes.mov"
+        src="/videos/VIDEO_LANDING_PAGE_5.mp4"
         autoPlay
         loop
         muted
