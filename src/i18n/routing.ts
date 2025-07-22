@@ -10,6 +10,10 @@ export const routing = defineRouting({
       fr: '/evasion-holistique-3-jours',
       en: '/evasion-holistique-3-jours'
     },
+    '/evasion-holistique-5-jours': {
+      fr: '/evasion-holistique-5-jours',
+      en: '/evasion-holistique-5-jours'
+    },
     '/legal/privacy': {
       fr: '/legal/privacy',
       en: '/legal/privacy'

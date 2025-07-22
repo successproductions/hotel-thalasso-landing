@@ -27,26 +27,27 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // WWW to non-WWW redirect
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.offer.dakhlaclub.com' }],
         destination: 'https://offer.dakhlaclub.com/:path*',
         permanent: true,
       },
-      // Root redirect
       {
         source: '/',
         destination: '/fr/evasion-holistique-3-jours',
         permanent: true,
       },
-      // Handle old URLs
       {
         source: '/evasion-holistique-3-jours',
         destination: '/fr/evasion-holistique-3-jours',
         permanent: true,
       },
-      // Add missing trailing slash redirects
+      {
+        source: '/evasion-holistique-5-jours',
+        destination: '/fr/evasion-holistique-5-jours',
+        permanent: true,
+      },
       {
         source: '/fr',
         destination: '/fr/evasion-holistique-3-jours',
