@@ -1,13 +1,21 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import LegalLayout from '../components/LegalLayout';
+
+interface CookiesPageProps {
+  params: Promise<{ locale: string }>;
+}
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+}: CookiesPageProps): Promise<Metadata> {
   const { locale } = await params;
+  
+  // Validate locale
+  if (!['fr', 'en'].includes(locale)) {
+    notFound();
+  }
   
   return {
     title: locale === 'fr' ? 'Politique de Cookies - Dakhla Club' : 'Cookie Policy - Dakhla Club',
@@ -17,11 +25,23 @@ export async function generateMetadata({
   };
 }
 
-export default function CookiesPage() {
-  const t = useTranslations('legal.cookies');
+export default async function CookiesPage({ params }: CookiesPageProps) {
+  const { locale } = await params;
+  
+  // Validate locale again
+  if (!['fr', 'en'].includes(locale)) {
+    notFound();
+  }
+  
+  const t = await getTranslations('legal.cookies');
   
   return (
     <LegalLayout>
+      {/* Debug info - remove this once it's working */}
+      <div className="mb-4 p-2 bg-yellow-100 text-sm">
+        Debug: Current locale = {locale}
+      </div>
+      
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 playfair">
           <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
