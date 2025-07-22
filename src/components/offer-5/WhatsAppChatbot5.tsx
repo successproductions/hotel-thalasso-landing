@@ -342,8 +342,8 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
       advisorText = t('advisor.contact');
       
       if (advisorText.startsWith('offer5.chatbot5.advisor.contact') || advisorText === 'advisor.contact') {
-        advisorText = `📞 **Ligne directe** : +212 652 88 192
-💬 **WhatsApp Business** : +212 652 88 192
+        advisorText = `📞 **Ligne directe** : +212 652881921
+💬 **WhatsApp Business** : +212 652881921
 📧 **Email** : concierge@dakhlaclub.com`;
       } else {
         // Translation successful, replace placeholders
@@ -354,8 +354,8 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
     } catch (error) {
       console.error('Translation error for advisor.contact:', error);
       // Fallback to hardcoded text
-      advisorText = `📞 **Ligne directe** : +212 652 88 192
-💬 **WhatsApp Business** : +212 652 88 192
+      advisorText = `📞 **Ligne directe** : +212 652881921
+💬 **WhatsApp Business** : +212 652881921
 📧 **Email VIP** : concierge@dakhlaclub.com
 
 Vos informations seront transmises :

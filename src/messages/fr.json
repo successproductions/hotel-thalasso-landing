@@ -586,7 +586,7 @@
     },
     "advisor": {
       "title": "📞 **Conseil Personnalisé**",
-      "contact2": "📞 **Ligne directe** : +212 652 88 192\n💬 **WhatsApp Business** : +212 652 88 192\n📧 **Email VIP** : concierge@dakhlaclub.com\n\n**Disponibilité** :\n• Lun-Dim : 9h-20h\n• Réponse WhatsApp : < 2h\n• Réponse email : < 4h\n\nUn expert bien-être vous rappellera pour répondre à toutes vos questions personnalisées et vous accompagner dans votre réservation.\n\nVos informations seront transmises :\n👤 {name}\n📞 {phone}"
+      "contact2": "📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp Business** : +212 652 88 1921\n📧 **Email VIP** : concierge@dakhlaclub.com\n\n**Disponibilité** :\n• Lun-Dim : 9h-20h\n• Réponse WhatsApp : < 2h\n• Réponse email : < 4h\n\nUn expert bien-être vous rappellera pour répondre à toutes vos questions personnalisées et vous accompagner dans votre réservation.\n\nVos informations seront transmises :\n👤 {name}\n📞 {phone}"
     },
     "faq": {
       "title": "❓ **Questions Fréquentes :**",
@@ -606,7 +606,7 @@
   "chooseToday": "Veuillez choisir une date à partir d'aujourd'hui."
 },
 "messages": {
-  "thankYou": "Merci pour votre message ! Un conseiller vous répondra sous peu. Pour une réponse immédiate, appelez le +212 652 88 192.",
+  "thankYou": "Merci pour votre message ! Un conseiller vous répondra sous peu. Pour une réponse immédiate, appelez le +212 652 88 1921.",
   "whatsappRedirect": "Bonjour ! Je souhaite en savoir plus sur l'Évasion Holistique 7 jours au Dakhla Club."
 },
 "placeholders": {
@@ -841,7 +841,7 @@
         "confirm": "✅ Oui, réserver maintenant",
         "modify": "👥 Modifier encore",
         "moreInfo": "Pour plus de 4 adultes, veuillez contacter directement notre équipe :",
-        "contact": "📞 **Téléphone :** +212 652 88 192\n📧 **Email :** reservation@dakhlaclub.com\n\nIls pourront vous proposer des solutions adaptées à votre groupe !"
+        "contact": "📞 **Téléphone :** +212 652 88 1921\n📧 **Email :** reservation@dakhlaclub.com\n\nIls pourront vous proposer des solutions adaptées à votre groupe !"
       },
       "info": {
         "title": " **DC Thermes - Dakhla Club**",
@@ -866,7 +866,7 @@
       },
       "advisor": {
         "title": "🤝 **Parler à un conseiller spécialisé**",
-        "contact": "📞 **Ligne directe** : +212 652 88 192\n💬 **WhatsApp Business** : +212 652 88 192\n📧 **Email VIP** : concierge@dakhlaclub.com\n\n**Disponibilité** :\n• Lun-Dim : 9h-20h\n• Réponse WhatsApp : < 2h\n• Réponse email : < 4h\n\nUn expert bien-être vous rappellera pour répondre à toutes vos questions personnalisées et vous accompagner dans votre réservation.\n\nVos informations seront transmises :\n👤 {name}\n📞 {phone}"
+        "contact": "📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp Business** : +212 652 88 1921\n📧 **Email VIP** : concierge@dakhlaclub.com\n\n**Disponibilité** :\n• Lun-Dim : 9h-20h\n• Réponse WhatsApp : < 2h\n• Réponse email : < 4h\n\nUn expert bien-être vous rappellera pour répondre à toutes vos questions personnalisées et vous accompagner dans votre réservation.\n\nVos informations seront transmises :\n👤 {name}\n📞 {phone}"
       },
       "faq": {
         "title": "❓ **Questions fréquentes** :",
@@ -897,7 +897,7 @@
         "expert": " Parler à un expert"
       },
       "messages": {
-        "thankYou": "Merci pour votre message ! Un conseiller vous répondra sous peu. Pour une réponse immédiate, appelez le +212 652 88 192.",
+        "thankYou": "Merci pour votre message ! Un conseiller vous répondra sous peu. Pour une réponse immédiate, appelez le +212 652 88 1921.",
         "whatsappRedirect": "Bonjour ! Je souhaite en savoir plus sur l'Évasion Holistique 3 jours au Dakhla Club."
       },
       "placeholders": {
