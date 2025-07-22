@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Phone } from 'lucide-react';
+import { MessageCircle, X, Send, Phone, Bot } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 // TypeScript interfaces
@@ -520,27 +520,29 @@ Souhaitez-vous modifier le nombre d'adultes ?`, false, true, [
       {/* WhatsApp Floating Button */}
       {!isOpen && (
         <div className="relative">
-        <button
-          onClick={handleOpenChat}
-          className="w-16 h-16 bg-[#458b8b] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-          style={{
-            animation: 'softGlow 2s ease-in-out infinite alternate'
-          }}
-        >
-          {/* Clean pill-shaped chat bubble like your second image */}
-          <div className="w-8 h-4 bg-white rounded-full flex items-center justify-center relative">
-            {/* Small tail */}
-            <div className="absolute -bottom-0.5 left-1.5 w-1.5 h-1.5 bg-white rounded-full transform rotate-45 translate-y-0.5"></div>
+          <button
+            onClick={handleOpenChat}
+            className="w-16 h-16 bg-[#458b8b] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            style={{
+              animation: 'softGlow 2s ease-in-out infinite alternate'
+            }}
+          >
+            {/* Robot Icon */}
+            <Bot size={28} className="text-white" />
+          </button>
+          
+          {/* Notification Badge */}
+          <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+            <span className="text-white text-xs font-bold">1</span>
           </div>
-        </button>
-        
-        <style jsx>{`
-          @keyframes softGlow {
-            0% { box-shadow: 0 4px 8px rgba(45, 90, 90, 0.3); }
-            100% { box-shadow: 0 6px 20px rgba(45, 90, 90, 0.5), 0 0 0 4px rgba(45, 90, 90, 0.1); }
-          }
-        `}</style>
-      </div>
+          
+          <style jsx>{`
+            @keyframes softGlow {
+              0% { box-shadow: 0 4px 8px rgba(45, 90, 90, 0.3); }
+              100% { box-shadow: 0 6px 20px rgba(45, 90, 90, 0.5), 0 0 0 4px rgba(45, 90, 90, 0.1); }
+            }
+          `}</style>
+        </div>
       )}
 
       {/* Chat Interface */}
