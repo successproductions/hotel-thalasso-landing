@@ -43,7 +43,7 @@ export function Footer() {
               <a href="mailto:reservation@dakhlaclub.com">reservation@dakhlaclub.com</a>
             </li>
             <li className="hover:underline font-trajan cursor-pointer">
-              <a href="tel:+21265288192">+212 6652881921</a>
+              <a href="tel:+21265288192">+212 652881921</a>
             </li>
           </ul>
         </div>
