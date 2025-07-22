@@ -349,20 +349,20 @@
       "title2": "ÉVASION HOLISTIQUE À DAKHLA",
       "description": "Une cure premium au bord de l’Atlantique, pour celles et ceux qui veulent aller mieux… durablement",
       "duration":"Durée",
-      "days": "5 Jours",
+      "days": "5 Nuits",
       "callButton":" Je veux vivre  l’expérience",
       "Check-in":"Arrivée",
       "Check-out":"Départ",
       "bookingValidation": {
         "invalidDurationTitle": "Durée de séjour invalide",
-        "invalidDurationText": "Votre séjour doit être exactement de 6 jours. Veuillez ajuster vos dates.",
+        "invalidDurationText": "Votre séjour doit être exactement de 5 Nuits. Veuillez ajuster vos dates.",
         "confirmButton": "OK"
       }
     },
     "healthProgram": {
       "title": "Dakhla is calling… Êtes-vous prêts à recharger vos batteries ?",
       "title2":       "Une cure puissante et progressive, conçue pour un reset profond",
-      "description1": "Dans un cadre sauvage et pur, entre mer, désert et lumière, nous avons conçu un parcours de 5 jours pour vous offrir bien plus qu’un simple moment de détente : une reconnexion durable à votre vitalité intérieure."
+      "description1": "Dans un cadre sauvage et pur, entre mer, désert et lumière, nous avons conçu un parcours de 5 Nuits pour vous offrir bien plus qu’un simple moment de détente : une reconnexion durable à votre vitalité intérieure."
     },
     "about":{
 "title":       "Pour qui est ce séjour ?",
@@ -379,7 +379,7 @@
   "programSection": {
     "header": {
       "title":             "LE PROGRAMME",
-      "subheading":        "Marine Serenity Retreat – 6 Days to Regenerate Your Body and Mind",
+      "subheading":        "Marine Serenity Retreat – 5 Nuits to Regenerate Your Body and Mind",
       "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
       "jour":              "Jour",
       "activitiesTitle":   "Soins inclus :",
@@ -477,7 +477,7 @@
     },
     "items": [
       {
-        "question": "Qu’est-ce que je vais vivre pendant ces 7 nuits au Dakhla Club ?",
+        "question": "Qu’est-ce que je vais vivre pendant ces 5 nuits au Dakhla Club ?",
         "answer": "Vous allez vivre une véritable reconnexion à vous-même grâce à une combinaison de soins relaxants, d’expériences sensorielles et d’un cadre naturel exceptionnel entre désert et océan."
       },
       {
@@ -500,20 +500,20 @@
   },
   "chatbot5": {
     "welcome": {
-      "greeting": "👋 Bonjour ! Je suis votre assistant personnel pour l'**Évasion Holistique 5 Jours** au Dakhla Club.",
+      "greeting": "👋 Bonjour ! Je suis votre assistant personnel pour l'**Évasion Holistique 5 Nuits** au Dakhla Club.",
       "requestInfo": "Pour mieux vous aider, pouvez-vous me donner votre nom et numéro de téléphone ?",
       "format": "Format : **Nom Prénom** suivi de votre **numéro de téléphone**\nExemple : Marie Dupont - 0612345678"
     },
     "menu": {
       "title": "🌟 **Que souhaitez-vous découvrir ?**",
       "options": {
-        "program": "Programme détaillé 5 jours",
+        "program": "Programme détaillé 5 Nuits",
         "booking": " Réserver maintenant",
         "info": " Informations pratiques"
       }
     },
     "program": {
-      "title": "🌟 **Programme Évasion Holistique 7 Jours**\n\nUn voyage complet de transformation corps-esprit :",
+      "title": "🌟 **Programme Évasion Holistique 7 Nuits**\n\nUn voyage complet de transformation corps-esprit :",
       "day1": {
         "title": "**🌅 Jour 1 - Arrivée au Dakhla Club**",
         "activities": "• Accueil personnalisé\n• Infusion d'ancrage\n• Installation bungalow\n• Début en douceur dans un environnement pur",
@@ -552,18 +552,18 @@
       "followUp": "**✨ Résultat :** Une transformation complète en 7 jours (6 nuits) pour retrouver votre énergie et votre équilibre naturel !"
     },
           "booking": {
-      "decision": "🎉 **Excellente décision !** Vous vous offrez 6 nuits de transformation holistique.",
+      "decision": "🎉 **Excellente décision !** Vous vous offrez 5 nuits de transformation holistique.",
       "needInfo": "Pour préparer votre réservation, j'ai besoin de quelques informations :",
       "askDate": "📅 **Quelle est votre date d'arrivée souhaitée ?**",
       "dateFormat": "**Format :** AAAA-MM-JJ",
       "example": "**Exemple :**",
-      "note": "**Note :** Le séjour dure exactement 6 nuits consécutives (7 jours).",
+      "note": "**Note :** Le séjour dure exactement 5 nuits consécutives (7 jours).",
       "invalidDate": "❌ La date doit être au format AAAA-MM-JJ et ne peut pas être dans le passé.",
-      "dateSet": "✅ **Date d'arrivée confirmée :** {checkIn}\n📅 **Date de départ automatique :** {checkOut}\n🌙 **Durée :** 6 nuits d'évasion holistique (7 jours)",
+      "dateSet": "✅ **Date d'arrivée confirmée :** {checkIn}\n📅 **Date de départ automatique :** {checkOut}\n🌙 **Durée :** 5 nuits d'évasion holistique (7 jours)",
       "askAdults": "👥 **Combien d'adultes participeront à cette évasion ?**"
     },
     "info": {
-      "title": "ℹ️ **Informations Pratiques - Évasion 7 Jours**",
+      "title": "ℹ️ **Informations Pratiques - Évasion 7 Nuits**",
       "details": "**📍 Lieu :** Dakhla Club, Point de Dragon PK28\n**⏰ Durée :** 7 jours / 6 nuits\n**🏠 Hébergement :** Inclus en pension complète\n**🍽️ Repas :** Cuisine santé et détox\n**👥 Capacité :** Groupes de 2 à 8 personnes\n**📞 Contact :** +212 652 881 921"
     },
     "testimonials": {
@@ -577,7 +577,7 @@
       "ready": "**Parfait pour votre évasion holistique !**"
     },
     "benefits": {
-      "title": "🌟 **Bénéfices de l'Évasion 7 Jours :**",
+      "title": "🌟 **Bénéfices de l'Évasion 5 Nuits :**",
       "physical": "**💪 Physique :** Détoxification profonde, regain d'énergie, amélioration du sommeil, renforcement immunitaire",
       "mental": "**🧠 Mental :** Réduction du stress, clarté mentale, équilibre émotionnel, confiance retrouvée",
       "lasting": "**⏳ Durable :** Nouvelles habitudes saines, outils de bien-être, suivi personnalisé post-séjour",
@@ -617,7 +617,7 @@
 }
   },
   "servicesTable5": {
-  "header": "PROGRAMME ÉVASION HOLISTIQUE 7 JOURS – DAKHLA",
+  "header": "PROGRAMME ÉVASION HOLISTIQUE 5 NUITS – DAKHLA",
   "servicesLabel": "Prestations",
   "programs": [
     "Jour 1",

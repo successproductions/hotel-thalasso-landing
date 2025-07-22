@@ -346,20 +346,20 @@
     "title2": "WELCOME TO DAKHLACLUB",
     "description": "A premium retreat by the Atlantic Ocean, for those ready to feel better… for good.",
     "duration":"Duration",
-    "days": "5 Days",
+    "days": "5 Nights",
     "callButton":" I Want To Live The Experience",
     "Check-in":"Check-in",
     "Check-out":"Check-out",
     "bookingValidation": {
       "invalidDurationTitle": "Invalid Stay Duration",
-      "invalidDurationText": "Your stay must be exactly 6 days. Please adjust your dates.",
+      "invalidDurationText": "Your stay must be exactly 5 Nights. Please adjust your dates.",
       "confirmButton": "OK"
     }
   },
   "healthProgram": {
     "title": "Dakhla is calling… Are you ready to refuel your energy?",
     "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
-    "description1": "Set in a wild and pure environment between ocean, desert, and light, this 5-day journey offers far more than relaxation — it's a long-lasting reconnection with your inner vitality."
+    "description1": "Set in a wild and pure environment between ocean, desert, and light, this 5 Nights journey offers far more than relaxation — it's a long-lasting reconnection with your inner vitality."
   },
   "about":{
   "title":       "Who is this retreat for?",
@@ -376,7 +376,7 @@
   "programSection": {
     "header": {
       "title": "THE PROGRAM",
-      "subheading": "Marine Serenity Retreat – 6 Days to Regenerate Your Body and Mind",
+      "subheading": "Marine Serenity Retreat – 5 Nights to Regenerate Your Body and Mind",
       "description": "A holistic journey to your complete well-being in the unique universe of Dakhla",
       "jour": "Day",
       "activitiesTitle": "Included treatments:",
@@ -526,7 +526,7 @@
   },
 "chatbot5": {
     "welcome": {
-      "greeting": "👋 Hello! I'm your personal assistant for the **5-Day Holistic Escape** at Dakhla Club.",
+      "greeting": "👋 Hello! I'm your personal assistant for the **5-Nights Holistic Escape** at Dakhla Club.",
       "requestInfo": "To better assist you, could you please provide your name and phone number?",
       "format": "Format: **First Last Name** followed by your **phone number**\nExample: Marie Dupont 0612345678"
     },
@@ -575,26 +575,26 @@
         "activities": "• Closing ritual\n• Integration tips\n• Wellness journal to take home\n• Departure with deep serenity",
         "objective": "**Objective:** Integrate benefits for a transformed return"
       },
-      "followUp": "**✨ Result:** Complete transformation in 7 days (6 nights) to regain your energy and natural balance!"
+      "followUp": "**✨ Result:** Complete transformation in 7 days (5 nights) to regain your energy and natural balance!"
     },
     "booking": {
-      "decision": "🎉 **Excellent choice!** You're treating yourself to 6 nights of holistic transformation.",
+      "decision": "🎉 **Excellent choice!** You're treating yourself to 5 nights of holistic transformation.",
       "needInfo": "To prepare your reservation, I need some information:",
       "askDate": "📅 **What is your desired arrival date?**",
       "dateFormat": "**Format:** YYYY-MM-DD",
       "example": "**Example:**",
       "note": "**Note:** The stay lasts exactly 6 consecutive nights (7 days).",
       "invalidDate": "❌ The date must be in YYYY-MM-DD format and cannot be in the past.",
-      "dateSet": "✅ **Arrival date confirmed:** {checkIn}\n📅 **Automatic departure date:** {checkOut}\n🌙 **Duration:** 6 nights of holistic escape (7 days)",
+      "dateSet": "✅ **Arrival date confirmed:** {checkIn}\n📅 **Automatic departure date:** {checkOut}\n🌙 **Duration:** 5 nights of holistic escape (7 days)",
       "askAdults": "👥 **How many adults will participate in this escape?**"
     },
     "info": {
       "title": "ℹ️ **Practical Information - 7-Day Escape**",
-      "details": "**📍 Location:** Dakhla Club, Point de Dragon PK28\n**⏰ Duration:** 7 days / 6 nights\n**🏠 Accommodation:** Included with full board\n**🍽️ Meals:** Health and detox cuisine\n**👥 Capacity:** Groups of 2 to 8 people\n**📞 Contact:** +212 652 881 921\n**💳 Payment:** 30% deposit upon booking"
+      "details": "**📍 Location:** Dakhla Club, Point de Dragon PK28\n**⏰ Duration:** 7 days / 6 nights\n**🏠 Accommodation:** Included with full board\n**🍽️ Meals:** Health and detox cuisine\n**👥 Capacity:** Groups of 2 to 8 people\n**📞 Contact:** +212 652 881 921"
     },
     "testimonials": {
       "title": "🌟 **What our clients say:**",
-      "reviews": "**Sarah, 34 years old:** *\"The 7 days literally changed my life. I feel completely regenerated!\"*\n\n**Marc, 42 years old:** *\"An exceptional program over 6 nights. The therapists are remarkably professional.\"*\n\n**Fatima, 38 years old:** *\"I found my energy and joy of living again. This week of transformation is magical!\"*",
+      "reviews": "**Sarah, 34 years old:** *\"The 7 days literally changed my life. I feel completely regenerated!\"*\n\n**Marc, 42 years old:** *\"An exceptional program over 5 nights. The therapists are remarkably professional.\"*\n\n**Fatima, 38 years old:** *\"I found my energy and joy of living again. This week of transformation is magical!\"*",
       "convinced": "**Are you convinced by these testimonials?**"
     },
     "weather": {
@@ -631,7 +631,7 @@
   "chooseToday": "Please choose a date from today onwards."
 },
 "messages": {
-  "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 652 88 192.",
+  "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 65288192.",
   "whatsappRedirect": "Hello! I would like to know more about the 7-day Holistic Escape at Dakhla Club."
 },
 "placeholders": {
