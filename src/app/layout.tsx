@@ -1,17 +1,10 @@
-
-import './globals.css'
 import type { ReactNode } from 'react'
 
 interface RootLayoutProps {
   children: ReactNode
 }
 
+// This root layout is required and minimal
 export default function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <html lang="fr">   
-      <body>
-        {children}
-      </body>
-    </html>
-  )
+  return children;
 }

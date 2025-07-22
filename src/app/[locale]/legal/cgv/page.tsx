@@ -1,21 +1,6 @@
+'use client';
 import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  
-  return {
-    title: locale === 'fr' ? 'Conditions Générales de Vente - Dakhla Club' : 'Terms of Sale - Dakhla Club',
-    description: locale === 'fr' 
-      ? 'Conditions générales de vente du site Dakhla Club - Spa & Thalassothérapie'
-      : 'Terms of sale for Dakhla Club website - Spa & Thalassotherapy',
-  };
-}
 
 export default function CGVPage() {
   const t = useTranslations('legal.cgv');

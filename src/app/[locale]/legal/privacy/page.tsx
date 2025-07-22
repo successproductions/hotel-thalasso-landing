@@ -1,21 +1,6 @@
+'use client';
 import { useTranslations } from 'next-intl';
-import { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  
-  return {
-    title: locale === 'fr' ? 'Politique de Confidentialité - Dakhla Club' : 'Privacy Policy - Dakhla Club',
-    description: locale === 'fr' 
-      ? 'Politique de confidentialité du site Dakhla Club - Protection des données personnelles'
-      : 'Privacy policy for Dakhla Club website - Personal data protection',
-  };
-}
 
 export default function PrivacyPage() {
   const t = useTranslations('legal.privacy');
