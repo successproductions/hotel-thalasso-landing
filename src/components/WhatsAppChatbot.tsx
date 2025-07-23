@@ -80,7 +80,7 @@ const sendReservationToSheets = async (userInfo: UserInfo, bookingData: BookingD
 
 
 const generateSessionId = (): string => {
-  return `chatbot_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  return `chatbot_3_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 };
 
 
