@@ -204,7 +204,7 @@ const WhatsAppChatbot: React.FC = () => {
         case 'program':
           addMessage(t('program.title'), false);
           setTimeout(() => {
-            const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n${t('program.day1.objective')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n${t('program.day2.objective')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}\n${t('program.day3.objective')}\n\n${t('program.day4.title')}\n${t('program.day4.activities')}\n${t('program.day4.objective')}`;
+            const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}\n\n${t('program.day4.title')}\n${t('program.day4.activities')}`;
             
             addMessage(programText, false);
             setTimeout(() => {

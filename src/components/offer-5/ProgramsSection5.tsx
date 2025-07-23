@@ -11,12 +11,12 @@ export function ProgramsSection5() {
   
   const dayImages = [
     '/images/6 (1).png',     
-    '/images/Piscine_thermale.png',        
-    '/images/modelage.jpg',     
-    '/images/Salle-de-massage.png',
-    '/images/Salle-de-massage.png' ,
-    '/images/Salle-de-massage.png' ,
-    '/images/Salle-de-massage.png'    
+    '/images/6 (1).png',        
+    '/images/6 (1).png',     
+    '/images/6 (1).png',
+    '/images/6 (1).png' ,
+    '/images/6 (1).png' ,
+    '/images/6 (1).png'    
   ];
   
   const programs = days.map((dayNum, index) => {
