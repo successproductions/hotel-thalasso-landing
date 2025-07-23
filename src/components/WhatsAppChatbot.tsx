@@ -29,6 +29,11 @@ interface BookingData {
   checkOutDate: string;
   adults: number;
 }
+//check is mobile chatbot
+const isMobile = (): boolean => {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+         window.innerWidth <= 768;
+};
 
 const sendReservationToSheets = async (userInfo: UserInfo, bookingData: BookingData, sessionId: string) => {
   try {
@@ -235,30 +240,39 @@ const WhatsAppChatbot: React.FC = () => {
     addMessage("🔄 Redirection vers le système de réservation...", false);
     setTimeout(() => {
       const bookingUrl = generateBookingUrl(bookingData);
-      window.open(bookingUrl, '_blank');
-      addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
       
-      // Envoyer les données de réservation via l'API route (sans CORS)
+      // 🆕 Logique différente selon le device
+      if (isMobile()) {
+        // Sur mobile : redirection dans la même page
+        addMessage("📱 Redirection en cours...", false);
+        window.location.href = bookingUrl;
+      } else {
+        // Sur desktop : nouvel onglet (comme avant)
+        window.open(bookingUrl, '_blank');
+        addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
+      }
+      
+      // Envoyer les données de réservation (inchangé)
       sendReservationToSheets(userInfo, bookingData, sessionId)
         .then((result) => {
           if (result.status === 'success') {
             console.log('✅ Données sauvegardées avec succès');
-            // Optionnel: Afficher un message de confirmation
-            setTimeout(() => {
-              addMessage("📊 Vos informations ont été enregistrées avec succès!", false);
-            }, 2000);
+            if (!isMobile()) { // Seulement afficher sur desktop
+              setTimeout(() => {
+                addMessage("📊 Vos informations ont été enregistrées avec succès!", false);
+              }, 2000);
+            }
           } else {
             console.error('❌ Erreur lors de la sauvegarde:', result.message);
-            // Gérer l'erreur de manière gracieuse sans interrompre l'UX
           }
         })
         .catch((error) => {
           console.error('❌ Erreur réseau:', error);
-          // Continuer sans interrompre l'expérience utilisateur
         });
       
-      setTimeout(() => {
-        addMessage(`📋 **Récapitulatif de votre réservation :**
+      if (!isMobile()) { // Récapitulatif seulement sur desktop
+        setTimeout(() => {
+          addMessage(`📋 **Récapitulatif de votre réservation :**
 👤 ${userInfo.name}
 📞 ${userInfo.phone}
 📅 Arrivée : ${bookingData.checkInDate}
@@ -266,7 +280,8 @@ const WhatsAppChatbot: React.FC = () => {
 👥 ${bookingData.adults} adulte(s)
 
 Un conseiller vous contactera pour confirmer les détails !`, false);
-      }, 1500);
+        }, 1500);
+      }
     }, 1500);
   } else {
     addMessage("❌ Veuillez d'abord choisir vos dates d'arrivée.", false);
