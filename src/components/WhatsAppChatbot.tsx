@@ -441,12 +441,12 @@ Ils pourront vous proposer des solutions adaptées à votre groupe !`, false);
   };
 
   const handleDirectCall = (): void => {
-    window.open('tel:+212665288192', '_self');
+    window.open('tel:+212652881921', '_self');
   };
 
   const handleWhatsAppRedirect = (): void => {
     const message = encodeURIComponent(t('messages.whatsappRedirect'));
-    window.open(`https://wa.me/212665288192?text=${message}`, '_blank');
+    window.open(`https://wa.me/212652881921?text=${message}`, '_blank');
   };
 
   // Handle message sending with proper date validation
