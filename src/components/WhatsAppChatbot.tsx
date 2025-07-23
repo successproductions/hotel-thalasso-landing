@@ -308,7 +308,6 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
             setTimeout(() => {
               addMessage(t('testimonials.convinced'), false, true, [
                 { text: t('actions.reserve'), value: "booking" },
-                { text: "J'ai encore des questions", value: "questions" },
                 { text: "Parler à un expert", value: "advisor" }
               ]);
             }, 2000);
@@ -347,15 +346,39 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
           }, 1000);
           break;
           
-        case 'advisor':
-          addMessage(t('advisor.title'), false);
-          setTimeout(() => {
-            const advisorText = t('advisor.contact')
-              .replace('{name}', userInfo.name)
-              .replace('{phone}', userInfo.phone);
-            addMessage(advisorText, false);
-          }, 1000);
-          break;
+          case 'advisor':
+  addMessage(t('advisor.title'), false);
+  setTimeout(() => {
+    // First, try to get the translation
+    let advisorText;
+    try {
+      advisorText = t('advisor.contact');
+      
+      if (advisorText.startsWith('chatbot.advisor.contact') || advisorText === 'advisor.contact') {
+        advisorText = `📞 **Ligne directe** : +212 652881921
+💬 **WhatsApp Business** : +212 652881921
+📧 **Email** : reservation@dakhlaclub.com`;
+      } else {
+        // Translation successful, replace placeholders
+        advisorText = advisorText
+          .replace('{name}', userInfo.name)
+          .replace('{phone}', userInfo.phone);
+      }
+    } catch (error) {
+      console.error('Translation error for advisor.contact:', error);
+      // Fallback to hardcoded text
+      advisorText = `📞 **Ligne directe** : +212 652881921
+💬 **WhatsApp Business** : +212 652881921
+📧 **Email VIP** : reservation@dakhlaclub.com
+
+Vos informations seront transmises :
+👤 ${userInfo.name}
+📞 ${userInfo.phone}`;
+    }
+    
+    addMessage(advisorText, false);
+  }, 1000);
+  break;
           
         case 'questions':
           addMessage(t('faq.title'), false);

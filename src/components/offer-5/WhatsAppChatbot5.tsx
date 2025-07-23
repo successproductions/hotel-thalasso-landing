@@ -307,7 +307,6 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
             setTimeout(() => {
               addMessage(t('testimonials.convinced'), false, true, [
                 { text: t('actions.reserve'), value: "booking" },
-                { text: "J'ai encore des questions", value: "questions" },
                 { text: "Parler à un expert", value: "advisor" }
               ]);
             }, 2000);
@@ -357,7 +356,7 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
       if (advisorText.startsWith('offer5.chatbot5.advisor.contact') || advisorText === 'advisor.contact') {
         advisorText = `📞 **Ligne directe** : +212 652881921
 💬 **WhatsApp Business** : +212 652881921
-📧 **Email** : concierge@dakhlaclub.com`;
+📧 **Email** : reservation@dakhlaclub.com`;
       } else {
         // Translation successful, replace placeholders
         advisorText = advisorText
@@ -369,7 +368,7 @@ Un conseiller vous contactera pour confirmer les détails !`, false);
       // Fallback to hardcoded text
       advisorText = `📞 **Ligne directe** : +212 652881921
 💬 **WhatsApp Business** : +212 652881921
-📧 **Email VIP** : concierge@dakhlaclub.com
+📧 **Email VIP** : reservation@dakhlaclub.com
 
 Vos informations seront transmises :
 👤 ${userInfo.name}
@@ -433,10 +432,8 @@ Vos informations seront transmises :
           addMessage(`✅ **Réservation mise à jour !**`, false);
           setTimeout(() => {
             addMessage(`📅 **Arrivée :** ${updatedDates.checkInDate}
-📅 **Départ :** ${updatedDates.checkOutDate}
-👥 **Adultes :** ${updatedDates.adults}
-
-Tout est parfait ?`, false, true, [
+                 📅 **Départ :** ${updatedDates.checkOutDate}
+                 👥 **Adultes :** ${updatedDates.adults} Tout est parfait ?`, false, true, [
               { text: "✅ Oui, réserver maintenant", value: "confirm_booking" },
               { text: "👥 Modifier encore", value: "change_adults" }
             ]);
