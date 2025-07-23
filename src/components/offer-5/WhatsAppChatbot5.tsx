@@ -29,6 +29,11 @@ interface BookingData {
   checkOutDate: string;
   adults: number;
 }
+//check is mobile chatbot
+const isMobile = (): boolean => {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+         window.innerWidth <= 768;
+};
 
 const sendReservationToSheets = async (userInfo: UserInfo, bookingData: BookingData, sessionId: string) => {
   try {
@@ -205,7 +210,7 @@ const WhatsAppChatbot5: React.FC = () => {
   addMessage(t('program.title'), false);
   setTimeout(() => {
     // Show all 7 days instead of just 4
-    const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n${t('program.day1.objective')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n${t('program.day2.objective')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}\n${t('program.day3.objective')}\n\n${t('program.day4.title')}\n${t('program.day4.activities')}\n${t('program.day4.objective')}\n\n${t('program.day5.title')}\n${t('program.day5.activities')}\n${t('program.day5.objective')}\n\n${t('program.day6.title')}\n${t('program.day6.activities')}\n${t('program.day6.objective')}\n\n${t('program.day7.title')}\n${t('program.day7.activities')}\n${t('program.day7.objective')}`;
+    const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}\n\n${t('program.day4.title')}\n${t('program.day4.activities')}\n\n${t('program.day5.title')}\n${t('program.day5.activities')}\n\n${t('program.day6.title')}\n${t('program.day6.activities')}\n\n${t('program.day7.title')}\n${t('program.day7.activities')}`;
     
     addMessage(programText, false);
     setTimeout(() => {
@@ -236,8 +241,16 @@ const WhatsAppChatbot5: React.FC = () => {
     addMessage("🔄 Redirection vers le système de réservation...", false);
     setTimeout(() => {
       const bookingUrl = generateBookingUrl(bookingData);
-      window.open(bookingUrl, '_blank');
-      addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
+// 🆕 Logique différente selon le device
+if (isMobile()) {
+  // Sur mobile : redirection dans la même page
+  addMessage("📱 Redirection en cours...", false);
+  window.location.href = bookingUrl;
+} else {
+  // Sur desktop : nouvel onglet (comme avant)
+  window.open(bookingUrl, '_blank');
+  addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
+}
       
       // Envoyer les données de réservation via l'API route (sans CORS)
       sendReservationToSheets(userInfo, bookingData, sessionId)
