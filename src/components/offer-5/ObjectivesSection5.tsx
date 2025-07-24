@@ -8,11 +8,11 @@ export function ObjectivesSection5() {
 
   const images = [
     {
-      image: "/images/cure-detox-maroc.jpg",
+      image: "/images/cure-detox-maroc5.jpg",
       alt: "spa entre désert et océan",
     },
     {
-      image: "/images/sejour-bien-etre-dakhla.jpg", 
+      image: "/images/sejour-bien-etre-dakhla5.jpg", 
       alt: "retraite spirituelle Maroc",
     },
   ]

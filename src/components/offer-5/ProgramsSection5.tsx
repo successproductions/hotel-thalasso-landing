@@ -16,7 +16,7 @@ export function ProgramsSection5() {
     '/images/Brown.png',
     '/images/facecare.png' ,
     '/images/relaxing_massage.png' ,
-    '/images/6 (1).png'    
+    '/images/IMG_2150 (1).png'    
   ];
   
   const programs = days.map((dayNum, index) => {
