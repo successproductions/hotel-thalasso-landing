@@ -11,7 +11,7 @@ export function NewsletterSection5() {
   return (
     <section id="contact"
       className="relative h-[400px] md:h-[500px] bg-center bg-cover"
-      style={{ backgroundImage: `url("/images/Piscine_thermale.png")` }}
+      style={{ backgroundImage: `url("/images/IMG_2150 (1).png")` }}
     >
       {/* dark overlay */}
       <div className="absolute inset-0 bg-black/60" />

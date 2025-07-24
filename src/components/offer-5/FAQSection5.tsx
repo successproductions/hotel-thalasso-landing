@@ -88,14 +88,14 @@ export default function FAQ5() {
             <motion.div className="lg:col-span-2" variants={imageVariants}>
               <div className="sticky top-8">
                 <motion.div className="relative group" whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
-                  <div className="absolute -inset-4 bg-slate-200 dark:bg-slate-700 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                  <div className="absolute -inset-4  dark:bg-slate-700 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <Image
-                      src="/images/centrethalassoDakhla.jpg"
+                      src="/images/sauna_ritual.png"
                       alt={contact.alt}
                       width={600}
                       height={400}
-                      className="object-cover w-full h-90 filter contrast-110"
+                      className="object-cover w-full h-90 md:h-[38vh] filter contrast-110"
                     />
                   </div>
                 </motion.div> 
