@@ -10,12 +10,12 @@ export function ProgramsSection5() {
   const days = ['1', '2', '3', '4','5','6','7'];
   
   const dayImages = [
-    '/images/6 (1).png',     
-    '/images/6 (1).png',        
-    '/images/6 (1).png',     
-    '/images/6 (1).png',
-    '/images/6 (1).png' ,
-    '/images/6 (1).png' ,
+    '/images/0070.png',     
+    '/images/Piscine_thermale.png',        
+    '/images/InternationalYogaDay.png',     
+    '/images/Brown.png',
+    '/images/facecare.png' ,
+    '/images/relaxing_massage.png' ,
     '/images/6 (1).png'    
   ];
   
