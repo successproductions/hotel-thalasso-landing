@@ -106,7 +106,7 @@ export function ProgramsSection5() {
                   alt={`${t('header.jour')} ${program.dayNumber} - ${program.title}`}
                   width={600}
                   height={400}
-                  className="rounded-lg object-cover md:h-[45vh] w-full shadow-lg"
+                  className="rounded-lg object-cover h-[39vh] md:h-[47vh] w-full shadow-lg"
                 />
               </div>
 
