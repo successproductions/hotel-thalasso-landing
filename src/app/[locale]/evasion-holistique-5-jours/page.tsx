@@ -56,7 +56,7 @@ export async function generateMetadata({
       type: 'website',
       images: [
         {
-          url: `${baseUrl}/images/cure-detox-maroc.jpg`,
+          url: `${baseUrl}/images/cure-thalasso-maroc.jpg`,
           width: 1200,
           height: 630,
           alt: currentMeta.title,
@@ -70,7 +70,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: currentMeta.title,
       description: currentMeta.description,
-      images: [`${baseUrl}/images/cure-detox-maroc.jpg`],
+      images: [`${baseUrl}/images/cure-thalasso-maroc.jpg`],
     },
     
     alternates: {
