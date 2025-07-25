@@ -83,7 +83,7 @@ export default function FAQ5() {
           </motion.div>
 
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-5 gap-16 items-start">
+          <div className="grid lg:grid-cols-5 gap-5 md:gap-10 items-start">
             {/* Image Section - Left Side */}
             <motion.div className="lg:col-span-2" variants={imageVariants}>
               <div className="sticky top-8">
