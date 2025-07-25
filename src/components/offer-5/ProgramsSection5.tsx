@@ -10,13 +10,14 @@ export function ProgramsSection5() {
   const days = ['1', '2', '3', '4','5','6','7'];
   
   const dayImages = [
+    '/images/IMG_2150 (1).png',
     '/images/THERMALE.png',     
-    '/images/PISCINE_THERMALE_.png',        
-    '/images/massagedc.png',     
     '/images/Brown-1.png',
+    '/images/relaxing_massage-1.png' , 
+    '/images/massagedc.png',       
     '/images/BAIN_HYDRO.png' ,
-    '/images/relaxing_massage-1.png' ,
-    '/images/IMG_2150 (1).png'    
+    '/images/PISCINE_THERMALE_.png'
+
   ];
   
   const programs = days.map((dayNum, index) => {
@@ -106,7 +107,7 @@ export function ProgramsSection5() {
                   alt={`${t('header.jour')} ${program.dayNumber} - ${program.title}`}
                   width={600}
                   height={400}
-                  className="rounded-lg object-cover h-[39vh] lg:h-[85vh] xl:h-[67vh] w-full shadow-lg"
+                  className="rounded-lg object-cover h-[39vh] md:h-[77] lg:h-[85vh] xl:h-[64vh] w-full shadow-lg"
                 />
               </div>
 

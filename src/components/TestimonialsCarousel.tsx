@@ -128,7 +128,7 @@ export default function TestimonialsCarousel() {
                     <div className="relative aspect-[4/3] bg-black">
                       <video
                         src={item.videoUrl}
-                        className="w-full md:h-[60vh] object-cover"
+                        className="w-full md:h-[72vh] object-cover"
                         controls
                       />
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
