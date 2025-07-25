@@ -115,8 +115,6 @@ export default function Page() {
             <NewsletterSection5/>
             <Footer/>
             <WhatsAppChatbot5/>
-
-            
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
