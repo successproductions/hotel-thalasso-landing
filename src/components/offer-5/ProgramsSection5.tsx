@@ -13,9 +13,9 @@ export function ProgramsSection5() {
     '/images/THERMALE.png',     
     '/images/PISCINE_THERMALE_.png',        
     '/images/massagedc.png',     
-    '/images/Brown.png',
+    '/images/Brown-1.png',
     '/images/BAIN_HYDRO.png' ,
-    '/images/relaxing_massage.png' ,
+    '/images/relaxing_massage-1.png' ,
     '/images/IMG_2150 (1).png'    
   ];
   
