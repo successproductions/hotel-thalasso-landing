@@ -25,7 +25,7 @@ export async function generateMetadata({
   
   const metadata5Days = {
     fr: {
-      title: "Évasion Holistique 5 Jours à Dakhla – Transformation Profonde & Bien-être Complet",
+      title: " Vivez 5 jours de detox, yoga & thalasso à Dakhla. Édition limitée à 10 places – réservez votre bulle bien-être.",
       description: "Vivez 5 jours de transformation holistique au Dakhla Club. Cure détox intensive, yoga, méditation et soins thalasso pour une régénération complète corps et esprit.",
       keywords: "retraite bien-être 5 jours Dakhla, transformation holistique complète, cure détox longue Maroc, séjour thalasso 5 jours, retraite yoga intensive Dakhla, programme wellness complet, détox profonde 5 jours, cure régénérante intensive, retraite spirituelle Maroc, spa intensif désert océan"
     },
