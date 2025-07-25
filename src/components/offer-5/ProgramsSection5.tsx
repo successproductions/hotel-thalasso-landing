@@ -10,11 +10,11 @@ export function ProgramsSection5() {
   const days = ['1', '2', '3', '4','5','6','7'];
   
   const dayImages = [
-    '/images/0070.png',     
-    '/images/Piscine_thermale.png',        
-    '/images/InternationalYogaDay.png',     
+    '/images/THERMALE.png',     
+    '/images/PISCINE_THERMALE_.png',        
+    '/images/massagedc.png',     
     '/images/Brown.png',
-    '/images/facecare.png' ,
+    '/images/BAIN_HYDRO.png' ,
     '/images/relaxing_massage.png' ,
     '/images/IMG_2150 (1).png'    
   ];
