@@ -8,7 +8,7 @@ export function ObjectivesSection() {
 
   const images = [
     {
-      image: "/images/cure-detox-maroc.jpg",
+      image: "/images/sejour-bien-etre-dakhla5.jpg",
       alt: "spa entre désert et océan",
     },
     {

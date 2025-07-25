@@ -59,22 +59,7 @@ export async function generateMetadata({
       siteName: 'Dakhla Club - Évasion Holistique',
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
       type: 'website',
-      images: [
-        {
-          url: `${baseUrl}/images/og-image-${locale}.jpg`,
-          width: 1200,
-          height: 630,
-          alt: messages.meta.description,
-          type: 'image/jpeg'
-        },
-        {
-          url: `${baseUrl}/images/cure-detox-maroc.jpg`,
-          width: 800,
-          height: 600,
-          alt: 'Dakhla Club wellness spa treatments',
-          type: 'image/jpeg'
-        }
-      ],
+      
     },
 
     // Enhanced Twitter Card
@@ -82,7 +67,6 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: messages.meta.title,
       description: messages.meta.description,
-      images: [`${baseUrl}/images/og-image-${locale}.jpg`],
       creator: '@dakhlaclub',
       site: '@dakhlaclub'
     },
@@ -94,14 +78,6 @@ export async function generateMetadata({
         'fr-FR': `${baseUrl}/fr/evasion-holistique-3-jours`,
         'en-US': `${baseUrl}/en/evasion-holistique-3-jours`,
         'x-default': `${baseUrl}/fr/evasion-holistique-3-jours`
-      },
-      types: {
-        'application/rss+xml': [
-          { 
-            url: `${baseUrl}/feed.xml`, 
-            title: 'Dakhla Club Wellness Blog RSS Feed' 
-          }
-        ]
       }
     },
 
@@ -176,7 +152,6 @@ export default async function LocaleLayout({
       "url": locale === "en" ? "https://offer.dakhlaclub.com/en/evasion-holistique-3-jours" : "https://offer.dakhlaclub.com/fr/evasion-holistique-3-jours",
       "logo": "https://offer.dakhlaclub.com/images/LogoDakhla.png",
       "image": [
-        "https://offer.dakhlaclub.com/images/cure-detox-maroc.jpg",
         "https://offer.dakhlaclub.com/images/sejour-bien-etre-dakhla.jpg",
         "https://offer.dakhlaclub.com/images/Piscine_thermale.png"
       ],

@@ -36,21 +36,14 @@ export async function generateMetadata({
       url: currentUrl,
       siteName: 'Dakhla Club - Évasion Holistique 7 Jours',
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: `${baseUrl}/images/cure-detox-maroc.jpg`,
-          width: 1200,
-          height: 630,
-          alt: currentMeta.title,
-        },
-      ],
+      type: 'website'
+      
     },
     twitter: {
       card: 'summary_large_image',
       title: currentMeta.title,
-      description: currentMeta.description,
-      images: [`${baseUrl}/images/cure-detox-maroc.jpg`],
+      description: currentMeta.description
+      
     },
     alternates: {
       canonical: currentUrl,
