@@ -8,7 +8,7 @@ export function About5() {
   const descriptionList = msg.offer5.about.description1 as string[];
 
   return (
-    <section  className=" bg-white">
+    <section id="about" className=" bg-white">
       <div className="mx-auto  grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Text Column */}
         <div className="space-y-4 px-4 xl:px-28">

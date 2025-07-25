@@ -54,13 +54,23 @@ export async function generateMetadata({
       siteName: 'Dakhla Club - Évasion Holistique 5 Jours',
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
       type: 'website',
+      images: [
+        {
+          url: `${baseUrl}/images/cure-detox-maroc.jpg`,
+          width: 1200,
+          height: 630,
+          alt: currentMeta.title,
+          type: 'image/jpeg'
+        }
+      ],
 
     },
     
     twitter: {
       card: 'summary_large_image',
       title: currentMeta.title,
-      description: currentMeta.description
+      description: currentMeta.description,
+      images: [`${baseUrl}/images/cure-detox-maroc.jpg`],
     },
     
     alternates: {
@@ -117,7 +127,16 @@ export default function Page() {
                         "provider": {
                             "@type": "HealthAndBeautyBusiness",
                             "name": "Dakhla Club",
-                            "@id": "https://offer.dakhlaclub.com"
+                            "@id": "https://offer.dakhlaclub.com",
+                            "url": "https://offer.dakhlaclub.com",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "Point de Dragon PK 28",
+                                "addressLocality": "Dakhla",
+                                "postalCode": "73000",
+                                "addressCountry": "MA"
+                            },
+                            "telephone": "+212652881921"
                         },
                         "name": "Évasion Holistique 5 Jours",
                         "alternateName": "5-Day Holistic Transformation Retreat",
