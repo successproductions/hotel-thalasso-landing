@@ -534,9 +534,9 @@
     "menu": {
       "title": "🌟 **What would you like to discover?**",
       "options": {
-        "program": "🗓️ Detailed 5-day program",
-        "booking": "📅 Book now",
-        "info": "ℹ️ Practical information"
+        "program": " Detailed 5-day program",
+        "booking": "Book now",
+        "info": "ℹ Practical information"
       }
     },
     "program": {
@@ -585,9 +585,9 @@
       "dateFormat": "**Format:** YYYY-MM-DD",
       "example": "**Example:**",
       "note": "**Note:** The stay lasts exactly 6 consecutive nights (7 days).",
-      "invalidDate": "❌ The date must be in YYYY-MM-DD format and cannot be in the past.",
-      "dateSet": "✅ **Arrival date confirmed:** {checkIn}\n📅 **Automatic departure date:** {checkOut}\n🌙 **Duration:** 5 nights of holistic escape (7 days)",
-      "askAdults": "👥 **How many adults will participate in this escape?**"
+      "invalidDate": " The date must be in YYYY-MM-DD format and cannot be in the past.",
+      "dateSet": " **Arrival date confirmed:** {checkIn}\n📅 **Automatic departure date:** {checkOut}\n🌙 **Duration:** 5 nights of holistic escape (7 days)",
+      "askAdults": " **How many adults will participate in this escape?**"
     },
     "info": {
       "title": "ℹ️ **Practical Information - 7-Day Escape**",
@@ -628,7 +628,7 @@
     "errors": {
   "incorrectFormat": "Incorrect format. Please respect the format: First Name Last Name - Phone Number",
   "example": "Example: Ahmed Bennani - 0661234567",
-  "pastDate": "❌ Arrival date cannot be in the past.",
+  "pastDate": " Arrival date cannot be in the past.",
   "chooseToday": "Please choose a date from today onwards."
 },
 "messages": {
