@@ -380,7 +380,7 @@
   "programSection": {
     "header": {
       "title":             "LE PROGRAMME",
-      "subheading":        "Séjour Sérénité Marine – 6 jours pour régénérer votre corps et votre esprit.",
+      "subheading":        "Séjour Sérénité Marine – 6 Nuits pour régénérer votre corps et votre esprit.",
       "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
       "jour":              "Jour",
       "activitiesTitle":   "Soins inclus :",
@@ -399,7 +399,7 @@
       "2": {
         "title":        "Lâcher-prise & Équilibre",
                 "description":  "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins.",
-        "activities":   ["Yoga doux au lever du soleil","Piscine thermale","Sauna sec","Piscine thermale ","Gommage au sel de l’Himalaya ","Massage détox au sel"],
+        "activities":   ["Yoga doux au lever du soleil","Sauna sec","Piscine thermale ","Gommage au sel de l’Himalaya ","Massage détox au sel"],
         "objective":    "Libérer le système nerveux, relancer le drainage, préparer à la transformation.",
         "ctaText":      "ENTRER DANS L’UNIVERS"
       },
