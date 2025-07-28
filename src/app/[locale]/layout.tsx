@@ -77,7 +77,7 @@ export async function generateMetadata({
       languages: {
         'fr-FR': `${baseUrl}/fr/evasion-holistique-3-jours`,
         'en-US': `${baseUrl}/en/evasion-holistique-3-jours`,
-        'x-default': `${baseUrl}/fr/evasion-holistique-3-jours`
+        'x-default': `${baseUrl}/fr/evasion-holistique-5-jours`
       }
     },
 
