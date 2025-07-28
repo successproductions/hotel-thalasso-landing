@@ -105,12 +105,12 @@ export default function FAQ5() {
           </motion.div>
 
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-5 gap-5 md:gap-10 items-start">
+          <div className="grid lg:grid-cols-5 gap-2 md:gap-5 items-start">
             {/* Image Section - Left Side */}
             <motion.div className="lg:col-span-2" variants={imageVariants}>
-              <div className="sticky top-8">
+              {/* <div className="sticky top-8"> */}
                 <motion.div className="relative group" whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
-                  <div className="absolute -inset-4  dark:bg-slate-700 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                  {/* <div className="absolute -inset-4  dark:bg-slate-700 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div> */}
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <Image
                       src="/images/sauna_ritual.png"
@@ -121,7 +121,7 @@ export default function FAQ5() {
                     />
                   </div>
                 </motion.div> 
-              </div>
+              {/* </div> */}
             </motion.div>
 
             {/* FAQ Section - Right Side */}
