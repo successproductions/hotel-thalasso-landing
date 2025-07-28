@@ -17,6 +17,20 @@ export default function FAQ5() {
 
   const { contact, items } = messages.offer5.faq
 
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": items.map((item: FAQItem) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,6 +63,14 @@ export default function FAQ5() {
 
   return (
     <section id="faq" className="overflow-hidden">
+      {/* ✅ ADD FAQ SCHEMA MARKUP */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema)
+        }}
+      />
+
       {/* Animated Background */}
       <div className="relative py-12 md:py-14">
         {/* Full-width pale background sliding in from left (same as ProgramsSection) */}
