@@ -136,9 +136,9 @@ export function ProgramsSection5() {
                   {program.title.toUpperCase()}
                 </h3>
                 
-                <p className="text-gray-600 leading-relaxed mb-6">
+                {/* <p className="text-gray-600 leading-relaxed mb-6">
                   {program.description}
-                </p>
+                </p> */}
 
                 {/* Activities - only show if activities exist */}
                 {program.activities && program.activities.length > 0 && (

@@ -117,7 +117,7 @@ export default function FAQ5() {
                       alt={contact.alt}
                       width={600}
                       height={400}
-                      className="object-cover w-full h-90 md:h-[38vh] filter contrast-110"
+                      className="object-cover w-full h-90 md:h-fit filter contrast-110"
                     />
                   </div>
                 </motion.div> 
