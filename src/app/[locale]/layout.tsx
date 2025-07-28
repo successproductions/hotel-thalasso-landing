@@ -27,8 +27,8 @@ export async function generateMetadata({
   const baseUrl = 'https://offer.dakhlaclub.com';
   // FIXED: Ensure proper canonical URLs without www
   const currentUrl = locale === 'en' 
-    ? `${baseUrl}/en/evasion-holistique-3-jours` 
-    : `${baseUrl}/fr/evasion-holistique-3-jours`;
+  ? `${baseUrl}/en/evasion-holistique-5-jours` 
+  : `${baseUrl}/fr/evasion-holistique-5-jours`;
 
   return {
     title: messages.meta.title,
