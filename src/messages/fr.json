@@ -347,7 +347,7 @@
     "home": {
       "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
       "title2": "ÉVASION HOLISTIQUE À DAKHLA",
-      "description": "Une cure puissante et progressive, conçue pour un reset profond.",
+      "description": "Une cure puissante et progressive, conçue pour un reset profond",
       "description2": "Une cure premium au bord de l’Atlantique.",
       "duration":"Durée",
       "days": "5 Nuits",
@@ -726,7 +726,28 @@
     "description": "Paiement possible en 1, 2 ou 3 fois.",
     "nextSession": " Paiement possible en 1, 2 ou 3 fois.",
     "callButton": "Je Réserve Ma Transformation"
-  }
+  },
+  "ProgrammeFonctionne":{
+  "title": " Pourquoi cette cure fonctionne vraiment",
+  "title2": " Ce que vous allez vraiment ressentir",
+  "points":[
+
+    "Vous suivez une logique corporelle et émotionnelle intelligente.",
+    "Chaque jour est structuré pour un effet précis (drainage, réparation, intégration).",
+    "Vous bénéficiez de la méthode Nahed Rachad : une approche transformationnelle corps–cœur–cerveau.",
+    "Vous êtes accompagné(e) par des expertes du soin profond, de l’écoute et de la régénération cellulaire.",
+    "Vous ne suivez pas un soin. Vous suivez un vrai protocole, conçu pour vous remettre en marche."
+  ],
+  "points1":[
+    "Association rare entre soins de pointe, techniques ancestrales et environnement puissant",
+    "Tous nos soins visent à nettoyer, activer, apaiser, relancer"
+  ],
+  "points2":[
+    "Chaque jour suit une logique de progression biologique et émotionnelle",
+    "Vous êtes accompagné(e) par des thérapeutes certifiés et experts en revitalisation holistique"
+
+  ]
+}
   },
 
 
