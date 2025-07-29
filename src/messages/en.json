@@ -714,6 +714,43 @@
 }
 },
 
+"offer7":{
+  "home": {
+    "title": "WELCOME TO DAKHLA CLUB",
+    "title2": "WELCOME TO DAKHLACLUB",
+    "callButton":" I Want To Live The Experience",
+    "Check-in":"Check-in",
+    "Check-out":"Check-out",
+    "bookingValidation": {
+      "invalidDurationTitle": "Invalid Stay Duration",
+      "invalidDurationText": "Your stay must be exactly 7 Nights. Please adjust your dates.",
+      "confirmButton": "OK"
+    }
+  },
+  "healthProgram": {
+    "title": "Dakhla is calling… Are you ready to refuel your energy?",
+    "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
+    "description1": "Set in a wild and pure environment between ocean, desert, and light, this 5 Nights journey offers far more than relaxation — it's a long-lasting reconnection with your inner vitality."
+  },
+  "about":{
+"title":       "Is This Retreat Right For You?",
+    "description1": [
+      "You feel tired, even after rest?",
+      "You carry a heavy body and an overloaded mind?",
+      "You're not looking for just a massage or a spa — you need a structured, powerful, yet gentle reset?",
+      "You want to restore your energy, your digestion, your mental clarity?",
+      "Then yes — this retreat was designed for you."
+    ]
+ 
+  },
+  "exclusiveOffer": {
+    "title": "Exclusive offer – Only 10 spots per session.",
+    "description": "Payment available in 1, 2, or 3 installments. ",
+    "nextSession": " Paiement possible en 1, 2 ou 3 fois.",
+    "callButton": "I book my transformation"
+  }
+},
+
 
 
 "terms": {

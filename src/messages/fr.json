@@ -499,6 +499,8 @@
       }
     ]
   },
+
+
   "chatbot5": {
     "welcome": {
       "greeting": "👋 Bonjour ! Je suis votre assistant personnel pour l'**Évasion Holistique 5 Nuits** au Dakhla Club.",
@@ -687,11 +689,45 @@
   }
 }
   
-
   },
 
 
-
+"offer7":{
+    "home": {
+      "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
+      "title2": "ÉVASION HOLISTIQUE À DAKHLA",
+      "callButton":" Je veux vivre  l’expérience",
+      "Check-in":"Arrivée",
+      "Check-out":"Départ",
+      "bookingValidation": {
+        "invalidDurationTitle": "Durée de séjour invalide",
+        "invalidDurationText": "Votre séjour doit être exactement de 7 Nuits. Veuillez ajuster vos dates.",
+        "confirmButton": "OK"
+      }
+    },
+    "healthProgram": {
+      "title": "Dakhla is calling… Êtes-vous prêts à recharger vos batteries ?",
+      "title2":       "Une cure premium au bord de l’Atlantique, si vous voulez aller mieux… durablement",
+      "description1": "Dans un cadre sauvage et pur, entre mer, désert et lumière, nous avons conçu un parcours de 5 Nuits pour vous offrir bien plus qu’un simple moment de détente : une reconnexion durable à votre vitalité intérieure."
+    },
+    "about":{
+"title":       "Cette cure est définitivement pour vous si ?",
+    "description1": [
+      "Vous êtes fatigué(e), même après le repos ?",
+      "Vous avez cette sensation de lourdeur dans le corps, de saturation dans l’esprit ?",
+      "Vous avez besoin d’un vrai reset – pas d’un massage ou d’un spa, mais d’un programme structuré, puissant et doux à la fois ?",
+      "Vous cherchez à relancer votre énergie, votre digestion, votre clarté mentale ?",
+      "Alors oui. Cette cure a été pensée pour vous."
+    ]
+ 
+  },
+  "exclusiveOffer": {
+    "title": "Édition limitée – 10 places seulement par session.",
+    "description": "Paiement possible en 1, 2 ou 3 fois.",
+    "nextSession": " Paiement possible en 1, 2 ou 3 fois.",
+    "callButton": "Je Réserve Ma Transformation"
+  }
+  },
 
 
 

@@ -10,14 +10,14 @@ export async function generateMetadata({
 
   const metadata7Days = {
     fr: {
-      title: "Évasion Holistique 7 Jours à Dakhla – Bien-être, Détox & Renouveau",
-      description: "Offrez-vous 7 jours d'évasion holistique au Dakhla Club : yoga, méditation, cure détox, soins thalasso et activités bien-être pour une transformation profonde du corps et de l'esprit.",
-      keywords: "retraite bien-être 7 jours Dakhla, cure détox Maroc, séjour thalasso 7 jours, retraite yoga Dakhla, programme wellness Maroc, détox profonde, spa désert océan, transformation holistique, séjour bien-être Maroc, retraite spirituelle Dakhla"
+      title: "7 Nuits de Thalasso Holistique pour Rebooter Votre Corps et Votre Esprit",
+      description: "Offrez à votre corps et à votre esprit une véritable régénération. 7 Nuits – 34 soins – 1 grande transformation",
+      keywords: "retraite bien-être 7 Nuits Dakhla, cure détox Maroc, séjour thalasso 7 Nuits, retraite yoga Dakhla, programme wellness Maroc, détox profonde, spa désert océan, transformation holistique, séjour bien-être Maroc, retraite spirituelle Dakhla"
     },
     en: {
-      title: "7-Day Holistic Escape in Dakhla – Wellness, Detox & Renewal",
-      description: "Enjoy 7 days of holistic escape at Dakhla Club: yoga, meditation, detox cure, thalasso treatments and wellness activities for a deep transformation of body and mind.",
-      keywords: "7-day wellness retreat Dakhla, detox cure Morocco, 7-day thalasso stay, yoga retreat Dakhla, wellness program Morocco, deep detox, desert ocean spa, holistic transformation, wellness stay Morocco, spiritual retreat Dakhla"
+      title: "7-Nights Holistic Thalasso Retreat to Reboot Your Body and Mind",
+      description: "Give your body and mind the deep regeneration they deserve. 7 Nights – 34 treatments – 1 powerful transformation.",
+      keywords: "7-Nights wellness retreat Dakhla, detox cure Morocco, 7-Nights thalasso stay, yoga retreat Dakhla, wellness program Morocco, deep detox, desert ocean spa, holistic transformation, wellness stay Morocco, spiritual retreat Dakhla"
     }
   };
 
@@ -34,7 +34,7 @@ export async function generateMetadata({
       title: currentMeta.title,
       description: currentMeta.description,
       url: currentUrl,
-      siteName: 'Dakhla Club - Évasion Holistique 7 Jours',
+      siteName: 'Dakhla Club - Évasion Holistique 7 Nights',
       locale: locale === 'fr' ? 'fr_FR' : 'en_US',
       type: 'website'
       
@@ -70,11 +70,21 @@ export async function generateMetadata({
 }
 import { Footer } from "@/components/Footer";
 import Header from "@/components/Header";
+import Hero7 from '@/components/offer-7/Hero7';
+import { About7 } from '@/components/offer-7/About7';
+import { RewardsSection } from "@/components/RewardsSection"
+import TestimonialsCarousel from "@/components/TestimonialsCarousel"
+import { NewsletterSection7 } from '@/components/offer-7/NewsletterSection7';
 
 export default function Page() {
   return (
     <>
       <Header />
+      <Hero7/>
+      <About7/>
+      <TestimonialsCarousel/>
+      <RewardsSection/>
+      <NewsletterSection7/>
       <Footer />
     </>
   );
