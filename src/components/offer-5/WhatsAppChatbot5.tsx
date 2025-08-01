@@ -148,7 +148,7 @@ const WhatsAppChatbot5: React.FC = () => {
   const calculateCheckoutDate = (checkInDate: string): string => {
     if (!checkInDate) return '';
     const checkIn = new Date(checkInDate);
-    checkIn.setDate(checkIn.getDate() + 6); // Add 3 days for 3 nights
+    checkIn.setDate(checkIn.getDate() + 5); // Add 3 days for 2 nights
     return checkIn.toISOString().split('T')[0];
   };
 

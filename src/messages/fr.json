@@ -509,43 +509,38 @@
       }
     },
     "program": {
-      "title": "🌟 **Programme Évasion Holistique 7 Nuits**\n\nUn voyage complet de transformation corps-esprit :",
+      "title": "🌟 **5-Night Holistic Escape Program**\n\nA complete mind-body transformation journey:",
       "day1": {
-        "title": "**🌅 Jour 1 - Arrivée au Dakhla Club**",
-        "activities": "• Accueil personnalisé\n• Infusion d'ancrage\n• Installation bungalow\n• Début en douceur dans un environnement pur",
-        "objective": "**Objectif :** Ancrage, respiration, ouverture du corps et de l'esprit"
+        "title": "**🌅 Day 1 - Arrival at Dakhla Club**",
+        "activities": "• Personalized welcome\n• Grounding herbal tea\n• Bungalow check-in with nature/ocean view\n• Gentle start in pristine natural setting",
+        "objective": "**Objective:** Grounding, breathing, opening body and mind"
       },
       "day2": {
-        "title": "**🧘‍♀️ Jour 2 - Lâcher-prise & Équilibre**",
-        "activities": "• Yoga doux au lever du soleil\n• Sauna sec\n• Piscine thermale chauffée\n• Gommage au sel de l'Himalaya\n• Massage détox au sel",
-        "objective": "**Objectif :** Libérer le système nerveux, relancer le drainage"
+        "title": "**🧘‍♀️ Day 2 - Release & Balance**",
+        "activities": "• Gentle sunrise yoga\n• Dry sauna\n• Heated thermal pool\n• Himalayan salt detox scrub\n• 1001 Nights Moroccan hammam",
+        "objective": "**Objective:** Free the nervous system, activate drainage, prepare for transformation"
       },
       "day3": {
-        "title": "**💆‍♀️ Jour 3 - Oxygénation & Régénération**",
-        "activities": "• Yoga respiration & énergie\n• Bol d'Air Jacquier\n• Douche à jet\n• Bain hydromassant\n• Enveloppement aux algues\n• Modelage sous affusion",
-        "objective": "**Objectif :** Stimuler les cellules, détoxifier en profondeur"
+        "title": "**💆‍♀️ Day 3 - Oxygenation & Regeneration**",
+        "activities": "• Breathwork & energizing yoga\n• Bol d'Air Jacquier\n• Jet shower\n• Hydromassage bath\n• Seaweed body wrap\n• Affusion massage",
+        "objective": "**Objective:** Stimulate cells, eliminate toxins, reconnect to the living body"
       },
       "day4": {
-        "title": "**🌊 Jour 4 - Sérénité & Détente Profonde**",
-        "activities": "• Yoga méditatif\n• Bol d'Air Jacquier\n• Sauna + piscine thermale\n• Bain au magnésium\n• Massage traditionnel profond",
-        "objective": "**Objectif :** Sommeil réparateur, ancrage et relâchement durable"
+        "title": "**🌊 Day 4 - Serenity & Deep Relaxation**",
+        "activities": "• Meditative yoga\n• Bol d'Air Jacquier\n• Sauna\n• Thermal pool\n• Magnesium bath\n• Deep traditional massage",
+        "objective": "**Objective:** Restorative sleep, grounding and lasting relaxation"
       },
       "day5": {
-        "title": "**⚡ Jour 5 - Stimulation & Vitalité**",
-        "activities": "• Yoga dynamisant\n• Bol d'Air Jacquier\n• Soin visage à la spiruline\n• Cupping thérapie + serviette de feu",
-        "objective": "**Objectif :** Activation complète de la vitalité, drainage profond"
+        "title": "**⚡ Day 5 - Stimulation & Vitality**",
+        "activities": "• Energizing yoga\n• Bol d'Air Jacquier\n• Detoxifying spirulina facial treatment\n• Fire towel cupping therapy\n• Manicure & pedicure",
+        "objective": "**Objective:** Complete vitality activation, deep drainage"
       },
       "day6": {
-        "title": "**✨ Jour 6 - Purification & Intégration**",
-        "activities": "• Yoga d'intégration\n• Bol d'Air Jacquier\n• Douche à jet\n• Piscine thermale\n• Hammam Mille et Une Nuits\n• Massage relaxant",
-        "objective": "**Objectif :** Ancrer les bienfaits, repartir régénéré(e)"
+        "title": "**🏡 Day 6 - Departure from Dakhla Club**",
+        "activities": "• Closing ritual\n• Integration tips\n• Wellness journal to take home\n• Departure with renewed energy and deep serenity",
+        "objective": "**Objective:** Integration tips, closing ritual, wellness journal to take home"
       },
-      "day7": {
-        "title": "**🏡 Jour 7 - Départ du Dakhla Club**",
-        "activities": "• Rituel de clôture\n• Conseils de prolongation\n• Carnet de bien-être à emporter\n• Départ avec sérénité profonde",
-        "objective": "**Objectif :** Intégrer les bienfaits pour un retour transformé"
-      },
-      "followUp": "**✨ Résultat :** Une transformation complète en 7 jours (5 nuits) pour retrouver votre énergie et votre équilibre naturel !"
+      "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
     },
           "booking": {
       "decision": "🎉 **Excellente décision !** Vous vous offrez 5 nuits de transformation holistique.",
@@ -612,73 +607,68 @@
   "online": "En ligne • Répond rapidement"
 }
   },
-  "servicesTable5": {
-  "header": "PROGRAMME ÉVASION HOLISTIQUE 5 NUITS – DAKHLA",
-  "servicesLabel": "Prestations",
+"servicesTable5": {
+  "header": "5-NIGHT HOLISTIC ESCAPE PROGRAM – DAKHLA",
+  "servicesLabel": "Services",
   "programs": [
-    "Jour 1",
-    "Jour 2", 
-    "Jour 3",
-    "Jour 4",
-    "Jour 5",
-    "Jour 6",
-    "Jour 7"
+    "Day 1",
+    "Day 2",
+    "Day 3", 
+    "Day 4",
+    "Day 5",
+    "Day 6"
   ],
   "services": [
-    { "title": "Accueil personnalisé" },
-    { "title": "Infusion d'ancrage" },
-    { "title": "Installation bungalow vue nature/océan" },
-    { "title": "Yoga doux au lever du soleil" },
-    { "title": "Sauna sec" },
-    { "title": "Piscine thermale chauffée" },
-    { "title": "Gommage au sel de l'Himalaya" },
-    { "title": "Massage détox au sel" },
-    { "title": "Yoga respiration & énergie" },
+    { "title": "Personalized Welcome" },
+    { "title": "Grounding Herbal Tea" },
+    { "title": "Bungalow with Nature/Ocean View" },
+    { "title": "Gentle Sunrise Yoga" },
+    { "title": "Dry Sauna" },
+    { "title": "Heated Thermal Pool" },
+    { "title": "Himalayan Salt Detox Scrub" },
+    { "title": "1001 Nights Moroccan Hammam" },
+    { "title": "Breathwork & Energizing Yoga" },
     { "title": "Bol d'Air Jacquier" },
-    { "title": "Douche à jet" },
-    { "title": "Bain hydromassant" },
-    { "title": "Enveloppement aux algues" },
-    { "title": "Modelage sous affusion" },
-    { "title": "Yoga méditatif" },
-    { "title": "Bain au magnésium" },
-    { "title": "Massage traditionnel profond" },
-    { "title": "Yoga dynamisant" },
-    { "title": "Soin visage à la spiruline" },
-    { "title": "Cupping thérapie + serviette de feu" },
-    { "title": "Yoga d'intégration" },
-    { "title": "Hammam Mille et Une Nuits" },
-    { "title": "Massage relaxant" },
-    { "title": "Rituel de clôture" },
-    { "title": "Conseils de prolongation" },
-    { "title": "Carnet de bien-être à emporter" }
+    { "title": "Jet Shower" },
+    { "title": "Hydromassage Bath" },
+    { "title": "Seaweed Body Wrap" },
+    { "title": "Affusion Massage" },
+    { "title": "Meditative Yoga" },
+    { "title": "Magnesium Bath" },
+    { "title": "Deep Traditional Massage" },
+    { "title": "Energizing Yoga" },
+    { "title": "Detoxifying Spirulina Facial Treatment" },
+    { "title": "Fire Towel Cupping Therapy" },
+    { "title": "Manicure & Pedicure" },
+    { "title": "Closing Ritual" },
+    { "title": "Integration Tips" },
+    { "title": "Wellness Journal to Take Home" }
   ],
   "availability": {
-    "Accueil personnalisé": [1,0,0,0,0,0,0],
-    "Infusion d'ancrage": [1,0,0,0,0,0,0],
-    "Installation bungalow vue nature/océan": [1,0,0,0,0,0,0],
-    "Yoga doux au lever du soleil": [0,1,0,0,0,0,0],
-    "Sauna sec": [0,1,0,1,0,0,0],
-    "Piscine thermale chauffée": [0,1,1,1,0,1,1],
-    "Gommage au sel de l'Himalaya": [0,1,0,0,0,0,0],
-    "Massage détox au sel": [0,1,0,0,0,0,0],
-    "Yoga respiration & énergie": [0,0,1,0,0,0,0],
-    "Bol d'Air Jacquier": [0,0,1,1,1,1,0],
-    "Douche à jet": [0,0,1,0,0,1,0],
-    "Bain hydromassant": [0,0,1,0,0,0,0],
-    "Enveloppement aux algues": [0,0,1,0,0,0,0],
-    "Modelage sous affusion": [0,0,1,0,0,0,0],
-    "Yoga méditatif": [0,0,0,1,0,0,0],
-    "Bain au magnésium": [0,0,0,1,0,0,0],
-    "Massage traditionnel profond": [0,0,0,1,0,0,0],
-    "Yoga dynamisant": [0,0,0,0,1,0,0],
-    "Soin visage à la spiruline": [0,0,0,0,1,0,0],
-    "Cupping thérapie + serviette de feu": [0,0,0,0,1,0,0],
-    "Yoga d'intégration": [0,0,0,0,0,1,0],
-    "Hammam Mille et Une Nuits": [0,0,0,0,0,1,0],
-    "Massage relaxant": [0,0,0,0,0,1,0],
-    "Rituel de clôture": [0,0,0,0,0,0,1],
-    "Conseils de prolongation": [0,0,0,0,0,0,1],
-    "Carnet de bien-être à emporter": [0,0,0,0,0,0,1]
+    "Personalized Welcome": [1,0,0,0,0,0],
+    "Grounding Herbal Tea": [1,0,0,0,0,0],
+    "Bungalow with Nature/Ocean View": [1,0,0,0,0,0],
+    "Gentle Sunrise Yoga": [0,1,0,0,0,0],
+    "Dry Sauna": [0,1,0,1,0,0],
+    "Heated Thermal Pool": [0,1,1,1,0,0],
+    "Himalayan Salt Detox Scrub": [0,1,0,0,0,0],
+    "1001 Nights Moroccan Hammam": [0,1,0,0,0,0],
+    "Breathwork & Energizing Yoga": [0,0,1,0,0,0],
+    "Bol d'Air Jacquier": [0,0,1,1,1,0],
+    "Jet Shower": [0,0,1,0,0,0],
+    "Hydromassage Bath": [0,0,1,0,0,0],
+    "Seaweed Body Wrap": [0,0,1,0,0,0],
+    "Affusion Massage": [0,0,1,0,0,0],
+    "Meditative Yoga": [0,0,0,1,0,0],
+    "Magnesium Bath": [0,0,0,1,0,0],
+    "Deep Traditional Massage": [0,0,0,1,0,0],
+    "Energizing Yoga": [0,0,0,0,1,0],
+    "Detoxifying Spirulina Facial Treatment": [0,0,0,0,1,0],
+    "Fire Towel Cupping Therapy": [0,0,0,0,1,0],
+    "Manicure & Pedicure": [0,0,0,0,1,0],
+    "Closing Ritual": [0,0,0,0,0,1],
+    "Integration Tips": [0,0,0,0,0,1],
+    "Wellness Journal to Take Home": [0,0,0,0,0,1]
   }
 }
   

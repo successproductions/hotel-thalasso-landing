@@ -39,11 +39,11 @@ export default function Hero5() {
     return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   };
 
-  // Auto-calculate check-out date (6 nights after check-in)
+  // Auto-calculate check-out date (5 nights after check-in)
   const calculateCheckoutDate = (checkInDate: string): string => {
     if (!checkInDate) return '';
     const checkIn = new Date(checkInDate);
-    checkIn.setDate(checkIn.getDate() + 6); // Add 3 days for 3 nights
+    checkIn.setDate(checkIn.getDate() + 5); // Add 3 days for 3 nights
     return checkIn.toISOString().split('T')[0];
   };
 
