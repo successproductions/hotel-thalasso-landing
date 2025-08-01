@@ -6,6 +6,7 @@ import { HealthPrograms5 } from "@/components/offer-5/HealthPrograms5"
 import Hero5 from "@/components/offer-5/Hero5"
 import { NewsletterSection5 } from "@/components/offer-5/NewsletterSection5"
 import { ObjectivesSection5 } from "@/components/offer-5/ObjectivesSection5"
+import { ProgrammeFonctionne5 } from "@/components/offer-5/ProgrammeFonctionne5"
 import { ProgramsSection5 } from "@/components/offer-5/ProgramsSection5"
 import { ServicesTable5 } from "@/components/offer-5/ServicesTable5"
 import WhatsAppChatbot5 from "@/components/offer-5/WhatsAppChatbot5"
@@ -108,6 +109,7 @@ export default function Page() {
             <About5/>
             <ProgramsSection5/>
             <ServicesTable5/>
+            <ProgrammeFonctionne5/>
             <ObjectivesSection5/>
             <TestimonialsCarousel/>
             <RewardsSection/>

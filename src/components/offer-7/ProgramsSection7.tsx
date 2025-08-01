@@ -16,6 +16,7 @@ export function ProgramsSection7() {
     '/images/relaxing_massage-1.png' , 
     '/images/massagedc.png',       
     '/images/BAIN_HYDRO.png' ,
+    '/images/InternationalYogaDay.png',
     '/images/PISCINE_THERMALE_.png'
 
   ];
