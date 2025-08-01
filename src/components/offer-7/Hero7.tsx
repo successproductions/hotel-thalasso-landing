@@ -149,7 +149,7 @@ export default function Hero7() {
       {/* Background Video */}
       <iframe
         className="absolute inset-0 w-full h-[57vh] lg:h-[80vh] xl:h-[92vh] object-cover"
-        src="https://www.youtube.com/embed/DjCFi8NRWvs?autoplay=1&mute=1&loop=1&playlist=DjCFi8NRWvs&controls=0&showinfo=0&modestbranding=1"
+        src="https://www.youtube.com/embed/H1CIBqDeWQ0?autoplay=1&mute=1&loop=1&playlist=H1CIBqDeWQ0&controls=0&showinfo=0&modestbranding=1"
         allow="autoplay; encrypted-media"
         allowFullScreen
         frameBorder="0"
