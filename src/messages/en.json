@@ -513,6 +513,108 @@
       }
     ]
   },
+    "servicesTable5": {
+      "header": "MARINE SERENITY RETREAT – 5 NIGHTS PROGRAM",
+      "servicesLabel": "Services",
+      "programs": [
+        "Day 1 - Arrival",
+        "Day 2 - Release",
+        "Day 3 - Regeneration", 
+        "Day 4 - Serenity",
+        "Day 5 - Vitality",
+        "Day 6 - Departure"
+      ],
+        "services": [
+          { 
+            "title": "Personalized Welcome & Check-in",
+            "subItems": ["Grounding herbal tea", "Bungalow assignment", "Orientation"]
+          },
+          { 
+            "title": "Yoga Sessions",
+            "subItems": ["Gentle sunrise practice", "Body-mind alignment", "Breathing techniques"]
+          },
+          { 
+            "title": "Jacquier's Oxygen Therapy (Bol d'air)",
+            "subItems": ["Cellular oxygenation", "Enhanced vitality", "Natural detox boost"]
+          },
+          { 
+            "title": "Thermal Pool Access",
+            "subItems": ["Heated mineral water", "Muscle relaxation", "Improved circulation"]
+          },
+          { 
+            "title": "Dry Sauna",
+            "subItems": ["Deep detoxification", "Stress relief", "Skin purification"]
+          },
+          { 
+            "title": "Himalayan Salt Scrub",
+            "subItems": ["Exfoliation treatment", "Mineral absorption", "Skin renewal"]
+          },
+          { 
+            "title": "1001 Nights Moroccan Hammam",
+            "subItems": ["Traditional ritual", "Deep cleansing", "Cultural wellness experience"]
+          },
+          { 
+            "title": "Jet Shower",
+            "subItems": ["Hydrotherapy treatment", "Circulation boost", "Muscle tension relief"]
+          },
+          { 
+            "title": "Hydromassage Bath",
+            "subItems": ["Underwater massage", "Joint mobility", "Deep relaxation"]
+          },
+          { 
+            "title": "Seaweed Body Wrap",
+            "subItems": ["Marine minerals", "Skin nourishment", "Detox acceleration"]
+          },
+          { 
+            "title": "Affusion Massage",
+            "subItems": ["Water therapy", "Gentle pressure points", "Stress release"]
+          },
+          { 
+            "title": "Magnesium Bath",
+            "subItems": ["Muscle recovery", "Nervous system calm", "Sleep enhancement"]
+          },
+          { 
+            "title": "Traditional Relaxing Massage",
+            "subItems": ["Full body treatment", "Tension release", "Energy rebalancing"]
+          },
+          { 
+            "title": "Detoxifying Spirulina Facial",
+            "subItems": ["Anti-aging treatment", "Skin smoothing", "Natural glow enhancement"]
+          },
+          { 
+            "title": "Fire Towel Cupping Therapy",
+            "subItems": ["Traditional technique", "Deep tissue release", "Energy circulation"]
+          },
+          { 
+            "title": "Manicure & Pedicure",
+            "subItems": ["Complete nail care", "Hand & foot treatment", "Beauty wellness"]
+          },
+          { 
+            "title": "Closing Ritual & Wellness Journal",
+            "subItems": ["Integration session", "Take-home guide", "Wellness tips"]
+          }
+        ],
+        "availability": {
+          "Personalized Welcome & Check-in": [1,0,0,0,0,0],
+          "Yoga Sessions": [0,1,1,1,1,0],
+          "Jacquier's Oxygen Therapy (Bol d'air)": [0,0,1,1,1,0],
+          "Thermal Pool Access": [0,1,0,1,0,0],
+          "Dry Sauna": [0,1,0,1,0,0],
+          "Himalayan Salt Scrub": [0,1,0,0,0,0],
+          "1001 Nights Moroccan Hammam": [0,1,0,0,0,0],
+          "Jet Shower": [0,0,1,0,0,0],
+          "Hydromassage Bath": [0,0,1,0,0,0],
+          "Seaweed Body Wrap": [0,0,1,0,0,0],
+          "Affusion Massage": [0,0,1,0,0,0],
+          "Magnesium Bath": [0,0,0,1,0,0],
+          "Traditional Relaxing Massage": [0,0,0,1,0,0],
+          "Detoxifying Spirulina Facial": [0,0,0,0,1,0],
+          "Fire Towel Cupping Therapy": [0,0,0,0,1,0],
+          "Manicure & Pedicure": [0,0,0,0,1,0],
+          "Closing Ritual & Wellness Journal": [0,0,0,0,0,1]
+        }
+},
+  
 "chatbot5": {
     "welcome": {
       "greeting": "👋 Hello! I'm your personal assistant for the **5-Nights Holistic Escape** at Dakhla Club.",
@@ -790,6 +892,52 @@
         "ctaText": "ACCESS MY RETREAT"
       }
     }
+  },
+  "servicesTable7": {
+    "header": "HOLISTIC ESCAPE PROGRAM – DAKHLA",
+    "servicesLabel": "Services",
+    "programs": [
+      "Day 1",
+      "Day 2",
+      "Day 3",
+      "Day 4"
+    ],
+    "services": [
+      { "title": "Personalized Welcome" },
+      { "title": "Detox Infusion" },
+      { "title": "Bungalow with Nature/Ocean View" },
+      { "title": "Bol d’Air Jacquier" },
+      { "title": "Thermal Pool Access" },
+      { "title": "Purifying Sauna" },
+      { "title": "Hydro-Massage Bath" },
+      { "title": "Seaweed Body Wrap" },
+      { "title": "Affusion Massage" },
+      { "title": "Jet Shower" },
+      { "title": "Magnesium Bath" },
+      { "title": "Cupping Therapy" },
+      { "title": "Desert Secret Hammam" },
+      { "title": "Relaxing Massage" }
+      
+    ],
+    "availability": {
+      "Personalized Welcome":        [1,0,0,0],
+      "Detox Infusion":              [1,0,0,0],
+      "Bungalow with Nature/Ocean View": [1,0,0,0],
+      "Bol d’Air Jacquier":          [1,1,0,1],
+      "Thermal Pool Access":         [1,1,1,1],
+      "Purifying Sauna":             [0,1,0,0],
+      "Hydro-Massage Bath":          [0,1,0,0],
+      "Seaweed Body Wrap":           [0,1,0,0],
+      "Affusion Massage":            [0,1,0,0],
+      "Jet Shower":                  [0,0,1,0],
+      "Magnesium Bath":              [0,0,1,0],
+      "Cupping Therapy":             [0,0,1,0],
+      "Desert Secret Hammam":        [0,0,0,1],
+      "Relaxing Massage":            [0,0,0,1],
+      "Therapeutic Objectives":      [1,1,1,1],
+      "Expected Benefits":           [1,1,1,1]
+    }
+    
   }
 },
 

@@ -9,7 +9,7 @@ type Service = {
 
 type Messages = {
   offer7: {
-    servicesTable: {
+    servicesTable7: {
       header: string;
       programs: string[];
       services: Service[];
@@ -21,10 +21,10 @@ type Messages = {
 export function ServicesTable7() {
   // grab the raw JSON object under "servicesTable5"
   const msg = useMessages() as Messages;
-const table = msg.offer7.servicesTable;
+const table = msg.offer7.servicesTable7;
 
   // translations hook—for any one-off strings if you prefer live locale switching
-  const t = useTranslations('offer7.servicesTable');
+  const t = useTranslations('offer7.servicesTable7');
 
   return (
     <div className="overflow-x-auto py-4 md:py-8">
