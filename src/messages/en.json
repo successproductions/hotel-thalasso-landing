@@ -978,6 +978,57 @@
       "Wellness journal": [0,0,0,0,0,0,0,1],
       "Conscious departure": [0,0,0,0,0,0,0,1]
     }
+  },
+  "ProgrammeFonctionne":{
+    "title": " Why This Program Works",
+    "title2": " What You’ll Truly Feel",
+    "points":[
+  
+      "A smart progression of physical and emotional reset.",
+      "Each day is designed for a specific effect (drainage, repair, integration).",
+      "The Nahed Rachad method: transformational care for body–heart–mind.",
+      "You’re guided by expert practitioners in deep care and cellular regeneration.",
+      "This isn’t just a treatment — it’s a full protocol designed to get you back in flow."
+    ],
+    "points1":[
+      "Hotel ranked #1 on TripAdvisor in Dakhla",
+      "92%+ post-retreat satisfaction rate"
+    ],
+    "points2":[
+      "Official partner of Thalgo – global leader in marine therapies",
+      "Exclusive thalasso between desert, ocean and lagoon — a rare location worldwide"
+  
+    ]
+  },
+  "faq": {
+    "title": "FAQ",
+    "contact": {
+      "label": "Contact us",
+      "subtext": "Quick response by phone or email.",
+      "alt": "Woman in water at Dakhla"
+    },
+    "items": [
+      {
+        "question": "What can I expect during these 7 Nights at Dakhla Club?",
+        "answer": "You’ll experience a true reconnection with yourself through a blend of relaxing treatments, sensory rituals, and a stunning natural setting between the desert and the ocean."
+      },
+      {
+        "question": "What types of treatments are included in the program?",
+        "answer": "You’ll enjoy a range of holistic therapies such as hydromassage baths, seaweed wraps, cupping therapy, and affusion massages — all designed to deeply relax and recharge your body and mind."
+      },
+      {
+        "question": "Is this program suitable if I’ve never done a spa or wellness retreat before?",
+        "answer": "Absolutely — it’s the perfect introduction, carefully designed to be gentle, welcoming, and fully guided by wellness professionals."
+      },
+      {
+        "question": "Why should I book quickly?",
+        "answer": "Availability is limited to ensure a calm, personalized experience for every guest, so early booking is highly recommended."
+      },
+      {
+        "question": "Where will I stay during the retreat?",
+        "answer": "You’ll be staying right at the Dakhla Club Hotel & Spa, in a serene setting that perfectly complements and enhances the benefits of your treatments."
+      }
+    ]
   }
 },
 

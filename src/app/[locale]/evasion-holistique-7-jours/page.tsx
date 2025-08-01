@@ -78,6 +78,7 @@ import { NewsletterSection7 } from '@/components/offer-7/NewsletterSection7';
 import { ProgramsSection7 } from '@/components/offer-7/ProgramsSection7';
 import { ServicesTable7 } from '@/components/offer-7/ServicesTable7';
 import { ProgrammeFonctionne7 } from '@/components/offer-7/ProgrammeFonctionne7';
+import { ObjectivesSection7 } from '@/components/offer-7/ObjectivesSection7';
 
 export default function Page() {
   return (
@@ -88,6 +89,7 @@ export default function Page() {
       <ProgramsSection7/>
       <ServicesTable7/>
       <ProgrammeFonctionne7/>
+      <ObjectivesSection7/>
       <TestimonialsCarousel/>
       <RewardsSection/>
       <NewsletterSection7/>

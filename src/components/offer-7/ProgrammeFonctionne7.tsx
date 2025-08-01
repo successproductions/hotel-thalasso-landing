@@ -15,7 +15,7 @@ export function ProgrammeFonctionne7() {
         {/* Image Column */}
         <div className="w-full h-56 md:h-[30rem] xl:h-[38rem] relative overflow-hidden rounded-lg shadow-lg">
           <Image
-            src="/images/DJI_0070.png"    
+            src="/images/0070.png"    
             alt="Pourquoi ce programme fonctionne"
             fill
             className="object-cover"
@@ -31,7 +31,7 @@ export function ProgrammeFonctionne7() {
           {te('title2').toUpperCase()}
           </h2>
           <ul className="list-disc pl-5 space-y-3 text-gray-600 text-base md:text-lg leading-relaxed">
-            {[0, 1, 2, 3, 4, 5].map((i) => {
+            {[0, 1, 2, 3, 4].map((i) => {
               const point = t(`${i}`);
               return <li key={i}>{point}</li>;
             })}
