@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 export function ProgramsSection7() {
   const t = useTranslations('offer7.programSection');
 
-  const days = ['1', '2', '3', '4','5','6','7'];
+  const days = ['1', '2', '3', '4','5','6','7',"8"];
   
   const dayImages = [
     '/images/IMG_2150 (1).png',
