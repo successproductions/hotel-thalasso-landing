@@ -147,13 +147,12 @@ export default function Hero7() {
   return (
     <section id="accueil" className="relative h-[70vh] md:h-screen w-screen overflow-hidden">
       {/* Background Video */}
-      <video
+      <iframe
         className="absolute inset-0 w-full h-[57vh] lg:h-[80vh] xl:h-[92vh] object-cover"
-        src="/videos/VIDEO_LANDING_PAGE_5.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
+        src="https://www.youtube.com/embed/DjCFi8NRWvs?autoplay=1&mute=1&loop=1&playlist=DjCFi8NRWvs&controls=0&showinfo=0&modestbranding=1"
+        allow="autoplay; encrypted-media"
+        allowFullScreen
+        frameBorder="0"
       />
       <div className="absolute inset-0 " />
 

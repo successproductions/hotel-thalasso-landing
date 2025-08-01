@@ -75,6 +75,8 @@ import { About7 } from '@/components/offer-7/About7';
 import { RewardsSection } from "@/components/RewardsSection"
 import TestimonialsCarousel from "@/components/TestimonialsCarousel"
 import { NewsletterSection7 } from '@/components/offer-7/NewsletterSection7';
+import { ProgramsSection7 } from '@/components/offer-7/ProgramsSection7';
+import { ServicesTable7 } from '@/components/offer-7/ServicesTable7';
 
 export default function Page() {
   return (
@@ -82,6 +84,8 @@ export default function Page() {
       <Header />
       <Hero7/>
       <About7/>
+      <ProgramsSection7/>
+      <ServicesTable7/>
       <TestimonialsCarousel/>
       <RewardsSection/>
       <NewsletterSection7/>
