@@ -69,7 +69,7 @@ export default function Hero7() {
       }
 
       const numberOfDays = calculateDays(bookingData.checkInDate, bookingData.checkOutDate);
-      if (numberOfDays !== 3) {
+      if (numberOfDays !== 8) {
         // Show SweetAlert2 warning with translated messages
         Swal.fire({
           icon: 'warning',
