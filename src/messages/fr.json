@@ -694,69 +694,120 @@
       "description1": "Dans un cadre sauvage et pur, entre mer, désert et lumière, nous avons conçu un parcours de 5 Nuits pour vous offrir bien plus qu’un simple moment de détente : une reconnexion durable à votre vitalité intérieure."
     },
     "programSection": {
-      "header": {
-        "title":             "Votre programme ",
-        "subheading":        " 7 Nuits – 34 Soins",
-        "description":       "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
-        "jour":              "Jour",
-        "activitiesTitle":   "Soins inclus :",
-        "callButton": " Entrer dans l’univers holistique du Dakhla Club",
-        "objectiveTitle": "Objectif :"
-  
-      },      
-      "days": {
-        "1": {
-          "title":        "Accueil & Ancrage",
-          "description":  "Vous commencez doucement. Une infusion, une installation, un accueil dans votre cocon.",
-          "activities":   [],
-          "objective":    "Créer un espace de sécurité et amorcer la déconnexion mentale.",
-          "ctaText":      "JE CHOISIS DE ME RÉGÉNÉRER"
-        },
-        "2": {
-          "title":        "Drainage & Reconnexion",
-                  "description":  "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins.",
-          "activities":   ["Yoga d’ouverture","Sauna sec","Piscine thermale ","Gommage au sel de l’Himalaya ","massage sel Hymalaya  détox"],
-          "objective":    "Stimuler les voies d’élimination, relancer la circulation lymphatique, reconnecter au corps.",
-          "ctaText":      "ENTRER DANS L’UNIVERS"
-        },
-        "3": {
-          "title":        "Oxygénation & Régénération",
-                  "description":  "Aujourd’hui, le corps se régénère en profondeur. Les soins ciblés relâchent les tensions et rééquilibrent l’énergie pour une détente totale.",
-          "activities":   ["Respiration","Bol d’Air Jacquier","Douche à jet","Bain hydromassant","Enveloppement aux algues","Modelage sous affusion"],
-          "objective":    "Oxygéner les cellules, nourrir les tissus en profondeur, réveiller l’énergie vitale.",
-          "ctaText":      "JE VEUX VIVRE L'EXPÉRIENCE"
-        },
-        "4": {
-          "title":        "Détente & Alignement",
-                 "description":  "Le séjour touche à sa fin, mais les effets se prolongent bien au-delà de ces quelques jours. Vous repartez avec un esprit plus clair, un corps détendu, et une énergie rééquilibrée.",
-          "activities":   ["Yoga méditatif","Sauna" ,"piscine thermale","Bain au magnésium","Massage profond"],
-          "objective":    "Apaiser le système nerveux, relâcher les tensions enfouies, favoriser un sommeil réparateur.",
-          "ctaText":      "J'ACCÈDE À MON SÉJOUR"
-        },
-        "5": {
-          "title":        "Activation & Éclat",
-            "description":  "Une journée pour activer la vitalité et stimuler l’énergie. Pratiques dynamiques et soins ciblés pour booster le corps et l’esprit, et ressentir une nouvelle force intérieure.",
-          "activities":   ["Yoga tonique","Soin visage spiruline","Bol d’air Jacquier","Cupping + Serviette de feu"],
-          "objective":    "",
-          "ctaText":      "J'ACCÈDE À MON SÉJOUR"
-        },
-        "6": {
-          "title":        "Intégration & Purification",
-          "description":  "Une journée pour purifier le corps et intégrer tous les bienfaits du séjour. Pratiques d’intégration, hammam et soins pour repartir aligné(e), apaisé(e) et plein(e) d’énergie.",
-          "activities":   ["Yoga d’ancrage","Hammam Mille et Une Nuits","Douche à jet","Massage relaxant"],
-          "objective":    "Consolider les bienfaits, éliminer les derniers blocages, stabiliser la transformation.",
-          "ctaText":      "J'ACCÈDE À MON SÉJOUR"
-        },
-        "7": {
-          "title":        "Clôture & Renaissance",
-          "description":  "C’est le moment du départ. Vous repartez avec des outils concrets pour prolonger les bienfaits, une énergie renouvelée et une sérénité profonde.",
-          "activities":   ["Rituel de fermeture","Carnet bien-être","Départ en conscience"],
-          "objective":    "Intégrer les apprentissages, repartir avec des clés de prolongement chez soi.",
-          "ctaText":      "J'ACCÈDE À MON SÉJOUR"
-        }
-  
-      }
+    "header": {
+      "title": "Votre programme",
+      "subheading": "7 Nuits – 34 Soins",
+      "description": "Un voyage holistique vers votre bien-être complet dans l'univers unique de Dakhla",
+      "jour": "Jour",
+      "activitiesTitle": "Soins inclus :",
+      "callButton": " Entrer dans l'univers holistique du Dakhla Club",
+      "objectiveTitle": "Objectif :"
     },
+    "days": {
+      "1": {
+        "title": "Accueil & Premiers Pas",
+        "description": "Vous commencez doucement. Une infusion, une installation, un accueil dans votre cocon.",
+        "activities": [
+          "Arrivée et installation"
+        ],
+        "objective": "Créer un espace de sécurité et amorcer la déconnexion mentale.",
+        "ctaText": "JE CHOISIS DE ME RÉGÉNÉRER"
+      },
+      "2": {
+        "title": "Vitalité & Pureté",
+        "description": "Une journée dédiée à l'éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l'eau et des soins.",
+        "activities": [
+          "Yoga",
+          "Sauna",
+          "Piscine thermale",
+          "Scrub detox sel himalaya",
+          "Hammam mille et une nuit"
+        ],
+        "objective": "Stimuler les voies d'élimination, relancer la circulation lymphatique, reconnecter au corps.",
+        "ctaText": "ENTRER DANS L'UNIVERS"
+      },
+      "3": {
+        "title": "Sérénité Marine",
+        "description": "Aujourd'hui, le corps se régénère en profondeur. Les soins ciblés relâchent les tensions et rééquilibrent l'énergie pour une détente totale.",
+        "activities": [
+          "Yoga",
+          "Bol d'air Jacquier",
+          "Bain hydromassant",
+          "Enveloppement aux algues",
+          "Modelage affusion"
+        ],
+        "objective": "Oxygéner les cellules, nourrir les tissus en profondeur, réveiller l'énergie vitale.",
+        "ctaText": "JE VEUX VIVRE L'EXPÉRIENCE"
+      },
+      "4": {
+        "title": "Équilibre & Relaxation",
+        "description": "Le séjour touche à sa fin, mais les effets se prolongent bien au-delà de ces quelques jours. Vous repartez avec un esprit plus clair, un corps détendu, et une énergie rééquilibrée.",
+        "activities": [
+          "Yoga",
+          "Bol d'air Jacquier",
+          "Sauna",
+          "Piscine thermale",
+          "Massage Traditionnel Relaxant"
+        ],
+        "objective": "Apaiser le système nerveux, relâcher les tensions enfouies, favoriser un sommeil réparateur.",
+        "ctaText": "J'ACCÈDE À MON SÉJOUR"
+      },
+      "5": {
+        "title": "Énergie & Revitalisation",
+        "description": "Une journée pour activer la vitalité et stimuler l'énergie. Pratiques dynamiques et soins ciblés pour booster le corps et l'esprit, et ressentir une nouvelle force intérieure.",
+        "activities": [
+          "Sport coaching class",
+          "Yoga",
+          "Bol d'air Jacquier",
+          "Douche à jet"
+        ],
+        "objective": "Activer la vitalité profonde et stimuler l'énergie corporelle.",
+        "ctaText": "J'ACCÈDE À MON SÉJOUR"
+      },
+      "6": {
+        "title": "Dynamisme & Purification",
+        "description": "Une journée pour purifier le corps et intégrer tous les bienfaits du séjour. Pratiques d'intégration, hammam et soins pour repartir aligné(e), apaisé(e) et plein(e) d'énergie.",
+        "activities": [
+          "Cupping thérapie",
+          "Coaching sport class",
+          "Yoga",
+          "Bol d'air Jacquier",
+          "Douche à jet",
+          "Piscine thermale",
+          "Manucure + Pédicure"
+        ],
+        "objective": "Consolider les bienfaits, éliminer les derniers blocages, stabiliser la transformation.",
+        "ctaText": "J'ACCÈDE À MON SÉJOUR"
+      },
+      "7": {
+        "title": "Régénération Intense",
+        "description": "Le jour le plus intense de votre séjour. Une journée complète de soins pour une régénération profonde et durable.",
+        "activities": [
+          "Bol d'air Jacquier",
+          "Stretching",
+          "Massage pierre chaude",
+          "Soin lissant détoxifiant spiruline",
+          "Bain magnésium",
+          "Yoga",
+          "Ice bath",
+          "Enveloppement aux algues"
+        ],
+        "objective": "Régénération cellulaire maximale, détox profonde, équilibre énergétique optimal.",
+        "ctaText": "J'ACCÈDE À MON SÉJOUR"
+      },
+      "8": {
+        "title": "Clôture & Départ",
+        "description": "C'est le moment du départ. Vous repartez avec des outils concrets pour prolonger les bienfaits, une énergie renouvelée et une sérénité profonde.",
+        "activities": [
+          "Rituel de fermeture",
+          "Carnet bien-être",
+          "Départ en conscience"
+        ],
+        "objective": "Intégrer les apprentissages, repartir avec des clés de prolongement chez soi.",
+        "ctaText": "J'ACCÈDE À MON SÉJOUR"
+      }
+    }
+  },
     "about":{
 "title":       "Cette cure est définitivement pour vous si ?",
     "description1": [

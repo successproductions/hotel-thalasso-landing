@@ -800,10 +800,10 @@
     "nextSession": " Paiement possible en 1, 2 ou 3 fois.",
     "callButton": "I book my transformation"
   },
-  "programSection": {
+"programSection": {
     "header": {
-      "title": "THE PROGRAM",
-      "subheading": "Your 7-Day Program – 34 Treatments",
+      "title": "Your Program",
+      "subheading": "7 Nights – 34 Treatments",
       "description": "A holistic journey to your complete well-being in the unique universe of Dakhla",
       "jour": "Day",
       "activitiesTitle": "Included treatments:",
@@ -812,83 +812,105 @@
     },
     "days": {
       "1": {
-        "title": "Arrival at Dakhla Club",
-        "description": "Welcome, grounding herbal tea, and check-in to your bungalow. A gentle start in a pristine natural setting.",
-        "activities": [],
-        "objective": "Grounding, breathing, opening body and mind.",
+        "title": "Welcome & First Steps",
+        "description": "You begin gently. A herbal tea, settling in, a welcome to your cocoon.",
+        "activities": [
+          "Arrival and check-in"
+        ],
+        "objective": "Create a safe space and initiate mental disconnection.",
         "ctaText": "I CHOOSE TO REGENERATE"
       },
       "2": {
-        "title": "Release & Balance",
+        "title": "Vitality & Purity",
         "description": "A day dedicated to awakening the senses and revitalizing the body. Breathe, release, and let yourself be carried by the benefits of water and treatments.",
         "activities": [
-          "Gentle sunrise yoga",
-          "Dry sauna",
-          "Heated thermal pool",
-          "Himalayan salt scrub",
-          "Salt detox massage"
+          "Yoga",
+          "Sauna",
+          "Thermal pool",
+          "Himalayan salt detox scrub",
+          "\"1001 Nights\" Oriental Hammam Ritual"
         ],
-        "objective": "Relax the nervous system, activate drainage, and prepare for transformation.",
+        "objective": "Stimulate elimination pathways, reactivate lymphatic circulation, reconnect to the body.",
         "ctaText": "ENTER THE UNIVERSE"
       },
       "3": {
-        "title": "Oxygenation & Regeneration",
+        "title": "Marine Serenity",
         "description": "Today, the body regenerates deeply. Targeted treatments release tension and rebalance energy for total relaxation.",
         "activities": [
-          "Breathwork and energizing yoga",
-          "Bol d’Air Jacquier",
-          "Jet shower",
+          "Yoga",
+          "Jacquier's Oxygen Therapy",
           "Hydromassage bath",
-          "Algae wrap",
+          "Seaweed wrap",
           "Affusion massage"
         ],
-        "objective": "Stimulate cells, detox deeply, reconnect to your body.",
+        "objective": "Oxygenate cells, nourish tissues deeply, awaken vital energy.",
         "ctaText": "I WANT TO LIVE THE EXPERIENCE"
       },
       "4": {
-        "title": "Serenity & Deep Relaxation",
+        "title": "Balance & Relaxation",
         "description": "The retreat is coming to an end, but the effects last well beyond these few days. You leave with a clearer mind, a relaxed body, and rebalanced energy.",
         "activities": [
-          "Meditative yoga",
-          "Bol d’Air Jacquier",
-          "Sauna and thermal pool",
-          "Magnesium bath",
-          "Deep traditional massage"
+          "Yoga",
+          "Jacquier's Oxygen Therapy",
+          "Sauna",
+          "Thermal pool",
+          "Traditional relaxing massage"
         ],
-        "objective": "Restorative sleep, grounding, and lasting calm.",
+        "objective": "Soothe the nervous system, release buried tensions, promote restorative sleep.",
         "ctaText": "ACCESS MY RETREAT"
       },
       "5": {
-        "title": "Stimulation & Vitality",
+        "title": "Energy & Revitalization",
         "description": "A day to activate vitality and stimulate energy. Dynamic practices and targeted treatments to boost body and mind, and feel a new inner strength.",
         "activities": [
-          "Energizing yoga",
-          "Bol d’Air Jacquier",
-          "Spirulina facial",
-          "Cupping therapy and fire towel"
+          "Fitness coaching session",
+          "Yoga",
+          "Jacquier's Oxygen Therapy",
+          "Jet shower"
         ],
-        "objective": "Activate full vitality and deep drainage.",
+        "objective": "Activate deep vitality and stimulate body energy.",
         "ctaText": "ACCESS MY RETREAT"
       },
       "6": {
-        "title": "Purification & Integration",
-        "description": "A day to purify the body and integrate all the benefits of the retreat. Integration practices, hammam, and treatments to leave aligned, soothed, and full of energy.",
+        "title": "Dynamism & Purification",
+        "description": "A day to purify the body and integrate all the benefits of the stay. Integration practices, hammam and treatments to leave aligned, soothed and full of energy.",
         "activities": [
-          "Integration yoga",
-          "Bol d’Air Jacquier",
+          "Fire cupping therapy",
+          "Fitness coaching session",
+          "Yoga",
+          "Jacquier's Oxygen Therapy",
           "Jet shower",
           "Thermal pool",
-          "“Thousand and One Nights” Hammam",
-          "Relaxing massage"
+          "Manicure & Pedicure"
         ],
-        "objective": "Anchor the benefits, leave regenerated and reprogrammed.",
+        "objective": "Consolidate benefits, eliminate last blockages, stabilize transformation.",
         "ctaText": "ACCESS MY RETREAT"
       },
       "7": {
-        "title": "Departure",
-        "description": "It's time to leave. You go home with practical tools to prolong the benefits, renewed energy, and deep serenity.",
-        "activities": [],
-        "objective": "Closing ritual, take-home wellness journal, and integration tips.",
+        "title": "Deep Regeneration",
+        "description": "The most intense day of your stay. A complete day of treatments for deep and lasting regeneration.",
+        "activities": [
+          "Jacquier's Oxygen Therapy",
+          "Stretching session",
+          "Hot stone massage",
+          "Detoxifying & smoothing spirulina facial",
+          "Magnesium bath",
+          "Yoga",
+          "Ice bath immersion",
+          "Seaweed wrap"
+        ],
+        "objective": "Maximum cellular regeneration, deep detox, optimal energy balance.",
+        "ctaText": "ACCESS MY RETREAT"
+      },
+      "8": {
+        "title": "Closure & Departure",
+        "description": "It's time to leave. You go home with practical tools to prolong the benefits, renewed energy and deep serenity.",
+        "activities": [
+          "Closing ritual",
+          "Wellness journal",
+          "Conscious departure"
+        ],
+        "objective": "Integrate learnings, leave with keys to continue at home.",
         "ctaText": "ACCESS MY RETREAT"
       }
     }
