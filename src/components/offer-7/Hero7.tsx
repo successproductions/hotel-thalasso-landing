@@ -43,7 +43,7 @@ export default function Hero7() {
   const calculateCheckoutDate = (checkInDate: string): string => {
     if (!checkInDate) return '';
     const checkIn = new Date(checkInDate);
-    checkIn.setDate(checkIn.getDate() + 9); // Add 3 days for 3 nights
+    checkIn.setDate(checkIn.getDate() + 8); // Add 3 days for 3 nights
     return checkIn.toISOString().split('T')[0];
   };
 
