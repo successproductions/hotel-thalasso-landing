@@ -399,7 +399,7 @@
       "2": {
         "title":        "Lâcher-prise & Équilibre",
                 "description":  "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins.",
-        "activities":   ["Yoga doux au lever du soleil","Sauna sec","Piscine thermale ","Gommage au sel de l’Himalaya ","Massage détox au sel"],
+        "activities":   ["Yoga doux au lever du soleil","Sauna sec","Piscine thermale ","Scrub detox sel himalaya ","Hammam mille et une nuit"],
         "objective":    "Libérer le système nerveux, relancer le drainage, préparer à la transformation.",
         "ctaText":      "ENTRER DANS L’UNIVERS"
       },
@@ -420,18 +420,11 @@
       "5": {
         "title":        "Stimulation & Vitalité",
           "description":  "Une journée pour activer la vitalité et stimuler l’énergie. Pratiques dynamiques et soins ciblés pour booster le corps et l’esprit, et ressentir une nouvelle force intérieure.",
-        "activities":   ["Yoga dynamisant","Bol d’Air Jacquier","Soin visage à la spiruline","Cupping thérapie + serviette de feu"],
+        "activities":   ["Yoga dynamisant","Bol d’Air Jacquier","Soin lissant détoxifiant spiruline","Cupping thérapie serviette de feu","Manucure + Pédicure "],
         "objective":    "Activation complète de la vitalité, drainage profond.",
         "ctaText":      "J'ACCÈDE À MON SÉJOUR"
       },
       "6": {
-        "title":        "Purification & Intégration",
-        "description":  "Une journée pour purifier le corps et intégrer tous les bienfaits du séjour. Pratiques d’intégration, hammam et soins pour repartir aligné(e), apaisé(e) et plein(e) d’énergie.",
-        "activities":   ["Yoga d’intégration","Bol d’Air Jacquier","Douche à jet","Piscine thermale","Hammam Mille et Une Nuits","Massage relaxant"],
-        "objective":    "Ancrer les bienfaits, repartir régénéré(e), reprogrammé(e).",
-        "ctaText":      "J'ACCÈDE À MON SÉJOUR"
-      },
-      "7": {
         "title":        "Départ du Dakhla Club",
         "description":  "C’est le moment du départ. Vous repartez avec des outils concrets pour prolonger les bienfaits, une énergie renouvelée et une sérénité profonde.",
         "activities":   [],
