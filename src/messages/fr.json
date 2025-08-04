@@ -819,8 +819,8 @@
   },
   "exclusiveOffer": {
     "title": "Édition limitée – 10 places seulement par session.",
-    "description": "Paiement possible en 1, 2 ou 3 fois.",
-    "nextSession": " Paiement possible en 1, 2 ou 3 fois.",
+    "description": "Un format confidentiel, pensé pour garantir un accompagnement sur-mesure.",
+    "nextSession": " Un format confidentiel, pensé pour garantir un accompagnement sur-mesure.",
     "callButton": "Je Réserve Ma Transformation"
   },
   "ProgrammeFonctionne":{
@@ -835,11 +835,13 @@
   ],
   "points1":[
     "Hotel Classé #1 sur TripAdvisor à Dakhla.",
-    "+92% de taux de satisfaction post-cure."
+    "+92% de taux de satisfaction post-cure.",
+    "+1 200 clients transformés depuis l’ouverture : énergie retrouvée, poids allégé, esprit recentré."
   ],
   "points2":[
     "Partenaires officiels Thalgo – leader mondial en soins marins.",
-    "Thalasso exclusive entre désert, océan et lagon : une rareté mondiale."
+    "Thalasso exclusive entre désert, océan et lagon : une rareté mondiale.",
+    "Équipe 100% certifiée en soins holistiques, yoga & détox cellulaire."
 
   ]
 },
