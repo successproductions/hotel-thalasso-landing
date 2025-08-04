@@ -10,14 +10,14 @@ export function ProgramsSection7() {
   const days = ['1', '2', '3', '4','5','6','7',"8"];
   
   const dayImages = [
-    '/images/IMG_2150 (1).png',
-    '/images/THERMALE.png',     
-    '/images/Brown-1.png',
-    '/images/relaxing_massage-1.png' , 
-    '/images/massagedc.png',       
-    '/images/BAIN_HYDRO.png' ,
-    '/images/InternationalYogaDay.png',
-    '/images/PISCINE_THERMALE_.png'
+    '/images/1.jpg',
+    '/images/2.jpg',     
+    '/images/3.jpg',
+    '/images/4.jpg' , 
+    '/images/5.jpg',       
+    '/images/6.jpg' ,
+    '/images/7.jpg',
+    '/images/8.jpg'
 
   ];
   
