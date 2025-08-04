@@ -23,7 +23,7 @@ export function NewsletterSection7() {
         </h2>
 
         {/* Description */}
-        <p className="text-sm md:text-base text-white/80 uppercase tracking-wide">
+        <p className="text-sm md:text-base font-trajan text-white/80 uppercase tracking-wide">
           {t("description")}
         </p>
 
