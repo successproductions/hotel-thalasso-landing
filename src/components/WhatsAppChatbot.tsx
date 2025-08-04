@@ -29,6 +29,7 @@ interface BookingData {
   checkOutDate: string;
   adults: number;
 }
+
 //check is mobile chatbot
 const isMobile = (): boolean => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
@@ -55,7 +56,6 @@ const sendReservationToSheets = async (userInfo: UserInfo, bookingData: BookingD
 
     console.log('Envoi des données de réservation:', reservationData);
 
-    // ✅ Utiliser l'API route Next.js au lieu de l'URL Google Apps Script directement
     const response = await fetch('/api/chatbot-reservation', {
       method: 'POST',
       headers: {
@@ -75,7 +75,6 @@ const sendReservationToSheets = async (userInfo: UserInfo, bookingData: BookingD
   } catch (error) {
     console.error('Erreur lors de l\'envoi des données de réservation:', error);
     
-    // Retourner une erreur structurée au lieu de faire planter l'application
     return { 
       status: 'error', 
       message: error instanceof Error ? error.message : 'Erreur inconnue' 
@@ -83,12 +82,9 @@ const sendReservationToSheets = async (userInfo: UserInfo, bookingData: BookingD
   }
 };
 
-
 const generateSessionId = (): string => {
   return `chatbot_3_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 };
-
-
 
 const WhatsAppChatbot: React.FC = () => {
   const [sessionId] = useState<string>(generateSessionId());
@@ -125,22 +121,27 @@ const WhatsAppChatbot: React.FC = () => {
     setIsOpen(true);
     if (messages.length === 0) {
       setTimeout(() => {
+        // New welcome flow - no name/phone request
         addMessage(t('welcome.greeting'), false);
         setTimeout(() => {
-          addMessage(t('welcome.requestInfo'), false);
+          addMessage(t('welcome.description'), false);
           setTimeout(() => {
-            addMessage(t('welcome.format'), false);
-          }, 500);
+            addMessage(t('welcome.instruction'), false);
+            setTimeout(() => {
+              showMainMenu();
+            }, 500);
+          }, 1000);
         }, 1000);
       }, 500);
     }
   };
 
   const showMainMenu = (): void => {
-    addMessage(t('menu.title'), false, true, [
+    addMessage(t('welcome.question'), false, true, [
       { text: t('menu.options.program'), value: "program" },
+      { text: t('menu.options.info'), value: "info" },
       { text: t('menu.options.booking'), value: "booking" },
-      { text: t('menu.options.info'), value: "info" }
+      { text: t('menu.options.advisor'), value: "advisor" }
     ]);
   };
 
@@ -152,7 +153,6 @@ const WhatsAppChatbot: React.FC = () => {
     return checkIn.toISOString().split('T')[0];
   };
 
-  
   const getTodayDate = (): string => {
     return new Date().toISOString().split('T')[0];
   };
@@ -184,17 +184,25 @@ const WhatsAppChatbot: React.FC = () => {
   };
 
   const handleUserInfoSubmission = (input: string): boolean => {
-    // Simple validation for name and phone
-    const parts = input.split('-').map(part => part.trim());
-    if (parts.length >= 2 && parts[0].length > 2 && parts[1].length > 8) {
+    // Simple validation for name and phone - accepting both - and – separators
+    const parts = input.split(/[-–]/).map(part => part.trim());
+    if (parts.length >= 2 && parts[0].length > 2 && parts[1].length > 0) {
       setUserInfo({
         name: parts[0],
         phone: parts[1],
         hasProvidedInfo: true
       });
-      addMessage(`Merci ${parts[0]} ! Ravi de faire votre connaissance. 😊`, false);
+      addMessage(`✅ **Parfait ${parts[0]} !**`, false);
       setTimeout(() => {
-        showMainMenu();
+        addMessage(`📋 **Récapitulatif complet :**\n👤 ${parts[0]}\n📞 ${parts[1]}\n📅 ${bookingData.checkInDate} → ${bookingData.checkOutDate}\n👥 ${bookingData.adults} adulte${bookingData.adults > 1 ? 's' : ''}\n🌙 3 nuits d'évasion holistique`, false);
+        setTimeout(() => {
+          addMessage("🎉 **Tout est prêt !**", false);
+          setTimeout(() => {
+            addMessage("Cliquez ci-dessous pour finaliser votre réservation en toute sécurité 🔒", false, true, [
+              { text: "✅ Finaliser ma réservation", value: "redirect_booking" }
+            ]);
+          }, 1000);
+        }, 1000);
       }, 1000);
       return true;
     }
@@ -209,211 +217,138 @@ const WhatsAppChatbot: React.FC = () => {
         case 'program':
           addMessage(t('program.title'), false);
           setTimeout(() => {
-            const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}\n\n${t('program.day4.title')}\n${t('program.day4.activities')}`;
-            
-            addMessage(programText, false);
+            addMessage(t('program.description'), false);
             setTimeout(() => {
-              addMessage(t('program.followUp'), false, true, [
-                { text: t('actions.reserve'), value: "booking" },
-                { text: " Témoignages clients", value: "testimonials" },
-                { text: t('menu.options.info'), value: "info" }
-              ]);
-            }, 2000);
-          }, 1000);
-          break;
-          
-        case 'booking':
-          addMessage(t('booking.decision'), false);
-          setTimeout(() => {
-            addMessage(t('booking.needInfo'), false);
-            setTimeout(() => {
-              addMessage(t('booking.askDate'), false);
-              addMessage(`${t('booking.dateFormat')}\n${t('booking.example')} ${getTodayDate()}\n\n${t('booking.note')}`, false);
-             
-              setCurrentStep('booking');
+              const programText = `${t('program.day1.title')}\n${t('program.day2.title')}\n${t('program.day3.title')}\n${t('program.day4.title')}`;
+              
+              addMessage(programText, false);
+              setTimeout(() => {
+                addMessage(t('program.followUp'), false, true, [
+                  { text: t('program.nextOptions.benefits'), value: "benefits" },
+                  { text: t('program.nextOptions.booking'), value: "booking" }
+                ]);
+              }, 2000);
             }, 1000);
           }, 1000);
           break;
-          
-          case 'redirect_booking':
-  if (bookingData.checkInDate && bookingData.checkOutDate) {
-    addMessage("🔄 Redirection vers le système de réservation...", false);
-    setTimeout(() => {
-      const bookingUrl = generateBookingUrl(bookingData);
-      
-      // 🆕 Logique différente selon le device
-      if (isMobile()) {
-        // Sur mobile : redirection dans la même page
-        addMessage("📱 Redirection en cours...", false);
-        window.location.href = bookingUrl;
-      } else {
-        // Sur desktop : nouvel onglet (comme avant)
-        window.open(bookingUrl, '_blank');
-        addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
-      }
-      
-      // Envoyer les données de réservation (inchangé)
-      sendReservationToSheets(userInfo, bookingData, sessionId)
-        .then((result) => {
-          if (result.status === 'success') {
-            console.log('✅ Données sauvegardées avec succès');
-            if (!isMobile()) { // Seulement afficher sur desktop
-              setTimeout(() => {
-                addMessage("📊 Vos informations ont été enregistrées avec succès!", false);
-              }, 2000);
-            }
-          } else {
-            console.error('❌ Erreur lors de la sauvegarde:', result.message);
-          }
-        })
-        .catch((error) => {
-          console.error('❌ Erreur réseau:', error);
-        });
-      
-      if (!isMobile()) { // Récapitulatif seulement sur desktop
-        setTimeout(() => {
-          addMessage(`📋 **Récapitulatif de votre réservation :**
-👤 ${userInfo.name}
-📞 ${userInfo.phone}
-📅 Arrivée : ${bookingData.checkInDate}
-📅 Départ : ${bookingData.checkOutDate}
-👥 ${bookingData.adults} adulte(s)
 
-Un conseiller vous contactera pour confirmer les détails !`, false);
-        }, 1500);
-      }
-    }, 1500);
-  } else {
-    addMessage("❌ Veuillez d'abord choisir vos dates d'arrivée.", false);
-  }
-  break;
-        case 'info':
-          addMessage(t('info.title'), false);
-          setTimeout(() => {
-            addMessage(t('info.details'), false);
-            setTimeout(() => {
-              addMessage("Autres informations souhaitées ?", false, true, [
-                { text: "Météo et climat", value: "weather" },
-                { text: "Bénéfices du programme", value: "benefits" },
-                { text: t('menu.options.booking'), value: "booking" }
-              ]);
-            }, 2000);
-          }, 1000);
-          break;
-          
-        case 'testimonials':
-          addMessage(t('testimonials.title'), false);
-          setTimeout(() => {
-            addMessage(t('testimonials.reviews'), false);
-            setTimeout(() => {
-              addMessage(t('testimonials.convinced'), false, true, [
-                { text: t('actions.reserve'), value: "booking" },
-                { text: "Parler à un expert", value: "advisor" }
-              ]);
-            }, 2000);
-          }, 1000);
-          break;
-          
-        case 'weather':
-          addMessage(t('weather.title'), false);
-          setTimeout(() => {
-            addMessage(t('weather.details'), false);
-            setTimeout(() => {
-              addMessage(t('weather.ready'), false, true, [
-                { text: t('menu.options.booking'), value: "booking" },
-                { text: t('menu.options.program'), value: "program" }
-              ]);
-            }, 1500);
-          }, 1000);
-          break;
-          
         case 'benefits':
           addMessage(t('benefits.title'), false);
           setTimeout(() => {
-            addMessage(t('benefits.physical'), false);
+            addMessage(t('benefits.description'), false);
             setTimeout(() => {
-              addMessage(t('benefits.mental'), false);
+              const physicalText = `${t('benefits.physical.title')}\n${t('benefits.physical.items.0')}\n${t('benefits.physical.items.1')}\n${t('benefits.physical.items.2')}`;
+              addMessage(physicalText, false);
               setTimeout(() => {
-                addMessage(t('benefits.lasting'), false);
+                const mentalText = `${t('benefits.mental.title')}\n${t('benefits.mental.items.0')}\n${t('benefits.mental.items.1')}\n${t('benefits.mental.items.2')}`;
+                addMessage(mentalText, false);
                 setTimeout(() => {
-                  addMessage(t('benefits.motivated'), false, true, [
-                    { text: "Oui, je réserve maintenant", value: "booking" },
-                    { text: "Voir le programme détaillé", value: "program" }
-                  ]);
+                  addMessage(`${t('benefits.lasting.title')}\n${t('benefits.lasting.description')}`, false);
+                  setTimeout(() => {
+                    addMessage(t('benefits.nextQuestion'), false, true, [
+                      { text: t('benefits.nextOptions.booking'), value: "booking" },
+                      { text: t('benefits.nextOptions.question'), value: "advisor" }
+                    ]);
+                  }, 1000);
                 }, 1000);
               }, 1000);
             }, 1000);
           }, 1000);
           break;
           
-          case 'advisor':
-  addMessage(t('advisor.title'), false);
-  setTimeout(() => {
-    // First, try to get the translation
-    let advisorText;
-    try {
-      advisorText = t('advisor.contact');
-      
-      if (advisorText.startsWith('chatbot.advisor.contact') || advisorText === 'advisor.contact') {
-        advisorText = `📞 **Ligne directe** : +212 652881921
-💬 **WhatsApp Business** : +212 652881921
-📧 **Email** : reservation@dakhlaclub.com`;
-      } else {
-        // Translation successful, replace placeholders
-        advisorText = advisorText
-          .replace('{name}', userInfo.name)
-          .replace('{phone}', userInfo.phone);
-      }
-    } catch (error) {
-      console.error('Translation error for advisor.contact:', error);
-      // Fallback to hardcoded text
-      advisorText = `📞 **Ligne directe** : +212 652881921
-💬 **WhatsApp Business** : +212 652881921
-📧 **Email VIP** : reservation@dakhlaclub.com
-
-Vos informations seront transmises :
-👤 ${userInfo.name}
-📞 ${userInfo.phone}`;
-    }
-    
-    addMessage(advisorText, false);
-  }, 1000);
-  break;
-          
-        case 'questions':
-          addMessage(t('faq.title'), false);
+        case 'booking':
+          addMessage(t('booking.title'), false);
           setTimeout(() => {
-            addMessage(t('faq.content'), false);
+            addMessage(t('booking.decision'), false);
             setTimeout(() => {
-              addMessage(t('faq.notListed'), false, true, [
-                { text: " Poser ma question à un conseiller", value: "advisor" },
-                { text: " Réserver malgré tout", value: "booking" },
-                { text: " Retour au menu", value: "main_menu" }
+              addMessage("📅 **Quelle est votre date d'arrivée souhaitée ?**", false);
+              setTimeout(() => {
+                addMessage(`Format: AAAA-MM-JJ\nExemple: ${getTodayDate()}\n\nNote: Votre séjour sera automatiquement de 3 nuits 🌙`, false);
+                setCurrentStep('booking_date');
+              }, 1000);
+            }, 1000);
+          }, 1000);
+          break;
+
+        case 'info':
+          addMessage(t('info.title'), false);
+          setTimeout(() => {
+            const infoText = `${t('info.location')}\n${t('info.accommodation')}\n${t('info.meals')}\n${t('info.access')}\n\n${t('info.included.title')}\n${t('info.included.items.0')}\n${t('info.included.items.1')}\n${t('info.included.items.2')}\n${t('info.included.items.3')}\n${t('info.included.items.4')}\n\n${t('info.bring.title')}\n${t('info.bring.items.0')}\n${t('info.bring.items.1')}\n${t('info.bring.items.2')}\n${t('info.bring.items.3')}`;
+            addMessage(infoText, false);
+            setTimeout(() => {
+              addMessage("Autres informations souhaitées ?", false, true, [
+                { text: "🔸 Voir le programme détaillé", value: "program" },
+                { text: "🔸 Réserver maintenant", value: "booking" },
+                { text: "🔸 Parler à un conseiller", value: "advisor" }
               ]);
             }, 2000);
           }, 1000);
           break;
-          
-        case 'confirm_booking':
-          addMessage("🎉 **Réservation en cours...**", false);
-          setTimeout(() => {
-            addMessage(`Vous allez être redirigé vers notre système de réservation sécurisé.
 
-📋 **Récapitulatif :**
-👤 ${userInfo.name}
-📞 ${userInfo.phone}
-📅 ${bookingData.checkInDate} → ${bookingData.checkOutDate}
-👥 ${bookingData.adults} adulte(s)
-🌙 3 nuits d'évasion holistique`, false);
+        case 'advisor':
+          addMessage(t('advisor.title'), false);
+          setTimeout(() => {
+            addMessage(t('advisor.subtitle'), false);
             setTimeout(() => {
-              addMessage("Prêt(e) à finaliser votre réservation ?", false, true, [
-                { text: "✅ Oui, réserver maintenant", value: "redirect_booking" },
-                { text: "📞 Parler d'abord à un conseiller", value: "advisor" }
-              ]);
-            }, 2000);
+              const contactText = `${t('advisor.contact.phone')}\n${t('advisor.contact.whatsapp')}\n${t('advisor.contact.email')}\n${t('advisor.contact.hours')}\n${t('advisor.contact.response')}`;
+              addMessage(contactText, false);
+            }, 1000);
           }, 1000);
           break;
           
+        case 'redirect_booking':
+          if (bookingData.checkInDate && bookingData.checkOutDate && userInfo.hasProvidedInfo) {
+            addMessage("🔄 Redirection vers le système de réservation...", false);
+            setTimeout(() => {
+              const bookingUrl = generateBookingUrl(bookingData);
+              
+              if (isMobile()) {
+                addMessage("📱 Redirection en cours...", false);
+                window.location.href = bookingUrl;
+              } else {
+                window.open(bookingUrl, '_blank');
+                addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
+              }
+              
+              sendReservationToSheets(userInfo, bookingData, sessionId)
+                .then((result) => {
+                  if (result.status === 'success') {
+                    console.log('✅ Données sauvegardées avec succès');
+                    if (!isMobile()) {
+                      setTimeout(() => {
+                        addMessage("📊 Vos informations ont été enregistrées avec succès!", false);
+                      }, 2000);
+                    }
+                  } else {
+                    console.error('❌ Erreur lors de la sauvegarde:', result.message);
+                  }
+                })
+                .catch((error) => {
+                  console.error('❌ Erreur réseau:', error);
+                });
+              
+              if (!isMobile()) {
+                setTimeout(() => {
+                  const summaryText = t('summary.subtitle').replace('{name}', userInfo.name)
+                    .replace('{phone}', userInfo.phone)
+                    .replace('{checkInDate}', bookingData.checkInDate)
+                    .replace('{checkOutDate}', bookingData.checkOutDate)
+                    .replace('{adults}', bookingData.adults.toString());
+                  
+                  addMessage(`📋 ${summaryText}\n\n🌙 Séjour : 3 nuits d'évasion holistique\n\nUn conseiller vous contactera pour confirmer les détails !`, false);
+                }, 1500);
+              }
+            }, 1500);
+          } else {
+            addMessage("❌ Veuillez d'abord remplir toutes les informations nécessaires.", false);
+            setTimeout(() => {
+              addMessage("Retournons à la réservation :", false, true, [
+                { text: "📅 Choisir mes dates", value: "booking" }
+              ]);
+            }, 1000);
+          }
+          break;
+
         case 'change_adults':
           addMessage("👥 **Combien d'adultes serez-vous ?**", false, true, [
             { text: "1 adulte", value: "adults_1" },
@@ -432,24 +367,25 @@ Vos informations seront transmises :
           const updatedDates = handleDateSelection(bookingData.checkInDate, adultCount);
           addMessage(`✅ **Réservation mise à jour !**`, false);
           setTimeout(() => {
-            addMessage(`📅 **Arrivée :** ${updatedDates.checkInDate}
-📅 **Départ :** ${updatedDates.checkOutDate}
-👥 **Adultes :** ${updatedDates.adults}
-
-Tout est parfait ?`, false, true, [
-              { text: "✅ Oui, réserver maintenant", value: "confirm_booking" },
+            addMessage(`📅 **Arrivée :** ${updatedDates.checkInDate}\n📅 **Départ :** ${updatedDates.checkOutDate}\n👥 **Adultes :** ${updatedDates.adults}\n\nTout est parfait ?`, false, true, [
+              { text: "✅ Oui, continuer", value: "booking_info_step" },
               { text: "👥 Modifier encore", value: "change_adults" }
             ]);
+          }, 1000);
+          break;
+
+        case 'booking_info_step':
+          addMessage("Parfait ! Maintenant j'ai besoin de vos coordonnées :", false);
+          setTimeout(() => {
+            addMessage(t('booking.fields.contact'), false);
+            setCurrentStep('contact_info');
           }, 1000);
           break;
           
         case 'adults_more':
           addMessage("Pour plus de 4 adultes, veuillez contacter directement notre équipe :", false);
           setTimeout(() => {
-            addMessage(`📞 **Téléphone :** +21265288192
-📧 **Email :** reservation@dakhlaclub.com
-
-Ils pourront vous proposer des solutions adaptées à votre groupe !`, false);
+            addMessage(`📞 **Téléphone :** +212 652 88 1921\n📧 **Email :** reservation@dakhlaclub.com\n\nIls pourront vous proposer des solutions adaptées à votre groupe !`, false);
           }, 1000);
           break;
           
@@ -472,85 +408,78 @@ Ils pourront vous proposer des solutions adaptées à votre groupe !`, false);
     window.open(`https://wa.me/212652881921?text=${message}`, '_blank');
   };
 
-  // Handle message sending with proper date validation
+  // Handle message sending with step-by-step validation
   const handleSendMessage = (): void => {
     if (!userInput.trim()) return;
 
     addMessage(userInput, true);
     
-    if (!userInfo.hasProvidedInfo) {
-      // Handle user info submission
+    if (currentStep === 'booking_date') {
+      // Handle date input
+      const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+      if (dateRegex.test(userInput)) {
+        const inputDate = new Date(userInput);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        if (isNaN(inputDate.getTime())) {
+          setTimeout(() => {
+            addMessage("❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ", false);
+            addMessage(`Exemple valide: ${getTodayDate()}`, false);
+          }, 1000);
+        } else if (inputDate < today) {
+          setTimeout(() => {
+            addMessage("❌ La date d'arrivée ne peut pas être dans le passé.", false);
+            addMessage("Veuillez choisir une date à partir d'aujourd'hui.", false);
+          }, 1000);
+        } else {
+          // Save the date and move to adults selection
+          const dates = handleDateSelection(userInput, 2); // Default 2 adults for now
+          setTimeout(() => {
+            addMessage(`✅ **Date confirmée !**`, false);
+            setTimeout(() => {
+              addMessage(`📅 **Arrivée :** ${dates.checkInDate}\n📅 **Départ :** ${dates.checkOutDate} (3 nuits)`, false);
+              setTimeout(() => {
+                addMessage("👥 **Combien d'adultes serez-vous ?**", false, true, [
+                  { text: "1 adulte", value: "adults_1" },
+                  { text: "2 adultes", value: "adults_2" },
+                  { text: "3 adultes", value: "adults_3" },
+                  { text: "4 adultes", value: "adults_4" },
+                  { text: "Plus de 4 adultes", value: "adults_more" }
+                ]);
+                setCurrentStep('booking_adults');
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }
+      } else {
+        setTimeout(() => {
+          addMessage("❌ Format de date incorrect.", false);
+          addMessage(`Veuillez utiliser le format: AAAA-MM-JJ`, false);
+          addMessage(`Exemple: ${getTodayDate()}`, false);
+        }, 1000);
+      }
+    } else if (currentStep === 'contact_info') {
+      // Handle contact info
       if (handleUserInfoSubmission(userInput)) {
-        setUserInput('');
+        setCurrentStep('booking_confirmed');
       } else {
         setTimeout(() => {
           addMessage(t('errors.incorrectFormat'), false);
           addMessage(t('errors.example'), false);
         }, 1000);
-        setUserInput('');
       }
     } else {
-      // Handle regular messages based on current step
-      setUserInput('');
-      
-      // Check if we're in booking flow and expecting a date
-      if (currentStep === 'booking') {
-        // Check if it's a valid date format
-        const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-        if (dateRegex.test(userInput)) {
-          const inputDate = new Date(userInput);
-          const today = new Date();
-          today.setHours(0, 0, 0, 0);
-          
-          // Check if date is valid (not NaN)
-          if (isNaN(inputDate.getTime())) {
-            setTimeout(() => {
-              addMessage("❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ", false);
-              addMessage(`Exemple valide: ${getTodayDate()}`, false);
-              addMessage("Merci de réessayer avec une date valide.", false);
-            }, 1000);
-          } else if (inputDate < today) {
-            setTimeout(() => {
-              addMessage(t('errors.pastDate'), false);
-              addMessage(t('errors.chooseToday'), false);
-            }, 1000);
-          } else {
-            const dates = handleDateSelection(userInput, 2);
-            setCurrentStep('booking_confirmed');
-            setTimeout(() => {
-              addMessage(`✅ **Dates confirmées !**`, false);
-              setTimeout(() => {
-                addMessage(`📅 **Arrivée :** ${dates.checkInDate}
-📅 **Départ :** ${dates.checkOutDate} (3 nuits)
-👥 **Adultes :** ${dates.adults}
-
-Souhaitez-vous modifier le nombre d'adultes ?`, false, true, [
-                  { text: "✅ C'est parfait, continuer", value: "confirm_booking" },
-                  { text: "👥 Modifier le nombre d'adultes", value: "change_adults" },
-                  { text: "📅 Changer les dates", value: "booking" }
-                ]);
-              }, 1000);
-            }, 1000);
-          }
-        } else {
-          // Invalid date format
-          setTimeout(() => {
-            addMessage(" Format de date incorrect.", false);
-            addMessage(` Veuillez utiliser le format: AAAA-MM-JJ`, false);
-            addMessage(`Exemple: ${getTodayDate()}`, false);
-            addMessage("Merci de réessayer.", false);
-          }, 1000);
-        }
-      } else {
-        // Handle other types of messages
+      // Handle other messages
+      setTimeout(() => {
+        addMessage(t('messages.thankYou'), false);
         setTimeout(() => {
-          addMessage(t('messages.thankYou'), false);
-          setTimeout(() => {
-            showMainMenu();
-          }, 1000);
+          showMainMenu();
         }, 1000);
-      }
+      }, 1000);
     }
+    
+    setUserInput('');
   };
 
   return (
@@ -565,11 +494,9 @@ Souhaitez-vous modifier le nombre d'adultes ?`, false, true, [
               animation: 'softGlow 2s ease-in-out infinite alternate'
             }}
           >
-            {/* Robot Icon */}
             <Bot size={28} className="text-white" />
           </button>
           
-          {/* Notification Badge */}
           <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
             <span className="text-white text-xs font-bold">1</span>
           </div>
@@ -656,7 +583,11 @@ Souhaitez-vous modifier le nombre d'adultes ?`, false, true, [
                 type="text"
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
-                placeholder={userInfo.hasProvidedInfo ? t('placeholders.typeMessage') : t('placeholders.namePhone')}
+                placeholder={
+                  currentStep === 'booking_date' ? "AAAA-MM-JJ" :
+                  currentStep === 'contact_info' ? "Prénom Nom - 06xx xx xx xx" :
+                  t('placeholders.typeMessage')
+                }
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#14b8a6]"
                 onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) => {
                   if (e.key === 'Enter') {
