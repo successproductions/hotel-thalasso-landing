@@ -707,9 +707,7 @@
       "1": {
         "title": "Accueil & Premiers Pas",
         "description": "Vous commencez doucement. Une infusion, une installation, un accueil dans votre cocon.",
-        "activities": [
-          "Arrivée et installation"
-        ],
+        "activities": [],
         "objective": "Créer un espace de sécurité et amorcer la déconnexion mentale.",
         "ctaText": "JE CHOISIS DE ME RÉGÉNÉRER"
       },
