@@ -79,6 +79,7 @@ import { ProgramsSection7 } from '@/components/offer-7/ProgramsSection7';
 import { ServicesTable7 } from '@/components/offer-7/ServicesTable7';
 import { ProgrammeFonctionne7 } from '@/components/offer-7/ProgrammeFonctionne7';
 import { ObjectivesSection7 } from '@/components/offer-7/ObjectivesSection7';
+import FAQ7 from '@/components/offer-7/FAQ7';
 
 export default function Page() {
   return (
@@ -92,6 +93,7 @@ export default function Page() {
       <ObjectivesSection7/>
       <TestimonialsCarousel/>
       <RewardsSection/>
+      <FAQ7/>
       <NewsletterSection7/>
       <Footer />
     </>

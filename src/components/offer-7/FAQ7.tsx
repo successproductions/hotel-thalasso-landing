@@ -15,7 +15,7 @@ export default function FAQ7() {
   const messages = useMessages()
   const [openItem, setOpenItem] = useState<string | undefined>(undefined)
 
-  const { contact, items } = messages.offer5.faq
+  const { contact, items } = messages.offer7.faq
 
 
   const faqSchema = {
@@ -113,7 +113,7 @@ export default function FAQ7() {
                   {/* <div className="absolute -inset-4  dark:bg-slate-700 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div> */}
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <Image
-                      src="/images/.png"
+                      src="/images/0070.png"
                       alt={contact.alt}
                       width={600}
                       height={400}
