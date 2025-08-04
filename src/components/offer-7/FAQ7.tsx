@@ -113,11 +113,11 @@ export default function FAQ7() {
                   {/* <div className="absolute -inset-4  dark:bg-slate-700 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div> */}
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                     <Image
-                      src="/images/0070.png"
+                      src="/images/PISCINE_THERMALE_.png"
                       alt={contact.alt}
                       width={600}
                       height={400}
-                      className="object-cover w-full h-90 md:h-fit filter contrast-110"
+                      className="object-cover w-full h-fit md:h-fit filter contrast-110"
                     />
                   </div>
                 </motion.div> 
