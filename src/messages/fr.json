@@ -543,14 +543,22 @@
       "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
     },
     "booking": {
+      
       "title": "📅 **Je réserve**",
-      "decision": "💛 Excellente décision ! Offrez à votre corps 3 nuits qu'il n'oubliera jamais.",
+      "decision": "💛 Excellente décision ! Offrez à votre corps 5 nuits qu'il n'oubliera jamais.",
       "needInfo": "J'ai simplement besoin de 3 infos pour lancer votre réservation :",
+      "dateFormat": "Format: AAAA-MM-JJ\nExemple: 2025-08-05\n\nNote: Votre séjour sera automatiquement de 5 nuits 🌙",
+  "dateConfirmed": "✅ **Date confirmée !**",
+  "arrival": "📅 **Arrivée :** {checkIn}",
+  "departure": "📅 **Départ :** {checkOut} (5 nuits)",
+  "askAdults": "👥 **Combien d'adultes serez-vous ?**",
+  "adultsConfirmed": "✅ **{count} adulte{plural} confirmé{plural} !**",
+  "contactNeeded": "📞 **Maintenant, j'ai besoin de vos coordonnées :**",
+  "formatExample": "Format : Prénom Nom - 0612345678\nExemple : Marie Dupont - 0612345678",
       "fields": {
-        "date": "📅 Votre date d'arrivée (format : AAAA-MM-JJ)",
-        "adults": "👥 Nombre d'adultes (1 à 4+)",
-        "contact": "📞 Votre nom et numéro de téléphone (format : Prénom Nom – 06xx xx xx xx)"
-      }
+    "date": "📅 **Quelle est votre date d'arrivée souhaitée ?**",
+    "contact": "📞 Votre nom et numéro de téléphone (format : Prénom Nom – 06xx xx xx xx)"
+  }
     },
 
     "info": {
@@ -582,10 +590,11 @@
       "lasting": "**⏳ Durable :** Nouvelles habitudes saines, outils de bien-être, suivi personnalisé post-séjour",
       "motivated": "**Motivé(e) pour commencer cette transformation ?**"
     },
-    "advisor": {
-      "title": "📞 **Conseil Personnalisé**",
-      "contact2": "📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp Business** : +212 652 88 1921\n📧 **Email VIP** : concierge@dakhlaclub.com\n\n**Disponibilité** :\n• Lun-Dim : 9h-20h\n• Réponse WhatsApp : < 2h\n• Réponse email : < 4h\n\nUn expert bien-être vous rappellera pour répondre à toutes vos questions personnalisées et vous accompagner dans votre réservation.\n\nVos informations seront transmises :\n👤 {name}\n📞 {phone}"
-    },
+"advisor": {
+  "title": "🤝 **Parler avec un conseiller spécialisé**",
+  "contact2": "📞 **Ligne directe**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Disponibilité**: Tous les jours de 9h à 20h\n⚡ **Réponse rapide**: WhatsApp < 2h • Email < 4h"
+},
+
     "faq": {
       "title": "❓ **Questions Fréquentes :**",
       "content": "**Q: Puis-je venir seul(e) ?**\nR: Absolument ! 40% de nos clients viennent seuls.\n\n**Q: Y a-t-il des contre-indications ?**\nR: Nous adaptons selon votre état de santé.\n\n**Q: Le transport est-il inclus ?**\nR: Navette aéroport disponible (supplément).\n\n**Q: Puis-je modifier mes dates ?**\nR: Oui, sous conditions selon disponibilités.",
@@ -602,8 +611,13 @@
         "validExample": "Valid example: {date}",
         "invalidDateFormat": "❌ Incorrect date format.",
         "dateFormatInstruction": "Please use the format: YYYY-MM-DD",
-        "dateExample": "Example: {date}"
+        "dateExample": "Example: {date}",
+        "incorrectFormat": "Format incorrect. Merci de respecter le format : Prénom Nom – Numéro de téléphone",
+  "example": "Exemple : Ahmed Bennani – 0661234567",
+  "pastDate": "❌ La date d'arrivée ne peut pas être dans le passé.",
+  "chooseToday": "Veuillez choisir une date à partir d'aujourd'hui."
       },
+      
       "summary": {
         "perfect": "✅ **Perfect {name}!**",
         "complete": "📋 **Complete Summary:**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adult{plural}\n🌙 5 nights holistic escape",
@@ -618,12 +632,15 @@
 },
 "placeholders": {
   "typeMessage": "Tapez votre message...",
-  "namePhone": "Nom Prénom - Numéro de téléphone"
+  "namePhone": "Nom Prénom - Numéro de téléphone",
+  "date": "AAAA-MM-JJ"
 },
 "status": {
   "online": "En ligne • Répond rapidement"
 }
   },
+
+  
   "servicesTable5": {
   "header": "5-NIGHT HOLISTIC ESCAPE PROGRAM – DAKHLA",
   "servicesLabel": "Services",

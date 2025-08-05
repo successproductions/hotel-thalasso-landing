@@ -664,7 +664,11 @@
       "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
     },
     "booking": {
-        "askAdults": "👥 **How many adults will participate?**",
+      "fields": {
+    "date": "📅 **What is your desired arrival date?**",
+    "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
+  },
+      "decision": "💛 Excellent decision! Give your body 5 nights it will never forget.",
         "adultsOptions": {
           "adults1": "1 adult",
           "adults2": "2 adults",
@@ -672,12 +676,6 @@
           "adults4": "4 adults", 
           "adultsMore": "More than 4 adults"
         },
-        "dateConfirmed": "✅ **Date confirmed!**",
-        "arrival": "📅 **Arrival:** {checkIn}",
-        "departure": "📅 **Departure:** {checkOut} (5 nights)",
-        "adultsConfirmed": "✅ **{count} adult{plural} confirmed!**",
-        "contactNeeded": "📞 **Now I need your contact details:**",
-        "formatExample": "Format: First Last Name - 0612345678\nExample: Marie Dupont - 0612345678",
         "largeGroup": "For more than 4 adults, please contact our team directly:",
         "contactInfo": "📞 **Phone:** +212 652 88 1921\n📧 **Email:** reservation@dakhlaclub.com\n\nThey can offer solutions adapted to your group!",
         "redirecting": "🔄 Redirecting to booking system...",
@@ -686,14 +684,24 @@
         "dataSuccess": "📊 Your information has been successfully saved!",
         "missingInfo": "❌ Please fill in all necessary information first.",
         "backToBooking": "Let's go back to booking:",
-        "chooseDates": "📅 Choose my dates"
+        "chooseDates": "📅 Choose my dates",
+        "dateFormat": "Format: YYYY-MM-DD\nExample: 2025-08-05\n\nNote: Your stay will automatically be 5 nights 🌙",
+  "dateConfirmed": "✅ **Date confirmed!**",
+  "arrival": "📅 **Arrival:** {checkIn}",
+  "departure": "📅 **Departure:** {checkOut} (5 nights)",
+  "askAdults": "👥 **How many adults will you be?**",
+  "adultsConfirmed": "✅ **{count} adult{plural} confirmed!**",
+  "contactNeeded": "📞 **Now I need your contact details:**",
+  "formatExample": "Format: First Name Last Name - 0612345678\nExample: Marie Dupont - 0612345678"
       },
     "info": {
       "followUp": "What other information would you like?",
+      
         "options": {
           "program": "🔸 View detailed program",
           "reserve": "🔸 Book now",
-          "advisor": "🔸 Speak to an advisor"
+          "advisor": "🔸 Speak to an advisor",
+          "booking": "🔸 Book now" 
         },
       "title": "ℹ️ **Practical Information - 7-Day Escape**",
       "details": "**📍 Location:** Dakhla Club, Point de Dragon PK28\n**⏰ Duration:** 6 days / 5 nights\n**🏠 Accommodation:** Included with full board\n**🍽️ Meals:** Health and detox cuisine\n**👥 Capacity:** Groups of 2 to 8 people\n**📞 Contact:** +212 652 881 921"
@@ -715,10 +723,10 @@
       "lasting": "**⏳ Lasting:** New healthy habits, wellness tools, personalized post-stay follow-up",
       "motivated": "**Motivated to start this transformation?**"
     },
-    "advisor": {
-        "title": "🤝 **Speak with a specialized consultant**",
-        "contact": "📞 **Direct line**: +212 \n💬 **WhatsApp Business**: +212 \n📧 **VIP Email**: concierge@dakhlaclub.com\n\n**Availability**:\n• Mon-Sun: 9am-8pm\n• WhatsApp response: < 2h\n• Email response: < 4h\n\nA wellness expert will call you back to answer all your personalized questions and assist you with your booking.\n\nYour information will be transmitted:\n👤 {name}\n📞 {phone}"
-      },
+"advisor": {
+  "title": "🤝 **Speak with a specialized consultant**",
+  "contact2": "📞 **Direct line**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Availability**: Every day from 9am to 8pm\n⚡ **Quick response**: WhatsApp < 2h • Email < 4h"
+},
     "faq": {
       "title": "❓ **Frequently Asked Questions:**",
       "content": "**Q: Can I come alone?**\nA: Absolutely! 40% of our clients come alone.\n\n**Q: Are there any contraindications?**\nA: We adapt according to your health condition.\n\n**Q: Is transportation included?**\nA: Airport shuttle available (additional cost).\n\n**Q: Can I modify my dates?**\nA: Yes, subject to availability conditions.",
@@ -735,7 +743,11 @@
         "validExample": "Exemple valide: {date}",
         "invalidDateFormat": "❌ Format de date incorrect.",
         "dateFormatInstruction": "Veuillez utiliser le format: AAAA-MM-JJ",
-        "dateExample": "Exemple: {date}"
+        "dateExample": "Exemple: {date}",
+        "incorrectFormat": "Incorrect format. Please respect the format: First Name Last Name – Phone Number",
+        "example": "Example: Ahmed Bennani – 0661234567",
+        "pastDate": "❌ Arrival date cannot be in the past.",
+        "chooseToday": "Please choose a date from today onwards."
       },
       "summary": {
         "perfect": "✅ **Parfait {name} !**",
@@ -751,7 +763,8 @@
 },
 "placeholders": {
   "typeMessage": "Type your message...",
-  "namePhone": "First Name Last Name - Phone Number"
+  "namePhone": "First Name Last Name - Phone Number",
+  "date": "YYYY-MM-DD"
 },
 "status": {
   "online": "Online • Responds quickly"
