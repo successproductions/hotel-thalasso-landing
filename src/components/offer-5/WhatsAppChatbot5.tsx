@@ -226,7 +226,7 @@ const WhatsAppChatbot5: React.FC = () => {
       addMessage(programText2, false);
       setTimeout(() => {
         addMessage(t('program.followUp'), false, true, [
-          // { text: t('benefits.knowledgeOption'), value: "benefits" },
+          { text: t('info.options.advisor'), value: "advisor" },
           { text: t('info.options.reserve'), value: "booking" }
         ]);
       }, 2000);
@@ -297,6 +297,7 @@ const WhatsAppChatbot5: React.FC = () => {
                     addMessage(advisorText, false);
                     addMessage(t('info.followUp'), false, true, [
                       { text: t('info.options.booking'), value: "booking" },
+
                     ]);
                   }, 1000);
                   break;
