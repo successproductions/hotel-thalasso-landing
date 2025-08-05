@@ -289,9 +289,9 @@ const WhatsAppChatbot: React.FC = () => {
               const contactText = `${t('advisor.contact.phone')}\n${t('advisor.contact.whatsapp')}\n${t('advisor.contact.email')}\n${t('advisor.contact.hours')}\n${t('advisor.contact.response')}`;
               addMessage(contactText, false);
               addMessage(t('info.followUp'), false, true, [
-                { text: t('info.options.program'), value: "program" },
+                // { text: t('info.options.program'), value: "program" },
                 { text: t('info.options.booking'), value: "booking" },
-                { text: t('info.options.advisor'), value: "advisor" }
+                // { text: t('info.options.advisor'), value: "advisor" }
               ]);
             }, 1000);
           }, 1000);
