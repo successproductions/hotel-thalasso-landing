@@ -1204,6 +1204,12 @@
       "finalStep": "Click below to finalize your booking securely 🔒"
     },
     "info": {
+      "followUp": "What other information would you like?",
+      "options": {
+        "program": "🔸 View detailed program",
+        "booking": "🔸 Book now",
+        "advisor": "🔸 Speak to an advisor"
+      },
       "title": "ℹ️ **Practical information**",
       "location": "📍 **Location:** Dakhla Club, Point de Dragon PK28",
       "accommodation": "🏠 **Accommodation:** Bungalows with nature/ocean view",

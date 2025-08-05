@@ -273,10 +273,10 @@ const WhatsAppChatbot: React.FC = () => {
             const infoText = `${t('info.location')}\n${t('info.accommodation')}\n${t('info.meals')}\n${t('info.access')}\n\n${t('info.included.title')}\n${t('info.included.items.0')}\n${t('info.included.items.1')}\n${t('info.included.items.2')}\n${t('info.included.items.3')}\n${t('info.included.items.4')}\n\n${t('info.bring.title')}\n${t('info.bring.items.0')}\n${t('info.bring.items.1')}\n${t('info.bring.items.2')}\n${t('info.bring.items.3')}`;
             addMessage(infoText, false);
             setTimeout(() => {
-              addMessage("Autres informations souhaitées ?", false, true, [
-                { text: "🔸 Voir le programme détaillé", value: "program" },
-                { text: "🔸 Réserver maintenant", value: "booking" },
-                { text: "🔸 Parler à un conseiller", value: "advisor" }
+              addMessage(t('info.followUp'), false, true, [
+                { text: t('info.options.program'), value: "program" },
+                { text: t('info.options.booking'), value: "booking" },
+                { text: t('info.options.advisor'), value: "advisor" }
               ]);
             }, 2000);
           }, 1000);
@@ -288,10 +288,10 @@ const WhatsAppChatbot: React.FC = () => {
             setTimeout(() => {
               const contactText = `${t('advisor.contact.phone')}\n${t('advisor.contact.whatsapp')}\n${t('advisor.contact.email')}\n${t('advisor.contact.hours')}\n${t('advisor.contact.response')}`;
               addMessage(contactText, false);
-              addMessage("Autres informations souhaitées ?", false, true, [
-                { text: "🔸 Voir le programme détaillé", value: "program" },
-                { text: "🔸 Réserver maintenant", value: "booking" },
-                { text: "🔸 Parler à un conseiller", value: "advisor" }
+              addMessage(t('info.followUp'), false, true, [
+                { text: t('info.options.program'), value: "program" },
+                { text: t('info.options.booking'), value: "booking" },
+                { text: t('info.options.advisor'), value: "advisor" }
               ]);
             }, 1000);
           }, 1000);

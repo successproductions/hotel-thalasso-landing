@@ -1118,6 +1118,12 @@
       "finalStep": "Cliquez ci-dessous pour finaliser votre réservation en toute sécurité 🔒"
     },
     "info": {
+      "followUp": "Autres informations souhaitées ?",
+      "options": {
+        "program": "🔸 Voir le programme détaillé",
+        "booking": "🔸 Réserver maintenant", 
+        "advisor": "🔸 Parler à un conseiller"
+      },
       "title": "ℹ️ **Informations pratiques**",
       "location": "📍 **Lieu :** Dakhla Club, Point de Dragon PK28",
       "accommodation": "🏠 **Hébergement :** Bungalows avec vue nature/océan",
