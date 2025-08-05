@@ -296,7 +296,7 @@ const WhatsAppChatbot5: React.FC = () => {
                     
                     addMessage(advisorText, false);
                     addMessage(t('info.followUp'), false, true, [
-                      { text: t('info.options.booking'), value: "booking" },
+                      { text: t('info.options.reserve'), value: "reserve" },
 
                     ]);
                   }, 1000);
