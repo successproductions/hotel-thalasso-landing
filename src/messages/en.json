@@ -664,17 +664,37 @@
       "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
     },
     "booking": {
-      "decision": "🎉 **Excellent choice!** You're treating yourself to 5 nights of holistic transformation.",
-      "needInfo": "To prepare your reservation, I need some information:",
-      "askDate": "📅 **What is your desired arrival date?**",
-      "dateFormat": "**Format:** YYYY-MM-DD",
-      "example": "**Example:**",
-      "note": "**Note:** The stay lasts exactly 6 consecutive nights (7 days).",
-      "invalidDate": " The date must be in YYYY-MM-DD format and cannot be in the past.",
-      "dateSet": " **Arrival date confirmed:** {checkIn}\n📅 **Automatic departure date:** {checkOut}\n🌙 **Duration:** 5 nights of holistic escape (7 days)",
-      "askAdults": " **How many adults will participate in this escape?**"
-    },
+        "askAdults": "👥 **How many adults will participate?**",
+        "adultsOptions": {
+          "adults1": "1 adult",
+          "adults2": "2 adults",
+          "adults3": "3 adults",
+          "adults4": "4 adults", 
+          "adultsMore": "More than 4 adults"
+        },
+        "dateConfirmed": "✅ **Date confirmed!**",
+        "arrival": "📅 **Arrival:** {checkIn}",
+        "departure": "📅 **Departure:** {checkOut} (5 nights)",
+        "adultsConfirmed": "✅ **{count} adult{plural} confirmed!**",
+        "contactNeeded": "📞 **Now I need your contact details:**",
+        "formatExample": "Format: First Last Name - 0612345678\nExample: Marie Dupont - 0612345678",
+        "largeGroup": "For more than 4 adults, please contact our team directly:",
+        "contactInfo": "📞 **Phone:** +212 652 88 1921\n📧 **Email:** reservation@dakhlaclub.com\n\nThey can offer solutions adapted to your group!",
+        "redirecting": "🔄 Redirecting to booking system...",
+        "mobileRedirect": "📱 Redirecting...",
+        "newTabOpened": "✅ The booking page has opened in a new tab.",
+        "dataSuccess": "📊 Your information has been successfully saved!",
+        "missingInfo": "❌ Please fill in all necessary information first.",
+        "backToBooking": "Let's go back to booking:",
+        "chooseDates": "📅 Choose my dates"
+      },
     "info": {
+      "followUp": "What other information would you like?",
+        "options": {
+          "program": "🔸 View detailed program",
+          "reserve": "🔸 Book now",
+          "advisor": "🔸 Speak to an advisor"
+        },
       "title": "ℹ️ **Practical Information - 7-Day Escape**",
       "details": "**📍 Location:** Dakhla Club, Point de Dragon PK28\n**⏰ Duration:** 6 days / 5 nights\n**🏠 Accommodation:** Included with full board\n**🍽️ Meals:** Health and detox cuisine\n**👥 Capacity:** Groups of 2 to 8 people\n**📞 Contact:** +212 652 881 921"
     },

@@ -227,69 +227,68 @@ const WhatsAppChatbot5: React.FC = () => {
           }, 1000);
           break;
 
-        case 'benefits':
-          addMessage(t('benefits.title'), false);
-          setTimeout(() => {
-            addMessage(t('benefits.physical'), false);
+          case 'benefits':
+            addMessage(t('benefits.title'), false);
             setTimeout(() => {
-              addMessage(t('benefits.mental'), false);
+              addMessage(t('benefits.physical'), false);
               setTimeout(() => {
-                addMessage(t('benefits.lasting'), false);
+                addMessage(t('benefits.mental'), false);
                 setTimeout(() => {
-                  addMessage(t('benefits.motivated'), false, true, [
-                    { text: "🔸 " + t('actions.reserve'), value: "booking" },
-                    { text: "🔸 Parler à un conseiller", value: "advisor" }
-                  ]);
+                  addMessage(t('benefits.lasting'), false);
+                  setTimeout(() => {
+                    addMessage(t('benefits.motivated'), false, true, [
+                      { text: t('info.options.reserve'), value: "booking" }
+                    ]);
+                  }, 1000);
                 }, 1000);
               }, 1000);
             }, 1000);
-          }, 1000);
-          break;
+            break;
           
-        case 'booking':
-          addMessage(t('booking.decision'), false);
-          setTimeout(() => {
-            addMessage(t('booking.askDate'), false);
-            setTimeout(() => {
-              addMessage(`${t('booking.dateFormat')}\n${t('booking.example')} ${getTodayDate()}\n\n${t('booking.note')}`, false);
-              setCurrentStep('booking_date');
-            }, 1000);
-          }, 1000);
-          break;
+            case 'booking':
+              addMessage(t('booking.decision'), false);
+              setTimeout(() => {
+                addMessage(t('booking.askDate'), false);
+                setTimeout(() => {
+                  addMessage(`${t('booking.dateFormat')}\n${t('booking.example')} ${getTodayDate()}\n\n${t('booking.note')}`, false);
+                  setCurrentStep('booking_date');
+                }, 1000);
+              }, 1000);
+              break;
 
-        case 'info':
-          addMessage(t('info.title'), false);
-          setTimeout(() => {
-            addMessage(t('info.details'), false);
-            setTimeout(() => {
-              addMessage("Autres informations souhaitées ?", false, true, [
-                { text: "🔸 Voir le programme détaillé", value: "program" },
-                { text: "🔸 " + t('actions.reserve'), value: "booking" },
-                { text: "🔸 Parler à un conseiller", value: "advisor" }
-              ]);
-            }, 2000);
-          }, 1000);
-          break;
+              case 'info':
+                addMessage(t('info.title'), false);
+                setTimeout(() => {
+                  addMessage(t('info.details'), false);
+                  setTimeout(() => {
+                    addMessage(t('info.followUp'), false, true, [
+                      { text: t('info.options.program'), value: "program" },
+                      { text: t('info.options.reserve'), value: "booking" },
+                      { text: t('info.options.advisor'), value: "advisor" }
+                    ]);
+                  }, 2000);
+                }, 1000);
+                break;
 
-        case 'advisor':
-          addMessage(t('advisor.title'), false);
-          setTimeout(() => {
-            // Try to get the translation, fallback if needed
-            let advisorText;
-            try {
-              advisorText = t('advisor.contact2');
-              
-              if (advisorText.startsWith('offer5.chatbot5.advisor.contact2') || advisorText === 'advisor.contact2') {
-                advisorText = `📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp** : +212 652 88 1921\n📧 **Email** : reservation@dakhlaclub.com\n🕘 **Disponibilité** : Tous les jours de 9h à 20h\n⚡ **Réponse rapide** : WhatsApp < 2h • Email < 4h`;
-              }
-            } catch (error) {
-              console.error('Translation error for advisor.contact2:', error);
-              advisorText = `📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp** : +212 652 88 1921\n📧 **Email** : reservation@dakhlaclub.com\n🕘 **Disponibilité** : Tous les jours de 9h à 20h\n⚡ **Réponse rapide** : WhatsApp < 2h • Email < 4h`;
-            }
-            
-            addMessage(advisorText, false);
-          }, 1000);
-          break;
+                case 'advisor':
+                  addMessage(t('advisor.title'), false);
+                  setTimeout(() => {
+                    // Try to get the translation, fallback if needed
+                    let advisorText;
+                    try {
+                      advisorText = t('advisor.contact2');
+                      
+                      if (advisorText.startsWith('offer5.chatbot5.advisor.contact2') || advisorText === 'advisor.contact2') {
+                        advisorText = `📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp** : +212 652 88 1921\n📧 **Email** : reservation@dakhlaclub.com\n🕘 **Disponibilité** : Tous les jours de 9h à 20h\n⚡ **Réponse rapide** : WhatsApp < 2h • Email < 4h`;
+                      }
+                    } catch (error) {
+                      console.error('Translation error for advisor.contact2:', error);
+                      advisorText = `📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp** : +212 652 88 1921\n📧 **Email** : reservation@dakhlaclub.com\n🕘 **Disponibilité** : Tous les jours de 9h à 20h\n⚡ **Réponse rapide** : WhatsApp < 2h • Email < 4h`;
+                    }
+                    
+                    addMessage(advisorText, false);
+                  }, 1000);
+                  break;
           
         case 'redirect_booking':
           if (bookingData.checkInDate && bookingData.checkOutDate && userInfo.hasProvidedInfo) {
@@ -338,15 +337,15 @@ const WhatsAppChatbot5: React.FC = () => {
           }
           break;
 
-        case 'change_adults':
-          addMessage("👥 **Combien d'adultes serez-vous ?**", false, true, [
-            { text: "1 adulte", value: "adults_1" },
-            { text: "2 adultes", value: "adults_2" },
-            { text: "3 adultes", value: "adults_3" },
-            { text: "4 adultes", value: "adults_4" },
-            { text: "Plus de 4 adultes", value: "adults_more" }
-          ]);
-          break;
+          case 'change_adults':
+            addMessage(t('booking.askAdults'), false, true, [
+              { text: t('booking.adultsOptions.adults1'), value: "adults_1" },
+              { text: t('booking.adultsOptions.adults2'), value: "adults_2" },
+              { text: t('booking.adultsOptions.adults3'), value: "adults_3" },
+              { text: t('booking.adultsOptions.adults4'), value: "adults_4" },
+              { text: t('booking.adultsOptions.adultsMore'), value: "adults_more" }
+            ]);
+            break;
           
         case 'adults_1':
         case 'adults_2':
@@ -367,20 +366,20 @@ const WhatsAppChatbot5: React.FC = () => {
           }, 1000);
           break;
 
-        case 'booking_info_step':
-          addMessage("Parfait ! Maintenant j'ai besoin de vos coordonnées :", false);
-          setTimeout(() => {
-            addMessage("Format : Prénom Nom - 0612345678", false);
-            setCurrentStep('contact_info');
-          }, 1000);
-          break;
+          case 'booking_info_step':
+            addMessage(t('booking.contactNeeded'), false);
+            setTimeout(() => {
+              addMessage(t('booking.formatExample'), false);
+              setCurrentStep('contact_info');
+            }, 1000);
+            break;
           
-        case 'adults_more':
-          addMessage("Pour plus de 4 adultes, veuillez contacter directement notre équipe :", false);
-          setTimeout(() => {
-            addMessage(`📞 **Téléphone :** +212 652 88 1921\n📧 **Email :** reservation@dakhlaclub.com\n\nIls pourront vous proposer des solutions adaptées à votre groupe !`, false);
-          }, 1000);
-          break;
+            case 'adults_more':
+              addMessage(t('booking.largeGroup'), false);
+              setTimeout(() => {
+                addMessage(t('booking.contactInfo'), false);
+              }, 1000);
+              break;
           
         case 'main_menu':
           showMainMenu();
