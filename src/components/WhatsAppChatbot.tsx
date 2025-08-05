@@ -124,7 +124,6 @@ const WhatsAppChatbot: React.FC = () => {
         // New welcome flow - no name/phone request
         addMessage(t('welcome.greeting'), false);
         setTimeout(() => {
-          addMessage(t('welcome.description'), false);
           setTimeout(() => {
             addMessage(t('welcome.instruction'), false);
             setTimeout(() => {
@@ -215,7 +214,7 @@ const WhatsAppChatbot: React.FC = () => {
     setTimeout(() => {
       switch(option.value) {
         case 'program':
-          addMessage(t('program.title'), false);
+          
           setTimeout(() => {
             addMessage(t('program.description'), false);
             setTimeout(() => {
@@ -233,7 +232,6 @@ const WhatsAppChatbot: React.FC = () => {
           break;
 
         case 'benefits':
-          addMessage(t('benefits.title'), false);
           setTimeout(() => {
             addMessage(t('benefits.description'), false);
             setTimeout(() => {
@@ -257,7 +255,6 @@ const WhatsAppChatbot: React.FC = () => {
           break;
           
         case 'booking':
-          addMessage(t('booking.title'), false);
           setTimeout(() => {
             addMessage(t('booking.decision'), false);
             setTimeout(() => {
@@ -286,12 +283,16 @@ const WhatsAppChatbot: React.FC = () => {
           break;
 
         case 'advisor':
-          addMessage(t('advisor.title'), false);
           setTimeout(() => {
             addMessage(t('advisor.subtitle'), false);
             setTimeout(() => {
               const contactText = `${t('advisor.contact.phone')}\n${t('advisor.contact.whatsapp')}\n${t('advisor.contact.email')}\n${t('advisor.contact.hours')}\n${t('advisor.contact.response')}`;
               addMessage(contactText, false);
+              addMessage("Autres informations souhaitées ?", false, true, [
+                { text: "🔸 Voir le programme détaillé", value: "program" },
+                { text: "🔸 Réserver maintenant", value: "booking" },
+                { text: "🔸 Parler à un conseiller", value: "advisor" }
+              ]);
             }, 1000);
           }, 1000);
           break;

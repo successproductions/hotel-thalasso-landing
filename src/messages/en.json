@@ -624,9 +624,9 @@
     "menu": {
       "title": "🌟 **What would you like to discover?**",
       "options": {
-        "program": " Detailed 5-day program",
-        "booking": "Book now",
-        "info": "ℹ Practical information"
+        "program": "🔸 Detailed 5-day program",
+        "booking": "🔸 Book now",
+        "info": "🔸 Practical information"
       }
     },
     "program": {

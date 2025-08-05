@@ -503,9 +503,9 @@
     "menu": {
       "title": "🌟 **Que souhaitez-vous découvrir ?**",
       "options": {
-        "program": "Programme détaillé 5 Nuits",
-        "booking": " Réserver maintenant",
-        "info": " Informations pratiques"
+        "program": "🔸 Programme détaillé 5 Nuits",
+        "booking": "🔸 Réserver maintenant",
+        "info": "🔸 Informations pratiques"
       }
     },
     "program": {
