@@ -1071,7 +1071,140 @@
         "answer": "You’ll be staying right at the Dakhla Club Hotel & Spa, in a serene setting that perfectly complements and enhances the benefits of your treatments."
       }
     ]
-  }
+  },
+
+  "chatbot7": {
+      "welcome": {
+        "greeting": "👋 Hello! I'm your personal assistant for the **7-Night Holistic Escape** at Dakhla Club.",
+        "requestInfo": "To better assist you, could you please provide your name and phone number?",
+        "format": "Format: **First Last Name** followed by your **phone number**\nExample: Marie Dupont - 0612345678"
+      },
+      "menu": {
+        "title": "🌟 **What would you like to discover?**",
+        "options": {
+          "program": "🔸 Detailed 7-Night Program",
+          "booking": "🔸 Book Now",
+          "info": "🔸 Practical Information"
+        }
+      },
+      "program": {
+        "title": "🌟 **7-Night Holistic Escape Program**\n\n**A profound transformation in 8 days:**",
+        "day1": {
+          "title": "**🌅 Day 1 - Welcome & First Steps**",
+          "activities": "• Personalized welcome\n• Grounding herbal tea\n• Bungalow check-in\n• Gentle start in pristine environment",
+          "objective": "**Objective:** Create a safe cocoon and initiate mental disconnection"
+        },
+        "day2": {
+          "title": "**🧘‍♀️ Day 2 - Vitality & Purity**",
+          "activities": "• Gentle morning yoga\n• Dry sauna\n• Heated thermal pool\n• Himalayan salt detox scrub\n• \"1001 Nights\" Oriental hammam ritual",
+          "objective": "**Objective:** Stimulate elimination pathways, reactivate lymphatic circulation"
+        },
+        "day3": {
+          "title": "**💆‍♀️ Day 3 - Marine Serenity**",
+          "activities": "• Energizing breathwork yoga\n• Bol d'Air Jacquier\n• Jet shower\n• Hydromassage bath\n• Seaweed body wrap\n• Affusion massage",
+          "objective": "**Objective:** Oxygenate cells, eliminate toxins, reconnect to the living body"
+        },
+        "day4": {
+          "title": "**🌊 Day 4 - Relaxation & Deep Rest**",
+          "activities": "• Meditative yoga\n• Bol d'Air Jacquier\n• Sauna\n• Thermal pool\n• Magnesium bath\n• Deep traditional massage",
+          "objective": "**Objective:** Restorative sleep, grounding and lasting relaxation"
+        },
+        "day5": {
+          "title": "**⚡ Day 5 - Energy & Revitalization**",
+          "activities": "• Energizing yoga\n• Bol d'Air Jacquier\n• Jet shower\n• Sport coaching class",
+          "objective": "**Objective:** Activate deep vitality and stimulate body energy"
+        },
+        "day6": {
+          "title": "**🔥 Day 6 - Dynamism & Purification**",
+          "activities": "• Fire cupping therapy\n• Sport coaching class\n• Yoga\n• Bol d'Air Jacquier\n• Jet shower\n• Thermal pool\n• Manicure + Pedicure",
+          "objective": "**Objective:** Consolidate benefits, eliminate final blockages"
+        },
+        "day7": {
+          "title": "**💎 Day 7 - Intense Regeneration**",
+          "activities": "• Bol d'Air Jacquier\n• Stretching\n• Hot stone massage\n• Detoxifying spirulina facial\n• Magnesium bath\n• Yoga\n• Ice bath\n• Seaweed body wrap",
+          "objective": "**Objective:** Maximum cellular regeneration, deep detox, optimal energy balance"
+        },
+        "day8": {
+          "title": "**🏡 Day 8 - Closing & Departure**",
+          "activities": "• Closing ritual\n• Wellness journal\n• Conscious departure",
+          "objective": "**Objective:** Integrate learnings, leave with tools to extend benefits at home"
+        },
+        "followUp": "**✨ Result:** Complete transformation in 8 days (7 nights) to regain your energy and natural balance!"
+      },
+      "booking": {
+        "title": "📅 **I'm Booking**",
+        "decision": "💛 Excellent decision! You're giving yourself 7 nights of pure regeneration.",
+        "fields": {
+          "date": "📅 **Choose your arrival date:**\n(Your stay will last exactly 7 nights)"
+        },
+        "dateFormat": "📝 **Required format:** YYYY-MM-DD",
+        "dateConfirmed": "✅ **Perfect!**\n📅 Arrival: **{checkInDate}**\n📅 Departure: **{checkOutDate}**",
+        "askAdults": "👥 **How many people for this stay?**",
+        "adultsOptions": {
+          "adults1": "1 person",
+          "adults2": "2 people",
+          "adults3": "3 people",
+          "adults4": "4 people",
+          "adultsMore": "More than 4 people"
+        },
+        "adultsConfirmed": "✅ **Booking for {count} person{plural}**\n📅 From **{checkInDate}** to **{checkOutDate}**",
+        "adultsMore": "🌟 **Perfect!** We organize stays for larger groups.\n\nWe'll contact you quickly to personalize your experience.",
+        "contactInfo": "📝 **Final step:**\nYour name and phone number to finalize the booking.",
+        "missingInfo": "❌ **Missing information**\nWe need your dates and contact details to finalize.",
+        "backToBooking": "↩️ **Back to booking**",
+        "chooseDates": "📅 Choose my dates"
+      },
+      "info": {
+        "title": "ℹ️ **7-Night Holistic Escape Information**",
+        "details": "🏨 **Accommodation:** Ocean/nature view bungalows at Dakhla Club\n⏰ **Duration:** 7 nights (8 days)\n🧘‍♀️ **Includes:** 34 treatments + yoga + meals + accommodation\n🌊 **Location:** Dakhla, between desert and ocean\n💰 **Price:** From €2,500/person\n📞 **Booking:** +212 661 230 604",
+        "followUp": "**What would you like to do now?**",
+        "options": {
+          "program": "📋 View detailed program",
+          "reserve": "📅 Book now",
+          "benefits": "✨ Discover the benefits",
+          "advisor": "📞 Speak to an advisor"
+        }
+      },
+      "benefits": {
+        "title": "✨ **Benefits of your 7-night stay**",
+        "physical": "🎯 **Physical benefits:**\n• Deep body detoxification\n• Improved circulation\n• Complete muscle relaxation\n• Immune system boost\n• Restorative sleep",
+        "mental": "🧠 **Mental benefits:**\n• Reduced stress and anxiety\n• Restored mental clarity\n• Emotional balance\n• Reconnection with self\n• Lasting serenity",
+        "lasting": "🌟 **Lasting effects:**\n• Renewed energy\n• Integrated healthy habits\n• Home wellness tools\n• Complete holistic transformation",
+        "motivated": "**Ready to experience this transformation?**"
+      },
+      "advisor": {
+        "whatsappMessage": "Hello, I would like information about the 7-Night Holistic Escape at Dakhla Club.",
+        "desktop": "📞 **Contact our team:**\n+212 661 230 604\n\nOr write to us on WhatsApp for personalized advice!"
+      },
+      "summary": {
+        "complete": "✅ **Your booking summary:**\n\n👤 **Name:** {name}\n📞 **Phone:** {phone}\n📅 **Arrival:** {checkInDate}\n📅 **Departure:** {checkOutDate}\n👥 **Person{plural}:** {adults}",
+        "allReady": "🎉 **Everything is ready!** Our team will process your request as soon as possible.",
+        "finalizeText": "**Finalize my booking:**",
+        "finalize": "✅ Confirm my 7-night booking",
+        "bookingSummary": "📋 **Your booking:**\n• **Name:** {name}\n• **Phone:** {phone}\n• **Stay:** {checkInDate} to {checkOutDate}\n• **People:** {adults}\n\n✅ **Booking confirmed!** We'll contact you within 24h."
+      },
+      "errors": {
+        "invalidDateFormat": "❌ **Incorrect date format**",
+        "dateFormatInstruction": "📝 **Use format:** YYYY-MM-DD",
+        "dateExample": "💡 **Example:** {date}",
+        "incorrectFormat": "❌ **Incorrect format**",
+        "example": "💡 **Example:** Marie Dupont - 0612345678"
+      },
+      "messages": {
+        "thankYou": "😊 **Thank you for your message!** How can I help you?"
+      },
+      "placeholders": {
+        "date": "📅 YYYY-MM-DD",
+        "namePhone": "First Last Name - Phone",
+        "typeMessage": "Type your message..."
+      },
+      "status": {
+        "online": "Online"
+      },
+      "actions": {
+        "call": "📞 Call an advisor"
+      }
+    }
 },
 
 

@@ -80,6 +80,7 @@ import { ServicesTable7 } from '@/components/offer-7/ServicesTable7';
 import { ProgrammeFonctionne7 } from '@/components/offer-7/ProgrammeFonctionne7';
 import { ObjectivesSection7 } from '@/components/offer-7/ObjectivesSection7';
 import FAQ7 from '@/components/offer-7/FAQ7';
+import WhatsAppChatbot7 from '@/components/offer-7/WhatsAppChatbot7';
 
 export default function Page() {
   return (
@@ -95,6 +96,7 @@ export default function Page() {
       <RewardsSection/>
       <FAQ7/>
       <NewsletterSection7/>
+      <WhatsAppChatbot7/>
       <Footer />
     </>
   );
