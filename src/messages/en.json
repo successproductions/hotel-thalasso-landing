@@ -1209,16 +1209,44 @@
         "response": "⚡ Quick response: WhatsApp < 2h • Email < 4h"
       }
     },
-    "booking": {
-      "title": "📅 **I book**",
-      "decision": "💛 Excellent decision! Give your body 3 nights it will never forget.",
-      "needInfo": "I simply need 3 pieces of information to start your booking:",
-      "fields": {
-        "date": "📅 Your arrival date (format: YYYY-MM-DD)",
-        "adults": "👥 Number of adults (1 to 4+)",
-        "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
-      }
-    },
+"booking": {
+  "decision": "💛 Excellent decision! Give your body 3 nights it will never forget.",
+  "fields": {
+    "date": "📅 **What is your desired arrival date?**",
+    "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
+  },
+  "dateFormat": "Format: YYYY-MM-DD\nExample: 2025-08-05\n\nNote: Your stay will automatically be 3 nights 🌙",
+  "adultsQuestion": "👥 **How many adults will you be?**",
+  "adultsOptions": {
+    "one": "1 adult",
+    "two": "2 adults",
+    "three": "3 adults", 
+    "four": "4 adults",
+    "more": "More than 4 adults"
+  },
+  "updated": "✅ **Booking updated!**",
+  "confirmDetails": "📅 **Arrival:** {checkIn}\n📅 **Departure:** {checkOut}\n👥 **Adults:** {adults}\n\nEverything perfect?",
+  "continueYes": "✅ Yes, continue",
+  "modifyAdults": "👥 Modify again",
+  "needContact": "Perfect! Now I need your contact details:",
+  "perfect": "✅ **Perfect {name}!**",
+  "fullSummary": "📋 **Complete summary:**\n👤 {name}\n📞 {phone}\n📅 {checkIn} → {checkOut}\n👥 {adults} adult{plural}\n🌙 3 nights holistic escape",
+  "allReady": "🎉 **Everything is ready!**", 
+  "secureBooking": "Click below to finalize your booking securely 🔒",
+  "finalizeButton": "✅ Finalize my booking",
+  "dateConfirmed": "✅ **Date confirmed!**",
+  "arrivalDeparture": "📅 **Arrival:** {checkIn}\n📅 **Departure:** {checkOut} (3 nights)",
+  "redirecting": "🔄 Redirection vers le système de réservation...",
+  "mobileRedirect": "📱 Redirection en cours...",
+  "desktopRedirect": "✅ La page de réservation s'est ouverte dans un nouvel onglet.",
+  "dataSaved": "📊 Vos informations ont été enregistrées avec succès!",
+  "advisorContact": "Un conseiller vous contactera pour confirmer les détails !",
+  "missingInfo": "❌ Veuillez d'abord remplir toutes les informations nécessaires.",
+  "returnToBooking": "Retournons à la réservation :",
+  "chooseDates": "📅 Choisir mes dates",
+  "moreThan4": "Pour plus de 4 adultes, veuillez contacter directement notre équipe :",
+  "contactTeam": "📞 **Téléphone :** +212 652 88 1921\n📧 **Email :** reservation@dakhlaclub.com\n\nIls pourront vous proposer des solutions adaptées à votre groupe !"
+},
     "summary": {
       "title": "🔁 **Once the info is filled in:**",
       "subtitle": "📋 Here's your summary:",
@@ -1266,9 +1294,13 @@
     },
     "errors": {
       "incorrectFormat": "Incorrect format. Please respect the format: First Name Last Name – Phone Number",
-      "example": "Example: Ahmed Bennani – 0661234567",
       "pastDate": "❌ Arrival date cannot be in the past.",
-      "chooseToday": "Please choose a date from today onwards."
+      "chooseToday": "Please choose a date from today onwards.",
+      "invalidDate": "❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ",
+  "validExample": "Exemple valide: {example}",
+  "incorrectDateFormat": "❌ Format de date incorrect.",
+  "useFormat": "Veuillez utiliser le format: AAAA-MM-JJ",
+  "example": "Exemple: {example}"
     },
     "actions": {
       "call": "Call",

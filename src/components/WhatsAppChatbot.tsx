@@ -191,14 +191,22 @@ const WhatsAppChatbot: React.FC = () => {
         phone: parts[1],
         hasProvidedInfo: true
       });
-      addMessage(`✅ **Parfait ${parts[0]} !**`, false);
+      addMessage(t('booking.perfect', { name: parts[0] }), false);
       setTimeout(() => {
-        addMessage(`📋 **Récapitulatif complet :**\n👤 ${parts[0]}\n📞 ${parts[1]}\n📅 ${bookingData.checkInDate} → ${bookingData.checkOutDate}\n👥 ${bookingData.adults} adulte${bookingData.adults > 1 ? 's' : ''}\n🌙 3 nuits d'évasion holistique`, false);
+        const plural = bookingData.adults > 1 ? 's' : '';
+        addMessage(t('booking.fullSummary', { 
+          name: parts[0], 
+          phone: parts[1], 
+          checkIn: bookingData.checkInDate, 
+          checkOut: bookingData.checkOutDate, 
+          adults: bookingData.adults.toString(),
+          plural: plural
+        }), false);
         setTimeout(() => {
-          addMessage("🎉 **Tout est prêt !**", false);
+          addMessage(t('booking.allReady'), false);
           setTimeout(() => {
-            addMessage("Cliquez ci-dessous pour finaliser votre réservation en toute sécurité 🔒", false, true, [
-              { text: "✅ Finaliser ma réservation", value: "redirect_booking" }
+            addMessage(t('booking.secureBooking'), false, true, [
+              { text: t('booking.finalizeButton'), value: "redirect_booking" }
             ]);
           }, 1000);
         }, 1000);
@@ -258,9 +266,9 @@ const WhatsAppChatbot: React.FC = () => {
           setTimeout(() => {
             addMessage(t('booking.decision'), false);
             setTimeout(() => {
-              addMessage("📅 **Quelle est votre date d'arrivée souhaitée ?**", false);
+              addMessage(t('booking.fields.date'), false);
               setTimeout(() => {
-                addMessage(`Format: AAAA-MM-JJ\nExemple: ${getTodayDate()}\n\nNote: Votre séjour sera automatiquement de 3 nuits 🌙`, false);
+                addMessage(t('booking.dateFormat'), false);
                 setCurrentStep('booking_date');
               }, 1000);
             }, 1000);
@@ -289,9 +297,7 @@ const WhatsAppChatbot: React.FC = () => {
               const contactText = `${t('advisor.contact.phone')}\n${t('advisor.contact.whatsapp')}\n${t('advisor.contact.email')}\n${t('advisor.contact.hours')}\n${t('advisor.contact.response')}`;
               addMessage(contactText, false);
               addMessage(t('info.followUp'), false, true, [
-                // { text: t('info.options.program'), value: "program" },
                 { text: t('info.options.booking'), value: "booking" },
-                // { text: t('info.options.advisor'), value: "advisor" }
               ]);
             }, 1000);
           }, 1000);
@@ -299,16 +305,16 @@ const WhatsAppChatbot: React.FC = () => {
           
         case 'redirect_booking':
           if (bookingData.checkInDate && bookingData.checkOutDate && userInfo.hasProvidedInfo) {
-            addMessage("🔄 Redirection vers le système de réservation...", false);
+            addMessage(t('booking.redirecting'), false);
             setTimeout(() => {
               const bookingUrl = generateBookingUrl(bookingData);
               
               if (isMobile()) {
-                addMessage("📱 Redirection en cours...", false);
+                addMessage(t('booking.mobileRedirect'), false);
                 window.location.href = bookingUrl;
               } else {
                 window.open(bookingUrl, '_blank');
-                addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
+                addMessage(t('booking.desktopRedirect'), false);
               }
               
               sendReservationToSheets(userInfo, bookingData, sessionId)
@@ -317,7 +323,7 @@ const WhatsAppChatbot: React.FC = () => {
                     console.log('✅ Données sauvegardées avec succès');
                     if (!isMobile()) {
                       setTimeout(() => {
-                        addMessage("📊 Vos informations ont été enregistrées avec succès!", false);
+                        addMessage(t('booking.dataSaved'), false);
                       }, 2000);
                     }
                   } else {
@@ -330,33 +336,35 @@ const WhatsAppChatbot: React.FC = () => {
               
               if (!isMobile()) {
                 setTimeout(() => {
-                  const summaryText = t('summary.subtitle').replace('{name}', userInfo.name)
-                    .replace('{phone}', userInfo.phone)
-                    .replace('{checkInDate}', bookingData.checkInDate)
-                    .replace('{checkOutDate}', bookingData.checkOutDate)
-                    .replace('{adults}', bookingData.adults.toString());
+                  const summaryText = t('summary.subtitle', {
+                    name: userInfo.name,
+                    phone: userInfo.phone,
+                    checkInDate: bookingData.checkInDate,
+                    checkOutDate: bookingData.checkOutDate,
+                    adults: bookingData.adults.toString()
+                  });
                   
-                  addMessage(`📋 ${summaryText}\n\n🌙 Séjour : 3 nuits d'évasion holistique\n\nUn conseiller vous contactera pour confirmer les détails !`, false);
+                  addMessage(`📋 ${summaryText}\n\n${t('summary.fields.duration')}\n\n${t('booking.advisorContact')}`, false);
                 }, 1500);
               }
             }, 1500);
           } else {
-            addMessage("❌ Veuillez d'abord remplir toutes les informations nécessaires.", false);
+            addMessage(t('booking.missingInfo'), false);
             setTimeout(() => {
-              addMessage("Retournons à la réservation :", false, true, [
-                { text: "📅 Choisir mes dates", value: "booking" }
+              addMessage(t('booking.returnToBooking'), false, true, [
+                { text: t('booking.chooseDates'), value: "booking" }
               ]);
             }, 1000);
           }
           break;
 
         case 'change_adults':
-          addMessage("👥 **Combien d'adultes serez-vous ?**", false, true, [
-            { text: "1 adulte", value: "adults_1" },
-            { text: "2 adultes", value: "adults_2" },
-            { text: "3 adultes", value: "adults_3" },
-            { text: "4 adultes", value: "adults_4" },
-            { text: "Plus de 4 adultes", value: "adults_more" }
+          addMessage(t('booking.adultsQuestion'), false, true, [
+            { text: t('booking.adultsOptions.one'), value: "adults_1" },
+            { text: t('booking.adultsOptions.two'), value: "adults_2" },
+            { text: t('booking.adultsOptions.three'), value: "adults_3" },
+            { text: t('booking.adultsOptions.four'), value: "adults_4" },
+            { text: t('booking.adultsOptions.more'), value: "adults_more" }
           ]);
           break;
           
@@ -366,17 +374,21 @@ const WhatsAppChatbot: React.FC = () => {
         case 'adults_4':
           const adultCount = parseInt(option.value.split('_')[1]);
           const updatedDates = handleDateSelection(bookingData.checkInDate, adultCount);
-          addMessage(`✅ **Réservation mise à jour !**`, false);
+          addMessage(t('booking.updated'), false);
           setTimeout(() => {
-            addMessage(`📅 **Arrivée :** ${updatedDates.checkInDate}\n📅 **Départ :** ${updatedDates.checkOutDate}\n👥 **Adultes :** ${updatedDates.adults}\n\nTout est parfait ?`, false, true, [
-              { text: "✅ Oui, continuer", value: "booking_info_step" },
-              { text: "👥 Modifier encore", value: "change_adults" }
+            addMessage(t('booking.confirmDetails', {
+              checkIn: updatedDates.checkInDate,
+              checkOut: updatedDates.checkOutDate,
+              adults: updatedDates.adults.toString()
+            }), false, true, [
+              { text: t('booking.continueYes'), value: "booking_info_step" },
+              { text: t('booking.modifyAdults'), value: "change_adults" }
             ]);
           }, 1000);
           break;
 
         case 'booking_info_step':
-          addMessage("Parfait ! Maintenant j'ai besoin de vos coordonnées :", false);
+          addMessage(t('booking.needContact'), false);
           setTimeout(() => {
             addMessage(t('booking.fields.contact'), false);
             setCurrentStep('contact_info');
@@ -384,9 +396,9 @@ const WhatsAppChatbot: React.FC = () => {
           break;
           
         case 'adults_more':
-          addMessage("Pour plus de 4 adultes, veuillez contacter directement notre équipe :", false);
+          addMessage(t('booking.moreThan4'), false);
           setTimeout(() => {
-            addMessage(`📞 **Téléphone :** +212 652 88 1921\n📧 **Email :** reservation@dakhlaclub.com\n\nIls pourront vous proposer des solutions adaptées à votre groupe !`, false);
+            addMessage(t('booking.contactTeam'), false);
           }, 1000);
           break;
           
@@ -425,28 +437,31 @@ const WhatsAppChatbot: React.FC = () => {
         
         if (isNaN(inputDate.getTime())) {
           setTimeout(() => {
-            addMessage("❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ", false);
-            addMessage(`Exemple valide: ${getTodayDate()}`, false);
+            addMessage(t('errors.invalidDate'), false);
+            addMessage(t('errors.validExample', { example: getTodayDate() }), false);
           }, 1000);
         } else if (inputDate < today) {
           setTimeout(() => {
-            addMessage("❌ La date d'arrivée ne peut pas être dans le passé.", false);
-            addMessage("Veuillez choisir une date à partir d'aujourd'hui.", false);
+            addMessage(t('errors.pastDate'), false);
+            addMessage(t('errors.chooseToday'), false);
           }, 1000);
         } else {
           // Save the date and move to adults selection
           const dates = handleDateSelection(userInput, 2); // Default 2 adults for now
           setTimeout(() => {
-            addMessage(`✅ **Date confirmée !**`, false);
+            addMessage(t('booking.dateConfirmed'), false);
             setTimeout(() => {
-              addMessage(`📅 **Arrivée :** ${dates.checkInDate}\n📅 **Départ :** ${dates.checkOutDate} (3 nuits)`, false);
+              addMessage(t('booking.arrivalDeparture', {
+                checkIn: dates.checkInDate,
+                checkOut: dates.checkOutDate
+              }), false);
               setTimeout(() => {
-                addMessage("👥 **Combien d'adultes serez-vous ?**", false, true, [
-                  { text: "1 adulte", value: "adults_1" },
-                  { text: "2 adultes", value: "adults_2" },
-                  { text: "3 adultes", value: "adults_3" },
-                  { text: "4 adultes", value: "adults_4" },
-                  { text: "Plus de 4 adultes", value: "adults_more" }
+                addMessage(t('booking.adultsQuestion'), false, true, [
+                  { text: t('booking.adultsOptions.one'), value: "adults_1" },
+                  { text: t('booking.adultsOptions.two'), value: "adults_2" },
+                  { text: t('booking.adultsOptions.three'), value: "adults_3" },
+                  { text: t('booking.adultsOptions.four'), value: "adults_4" },
+                  { text: t('booking.adultsOptions.more'), value: "adults_more" }
                 ]);
                 setCurrentStep('booking_adults');
               }, 1000);
@@ -455,9 +470,9 @@ const WhatsAppChatbot: React.FC = () => {
         }
       } else {
         setTimeout(() => {
-          addMessage("❌ Format de date incorrect.", false);
-          addMessage(`Veuillez utiliser le format: AAAA-MM-JJ`, false);
-          addMessage(`Exemple: ${getTodayDate()}`, false);
+          addMessage(t('errors.incorrectDateFormat'), false);
+          addMessage(t('errors.useFormat'), false);
+          addMessage(t('errors.example', { example: getTodayDate() }), false);
         }, 1000);
       }
     } else if (currentStep === 'contact_info') {
@@ -585,8 +600,8 @@ const WhatsAppChatbot: React.FC = () => {
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder={
-                  currentStep === 'booking_date' ? "AAAA-MM-JJ" :
-                  currentStep === 'contact_info' ? "Prénom Nom - 06xx xx xx xx" :
+                  currentStep === 'booking_date' ? t('placeholders.date') :
+                  currentStep === 'contact_info' ? t('placeholders.namePhone') :
                   t('placeholders.typeMessage')
                 }
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#14b8a6]"
