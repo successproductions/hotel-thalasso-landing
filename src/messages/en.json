@@ -731,11 +731,20 @@
       "whatsapp": "WhatsApp"
     },
     "errors": {
-  "incorrectFormat": "Incorrect format. Please respect the format: First Name Last Name - Phone Number",
-  "example": "Example: Ahmed Bennani - 0661234567",
-  "pastDate": " Arrival date cannot be in the past.",
-  "chooseToday": "Please choose a date from today onwards."
-},
+        "invalidDate": "❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ",
+        "validExample": "Exemple valide: {date}",
+        "invalidDateFormat": "❌ Format de date incorrect.",
+        "dateFormatInstruction": "Veuillez utiliser le format: AAAA-MM-JJ",
+        "dateExample": "Exemple: {date}"
+      },
+      "summary": {
+        "perfect": "✅ **Parfait {name} !**",
+        "complete": "📋 **Récapitulatif complet :**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adulte{plural}\n🌙 5 nuits d'évasion holistique",
+        "allReady": "🎉 **Tout est prêt !**",
+        "finalizeText": "Cliquez ci-dessous pour finaliser votre réservation en toute sécurité 🔒",
+        "finalize": "✅ Finaliser ma réservation",
+        "bookingSummary": "📋 **Récapitulatif de votre réservation :**\n👤 {name}\n📞 {phone}\n📅 Arrivée : {checkInDate}\n📅 Départ : {checkOutDate}\n👥 {adults} adulte(s)\n🌙 5 nuits d'évasion holistique\n\nUn conseiller vous contactera pour confirmer les détails !"
+      },
 "messages": {
   "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 65288192.",
   "whatsappRedirect": "Hello! I would like to know more about the 7-day Holistic Escape at Dakhla Club."
