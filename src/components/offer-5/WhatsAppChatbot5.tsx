@@ -185,14 +185,21 @@ const WhatsAppChatbot5: React.FC = () => {
         phone: parts[1],
         hasProvidedInfo: true
       });
-      addMessage(`✅ **Parfait ${parts[0]} !**`, false);
+      addMessage(t('summary.perfect').replace('{name}', parts[0]), false);
       setTimeout(() => {
-        addMessage(`📋 **Récapitulatif complet :**\n👤 ${parts[0]}\n📞 ${parts[1]}\n📅 ${bookingData.checkInDate} → ${bookingData.checkOutDate}\n👥 ${bookingData.adults} adulte${bookingData.adults > 1 ? 's' : ''}\n🌙 5 nuits d'évasion holistique`, false);
+        const plural = bookingData.adults > 1 ? 's' : '';
+        addMessage(t('summary.complete')
+          .replace('{name}', parts[0])
+          .replace('{phone}', parts[1])
+          .replace('{checkInDate}', bookingData.checkInDate)
+          .replace('{checkOutDate}', bookingData.checkOutDate)
+          .replace('{adults}', bookingData.adults.toString())
+          .replace('{plural}', plural), false);
         setTimeout(() => {
-          addMessage("🎉 **Tout est prêt !**", false);
+          addMessage(t('summary.allReady'), false);
           setTimeout(() => {
-            addMessage("Cliquez ci-dessous pour finaliser votre réservation en toute sécurité 🔒", false, true, [
-              { text: "✅ Finaliser ma réservation", value: "redirect_booking" }
+            addMessage(t('summary.finalizeText'), false, true, [
+              { text: t('summary.finalize'), value: "redirect_booking" }
             ]);
           }, 1000);
         }, 1000);
@@ -208,42 +215,43 @@ const WhatsAppChatbot5: React.FC = () => {
     setTimeout(() => {
       switch(option.value) {
         case 'program':
-          addMessage(t('program.title'), false);
-          setTimeout(() => {
-            const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n${t('program.day1.objective')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n${t('program.day2.objective')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}\n${t('program.day3.objective')}`;
-            
-            addMessage(programText, false);
-            setTimeout(() => {
-              const programText2 = `${t('program.day4.title')}\n${t('program.day4.activities')}\n${t('program.day4.objective')}\n\n${t('program.day5.title')}\n${t('program.day5.activities')}\n${t('program.day5.objective')}\n\n${t('program.day6.title')}\n${t('program.day6.activities')}\n${t('program.day6.objective')}`;
-              
-              addMessage(programText2, false);
-              setTimeout(() => {
-                addMessage(t('program.followUp'), false, true, [
-                  { text: "🔸 Connaître les bienfaits concrets", value: "benefits" },
-                  { text: "🔸 Réserver maintenant", value: "booking" }
-                ]);
-              }, 2000);
-            }, 2000);
-          }, 1000);
-          break;
+  addMessage(t('program.title'), false);
+  setTimeout(() => {
+    const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n${t('program.day1.objective')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n${t('program.day2.objective')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}\n${t('program.day3.objective')}`;
+    
+    addMessage(programText, false);
+    setTimeout(() => {
+      const programText2 = `${t('program.day4.title')}\n${t('program.day4.activities')}\n${t('program.day4.objective')}\n\n${t('program.day5.title')}\n${t('program.day5.activities')}\n${t('program.day5.objective')}\n\n${t('program.day6.title')}\n${t('program.day6.activities')}\n${t('program.day6.objective')}`;
+      
+      addMessage(programText2, false);
+      setTimeout(() => {
+        addMessage(t('program.followUp'), false, true, [
+          // { text: t('benefits.knowledgeOption'), value: "benefits" },
+          { text: t('info.options.reserve'), value: "booking" }
+        ]);
+      }, 2000);
+    }, 2000);
+  }, 1000);
+  break;
 
-          case 'benefits':
-            addMessage(t('benefits.title'), false);
-            setTimeout(() => {
-              addMessage(t('benefits.physical'), false);
-              setTimeout(() => {
-                addMessage(t('benefits.mental'), false);
-                setTimeout(() => {
-                  addMessage(t('benefits.lasting'), false);
-                  setTimeout(() => {
-                    addMessage(t('benefits.motivated'), false, true, [
-                      { text: t('info.options.reserve'), value: "booking" }
-                    ]);
-                  }, 1000);
-                }, 1000);
-              }, 1000);
-            }, 1000);
-            break;
+  case 'benefits':
+    addMessage(t('benefits.title'), false);
+    setTimeout(() => {
+      addMessage(t('benefits.physical'), false);
+      setTimeout(() => {
+        addMessage(t('benefits.mental'), false);
+        setTimeout(() => {
+          addMessage(t('benefits.lasting'), false);
+          setTimeout(() => {
+            addMessage(t('benefits.motivated'), false, true, [
+              { text: t('info.options.reserve'), value: "booking" },
+              { text: t('benefits.advisorOption'), value: "advisor" }
+            ]);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    }, 1000);
+    break;
           
             case 'booking':
               addMessage(t('booking.decision'), false);
@@ -289,54 +297,57 @@ const WhatsAppChatbot5: React.FC = () => {
                     addMessage(advisorText, false);
                   }, 1000);
                   break;
-          
-        case 'redirect_booking':
-          if (bookingData.checkInDate && bookingData.checkOutDate && userInfo.hasProvidedInfo) {
-            addMessage("🔄 Redirection vers le système de réservation...", false);
-            setTimeout(() => {
-              const bookingUrl = generateBookingUrl(bookingData);
-              
-              if (isMobile()) {
-                addMessage("📱 Redirection en cours...", false);
-                window.location.href = bookingUrl;
-              } else {
-                window.open(bookingUrl, '_blank');
-                addMessage("✅ La page de réservation s'est ouverte dans un nouvel onglet.", false);
-              }
-              
-              sendReservationToSheets(userInfo, bookingData, sessionId)
-                .then((result) => {
-                  if (result.status === 'success') {
-                    console.log('✅ Données sauvegardées avec succès');
-                    if (!isMobile()) {
+                  case 'redirect_booking':
+                    if (bookingData.checkInDate && bookingData.checkOutDate && userInfo.hasProvidedInfo) {
+                      addMessage(t('booking.redirecting'), false);
                       setTimeout(() => {
-                        addMessage("📊 Vos informations ont été enregistrées avec succès!", false);
-                      }, 2000);
+                        const bookingUrl = generateBookingUrl(bookingData);
+                        
+                        if (isMobile()) {
+                          addMessage(t('booking.mobileRedirect'), false);
+                          window.location.href = bookingUrl;
+                        } else {
+                          window.open(bookingUrl, '_blank');
+                          addMessage(t('booking.newTabOpened'), false);
+                        }
+                        
+                        sendReservationToSheets(userInfo, bookingData, sessionId)
+                          .then((result) => {
+                            if (result.status === 'success') {
+                              console.log('✅ Données sauvegardées avec succès');
+                              if (!isMobile()) {
+                                setTimeout(() => {
+                                  addMessage(t('booking.dataSuccess'), false);
+                                }, 2000);
+                              }
+                            } else {
+                              console.error('❌ Erreur lors de la sauvegarde:', result.message);
+                            }
+                          })
+                          .catch((error) => {
+                            console.error('❌ Erreur réseau:', error);
+                          });
+                        
+                        if (!isMobile()) {
+                          setTimeout(() => {
+                            addMessage(t('summary.bookingSummary')
+                              .replace('{name}', userInfo.name)
+                              .replace('{phone}', userInfo.phone)
+                              .replace('{checkInDate}', bookingData.checkInDate)
+                              .replace('{checkOutDate}', bookingData.checkOutDate)
+                              .replace('{adults}', bookingData.adults.toString()), false);
+                          }, 1500);
+                        }
+                      }, 1500);
+                    } else {
+                      addMessage(t('booking.missingInfo'), false);
+                      setTimeout(() => {
+                        addMessage(t('booking.backToBooking'), false, true, [
+                          { text: t('booking.chooseDates'), value: "booking" }
+                        ]);
+                      }, 1000);
                     }
-                  } else {
-                    console.error('❌ Erreur lors de la sauvegarde:', result.message);
-                  }
-                })
-                .catch((error) => {
-                  console.error('❌ Erreur réseau:', error);
-                });
-              
-              if (!isMobile()) {
-                setTimeout(() => {
-                  addMessage(`📋 **Récapitulatif de votre réservation :**\n👤 ${userInfo.name}\n📞 ${userInfo.phone}\n📅 Arrivée : ${bookingData.checkInDate}\n📅 Départ : ${bookingData.checkOutDate}\n👥 ${bookingData.adults} adulte(s)\n🌙 5 nuits d'évasion holistique\n\nUn conseiller vous contactera pour confirmer les détails !`, false);
-                }, 1500);
-              }
-            }, 1500);
-          } else {
-            addMessage("❌ Veuillez d'abord remplir toutes les informations nécessaires.", false);
-            setTimeout(() => {
-              addMessage("Retournons à la réservation :", false, true, [
-                { text: "📅 Choisir mes dates", value: "booking" }
-              ]);
-            }, 1000);
-          }
-          break;
-
+                    break;
           case 'change_adults':
             addMessage(t('booking.askAdults'), false, true, [
               { text: t('booking.adultsOptions.adults1'), value: "adults_1" },
