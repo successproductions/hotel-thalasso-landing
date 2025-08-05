@@ -208,17 +208,17 @@ const WhatsAppChatbot5: React.FC = () => {
     setTimeout(() => {
       switch(option.value) {
         case 'program':
-          addMessage("🌟 **Programme Évasion Holistique 5 Nuits**\n\nUn voyage complet de transformation corps & esprit :", false);
+          addMessage(t('program.title'), false);
           setTimeout(() => {
-            const programText = `**🌅 Jour 1 - Arrivée au Dakhla Club**\n• Accueil personnalisé\n• Infusion d'ancrage\n• Installation bungalow vue nature/océan\n• Début en douceur dans un environnement pur\n\n**🧘‍♀️ Jour 2 - Lâcher-prise & Équilibre**\n• Yoga doux au lever du soleil\n• Sauna sec\n• Piscine thermale chauffée\n• Scrub détox sel himalaya\n• Hammam mille et une nuit\n\n**💆‍♀️ Jour 3 - Oxygénation & Régénération**\n• Yoga respiration & énergie\n• Bol d'Air Jacquier\n• Douche à jet\n• Bain hydromassant\n• Enveloppement aux algues\n• Modelage sous affusion`;
+            const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n${t('program.day1.objective')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n${t('program.day2.objective')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}\n${t('program.day3.objective')}`;
             
             addMessage(programText, false);
             setTimeout(() => {
-              const programText2 = `**🌊 Jour 4 - Sérénité & Détente Profonde**\n• Yoga méditatif\n• Bol d'Air Jacquier\n• Sauna\n• Piscine thermale\n• Bain au magnésium\n• Massage traditionnel profond\n\n**⚡ Jour 5 - Stimulation & Vitalité**\n• Yoga dynamisant\n• Bol d'Air Jacquier\n• Soin lissant détoxifiant spiruline\n• Cupping thérapie serviette de feu\n• Manucure + Pédicure\n\n**🏡 Jour 6 - Départ du Dakhla Club**\n• Rituel de clôture\n• Conseils de prolongation\n• Carnet de bien-être à emporter`;
+              const programText2 = `${t('program.day4.title')}\n${t('program.day4.activities')}\n${t('program.day4.objective')}\n\n${t('program.day5.title')}\n${t('program.day5.activities')}\n${t('program.day5.objective')}\n\n${t('program.day6.title')}\n${t('program.day6.activities')}\n${t('program.day6.objective')}`;
               
               addMessage(programText2, false);
               setTimeout(() => {
-                addMessage("**✨ Résultat :** Une transformation complète en 6 jours (5 nuits) pour retrouver votre énergie et votre équilibre naturel !", false, true, [
+                addMessage(t('program.followUp'), false, true, [
                   { text: "🔸 Connaître les bienfaits concrets", value: "benefits" },
                   { text: "🔸 Réserver maintenant", value: "booking" }
                 ]);
@@ -228,23 +228,18 @@ const WhatsAppChatbot5: React.FC = () => {
           break;
 
         case 'benefits':
-          addMessage("✨ **Bienfaits de votre évasion 5 nuits**", false);
+          addMessage(t('benefits.title'), false);
           setTimeout(() => {
-            addMessage("🌟 En 5 nuits, votre corps et votre esprit vous diront merci :", false);
+            addMessage(t('benefits.physical'), false);
             setTimeout(() => {
-              const physicalText = `💪 **Physiques**\n• Détoxification profonde\n• Regain d'énergie\n• Amélioration du sommeil\n• Renforcement immunitaire`;
-              addMessage(physicalText, false);
+              addMessage(t('benefits.mental'), false);
               setTimeout(() => {
-                const mentalText = `🧠 **Mentaux**\n• Réduction du stress\n• Clarté mentale\n• Équilibre émotionnel\n• Confiance retrouvée`;
-                addMessage(mentalText, false);
+                addMessage(t('benefits.lasting'), false);
                 setTimeout(() => {
-                  addMessage(`⏳ **Et après le séjour ?**\nNouvelles habitudes saines, outils de bien-être, suivi personnalisé post-séjour`, false);
-                  setTimeout(() => {
-                    addMessage("🎯 Motivé(e) pour commencer cette transformation ?", false, true, [
-                      { text: "🔸 Je réserve maintenant", value: "booking" },
-                      { text: "🔸 Parler à un conseiller", value: "advisor" }
-                    ]);
-                  }, 1000);
+                  addMessage(t('benefits.motivated'), false, true, [
+                    { text: "🔸 " + t('actions.reserve'), value: "booking" },
+                    { text: "🔸 Parler à un conseiller", value: "advisor" }
+                  ]);
                 }, 1000);
               }, 1000);
             }, 1000);
@@ -252,28 +247,24 @@ const WhatsAppChatbot5: React.FC = () => {
           break;
           
         case 'booking':
-          addMessage("📅 **Je réserve ma transformation**", false);
+          addMessage(t('booking.decision'), false);
           setTimeout(() => {
-            addMessage("🎉 **Excellente décision !** Vous vous offrez 5 nuits de transformation holistique.", false);
+            addMessage(t('booking.askDate'), false);
             setTimeout(() => {
-              addMessage("📅 **Quelle est votre date d'arrivée souhaitée ?**", false);
-              setTimeout(() => {
-                addMessage(`Format : AAAA-MM-JJ\nExemple : ${getTodayDate()}\n\nNote : Votre séjour sera automatiquement de 5 nuits 🌙`, false);
-                setCurrentStep('booking_date');
-              }, 1000);
+              addMessage(`${t('booking.dateFormat')}\n${t('booking.example')} ${getTodayDate()}\n\n${t('booking.note')}`, false);
+              setCurrentStep('booking_date');
             }, 1000);
           }, 1000);
           break;
 
         case 'info':
-          addMessage("ℹ️ **Informations Pratiques - Évasion 5 Nuits**", false);
+          addMessage(t('info.title'), false);
           setTimeout(() => {
-            const infoText = `📍 **Lieu :** Dakhla Club, Point de Dragon PK28\n⏰ **Durée :** 6 jours / 5 nuits\n🏠 **Hébergement :** Inclus en pension complète\n🍽️ **Repas :** Cuisine santé et détox\n👥 **Capacité :** Groupes de 2 à 8 personnes\n📞 **Contact :** +212 652 881 921`;
-            addMessage(infoText, false);
+            addMessage(t('info.details'), false);
             setTimeout(() => {
               addMessage("Autres informations souhaitées ?", false, true, [
                 { text: "🔸 Voir le programme détaillé", value: "program" },
-                { text: "🔸 Réserver maintenant", value: "booking" },
+                { text: "🔸 " + t('actions.reserve'), value: "booking" },
                 { text: "🔸 Parler à un conseiller", value: "advisor" }
               ]);
             }, 2000);
@@ -281,10 +272,22 @@ const WhatsAppChatbot5: React.FC = () => {
           break;
 
         case 'advisor':
-          addMessage("🤝 **Parler à un conseiller spécialisé**", false);
+          addMessage(t('advisor.title'), false);
           setTimeout(() => {
-            const contactText = `📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp** : +212 652 88 1921\n📧 **Email** : reservation@dakhlaclub.com\n🕘 **Disponibilité** : Tous les jours de 9h à 20h\n⚡ **Réponse rapide** : WhatsApp < 2h • Email < 4h`;
-            addMessage(contactText, false);
+            // Try to get the translation, fallback if needed
+            let advisorText;
+            try {
+              advisorText = t('advisor.contact2');
+              
+              if (advisorText.startsWith('offer5.chatbot5.advisor.contact2') || advisorText === 'advisor.contact2') {
+                advisorText = `📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp** : +212 652 88 1921\n📧 **Email** : reservation@dakhlaclub.com\n🕘 **Disponibilité** : Tous les jours de 9h à 20h\n⚡ **Réponse rapide** : WhatsApp < 2h • Email < 4h`;
+              }
+            } catch (error) {
+              console.error('Translation error for advisor.contact2:', error);
+              advisorText = `📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp** : +212 652 88 1921\n📧 **Email** : reservation@dakhlaclub.com\n🕘 **Disponibilité** : Tous les jours de 9h à 20h\n⚡ **Réponse rapide** : WhatsApp < 2h • Email < 4h`;
+            }
+            
+            addMessage(advisorText, false);
           }, 1000);
           break;
           
@@ -394,7 +397,7 @@ const WhatsAppChatbot5: React.FC = () => {
   };
 
   const handleWhatsAppRedirect = (): void => {
-    const message = encodeURIComponent("Bonjour ! Je souhaite en savoir plus sur l'Évasion Holistique 5 nuits au Dakhla Club.");
+    const message = encodeURIComponent(t('messages.whatsappRedirect'));
     window.open(`https://wa.me/212652881921?text=${message}`, '_blank');
   };
 
@@ -419,8 +422,10 @@ const WhatsAppChatbot5: React.FC = () => {
           }, 1000);
         } else if (inputDate < today) {
           setTimeout(() => {
-            addMessage("❌ La date d'arrivée ne peut pas être dans le passé.", false);
-            addMessage("Veuillez choisir une date à partir d'aujourd'hui.", false);
+            addMessage(t('errors.pastDate'), false);
+            setTimeout(() => {
+              addMessage(t('errors.chooseToday'), false);
+            }, 500);
           }, 1000);
         } else {
           // Save the date and move to adults selection
@@ -455,14 +460,16 @@ const WhatsAppChatbot5: React.FC = () => {
         setCurrentStep('booking_confirmed');
       } else {
         setTimeout(() => {
-          addMessage("Format incorrect. Merci de respecter le format : Prénom Nom - Numéro de téléphone", false);
-          addMessage("Exemple : Ahmed Bennani - 0661234567", false);
+          addMessage(t('errors.incorrectFormat'), false);
+          setTimeout(() => {
+            addMessage(t('errors.example'), false);
+          }, 500);
         }, 1000);
       }
     } else {
       // Handle other messages
       setTimeout(() => {
-        addMessage("Merci pour votre message ! Un conseiller vous répondra sous peu. Pour une réponse immédiate, appelez le +212 652 88 1921.", false);
+        addMessage(t('messages.thankYou'), false);
         setTimeout(() => {
           showMainMenu();
         }, 1000);
@@ -511,7 +518,7 @@ const WhatsAppChatbot5: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-semibold">Dakhla Club Assistant</h3>
-                <p className="text-xs opacity-90">En ligne • Répond rapidement</p>
+                <p className="text-xs opacity-90">{t('status.online')}</p>
               </div>
             </div>
             <button
@@ -556,14 +563,14 @@ const WhatsAppChatbot5: React.FC = () => {
                 className="flex-1 bg-[#14b8a6] text-white px-3 py-2 rounded-lg text-xs flex items-center justify-center space-x-1 hover:bg-[#0d9488] transition-colors"
               >
                 <Phone size={14} />
-                <span>Appeler</span>
+                <span>{t('actions.call')}</span>
               </button>
               <button
                 onClick={handleWhatsAppRedirect}
                 className="flex-1 bg-green-500 text-white px-3 py-2 rounded-lg text-xs flex items-center justify-center space-x-1 hover:bg-green-600 transition-colors"
               >
                 <MessageCircle size={14} />
-                <span>WhatsApp</span>
+                <span>{t('actions.whatsapp')}</span>
               </button>
             </div>
             
@@ -574,9 +581,9 @@ const WhatsAppChatbot5: React.FC = () => {
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 placeholder={
-                  currentStep === 'booking_date' ? "AAAA-MM-JJ" :
-                  currentStep === 'contact_info' ? "Prénom Nom - 06xx xx xx xx" :
-                  "Tapez votre message..."
+                  currentStep === 'booking_date' ? t('placeholders.date') :
+                  currentStep === 'contact_info' ? t('placeholders.namePhone') :
+                  t('placeholders.typeMessage')
                 }
                 className="flex-1 px-3 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#14b8a6]"
                 onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) => {
