@@ -253,16 +253,18 @@ const WhatsAppChatbot5: React.FC = () => {
     }, 1000);
     break;
           
-            case 'booking':
-              addMessage(t('booking.decision'), false);
-              setTimeout(() => {
-                addMessage(t('booking.askDate'), false);
-                setTimeout(() => {
-                  addMessage(`${t('booking.dateFormat')}\n${t('booking.example')} ${getTodayDate()}\n\n${t('booking.note')}`, false);
-                  setCurrentStep('booking_date');
-                }, 1000);
-              }, 1000);
-              break;
+    case 'booking':
+      setTimeout(() => {
+        addMessage(t('booking.decision'), false);
+        setTimeout(() => {
+          addMessage("📅 **Quelle est votre date d'arrivée souhaitée ?**", false);
+          setTimeout(() => {
+            addMessage(`Format: AAAA-MM-JJ\nExemple: ${getTodayDate()}\n\nNote: Votre séjour sera automatiquement de 3 nuits 🌙`, false);
+            setCurrentStep('booking_date');
+          }, 1000);
+        }, 1000);
+      }, 1000);
+      break;
 
               case 'info':
                 addMessage(t('info.title'), false);
@@ -281,23 +283,19 @@ const WhatsAppChatbot5: React.FC = () => {
                 case 'advisor':
                   addMessage(t('advisor.title'), false);
                   setTimeout(() => {
-                    // Try to get the translation, fallback if needed
                     let advisorText;
                     try {
                       advisorText = t('advisor.contact2');
-                      
                       if (advisorText.startsWith('offer5.chatbot5.advisor.contact2') || advisorText === 'advisor.contact2') {
                         advisorText = `📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp** : +212 652 88 1921\n📧 **Email** : reservation@dakhlaclub.com\n🕘 **Disponibilité** : Tous les jours de 9h à 20h\n⚡ **Réponse rapide** : WhatsApp < 2h • Email < 4h`;
                       }
-                    } catch (error) {
-                      console.error('Translation error for advisor.contact2:', error);
+                    } catch {
                       advisorText = `📞 **Ligne directe** : +212 652 88 1921\n💬 **WhatsApp** : +212 652 88 1921\n📧 **Email** : reservation@dakhlaclub.com\n🕘 **Disponibilité** : Tous les jours de 9h à 20h\n⚡ **Réponse rapide** : WhatsApp < 2h • Email < 4h`;
                     }
                     
                     addMessage(advisorText, false);
                     addMessage(t('info.followUp'), false, true, [
-                      { text: t('info.options.reserve'), value: "booking" },
-
+                      { text: t('info.options.booking'), value: "booking" },
                     ]);
                   }, 1000);
                   break;

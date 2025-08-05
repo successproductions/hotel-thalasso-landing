@@ -542,41 +542,28 @@
       },
       "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
     },
-"booking": {
-        "askAdults": "👥 **Combien d'adultes serez-vous ?**",
-        "adultsOptions": {
-          "adults1": "1 adulte",
-          "adults2": "2 adultes",
-          "adults3": "3 adultes", 
-          "adults4": "4 adultes",
-          "adultsMore": "Plus de 4 adultes"
-        },
-        "dateConfirmed": "✅ **Date confirmée !**",
-        "arrival": "📅 **Arrivée :** {checkIn}",
-        "departure": "📅 **Départ :** {checkOut} (5 nuits)",
-        "adultsConfirmed": "✅ **{count} adulte{plural} confirmé{plural} !**",
-        "contactNeeded": "📞 **Maintenant, j'ai besoin de vos coordonnées :**",
-        "formatExample": "Format : Prénom Nom - 0612345678\nExemple : Marie Dupont - 0612345678",
-        "largeGroup": "Pour plus de 4 adultes, veuillez contacter directement notre équipe :",
-        "contactInfo": "📞 **Téléphone :** +212 652 88 1921\n📧 **Email :** reservation@dakhlaclub.com\n\nIls pourront vous proposer des solutions adaptées à votre groupe !",
-        "redirecting": "🔄 Redirection vers le système de réservation...",
-        "mobileRedirect": "📱 Redirection en cours...",
-        "newTabOpened": "✅ La page de réservation s'est ouverte dans un nouvel onglet.",
-        "dataSuccess": "📊 Vos informations ont été enregistrées avec succès!",
-        "missingInfo": "❌ Veuillez d'abord remplir toutes les informations nécessaires.",
-        "backToBooking": "Retournons à la réservation :",
-        "chooseDates": "📅 Choisir mes dates"
-      },
+    "booking": {
+      "title": "📅 **Je réserve**",
+      "decision": "💛 Excellente décision ! Offrez à votre corps 3 nuits qu'il n'oubliera jamais.",
+      "needInfo": "J'ai simplement besoin de 3 infos pour lancer votre réservation :",
+      "fields": {
+        "date": "📅 Votre date d'arrivée (format : AAAA-MM-JJ)",
+        "adults": "👥 Nombre d'adultes (1 à 4+)",
+        "contact": "📞 Votre nom et numéro de téléphone (format : Prénom Nom – 06xx xx xx xx)"
+      }
+    },
     "info": {
         "followUp": "Autres informations souhaitées ?",
         "options": {
           "program": "🔸 Voir le programme détaillé",
           "reserve": "🔸 Réserver maintenant",
-          "advisor": "🔸 Parler à un conseiller"
+          "advisor": "🔸 Parler à un conseiller",
+          "booking": "🔸 Réserver maintenant"
         },
       "title": "ℹ️ **Informations Pratiques - Évasion 5 Nuits**",
       "details": "**📍 Lieu :** Dakhla Club, Point de Dragon PK28\n**⏰ Durée :** 6 jours / 5 nuits\n**🏠 Hébergement :** Inclus en pension complète\n**🍽️ Repas :** Cuisine santé et détox\n**👥 Capacité :** Groupes de 2 à 8 personnes\n**📞 Contact :** +212 652 881 921"
     },
+
     "testimonials": {
       "title": "🌟 **Ce que disent nos clients :**",
       "reviews": "**Sarah, 34 ans :** *\"Les 7 jours ont littéralement changé ma vie. Je me sens complètement régénérée !\"*\n\n**Marc, 42 ans :** *\"Un programme exceptionnel sur 5 nuits. Les thérapeutes sont d'un professionnalisme remarquable.\"*\n\n**Fatima, 38 ans :** *\"J'ai retrouvé mon énergie et ma joie de vivre. Cette semaine de transformation est magique !\"*",
