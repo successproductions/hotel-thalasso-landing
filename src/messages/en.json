@@ -807,6 +807,7 @@
   
 },
 
+
 "offer7":{
   "home": {
     "title": "WELCOME TO DAKHLA CLUB",
@@ -1072,9 +1073,8 @@
       }
     ]
   },
-
-  "chatbot7": {
-      "welcome": {
+    "chatbot7": {
+    "welcome": {
         "greeting": "👋 Hello! I'm your personal assistant for the **7-Night Holistic Escape** at Dakhla Club.",
         "requestInfo": "To better assist you, could you please provide your name and phone number?",
         "format": "Format: **First Last Name** followed by your **phone number**\nExample: Marie Dupont - 0612345678"
@@ -1131,80 +1131,115 @@
         },
         "followUp": "**✨ Result:** Complete transformation in 8 days (7 nights) to regain your energy and natural balance!"
       },
-      "booking": {
-        "title": "📅 **I'm Booking**",
-        "decision": "💛 Excellent decision! You're giving yourself 7 nights of pure regeneration.",
-        "fields": {
-          "date": "📅 **Choose your arrival date:**\n(Your stay will last exactly 7 nights)"
-        },
-        "dateFormat": "📝 **Required format:** YYYY-MM-DD",
-        "dateConfirmed": "✅ **Perfect!**\n📅 Arrival: **{checkInDate}**\n📅 Departure: **{checkOutDate}**",
-        "askAdults": "👥 **How many people for this stay?**",
+    "booking": {
+      "fields": {
+    "date": "📅 **What is your desired arrival date?**",
+    "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
+  },
+      "decision": "💛 Excellent decision! Give your body 7 nights it will never forget.",
         "adultsOptions": {
-          "adults1": "1 person",
-          "adults2": "2 people",
-          "adults3": "3 people",
-          "adults4": "4 people",
-          "adultsMore": "More than 4 people"
+          "adults1": "1 adult",
+          "adults2": "2 adults",
+          "adults3": "3 adults",
+          "adults4": "4 adults", 
+          "adultsMore": "More than 4 adults"
         },
-        "adultsConfirmed": "✅ **Booking for {count} person{plural}**\n📅 From **{checkInDate}** to **{checkOutDate}**",
-        "adultsMore": "🌟 **Perfect!** We organize stays for larger groups.\n\nWe'll contact you quickly to personalize your experience.",
-        "contactInfo": "📝 **Final step:**\nYour name and phone number to finalize the booking.",
-        "missingInfo": "❌ **Missing information**\nWe need your dates and contact details to finalize.",
-        "backToBooking": "↩️ **Back to booking**",
-        "chooseDates": "📅 Choose my dates"
+        "largeGroup": "For more than 4 adults, please contact our team directly:",
+        "contactInfo": "📞 **Phone:** +212 652 88 1921\n📧 **Email:** reservation@dakhlaclub.com\n\nThey can offer solutions adapted to your group!",
+        "redirecting": "🔄 Redirecting to booking system...",
+        "mobileRedirect": "📱 Redirecting...",
+        "newTabOpened": "✅ The booking page has opened in a new tab.",
+        "dataSuccess": "📊 Your information has been successfully saved!",
+        "missingInfo": "❌ Please fill in all necessary information first.",
+        "backToBooking": "Let's go back to booking:",
+        "chooseDates": "📅 Choose my dates",
+        "dateFormat": "Format: YYYY-MM-DD\nExample: 2025-08-05\n\nNote: Your stay will automatically be 7 nights 🌙",
+  "dateConfirmed": "✅ **Date confirmed!**",
+  "arrival": "📅 **Arrival:** {checkIn}",
+  "departure": "📅 **Departure:** {checkOut} (7 nights)",
+  "askAdults": "👥 **How many adults will you be?**",
+  "adultsConfirmed": "✅ **{count} adult{plural} confirmed!**",
+  "contactNeeded": "📞 **Now I need your contact details:**",
+  "formatExample": "Format: First Name Last Name - 0612345678\nExample: Marie Dupont - 0612345678"
       },
-      "info": {
-        "title": "ℹ️ **7-Night Holistic Escape Information**",
-        "details": "🏨 **Accommodation:** Ocean/nature view bungalows at Dakhla Club\n⏰ **Duration:** 7 nights (8 days)\n🧘‍♀️ **Includes:** 34 treatments + yoga + meals + accommodation\n🌊 **Location:** Dakhla, between desert and ocean\n💰 **Price:** From €2,500/person\n📞 **Booking:** +212 661 230 604",
-        "followUp": "**What would you like to do now?**",
+    "info": {
+      "followUp": "What other information would you like?",
+      
         "options": {
-          "program": "📋 View detailed program",
-          "reserve": "📅 Book now",
-          "benefits": "✨ Discover the benefits",
-          "advisor": "📞 Speak to an advisor"
-        }
-      },
-      "benefits": {
-        "title": "✨ **Benefits of your 7-night stay**",
-        "physical": "🎯 **Physical benefits:**\n• Deep body detoxification\n• Improved circulation\n• Complete muscle relaxation\n• Immune system boost\n• Restorative sleep",
-        "mental": "🧠 **Mental benefits:**\n• Reduced stress and anxiety\n• Restored mental clarity\n• Emotional balance\n• Reconnection with self\n• Lasting serenity",
-        "lasting": "🌟 **Lasting effects:**\n• Renewed energy\n• Integrated healthy habits\n• Home wellness tools\n• Complete holistic transformation",
-        "motivated": "**Ready to experience this transformation?**"
-      },
-      "advisor": {
-        "whatsappMessage": "Hello, I would like information about the 7-Night Holistic Escape at Dakhla Club.",
-        "desktop": "📞 **Contact our team:**\n+212 661 230 604\n\nOr write to us on WhatsApp for personalized advice!"
+          "program": "🔸 View detailed program",
+          "reserve": "🔸 Book now",
+          "advisor": "🔸 Speak to an advisor",
+          "booking": "🔸 Book now" 
+        },
+      "title": "ℹ️ **Practical Information - 8-Day Escape**",
+      "details": "**📍 Location:** Dakhla Club, Point de Dragon PK28\n**⏰ Duration:** 8 days / 7 nights\n**🏠 Accommodation:** Included with full board\n**🍽️ Meals:** Health and detox cuisine\n**👥 Capacity:** Groups of 2 to 8 people\n**📞 Contact:** +212 652 881 921"
+    },
+    "testimonials": {
+      "title": "🌟 **What our clients say:**",
+      "reviews": "**Sarah, 34 years old:** *\"The 8 days literally changed my life. I feel completely regenerated!\"*\n\n**Marc, 42 years old:** *\"An exceptional program over 7 nights. The therapists are remarkably professional.\"*\n\n**Fatima, 38 years old:** *\"I found my energy and joy of living again. This week of transformation is magical!\"*",
+      "convinced": "**Are you convinced by these testimonials?**"
+    },
+    "weather": {
+      "title": "🌡️ **Weather & Climate in Dakhla**",
+      "details": "**🌞 Climate:** Subtropical arid, ideal year-round\n**🌡️ Temperatures:** 18-28°C depending on season\n**💨 Winds:** Refreshing trade winds\n**☀️ Sun:** Over 300 days per year\n**🌊 Ocean:** Pleasant temperature 18-22°C\n**👕 To bring:** Light clothes + jacket for evenings",
+      "ready": "**Perfect for your holistic escape!**"
+    },
+    "benefits": {
+      "title": "🌟 **Benefits of the 8-Day Escape:**",
+      "physical": "**💪 Physical:** Deep detoxification, energy boost, improved sleep, immune system strengthening",
+      "mental": "**🧠 Mental:** Stress reduction, mental clarity, emotional balance, restored confidence",
+      "lasting": "**⏳ Lasting:** New healthy habits, wellness tools, personalized post-stay follow-up",
+      "motivated": "**Motivated to start this transformation?**"
+    },
+"advisor": {
+  "title": "🤝 **Speak with a specialized consultant**",
+  "contact2": "📞 **Direct line**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Availability**: Every day from 9am to 8pm\n⚡ **Quick response**: WhatsApp < 2h • Email < 4h"
+},
+    "faq": {
+      "title": "❓ **Frequently Asked Questions:**",
+      "content": "**Q: Can I come alone?**\nA: Absolutely! 40% of our clients come alone.\n\n**Q: Are there any contraindications?**\nA: We adapt according to your health condition.\n\n**Q: Is transportation included?**\nA: Airport shuttle available (additional cost).\n\n**Q: Can I modify my dates?**\nA: Yes, subject to availability conditions.",
+      "notListed": "**Your question is not listed?**"
+    },
+    "actions": {
+      "reserve": "✅ Book now",
+      "mainMenu": "🏠 Back to main menu",
+      "call": "Call",
+      "whatsapp": "WhatsApp"
+    },
+    "errors": {
+        "invalidDate": "❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ",
+        "validExample": "Exemple valide: {date}",
+        "invalidDateFormat": "❌ Format de date incorrect.",
+        "dateFormatInstruction": "Veuillez utiliser le format: AAAA-MM-JJ",
+        "dateExample": "Exemple: {date}",
+        "incorrectFormat": "Incorrect format. Please respect the format: First Name Last Name – Phone Number",
+        "example": "Example: Ahmed Bennani – 0661234567",
+        "pastDate": "❌ Arrival date cannot be in the past.",
+        "chooseToday": "Please choose a date from today onwards."
       },
       "summary": {
-        "complete": "✅ **Your booking summary:**\n\n👤 **Name:** {name}\n📞 **Phone:** {phone}\n📅 **Arrival:** {checkInDate}\n📅 **Departure:** {checkOutDate}\n👥 **Person{plural}:** {adults}",
-        "allReady": "🎉 **Everything is ready!** Our team will process your request as soon as possible.",
-        "finalizeText": "**Finalize my booking:**",
-        "finalize": "✅ Confirm my 7-night booking",
-        "bookingSummary": "📋 **Your booking:**\n• **Name:** {name}\n• **Phone:** {phone}\n• **Stay:** {checkInDate} to {checkOutDate}\n• **People:** {adults}\n\n✅ **Booking confirmed!** We'll contact you within 24h."
+        "perfect": "✅ **Perfect, {name}!**",
+        "complete": "📋 **Full summary:**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adult{plural}\n🌙 7-night holistic escape",
+        "allReady": "🎉 **Everything is ready!**",
+        "finalizeText": "Click below to finalize your booking securely 🔒",
+        "finalize": "✅ Finalize my booking",
+        "bookingSummary": "📋 **Your booking summary:**\n👤 {name}\n📞 {phone}\n📅 Check-in: {checkInDate}\n📅 Check-out: {checkOutDate}\n👥 {adults} adult(s)\n🌙 5-night holistic escape\n\nA consultant will contact you to confirm the details!"
       },
-      "errors": {
-        "invalidDateFormat": "❌ **Incorrect date format**",
-        "dateFormatInstruction": "📝 **Use format:** YYYY-MM-DD",
-        "dateExample": "💡 **Example:** {date}",
-        "incorrectFormat": "❌ **Incorrect format**",
-        "example": "💡 **Example:** Marie Dupont - 0612345678"
-      },
-      "messages": {
-        "thankYou": "😊 **Thank you for your message!** How can I help you?"
-      },
-      "placeholders": {
-        "date": "📅 YYYY-MM-DD",
-        "namePhone": "First Last Name - Phone",
-        "typeMessage": "Type your message..."
-      },
-      "status": {
-        "online": "Online"
-      },
-      "actions": {
-        "call": "📞 Call an advisor"
-      }
-    }
+"messages": {
+  "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 65288192.",
+  "whatsappRedirect": "Hello! I would like to know more about the 7-day Holistic Escape at Dakhla Club."
+},
+"placeholders": {
+  "typeMessage": "Type your message...",
+  "namePhone": "First Name Last Name - Phone Number",
+  "date": "YYYY-MM-DD"
+},
+"status": {
+  "online": "Online • Responds quickly"
+}
+  }
+
+
 },
 
 

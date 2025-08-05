@@ -619,12 +619,12 @@
       },
       
       "summary": {
-        "perfect": "✅ **Perfect {name}!**",
-        "complete": "📋 **Complete Summary:**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adult{plural}\n🌙 5 nights holistic escape",
-        "allReady": "🎉 **Everything is ready!**",
-        "finalizeText": "Click below to finalize your booking securely 🔒",
-        "finalize": "✅ Finalize my booking",
-        "bookingSummary": "📋 **Booking Summary:**\n👤 {name}\n📞 {phone}\n📅 Arrival: {checkInDate}\n📅 Departure: {checkOutDate}\n👥 {adults} adult(s)\n🌙 5 nights holistic escape\n\nAn advisor will contact you to confirm details!"
+        "perfect": "✅ **Parfait {name} !**",
+        "complete": "📋 **Récapitulatif complet :**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adulte{plural}\n🌙 5 nuits d'évasion holistique",
+        "allReady": "🎉 **Tout est prêt !**",
+        "finalizeText": "Cliquez ci-dessous pour finaliser votre réservation en toute sécurité 🔒",
+        "finalize": "✅ Finaliser ma réservation",
+        "bookingSummary": "📋 **Résumé de réservation :**\n👤 {name}\n📞 {phone}\n📅 Arrivée : {checkInDate}\n📅 Départ : {checkOutDate}\n👥 {adults} adulte(s)\n🌙 5 nuits d'évasion holistique\n\nUn conseiller vous contactera pour confirmer les détails !"
       },
 "messages": {
   "thankYou": "Merci pour votre message ! Un conseiller vous répondra sous peu. Pour une réponse immédiate, appelez le +212 652 88 1921.",
@@ -974,7 +974,7 @@
     ]
   },
 
-  "chatbot7": {
+    "chatbot7": {
       "welcome": {
         "greeting": "👋 Bonjour ! Je suis votre assistant personnel pour l'**Évasion Holistique 7 Nuits** au Dakhla Club.",
         "requestInfo": "Pour mieux vous aider, pouvez-vous me donner votre nom et numéro de téléphone ?",
@@ -988,7 +988,7 @@
           "info": "🔸 Informations pratiques"
         }
       },
-      "program": {
+"program": {
         "title": "🌟 **Programme Évasion Holistique 7 Nuits**\n\n**Une transformation profonde en 8 jours :**",
         "day1": {
           "title": "**🌅 Jour 1 - Accueil & Premiers Pas**",
@@ -1034,13 +1034,9 @@
       },
       "booking": {
         "title": "📅 **Je réserve**",
-        "decision": "💛 Excellente décision ! Vous vous offrez 7 nuits de pure régénération.",
-        "fields": {
-          "date": "📅 **Choisissez votre date d'arrivée :**\n(Votre séjour durera exactement 7 nuits)"
-        },
-        "dateFormat": "📝 **Format requis :** AAAA-MM-JJ",
-        "dateConfirmed": "✅ **Parfait !**\n📅 Arrivée : **{checkInDate}**\n📅 Départ : **{checkOutDate}**",
-        "askAdults": "👥 **Combien de personnes pour ce séjour ?**",
+        "decision": "💛 Excellente décision ! Offrez à votre corps 7 nuits qu'il n'oubliera jamais.",
+        "needInfo": "J'ai simplement besoin de 3 infos pour lancer votre réservation :",
+        "dateFormat": "Format: AAAA-MM-JJ\nExemple: 2025-08-05\n\nNote: Votre séjour sera automatiquement de 7 nuits 🌙",
         "adultsOptions": {
           "adults1": "1 personne",
           "adults2": "2 personnes",
@@ -1048,64 +1044,102 @@
           "adults4": "4 personnes",
           "adultsMore": "Plus de 4 personnes"
         },
-        "adultsConfirmed": "✅ **Réservation pour {count} personne{plural}**\n📅 Du **{checkInDate}** au **{checkOutDate}**",
         "adultsMore": "🌟 **Parfait !** Nous organisons des séjours pour groupes plus importants.\n\nNous vous recontacterons rapidement pour personnaliser votre expérience.",
         "contactInfo": "📝 **Dernière étape :**\nVotre nom et téléphone pour finaliser la réservation.",
         "missingInfo": "❌ **Information manquante**\nIl nous faut vos dates et vos coordonnées pour finaliser.",
         "backToBooking": "↩️ **Retour à la réservation**",
-        "chooseDates": "📅 Choisir mes dates"
+        "chooseDates": "📅 Choisir mes dates",
+        "dateConfirmed": "✅ **Date confirmée !**",
+    "arrival": "📅 **Arrivée :** {checkIn}",
+    "departure": "📅 **Départ :** {checkOut} (7 nuits)",
+    "askAdults": "👥 **Combien d'adultes serez-vous ?**",
+    "adultsConfirmed": "✅ **{count} adulte{plural} confirmé{plural} !**",
+    "contactNeeded": "📞 **Maintenant, j'ai besoin de vos coordonnées :**",
+    "formatExample": "Format : Prénom Nom - 0612345678\nExemple : Marie Dupont - 0612345678",
+        "fields": {
+      "date": "📅 **Quelle est votre date d'arrivée souhaitée ?**",
+      "contact": "📞 Votre nom et numéro de téléphone (format : Prénom Nom – 06xx xx xx xx)"
+    }
       },
+
       "info": {
-        "title": "ℹ️ **Informations Évasion Holistique 7 Nuits**",
-        "details": "🏨 **Hébergement :** Bungalows vue mer/nature au Dakhla Club\n⏰ **Durée :** 7 nuits (8 jours)\n🧘‍♀️ **Inclus :** 34 soins + yoga + repas + hébergement\n🌊 **Lieu :** Dakhla, entre désert et océan\n💰 **Tarif :** À partir de 2 500€/personne\n📞 **Réservation :** +212 661 230 604",
-        "followUp": "**Que souhaitez-vous faire maintenant ?**",
-        "options": {
-          "program": "📋 Voir le programme détaillé",
-          "reserve": "📅 Réserver maintenant",
-          "benefits": "✨ Découvrir les bienfaits",
-          "advisor": "📞 Parler à un conseiller"
-        }
+          "followUp": "Autres informations souhaitées ?",
+          "options": {
+            "program": "🔸 Voir le programme détaillé",
+            "reserve": "🔸 Réserver maintenant",
+            "advisor": "🔸 Parler à un conseiller",
+            "booking": "🔸 Réserver maintenant"
+          },
+        "title": "ℹ️ **Informations Pratiques - Évasion 7 Nuits**",
+        "details": "**📍 Lieu :** Dakhla Club, Point de Dragon PK28\n**⏰ Durée :** 8 jours / 7 nuits\n**🏠 Hébergement :** Inclus en pension complète\n**🍽️ Repas :** Cuisine santé et détox\n**👥 Capacité :** Groupes de 2 à 8 personnes\n**📞 Contact :** +212 652 881 921"
+      },
+  
+      "testimonials": {
+        "title": "🌟 **Ce que disent nos clients :**",
+        "reviews": "**Sarah, 34 ans :** *\"Les 8 jours ont littéralement changé ma vie. Je me sens complètement régénérée !\"*\n\n**Marc, 42 ans :** *\"Un programme exceptionnel sur 7 nuits. Les thérapeutes sont d'un professionnalisme remarquable.\"*\n\n**Fatima, 38 ans :** *\"J'ai retrouvé mon énergie et ma joie de vivre. Cette semaine de transformation est magique !\"*",
+        "convinced": "**Êtes-vous convaincu(e) par ces témoignages ?**"
+      },
+      "weather": {
+        "title": "🌡️ **Météo & Climat à Dakhla**",
+        "details": "**🌞 Climat :** Subtropical aride, idéal toute l'année\n**🌡️ Températures :** 18-28°C selon la saison\n**💨 Vents :** Alizés rafraîchissants\n**☀️ Soleil :** Plus de 300 jours par an\n**🌊 Océan :** Température agréable 18-22°C\n**👕 À prévoir :** Vêtements légers + veste pour le soir",
+        "ready": "**Parfait pour votre évasion holistique !**"
       },
       "benefits": {
-        "title": "✨ **Les bienfaits de votre séjour 7 nuits**",
-        "physical": "🎯 **Bienfaits physiques :**\n• Détoxification profonde du corps\n• Amélioration de la circulation\n• Relaxation musculaire complète\n• Boost du système immunitaire\n• Sommeil réparateur",
-        "mental": "🧠 **Bienfaits mentaux :**\n• Réduction du stress et de l'anxiété\n• Clarté mentale retrouvée\n• Équilibre émotionnel\n• Reconnexion à soi\n• Sérénité durable",
-        "lasting": "🌟 **Effets durables :**\n• Énergie renouvelée\n• Habitudes saines intégrées\n• Outils de bien-être à domicile\n• Transformation holistique complète",
-        "motivated": "**Prêt(e) à vivre cette transformation ?**"
+        "title": "🌟 **Bénéfices de l'Évasion 7 Nuits :**",
+        "physical": "**💪 Physique :** Détoxification profonde, regain d'énergie, amélioration du sommeil, renforcement immunitaire",
+        "mental": "**🧠 Mental :** Réduction du stress, clarté mentale, équilibre émotionnel, confiance retrouvée",
+        "lasting": "**⏳ Durable :** Nouvelles habitudes saines, outils de bien-être, suivi personnalisé post-séjour",
+        "motivated": "**Motivé(e) pour commencer cette transformation ?**"
       },
-      "advisor": {
-        "whatsappMessage": "Bonjour, je souhaite des informations sur l'Évasion Holistique 7 Nuits au Dakhla Club.",
-        "desktop": "📞 **Contactez notre équipe :**\n+212 661 230 604\n\nOu écrivez-nous sur WhatsApp pour un conseil personnalisé !"
-      },
-      "summary": {
-        "complete": "✅ **Récapitulatif de votre réservation :**\n\n👤 **Nom :** {name}\n📞 **Téléphone :** {phone}\n📅 **Arrivée :** {checkInDate}\n📅 **Départ :** {checkOutDate}\n👥 **Personne{plural} :** {adults}",
-        "allReady": "🎉 **Tout est prêt !** Notre équipe va traiter votre demande dans les plus brefs délais.",
-        "finalizeText": "**Finaliser ma réservation :**",
-        "finalize": "✅ Confirmer ma réservation 7 nuits",
-        "bookingSummary": "📋 **Votre réservation :**\n• **Nom :** {name}\n• **Téléphone :** {phone}\n• **Séjour :** {checkInDate} au {checkOutDate}\n• **Personnes :** {adults}\n\n✅ **Réservation confirmée !** Nous vous contacterons sous 24h."
-      },
-      "errors": {
-        "invalidDateFormat": "❌ **Format de date incorrect**",
-        "dateFormatInstruction": "📝 **Utilisez le format :** AAAA-MM-JJ",
-        "dateExample": "💡 **Exemple :** {date}",
-        "incorrectFormat": "❌ **Format incorrect**",
-        "example": "💡 **Exemple :** Marie Dupont - 0612345678"
-      },
-      "messages": {
-        "thankYou": "😊 **Merci pour votre message !** Comment puis-je vous aider ?"
-      },
-      "placeholders": {
-        "date": "📅 AAAA-MM-JJ",
-        "namePhone": "Nom Prénom - Téléphone",
-        "typeMessage": "Tapez votre message..."
-      },
-      "status": {
-        "online": "En ligne"
+  "advisor": {
+    "title": "🤝 **Parler avec un conseiller spécialisé**",
+    "contact2": "📞 **Ligne directe**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Disponibilité**: Tous les jours de 9h à 20h\n⚡ **Réponse rapide**: WhatsApp < 2h • Email < 4h"
+  },
+  
+      "faq": {
+        "title": "❓ **Questions Fréquentes :**",
+        "content": "**Q: Puis-je venir seul(e) ?**\nR: Absolument ! 40% de nos clients viennent seuls.\n\n**Q: Y a-t-il des contre-indications ?**\nR: Nous adaptons selon votre état de santé.\n\n**Q: Le transport est-il inclus ?**\nR: Navette aéroport disponible (supplément).\n\n**Q: Puis-je modifier mes dates ?**\nR: Oui, sous conditions selon disponibilités.",
+        "notListed": "**Votre question n'est pas listée ?**"
       },
       "actions": {
-        "call": "📞 Appeler un conseiller"
-      }
-    }
+        "reserve": "Je réserve maintenant",
+        "mainMenu": "Retour au menu principal",
+        "call": "Appeler",
+        "whatsapp": "WhatsApp"
+      },
+      "errors": {
+          "invalidDate": "❌ Invalid date. Please use YYYY-MM-DD format",
+          "validExample": "Valid example: {date}",
+          "invalidDateFormat": "❌ Incorrect date format.",
+          "dateFormatInstruction": "Please use the format: YYYY-MM-DD",
+          "dateExample": "Example: {date}",
+          "incorrectFormat": "Format incorrect. Merci de respecter le format : Prénom Nom – Numéro de téléphone",
+    "example": "Exemple : Ahmed Bennani – 0661234567",
+    "pastDate": "❌ La date d'arrivée ne peut pas être dans le passé.",
+    "chooseToday": "Veuillez choisir une date à partir d'aujourd'hui."
+        },
+        
+        "summary": {
+          "perfect": "✅ **Parfait {name} !**",
+          "complete": "📋 **Récapitulatif complet :**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adulte{plural}\n🌙 7 nuits d'évasion holistique",
+          "allReady": "🎉 **Tout est prêt !**",
+          "finalizeText": "Cliquez ci-dessous pour finaliser votre réservation en toute sécurité 🔒",
+          "finalize": "✅ Finaliser ma réservation",
+          "bookingSummary": "📋 **Résumé de réservation :**\n👤 {name}\n📞 {phone}\n📅 Arrivée : {checkInDate}\n📅 Départ : {checkOutDate}\n👥 {adults} adulte(s)\n🌙 7 nuits d'évasion holistique\n\nUn conseiller vous contactera pour confirmer les détails !"
+        },
+  "messages": {
+    "thankYou": "Merci pour votre message ! Un conseiller vous répondra sous peu. Pour une réponse immédiate, appelez le +212 652 88 1921.",
+    "whatsappRedirect": "Bonjour ! Je souhaite en savoir plus sur l'Évasion Holistique 8 jours au Dakhla Club."
+  },
+  "placeholders": {
+    "typeMessage": "Tapez votre message...",
+    "namePhone": "Nom Prénom - Numéro de téléphone",
+    "date": "AAAA-MM-JJ"
+  },
+  "status": {
+    "online": "En ligne • Répond rapidement"
+  }
+    }  
   
   },
 

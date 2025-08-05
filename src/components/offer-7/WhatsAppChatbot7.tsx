@@ -217,13 +217,18 @@ const WhatsAppChatbot7: React.FC = () => {
         case 'program':
           addMessage(t('program.title'), false);
           setTimeout(() => {
-            const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n${t('program.day1.objective')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n${t('program.day2.objective')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}\n${t('program.day3.objective')}`;
+            const programText = `${t('program.day1.title')}\n${t('program.day1.activities')}\n\n${t('program.day2.title')}\n${t('program.day2.activities')}\n\n${t('program.day3.title')}\n${t('program.day3.activities')}`;
             
             addMessage(programText, false);
             setTimeout(() => {
-              const programText2 = `${t('program.day4.title')}\n${t('program.day4.activities')}\n${t('program.day4.objective')}\n\n${t('program.day5.title')}\n${t('program.day5.activities')}\n${t('program.day5.objective')}\n\n${t('program.day6.title')}\n${t('program.day6.activities')}\n${t('program.day6.objective')}`;
+              const programText2 = `${t('program.day4.title')}\n${t('program.day4.activities')}\n\n${t('program.day5.title')}\n${t('program.day5.activities')}\n\n${t('program.day6.title')}\n${t('program.day6.activities')}`;
               
               addMessage(programText2, false);
+
+              setTimeout(()=>{
+                const programText3 = `${t('program.day7.title')}\n${t('program.day7.activities')}\n${t('program.day7.objective')}\n\n${t('program.day8.title')}\n${t('program.day8.activities')}`;
+              addMessage(programText3, false);
+             
               setTimeout(() => {
                 addMessage(t('program.followUp'), false, true, [
                   { text: t('info.options.advisor'), value: "advisor" },
@@ -231,6 +236,7 @@ const WhatsAppChatbot7: React.FC = () => {
                 ]);
               }, 2000);
             }, 2000);
+        },2000)
           }, 1000);
           break;
 
