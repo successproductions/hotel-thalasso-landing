@@ -1,6 +1,50 @@
-'use client';
 import { useTranslations } from 'next-intl';
+import { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const baseUrl = 'https://offer.dakhlaclub.com';
+  
+  const cguMeta = {
+    fr: {
+      title: 'Conditions Générales d\'Utilisation - Dakhla Club',
+      description: 'Conditions générales d\'utilisation du site Dakhla Club. Règles d\'accès, propriété intellectuelle et responsabilités.',
+    },
+    en: {
+      title: 'Terms of Use - Dakhla Club',
+      description: 'Terms of use for Dakhla Club website. Access rules, intellectual property and responsibilities.',
+    }
+  };
+
+  const currentMeta = cguMeta[locale as 'fr' | 'en'] || cguMeta.fr;
+  const currentUrl = `${baseUrl}/${locale}/legal/cgu`;
+
+  return {
+    title: currentMeta.title,
+    description: currentMeta.description,
+    
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        'fr-FR': `${baseUrl}/fr/legal/cgu`,
+        'en-US': `${baseUrl}/en/legal/cgu`,
+        'x-default': `${baseUrl}/fr/legal/cgu`,
+      },
+    },
+    
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
 
 export default function CGUPage() {
   const t = useTranslations('legal.cgu');

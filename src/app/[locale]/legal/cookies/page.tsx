@@ -1,6 +1,49 @@
-'use client';
 import { useTranslations } from 'next-intl';
+import { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const baseUrl = 'https://offer.dakhlaclub.com';
+  
+  const cookiesMeta = {
+    fr: {
+      title: 'Politique des Cookies - Dakhla Club',
+      description: 'Politique de gestion des cookies sur le site Dakhla Club. Types de cookies utilisés et gestion de vos préférences.',
+    },
+    en: {
+      title: 'Cookie Policy - Dakhla Club',
+      description: 'Cookie management policy on Dakhla Club website. Types of cookies used and managing your preferences.',
+    }
+  };
+
+  const currentMeta = cookiesMeta[locale as 'fr' | 'en'] || cookiesMeta.fr;
+  const currentUrl = `${baseUrl}/${locale}/legal/cookies`;
+
+  return {
+    title: currentMeta.title,
+    description: currentMeta.description,
+    
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        'fr-FR': `${baseUrl}/fr/legal/cookies`,
+        'en-US': `${baseUrl}/en/legal/cookies`,
+        'x-default': `${baseUrl}/fr/legal/cookies`,
+      },
+    },
+    
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
 
 export default function CookiesPage() {
   const t = useTranslations('legal.cookies');

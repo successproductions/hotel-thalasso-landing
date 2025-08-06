@@ -1,6 +1,51 @@
-'use client';
 import { useTranslations } from 'next-intl';
+import { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const baseUrl = 'https://offer.dakhlaclub.com';
+  
+  const privacyMeta = {
+    fr: {
+      title: 'Politique de Confidentialité - Dakhla Club',
+      description: 'Politique de protection des données personnelles de Dakhla Club. Collecte, traitement et protection de vos informations.',
+    },
+    en: {
+      title: 'Privacy Policy - Dakhla Club',
+      description: 'Dakhla Club personal data protection policy. Collection, processing and protection of your information.',
+    }
+  };
+
+  const currentMeta = privacyMeta[locale as 'fr' | 'en'] || privacyMeta.fr;
+  const currentUrl = `${baseUrl}/${locale}/legal/privacy`;
+
+  return {
+    title: currentMeta.title,
+    description: currentMeta.description,
+    
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        'fr-FR': `${baseUrl}/fr/legal/privacy`,
+        'en-US': `${baseUrl}/en/legal/privacy`,
+        'x-default': `${baseUrl}/fr/legal/privacy`,
+      },
+    },
+    
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
+
 
 export default function PrivacyPage() {
   const t = useTranslations('legal.privacy');

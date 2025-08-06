@@ -1,6 +1,50 @@
-'use client';
 import { useTranslations } from 'next-intl';
+import { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const baseUrl = 'https://offer.dakhlaclub.com';
+  
+  const cgvMeta = {
+    fr: {
+      title: 'Conditions Générales de Vente - Dakhla Club',
+      description: 'Conditions générales de vente pour les séjours wellness et thalasso au Dakhla Club. Modalités de réservation, annulation et remboursement.',
+    },
+    en: {
+      title: 'Terms and Conditions of Sale - Dakhla Club',
+      description: 'General terms and conditions of sale for wellness and thalasso stays at Dakhla Club. Booking, cancellation and refund procedures.',
+    }
+  };
+
+  const currentMeta = cgvMeta[locale as 'fr' | 'en'] || cgvMeta.fr;
+  const currentUrl = `${baseUrl}/${locale}/legal/cgv`;
+
+  return {
+    title: currentMeta.title,
+    description: currentMeta.description,
+    
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        'fr-FR': `${baseUrl}/fr/legal/cgv`,
+        'en-US': `${baseUrl}/en/legal/cgv`,
+        'x-default': `${baseUrl}/fr/legal/cgv`,
+      },
+    },
+    
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
+
 
 export default function CGVPage() {
   const t = useTranslations('legal.cgv');
