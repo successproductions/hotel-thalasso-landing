@@ -1043,36 +1043,36 @@
   
     ]
   },
-  "faq": {
-    "title": "FAQ",
-    "contact": {
-      "label": "Contact us",
-      "subtext": "Quick response by phone or email.",
-      "alt": "Woman in water at Dakhla"
-    },
-    "items": [
-      {
-        "question": "What can I expect during these 7 Nights at Dakhla Club?",
-        "answer": "You’ll experience a true reconnection with yourself through a blend of relaxing treatments, sensory rituals, and a stunning natural setting between the desert and the ocean."
-      },
-      {
-        "question": "What types of treatments are included in the program?",
-        "answer": "You’ll enjoy a range of holistic therapies such as hydromassage baths, seaweed wraps, cupping therapy, and affusion massages — all designed to deeply relax and recharge your body and mind."
-      },
-      {
-        "question": "Is this program suitable if I’ve never done a spa or wellness retreat before?",
-        "answer": "Absolutely — it’s the perfect introduction, carefully designed to be gentle, welcoming, and fully guided by wellness professionals."
-      },
-      {
-        "question": "Why should I book quickly?",
-        "answer": "Availability is limited to ensure a calm, personalized experience for every guest, so early booking is highly recommended."
-      },
-      {
-        "question": "Where will I stay during the retreat?",
-        "answer": "You’ll be staying right at the Dakhla Club Hotel & Spa, in a serene setting that perfectly complements and enhances the benefits of your treatments."
-      }
-    ]
+"faq": {
+  "title": "Frequently Asked Questions",
+  "contact": {
+    "label": "Contact us",
+    "subtext": "Quick response by phone or email",
+    "alt": "Thermal pool at Dakhla Club thalasso center with ocean view"
   },
+  "items": [
+    {
+      "question": "What can I expect during these 7 nights at Dakhla Club?",
+      "answer": "Experience a complete holistic transformation with 34 personalized thalasso treatments. Our 7-night program combines ocean-facing yoga, hydromassage baths with heated seawater, marine algae wraps, and therapeutic massages in a unique setting between Sahara desert and Atlantic Ocean. Each day follows a specific protocol to detoxify, regenerate and rebalance your body and mind."
+    },
+    {
+      "question": "What thalasso treatments are included in the 7-night program?",
+      "answer": "The program includes 34 varied treatments: Jacquier air bowl, hydromassage baths, Thalgo seaweed wraps, cupping therapy, affusion massages, saunas and hammams, jet showers, hot stone massages, spirulina detox treatments, magnesium baths, ice baths, plus daily yoga and sports coaching. All treatments are provided by our certified team in our exclusive thalasso center."
+    },
+    {
+      "question": "Is the 7-night thalasso program suitable for beginners?",
+      "answer": "Perfect for beginners! Our wellness program is progressive and supervised by certified expert therapists. Over 1,200 transformed clients since opening with 92% satisfaction rate. Our hotel ranked #1 on TripAdvisor Dakhla guarantees personalized guidance for your first thalassotherapy experience."
+    },
+    {
+      "question": "Why book this thalasso retreat quickly?",
+      "answer": "Each session is limited to maximum 10 participants to ensure an intimate and personalized experience. This exclusivity ensures individual follow-up, privileged access to thalasso facilities (thermal pool, spa, saunas), and maintains the serenity of our unique wellness center between Sahara and Atlantic."
+    },
+    {
+      "question": "Where does the 7-night thalasso stay take place?",
+      "answer": "At Dakhla Club Hotel & Spa 4*, the only thalassotherapy center between desert and ocean in Morocco. Ocean-view room accommodation, free access to heated seawater thermal pool, gourmet restaurant, and all spa facilities. Unique geographical location in Dakhla with ideal climate 300 days of sunshine per year, temperatures 18-28°C."
+    }
+  ]
+},
     "chatbot7": {
     "welcome": {
         "greeting": "👋 Hello! I'm your personal assistant for the **7-Night Holistic Escape** at Dakhla Club.",

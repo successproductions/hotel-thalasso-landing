@@ -944,35 +944,35 @@
     }
   },
   "faq": {
-    "title": "FAQ",
-    "contact": {
-      "label": "Contactez-nous",
-      "subtext": "Réponse rapide par téléphone ou email.",
-      "alt": "centre thalasso Dakhla"
-    },
-    "items": [
-      {
-        "question": "Qu’est-ce que je vais vivre pendant ces 7 nuits au Dakhla Club ?",
-        "answer": "Vous allez vivre une véritable reconnexion à vous-même grâce à une combinaison de soins relaxants, d’expériences sensorielles et d’un cadre naturel exceptionnel entre désert et océan."
-      },
-      {
-        "question": "Quels types de soins vais-je recevoir pendant le séjour ?",
-        "answer": "Vous profiterez de soins holistiques comme le bain hydromassant, l’enveloppement aux algues, la cupping thérapie ou encore le massage sous affusion, pour revitaliser à la fois le corps et l’esprit."
-      },
-      {
-        "question": "Est-ce que ce programme est adapté si je n’ai jamais fait de spa ou de cure bien-être ?",
-        "answer": "Oui, ce programme est idéal pour une première fois : il a été pensé pour être doux, accessible et encadré par des professionnels à votre écoute."
-      },
-      {
-        "question": "Pourquoi faut-il réserver rapidement ?",
-        "answer": "Les places sont limitées afin de garantir un cadre paisible et une attention personnalisée à chaque participant, c’est pourquoi il est conseillé de réserver sans tarder."
-      },
-      {
-        "question": "Où vais-je loger pendant le séjour ?",
-        "answer": "Vous serez hébergé(e) directement au Dakhla Club Hotel & Spa, dans un environnement apaisant qui prolonge naturellement les bienfaits des soins."
-      }
-    ]
+  "title": "Questions Fréquentes",
+  "contact": {
+    "label": "Contactez-nous",
+    "subtext": "Réponse rapide par téléphone ou email",
+    "alt": "Piscine thermale du centre thalasso Dakhla Club avec vue océan"
   },
+  "items": [
+    {
+      "question": "Qu'est-ce que je vais vivre pendant ces 7 nuits au Dakhla Club ?",
+      "answer": "Vous vivrez une transformation holistique complète avec 34 soins thalasso personnalisés. Notre programme 7 nuits combine yoga face à l'océan, bains hydromassants à l'eau de mer, enveloppements aux algues marines, et massages thérapeutiques dans un cadre unique entre désert saharien et océan Atlantique. Chaque journée suit un protocole spécifique pour détoxifier, régénérer et rééquilibrer votre corps et votre esprit."
+    },
+    {
+      "question": "Quels soins thalasso sont inclus dans le programme 7 nuits ?",
+      "answer": "Le programme inclut 34 soins variés : bol d'air Jacquier, bains hydromassants, enveloppements algues Thalgo, cupping thérapie, massages sous affusion, saunas et hammams, douches à jet, massages aux pierres chaudes, soins détoxifiants spiruline, bains magnésium, ice baths, plus yoga quotidien et coaching sportif. Tous les soins sont prodigués par notre équipe certifiée dans notre centre thalasso exclusive."
+    },
+    {
+      "question": "Le programme thalasso 7 nuits convient-il aux débutants ?",
+      "answer": "Parfaitement adapté aux débutants ! Notre programme wellness est progressif et encadré par des thérapeutes experts certifiés. Plus de 1200 clients transformés depuis l'ouverture avec 92% de satisfaction. Notre hôtel classé #1 sur TripAdvisor Dakhla garantit un accompagnement personnalisé pour votre première expérience thalassothérapie."
+    },
+    {
+      "question": "Pourquoi réserver rapidement ce séjour thalasso ?",
+      "answer": "Chaque session est limitée à 10 participants maximum pour garantir une expérience intime et personnalisée. Cette exclusivité assure un suivi individualisé, l'accès privilégié aux équipements thalasso (piscine thermale, spa, saunas), et maintient la sérénité de notre centre wellness unique entre Sahara et Atlantique."
+    },
+    {
+      "question": "Où se déroule le séjour thalasso 7 nuits ?",
+      "answer": "Au Dakhla Club Hotel & Spa 4*, seul centre de thalassothérapie entre désert et océan au Maroc. Hébergement en chambre vue océan, accès libre piscine thermale eau de mer chauffée, restaurant gastronomique, et tous équipements spa. Situation géographique unique à Dakhla avec climat idéal 300 jours de soleil par an, températures 18-28°C."
+    }
+  ]
+},
 
     "chatbot7": {
       "welcome": {

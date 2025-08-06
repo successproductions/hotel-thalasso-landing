@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, Phone, Bot } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
-// TypeScript interfaces
 interface Message {
   text: string;
   isUser: boolean;

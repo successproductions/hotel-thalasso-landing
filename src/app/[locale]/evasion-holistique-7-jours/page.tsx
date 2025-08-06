@@ -23,16 +23,25 @@ export async function generateMetadata({
 
   const metadata7Days = {
     fr: {
-      title: "7 Nuits de Thalasso Holistique pour Rebooter Votre Corps et Votre Esprit",
-      description: "Offrez à votre corps et à votre esprit une véritable régénération. 7 Nuits – 34 soins – 1 grande transformation",
-      keywords: "retraite bien-être 7 Nuits Dakhla, cure détox Maroc, séjour thalasso 7 Nuits, retraite yoga Dakhla, programme wellness Maroc, détox profonde, spa désert océan, transformation holistique, séjour bien-être Maroc, retraite spirituelle Dakhla"
+
+      title: "Séjour Thalasso 7 Nuits Dakhla - Retraite Bien-être",
+      
+      description: "Séjour thalasso 7 nuits à Dakhla. 34 soins détox, yoga face à l'océan, programme wellness complet. Réservez votre retraite bien-être.",
+ 
+      keywords: "séjour thalasso 7 nuits, retraite bien-être Dakhla, cure thalasso Maroc, spa détox océan, yoga wellness Dakhla, programme holistique 7 jours, thalassothérapie Maroc, détox marine, bien-être Sahara océan"
     },
     en: {
-      title: "7-Nights Holistic Thalasso Retreat to Reboot Your Body and Mind",
-      description: "Give your body and mind the deep regeneration they deserve. 7 Nights – 34 treatments – 1 powerful transformation.",
-      keywords: "7-Nights wellness retreat Dakhla, detox cure Morocco, 7-Nights thalasso stay, yoga retreat Dakhla, wellness program Morocco, deep detox, desert ocean spa, holistic transformation, wellness stay Morocco, spiritual retreat Dakhla"
+
+      title: "7-Night Thalasso Stay Dakhla - Wellness Retreat",
+
+      description: "7-night thalasso stay in Dakhla. 34 detox treatments, ocean yoga, complete wellness program. Book your holistic retreat now.",
+   
+      keywords: "7-night thalasso stay, wellness retreat Dakhla, thalasso cure Morocco, ocean spa detox, yoga wellness Dakhla, 7-day holistic program, thalassotherapy Morocco, marine detox, Sahara ocean wellness"
     }
+    
   };
+  
+  
 
   const currentMeta = metadata7Days[locale];
   const currentUrl = locale === 'en' 

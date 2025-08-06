@@ -2,8 +2,9 @@
 import Image from "next/image"
 import { motion, AnimatePresence, Variants } from "framer-motion"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { useTranslations, useMessages } from "next-intl"
+import { useTranslations } from "next-intl"
 import { useState } from "react"
+
 
 interface FAQItem {
   question: string
@@ -12,21 +13,33 @@ interface FAQItem {
 
 export default function FAQ7() {
   const t = useTranslations("offer7.faq")
-  const messages = useMessages()
   const [openItem, setOpenItem] = useState<string | undefined>(undefined)
 
-  const { contact, items } = messages.offer7.faq
+  // ✅ Get FAQ data from your existing translation structure
+  const contact = {
+    label: t("contact.label"),
+    subtext: t("contact.subtext"), 
+    alt: t("contact.alt")
+  }
 
+  const items = t.raw("items") as FAQItem[]
 
+  // ✅ ENHANCED FAQ SCHEMA with more detailed answers
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": items.map((item: FAQItem) => ({
+    "mainEntity": items.map((item: FAQItem, index: number) => ({
       "@type": "Question",
       "name": item.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": item.answer
+        "text": item.answer,
+        // ✅ Add unique identifier for each FAQ item
+        "@id": `#faq-${index}`,
+        "author": {
+          "@type": "Organization",
+          "name": "Dakhla Club"
+        }
       }
     }))
   }
@@ -52,7 +65,6 @@ export default function FAQ7() {
     visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
   }
 
-  // Background slide animation (same as ProgramsSection)
   const bgVariant: Variants = {
     hidden: { x: "-100%" },
     show: { 
@@ -62,8 +74,8 @@ export default function FAQ7() {
   }
 
   return (
-    <section id="faq" className="overflow-hidden">
-      {/* ✅ ADD FAQ SCHEMA MARKUP */}
+    <section id="faq" className="overflow-hidden" aria-labelledby="faq-heading">
+      {/* ✅ ENHANCED FAQ SCHEMA MARKUP */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -73,7 +85,6 @@ export default function FAQ7() {
 
       {/* Animated Background */}
       <div className="relative py-12 md:py-14">
-        {/* Full-width pale background sliding in from left (same as ProgramsSection) */}
         <motion.div
           className="absolute inset-x-0 inset-y-0 bg-[#f4f4f4]"
           initial="hidden"
@@ -82,7 +93,6 @@ export default function FAQ7() {
           variants={bgVariant}
         />
 
-        {/* Content sits above the background */}
         <motion.div
           className="relative z-10 max-w-6xl mx-auto px-6"
           variants={containerVariants}
@@ -90,45 +100,67 @@ export default function FAQ7() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {/* Header Section */}
-          <motion.div className="text-center mb-20" variants={itemVariants}>
+          {/* ✅ ENHANCED HEADER with proper SEO structure */}
+          <motion.div className="text-center mb-4 md:mb-10" variants={itemVariants}>
             <motion.div
               className="inline-block"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <h2 className="text-5xl md:text-5xl font-medium text-slate-800 dark:text-slate-100 mb-4 tracking-tight">
-                {t("title")}
+              <h2 
+                id="faq-heading" 
+                className="text-5xl md:text-5xl font-medium text-slate-800 dark:text-slate-100 mb-4 tracking-tight"
+              >
+                FQA
               </h2>
               <div className="w-24 h-1 bg-slate-800 dark:bg-slate-100 mx-auto rounded-full"></div>
+              
+             
             </motion.div>
           </motion.div>
 
           {/* Main Content Grid */}
           <div className="grid lg:grid-cols-5 gap-2 md:gap-5 items-start">
-            {/* Image Section - Left Side */}
+            {/* ✅ ENHANCED IMAGE SECTION with better SEO */}
             <motion.div className="lg:col-span-2" variants={imageVariants}>
-              {/* <div className="sticky top-8"> */}
-                <motion.div className="relative group" whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
-                  {/* <div className="absolute -inset-4  dark:bg-slate-700 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div> */}
-                  <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                    <Image
-                      src="/images/PISCINE_THERMALE_.png"
-                      alt={contact.alt}
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-fit md:h-fit filter contrast-110"
-                    />
+              <motion.div 
+                className="relative group" 
+                whileHover={{ y: -8 }} 
+                transition={{ duration: 0.3 }}
+              >
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <Image
+                    src="/images/PISCINE_THERMALE_.png"
+                    alt={contact.alt}
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-fit md:h-fit filter contrast-110"
+                    priority={false}
+                    loading="lazy"
+                  />
+                  {/* ✅ ADD IMAGE OVERLAY with CTA */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <div className="text-white">
+                      <p className="text-sm font-medium">Centre de thalassothérapie</p>
+                      <p className="text-xs opacity-90">Piscine thermale chauffée à l&apos;eau de mer</p>
+                    </div>
                   </div>
-                </motion.div> 
-              {/* </div> */}
+                </div>
+              </motion.div>
             </motion.div>
 
-            {/* FAQ Section - Right Side */}
+            {/* ✅ ENHANCED FAQ SECTION with microdata */}
             <motion.div className="lg:col-span-3" variants={itemVariants}>
-              <div className="space-y-4">
+              <div className="space-y-4" itemScope itemType="https://schema.org/FAQPage">
                 {items.map((item: FAQItem, index: number) => (
-                  <motion.div key={index} variants={itemVariants} className="group">
+                  <motion.div 
+                    key={index} 
+                    variants={itemVariants} 
+                    className="group"
+                    itemScope 
+                    itemType="https://schema.org/Question"
+                    id={`faq-${index}`}
+                  >
                     <Accordion type="single" collapsible value={openItem} onValueChange={setOpenItem}>
                       <AccordionItem value={`item-${index}`} className="border-none">
                         <motion.div
@@ -140,8 +172,14 @@ export default function FAQ7() {
                           transition={{ duration: 0.2 }}
                         >
                           <AccordionTrigger className="px-6 py-5 text-left font-medium text-slate-800 dark:text-slate-100 dark:hover:bg-slate-600 transition-colors duration-200">
-                            <div className="flex items-center justify-between w-full dark:hover:bg-slate-600">
-                              <span className="text-base md:text-lg pr-4">{item.question}</span>
+                            <div className="flex items-center justify-between w-full">
+                              {/* ✅ ADD itemProp for schema.org */}
+                              <h3 
+                                itemProp="name" 
+                                className="text-base md:text-lg pr-4 font-medium"
+                              >
+                                {item.question}
+                              </h3>
                               <motion.div
                                 animate={{
                                   rotate: openItem === `item-${index}` ? 45 : 0,
@@ -161,8 +199,16 @@ export default function FAQ7() {
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.3 }}
                                 className="text-slate-600 dark:text-slate-300 leading-relaxed"
+                                itemScope 
+                                itemType="https://schema.org/Answer" 
+                                itemProp="acceptedAnswer"
                               >
-                                <div className="pt-2 border-t border-slate-100">{item.answer}</div>
+                                <div 
+                                  className="pt-2 border-t border-slate-100"
+                                  itemProp="text"
+                                >
+                                  {item.answer}
+                                </div>
                               </motion.div>
                             </AccordionContent>
                           </AnimatePresence>
@@ -172,8 +218,10 @@ export default function FAQ7() {
                   </motion.div>
                 ))}
               </div>
+
             </motion.div>
           </div>
+
         </motion.div>
       </div>
     </section>
