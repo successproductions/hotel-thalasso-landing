@@ -1,56 +1,99 @@
-# Hotel & Thalasso – Landing Page (Next.js App Router)
+### Hotel & Thalasso – Landing Page (Next.js App Router)
 
-A fast, multilingual (FR/EN) landing page for **Dakhla Club’s spa & wellness offers**.
+A fast, multilingual (FR/EN) landing page for Dakhla Club’s spa & wellness offers.
 
-| Tech | Usage |
-|------|-------|
-| **Next.js 14** | App Router, Server/Client components |
-| **Tailwind CSS** | Utility-first styling |
-| **shadcn/ui + Radix** | Accessible UI primitives |
-| **next-intl** | i18n routing (`/fr` / `/en`) |
-| **next-themes** | Light / Dark mode toggle |
-| **Framer-Motion** | Hero & logo loader animations |
-| **Embla-Carousel** | Responsive testimonial / image carousels |
-| **Google Apps Script + API route** | Sends reservation forms to Google Sheets |
-| **next-sitemap** | Auto-generated sitemap & `robots.txt` |
-| **SweetAlert2** | Friendly form feedback |
+### Tech stack
 
----
+- **Next.js 15 (App Router)**: server/client components, headers/redirects
+- **TypeScript**
+- **Tailwind CSS** (+ shadcn/ui, Radix, tailwindcss-animate)
+- **next-intl** (i18n routing `/fr` and `/en`)
+- **next-themes** (light/dark)
+- **Framer Motion**, **Embla Carousel**
+- **Vercel Analytics**, **next-sitemap**
 
-## ✨ Features
+### Features
 
-- **2-second animated loader** that does **not** hurt SEO (full HTML is rendered underneath, then an overlay fades).
-- **SEO-ready**: title/description tags, Open Graph, ALT attributes, sitemap, robots, and lighthouse-friendly performance.
-- **Responsive & accessible** out of the box – keyboard navigation, proper color contrast, semantic markup.
-- **Serverless form endpoint** (`/api/reservation`) → Google Sheets (no dedicated backend required).
-- **Easy localisation** – add new languages by dropping JSON files in `src/messages`.
+- 2s animated loader that doesn’t block SEO
+- SEO-ready: metadata, Open Graph, sitemap, robots, responsive images
+- Accessible and responsive UI
+- Serverless API to forward reservations to Google Apps Script/Sheets
+- Easy localisation via `src/messages/*.json`
 
----
+### Project structure
 
-## 🔧 Getting Started
+```text
+src/
+├─ app/
+│  ├─ [locale]/            # “fr” & “en” segments
+│  │  ├─ layout.tsx        # i18n provider, theme, analytics, schema
+│  │  └─ page.tsx          # localized landing pages
+│  └─ api/
+│     ├─ reservation/route.ts
+│     └─ chatbot-reservation/route.ts
+├─ components/              # UI and sections (incl. shadcn ui/*)
+├─ i18n/                    # next-intl routing helpers
+├─ lib/                     # utilities
+├─ messages/                # en.json, fr.json
+└─ app/globals.css          # Tailwind base styles
+```
 
-### 1. Clone & install
+### Requirements
+
+- Node.js 18+
+
+### Setup
+
+1. Install dependencies
 
 ```bash
-git clone https://github.com/successproductions/hotel-thalasso-landing.git
-cd hotel-thalasso-landing
-npm install        # or npm install / yarn
+npm install
+```
 
+2. Copy environment template and fill values
 
-src/
-├─ app/                     # Next App Router routes
-│  ├─ [locale]/             # “fr” & “en” segments
-│  │  ├─ page.tsx           # root landing page
-│  │  └─ layout.tsx         # i18n + theme + PageLoader overlay
-│  └─ api/
-│     └─ reservation/       # POST → Google Apps Script
-├─ components/              # Reusable UI pieces
-│  ├─ PageLoader.tsx        # 2-second logo overlay
-│  ├─ contact-form.tsx
-│  ├─ ImageCarousel.tsx     # Embla wrapper
-│  └─ ui/                   # shadcn-generated primitives
-├─ messages/                # i18n JSON dictionaries
-└─ styles/                  # globals.css, fonts, etc.
-public/
-  ├─ LogoIcone.png
-  └─ og-images/…
+```bash
+cp .env.example .env.local
+# set GSCRIPT_URL
+```
+
+3. Run the app
+
+```bash
+npm run dev
+```
+
+Build and start
+
+```bash
+npm run build && npm start
+```
+
+### Environment variables
+
+- **GSCRIPT_URL**: Server-side URL to your Google Apps Script endpoint (preferred)
+- Legacy: **NEXT_PUBLIC_GSCRIPT_URL** (still supported via fallback)
+
+### NPM scripts
+
+- `dev`: run Next.js in dev with Turbopack
+- `build`: production build
+- `start`: start production server
+- `lint`, `lint:fix`: lint code
+- `type-check`: TypeScript without emitting
+- `format`, `format:check`: Prettier formatting
+
+### Conventions & tooling
+
+- Type-safe env via `src/env.ts` (Zod). API routes use `env.GSCRIPT_URL`.
+- Prettier + Tailwind plugin and `.editorconfig` for consistent formatting.
+- Strict TS, ESLint `next/core-web-vitals`.
+
+### Deployment
+
+- Recommended: Vercel. Ensure `GSCRIPT_URL` is configured in project settings.
+- `next-sitemap` runs postbuild to generate `sitemap.xml` and `robots.txt`.
+
+### License
+
+Private project. All rights reserved.

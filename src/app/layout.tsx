@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react'
+import type { ReactNode } from 'react';
 
 interface RootLayoutProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 // This root layout is required and minimal

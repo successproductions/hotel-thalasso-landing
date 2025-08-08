@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import WavyText from "./ui/WavyText";
-import { useTranslations } from "next-intl";
+import React, { useState } from 'react';
+import WavyText from './ui/WavyText';
+import { useTranslations } from 'next-intl';
 import Swal from 'sweetalert2';
 
 // TypeScript interfaces
@@ -25,9 +25,9 @@ export default function Hero() {
     checkInDate: '',
     checkOutDate: '',
     adults: 2,
-    children: 0
+    children: 0,
   });
-  
+
   const [errors, setErrors] = useState<ValidationErrors>({});
 
   // Calculate number of days between two dates
@@ -50,20 +50,20 @@ export default function Hero() {
   // Validation function
   const validateForm = (): boolean => {
     const newErrors: ValidationErrors = {};
-    
+
     if (!bookingData.checkInDate) {
       newErrors.checkInDate = 'Check-in date is required';
     }
-    
+
     if (!bookingData.checkOutDate) {
       newErrors.checkOutDate = 'Check-out date is required';
     }
-    
+
     if (bookingData.checkInDate && bookingData.checkOutDate) {
       const checkIn = new Date(bookingData.checkInDate);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      
+
       if (checkIn < today) {
         newErrors.checkInDate = 'Check-in date cannot be in the past';
       }
@@ -76,16 +76,16 @@ export default function Hero() {
           title: t('bookingValidation.invalidDurationTitle'),
           text: 'Your stay must be exactly 3 nights. Please adjust your dates.',
           confirmButtonText: t('bookingValidation.confirmButton'),
-          confirmButtonColor: '#f59e0b'
+          confirmButtonColor: '#f59e0b',
         });
         return false;
       }
     }
-    
+
     if (bookingData.adults < 1) {
       newErrors.adults = 'At least 1 adult is required';
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -93,7 +93,7 @@ export default function Hero() {
   // Handle form submission
   const handleBookingSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -108,7 +108,7 @@ export default function Hero() {
       'items[0][infants]': '0',
       currency: 'MAD',
       locale: 'en',
-      trackPage: 'yes'
+      trackPage: 'yes',
     });
 
     const bookingUrl = `${baseUrl}?${params.toString()}`;
@@ -119,24 +119,24 @@ export default function Hero() {
     if (field === 'checkInDate') {
       // Auto-calculate check-out date when check-in changes
       const checkOutDate = calculateCheckoutDate(value as string);
-      setBookingData(prev => ({
+      setBookingData((prev) => ({
         ...prev,
         checkInDate: value as string,
-        checkOutDate: checkOutDate
+        checkOutDate: checkOutDate,
       }));
     } else if (field !== 'checkOutDate') {
       // Allow changes to other fields except checkOutDate
-      setBookingData(prev => ({
+      setBookingData((prev) => ({
         ...prev,
-        [field]: value
+        [field]: value,
       }));
     }
-    
+
     // Clear error when user starts typing
     if (errors[field as keyof ValidationErrors]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [field]: undefined
+        [field]: undefined,
       }));
     }
   };
@@ -145,47 +145,46 @@ export default function Hero() {
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <section id="accueil" className="relative h-[70vh] md:h-screen w-screen overflow-hidden">
+    <section id="accueil" className="relative h-[70vh] w-screen overflow-hidden md:h-screen">
       {/* Background Video */}
       <video
-        className="absolute inset-0 w-full h-[57vh] lg:h-[80vh] xl:h-[92vh] object-cover"
+        className="absolute inset-0 h-[57vh] w-full object-cover lg:h-[80vh] xl:h-[92vh]"
         src="/videos/DC-Thermes.mov"
         autoPlay
         loop
         muted
         playsInline
       />
-      <div className="absolute inset-0 " />
+      <div className="absolute inset-0" />
 
       {/* animated two-line headline */}
-      <div className="relative z-20 flex flex-col items-center justify-center h-full text-white text-center pb-12 md:pb-0 px-4 space-y-4">
+      <div className="relative z-20 flex h-full flex-col items-center justify-center space-y-4 px-4 pb-12 text-center text-white md:pb-0">
         {/* Line 1: big italic serif */}
-        <h1 className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-normal">
+        <h1 className="text-2xl font-normal md:text-4xl lg:text-5xl xl:text-6xl">
           <span className="hidden md:block">
-            <WavyText text={t("title")} />
+            <WavyText text={t('title')} />
           </span>
           <span className="block md:hidden">
-            <WavyText text={t("title2")} />
+            <WavyText text={t('title2')} />
           </span>
         </h1>
 
         {/* Line 2: uppercase tracking-wide */}
-        <h2 className="uppercase text-sm md:text-lg tracking-widest">
-          <WavyText text={t("description")} />
+        <h2 className="text-sm uppercase tracking-widest md:text-lg">
+          <WavyText text={t('description')} />
         </h2>
       </div>
 
       {/* Bottom Info Panel */}
-      <div className="absolute bottom-12 lg:bottom-9 xl:bottom-8 left-1/2 transform -translate-x-1/2 z-20 w-[90%] md:w-auto">
-        <div className="bg-white/90 lg:p-6 backdrop-blur-sm rounded-3xl px-4 py-4 md:px-12 md:py-8 shadow-lg">
-          
+      <div className="absolute bottom-12 left-1/2 z-20 w-[90%] -translate-x-1/2 transform md:w-auto lg:bottom-9 xl:bottom-8">
+        <div className="rounded-3xl bg-white/90 px-4 py-4 shadow-lg backdrop-blur-sm md:px-12 md:py-8 lg:p-6">
           {/* Mobile Layout: All fields in one row, button below */}
           <div className="md:hidden">
             {/* Fields row */}
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="mb-4 flex items-center space-x-2">
               {/* Check-in Date */}
-              <div className="flex-1 min-w-0">
-                <span className="block text-xs text-gray-500 tracking-wider mb-1">
+              <div className="min-w-0 flex-1">
+                <span className="mb-1 block text-xs tracking-wider text-gray-500">
                   {t('Check-in')}
                 </span>
                 <input
@@ -193,38 +192,37 @@ export default function Hero() {
                   min={today}
                   value={bookingData.checkInDate}
                   onChange={(e) => handleInputChange('checkInDate', e.target.value)}
-                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full rounded border border-gray-300 px-2 py-1 text-xs text-gray-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
               {/* Check-out Date */}
-              <div className="flex-1 min-w-0 relative">
-                <span className="block text-xs text-gray-500 tracking-wider mb-1">
+              <div className="relative min-w-0 flex-1">
+                <span className="mb-1 block text-xs tracking-wider text-gray-500">
                   {t('Check-out')}
                 </span>
                 <input
                   type="date"
                   value={bookingData.checkOutDate}
                   readOnly
-                  className="w-full px-2 py-1 text-xs border border-gray-300 rounded text-gray-800 bg-gray-50 cursor-not-allowed"
+                  className="w-full cursor-not-allowed rounded border border-gray-300 bg-gray-50 px-2 py-1 text-xs text-gray-800"
                   title="Check-out date is automatically set to 3 nights after check-in"
                 />
                 {/* Forbidden icon overlay */}
-                
               </div>
 
               {/* Adults */}
               <div className="w-16">
-                <span className="block text-xs text-gray-500 tracking-wider mb-1">
-                  Adults
-                </span>
+                <span className="mb-1 block text-xs tracking-wider text-gray-500">Adults</span>
                 <select
                   value={bookingData.adults}
                   onChange={(e) => handleInputChange('adults', parseInt(e.target.value))}
-                  className="w-full px-1 py-1 text-xs border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full rounded border border-gray-300 px-1 py-1 text-xs text-gray-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                 >
-                  {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
-                    <option key={num} value={num}>{num}</option>
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                    <option key={num} value={num}>
+                      {num}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -234,7 +232,7 @@ export default function Hero() {
             <div className="text-center">
               <button
                 onClick={handleBookingSubmit}
-                className="w-full px-5 py-2 border border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition text-sm"
+                className="w-full rounded-full border border-gray-800 px-5 py-2 text-sm text-gray-800 transition hover:bg-gray-100"
               >
                 {t('callButton')}
               </button>
@@ -242,52 +240,53 @@ export default function Hero() {
           </div>
 
           {/* Desktop Layout: Original horizontal layout */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden items-center space-x-8 md:flex">
             {/* Check-in Date */}
-            <div className="flex flex-col items-start text-sm min-w-0">
-              <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
-              {t('Check-in')}
+            <div className="flex min-w-0 flex-col items-start text-sm">
+              <span className="whitespace-nowrap text-xs uppercase tracking-wider text-gray-500">
+                {t('Check-in')}
               </span>
               <input
                 type="date"
                 min={today}
                 value={bookingData.checkInDate}
                 onChange={(e) => handleInputChange('checkInDate', e.target.value)}
-                className="mt-1 px-2 py-1 font-trajan border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+                className="mt-1 w-full rounded border border-gray-300 px-2 py-1 font-trajan text-sm text-gray-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
             <div className="h-8 border-l border-gray-300" />
 
             {/* Check-out Date */}
-            <div className="flex flex-col items-start text-sm min-w-0 relative">
-              <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
-              {t('Check-out')}
+            <div className="relative flex min-w-0 flex-col items-start text-sm">
+              <span className="whitespace-nowrap text-xs uppercase tracking-wider text-gray-500">
+                {t('Check-out')}
               </span>
               <input
                 type="date"
                 value={bookingData.checkOutDate}
                 readOnly
-                className="mt-1 font-trajan px-2 py-1 border border-gray-300 rounded text-gray-800 text-sm w-full bg-gray-50 cursor-not-allowed"
+                className="mt-1 w-full cursor-not-allowed rounded border border-gray-300 bg-gray-50 px-2 py-1 font-trajan text-sm text-gray-800"
                 title="Check-out date is automatically set to 3 nights after check-in"
               />
-              
             </div>
 
             <div className="h-8 border-l border-gray-300" />
 
             {/* Adults */}
-            <div className="flex flex-col items-start text-sm min-w-0">
-              <span className="uppercase text-gray-500 tracking-wider text-xs whitespace-nowrap">
+            <div className="flex min-w-0 flex-col items-start text-sm">
+              <span className="whitespace-nowrap text-xs uppercase tracking-wider text-gray-500">
                 Adults
               </span>
               <select
                 value={bookingData.adults}
                 onChange={(e) => handleInputChange('adults', parseInt(e.target.value))}
-                className="mt-1 px-1 xl:px-2 py-1 font-trajan border border-gray-300 rounded text-gray-800 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm w-full"
+                className="mt-1 w-full rounded border border-gray-300 px-1 py-1 font-trajan text-sm text-gray-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 xl:px-2"
               >
-                {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
-                  <option key={num} value={num}>{num}</option>
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                  <option key={num} value={num}>
+                    {num}
+                  </option>
                 ))}
               </select>
             </div>
@@ -297,7 +296,7 @@ export default function Hero() {
             {/* CTA Button */}
             <button
               onClick={handleBookingSubmit}
-              className="px-5 py-2 border text-center border-gray-800 text-gray-800 rounded-full hover:bg-gray-100 transition"
+              className="rounded-full border border-gray-800 px-5 py-2 text-center text-gray-800 transition hover:bg-gray-100"
             >
               {t('callButton')}
             </button>

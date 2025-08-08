@@ -3,8 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @font-face {
   font-family: 'Trajan Pro';
   src: url('/fonts/TrajanPro-Regular.ttf') format('truetype');
@@ -13,8 +11,8 @@
 }
 
 @font-face {
-  font-family: "Trajan Pro";
-  src: url("/fonts/TrajanPro-Bold.ttf") format("truetype");
+  font-family: 'Trajan Pro';
+  src: url('/fonts/TrajanPro-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
@@ -26,9 +24,8 @@
 
 body {
   background: rgb(var(--background-rgb));
-   font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
-
 
 nav {
   font-family: 'Montserrat';
@@ -92,8 +89,6 @@ nav {
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -101,7 +96,7 @@ nav {
   body {
     @apply bg-background text-foreground;
   }
-} 
+}
 @keyframes fade-in-up {
   0% {
     opacity: 0;
@@ -117,6 +112,8 @@ nav {
   animation: fade-in-up 0.8s ease-out;
 }
 
-@media (max-width: 768px){
- .seo-ping{display:none} 
+@media (max-width: 768px) {
+  .seo-ping {
+    display: none;
+  }
 }
