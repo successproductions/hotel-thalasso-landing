@@ -16,7 +16,7 @@ export function RewardsSection() {
   return (
     <section id="rewards" className="bg-gray-50 py-1 md:py-12">
       <div className="mx-auto max-w-5xl px-4">
-        <h2 className="block pb-4 text-center text-4xl text-gray-800 md:hidden">Latest Awards</h2>
+        <h2 className="block pb-4 text-center text-4xl text-gray-800 md:hidden">LATEST AWARDS</h2>
 
         {/* Top row (2 logos) */}
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-20">
@@ -29,7 +29,7 @@ export function RewardsSection() {
 
         {/* Heading + divider */}
         <div className="hidden items-center md:flex">
-          <h2 className="font-serif text-3xl text-gray-800">Latest Awards</h2>
+          <h2 className="font-serif text-3xl text-gray-800">LATEST AWARDS</h2>
           <div className="ml-4 h-px flex-grow bg-gray-300" />
         </div>
 

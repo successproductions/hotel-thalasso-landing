@@ -70,21 +70,21 @@ export function Footer() {
           <h3 className="mb-4 text-sm font-semibold uppercase">Follow Us</h3>
           <div className="flex space-x-4">
             <a
-              href="https://facebook.com/DCthermes"
+              href="https://www.facebook.com/DakhlaClub/"
               aria-label="Facebook"
               className="hover:text-gray-900"
             >
               <Facebook size={20} />
             </a>
             <a
-              href="https://instagram.com/DCthermes"
+              href="https://www.instagram.com/hoteldakhlaclub/"
               aria-label="Instagram"
               className="hover:text-gray-900"
             >
               <Instagram size={20} />
             </a>
             <a
-              href="https://youtube.com/DCthermes"
+              href="https://youtube.com/@dakhlaclub1745?si=D_TKjBar-WzAMcnY"
               aria-label="Youtube"
               className="hover:text-gray-900"
             >
