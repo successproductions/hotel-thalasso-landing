@@ -12,7 +12,7 @@ const playfair = Playfair_Display({
   display: 'swap'
 })
 
-// ✅ VIEWPORT EXPORT (modern Next.js way)
+
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
   return [{ locale: 'fr' }, { locale: 'en' }];
 }
 
-// ✅ CLEAN LAYOUT METADATA - NO PAGE-SPECIFIC DATA
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
     // Only global metadata in layout
@@ -146,7 +146,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
         />
 
-        {/* Performance and SEO meta tags */}
+
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#0ea5e9" />
         <meta name="color-scheme" content="light dark" />
@@ -154,15 +154,14 @@ export default async function LocaleLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Dakhla Club" />
         
-        {/* Preconnect to external domains */}
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://api.qrserver.com" />
         
-        {/* DNS prefetch for performance */}
         <link rel="dns-prefetch" href="https://direct-book.com" />
         
-        {/* Updated time for SEO */}
+
         <meta
           property="og:updated_time"
           content={new Date().toISOString()}
