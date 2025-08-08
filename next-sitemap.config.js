@@ -3,19 +3,9 @@ module.exports = {
   siteUrl: 'https://offer.dakhlaclub.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  
-  
-  exclude: [
-    '/api/*', 
-    '/admin/*', 
-    '/_next/*', 
-    '/404', 
-    '/500',
-    '/fr',     
-    '/en',     
-    '/'        
-  ],
-  
+
+  exclude: ['/api/*', '/admin/*', '/_next/*', '/404', '/500', '/fr', '/en', '/'],
+
   transform: async (config, path) => {
     // Handle 3-day offers
     if (path === '/fr/evasion-holistique-3-jours' || path === '/en/evasion-holistique-3-jours') {
@@ -24,7 +14,7 @@ module.exports = {
         changefreq: 'weekly',
         priority: 1.0,
         lastmod: new Date().toISOString(),
-      }
+      };
     }
 
     // Handle 5-day offers
@@ -34,7 +24,7 @@ module.exports = {
         changefreq: 'weekly',
         priority: 0.9,
         lastmod: new Date().toISOString(),
-      }
+      };
     }
 
     // Handle 7-day offers
@@ -44,7 +34,7 @@ module.exports = {
         changefreq: 'weekly',
         priority: 0.8,
         lastmod: new Date().toISOString(),
-      }
+      };
     }
 
     // Handle legal pages
@@ -54,7 +44,7 @@ module.exports = {
         changefreq: 'monthly',
         priority: 0.3,
         lastmod: new Date().toISOString(),
-      }
+      };
     }
 
     return {
@@ -62,9 +52,8 @@ module.exports = {
       changefreq: 'monthly',
       priority: 0.5,
       lastmod: new Date().toISOString(),
-    }
+    };
   },
-
 
   additionalPaths: async () => {
     return [
@@ -77,7 +66,7 @@ module.exports = {
       },
       {
         loc: '/en/evasion-holistique-3-jours',
-        changefreq: 'weekly', 
+        changefreq: 'weekly',
         priority: 1.0,
         lastmod: new Date().toISOString(),
       },
@@ -137,8 +126,8 @@ module.exports = {
         loc: '/en/legal/cookies',
         changefreq: 'monthly',
         priority: 0.3,
-      }
-    ]
+      },
+    ];
   },
 
   robotsTxtOptions: {
@@ -146,8 +135,8 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/']
-      }
+        disallow: ['/api/', '/admin/'],
+      },
     ],
-  }
-}
+  },
+};

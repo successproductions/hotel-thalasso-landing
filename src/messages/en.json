@@ -16,11 +16,11 @@
     "title": "WELCOME TO DAKHLA CLUB",
     "title2": "WELCOME TO DAKHLACLUB",
     "description": "Enjoy a 3 Nights wellness escape",
-    "duration":"Duration",
+    "duration": "Duration",
     "days": "3 Days",
-    "callButton":" I Want To Live The Experience",
-    "Check-in":"Check-in",
-    "Check-out":"Check-out",
+    "callButton": " I Want To Live The Experience",
+    "Check-in": "Check-in",
+    "Check-out": "Check-out",
     "bookingValidation": {
       "invalidDurationTitle": "Invalid Stay Duration",
       "invalidDurationText": "Your stay must be exactly 4 days. Please adjust your dates.",
@@ -28,18 +28,18 @@
     }
   },
   "hero": {
-    "tagline":     "Holistic Escape",
-    "headline":    "3 DAYS TO REJUVENATE BODY & MIND",
+    "tagline": "Holistic Escape",
+    "headline": "3 DAYS TO REJUVENATE BODY & MIND",
     "description": "Dakhla is calling… Are you ready to recharge your batteries?",
-    "cta":         "BOOK YOUR HOLISTIC ESCAPE"
+    "cta": "BOOK YOUR HOLISTIC ESCAPE"
   },
   "healthProgram": {
     "title": "Dakhla is calling… Are you ready to refuel your energy?",
-    "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
+    "title2": "A sanctuary between golden desert, turquoise lagoon, and sacred light",
     "description1": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual Here, silence heals. The sun warms from within. Our certified therapists welcome you for an immersive and deeply regenerative experience."
   },
-  "about":{
-  "title":       "Is this retreat for you?",
+  "about": {
+    "title": "Is this retreat for you?",
     "description1": [
       "You feel mentally and physically drained",
       "You need a break without going far or too long",
@@ -51,49 +51,61 @@
   },
 
   "servicesSection": {
-    "title":       "OUR SIGNATURE TREATMENTS",
+    "title": "OUR SIGNATURE TREATMENTS",
     "description": "Discover a range of treatments designed for your physical and mental well-being"
   },
-  
+
   "programSection": {
     "header": {
-      "title":             "THE PROGRAM",
-      "subheading":        "3 Nights, 3 Energies, 3 Transformations",
-      "description":       "A holistic journey to your complete well-being in the unique universe of Dakhla",
-      "jour":              "Day",
-      "activitiesTitle":   "Care included :",
+      "title": "THE PROGRAM",
+      "subheading": "3 Nights, 3 Energies, 3 Transformations",
+      "description": "A holistic journey to your complete well-being in the unique universe of Dakhla",
+      "jour": "Day",
+      "activitiesTitle": "Care included :",
       "callButton": " Enter the holistic universe of the Dakhla Club",
       "objectiveTitle": "objective :"
-      
     },
     "days": {
       "1": {
-        "title":        "Arrival & Preparation",
-        "description":  "PA gentle start to your wellness getaway. Take the time to settle in, unwind, and reconnect with yourself—far from the stress of everyday life.",
-        "activities":   [],
-        "objective":    "Grounding, breathwork, opening body & mind.",
-        "ctaText":      "I CHOOSE TO REGENERATE"
+        "title": "Arrival & Preparation",
+        "description": "PA gentle start to your wellness getaway. Take the time to settle in, unwind, and reconnect with yourself—far from the stress of everyday life.",
+        "activities": [],
+        "objective": "Grounding, breathwork, opening body & mind.",
+        "ctaText": "I CHOOSE TO REGENERATE"
       },
       "2": {
-        "title":        "Vitality & Sensory Relaxation",
-        "description":  "A day devoted to awakening the senses and revitalizing the body. Breathe, let go, and allow yourself to be carried by the soothing power of water and therapeutic care.",
-        "activities":   ["Jacquier Air Bowl","Thermal pool","Purifying Sauna","Hydromassage Bath","Seaweed Wrap","Affusion Shower Massage"],
-        "objective":    "Deep release, cellular oxygenation, muscle relaxation.",
-        "ctaText":      "ENTER THE EXPERIENCE"
+        "title": "Vitality & Sensory Relaxation",
+        "description": "A day devoted to awakening the senses and revitalizing the body. Breathe, let go, and allow yourself to be carried by the soothing power of water and therapeutic care.",
+        "activities": [
+          "Jacquier Air Bowl",
+          "Thermal pool",
+          "Purifying Sauna",
+          "Hydromassage Bath",
+          "Seaweed Wrap",
+          "Affusion Shower Massage"
+        ],
+        "objective": "Deep release, cellular oxygenation, muscle relaxation.",
+        "ctaText": "ENTER THE EXPERIENCE"
       },
       "3": {
-        "title":        "Regeneration & Balance",
-        "description":  "Today is all about deep regeneration. Targeted treatments release built-up tension and rebalance your energy for complete relaxation.",
-        "activities":   ["Thermal pool","Jet shower","Magnesium bath","Cupping therapy","Relaxation Massage"],
-        "objective":    "Boost circulation, refine silhouette, energy recharge.",
-        "ctaText":      "I WANT THE EXPERIENCE"
+        "title": "Regeneration & Balance",
+        "description": "Today is all about deep regeneration. Targeted treatments release built-up tension and rebalance your energy for complete relaxation.",
+        "activities": [
+          "Thermal pool",
+          "Jet shower",
+          "Magnesium bath",
+          "Cupping therapy",
+          "Relaxation Massage"
+        ],
+        "objective": "Boost circulation, refine silhouette, energy recharge.",
+        "ctaText": "I WANT THE EXPERIENCE"
       },
       "4": {
-        "title":        "Departure & Lasting Serenity",
-        "description":  "Your retreat comes to an end, but the benefits linger. You leave with a clearer mind, a deeply relaxed body, and renewed inner balance.",
-        "activities":   [],
-        "objective":    "Toxin elimination, mental calm, regenerated skin.",
-        "ctaText":      "ACCESS MY STAY"
+        "title": "Departure & Lasting Serenity",
+        "description": "Your retreat comes to an end, but the benefits linger. You leave with a clearer mind, a deeply relaxed body, and renewed inner balance.",
+        "activities": [],
+        "objective": "Toxin elimination, mental calm, regenerated skin.",
+        "ctaText": "ACCESS MY STAY"
       }
     }
   },
@@ -107,28 +119,28 @@
   "carousel": {
     "overlay": {
       "description": "Discover our exceptional spaces dedicated to your well-being and relaxation",
-      "pause":       "⏸️ Pause",
-      "play":        "▶️ Play"
+      "pause": "⏸️ Pause",
+      "play": "▶️ Play"
     },
     "images": {
       "oceanView": {
-        "alt":   "Panoramic view of the thalasso hotel facing the sea",
+        "alt": "Panoramic view of the thalasso hotel facing the sea",
         "title": "OCEAN VIEW"
       },
       "thermalPool": {
-        "alt":   "Thermal pool with sea view",
+        "alt": "Thermal pool with sea view",
         "title": "THERMAL POOL"
       },
       "spaRoom": {
-        "alt":   "Massage room and thalasso treatments",
+        "alt": "Massage room and thalasso treatments",
         "title": "SPA ROOM"
       },
       "saunaHammam": {
-        "alt":   "Sauna and hammam of the hotel",
+        "alt": "Sauna and hammam of the hotel",
         "title": "SAUNA & HAMMAM"
       },
       "restaurant": {
-        "alt":   "Hotel gourmet restaurant",
+        "alt": "Hotel gourmet restaurant",
         "title": "RESTAURANT"
       }
     }
@@ -165,123 +177,118 @@
   },
   "contactForm": {
     "header": {
-      "small":    "BOOK A DATE",
-      "title":    "RECONNECT WITH YOUR WELL-BEING",
+      "small": "BOOK A DATE",
+      "title": "RECONNECT WITH YOUR WELL-BEING",
       "subtitle": "We’re here to guide your thalasso experience. Fill out the form and treat yourself to a moment off time."
     },
     "fields": {
       "name": {
-        "label":      "Full Name",
-        "placeholder":"John Doe"
+        "label": "Full Name",
+        "placeholder": "John Doe"
       },
       "countryCode": {
-        "label":      "Country"
+        "label": "Country"
       },
       "phone": {
-        "label":      "Phone",
-        "placeholder":"+1 (234) 567-890"
+        "label": "Phone",
+        "placeholder": "+1 (234) 567-890"
       },
       "email": {
-        "label":      "Email",
-        "placeholder":"example@mail.com"
+        "label": "Email",
+        "placeholder": "example@mail.com"
       },
       "date": {
-        "label":      "Preferred Date",
-        "placeholder":"Select a date"
+        "label": "Preferred Date",
+        "placeholder": "Select a date"
       },
       "message": {
-        "label":      "Message",
-        "placeholder":"Hello there!"
+        "label": "Message",
+        "placeholder": "Hello there!"
       }
     },
     "submit": "SEND",
     "errors": {
-    "missingFields": "Please fill in all required fields.",
-    "server":        "Server error",
-    "unknown":       "An unknown error occurred"
-  },
-  "success": {
-    "title":   "Message sent!",
-    "message": "We’ll be in touch soon."
-  },
+      "missingFields": "Please fill in all required fields.",
+      "server": "Server error",
+      "unknown": "An unknown error occurred"
+    },
+    "success": {
+      "title": "Message sent!",
+      "message": "We’ll be in touch soon."
+    },
     "info": {
       "address": {
-        "title":"Address",
+        "title": "Address",
         "text": "POINT DE DRAGON PK 28, 73000 Dakhla"
       },
       "phone": {
-        "title":"Phone Number",
-        "text":  "+212 652-881921"
+        "title": "Phone Number",
+        "text": "+212 652-881921"
       },
       "email": {
-        "title":"Email",
-        "text":  "reservation@dakhlaclub.com"
+        "title": "Email",
+        "text": "reservation@dakhlaclub.com"
       }
     }
   },
-  "clientsCarousel":{
+  "clientsCarousel": {
     "title": "What They Say ",
     "testimonial1": "I tried the ice baths and loved it!",
     "testimonial2": "After kiting, it's so relaxing",
     "testimonial3": "The best spa i've ever been to in my life",
     "testimonial4": "Dakhla offers a unique setting to reconnect with yourself.",
     "testimonial5": "I feel that my skin is well hydrated"
-},
+  },
   "introduction": {
-    "whyTitle":        "Why this retreat?",
-    "headlineLine1":   "A reconnection to self",
-    "headlineLine2":   "in an exceptional natural setting",
-    "description":     "A 3-day escape designed to reconnect you with your body, boost your vital energy, and restore mental clarity. A bubble of softness in a unique natural setting between desert and ocean…",
-    "imageAlt":        "Woman relaxing at the spa in Dakhla"
+    "whyTitle": "Why this retreat?",
+    "headlineLine1": "A reconnection to self",
+    "headlineLine2": "in an exceptional natural setting",
+    "description": "A 3-day escape designed to reconnect you with your body, boost your vital energy, and restore mental clarity. A bubble of softness in a unique natural setting between desert and ocean…",
+    "imageAlt": "Woman relaxing at the spa in Dakhla"
   },
   "rewards": {
     "title": "WE HAVE BEEN AWARDED BY",
     "logos": {
       "tripadvisor": { "alt": "TripAdvisor" },
-      "tripdotcom":  { "alt": "Trip.com" },
-      "spaAward":    { "alt": "Spa Award" },
-      "kayakBadge":  { "alt": "Kayak badge" }
+      "tripdotcom": { "alt": "Trip.com" },
+      "spaAward": { "alt": "Spa Award" },
+      "kayakBadge": { "alt": "Kayak badge" }
     }
   },
-"footer": {
-  "scanBrochure": "Scan to download our brochure",
-  "qrAlt": "QR Code – Download Brochure",
+  "footer": {
+    "scanBrochure": "Scan to download our brochure",
+    "qrAlt": "QR Code – Download Brochure",
     "column1": "Navigate",
     "footerNav": {
-      "home":     "Home",
-      "about":    "About",
+      "home": "Home",
+      "about": "About",
       "services": "Stays",
-      "contact":  "Contact"
+      "contact": "Contact"
     },
     "column2": "Support",
     "support": {
-      "faq":        "FAQ",
-      "contactUs":  "Contact Us",
-      "terms":      "Terms of Use"
+      "faq": "FAQ",
+      "contactUs": "Contact Us",
+      "terms": "Terms of Use"
     },
     "column3": "Company",
     "company": {
       "aboutUs": "About",
       "careers": "Careers",
-      "news":    "News"
+      "news": "News"
     },
     "column4": "Legal",
     "legal": {
-      "privacy":   "Privacy Policy",
-      "cookies":   "Cookie Policy",
-      "sitemap":   "Terms-of-sale"
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "sitemap": "Terms-of-sale"
     },
     "copyright": "© 2025 DakhlaClub and its Associated Subsidiaries | Luxury Fitness, Health & Wellness Vacation Retreat."
   },
-"servicesTable": {
+  "servicesTable": {
     "header": "HOLISTIC ESCAPE PROGRAM – DAKHLA",
     "servicesLabel": "Services",
-    "programs": [
-      "Day 1",
-      "Day 2",
-      "Day 3",
-      "Day 4"
-    ],
+    "programs": ["Day 1", "Day 2", "Day 3", "Day 4"],
     "services": [
       { "title": "Personalized Welcome" },
       { "title": "Detox Infusion" },
@@ -297,336 +304,469 @@
       { "title": "Cupping Therapy" },
       { "title": "Desert Secret Hammam" },
       { "title": "Relaxing Massage" }
-      
     ],
     "availability": {
-      "Personalized Welcome":        [1,0,0,0],
-      "Detox Infusion":              [1,0,0,0],
-      "Bungalow with Nature/Ocean View": [1,0,0,0],
-      "Bol d’Air Jacquier":          [1,1,0,1],
-      "Thermal Pool Access":         [1,1,1,1],
-      "Purifying Sauna":             [0,1,0,0],
-      "Hydro-Massage Bath":          [0,1,0,0],
-      "Seaweed Body Wrap":           [0,1,0,0],
-      "Affusion Massage":            [0,1,0,0],
-      "Jet Shower":                  [0,0,1,0],
-      "Magnesium Bath":              [0,0,1,0],
-      "Cupping Therapy":             [0,0,1,0],
-      "Desert Secret Hammam":        [0,0,0,1],
-      "Relaxing Massage":            [0,0,0,1],
-      "Therapeutic Objectives":      [1,1,1,1],
-      "Expected Benefits":           [1,1,1,1]
+      "Personalized Welcome": [1, 0, 0, 0],
+      "Detox Infusion": [1, 0, 0, 0],
+      "Bungalow with Nature/Ocean View": [1, 0, 0, 0],
+      "Bol d’Air Jacquier": [1, 1, 0, 1],
+      "Thermal Pool Access": [1, 1, 1, 1],
+      "Purifying Sauna": [0, 1, 0, 0],
+      "Hydro-Massage Bath": [0, 1, 0, 0],
+      "Seaweed Body Wrap": [0, 1, 0, 0],
+      "Affusion Massage": [0, 1, 0, 0],
+      "Jet Shower": [0, 0, 1, 0],
+      "Magnesium Bath": [0, 0, 1, 0],
+      "Cupping Therapy": [0, 0, 1, 0],
+      "Desert Secret Hammam": [0, 0, 0, 1],
+      "Relaxing Massage": [0, 0, 0, 1],
+      "Therapeutic Objectives": [1, 1, 1, 1],
+      "Expected Benefits": [1, 1, 1, 1]
     }
-    
   },
-  "ProgrammeFonctionne":{
+  "ProgrammeFonctionne": {
     "title": "Why This Program Works",
     "title2": "What You’ll Truly Feel ",
-  "points":[
-    "Inner oxygenation & glowing skin",
-    "Light body, released tensions",
-    "Muscular relaxation & restful sleep",
-    "Smooth, de-puffed, remineralized skin",
-    "Naturally refined and drained silhouette",
-    "Mental clarity & stable energy"
-  ],
-  "points1": [
-      "Certified and caring therapists",
-      "An environment that heals all by itself"
+    "points": [
+      "Inner oxygenation & glowing skin",
+      "Light body, released tensions",
+      "Muscular relaxation & restful sleep",
+      "Smooth, de-puffed, remineralized skin",
+      "Naturally refined and drained silhouette",
+      "Mental clarity & stable energy"
     ],
+    "points1": ["Certified and caring therapists", "An environment that heals all by itself"],
     "points2": [
       "Synergy between modern treatments & ancient rituals",
       "A sequence designed around physiological & emotional logic"
     ]
-},
+  },
 
-"offer5":{
-  "home": {
-    "title": "WELCOME TO DAKHLA CLUB",
-    "title2": "WELCOME TO DAKHLACLUB",
-    "description": "A premium retreat by the Atlantic Ocean, for those ready to feel better… ",
-    "description2": "A premium retreat by the Atlantic Ocean. ",
-    "duration":"Duration",
-    "days": "5 Nights",
-    "callButton":" I Want To Live The Experience",
-    "Check-in":"Check-in",
-    "Check-out":"Check-out",
-    "bookingValidation": {
-      "invalidDurationTitle": "Invalid Stay Duration",
-      "invalidDurationText": "Your stay must be exactly 5 Nights. Please adjust your dates.",
-      "confirmButton": "OK"
-    }
-  },
-  "healthProgram": {
-    "title": "Dakhla is calling… Are you ready to refuel your energy?",
-    "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
-    "description1": "Set in a wild and pure environment between ocean, desert, and light, this 5 Nights journey offers far more than relaxation — it's a long-lasting reconnection with your inner vitality."
-  },
-  "about":{
-  "title":       "Who is this retreat for?",
-    "description1": [
-      "Those experiencing chronic fatigue despite rest",
-      "Anyone in need of a full physical, emotional, and mental reset",
-      "Athletes looking for smart and deep recovery",
-      "Women seeking inner alignment and full-body detox",
-      "Those suffering from poor sleep, digestion or lack of balance",
-      "Anyone who wants to care for themselves with elegance, structure, and results"
-    ]
-  }
-,
-  "programSection": {
-    "header": {
-      "title": "THE PROGRAM",
-      "subheading": "Marine Serenity Retreat – 5 Nights to Regenerate Your Body and Mind",
-      "description": "A holistic journey to your complete well-being in the unique universe of Dakhla",
-      "jour": "Day",
-      "activitiesTitle": "Included treatments:",
-      "callButton": " Enter the holistic world of Dakhla Club",
-      "objectiveTitle": "Objective:"
-    },
-    "days": {
-      "1": {
-        "title": "Arrival at Dakhla Club",
-        "description": "Welcome, grounding herbal tea, and check-in to your bungalow. A gentle start in a pristine natural setting.",
-        "activities": [],
-        "objective": "Grounding, breathing, opening body and mind.",
-        "ctaText": "I CHOOSE TO REGENERATE"
-      },
-      "2": {
-        "title": "Release & Balance",
-        "description": "A day dedicated to awakening the senses and revitalizing the body. Breathe, release, and let yourself be carried by the benefits of water and treatments.",
-        "activities": [
-          "Gentle sunrise yoga",
-          "Dry sauna",
-          "Heated thermal pool",
-          "Himalayan salt scrub",
-          "1001 Nights Moroccan hammam ritual"
-        ],
-        "objective": "Relax the nervous system, activate drainage, and prepare for transformation.",
-        "ctaText": "ENTER THE UNIVERSE"
-      },
-      "3": {
-        "title": "Oxygenation & Regeneration",
-        "description": "Today, the body regenerates deeply. Targeted treatments release tension and rebalance energy for total relaxation.",
-        "activities": [
-          "Yoga",
-          "Jacquier’s Oxygen Therapy (Bol d’air)",
-          "Jet shower",
-          "Hydromassage bath",
-          "Seaweed body wrap",
-          "Affusion massage"
-        ],
-        "objective": "Stimulate cells, detox deeply, reconnect to your body.",
-        "ctaText": "I WANT TO LIVE THE EXPERIENCE"
-      },
-      "4": {
-        "title": "Serenity & Deep Relaxation",
-        "description": "The retreat is coming to an end, but the effects last well beyond these few days. You leave with a clearer mind, a relaxed body, and rebalanced energy.",
-        "activities": [
-          "Yoga",
-          "Jacquier’s Oxygen Therapy",
-          "Sauna",
-          "Thermal pool",
-          "Magnesium bath",
-          "Traditional relaxing massage"
-        ],
-        "objective": "Restorative sleep, grounding, and lasting calm.",
-        "ctaText": "ACCESS MY RETREAT"
-      },
-      "5": {
-        "title": "Stimulation & Vitality",
-        "description": "A day to activate vitality and stimulate energy. Dynamic practices and targeted treatments to boost body and mind, and feel a new inner strength.",
-        "activities": [
-          "Yoga",
-          "Jacquier’s Oxygen Therapy",
-          "Detoxifying & smoothing spirulina facial",
-          "Fire towel cupping therapy",
-          "Manicure & pedicure"
-        ],
-        "objective": "Activate full vitality and deep drainage.",
-        "ctaText": "ACCESS MY RETREAT"
-      },
-      "6": {
-        "title": "Departure",
-        "description": "It's time to leave. You go home with practical tools to prolong the benefits, renewed energy, and deep serenity.",
-        "activities": [],
-        "objective": "Closing ritual, take-home wellness journal, and integration tips.",
-        "ctaText": "ACCESS MY RETREAT"
+  "offer5": {
+    "home": {
+      "title": "WELCOME TO DAKHLA CLUB",
+      "title2": "WELCOME TO DAKHLACLUB",
+      "description": "A premium retreat by the Atlantic Ocean, for those ready to feel better… ",
+      "description2": "A premium retreat by the Atlantic Ocean. ",
+      "duration": "Duration",
+      "days": "5 Nights",
+      "callButton": " I Want To Live The Experience",
+      "Check-in": "Check-in",
+      "Check-out": "Check-out",
+      "bookingValidation": {
+        "invalidDurationTitle": "Invalid Stay Duration",
+        "invalidDurationText": "Your stay must be exactly 5 Nights. Please adjust your dates.",
+        "confirmButton": "OK"
       }
-    }
-  },
-  "ProgrammeFonctionne":{
-  "title": " Why This Program Works",
-  "title2": " What You’ll Truly Feel",
-  "points":[
-
-    "A liberating emptiness in the head and belly",
-    "A calmed nervous system, deep sleep, grounded presence",
-    "Improved digestion, stable and available energy",
-    "Smoother skin, a relaxed and radiant face",
-    "A lighter, decongested, and unburdened body",
-    "A clear mind and a desire to come back to yourself"
-  ],
-  "points1":[
-    "Rare combination of cutting-edge treatments, ancient techniques, and powerful natural setting",
-    "All care is designed to cleanse, activate, soothe, and restart"
-  ],
-  "points2":[
-    "Each day follows a logical biological and emotional progression",
-    "Guided by certified holistic revitalization experts"
-
-  ]
-},
-"exclusiveOffer": {
-    "title": "⏳ Limited Edition – Only 10 participants per session",
-    "description": "🔒 To guarantee an intimate experience, we open only 10 spots per session.",
-    "nextSession": "📅 Prochaine session fermera bientôt ses portes",
-    "callButton": "Je Réserve Ma Place"
-  },
-  "faq": {
-    "title": "FAQ",
-    "contact": {
-      "label": "Contact us",
-      "subtext": "Quick response by phone or email.",
-      "alt": "Woman in water at Dakhla"
     },
-    "items": [
-      {
-        "question": "What can I expect during these 7 Nights at Dakhla Club?",
-        "answer": "You’ll experience a true reconnection with yourself through a blend of relaxing treatments, sensory rituals, and a stunning natural setting between the desert and the ocean."
+    "healthProgram": {
+      "title": "Dakhla is calling… Are you ready to refuel your energy?",
+      "title2": "A sanctuary between golden desert, turquoise lagoon, and sacred light",
+      "description1": "Set in a wild and pure environment between ocean, desert, and light, this 5 Nights journey offers far more than relaxation — it's a long-lasting reconnection with your inner vitality."
+    },
+    "about": {
+      "title": "Who is this retreat for?",
+      "description1": [
+        "Those experiencing chronic fatigue despite rest",
+        "Anyone in need of a full physical, emotional, and mental reset",
+        "Athletes looking for smart and deep recovery",
+        "Women seeking inner alignment and full-body detox",
+        "Those suffering from poor sleep, digestion or lack of balance",
+        "Anyone who wants to care for themselves with elegance, structure, and results"
+      ]
+    },
+    "programSection": {
+      "header": {
+        "title": "THE PROGRAM",
+        "subheading": "Marine Serenity Retreat – 5 Nights to Regenerate Your Body and Mind",
+        "description": "A holistic journey to your complete well-being in the unique universe of Dakhla",
+        "jour": "Day",
+        "activitiesTitle": "Included treatments:",
+        "callButton": " Enter the holistic world of Dakhla Club",
+        "objectiveTitle": "Objective:"
       },
-      {
-        "question": "What types of treatments are included in the program?",
-        "answer": "You’ll enjoy a range of holistic therapies such as hydromassage baths, seaweed wraps, cupping therapy, and affusion massages — all designed to deeply relax and recharge your body and mind."
-      },
-      {
-        "question": "Is this program suitable if I’ve never done a spa or wellness retreat before?",
-        "answer": "Absolutely — it’s the perfect introduction, carefully designed to be gentle, welcoming, and fully guided by wellness professionals."
-      },
-      {
-        "question": "Why should I book quickly?",
-        "answer": "Availability is limited to ensure a calm, personalized experience for every guest, so early booking is highly recommended."
-      },
-      {
-        "question": "Where will I stay during the retreat?",
-        "answer": "You’ll be staying right at the Dakhla Club Hotel & Spa, in a serene setting that perfectly complements and enhances the benefits of your treatments."
+      "days": {
+        "1": {
+          "title": "Arrival at Dakhla Club",
+          "description": "Welcome, grounding herbal tea, and check-in to your bungalow. A gentle start in a pristine natural setting.",
+          "activities": [],
+          "objective": "Grounding, breathing, opening body and mind.",
+          "ctaText": "I CHOOSE TO REGENERATE"
+        },
+        "2": {
+          "title": "Release & Balance",
+          "description": "A day dedicated to awakening the senses and revitalizing the body. Breathe, release, and let yourself be carried by the benefits of water and treatments.",
+          "activities": [
+            "Gentle sunrise yoga",
+            "Dry sauna",
+            "Heated thermal pool",
+            "Himalayan salt scrub",
+            "1001 Nights Moroccan hammam ritual"
+          ],
+          "objective": "Relax the nervous system, activate drainage, and prepare for transformation.",
+          "ctaText": "ENTER THE UNIVERSE"
+        },
+        "3": {
+          "title": "Oxygenation & Regeneration",
+          "description": "Today, the body regenerates deeply. Targeted treatments release tension and rebalance energy for total relaxation.",
+          "activities": [
+            "Yoga",
+            "Jacquier’s Oxygen Therapy (Bol d’air)",
+            "Jet shower",
+            "Hydromassage bath",
+            "Seaweed body wrap",
+            "Affusion massage"
+          ],
+          "objective": "Stimulate cells, detox deeply, reconnect to your body.",
+          "ctaText": "I WANT TO LIVE THE EXPERIENCE"
+        },
+        "4": {
+          "title": "Serenity & Deep Relaxation",
+          "description": "The retreat is coming to an end, but the effects last well beyond these few days. You leave with a clearer mind, a relaxed body, and rebalanced energy.",
+          "activities": [
+            "Yoga",
+            "Jacquier’s Oxygen Therapy",
+            "Sauna",
+            "Thermal pool",
+            "Magnesium bath",
+            "Traditional relaxing massage"
+          ],
+          "objective": "Restorative sleep, grounding, and lasting calm.",
+          "ctaText": "ACCESS MY RETREAT"
+        },
+        "5": {
+          "title": "Stimulation & Vitality",
+          "description": "A day to activate vitality and stimulate energy. Dynamic practices and targeted treatments to boost body and mind, and feel a new inner strength.",
+          "activities": [
+            "Yoga",
+            "Jacquier’s Oxygen Therapy",
+            "Detoxifying & smoothing spirulina facial",
+            "Fire towel cupping therapy",
+            "Manicure & pedicure"
+          ],
+          "objective": "Activate full vitality and deep drainage.",
+          "ctaText": "ACCESS MY RETREAT"
+        },
+        "6": {
+          "title": "Departure",
+          "description": "It's time to leave. You go home with practical tools to prolong the benefits, renewed energy, and deep serenity.",
+          "activities": [],
+          "objective": "Closing ritual, take-home wellness journal, and integration tips.",
+          "ctaText": "ACCESS MY RETREAT"
+        }
       }
-    ]
-  },
+    },
+    "ProgrammeFonctionne": {
+      "title": " Why This Program Works",
+      "title2": " What You’ll Truly Feel",
+      "points": [
+        "A liberating emptiness in the head and belly",
+        "A calmed nervous system, deep sleep, grounded presence",
+        "Improved digestion, stable and available energy",
+        "Smoother skin, a relaxed and radiant face",
+        "A lighter, decongested, and unburdened body",
+        "A clear mind and a desire to come back to yourself"
+      ],
+      "points1": [
+        "Rare combination of cutting-edge treatments, ancient techniques, and powerful natural setting",
+        "All care is designed to cleanse, activate, soothe, and restart"
+      ],
+      "points2": [
+        "Each day follows a logical biological and emotional progression",
+        "Guided by certified holistic revitalization experts"
+      ]
+    },
+    "exclusiveOffer": {
+      "title": "⏳ Limited Edition – Only 10 participants per session",
+      "description": "🔒 To guarantee an intimate experience, we open only 10 spots per session.",
+      "nextSession": "📅 Prochaine session fermera bientôt ses portes",
+      "callButton": "Je Réserve Ma Place"
+    },
+    "faq": {
+      "title": "FAQ",
+      "contact": {
+        "label": "Contact us",
+        "subtext": "Quick response by phone or email.",
+        "alt": "Woman in water at Dakhla"
+      },
+      "items": [
+        {
+          "question": "What can I expect during these 7 Nights at Dakhla Club?",
+          "answer": "You’ll experience a true reconnection with yourself through a blend of relaxing treatments, sensory rituals, and a stunning natural setting between the desert and the ocean."
+        },
+        {
+          "question": "What types of treatments are included in the program?",
+          "answer": "You’ll enjoy a range of holistic therapies such as hydromassage baths, seaweed wraps, cupping therapy, and affusion massages — all designed to deeply relax and recharge your body and mind."
+        },
+        {
+          "question": "Is this program suitable if I’ve never done a spa or wellness retreat before?",
+          "answer": "Absolutely — it’s the perfect introduction, carefully designed to be gentle, welcoming, and fully guided by wellness professionals."
+        },
+        {
+          "question": "Why should I book quickly?",
+          "answer": "Availability is limited to ensure a calm, personalized experience for every guest, so early booking is highly recommended."
+        },
+        {
+          "question": "Where will I stay during the retreat?",
+          "answer": "You’ll be staying right at the Dakhla Club Hotel & Spa, in a serene setting that perfectly complements and enhances the benefits of your treatments."
+        }
+      ]
+    },
     "servicesTable5": {
       "header": "MARINE SERENITY RETREAT – 5 NIGHTS PROGRAM",
       "servicesLabel": "Services",
       "programs": [
         "Day 1 - Arrival",
         "Day 2 - Release",
-        "Day 3 - Regeneration", 
+        "Day 3 - Regeneration",
         "Day 4 - Serenity",
         "Day 5 - Vitality",
         "Day 6 - Departure"
       ],
-        "services": [
-          { 
-            "title": "Personalized Welcome & Check-in",
-            "subItems": ["Grounding herbal tea", "Bungalow assignment", "Orientation"]
-          },
-          { 
-            "title": "Yoga Sessions",
-            "subItems": ["Gentle sunrise practice", "Body-mind alignment", "Breathing techniques"]
-          },
-          { 
-            "title": "Jacquier's Oxygen Therapy (Bol d'air)",
-            "subItems": ["Cellular oxygenation", "Enhanced vitality", "Natural detox boost"]
-          },
-          { 
-            "title": "Thermal Pool Access",
-            "subItems": ["Heated mineral water", "Muscle relaxation", "Improved circulation"]
-          },
-          { 
-            "title": "Dry Sauna",
-            "subItems": ["Deep detoxification", "Stress relief", "Skin purification"]
-          },
-          { 
-            "title": "Himalayan Salt Scrub",
-            "subItems": ["Exfoliation treatment", "Mineral absorption", "Skin renewal"]
-          },
-          { 
-            "title": "1001 Nights Moroccan Hammam",
-            "subItems": ["Traditional ritual", "Deep cleansing", "Cultural wellness experience"]
-          },
-          { 
-            "title": "Jet Shower",
-            "subItems": ["Hydrotherapy treatment", "Circulation boost", "Muscle tension relief"]
-          },
-          { 
-            "title": "Hydromassage Bath",
-            "subItems": ["Underwater massage", "Joint mobility", "Deep relaxation"]
-          },
-          { 
-            "title": "Seaweed Body Wrap",
-            "subItems": ["Marine minerals", "Skin nourishment", "Detox acceleration"]
-          },
-          { 
-            "title": "Affusion Massage",
-            "subItems": ["Water therapy", "Gentle pressure points", "Stress release"]
-          },
-          { 
-            "title": "Magnesium Bath",
-            "subItems": ["Muscle recovery", "Nervous system calm", "Sleep enhancement"]
-          },
-          { 
-            "title": "Traditional Relaxing Massage",
-            "subItems": ["Full body treatment", "Tension release", "Energy rebalancing"]
-          },
-          { 
-            "title": "Detoxifying Spirulina Facial",
-            "subItems": ["Anti-aging treatment", "Skin smoothing", "Natural glow enhancement"]
-          },
-          { 
-            "title": "Fire Towel Cupping Therapy",
-            "subItems": ["Traditional technique", "Deep tissue release", "Energy circulation"]
-          },
-          { 
-            "title": "Manicure & Pedicure",
-            "subItems": ["Complete nail care", "Hand & foot treatment", "Beauty wellness"]
-          },
-          { 
-            "title": "Closing Ritual & Wellness Journal",
-            "subItems": ["Integration session", "Take-home guide", "Wellness tips"]
-          }
-        ],
-        "availability": {
-          "Personalized Welcome & Check-in": [1,0,0,0,0,0],
-          "Yoga Sessions": [0,1,1,1,1,0],
-          "Jacquier's Oxygen Therapy (Bol d'air)": [0,0,1,1,1,0],
-          "Thermal Pool Access": [0,1,0,1,0,0],
-          "Dry Sauna": [0,1,0,1,0,0],
-          "Himalayan Salt Scrub": [0,1,0,0,0,0],
-          "1001 Nights Moroccan Hammam": [0,1,0,0,0,0],
-          "Jet Shower": [0,0,1,0,0,0],
-          "Hydromassage Bath": [0,0,1,0,0,0],
-          "Seaweed Body Wrap": [0,0,1,0,0,0],
-          "Affusion Massage": [0,0,1,0,0,0],
-          "Magnesium Bath": [0,0,0,1,0,0],
-          "Traditional Relaxing Massage": [0,0,0,1,0,0],
-          "Detoxifying Spirulina Facial": [0,0,0,0,1,0],
-          "Fire Towel Cupping Therapy": [0,0,0,0,1,0],
-          "Manicure & Pedicure": [0,0,0,0,1,0],
-          "Closing Ritual & Wellness Journal": [0,0,0,0,0,1]
+      "services": [
+        {
+          "title": "Personalized Welcome & Check-in",
+          "subItems": ["Grounding herbal tea", "Bungalow assignment", "Orientation"]
+        },
+        {
+          "title": "Yoga Sessions",
+          "subItems": ["Gentle sunrise practice", "Body-mind alignment", "Breathing techniques"]
+        },
+        {
+          "title": "Jacquier's Oxygen Therapy (Bol d'air)",
+          "subItems": ["Cellular oxygenation", "Enhanced vitality", "Natural detox boost"]
+        },
+        {
+          "title": "Thermal Pool Access",
+          "subItems": ["Heated mineral water", "Muscle relaxation", "Improved circulation"]
+        },
+        {
+          "title": "Dry Sauna",
+          "subItems": ["Deep detoxification", "Stress relief", "Skin purification"]
+        },
+        {
+          "title": "Himalayan Salt Scrub",
+          "subItems": ["Exfoliation treatment", "Mineral absorption", "Skin renewal"]
+        },
+        {
+          "title": "1001 Nights Moroccan Hammam",
+          "subItems": ["Traditional ritual", "Deep cleansing", "Cultural wellness experience"]
+        },
+        {
+          "title": "Jet Shower",
+          "subItems": ["Hydrotherapy treatment", "Circulation boost", "Muscle tension relief"]
+        },
+        {
+          "title": "Hydromassage Bath",
+          "subItems": ["Underwater massage", "Joint mobility", "Deep relaxation"]
+        },
+        {
+          "title": "Seaweed Body Wrap",
+          "subItems": ["Marine minerals", "Skin nourishment", "Detox acceleration"]
+        },
+        {
+          "title": "Affusion Massage",
+          "subItems": ["Water therapy", "Gentle pressure points", "Stress release"]
+        },
+        {
+          "title": "Magnesium Bath",
+          "subItems": ["Muscle recovery", "Nervous system calm", "Sleep enhancement"]
+        },
+        {
+          "title": "Traditional Relaxing Massage",
+          "subItems": ["Full body treatment", "Tension release", "Energy rebalancing"]
+        },
+        {
+          "title": "Detoxifying Spirulina Facial",
+          "subItems": ["Anti-aging treatment", "Skin smoothing", "Natural glow enhancement"]
+        },
+        {
+          "title": "Fire Towel Cupping Therapy",
+          "subItems": ["Traditional technique", "Deep tissue release", "Energy circulation"]
+        },
+        {
+          "title": "Manicure & Pedicure",
+          "subItems": ["Complete nail care", "Hand & foot treatment", "Beauty wellness"]
+        },
+        {
+          "title": "Closing Ritual & Wellness Journal",
+          "subItems": ["Integration session", "Take-home guide", "Wellness tips"]
         }
-},
-  
-"chatbot5": {
-    "welcome": {
-      "greeting": "👋 Hello! I'm your personal assistant for the **5-Nights Holistic Escape** at Dakhla Club.",
-      "requestInfo": "To better assist you, could you please provide your name and phone number?",
-      "format": "Format: **First Last Name** followed by your **phone number**\nExample: Marie Dupont 0612345678"
+      ],
+      "availability": {
+        "Personalized Welcome & Check-in": [1, 0, 0, 0, 0, 0],
+        "Yoga Sessions": [0, 1, 1, 1, 1, 0],
+        "Jacquier's Oxygen Therapy (Bol d'air)": [0, 0, 1, 1, 1, 0],
+        "Thermal Pool Access": [0, 1, 0, 1, 0, 0],
+        "Dry Sauna": [0, 1, 0, 1, 0, 0],
+        "Himalayan Salt Scrub": [0, 1, 0, 0, 0, 0],
+        "1001 Nights Moroccan Hammam": [0, 1, 0, 0, 0, 0],
+        "Jet Shower": [0, 0, 1, 0, 0, 0],
+        "Hydromassage Bath": [0, 0, 1, 0, 0, 0],
+        "Seaweed Body Wrap": [0, 0, 1, 0, 0, 0],
+        "Affusion Massage": [0, 0, 1, 0, 0, 0],
+        "Magnesium Bath": [0, 0, 0, 1, 0, 0],
+        "Traditional Relaxing Massage": [0, 0, 0, 1, 0, 0],
+        "Detoxifying Spirulina Facial": [0, 0, 0, 0, 1, 0],
+        "Fire Towel Cupping Therapy": [0, 0, 0, 0, 1, 0],
+        "Manicure & Pedicure": [0, 0, 0, 0, 1, 0],
+        "Closing Ritual & Wellness Journal": [0, 0, 0, 0, 0, 1]
+      }
     },
-    "menu": {
-      "title": "🌟 **What would you like to discover?**",
-      "options": {
-        "program": "🔸 Detailed 5-day program",
-        "booking": "🔸 Book now",
-        "info": "🔸 Practical information"
+
+    "chatbot5": {
+      "welcome": {
+        "greeting": "👋 Hello! I'm your personal assistant for the **5-Nights Holistic Escape** at Dakhla Club.",
+        "requestInfo": "To better assist you, could you please provide your name and phone number?",
+        "format": "Format: **First Last Name** followed by your **phone number**\nExample: Marie Dupont 0612345678"
+      },
+      "menu": {
+        "title": "🌟 **What would you like to discover?**",
+        "options": {
+          "program": "🔸 Detailed 5-day program",
+          "booking": "🔸 Book now",
+          "info": "🔸 Practical information"
+        }
+      },
+      "program": {
+        "title": "🌟 **5-Night Holistic Escape Program**\n\nA complete mind-body transformation journey:",
+        "day1": {
+          "title": "**🌅 Day 1 - Arrival at Dakhla Club**",
+          "activities": "• Personalized welcome\n• Grounding herbal tea\n• Bungalow check-in with nature/ocean view\n• Gentle start in pristine natural setting",
+          "objective": "**Objective:** Grounding, breathing, opening body and mind"
+        },
+        "day2": {
+          "title": "**🧘‍♀️ Day 2 - Release & Balance**",
+          "activities": "• Gentle sunrise yoga\n• Dry sauna\n• Heated thermal pool\n• Himalayan salt detox scrub\n• 1001 Nights Moroccan hammam",
+          "objective": "**Objective:** Free the nervous system, activate drainage, prepare for transformation"
+        },
+        "day3": {
+          "title": "**💆‍♀️ Day 3 - Oxygenation & Regeneration**",
+          "activities": "• Breathwork & energizing yoga\n• Bol d'Air Jacquier\n• Jet shower\n• Hydromassage bath\n• Seaweed body wrap\n• Affusion massage",
+          "objective": "**Objective:** Stimulate cells, eliminate toxins, reconnect to the living body"
+        },
+        "day4": {
+          "title": "**🌊 Day 4 - Serenity & Deep Relaxation**",
+          "activities": "• Meditative yoga\n• Bol d'Air Jacquier\n• Sauna\n• Thermal pool\n• Magnesium bath\n• Deep traditional massage",
+          "objective": "**Objective:** Restorative sleep, grounding and lasting relaxation"
+        },
+        "day5": {
+          "title": "**⚡ Day 5 - Stimulation & Vitality**",
+          "activities": "• Energizing yoga\n• Bol d'Air Jacquier\n• Detoxifying spirulina facial treatment\n• Fire towel cupping therapy\n• Manicure & pedicure",
+          "objective": "**Objective:** Complete vitality activation, deep drainage"
+        },
+        "day6": {
+          "title": "**🏡 Day 6 - Departure from Dakhla Club**",
+          "activities": "• Closing ritual\n• Integration tips\n• Wellness journal to take home\n• Departure with renewed energy and deep serenity",
+          "objective": "**Objective:** Integration tips, closing ritual, wellness journal to take home"
+        },
+        "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
+      },
+      "booking": {
+        "fields": {
+          "date": "📅 **What is your desired arrival date?**",
+          "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
+        },
+        "decision": "💛 Excellent decision! Give your body 5 nights it will never forget.",
+        "adultsOptions": {
+          "adults1": "1 adult",
+          "adults2": "2 adults",
+          "adults3": "3 adults",
+          "adults4": "4 adults",
+          "adultsMore": "More than 4 adults"
+        },
+        "largeGroup": "For more than 4 adults, please contact our team directly:",
+        "contactInfo": "📞 **Phone:** +212 652 88 1921\n📧 **Email:** reservation@dakhlaclub.com\n\nThey can offer solutions adapted to your group!",
+        "redirecting": "🔄 Redirecting to booking system...",
+        "mobileRedirect": "📱 Redirecting...",
+        "newTabOpened": "✅ The booking page has opened in a new tab.",
+        "dataSuccess": "📊 Your information has been successfully saved!",
+        "missingInfo": "❌ Please fill in all necessary information first.",
+        "backToBooking": "Let's go back to booking:",
+        "chooseDates": "📅 Choose my dates",
+        "dateFormat": "Format: YYYY-MM-DD\nExample: 2025-08-05\n\nNote: Your stay will automatically be 5 nights 🌙",
+        "dateConfirmed": "✅ **Date confirmed!**",
+        "arrival": "📅 **Arrival:** {checkIn}",
+        "departure": "📅 **Departure:** {checkOut} (5 nights)",
+        "askAdults": "👥 **How many adults will you be?**",
+        "adultsConfirmed": "✅ **{count} adult{plural} confirmed!**",
+        "contactNeeded": "📞 **Now I need your contact details:**",
+        "formatExample": "Format: First Name Last Name - 0612345678\nExample: Marie Dupont - 0612345678"
+      },
+      "info": {
+        "followUp": "What other information would you like?",
+
+        "options": {
+          "program": "🔸 View detailed program",
+          "reserve": "🔸 Book now",
+          "advisor": "🔸 Speak to an advisor",
+          "booking": "🔸 Book now"
+        },
+        "title": "ℹ️ **Practical Information - 7-Day Escape**",
+        "details": "**📍 Location:** Dakhla Club, Point de Dragon PK28\n**⏰ Duration:** 6 days / 5 nights\n**🏠 Accommodation:** Included with full board\n**🍽️ Meals:** Health and detox cuisine\n**👥 Capacity:** Groups of 2 to 8 people\n**📞 Contact:** +212 652 881 921"
+      },
+      "testimonials": {
+        "title": "🌟 **What our clients say:**",
+        "reviews": "**Sarah, 34 years old:** *\"The 7 days literally changed my life. I feel completely regenerated!\"*\n\n**Marc, 42 years old:** *\"An exceptional program over 5 nights. The therapists are remarkably professional.\"*\n\n**Fatima, 38 years old:** *\"I found my energy and joy of living again. This week of transformation is magical!\"*",
+        "convinced": "**Are you convinced by these testimonials?**"
+      },
+      "weather": {
+        "title": "🌡️ **Weather & Climate in Dakhla**",
+        "details": "**🌞 Climate:** Subtropical arid, ideal year-round\n**🌡️ Temperatures:** 18-28°C depending on season\n**💨 Winds:** Refreshing trade winds\n**☀️ Sun:** Over 300 days per year\n**🌊 Ocean:** Pleasant temperature 18-22°C\n**👕 To bring:** Light clothes + jacket for evenings",
+        "ready": "**Perfect for your holistic escape!**"
+      },
+      "benefits": {
+        "title": "🌟 **Benefits of the 7-Day Escape:**",
+        "physical": "**💪 Physical:** Deep detoxification, energy boost, improved sleep, immune system strengthening",
+        "mental": "**🧠 Mental:** Stress reduction, mental clarity, emotional balance, restored confidence",
+        "lasting": "**⏳ Lasting:** New healthy habits, wellness tools, personalized post-stay follow-up",
+        "motivated": "**Motivated to start this transformation?**"
+      },
+      "advisor": {
+        "title": "🤝 **Speak with a specialized consultant**",
+        "contact2": "📞 **Direct line**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Availability**: Every day from 9am to 8pm\n⚡ **Quick response**: WhatsApp < 2h • Email < 4h"
+      },
+      "faq": {
+        "title": "❓ **Frequently Asked Questions:**",
+        "content": "**Q: Can I come alone?**\nA: Absolutely! 40% of our clients come alone.\n\n**Q: Are there any contraindications?**\nA: We adapt according to your health condition.\n\n**Q: Is transportation included?**\nA: Airport shuttle available (additional cost).\n\n**Q: Can I modify my dates?**\nA: Yes, subject to availability conditions.",
+        "notListed": "**Your question is not listed?**"
+      },
+      "actions": {
+        "reserve": "✅ Book now",
+        "mainMenu": "🏠 Back to main menu",
+        "call": "Call",
+        "whatsapp": "WhatsApp"
+      },
+      "errors": {
+        "invalidDate": "❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ",
+        "validExample": "Exemple valide: {date}",
+        "invalidDateFormat": "❌ Format de date incorrect.",
+        "dateFormatInstruction": "Veuillez utiliser le format: AAAA-MM-JJ",
+        "dateExample": "Exemple: {date}",
+        "incorrectFormat": "Incorrect format. Please respect the format: First Name Last Name – Phone Number",
+        "example": "Example: Ahmed Bennani – 0661234567",
+        "pastDate": "❌ Arrival date cannot be in the past.",
+        "chooseToday": "Please choose a date from today onwards."
+      },
+      "summary": {
+        "perfect": "✅ **Parfait {name} !**",
+        "complete": "📋 **Récapitulatif complet :**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adulte{plural}\n🌙 5 nuits d'évasion holistique",
+        "allReady": "🎉 **Tout est prêt !**",
+        "finalizeText": "Cliquez ci-dessous pour finaliser votre réservation en toute sécurité 🔒",
+        "finalize": "✅ Finaliser ma réservation",
+        "bookingSummary": "📋 **Récapitulatif de votre réservation :**\n👤 {name}\n📞 {phone}\n📅 Arrivée : {checkInDate}\n📅 Départ : {checkOutDate}\n👥 {adults} adulte(s)\n🌙 5 nuits d'évasion holistique\n\nUn conseiller vous contactera pour confirmer les détails !"
+      },
+      "messages": {
+        "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 65288192.",
+        "whatsappRedirect": "Hello! I would like to know more about the 7-day Holistic Escape at Dakhla Club."
+      },
+      "placeholders": {
+        "typeMessage": "Type your message...",
+        "namePhone": "First Name Last Name - Phone Number",
+        "date": "YYYY-MM-DD"
+      },
+      "status": {
+        "online": "Online • Responds quickly"
       }
     },
     "program": {
@@ -662,419 +802,260 @@
         "objective": "**Objective:** Integration tips, closing ritual, wellness journal to take home"
       },
       "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
-    },
-    "booking": {
-      "fields": {
-    "date": "📅 **What is your desired arrival date?**",
-    "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
-  },
-      "decision": "💛 Excellent decision! Give your body 5 nights it will never forget.",
-        "adultsOptions": {
-          "adults1": "1 adult",
-          "adults2": "2 adults",
-          "adults3": "3 adults",
-          "adults4": "4 adults", 
-          "adultsMore": "More than 4 adults"
-        },
-        "largeGroup": "For more than 4 adults, please contact our team directly:",
-        "contactInfo": "📞 **Phone:** +212 652 88 1921\n📧 **Email:** reservation@dakhlaclub.com\n\nThey can offer solutions adapted to your group!",
-        "redirecting": "🔄 Redirecting to booking system...",
-        "mobileRedirect": "📱 Redirecting...",
-        "newTabOpened": "✅ The booking page has opened in a new tab.",
-        "dataSuccess": "📊 Your information has been successfully saved!",
-        "missingInfo": "❌ Please fill in all necessary information first.",
-        "backToBooking": "Let's go back to booking:",
-        "chooseDates": "📅 Choose my dates",
-        "dateFormat": "Format: YYYY-MM-DD\nExample: 2025-08-05\n\nNote: Your stay will automatically be 5 nights 🌙",
-  "dateConfirmed": "✅ **Date confirmed!**",
-  "arrival": "📅 **Arrival:** {checkIn}",
-  "departure": "📅 **Departure:** {checkOut} (5 nights)",
-  "askAdults": "👥 **How many adults will you be?**",
-  "adultsConfirmed": "✅ **{count} adult{plural} confirmed!**",
-  "contactNeeded": "📞 **Now I need your contact details:**",
-  "formatExample": "Format: First Name Last Name - 0612345678\nExample: Marie Dupont - 0612345678"
-      },
-    "info": {
-      "followUp": "What other information would you like?",
-      
-        "options": {
-          "program": "🔸 View detailed program",
-          "reserve": "🔸 Book now",
-          "advisor": "🔸 Speak to an advisor",
-          "booking": "🔸 Book now" 
-        },
-      "title": "ℹ️ **Practical Information - 7-Day Escape**",
-      "details": "**📍 Location:** Dakhla Club, Point de Dragon PK28\n**⏰ Duration:** 6 days / 5 nights\n**🏠 Accommodation:** Included with full board\n**🍽️ Meals:** Health and detox cuisine\n**👥 Capacity:** Groups of 2 to 8 people\n**📞 Contact:** +212 652 881 921"
-    },
-    "testimonials": {
-      "title": "🌟 **What our clients say:**",
-      "reviews": "**Sarah, 34 years old:** *\"The 7 days literally changed my life. I feel completely regenerated!\"*\n\n**Marc, 42 years old:** *\"An exceptional program over 5 nights. The therapists are remarkably professional.\"*\n\n**Fatima, 38 years old:** *\"I found my energy and joy of living again. This week of transformation is magical!\"*",
-      "convinced": "**Are you convinced by these testimonials?**"
-    },
-    "weather": {
-      "title": "🌡️ **Weather & Climate in Dakhla**",
-      "details": "**🌞 Climate:** Subtropical arid, ideal year-round\n**🌡️ Temperatures:** 18-28°C depending on season\n**💨 Winds:** Refreshing trade winds\n**☀️ Sun:** Over 300 days per year\n**🌊 Ocean:** Pleasant temperature 18-22°C\n**👕 To bring:** Light clothes + jacket for evenings",
-      "ready": "**Perfect for your holistic escape!**"
-    },
-    "benefits": {
-      "title": "🌟 **Benefits of the 7-Day Escape:**",
-      "physical": "**💪 Physical:** Deep detoxification, energy boost, improved sleep, immune system strengthening",
-      "mental": "**🧠 Mental:** Stress reduction, mental clarity, emotional balance, restored confidence",
-      "lasting": "**⏳ Lasting:** New healthy habits, wellness tools, personalized post-stay follow-up",
-      "motivated": "**Motivated to start this transformation?**"
-    },
-"advisor": {
-  "title": "🤝 **Speak with a specialized consultant**",
-  "contact2": "📞 **Direct line**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Availability**: Every day from 9am to 8pm\n⚡ **Quick response**: WhatsApp < 2h • Email < 4h"
-},
-    "faq": {
-      "title": "❓ **Frequently Asked Questions:**",
-      "content": "**Q: Can I come alone?**\nA: Absolutely! 40% of our clients come alone.\n\n**Q: Are there any contraindications?**\nA: We adapt according to your health condition.\n\n**Q: Is transportation included?**\nA: Airport shuttle available (additional cost).\n\n**Q: Can I modify my dates?**\nA: Yes, subject to availability conditions.",
-      "notListed": "**Your question is not listed?**"
-    },
-    "actions": {
-      "reserve": "✅ Book now",
-      "mainMenu": "🏠 Back to main menu",
-      "call": "Call",
-      "whatsapp": "WhatsApp"
-    },
-    "errors": {
-        "invalidDate": "❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ",
-        "validExample": "Exemple valide: {date}",
-        "invalidDateFormat": "❌ Format de date incorrect.",
-        "dateFormatInstruction": "Veuillez utiliser le format: AAAA-MM-JJ",
-        "dateExample": "Exemple: {date}",
-        "incorrectFormat": "Incorrect format. Please respect the format: First Name Last Name – Phone Number",
-        "example": "Example: Ahmed Bennani – 0661234567",
-        "pastDate": "❌ Arrival date cannot be in the past.",
-        "chooseToday": "Please choose a date from today onwards."
-      },
-      "summary": {
-        "perfect": "✅ **Parfait {name} !**",
-        "complete": "📋 **Récapitulatif complet :**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adulte{plural}\n🌙 5 nuits d'évasion holistique",
-        "allReady": "🎉 **Tout est prêt !**",
-        "finalizeText": "Cliquez ci-dessous pour finaliser votre réservation en toute sécurité 🔒",
-        "finalize": "✅ Finaliser ma réservation",
-        "bookingSummary": "📋 **Récapitulatif de votre réservation :**\n👤 {name}\n📞 {phone}\n📅 Arrivée : {checkInDate}\n📅 Départ : {checkOutDate}\n👥 {adults} adulte(s)\n🌙 5 nuits d'évasion holistique\n\nUn conseiller vous contactera pour confirmer les détails !"
-      },
-"messages": {
-  "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 65288192.",
-  "whatsappRedirect": "Hello! I would like to know more about the 7-day Holistic Escape at Dakhla Club."
-},
-"placeholders": {
-  "typeMessage": "Type your message...",
-  "namePhone": "First Name Last Name - Phone Number",
-  "date": "YYYY-MM-DD"
-},
-"status": {
-  "online": "Online • Responds quickly"
-}
-  },
-"program": {
-      "title": "🌟 **5-Night Holistic Escape Program**\n\nA complete mind-body transformation journey:",
-      "day1": {
-        "title": "**🌅 Day 1 - Arrival at Dakhla Club**",
-        "activities": "• Personalized welcome\n• Grounding herbal tea\n• Bungalow check-in with nature/ocean view\n• Gentle start in pristine natural setting",
-        "objective": "**Objective:** Grounding, breathing, opening body and mind"
-      },
-      "day2": {
-        "title": "**🧘‍♀️ Day 2 - Release & Balance**",
-        "activities": "• Gentle sunrise yoga\n• Dry sauna\n• Heated thermal pool\n• Himalayan salt detox scrub\n• 1001 Nights Moroccan hammam",
-        "objective": "**Objective:** Free the nervous system, activate drainage, prepare for transformation"
-      },
-      "day3": {
-        "title": "**💆‍♀️ Day 3 - Oxygenation & Regeneration**",
-        "activities": "• Breathwork & energizing yoga\n• Bol d'Air Jacquier\n• Jet shower\n• Hydromassage bath\n• Seaweed body wrap\n• Affusion massage",
-        "objective": "**Objective:** Stimulate cells, eliminate toxins, reconnect to the living body"
-      },
-      "day4": {
-        "title": "**🌊 Day 4 - Serenity & Deep Relaxation**",
-        "activities": "• Meditative yoga\n• Bol d'Air Jacquier\n• Sauna\n• Thermal pool\n• Magnesium bath\n• Deep traditional massage",
-        "objective": "**Objective:** Restorative sleep, grounding and lasting relaxation"
-      },
-      "day5": {
-        "title": "**⚡ Day 5 - Stimulation & Vitality**",
-        "activities": "• Energizing yoga\n• Bol d'Air Jacquier\n• Detoxifying spirulina facial treatment\n• Fire towel cupping therapy\n• Manicure & pedicure",
-        "objective": "**Objective:** Complete vitality activation, deep drainage"
-      },
-      "day6": {
-        "title": "**🏡 Day 6 - Departure from Dakhla Club**",
-        "activities": "• Closing ritual\n• Integration tips\n• Wellness journal to take home\n• Departure with renewed energy and deep serenity",
-        "objective": "**Objective:** Integration tips, closing ritual, wellness journal to take home"
-      },
-      "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
-    }
-  
-},
-
-
-"offer7":{
-  "home": {
-    "title": "WELCOME TO DAKHLA CLUB",
-    "title2": "WELCOME TO DAKHLACLUB",
-    "callButton":" I Want To Live The Experience",
-    "Check-in":"Check-in",
-    "Check-out":"Check-out",
-    "bookingValidation": {
-      "invalidDurationTitle": "Invalid Stay Duration",
-      "invalidDurationText": "Your stay must be exactly 7 Nights. Please adjust your dates.",
-      "confirmButton": "OK"
     }
   },
-  "healthProgram": {
-    "title": "Dakhla is calling… Are you ready to refuel your energy?",
-    "title2":       "A sanctuary between golden desert, turquoise lagoon, and sacred light",
-    "description1": "Set in a wild and pure environment between ocean, desert, and light, this 5 Nights journey offers far more than relaxation — it's a long-lasting reconnection with your inner vitality."
-  },
-  "about":{
-"title":       "Is This Retreat Right For You?",
-    "description1": [
-      "You feel tired, even after rest?",
-      "You carry a heavy body and an overloaded mind?",
-      "You're not looking for just a massage or a spa — you need a structured, powerful, yet gentle reset?",
-      "You want to restore your energy, your digestion, your mental clarity?",
-      "Then yes — this retreat was designed for you."
-    ]
- 
-  },
-  "exclusiveOffer": {
-    "title": "Exclusive offer – Only 10 spots per session.",
-    "description": "A confidential, intimate format — designed to ensure personalized guidance and deep care. ",
-    "nextSession": " Paiement possible en 1, 2 ou 3 fois.",
-    "callButton": "I book my transformation"
-  },
-"programSection": {
-    "header": {
-      "title": "Your Program",
-      "subheading": "7 Nights – 34 Treatments",
-      "description": "A holistic journey to your complete well-being in the unique universe of Dakhla",
-      "jour": "Day",
-      "activitiesTitle": "Included treatments:",
-      "callButton": " Enter the holistic world of Dakhla Club",
-      "objectiveTitle": "Objective:"
-    },
-    "days": {
-      "1": {
-        "title": "Welcome & First Steps",
-        "description": "You begin gently. A herbal tea, settling in, a welcome to your cocoon.",
-        "activities": [],
-        "objective": "Create a safe space and initiate mental disconnection.",
-        "ctaText": "I CHOOSE TO REGENERATE"
-      },
-      "2": {
-        "title": "Vitality & Purity",
-        "description": "A day dedicated to awakening the senses and revitalizing the body. Breathe, release, and let yourself be carried by the benefits of water and treatments.",
-        "activities": [
-          "Yoga",
-          "Sauna",
-          "Thermal pool",
-          "Himalayan salt detox scrub",
-          "\"1001 Nights\" Oriental Hammam Ritual"
-        ],
-        "objective": "Stimulate elimination pathways, reactivate lymphatic circulation, reconnect to the body.",
-        "ctaText": "ENTER THE UNIVERSE"
-      },
-      "3": {
-        "title": "Marine Serenity",
-        "description": "Today, the body regenerates deeply. Targeted treatments release tension and rebalance energy for total relaxation.",
-        "activities": [
-          "Yoga",
-          "Jacquier's Oxygen Therapy",
-          "Hydromassage bath",
-          "Seaweed wrap",
-          "Affusion massage"
-        ],
-        "objective": "Oxygenate cells, nourish tissues deeply, awaken vital energy.",
-        "ctaText": "I WANT TO LIVE THE EXPERIENCE"
-      },
-      "4": {
-        "title": "Balance & Relaxation",
-        "description": "The retreat is coming to an end, but the effects last well beyond these few days. You leave with a clearer mind, a relaxed body, and rebalanced energy.",
-        "activities": [
-          "Yoga",
-          "Jacquier's Oxygen Therapy",
-          "Sauna",
-          "Thermal pool",
-          "Traditional relaxing massage"
-        ],
-        "objective": "Soothe the nervous system, release buried tensions, promote restorative sleep.",
-        "ctaText": "ACCESS MY RETREAT"
-      },
-      "5": {
-        "title": "Energy & Revitalization",
-        "description": "A day to activate vitality and stimulate energy. Dynamic practices and targeted treatments to boost body and mind, and feel a new inner strength.",
-        "activities": [
-          "Fitness coaching session",
-          "Yoga",
-          "Jacquier's Oxygen Therapy",
-          "Jet shower"
-        ],
-        "objective": "Activate deep vitality and stimulate body energy.",
-        "ctaText": "ACCESS MY RETREAT"
-      },
-      "6": {
-        "title": "Dynamism & Purification",
-        "description": "A day to purify the body and integrate all the benefits of the stay. Integration practices, hammam and treatments to leave aligned, soothed and full of energy.",
-        "activities": [
-          "Fire cupping therapy",
-          "Fitness coaching session",
-          "Yoga",
-          "Jacquier's Oxygen Therapy",
-          "Jet shower",
-          "Thermal pool",
-          "Manicure & Pedicure"
-        ],
-        "objective": "Consolidate benefits, eliminate last blockages, stabilize transformation.",
-        "ctaText": "ACCESS MY RETREAT"
-      },
-      "7": {
-        "title": "Deep Regeneration",
-        "description": "The most intense day of your stay. A complete day of treatments for deep and lasting regeneration.",
-        "activities": [
-          "Jacquier's Oxygen Therapy",
-          "Stretching session",
-          "Hot stone massage",
-          "Detoxifying & smoothing spirulina facial",
-          "Magnesium bath",
-          "Yoga",
-          "Ice bath immersion",
-          "Seaweed wrap"
-        ],
-        "objective": "Maximum cellular regeneration, deep detox, optimal energy balance.",
-        "ctaText": "ACCESS MY RETREAT"
-      },
-      "8": {
-        "title": "Closure & Departure",
-        "description": "It's time to leave. You go home with practical tools to prolong the benefits, renewed energy and deep serenity.",
-        "activities": [
-          "Closing ritual",
-          "Wellness journal",
-          "Conscious departure"
-        ],
-        "objective": "Integrate learnings, leave with keys to continue at home.",
-        "ctaText": "ACCESS MY RETREAT"
+
+  "offer7": {
+    "home": {
+      "title": "WELCOME TO DAKHLA CLUB",
+      "title2": "WELCOME TO DAKHLACLUB",
+      "callButton": " I Want To Live The Experience",
+      "Check-in": "Check-in",
+      "Check-out": "Check-out",
+      "bookingValidation": {
+        "invalidDurationTitle": "Invalid Stay Duration",
+        "invalidDurationText": "Your stay must be exactly 7 Nights. Please adjust your dates.",
+        "confirmButton": "OK"
       }
-    }
-  },
-  "servicesTable7": {
-    "header": "7-NIGHT HOLISTIC ESCAPE PROGRAM – DAKHLA",
-    "servicesLabel": "Services",
-    "programs": [
-      "Day 1",
-      "Day 2", 
-      "Day 3",
-      "Day 4",
-      "Day 5",
-      "Day 6",
-      "Day 7",
-      "Day 8"
-    ],
-    "services": [
-      { "title": "Arrival & Check-in" },
-      { "title": "Yoga" },
-      { "title": "Sauna" },
-      { "title": "Thermal pool" },
-      { "title": "Himalayan salt detox scrub" },
-      { "title": "\"1001 Nights\" Oriental Hammam Ritual" },
-      { "title": "Jacquier's Oxygen Therapy" },
-      { "title": "Hydromassage bath" },
-      { "title": "Seaweed wrap" },
-      { "title": "Affusion massage" },
-      { "title": "Traditional relaxing massage" },
-      { "title": "Fitness coaching session" },
-      { "title": "Jet shower" },
-      { "title": "Fire cupping therapy" },
-      { "title": "Manicure & Pedicure" },
-      { "title": "Stretching session" },
-      { "title": "Hot stone massage" },
-      { "title": "Detoxifying & smoothing spirulina facial" },
-      { "title": "Magnesium bath" },
-      { "title": "Ice bath immersion" },
-      { "title": "Closing ritual" },
-      { "title": "Wellness journal" },
-      { "title": "Conscious departure" }
-    ],
-    "availability": {
-      "Arrival & Check-in": [1,0,0,0,0,0,0,0],
-      "Yoga": [0,1,1,1,1,1,1,0],
-      "Sauna": [0,1,0,1,0,0,0,0],
-      "Thermal pool": [0,1,0,1,0,1,0,0],
-      "Himalayan salt detox scrub": [0,1,0,0,0,0,0,0],
-      "\"1001 Nights\" Oriental Hammam Ritual": [0,1,0,0,0,0,0,0],
-      "Jacquier's Oxygen Therapy": [0,0,1,1,1,1,1,0],
-      "Hydromassage bath": [0,0,1,0,0,0,0,0],
-      "Seaweed wrap": [0,0,1,0,0,0,1,0],
-      "Affusion massage": [0,0,1,0,0,0,0,0],
-      "Traditional relaxing massage": [0,0,0,1,0,0,0,0],
-      "Fitness coaching session": [0,0,0,0,1,1,0,0],
-      "Jet shower": [0,0,0,0,1,1,0,0],
-      "Fire cupping therapy": [0,0,0,0,0,1,0,0],
-      "Manicure & Pedicure": [0,0,0,0,0,1,0,0],
-      "Stretching session": [0,0,0,0,0,0,1,0],
-      "Hot stone massage": [0,0,0,0,0,0,1,0],
-      "Detoxifying & smoothing spirulina facial": [0,0,0,0,0,0,1,0],
-      "Magnesium bath": [0,0,0,0,0,0,1,0],
-      "Ice bath immersion": [0,0,0,0,0,0,1,0],
-      "Closing ritual": [0,0,0,0,0,0,0,1],
-      "Wellness journal": [0,0,0,0,0,0,0,1],
-      "Conscious departure": [0,0,0,0,0,0,0,1]
-    }
-  },
-  "ProgrammeFonctionne":{
-    "title": " Why This Program Works",
-    "title2": " What You’ll Truly Feel",
-    "points":[
-  
-      "A smart progression of physical and emotional reset.",
-      "Each day is designed for a specific effect (drainage, repair, integration).",
-      "The Nahed Rachad method: transformational care for body–heart–mind.",
-      "You’re guided by expert practitioners in deep care and cellular regeneration.",
-      "This isn’t just a treatment — it’s a full protocol designed to get you back in flow."
-    ],
-    "points1":[
-      "Hotel ranked #1 on TripAdvisor in Dakhla",
-      "92%+ post-retreat satisfaction rate",
-      " 1,200+ transformed clients: restored energy, lightened body, focused mind."
-    ],
-    "points2":[
-      "Official partner of Thalgo – global leader in marine therapies",
-      "Exclusive thalasso between desert, ocean and lagoon — a rare location worldwide",
-      "100% certified experts in holistic care, yoga & cellular detox."
-  
-    ]
-  },
-"faq": {
-  "title": "Frequently Asked Questions",
-  "contact": {
-    "label": "Contact us",
-    "subtext": "Quick response by phone or email",
-    "alt": "Thermal pool at Dakhla Club thalasso center with ocean view"
-  },
-  "items": [
-    {
-      "question": "What can I expect during these 7 nights at Dakhla Club?",
-      "answer": "Experience a complete holistic transformation with 34 personalized thalasso treatments. Our 7-night program combines ocean-facing yoga, hydromassage baths with heated seawater, marine algae wraps, and therapeutic massages in a unique setting between Sahara desert and Atlantic Ocean. Each day follows a specific protocol to detoxify, regenerate and rebalance your body and mind."
     },
-    {
-      "question": "What thalasso treatments are included in the 7-night program?",
-      "answer": "The program includes 34 varied treatments: Jacquier air bowl, hydromassage baths, Thalgo seaweed wraps, cupping therapy, affusion massages, saunas and hammams, jet showers, hot stone massages, spirulina detox treatments, magnesium baths, ice baths, plus daily yoga and sports coaching. All treatments are provided by our certified team in our exclusive thalasso center."
+    "healthProgram": {
+      "title": "Dakhla is calling… Are you ready to refuel your energy?",
+      "title2": "A sanctuary between golden desert, turquoise lagoon, and sacred light",
+      "description1": "Set in a wild and pure environment between ocean, desert, and light, this 5 Nights journey offers far more than relaxation — it's a long-lasting reconnection with your inner vitality."
     },
-    {
-      "question": "Is the 7-night thalasso program suitable for beginners?",
-      "answer": "Perfect for beginners! Our wellness program is progressive and supervised by certified expert therapists. Over 1,200 transformed clients since opening with 92% satisfaction rate. Our hotel ranked #1 on TripAdvisor Dakhla guarantees personalized guidance for your first thalassotherapy experience."
+    "about": {
+      "title": "Is This Retreat Right For You?",
+      "description1": [
+        "You feel tired, even after rest?",
+        "You carry a heavy body and an overloaded mind?",
+        "You're not looking for just a massage or a spa — you need a structured, powerful, yet gentle reset?",
+        "You want to restore your energy, your digestion, your mental clarity?",
+        "Then yes — this retreat was designed for you."
+      ]
     },
-    {
-      "question": "Why book this thalasso retreat quickly?",
-      "answer": "Each session is limited to maximum 10 participants to ensure an intimate and personalized experience. This exclusivity ensures individual follow-up, privileged access to thalasso facilities (thermal pool, spa, saunas), and maintains the serenity of our unique wellness center between Sahara and Atlantic."
+    "exclusiveOffer": {
+      "title": "Exclusive offer – Only 10 spots per session.",
+      "description": "A confidential, intimate format — designed to ensure personalized guidance and deep care. ",
+      "nextSession": " Paiement possible en 1, 2 ou 3 fois.",
+      "callButton": "I book my transformation"
     },
-    {
-      "question": "Where does the 7-night thalasso stay take place?",
-      "answer": "At Dakhla Club Hotel & Spa 4*, the only thalassotherapy center between desert and ocean in Morocco. Ocean-view room accommodation, free access to heated seawater thermal pool, gourmet restaurant, and all spa facilities. Unique geographical location in Dakhla with ideal climate 300 days of sunshine per year, temperatures 18-28°C."
-    }
-  ]
-},
+    "programSection": {
+      "header": {
+        "title": "Your Program",
+        "subheading": "7 Nights – 34 Treatments",
+        "description": "A holistic journey to your complete well-being in the unique universe of Dakhla",
+        "jour": "Day",
+        "activitiesTitle": "Included treatments:",
+        "callButton": " Enter the holistic world of Dakhla Club",
+        "objectiveTitle": "Objective:"
+      },
+      "days": {
+        "1": {
+          "title": "Welcome & First Steps",
+          "description": "You begin gently. A herbal tea, settling in, a welcome to your cocoon.",
+          "activities": [],
+          "objective": "Create a safe space and initiate mental disconnection.",
+          "ctaText": "I CHOOSE TO REGENERATE"
+        },
+        "2": {
+          "title": "Vitality & Purity",
+          "description": "A day dedicated to awakening the senses and revitalizing the body. Breathe, release, and let yourself be carried by the benefits of water and treatments.",
+          "activities": [
+            "Yoga",
+            "Sauna",
+            "Thermal pool",
+            "Himalayan salt detox scrub",
+            "\"1001 Nights\" Oriental Hammam Ritual"
+          ],
+          "objective": "Stimulate elimination pathways, reactivate lymphatic circulation, reconnect to the body.",
+          "ctaText": "ENTER THE UNIVERSE"
+        },
+        "3": {
+          "title": "Marine Serenity",
+          "description": "Today, the body regenerates deeply. Targeted treatments release tension and rebalance energy for total relaxation.",
+          "activities": [
+            "Yoga",
+            "Jacquier's Oxygen Therapy",
+            "Hydromassage bath",
+            "Seaweed wrap",
+            "Affusion massage"
+          ],
+          "objective": "Oxygenate cells, nourish tissues deeply, awaken vital energy.",
+          "ctaText": "I WANT TO LIVE THE EXPERIENCE"
+        },
+        "4": {
+          "title": "Balance & Relaxation",
+          "description": "The retreat is coming to an end, but the effects last well beyond these few days. You leave with a clearer mind, a relaxed body, and rebalanced energy.",
+          "activities": [
+            "Yoga",
+            "Jacquier's Oxygen Therapy",
+            "Sauna",
+            "Thermal pool",
+            "Traditional relaxing massage"
+          ],
+          "objective": "Soothe the nervous system, release buried tensions, promote restorative sleep.",
+          "ctaText": "ACCESS MY RETREAT"
+        },
+        "5": {
+          "title": "Energy & Revitalization",
+          "description": "A day to activate vitality and stimulate energy. Dynamic practices and targeted treatments to boost body and mind, and feel a new inner strength.",
+          "activities": [
+            "Fitness coaching session",
+            "Yoga",
+            "Jacquier's Oxygen Therapy",
+            "Jet shower"
+          ],
+          "objective": "Activate deep vitality and stimulate body energy.",
+          "ctaText": "ACCESS MY RETREAT"
+        },
+        "6": {
+          "title": "Dynamism & Purification",
+          "description": "A day to purify the body and integrate all the benefits of the stay. Integration practices, hammam and treatments to leave aligned, soothed and full of energy.",
+          "activities": [
+            "Fire cupping therapy",
+            "Fitness coaching session",
+            "Yoga",
+            "Jacquier's Oxygen Therapy",
+            "Jet shower",
+            "Thermal pool",
+            "Manicure & Pedicure"
+          ],
+          "objective": "Consolidate benefits, eliminate last blockages, stabilize transformation.",
+          "ctaText": "ACCESS MY RETREAT"
+        },
+        "7": {
+          "title": "Deep Regeneration",
+          "description": "The most intense day of your stay. A complete day of treatments for deep and lasting regeneration.",
+          "activities": [
+            "Jacquier's Oxygen Therapy",
+            "Stretching session",
+            "Hot stone massage",
+            "Detoxifying & smoothing spirulina facial",
+            "Magnesium bath",
+            "Yoga",
+            "Ice bath immersion",
+            "Seaweed wrap"
+          ],
+          "objective": "Maximum cellular regeneration, deep detox, optimal energy balance.",
+          "ctaText": "ACCESS MY RETREAT"
+        },
+        "8": {
+          "title": "Closure & Departure",
+          "description": "It's time to leave. You go home with practical tools to prolong the benefits, renewed energy and deep serenity.",
+          "activities": ["Closing ritual", "Wellness journal", "Conscious departure"],
+          "objective": "Integrate learnings, leave with keys to continue at home.",
+          "ctaText": "ACCESS MY RETREAT"
+        }
+      }
+    },
+    "servicesTable7": {
+      "header": "7-NIGHT HOLISTIC ESCAPE PROGRAM – DAKHLA",
+      "servicesLabel": "Services",
+      "programs": ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8"],
+      "services": [
+        { "title": "Arrival & Check-in" },
+        { "title": "Yoga" },
+        { "title": "Sauna" },
+        { "title": "Thermal pool" },
+        { "title": "Himalayan salt detox scrub" },
+        { "title": "\"1001 Nights\" Oriental Hammam Ritual" },
+        { "title": "Jacquier's Oxygen Therapy" },
+        { "title": "Hydromassage bath" },
+        { "title": "Seaweed wrap" },
+        { "title": "Affusion massage" },
+        { "title": "Traditional relaxing massage" },
+        { "title": "Fitness coaching session" },
+        { "title": "Jet shower" },
+        { "title": "Fire cupping therapy" },
+        { "title": "Manicure & Pedicure" },
+        { "title": "Stretching session" },
+        { "title": "Hot stone massage" },
+        { "title": "Detoxifying & smoothing spirulina facial" },
+        { "title": "Magnesium bath" },
+        { "title": "Ice bath immersion" },
+        { "title": "Closing ritual" },
+        { "title": "Wellness journal" },
+        { "title": "Conscious departure" }
+      ],
+      "availability": {
+        "Arrival & Check-in": [1, 0, 0, 0, 0, 0, 0, 0],
+        "Yoga": [0, 1, 1, 1, 1, 1, 1, 0],
+        "Sauna": [0, 1, 0, 1, 0, 0, 0, 0],
+        "Thermal pool": [0, 1, 0, 1, 0, 1, 0, 0],
+        "Himalayan salt detox scrub": [0, 1, 0, 0, 0, 0, 0, 0],
+        "\"1001 Nights\" Oriental Hammam Ritual": [0, 1, 0, 0, 0, 0, 0, 0],
+        "Jacquier's Oxygen Therapy": [0, 0, 1, 1, 1, 1, 1, 0],
+        "Hydromassage bath": [0, 0, 1, 0, 0, 0, 0, 0],
+        "Seaweed wrap": [0, 0, 1, 0, 0, 0, 1, 0],
+        "Affusion massage": [0, 0, 1, 0, 0, 0, 0, 0],
+        "Traditional relaxing massage": [0, 0, 0, 1, 0, 0, 0, 0],
+        "Fitness coaching session": [0, 0, 0, 0, 1, 1, 0, 0],
+        "Jet shower": [0, 0, 0, 0, 1, 1, 0, 0],
+        "Fire cupping therapy": [0, 0, 0, 0, 0, 1, 0, 0],
+        "Manicure & Pedicure": [0, 0, 0, 0, 0, 1, 0, 0],
+        "Stretching session": [0, 0, 0, 0, 0, 0, 1, 0],
+        "Hot stone massage": [0, 0, 0, 0, 0, 0, 1, 0],
+        "Detoxifying & smoothing spirulina facial": [0, 0, 0, 0, 0, 0, 1, 0],
+        "Magnesium bath": [0, 0, 0, 0, 0, 0, 1, 0],
+        "Ice bath immersion": [0, 0, 0, 0, 0, 0, 1, 0],
+        "Closing ritual": [0, 0, 0, 0, 0, 0, 0, 1],
+        "Wellness journal": [0, 0, 0, 0, 0, 0, 0, 1],
+        "Conscious departure": [0, 0, 0, 0, 0, 0, 0, 1]
+      }
+    },
+    "ProgrammeFonctionne": {
+      "title": " Why This Program Works",
+      "title2": " What You’ll Truly Feel",
+      "points": [
+        "A smart progression of physical and emotional reset.",
+        "Each day is designed for a specific effect (drainage, repair, integration).",
+        "The Nahed Rachad method: transformational care for body–heart–mind.",
+        "You’re guided by expert practitioners in deep care and cellular regeneration.",
+        "This isn’t just a treatment — it’s a full protocol designed to get you back in flow."
+      ],
+      "points1": [
+        "Hotel ranked #1 on TripAdvisor in Dakhla",
+        "92%+ post-retreat satisfaction rate",
+        " 1,200+ transformed clients: restored energy, lightened body, focused mind."
+      ],
+      "points2": [
+        "Official partner of Thalgo – global leader in marine therapies",
+        "Exclusive thalasso between desert, ocean and lagoon — a rare location worldwide",
+        "100% certified experts in holistic care, yoga & cellular detox."
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "contact": {
+        "label": "Contact us",
+        "subtext": "Quick response by phone or email",
+        "alt": "Thermal pool at Dakhla Club thalasso center with ocean view"
+      },
+      "items": [
+        {
+          "question": "What can I expect during these 7 nights at Dakhla Club?",
+          "answer": "Experience a complete holistic transformation with 34 personalized thalasso treatments. Our 7-night program combines ocean-facing yoga, hydromassage baths with heated seawater, marine algae wraps, and therapeutic massages in a unique setting between Sahara desert and Atlantic Ocean. Each day follows a specific protocol to detoxify, regenerate and rebalance your body and mind."
+        },
+        {
+          "question": "What thalasso treatments are included in the 7-night program?",
+          "answer": "The program includes 34 varied treatments: Jacquier air bowl, hydromassage baths, Thalgo seaweed wraps, cupping therapy, affusion massages, saunas and hammams, jet showers, hot stone massages, spirulina detox treatments, magnesium baths, ice baths, plus daily yoga and sports coaching. All treatments are provided by our certified team in our exclusive thalasso center."
+        },
+        {
+          "question": "Is the 7-night thalasso program suitable for beginners?",
+          "answer": "Perfect for beginners! Our wellness program is progressive and supervised by certified expert therapists. Over 1,200 transformed clients since opening with 92% satisfaction rate. Our hotel ranked #1 on TripAdvisor Dakhla guarantees personalized guidance for your first thalassotherapy experience."
+        },
+        {
+          "question": "Why book this thalasso retreat quickly?",
+          "answer": "Each session is limited to maximum 10 participants to ensure an intimate and personalized experience. This exclusivity ensures individual follow-up, privileged access to thalasso facilities (thermal pool, spa, saunas), and maintains the serenity of our unique wellness center between Sahara and Atlantic."
+        },
+        {
+          "question": "Where does the 7-night thalasso stay take place?",
+          "answer": "At Dakhla Club Hotel & Spa 4*, the only thalassotherapy center between desert and ocean in Morocco. Ocean-view room accommodation, free access to heated seawater thermal pool, gourmet restaurant, and all spa facilities. Unique geographical location in Dakhla with ideal climate 300 days of sunshine per year, temperatures 18-28°C."
+        }
+      ]
+    },
     "chatbot7": {
-    "welcome": {
+      "welcome": {
         "greeting": "👋 Hello! I'm your personal assistant for the **7-Night Holistic Escape** at Dakhla Club.",
         "requestInfo": "To better assist you, could you please provide your name and phone number?",
         "format": "Format: **First Last Name** followed by your **phone number**\nExample: Marie Dupont - 0612345678"
@@ -1131,17 +1112,17 @@
         },
         "followUp": "**✨ Result:** Complete transformation in 8 days (7 nights) to regain your energy and natural balance!"
       },
-    "booking": {
-      "fields": {
-    "date": "📅 **What is your desired arrival date?**",
-    "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
-  },
-      "decision": "💛 Excellent decision! Give your body 7 nights it will never forget.",
+      "booking": {
+        "fields": {
+          "date": "📅 **What is your desired arrival date?**",
+          "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
+        },
+        "decision": "💛 Excellent decision! Give your body 7 nights it will never forget.",
         "adultsOptions": {
           "adults1": "1 adult",
           "adults2": "2 adults",
           "adults3": "3 adults",
-          "adults4": "4 adults", 
+          "adults4": "4 adults",
           "adultsMore": "More than 4 adults"
         },
         "largeGroup": "For more than 4 adults, please contact our team directly:",
@@ -1154,59 +1135,59 @@
         "backToBooking": "Let's go back to booking:",
         "chooseDates": "📅 Choose my dates",
         "dateFormat": "Format: YYYY-MM-DD\nExample: 2025-08-05\n\nNote: Your stay will automatically be 7 nights 🌙",
-  "dateConfirmed": "✅ **Date confirmed!**",
-  "arrival": "📅 **Arrival:** {checkIn}",
-  "departure": "📅 **Departure:** {checkOut} (7 nights)",
-  "askAdults": "👥 **How many adults will you be?**",
-  "adultsConfirmed": "✅ **{count} adult{plural} confirmed!**",
-  "contactNeeded": "📞 **Now I need your contact details:**",
-  "formatExample": "Format: First Name Last Name - 0612345678\nExample: Marie Dupont - 0612345678"
+        "dateConfirmed": "✅ **Date confirmed!**",
+        "arrival": "📅 **Arrival:** {checkIn}",
+        "departure": "📅 **Departure:** {checkOut} (7 nights)",
+        "askAdults": "👥 **How many adults will you be?**",
+        "adultsConfirmed": "✅ **{count} adult{plural} confirmed!**",
+        "contactNeeded": "📞 **Now I need your contact details:**",
+        "formatExample": "Format: First Name Last Name - 0612345678\nExample: Marie Dupont - 0612345678"
       },
-    "info": {
-      "followUp": "What other information would you like?",
-      
+      "info": {
+        "followUp": "What other information would you like?",
+
         "options": {
           "program": "🔸 View detailed program",
           "reserve": "🔸 Book now",
           "advisor": "🔸 Speak to an advisor",
-          "booking": "🔸 Book now" 
+          "booking": "🔸 Book now"
         },
-      "title": "ℹ️ **Practical Information - 8-Day Escape**",
-      "details": "**📍 Location:** Dakhla Club, Point de Dragon PK28\n**⏰ Duration:** 8 days / 7 nights\n**🏠 Accommodation:** Included with full board\n**🍽️ Meals:** Health and detox cuisine\n**👥 Capacity:** Groups of 2 to 8 people\n**📞 Contact:** +212 652 881 921"
-    },
-    "testimonials": {
-      "title": "🌟 **What our clients say:**",
-      "reviews": "**Sarah, 34 years old:** *\"The 8 days literally changed my life. I feel completely regenerated!\"*\n\n**Marc, 42 years old:** *\"An exceptional program over 7 nights. The therapists are remarkably professional.\"*\n\n**Fatima, 38 years old:** *\"I found my energy and joy of living again. This week of transformation is magical!\"*",
-      "convinced": "**Are you convinced by these testimonials?**"
-    },
-    "weather": {
-      "title": "🌡️ **Weather & Climate in Dakhla**",
-      "details": "**🌞 Climate:** Subtropical arid, ideal year-round\n**🌡️ Temperatures:** 18-28°C depending on season\n**💨 Winds:** Refreshing trade winds\n**☀️ Sun:** Over 300 days per year\n**🌊 Ocean:** Pleasant temperature 18-22°C\n**👕 To bring:** Light clothes + jacket for evenings",
-      "ready": "**Perfect for your holistic escape!**"
-    },
-    "benefits": {
-      "title": "🌟 **Benefits of the 8-Day Escape:**",
-      "physical": "**💪 Physical:** Deep detoxification, energy boost, improved sleep, immune system strengthening",
-      "mental": "**🧠 Mental:** Stress reduction, mental clarity, emotional balance, restored confidence",
-      "lasting": "**⏳ Lasting:** New healthy habits, wellness tools, personalized post-stay follow-up",
-      "motivated": "**Motivated to start this transformation?**"
-    },
-"advisor": {
-  "title": "🤝 **Speak with a specialized consultant**",
-  "contact2": "📞 **Direct line**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Availability**: Every day from 9am to 8pm\n⚡ **Quick response**: WhatsApp < 2h • Email < 4h"
-},
-    "faq": {
-      "title": "❓ **Frequently Asked Questions:**",
-      "content": "**Q: Can I come alone?**\nA: Absolutely! 40% of our clients come alone.\n\n**Q: Are there any contraindications?**\nA: We adapt according to your health condition.\n\n**Q: Is transportation included?**\nA: Airport shuttle available (additional cost).\n\n**Q: Can I modify my dates?**\nA: Yes, subject to availability conditions.",
-      "notListed": "**Your question is not listed?**"
-    },
-    "actions": {
-      "reserve": "✅ Book now",
-      "mainMenu": "🏠 Back to main menu",
-      "call": "Call",
-      "whatsapp": "WhatsApp"
-    },
-    "errors": {
+        "title": "ℹ️ **Practical Information - 8-Day Escape**",
+        "details": "**📍 Location:** Dakhla Club, Point de Dragon PK28\n**⏰ Duration:** 8 days / 7 nights\n**🏠 Accommodation:** Included with full board\n**🍽️ Meals:** Health and detox cuisine\n**👥 Capacity:** Groups of 2 to 8 people\n**📞 Contact:** +212 652 881 921"
+      },
+      "testimonials": {
+        "title": "🌟 **What our clients say:**",
+        "reviews": "**Sarah, 34 years old:** *\"The 8 days literally changed my life. I feel completely regenerated!\"*\n\n**Marc, 42 years old:** *\"An exceptional program over 7 nights. The therapists are remarkably professional.\"*\n\n**Fatima, 38 years old:** *\"I found my energy and joy of living again. This week of transformation is magical!\"*",
+        "convinced": "**Are you convinced by these testimonials?**"
+      },
+      "weather": {
+        "title": "🌡️ **Weather & Climate in Dakhla**",
+        "details": "**🌞 Climate:** Subtropical arid, ideal year-round\n**🌡️ Temperatures:** 18-28°C depending on season\n**💨 Winds:** Refreshing trade winds\n**☀️ Sun:** Over 300 days per year\n**🌊 Ocean:** Pleasant temperature 18-22°C\n**👕 To bring:** Light clothes + jacket for evenings",
+        "ready": "**Perfect for your holistic escape!**"
+      },
+      "benefits": {
+        "title": "🌟 **Benefits of the 8-Day Escape:**",
+        "physical": "**💪 Physical:** Deep detoxification, energy boost, improved sleep, immune system strengthening",
+        "mental": "**🧠 Mental:** Stress reduction, mental clarity, emotional balance, restored confidence",
+        "lasting": "**⏳ Lasting:** New healthy habits, wellness tools, personalized post-stay follow-up",
+        "motivated": "**Motivated to start this transformation?**"
+      },
+      "advisor": {
+        "title": "🤝 **Speak with a specialized consultant**",
+        "contact2": "📞 **Direct line**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Availability**: Every day from 9am to 8pm\n⚡ **Quick response**: WhatsApp < 2h • Email < 4h"
+      },
+      "faq": {
+        "title": "❓ **Frequently Asked Questions:**",
+        "content": "**Q: Can I come alone?**\nA: Absolutely! 40% of our clients come alone.\n\n**Q: Are there any contraindications?**\nA: We adapt according to your health condition.\n\n**Q: Is transportation included?**\nA: Airport shuttle available (additional cost).\n\n**Q: Can I modify my dates?**\nA: Yes, subject to availability conditions.",
+        "notListed": "**Your question is not listed?**"
+      },
+      "actions": {
+        "reserve": "✅ Book now",
+        "mainMenu": "🏠 Back to main menu",
+        "call": "Call",
+        "whatsapp": "WhatsApp"
+      },
+      "errors": {
         "invalidDate": "❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ",
         "validExample": "Exemple valide: {date}",
         "invalidDateFormat": "❌ Format de date incorrect.",
@@ -1225,26 +1206,22 @@
         "finalize": "✅ Finalize my booking",
         "bookingSummary": "📋 **Your booking summary:**\n👤 {name}\n📞 {phone}\n📅 Check-in: {checkInDate}\n📅 Check-out: {checkOutDate}\n👥 {adults} adult(s)\n🌙 5-night holistic escape\n\nA consultant will contact you to confirm the details!"
       },
-"messages": {
-  "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 65288192.",
-  "whatsappRedirect": "Hello! I would like to know more about the 7-day Holistic Escape at Dakhla Club."
-},
-"placeholders": {
-  "typeMessage": "Type your message...",
-  "namePhone": "First Name Last Name - Phone Number",
-  "date": "YYYY-MM-DD"
-},
-"status": {
-  "online": "Online • Responds quickly"
-}
-  }
+      "messages": {
+        "thankYou": "Thank you for your message! A consultant will respond shortly. For an immediate response, call +212 65288192.",
+        "whatsappRedirect": "Hello! I would like to know more about the 7-day Holistic Escape at Dakhla Club."
+      },
+      "placeholders": {
+        "typeMessage": "Type your message...",
+        "namePhone": "First Name Last Name - Phone Number",
+        "date": "YYYY-MM-DD"
+      },
+      "status": {
+        "online": "Online • Responds quickly"
+      }
+    }
+  },
 
-
-},
-
-
-
-"terms": {
+  "terms": {
     "meta": {
       "title": "Terms of Sale - Dakhla Club",
       "description": "Online terms and conditions for Dakhla Club stays"
@@ -1311,9 +1288,7 @@
     "backToHome": "Back to Home"
   },
 
-
-
-"chatbot": {
+  "chatbot": {
     "welcome": {
       "greeting": "🌿 Hello and welcome to Dakhla Club – your wellness refuge by the ocean.",
       "description": "In just 3 nights, you're giving your body and mind the restart they've been waiting for far too long.",
@@ -1363,11 +1338,7 @@
       },
       "mental": {
         "title": "🧠 **Mental**",
-        "items": [
-          "• Clearer mind",
-          "• Released stress",
-          "• Reconnection with yourself"
-        ]
+        "items": ["• Clearer mind", "• Released stress", "• Reconnection with yourself"]
       },
       "lasting": {
         "title": "⏳ **And after the stay?**",
@@ -1390,44 +1361,44 @@
         "response": "⚡ Quick response: WhatsApp < 2h • Email < 4h"
       }
     },
-"booking": {
-  "decision": "💛 Excellent decision! Give your body 3 nights it will never forget.",
-  "fields": {
-    "date": "📅 **What is your desired arrival date?**",
-    "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
-  },
-  "dateFormat": "Format: YYYY-MM-DD\nExample: 2025-08-05\n\nNote: Your stay will automatically be 3 nights 🌙",
-  "adultsQuestion": "👥 **How many adults will you be?**",
-  "adultsOptions": {
-    "one": "1 adult",
-    "two": "2 adults",
-    "three": "3 adults", 
-    "four": "4 adults",
-    "more": "More than 4 adults"
-  },
-  "updated": "✅ **Booking updated!**",
-  "confirmDetails": "📅 **Arrival:** {checkIn}\n📅 **Departure:** {checkOut}\n👥 **Adults:** {adults}\n\nEverything perfect?",
-  "continueYes": "✅ Yes, continue",
-  "modifyAdults": "👥 Modify again",
-  "needContact": "Perfect! Now I need your contact details:",
-  "perfect": "✅ **Perfect {name}!**",
-  "fullSummary": "📋 **Complete summary:**\n👤 {name}\n📞 {phone}\n📅 {checkIn} → {checkOut}\n👥 {adults} adult{plural}\n🌙 3 nights holistic escape",
-  "allReady": "🎉 **Everything is ready!**", 
-  "secureBooking": "Click below to finalize your booking securely 🔒",
-  "finalizeButton": "✅ Finalize my booking",
-  "dateConfirmed": "✅ **Date confirmed!**",
-  "arrivalDeparture": "📅 **Arrival:** {checkIn}\n📅 **Departure:** {checkOut} (3 nights)",
-  "redirecting": "🔄 Redirection vers le système de réservation...",
-  "mobileRedirect": "📱 Redirection en cours...",
-  "desktopRedirect": "✅ La page de réservation s'est ouverte dans un nouvel onglet.",
-  "dataSaved": "📊 Vos informations ont été enregistrées avec succès!",
-  "advisorContact": "Un conseiller vous contactera pour confirmer les détails !",
-  "missingInfo": "❌ Veuillez d'abord remplir toutes les informations nécessaires.",
-  "returnToBooking": "Retournons à la réservation :",
-  "chooseDates": "📅 Choisir mes dates",
-  "moreThan4": "Pour plus de 4 adultes, veuillez contacter directement notre équipe :",
-  "contactTeam": "📞 **Téléphone :** +212 652 88 1921\n📧 **Email :** reservation@dakhlaclub.com\n\nIls pourront vous proposer des solutions adaptées à votre groupe !"
-},
+    "booking": {
+      "decision": "💛 Excellent decision! Give your body 3 nights it will never forget.",
+      "fields": {
+        "date": "📅 **What is your desired arrival date?**",
+        "contact": "📞 Your name and phone number (format: First Name Last Name – 06xx xx xx xx)"
+      },
+      "dateFormat": "Format: YYYY-MM-DD\nExample: 2025-08-05\n\nNote: Your stay will automatically be 3 nights 🌙",
+      "adultsQuestion": "👥 **How many adults will you be?**",
+      "adultsOptions": {
+        "one": "1 adult",
+        "two": "2 adults",
+        "three": "3 adults",
+        "four": "4 adults",
+        "more": "More than 4 adults"
+      },
+      "updated": "✅ **Booking updated!**",
+      "confirmDetails": "📅 **Arrival:** {checkIn}\n📅 **Departure:** {checkOut}\n👥 **Adults:** {adults}\n\nEverything perfect?",
+      "continueYes": "✅ Yes, continue",
+      "modifyAdults": "👥 Modify again",
+      "needContact": "Perfect! Now I need your contact details:",
+      "perfect": "✅ **Perfect {name}!**",
+      "fullSummary": "📋 **Complete summary:**\n👤 {name}\n📞 {phone}\n📅 {checkIn} → {checkOut}\n👥 {adults} adult{plural}\n🌙 3 nights holistic escape",
+      "allReady": "🎉 **Everything is ready!**",
+      "secureBooking": "Click below to finalize your booking securely 🔒",
+      "finalizeButton": "✅ Finalize my booking",
+      "dateConfirmed": "✅ **Date confirmed!**",
+      "arrivalDeparture": "📅 **Arrival:** {checkIn}\n📅 **Departure:** {checkOut} (3 nights)",
+      "redirecting": "🔄 Redirection vers le système de réservation...",
+      "mobileRedirect": "📱 Redirection en cours...",
+      "desktopRedirect": "✅ La page de réservation s'est ouverte dans un nouvel onglet.",
+      "dataSaved": "📊 Vos informations ont été enregistrées avec succès!",
+      "advisorContact": "Un conseiller vous contactera pour confirmer les détails !",
+      "missingInfo": "❌ Veuillez d'abord remplir toutes les informations nécessaires.",
+      "returnToBooking": "Retournons à la réservation :",
+      "chooseDates": "📅 Choisir mes dates",
+      "moreThan4": "Pour plus de 4 adultes, veuillez contacter directement notre équipe :",
+      "contactTeam": "📞 **Téléphone :** +212 652 88 1921\n📧 **Email :** reservation@dakhlaclub.com\n\nIls pourront vous proposer des solutions adaptées à votre groupe !"
+    },
     "summary": {
       "title": "🔁 **Once the info is filled in:**",
       "subtitle": "📋 Here's your summary:",
@@ -1465,12 +1436,7 @@
       },
       "bring": {
         "title": "**To bring:**",
-        "items": [
-          "• Swimsuit",
-          "• Comfortable clothing",
-          "• Non-slip sandals",
-          "• Sun protection"
-        ]
+        "items": ["• Swimsuit", "• Comfortable clothing", "• Non-slip sandals", "• Sun protection"]
       }
     },
     "errors": {
@@ -1478,10 +1444,10 @@
       "pastDate": "❌ Arrival date cannot be in the past.",
       "chooseToday": "Please choose a date from today onwards.",
       "invalidDate": "❌ Date invalide. Veuillez utiliser le format AAAA-MM-JJ",
-  "validExample": "Exemple valide: {example}",
-  "incorrectDateFormat": "❌ Format de date incorrect.",
-  "useFormat": "Veuillez utiliser le format: AAAA-MM-JJ",
-  "example": "Exemple: {example}"
+      "validExample": "Exemple valide: {example}",
+      "incorrectDateFormat": "❌ Format de date incorrect.",
+      "useFormat": "Veuillez utiliser le format: AAAA-MM-JJ",
+      "example": "Exemple: {example}"
     },
     "actions": {
       "call": "Call",
@@ -1503,10 +1469,8 @@
       "online": "Online • Responds quickly"
     }
   },
-  
 
-
-    "legal": {
+  "legal": {
     "cgu": {
       "title": "Terms of Use",
       "lastUpdate": "Last updated: July 2025",
@@ -1691,6 +1655,4 @@
       }
     }
   }
-
-   
 }

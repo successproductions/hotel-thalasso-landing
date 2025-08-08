@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import { motion, Variants } from "framer-motion";
-import Image from "next/image";
+import { motion, Variants } from 'framer-motion';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 export function ProgramsSection() {
   const t = useTranslations('programSection');
 
   const days = ['1', '2', '3', '4'];
-  
+
   const dayImages = [
-    '/images/6 (1).png',     
-    '/images/Piscine_thermale.png',        
-    '/images/modelage.jpg',     
-    '/images/Salle-de-massage.png'   
+    '/images/6 (1).png',
+    '/images/Piscine_thermale.png',
+    '/images/modelage.jpg',
+    '/images/Salle-de-massage.png',
   ];
-  
+
   const programs = days.map((dayNum, index) => {
     const dayData = {
       title: t(`days.${dayNum}.title`),
@@ -23,7 +23,7 @@ export function ProgramsSection() {
       activities: t.raw(`days.${dayNum}.activities`) || [],
       objective: t(`days.${dayNum}.objective`),
       ctaText: t(`days.${dayNum}.ctaText`),
-      dayNumber: dayNum
+      dayNumber: dayNum,
     };
 
     return {
@@ -40,17 +40,17 @@ export function ProgramsSection() {
 
   // Background slide variants
   const bgVariant = (fromLeft: boolean) => ({
-    hidden: { x: fromLeft ? "-100%" : "100%" },
-    show: { 
-      x: "0%", 
-      transition: { duration: 3, ease: "easeOut" } 
+    hidden: { x: fromLeft ? '-100%' : '100%' },
+    show: {
+      x: '0%',
+      transition: { duration: 3, ease: 'easeOut' },
     },
   });
 
   return (
     <section id="services" className="overflow-hidden">
       {/* Header Section */}
-      <div className="max-w-6xl mx-auto px-4 py-1 md:py-8 text-center">
+      <div className="mx-auto max-w-6xl px-4 py-1 text-center md:py-8">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -60,18 +60,16 @@ export function ProgramsSection() {
             show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] } },
           }}
         >
-          <h2 className="text-3xl md:text-4xl font-medium text-gray-800 mb-4">
+          <h2 className="mb-4 text-3xl font-medium text-gray-800 md:text-4xl">
             {t('header.title')}
           </h2>
-          <h3 className="text-xl md:text-2xl  font-light text-teal-600 ">
-            {t('header.subheading')}
-          </h3>
+          <h3 className="text-xl font-light text-teal-600 md:text-2xl">{t('header.subheading')}</h3>
         </motion.div>
       </div>
 
       {/* Days Programs */}
       {programs.map((program, i) => {
-        const fromLeft = i % 2 === 0;   
+        const fromLeft = i % 2 === 0;
         const isOdd = i % 2 === 1;
 
         return (
@@ -87,29 +85,24 @@ export function ProgramsSection() {
 
             {/* content sits above the bg */}
             <div
-              className={`
-                relative z-10
-                max-w-6xl mx-auto px-4
-                grid gap-8 items-center
-                ${isOdd
-                  ? "md:grid-cols-2 md:grid-flow-col-dense"
-                  : "md:grid-cols-2"}
-              `}
+              className={`relative z-10 mx-auto grid max-w-6xl items-center gap-8 px-4 ${
+                isOdd ? 'md:grid-flow-col-dense md:grid-cols-2' : 'md:grid-cols-2'
+              } `}
             >
               {/* Image */}
-              <div className={isOdd ? "md:col-start-2 " : ""}>
+              <div className={isOdd ? 'md:col-start-2' : ''}>
                 <Image
                   src={program.image}
                   alt={`${t('header.jour')} ${program.dayNumber} - ${program.title}`}
                   width={600}
                   height={400}
-                  className="rounded-lg object-cover w-full shadow-lg"
+                  className="w-full rounded-lg object-cover shadow-lg"
                 />
               </div>
 
               {/* Text */}
               <motion.div
-                className={isOdd ? "md:col-start-1" : ""}
+                className={isOdd ? 'md:col-start-1' : ''}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
@@ -118,34 +111,32 @@ export function ProgramsSection() {
                   show: {
                     opacity: 1,
                     y: 0,
-                    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
-                  }
+                    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
+                  },
                 }}
               >
                 <div className="mb-2">
-                  <span className="text-teal-600 font-semibold text-sm uppercase tracking-wide">
+                  <span className="text-sm font-semibold uppercase tracking-wide text-teal-600">
                     {t('header.jour')} {program.dayNumber}
                   </span>
                 </div>
-                
-                <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
+
+                <h3 className="mb-2 text-2xl font-semibold text-gray-800 md:text-3xl">
                   {program.title.toUpperCase()}
                 </h3>
-                
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  {program.description}
-                </p>
+
+                <p className="mb-6 leading-relaxed text-gray-600">{program.description}</p>
 
                 {/* Activities - only show if activities exist */}
                 {program.activities && program.activities.length > 0 && (
                   <div className="mb-6">
-                    <h5 className="font-semibold text-gray-800 mb-3">
+                    <h5 className="mb-3 font-semibold text-gray-800">
                       {t('header.activitiesTitle')}
                     </h5>
                     <ul className="space-y-2">
                       {program.activities.map((activity: string, idx: number) => (
                         <li key={idx} className="flex items-start">
-                          <span className="text-teal-600 mr-2">•</span>
+                          <span className="mr-2 text-teal-600">•</span>
                           <span className="text-gray-600">{activity}</span>
                         </li>
                       ))}
@@ -155,19 +146,15 @@ export function ProgramsSection() {
 
                 {/* Objective */}
                 <div className="mb-6">
-                <h5 className="font-semibold text-gray-800 mb-3">
-                      {t('header.objectiveTitle')}
-                    </h5>
-                  <p className="text-gray-700 font-medium italic">
-                    {program.objective}
-                  </p>
+                  <h5 className="mb-3 font-semibold text-gray-800">{t('header.objectiveTitle')}</h5>
+                  <p className="font-medium italic text-gray-700">{program.objective}</p>
                 </div>
               </motion.div>
             </div>
           </div>
         );
       })}
-    {/* 
+      {/* 
       <div className="flex justify-center mt-10">
         <a
           href="#contact"
@@ -177,24 +164,26 @@ export function ProgramsSection() {
         </a>
       </div>
     */}
-    <div  className="md:px-0 px-4 text-center" style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}>
-      <a
-        href="#contact"
-        style={{
-          padding: "12px 32px",
-          background: "#14b8a6",
-          color: "#fff",
-          fontSize: "1.325rem",
-          fontWeight: 500,
-          borderRadius: "9999px",
-          textDecoration: "none",
-          boxShadow: "0 2px 8px rgba(20,184,166,0.15)"
-        }}
+      <div
+        className="px-4 text-center md:px-0"
+        style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}
       >
-        {t('header.callButton')}
-      </a>
-    </div>
-
+        <a
+          href="#contact"
+          style={{
+            padding: '12px 32px',
+            background: '#14b8a6',
+            color: '#fff',
+            fontSize: '1.325rem',
+            fontWeight: 500,
+            borderRadius: '9999px',
+            textDecoration: 'none',
+            boxShadow: '0 2px 8px rgba(20,184,166,0.15)',
+          }}
+        >
+          {t('header.callButton')}
+        </a>
+      </div>
     </section>
   );
 }

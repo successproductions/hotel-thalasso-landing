@@ -11,6 +11,6 @@ export const config = {
     // all requests that have a locale prefix
     '/(fr|en)/:path*',
     // Enable redirects that add missing locales
-    '/((?!_next|_vercel|.*\\..*).*)' 
-  ]
+    '/((?!_next|_vercel|.*\\..*).*)',
+  ],
 };

@@ -21,7 +21,7 @@ type Messages = {
 export function ServicesTable7() {
   // grab the raw JSON object under "servicesTable5"
   const msg = useMessages() as Messages;
-const table = msg.offer7.servicesTable7;
+  const table = msg.offer7.servicesTable7;
 
   // translations hook—for any one-off strings if you prefer live locale switching
   const t = useTranslations('offer7.servicesTable7');
@@ -35,21 +35,18 @@ const table = msg.offer7.servicesTable7;
             <tr>
               <th
                 colSpan={1 + table.programs.length}
-                className="text-left text-lg font-semibold uppercase pb-2 border-b border-gray-300"
+                className="border-b border-gray-300 pb-2 text-left text-lg font-semibold uppercase"
               >
                 {table.header}
               </th>
             </tr>
             {/* column headings: Services + each Day */}
             <tr>
-              <th className="text-left text-sm font-medium text-gray-600 px-4 py-2">
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-600">
                 {t('servicesLabel')}
               </th>
               {table.programs.map((day, i) => (
-                <th
-                  key={i}
-                  className="text-center text-sm font-medium text-gray-600 px-4 py-2"
-                >
+                <th key={i} className="px-4 py-2 text-center text-sm font-medium text-gray-600">
                   {day}
                 </th>
               ))}
@@ -60,10 +57,10 @@ const table = msg.offer7.servicesTable7;
             {table.services.map((svc, idx) => (
               <tr key={idx} className="bg-white">
                 {/* Service title + sub-items */}
-                <td className="align-top px-4 py-4">
+                <td className="px-4 py-4 align-top">
                   <div className="font-medium text-gray-800">{svc.title}</div>
                   {svc.subItems && (
-                    <ul className="mt-2 ml-4 list-disc text-sm text-gray-600 space-y-1">
+                    <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-gray-600">
                       {svc.subItems.map((item, j) => (
                         <li key={j}>{item}</li>
                       ))}
@@ -75,10 +72,7 @@ const table = msg.offer7.servicesTable7;
                 {table.programs.map((_, colIdx) => {
                   const avail = table.availability[svc.title]?.[colIdx];
                   return (
-                    <td
-                      key={colIdx}
-                      className="px-4 py-4 text-center font-medium text-gray-700"
-                    >
+                    <td key={colIdx} className="px-4 py-4 text-center font-medium text-gray-700">
                       {avail === 1 ? '✓' : ''}
                     </td>
                   );

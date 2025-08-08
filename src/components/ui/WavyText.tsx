@@ -1,5 +1,5 @@
 // components/WavyText.tsx
-import React from "react";
+import React from 'react';
 
 interface WavyTextProps {
   text: string;
@@ -16,9 +16,7 @@ export default function WavyText({ text, replay = true }: WavyTextProps) {
           key={i}
           className="wavy-letter"
           style={{
-            animation: replay
-              ? `wave 0.6s ease-in-out ${i * 0.08}s both`
-              : "none",
+            animation: replay ? `wave 0.6s ease-in-out ${i * 0.08}s both` : 'none',
           }}
         >
           {char}
@@ -35,8 +33,13 @@ export default function WavyText({ text, replay = true }: WavyTextProps) {
           display: inline-block;
         }
         @keyframes wave {
-          0%, 100% { transform: translateY(0); }
-          50%      { transform: translateY(-0.5em); }
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-0.5em);
+          }
         }
       `}</style>
     </span>

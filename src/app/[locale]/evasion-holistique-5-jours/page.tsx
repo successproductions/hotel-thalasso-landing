@@ -1,18 +1,17 @@
-import { Footer } from "@/components/Footer"
-import Header from "@/components/Header"
-import { About5 } from "@/components/offer-5/About5"
-import FAQ5 from "@/components/offer-5/FAQSection5"
-import { HealthPrograms5 } from "@/components/offer-5/HealthPrograms5"
-import Hero5 from "@/components/offer-5/Hero5"
-import { NewsletterSection5 } from "@/components/offer-5/NewsletterSection5"
-import { ObjectivesSection5 } from "@/components/offer-5/ObjectivesSection5"
-import { ProgrammeFonctionne5 } from "@/components/offer-5/ProgrammeFonctionne5"
-import { ProgramsSection5 } from "@/components/offer-5/ProgramsSection5"
-import { ServicesTable5 } from "@/components/offer-5/ServicesTable5"
-import WhatsAppChatbot5 from "@/components/offer-5/WhatsAppChatbot5"
-import { RewardsSection } from "@/components/RewardsSection"
-import TestimonialsCarousel from "@/components/TestimonialsCarousel"
-
+import { Footer } from '@/components/Footer';
+import Header from '@/components/Header';
+import { About5 } from '@/components/offer-5/About5';
+import FAQ5 from '@/components/offer-5/FAQSection5';
+import { HealthPrograms5 } from '@/components/offer-5/HealthPrograms5';
+import Hero5 from '@/components/offer-5/Hero5';
+import { NewsletterSection5 } from '@/components/offer-5/NewsletterSection5';
+import { ObjectivesSection5 } from '@/components/offer-5/ObjectivesSection5';
+import { ProgrammeFonctionne5 } from '@/components/offer-5/ProgrammeFonctionne5';
+import { ProgramsSection5 } from '@/components/offer-5/ProgramsSection5';
+import { ServicesTable5 } from '@/components/offer-5/ServicesTable5';
+import WhatsAppChatbot5 from '@/components/offer-5/WhatsAppChatbot5';
+import { RewardsSection } from '@/components/RewardsSection';
+import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 
 import type { Metadata } from 'next';
 
@@ -23,31 +22,36 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const baseUrl = 'https://offer.dakhlaclub.com';
-  
+
   const metadata5Days = {
     fr: {
-      title: "Évasion Holistique 5 Jours à Dakhla – Transformation Profonde",
-      description: "Vivez 5 jours de detox, yoga & thalasso à Dakhla. Édition limitée à 10 places – réservez votre bulle bien-être.",
-      keywords: "retraite bien-être 5 jours Dakhla, transformation holistique complète, cure détox longue Maroc, séjour thalasso 5 jours, retraite yoga intensive Dakhla, programme wellness complet, détox profonde 5 jours, cure régénérante intensive, retraite spirituelle Maroc, spa intensif désert océan"
+      title: 'Évasion Holistique 5 Jours à Dakhla – Transformation Profonde',
+      description:
+        'Vivez 5 jours de detox, yoga & thalasso à Dakhla. Édition limitée à 10 places – réservez votre bulle bien-être.',
+      keywords:
+        'retraite bien-être 5 jours Dakhla, transformation holistique complète, cure détox longue Maroc, séjour thalasso 5 jours, retraite yoga intensive Dakhla, programme wellness complet, détox profonde 5 jours, cure régénérante intensive, retraite spirituelle Maroc, spa intensif désert océan',
     },
     en: {
-      title: "5-Day Holistic Escape in Dakhla – Deep Transformation & Complete Wellness",
-      description: "Experience 5 days of holistic transformation at Dakhla Club. Intensive detox cure, yoga, meditation and thalasso treatments for complete body and mind regeneration.",
-      keywords: "5-day wellness retreat Dakhla, holistic transformation Morocco, intensive detox spa, 5-day thalasso program, yoga retreat Morocco, complete wellness transformation, deep detox cure, regenerative spa retreat, spiritual retreat Morocco, intensive desert spa"
-    }
+      title: '5-Day Holistic Escape in Dakhla – Deep Transformation & Complete Wellness',
+      description:
+        'Experience 5 days of holistic transformation at Dakhla Club. Intensive detox cure, yoga, meditation and thalasso treatments for complete body and mind regeneration.',
+      keywords:
+        '5-day wellness retreat Dakhla, holistic transformation Morocco, intensive detox spa, 5-day thalasso program, yoga retreat Morocco, complete wellness transformation, deep detox cure, regenerative spa retreat, spiritual retreat Morocco, intensive desert spa',
+    },
   };
 
   const currentMeta = metadata5Days[locale];
-  const currentUrl = locale === 'en' 
-    ? `${baseUrl}/en/evasion-holistique-5-jours` 
-    : `${baseUrl}/fr/evasion-holistique-5-jours`;
+  const currentUrl =
+    locale === 'en'
+      ? `${baseUrl}/en/evasion-holistique-5-jours`
+      : `${baseUrl}/fr/evasion-holistique-5-jours`;
 
   return {
     title: currentMeta.title,
     description: currentMeta.description,
-    
+
     keywords: currentMeta.keywords,
-    
+
     openGraph: {
       title: currentMeta.title,
       description: currentMeta.description,
@@ -61,19 +65,18 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: currentMeta.title,
-          type: 'image/jpeg'
-        }
+          type: 'image/jpeg',
+        },
       ],
-
     },
-    
+
     twitter: {
       card: 'summary_large_image',
       title: currentMeta.title,
       description: currentMeta.description,
       images: [`${baseUrl}/images/cure-thalasso-maroc.jpg`],
     },
-    
+
     alternates: {
       canonical: currentUrl,
       languages: {
@@ -101,63 +104,70 @@ export async function generateMetadata({
 }
 
 export default function Page() {
-    return (
-        <>
-            <Header />
-            <Hero5/>
-            <HealthPrograms5/>
-            <About5/>
-            <ProgramsSection5/>
-            <ServicesTable5/>
-            <ProgrammeFonctionne5/>
-            <ObjectivesSection5/>
-            <TestimonialsCarousel/>
-            <RewardsSection/>
-            <FAQ5/>
-            <NewsletterSection5/>
-            <Footer/>
-            <WhatsAppChatbot5/>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Service",
-                        "serviceType": "Intensive Holistic Wellness Retreat",
-                        "provider": {
-                            "@type": "HealthAndBeautyBusiness",
-                            "name": "Dakhla Club",
-                            "@id": "https://offer.dakhlaclub.com",
-                            "url": "https://offer.dakhlaclub.com",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "streetAddress": "Point de Dragon PK 28",
-                                "addressLocality": "Dakhla",
-                                "postalCode": "73000",
-                                "addressCountry": "MA"
-                            },
-                            "telephone": "+212652881921"
-                        },
-                        "name": "Évasion Holistique 5 Jours",
-                        "alternateName": "5-Day Holistic Transformation Retreat",
-                        "description": "Programme complet de transformation holistique 5 jours combinant cure détox, yoga, méditation et soins thalasso dans l'environnement unique de Dakhla entre désert et océan.",
-                        "offers": {
-                            "@type": "Offer",
-                            "availability": "https://schema.org/InStock",
-                            "priceCurrency": "MAD",
-                            "category": "Intensive Wellness Retreat",
-                            "validFrom": new Date().toISOString(),
-                            "validThrough": "2025-12-31T23:59:59Z"
-                        },
-                        "duration": "P5D",
-                        "category": ["Transformation", "Intensive Wellness", "Holistic Healing", "Thalassotherapy", "Yoga Retreat"],
-                        "audience": {
-                            "@type": "Audience",
-                            "audienceType": "Adults seeking deep transformation"
-                        }
-                    })
-                }}
-            />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <Hero5 />
+      <HealthPrograms5 />
+      <About5 />
+      <ProgramsSection5 />
+      <ServicesTable5 />
+      <ProgrammeFonctionne5 />
+      <ObjectivesSection5 />
+      <TestimonialsCarousel />
+      <RewardsSection />
+      <FAQ5 />
+      <NewsletterSection5 />
+      <Footer />
+      <WhatsAppChatbot5 />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            serviceType: 'Intensive Holistic Wellness Retreat',
+            provider: {
+              '@type': 'HealthAndBeautyBusiness',
+              name: 'Dakhla Club',
+              '@id': 'https://offer.dakhlaclub.com',
+              url: 'https://offer.dakhlaclub.com',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Point de Dragon PK 28',
+                addressLocality: 'Dakhla',
+                postalCode: '73000',
+                addressCountry: 'MA',
+              },
+              telephone: '+212652881921',
+            },
+            name: 'Évasion Holistique 5 Jours',
+            alternateName: '5-Day Holistic Transformation Retreat',
+            description:
+              "Programme complet de transformation holistique 5 jours combinant cure détox, yoga, méditation et soins thalasso dans l'environnement unique de Dakhla entre désert et océan.",
+            offers: {
+              '@type': 'Offer',
+              availability: 'https://schema.org/InStock',
+              priceCurrency: 'MAD',
+              category: 'Intensive Wellness Retreat',
+              validFrom: new Date().toISOString(),
+              validThrough: '2025-12-31T23:59:59Z',
+            },
+            duration: 'P5D',
+            category: [
+              'Transformation',
+              'Intensive Wellness',
+              'Holistic Healing',
+              'Thalassotherapy',
+              'Yoga Retreat',
+            ],
+            audience: {
+              '@type': 'Audience',
+              audienceType: 'Adults seeking deep transformation',
+            },
+          }),
+        }}
+      />
+    </>
+  );
 }
