@@ -80,7 +80,7 @@ export default function TestimonialsCarousel() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-4 md:py-6">
         <div className="mb-4 md:mb-10 text-center">
-          <h2 className="text-3xl font-medium text-gray-900 md:text-5xl lg:text-6xl">
+          <h2 className="text-3xl font-medium text-gray-900 md:text-4xl lg:text-5xl">
             {t('title')}
           </h2>
         </div>
