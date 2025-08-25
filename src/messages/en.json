@@ -111,7 +111,7 @@
   },
   "exclusiveOffer": {
     "title": "⏳ Exclusive offer — 10 places per session",
-    "description": "To preserve the quality and intimacy of the experience, each retreat is limited to 10 participants.",
+    "description": "To preserve the quality and intimacy of the experience, each retreat is limited to 10 participants",
     "nextSession": "📅 Next session: 15–18 July 2025",
     "callButton": "I Reserve My Place"
   },
@@ -478,7 +478,7 @@
     },
     "exclusiveOffer": {
       "title": "⏳ Limited Edition – Only 10 participants per session",
-      "description": "🔒 To guarantee an intimate experience, we open only 10 spots per session.",
+      "description": "🔒 To guarantee an intimate experience, we open only 10 spots per session",
       "nextSession": "📅 Prochaine session fermera bientôt ses portes",
       "callButton": "Je Réserve Ma Place"
     },
@@ -834,9 +834,9 @@
       ]
     },
     "exclusiveOffer": {
-      "title": "Exclusive offer – Only 10 spots per session.",
-      "description": "A confidential, intimate format — designed to ensure personalized guidance and deep care. ",
-      "nextSession": " Paiement possible en 1, 2 ou 3 fois.",
+      "title": "Exclusive offer – Only 10 spots per session",
+      "description": "A confidential, intimate format — designed to ensure personalized guidance and deep care ",
+      "nextSession": " Paiement possible en 1, 2 ou 3 fois",
       "callButton": "I book my transformation"
     },
     "programSection": {

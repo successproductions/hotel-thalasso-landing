@@ -107,7 +107,7 @@
   },
   "exclusiveOffer": {
     "title": "⏳ Offre exclusive – 10 places par session",
-    "description": "Pour préserver la qualité et l’intimité de l’expérience, nous limitons chaque retraite à 10 personnes.",
+    "description": "Pour préserver la qualité et l’intimité de l’expérience, nous limitons chaque retraite à 10 personnes",
     "nextSession": "📅 Prochaine session : 15 au 18 juillet 2025",
     "callButton": "Je Réserve Ma Place"
   },
@@ -477,7 +477,7 @@
     },
     "exclusiveOffer": {
       "title": "⏳ Édition limitée – 10 participants maximum",
-      "description": "🔒 Pour garantir un espace intime, nous ouvrons uniquement 10 places par session.",
+      "description": "🔒 Pour garantir un espace intime, nous ouvrons uniquement 10 places par session",
       "nextSession": "📅 Prochaine session fermera bientôt ses portes",
       "callButton": "Je Réserve Ma Place"
     },
@@ -849,9 +849,9 @@
       ]
     },
     "exclusiveOffer": {
-      "title": "Édition limitée – 10 places seulement par session.",
-      "description": "Un format confidentiel, pensé pour garantir un accompagnement sur-mesure.",
-      "nextSession": " Un format confidentiel, pensé pour garantir un accompagnement sur-mesure.",
+      "title": "Édition limitée – 10 places seulement par session",
+      "description": "Un format confidentiel, pensé pour garantir un accompagnement sur-mesure",
+      "nextSession": " Un format confidentiel, pensé pour garantir un accompagnement sur-mesure",
       "callButton": "Je Réserve Ma Transformation"
     },
     "ProgrammeFonctionne": {
