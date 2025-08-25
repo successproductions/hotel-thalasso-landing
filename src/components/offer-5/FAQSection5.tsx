@@ -95,7 +95,7 @@ export default function FAQ5() {
           viewport={{ once: true, margin: '-50px' }}
         >
           {/* Header Section */}
-          <motion.div className="mb-20 text-center" variants={itemVariants}>
+          <motion.div className="md:mb-20 mb-5 text-center" variants={itemVariants}>
             <motion.div
               className="inline-block"
               whileHover={{ scale: 1.05 }}
