@@ -79,8 +79,8 @@ export default function TestimonialsCarousel() {
       <div className="absolute inset-0 h-full w-full" style={{ backgroundColor: '#faf9f5' }} />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-4 md:py-6">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl font-medium text-gray-900 md:text-5xl lg:text-6xl">
+        <div className="mb-4 md:mb-10 text-center">
+          <h2 className="text-3xl font-medium text-gray-900 md:text-5xl lg:text-6xl">
             {t('title')}
           </h2>
         </div>

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Évasion Holistique à Dakhla – Cure Détox & Bien-Être 3 Jours",
-    "description": "Profitez d’une parenthèse thalasso de 3 jours à Dakhla : détox à l’eau de mer, rituels bien-être et excursions dans le désert."
+    "description": "Profitez d’une parenthèse thalasso de 3 jours à Dakhla : détox à l’eau de mer, rituels bien-être et excursions dans le désert"
   },
   "nav": {
     "home": "ACCUEIL",
@@ -24,7 +24,7 @@
     "Check-out": "Départ",
     "bookingValidation": {
       "invalidDurationTitle": "Durée de séjour invalide",
-      "invalidDurationText": "Votre séjour doit être exactement de 4 jours. Veuillez ajuster vos dates.",
+      "invalidDurationText": "Votre séjour doit être exactement de 4 jours. Veuillez ajuster vos dates",
       "confirmButton": "OK"
     }
   },
@@ -37,7 +37,7 @@
   "healthProgram": {
     "title": "Dakhla is calling… Êtes-vous prêts à recharger vos batteries ?",
     "title2": "Un sanctuaire entre désert doré, lagune turquoise et lumière sacrée",
-    "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne. Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante."
+    "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne. Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante"
   },
   "about": {
     "title": "Pour qui est ce séjour ?",
@@ -64,14 +64,14 @@
     "days": {
       "1": {
         "title": "Accueil personnalisé",
-        "description": "Installation en douceur pour commencer votre parenthèse bien-être. Prenez le temps de vous détendre et de vous recentrer, loin du rythme quotidien.",
+        "description": "Installation en douceur pour commencer votre parenthèse bien-être. Prenez le temps de vous détendre et de vous recentrer, loin du rythme quotidien",
         "activities": [],
         "objective": "Ancrage, respiration, ouverture du corps et de l'esprit.",
         "ctaText": "JE CHOISIS DE ME RÉGÉNÉRER"
       },
       "2": {
         "title": "Vitalité & Détente sensorielle",
-        "description": "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins.",
+        "description": "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins",
         "activities": [
           "Bol d'Air Jacquier",
           "Piscine thermale",
@@ -286,7 +286,7 @@
   },
   "ProgrammeFonctionne": {
     "title": " Pourquoi ce programme fonctionne",
-    "title2": " Ce que vous allez vraiment ressentir",
+    "title2": " CE QUE VOUS ALLEZ VRAIMENT RESSENTIR",
     "points": [
       "Oxygénation intérieure & peau rayonnante",
       "Corps léger, tensions relâchées",
@@ -346,7 +346,7 @@
       "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
       "title2": "ÉVASION HOLISTIQUE À DAKHLA",
       "description": "Une cure puissante et progressive, conçue pour un reset profond",
-      "description2": "Une cure premium au bord de l’Atlantique.",
+      "description2": "Une cure premium au bord de l’Atlantique",
       "duration": "Durée",
       "days": "5 Nuits",
       "callButton": " Je veux vivre  l’expérience",
@@ -457,7 +457,7 @@
     },
     "ProgrammeFonctionne": {
       "title": " Pourquoi ce programme fonctionne",
-      "title2": " Ce que vous allez vraiment ressentir",
+      "title2": " CE QUE VOUS ALLEZ VRAIMENT RESSENTIR",
       "points": [
         "Une sensation de vide libérateur dans la tête et dans le ventre",
         "Un système nerveux apaisé, un sommeil réparateur, un retour à l’ancrage",
@@ -856,7 +856,7 @@
     },
     "ProgrammeFonctionne": {
       "title": " Pourquoi cette cure fonctionne vraiment",
-      "title2": " Ce que vous allez vraiment ressentir",
+      "title2": " CE QUE VOUS ALLEZ VRAIMENT RESSENTIR",
       "points": [
         "Vous suivez une logique corporelle et émotionnelle intelligente.",
         "Chaque jour est structuré pour un effet précis (drainage, réparation, intégration).",

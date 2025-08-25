@@ -1,4 +1,3 @@
-// components/RewardsSection.tsx
 import Image from 'next/image';
 import React from 'react';
 
@@ -16,7 +15,7 @@ export function RewardsSection() {
   return (
     <section id="rewards" className="bg-gray-50 py-1 md:py-12">
       <div className="mx-auto max-w-5xl px-4">
-        <h2 className="block pb-4 text-center text-4xl text-gray-800 md:hidden">LATEST AWARDS</h2>
+        <h2 className="block pb-4 text-center text-3xl text-gray-800 md:hidden">LATEST AWARDS</h2>
 
         {/* Top row (2 logos) */}
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-20">
