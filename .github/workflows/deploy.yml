@@ -1,0 +1,42 @@
+name: Deploy to CloudPanel
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Deploy to CloudPanel Server
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: 95.216.6.6
+        username: offer.dakhlaclub
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: 22
+        script: |
+          # Navigate to project directory
+          cd /home/dakhlaclub-offer/htdocs/offer.dakhlaclub.com
+          
+          # Pull latest changes
+          git pull origin main
+          
+          # Install dependencies
+          npm ci --production
+          
+          # Build the application
+          npm run build
+          
+          # Restart PM2 process
+          pm2 restart offer-dakhlaclub || pm2 start npm --name "offer-dakhlaclub" -- start
+          pm2 save
+          
+    - name: Deployment notification
+      if: success()
+      run: echo "Deployment completed successfully"
+      
+    - name: Deployment failed
+      if: failure()
+      run: echo "Deployment failed"
