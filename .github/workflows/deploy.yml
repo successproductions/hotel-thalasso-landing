@@ -13,7 +13,7 @@ jobs:
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: 95.216.6.6
-        username: offer.dakhlaclub
+        username: dakhlaclub-offer  
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           export PATH="$HOME/.nvm/versions/node/$(ls $HOME/.nvm/versions/node/ | tail -1)/bin:$PATH"
