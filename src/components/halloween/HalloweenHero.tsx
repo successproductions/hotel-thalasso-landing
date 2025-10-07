@@ -12,6 +12,7 @@ export default function HalloweenHero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!heroRef.current || !textRef.current) return;
@@ -41,6 +42,18 @@ export default function HalloweenHero() {
           ease: 'back.out(1.7)',
         }
       );
+
+      // Image animation from right
+      gsap.fromTo(
+        imageRef.current,
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+        }
+      );
     }, heroRef);
 
     return () => ctx.revert();
@@ -56,51 +69,44 @@ export default function HalloweenHero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center py-8 bg-white"
     >
-      {/* Background Image - Mobile */}
-      <div className="absolute inset-0 w-full h-full lg:hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full">
         <Image
-          src="/images/halloweenHeroSectionMobile.png"
-          alt="Halloween Hero Background Mobile"
+          src="/images/hallowenn/1107622.png"
+          alt="Halloween Background"
           fill
-          className="object-cover object-center"
-          priority
-          quality={100}
-        />
-      </div>
-
-      {/* Background Image - Desktop */}
-      <div className="absolute inset-0 w-full h-full hidden lg:block">
-        <Image
-          src="/images/halloweenHeroSection.png"
-          alt="Halloween Hero Background"
-          fill
-          className="object-cover object-center"
+          className="object-cover"
           priority
           quality={100}
         />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
             {/* Left Content */}
-            <div ref={textRef} className="space-y-6">
+            <div ref={textRef} className="space-y-6 lg:col-span-2">
               <h1
-                className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-500 drop-shadow-lg"
-                style={{ fontFamily: 'Cinzel, serif' }}
+                className="text-5xl  md:text-6xl lg:text-7xl font-normal text-transparent bg-clip-text drop-shadow-lg"
+                style={{
+                  fontFamily: 'var(--font-creepster)',
+                  background: 'linear-gradient(to right, #5ea7aa, #5ea7aa, #5ea7aa)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
               >
                 Hello,
                 <br />
-                Halloween!
+                Halloween !
               </h1>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 drop-shadow-md" style={{ fontFamily: 'Cinzel, serif' }}>
-                Séjour Exceptionnel!
+              <h2 className="text-3xl md:text-4xl font-normal drop-shadow-md" style={{ fontFamily: 'var(--font-creepster)', color: '#5ea7aa' }}>
+                Séjour Exceptionnel
               </h2>
 
-              <p className="text-gray-800 text-lg leading-relaxed max-w-md drop-shadow-sm" style={{ fontFamily: 'Georgia, serif' }}>
+              <p className="text-white text-lg leading-relaxed max-w-md" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>
                 Vivez une expérience unique entre frissons et détente à Dakhla Club.
                 Soirée costumée, dîner thématique, animations et spa face à la lagune.
               </p>
@@ -108,24 +114,34 @@ export default function HalloweenHero() {
               <button
                 ref={buttonRef}
                 onClick={scrollToForm}
-                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 border-orange-500 text-orange-600 font-bold text-lg rounded-md overflow-hidden transition-all duration-300 hover:text-white shadow-lg"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 font-bold text-lg rounded-md overflow-hidden transition-all duration-300 hover:text-white shadow-lg"
+                style={{ borderColor: '#84bbca', color: '#84bbca' }}
               >
-                <span className="relative z-10 flex items-center gap-3">
-                  <span style={{ fontFamily: 'Cinzel, serif' }}>RÉSERVER MAINTENANT</span>
+                <span className="relative z-10 flex items-center gap-3 hover:text-white">
+                  <span style={{ fontFamily: 'var(--font-creepster)' }}>RÉSERVER MAINTENANT</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
+                <div className="absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" style={{ background: 'linear-gradient(to right, #5ea7aa , #a0d2de)' }} />
               </button>
 
               <div className="pt-4">
-                <p className="text-orange-600 text-sm font-semibold uppercase tracking-wider drop-shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-wider" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#5ea7aa' }}>
                   Du 30 Octobre au 2 Novembre 2025
                 </p>
               </div>
             </div>
 
-            {/* Right side - empty to show background image */}
-            <div className="hidden lg:block"></div>
+            {/* Right side - Image */}
+            <div ref={imageRef} className="flex justify-center items-center lg:col-span-3">
+              <Image
+                src="/images/imagehalloween.png"
+                alt="Halloween Dakhla Club"
+                width={1200}
+                height={1200}
+                className="w-[90%] h-auto scale-125"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

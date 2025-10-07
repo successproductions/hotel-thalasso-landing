@@ -79,7 +79,7 @@ export default function HalloweenOffer() {
       Icon: UtensilsCrossed,
       title: 'Dîner effrayant & menu thématique',
       description: 'Savourez un menu spécial Halloween préparé par nos chefs',
-      image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80',
+      image: '/images/Restaurant.jpg',
     },
     {
       Icon: Music,
@@ -91,52 +91,62 @@ export default function HalloweenOffer() {
       Icon: Trophy,
       title: 'Concours de costumes & prix',
       description: 'Participez au concours et gagnez des prix incroyables',
-      image: 'https://images.unsplash.com/photo-1509715513011-e394f0cb20c4?w=400&q=80',
+      image: '/images/1.jpg',
     },
     {
       Icon: Smile,
       title: 'Activités & maquillage enfants',
       description: 'Animations spéciales et maquillage pour les plus jeunes',
-      image: 'https://images.unsplash.com/photo-1530103043960-ef38714abb15?w=400&q=80',
+      image: '/images/3.jpg',
     },
     {
       Icon: Sparkles,
       title: 'Massage relaxant post-frissons',
       description: 'Détendez-vous avec un massage à 500 DHS seulement',
-      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80',
+      image: '/images/Salle-de-massage.png',
     },
     {
       Icon: Gift,
       title: '500 DHS offerts au Spa Shop',
       description: 'Un bon d\'achat de 500 DHS à utiliser dans notre boutique spa',
-      image: 'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=400&q=80',
+      image: '/images/2.jpg',
     },
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-white"
+      className="py-2 bg-white"
     >
       <div className="container mx-auto px-4">
         <h2
           ref={titleRef}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-16 text-gray-800"
-          style={{ fontFamily: 'Cinzel, serif' }}
+          className="text-4xl md:text-5xl lg:text-6xl font-normal text-center mb-8 text-transparent bg-clip-text"
+          style={{
+            fontFamily: 'var(--font-creepster)',
+            background: 'linear-gradient(to right, #5ea7aa, #a0d2de, #5ea7aa)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}
         >
           Offre Halloween
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {offers.map((offer, index) => {
-            const IconComponent = offer.Icon;
             return (
               <div
                 key={index}
                 ref={(el) => {
                   cardsRef.current[index] = el;
                 }}
-                className="bg-gradient-to-br from-orange-500/10 to-purple-600/10 backdrop-blur-sm border-2 border-orange-500/30 rounded-2xl overflow-hidden hover:border-orange-400 transition-all duration-300 cursor-pointer"
+                className="backdrop-blur-sm border-2 rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer"
+                style={{
+                  background: 'linear-gradient(to bottom right, rgba(132, 187, 202, 0.1), rgba(132, 187, 202, 0.1))',
+                  borderColor: 'rgba(132, 187, 202, 0.3)'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.borderColor = '#5ea7aa'}
+                onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(132, 187, 202, 0.3)'}
               >
                 <div className="relative h-48 w-full overflow-hidden">
                   <Image
@@ -145,16 +155,14 @@ export default function HalloweenOffer() {
                     fill
                     className="object-cover opacity-70"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-                    <IconComponent className="w-16 h-16 text-orange-400" strokeWidth={1.5} />
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-orange-300 mb-3 text-center">
+                  <h3 className="text-xl font-normal mb-3 text-center" style={{ fontFamily: 'var(--font-creepster)', color: '#5ea7aa' }}>
                     {offer.title}
                   </h3>
-                  <p className="text-gray-300 text-center text-sm">{offer.description}</p>
+                  <p className="text-gray-700 text-center text-sm" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>{offer.description}</p>
                 </div>
               </div>
             );

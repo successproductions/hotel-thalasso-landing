@@ -80,39 +80,34 @@ export default function HalloweenLimitedOffer() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-6 md:py-9 relative overflow-hidden"
     >
-      {/* Halloween Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-16 h-16">
-          <Image src="/images/pumpkinIcon.png" alt="" fill className="object-contain" />
-        </div>
-        <div className="absolute top-20 right-20 text-6xl">👻</div>
-        <div className="absolute bottom-20 left-20 text-6xl">🦇</div>
-        <div className="absolute bottom-10 right-10 w-16 h-16">
-          <Image src="/images/pumpkinIcon.png" alt="" fill className="object-contain" />
-        </div>
-        <div className="absolute top-1/2 left-1/4 text-6xl">🕷️</div>
-        <div className="absolute top-1/3 right-1/3 text-6xl">🦇</div>
-      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Title Section */}
           <div className="text-center mb-12">
             <div className="inline-block mb-6 relative">
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-orange-600 to-red-600"
+              {/* Glow effect */}
+              <div className="absolute inset-0 blur-3xl opacity-30" style={{ background: 'linear-gradient(to right, #84bbca, #84bbca, #84bbca)' }}></div>
+
+              <h2 className="relative text-5xl md:text-6xl lg:text-7xl font-normal text-transparent bg-clip-text flex items-center gap-4 justify-center"
                   style={{
-                    fontFamily: 'Cinzel, serif',
-                    textShadow: '2px 2px 4px rgba(0,0,0,0.1)'
+                    fontFamily: 'var(--font-creepster)',
+                    background: 'linear-gradient(to right, #84bbca, #a0d2de, #84bbca)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    filter: 'drop-shadow(0 0 20px rgba(132, 187, 202, 0.6))'
                   }}>
-                🎃 Offre Spéciale Halloween 🎃
+                <Image src="/images/pumpkinIcon.png" alt="" width={60} height={60} className="inline-block drop-shadow-[0_0_15px_rgba(234,179,8,0.8)]" />
+                Offre Spéciale Halloween
+                <Image src="/images/pumpkinIcon.png" alt="" width={60} height={60} className="inline-block drop-shadow-[0_0_15px_rgba(234,179,8,0.8)]" />
               </h2>
             </div>
-            <p className="text-xl md:text-2xl text-gray-700 font-semibold mb-2" style={{ fontFamily: 'Georgia, serif' }}>
+            <p className="text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>
               Du 30 Octobre au 2 Novembre 2025
             </p>
-            <div className="inline-block bg-black text-orange-400 px-6 py-2 rounded-lg border-2 border-orange-500 animate-pulse">
+            <div className="inline-block bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-3 rounded-full border-2 border-yellow-400 shadow-lg shadow-orange-500/50 animate-pulse">
               <span className="font-bold text-lg">⚠️ Places Limitées ⚠️</span>
             </div>
           </div>
@@ -123,38 +118,44 @@ export default function HalloweenLimitedOffer() {
             className="relative mb-12"
           >
             {/* Spooky Border */}
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-purple-600 to-orange-500 rounded-3xl opacity-20 blur-xl"></div>
+            <div className="absolute inset-0 rounded-3xl opacity-30 blur-2xl" style={{ background: 'linear-gradient(to right, #84bbca, #84bbca, #84bbca)' }}></div>
 
-            <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-orange-500"
-                 style={{
-                   backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='%23fff'/%3E%3Cpath d='M30 30L0 0h60L30 30z' fill='%23fef3c7' fill-opacity='0.2'/%3E%3C/svg%3E")`,
-                   backgroundSize: '30px 30px'
-                 }}>
+            <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border-4" style={{ borderColor: 'rgba(132, 187, 202, 0.5)' }}>
               <div className="text-center mb-8">
-                <p className="text-2xl md:text-3xl font-bold text-gray-800 mb-2" style={{ fontFamily: 'Cinzel, serif' }}>
+                <p className="text-2xl md:text-3xl font-normal text-transparent bg-clip-text mb-2"
+                   style={{
+                     fontFamily: 'var(--font-creepster)',
+                     background: 'linear-gradient(to right, #84bbca, #a0d2de, #84bbca)',
+                     WebkitBackgroundClip: 'text',
+                     WebkitTextFillColor: 'transparent',
+                     filter: 'drop-shadow(0 0 15px rgba(132, 187, 202, 0.5))'
+                   }}>
                   Le Compte à Rebours Commence...
                 </p>
-                <p className="text-orange-600 font-semibold">Ne ratez pas cette occasion unique !</p>
+                <p className="font-semibold" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>Ne ratez pas cette occasion unique !</p>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
                 {[
-                  { value: timeLeft.days, label: 'Jours', emoji: '🎃' },
-                  { value: timeLeft.hours, label: 'Heures', emoji: '👻' },
-                  { value: timeLeft.minutes, label: 'Minutes', emoji: '🦇' },
-                  { value: timeLeft.seconds, label: 'Secondes', emoji: '🕷️' },
+                  { value: timeLeft.days, label: 'Jours', icon: '/images/pumpkinIcon.png' },
+                  { value: timeLeft.hours, label: 'Heures', icon: '/images/hallowenn/gostIcon.png' },
+                  { value: timeLeft.minutes, label: 'Minutes', icon: '/images/hallowenn/batIcon.png' },
+                  { value: timeLeft.seconds, label: 'Secondes', icon: '/images/hallowenn/spider.png' },
                 ].map((item, index) => (
                   <div
                     key={index}
                     className="relative group"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-purple-600 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
-                    <div className="relative bg-white m-1 rounded-xl p-4 md:p-6 border-2 border-orange-300">
-                      <div className="text-2xl mb-2">{item.emoji}</div>
-                      <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">
+                    <div className="absolute inset-0 rounded-2xl transform group-hover:scale-105 transition-transform duration-300 opacity-50" style={{ background: 'linear-gradient(to bottom right, #84bbca, #84bbca)' }}></div>
+                    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 m-1 rounded-xl p-4 md:p-6 border-2 shadow-xl" style={{ borderColor: 'rgba(132, 187, 202, 0.5)' }}>
+                      <div className="relative w-10 h-10 mx-auto mb-2">
+                        <Image src={item.icon} alt="" fill className="object-contain" />
+                      </div>
+                      <div className="text-4xl md:text-5xl text-center font-bold mb-2"
+                           style={{ color: '#84bbca', textShadow: '0 0 10px rgba(132, 187, 202, 0.5)' }}>
                         {String(item.value).padStart(2, '0')}
                       </div>
-                      <div className="text-xs md:text-sm text-gray-700 uppercase font-semibold">
+                      <div className="text-xs md:text-sm text-center uppercase font-semibold" style={{ color: '#84bbca' }}>
                         {item.label}
                       </div>
                     </div>
@@ -171,27 +172,49 @@ export default function HalloweenLimitedOffer() {
               { emoji: '🍽️', title: 'Menu Thématique', desc: 'Dîner Spécial' },
               { emoji: '🎁', title: 'Cadeaux Offerts', desc: '500 DHS Spa' }
             ].map((item, index) => (
-              <div key={index} className="bg-gradient-to-br from-orange-50 to-purple-50 rounded-2xl p-6 border-2 border-orange-300 hover:border-orange-500 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                <div className="text-5xl mb-4 text-center">{item.emoji}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 text-center" style={{ fontFamily: 'Cinzel, serif' }}>
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-center">{item.desc}</p>
+              <div key={index} className="relative group rounded-2xl p-6 border-2 transition-all duration-300 transform hover:scale-105 shadow-lg bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm"
+                   style={{
+                     borderColor: 'rgba(132, 187, 202, 0.5)',
+                   }}
+                   onMouseEnter={(e) => e.currentTarget.style.borderColor = '#84bbca'}
+                   onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(132, 187, 202, 0.5)'}>
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(to bottom right, rgba(132, 187, 202, 0.1), rgba(132, 187, 202, 0.1))' }}></div>
+                <div className="relative">
+                  <div className="text-5xl mb-4 text-center">{item.emoji}</div>
+                  <h3 className="text-xl font-normal mb-2 text-center"
+                      style={{
+                        fontFamily: 'var(--font-creepster)',
+                        color: '#84bbca',
+                        textShadow: '0 0 10px rgba(132, 187, 202, 0.3)'
+                      }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-center" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="text-center">
-            <button
-              onClick={scrollToForm}
-              className="relative group bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold text-xl md:text-2xl px-12 py-6 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 border-4 border-orange-400"
-              style={{ fontFamily: 'Cinzel, serif' }}
-            >
-              <span className="relative z-10">🎃 Réservez Votre Séjour Halloween 🎃</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </button>
-            <p className="mt-6 text-gray-600 text-lg font-semibold">
+            <div className="relative inline-block group">
+              <div className="absolute -inset-2 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{ background: 'linear-gradient(to right, #84bbca, #84bbca, #84bbca)' }}></div>
+              <button
+                onClick={scrollToForm}
+                className="relative text-white font-normal text-xl md:text-2xl px-12 py-6 rounded-full shadow-2xl transform transition-all duration-300 border-2 hover:brightness-110"
+                style={{
+                  fontFamily: 'var(--font-creepster)',
+                  textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                  background: 'linear-gradient(to right, #84bbca, #a0d2de)',
+                  borderColor: '#a0d2de'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+              >
+                🎃 Réservez Votre Séjour Halloween 🎃
+              </button>
+            </div>
+            <p className="mt-6 text-lg font-semibold" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>
               ⏰ Offre limitée • 🔒 Paiement sécurisé • ⚡ Confirmation immédiate
             </p>
           </div>

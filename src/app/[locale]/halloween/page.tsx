@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-// import Header from '@/components/Header';
-// import { Footer } from '@/components/Footer';
+import HalloweenHeader from '@/components/halloween/HalloweenHeader';
+import HalloweenFooter from '@/components/halloween/HalloweenFooter';
 import HalloweenHero from '@/components/halloween/HalloweenHero';
 import HalloweenOffer from '@/components/halloween/HalloweenOffer';
 import HalloweenWhy from '@/components/halloween/HalloweenWhy';
@@ -93,16 +93,30 @@ export async function generateMetadata({
   };
 }
 
-export default function HalloweenPage() {
+export default async function HalloweenPage({
+  params,
+}: {
+  params: Promise<{ locale: 'fr' | 'en' }>;
+}) {
+  const { locale } = await params;
+
   return (
-    <main className="bg-black">
-      {/* <Header /> */}
-      <HalloweenHero />
-      <HalloweenLimitedOffer />
-      <HalloweenOffer />
-      <HalloweenWhy />
-      <HalloweenReservation />
-      {/* <Footer /> */}
+    <>
+      <HalloweenHeader locale={locale} />
+      <main className="bg-white">
+        <div id="hero">
+          <HalloweenHero />
+        </div>
+        <HalloweenLimitedOffer />
+        <div id="offre">
+          <HalloweenOffer />
+        </div>
+        <div id="about">
+          <HalloweenWhy />
+        </div>
+        <HalloweenReservation />
+      </main>
+      <HalloweenFooter />
 
       {/* HALLOWEEN STRUCTURED DATA */}
       <script
@@ -155,6 +169,6 @@ export default function HalloweenPage() {
           }),
         }}
       />
-    </main>
+    </>
   );
 }

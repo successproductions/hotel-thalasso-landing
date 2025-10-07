@@ -16,10 +16,25 @@ export default function HalloweenWhy() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Image animation
+      // Content animation from left
+      gsap.fromTo(
+        contentRef.current,
+        { opacity: 0, x: -100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: contentRef.current,
+            start: 'top 80%',
+          },
+        }
+      );
+
+      // Image animation from right
       gsap.fromTo(
         imageRef.current,
-        { opacity: 0, x: -100, scale: 0.8 },
+        { opacity: 0, x: 100, scale: 0.8 },
         {
           opacity: 1,
           x: 0,
@@ -31,21 +46,6 @@ export default function HalloweenWhy() {
           },
         }
       );
-
-      // Content animation
-      gsap.fromTo(
-        contentRef.current,
-        { opacity: 0, x: 100 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          scrollTrigger: {
-            trigger: contentRef.current,
-            start: 'top 80%',
-          },
-        }
-      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -53,15 +53,15 @@ export default function HalloweenWhy() {
 
   const reasons = [
     {
-      icon: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=100&q=80',
+      icon: '/images/1.jpg',
       text: 'Séjour All Inclusive au bord de la lagune',
     },
     {
-      icon: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=100&q=80',
+      icon: '/images/5.jpg',
       text: 'Atmosphère unique, festive et familiale',
     },
     {
-      icon: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=100&q=80',
+      icon: '/images/8.jpg',
       text: 'Expérience combinant détente & animations',
     },
   ];
@@ -69,32 +69,19 @@ export default function HalloweenWhy() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-8 bg-white"
     >
-
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-          {/* Image Section */}
-          <div ref={imageRef} className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-orange-500/50">
-              <img
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80"
-                alt="Dakhla Club Lagoon"
-                className="w-full h-[500px] object-cover"
-              />
-            </div>
-            {/* Floating badge */}
-            <div className="absolute -top-6 -right-6 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-full p-8 shadow-2xl animate-pulse border-4 border-orange-300">
-              <div className="text-center">
-                <div className="text-xl font-bold" style={{ fontFamily: 'Cinzel, serif' }}>HALLOWEEN</div>
-                <div className="text-2xl font-bold mt-1">2025</div>
-              </div>
-            </div>
-          </div>
-
           {/* Content Section */}
           <div ref={contentRef} className="space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800" style={{ fontFamily: 'Cinzel, serif' }}>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-transparent bg-clip-text"
+                style={{
+                  fontFamily: 'var(--font-creepster)',
+                  background: 'linear-gradient(to right, #5ea7aa, #a0d2de, #5ea7aa)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}>
               Pourquoi choisir Dakhla Club ?
             </h2>
 
@@ -102,7 +89,13 @@ export default function HalloweenWhy() {
               {reasons.map((reason, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 bg-orange-50 border border-orange-300 rounded-xl p-6 hover:border-orange-500 transition-all duration-300 shadow-sm"
+                  className="flex items-start gap-4 border rounded-xl p-6 transition-all duration-300 shadow-sm"
+                  style={{
+                    backgroundColor: 'rgba(132, 187, 202, 0.05)',
+                    borderColor: 'rgba(132, 187, 202, 0.3)'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.borderColor = '#5ea7aa'}
+                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(132, 187, 202, 0.3)'}
                 >
                   <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden">
                     <Image
@@ -112,14 +105,25 @@ export default function HalloweenWhy() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="text-lg text-gray-800 pt-2" style={{ fontFamily: 'Georgia, serif' }}>{reason.text}</p>
+                  <p className="text-lg text-gray-800 pt-2" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>{reason.text}</p>
                 </div>
               ))}
             </div>
 
-            <p className="text-gray-600 italic text-center mt-8 text-lg" style={{ fontFamily: 'Georgia, serif' }}>
+            <p className="text-gray-600 italic text-center mt-8 text-lg" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>
               &ldquo;Une expérience magique entre frissons et détente, dans le cadre exceptionnel de Dakhla&rdquo;
             </p>
+          </div>
+
+          {/* Image Section */}
+          <div ref={imageRef} className="relative">
+            <Image
+              src="/images/hallowenn/DSC09978-Edit.png"
+              alt="Halloween Dakhla Club"
+              width={800}
+              height={800}
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
       </div>

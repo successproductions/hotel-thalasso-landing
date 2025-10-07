@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider } from 'next-themes';
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Playfair_Display, Cinzel } from 'next/font/google';
+import { Playfair_Display, Cinzel, Creepster } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from 'next/script';
@@ -19,6 +19,13 @@ const cinzel = Cinzel({
   weight: ['400', '700'],
   display: 'swap',
   variable: '--font-cinzel',
+});
+
+const creepster = Creepster({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-creepster',
 });
 
 export const viewport = {
@@ -174,7 +181,7 @@ export default async function LocaleLayout({
         />
       </head>
 
-      <body className={`${playfair.className} ${cinzel.variable}`}>
+      <body className={`${playfair.className} ${cinzel.variable} ${creepster.variable}`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
