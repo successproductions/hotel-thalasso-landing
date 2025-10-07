@@ -153,9 +153,9 @@ export default function HalloweenOffer() {
                     src={offer.image}
                     alt={offer.title}
                     fill
-                    className="object-cover opacity-70"
+                    className="object-cover "
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+
 
                 </div>
                 <div className="p-6">

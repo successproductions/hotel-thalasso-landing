@@ -58,7 +58,7 @@ export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
               alt="Dakhla Club"
               width={96}
               height={56}
-              className="w-24 h-14"
+              className="w-32 h-14"
               quality={100}
               priority
             />

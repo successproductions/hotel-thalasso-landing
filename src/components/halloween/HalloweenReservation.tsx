@@ -57,20 +57,37 @@ export default function HalloweenReservation() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      alert(t('reservation.successMessage') || 'Merci pour votre réservation Halloween ! Nous vous contactons sous peu.');
-      setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        countryCode: 'MA',
-        phoneNumber: '',
-        checkIn: '2025-10-30',
-        checkOut: '2025-11-02',
-        guests: '2',
+    try {
+      const response = await fetch('/api/halloween-reservation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 2000);
+
+      const result = await response.json();
+
+      if (result.status === 'success') {
+        alert(t('reservation.successMessage') || 'Merci pour votre réservation Halloween ! Nous vous contactons sous peu.');
+        setFormData({
+          name: '',
+          email: '',
+          countryCode: 'MA',
+          phoneNumber: '',
+          checkIn: '2025-10-30',
+          checkOut: '2025-11-02',
+          guests: '2',
+        });
+      } else {
+        alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

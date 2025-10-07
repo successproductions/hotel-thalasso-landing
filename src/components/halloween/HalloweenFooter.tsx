@@ -68,7 +68,7 @@ export default function HalloweenFooter() {
             </h4>
             <div className="flex gap-4">
               <a
-                href="https://www.facebook.com/dakhlaclub"
+                href="https://www.facebook.com/DakhlaClub/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
@@ -79,7 +79,7 @@ export default function HalloweenFooter() {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://www.instagram.com/dakhlaclub"
+                href="https://www.instagram.com/hoteldakhlaclub/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
@@ -90,7 +90,7 @@ export default function HalloweenFooter() {
                 <Instagram size={20} />
               </a>
               <a
-                href="https://www.youtube.com/@dakhlaclub"
+                href="https://youtube.com/@dakhlaclub1745?si=D_TKjBar-WzAMcnY"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
