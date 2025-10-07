@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslations } from 'next-intl';
+import Swal from 'sweetalert2';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,9 +25,7 @@ export default function HalloweenReservation() {
 
   useEffect(() => {
     if (!sectionRef.current) return;
-
     const ctx = gsap.context(() => {
-      // Form animation
       gsap.fromTo(
         formRef.current,
         { opacity: 0, y: 50, scale: 0.9 },
@@ -42,7 +41,6 @@ export default function HalloweenReservation() {
         }
       );
     }, sectionRef);
-
     return () => ctx.revert();
   }, []);
 
@@ -53,23 +51,42 @@ export default function HalloweenReservation() {
     });
   };
 
+  // Regex validators
+  const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{2,50}$/;
+  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const phoneRegex = /^\d{7,15}$/;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Validate fields
+    if (!nameRegex.test(formData.name)) {
+      Swal.fire('Nom invalide', 'Veuillez saisir un nom valide.', 'error');
+      setIsSubmitting(false);
+      return;
+    }
+    if (!emailRegex.test(formData.email)) {
+      Swal.fire('Email invalide', 'Veuillez saisir une adresse email valide.', 'error');
+      setIsSubmitting(false);
+      return;
+    }
+    if (!phoneRegex.test(formData.phoneNumber)) {
+      Swal.fire('Numéro de téléphone invalide', 'Entrez au moins 7 chiffres et maximum 15.', 'error');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       const response = await fetch('/api/halloween-reservation', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
       const result = await response.json();
 
       if (result.status === 'success') {
-        alert(t('reservation.successMessage') || 'Merci pour votre réservation Halloween ! Nous vous contactons sous peu.');
+        Swal.fire('Réservation soumise !', '', 'success');
         setFormData({
           name: '',
           email: '',
@@ -80,11 +97,11 @@ export default function HalloweenReservation() {
           guests: '2',
         });
       } else {
-        alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.');
+        Swal.fire('Erreur', 'Une erreur est survenue. Veuillez réessayer ou nous contacter.', 'error');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.');
+      Swal.fire('Erreur', 'Une erreur est survenue. Veuillez réessayer ou nous contacter.', 'error');
     } finally {
       setIsSubmitting(false);
     }
@@ -96,7 +113,6 @@ export default function HalloweenReservation() {
       id="reservation-form"
       className="py-6 bg-white relative overflow-hidden"
     >
-
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Title */}
