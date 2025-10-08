@@ -12,7 +12,6 @@
       "book": "RÉSERVER"
     }
   },
-
   "home": {
     "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
     "title2": "ÉVASION HOLISTIQUE À DAKHLA",
@@ -50,7 +49,6 @@
       "Vous voulez vous offrir un soin holistique complet sans culpabilité"
     ]
   },
-
   "programSection": {
     "header": {
       "title": "PROGRAMME",
@@ -141,7 +139,6 @@
       }
     }
   },
-
   "faq": {
     "title": "FAQ",
     "contact": {
@@ -236,7 +233,6 @@
     "testimonial4": "Dakhla offre un cadre unique pour se reconnecter avec soi-même.",
     "testimonial5": "Je sens que ma peau est bien hydratée"
   },
-
   "introduction": {
     "whyTitle": "Pourquoi cette cure ?",
     "headlineLine1": "Une reconnexion à soi",
@@ -244,14 +240,21 @@
     "description": "Une escapade de 3 jours pensée pour vous reconnecter à votre corps, relancer votre énergie vitale et retrouver votre clarté mentale. Une bulle de douceur dans un cadre naturel unique entre désert et océan…",
     "imageAlt": "Femme en détente au spa à Dakhla"
   },
-
   "rewards": {
     "title": "NOUS AVONS ÉTÉ PRIMÉS PAR",
     "logos": {
-      "tripadvisor": { "alt": "TripAdvisor" },
-      "tripdotcom": { "alt": "Trip.com" },
-      "spaAward": { "alt": "Spa Award" },
-      "kayakBadge": { "alt": "Badge Kayak" }
+      "tripadvisor": {
+        "alt": "TripAdvisor"
+      },
+      "tripdotcom": {
+        "alt": "Trip.com"
+      },
+      "spaAward": {
+        "alt": "Spa Award"
+      },
+      "kayakBadge": {
+        "alt": "Badge Kayak"
+      }
     }
   },
   "footer": {
@@ -295,7 +298,10 @@
       "Silhouette affinée et drainée naturellement",
       "Clarté mentale & énergie stable"
     ],
-    "points1": ["Thérapeutes certifiés et attentionnés", "Un environnement qui soigne à lui seul"],
+    "points1": [
+      "Thérapeutes certifiés et attentionnés",
+      "Un environnement qui soigne à lui seul"
+    ],
     "points2": [
       "Synergie entre soins modernes & rituels ancestraux",
       "Enchaînement conçu sur une logique physiologique & émotionnelle"
@@ -304,43 +310,155 @@
   "servicesTable": {
     "header": "PROGRAMME ÉVASION HOLISTIQUE – DAKHLA",
     "servicesLabel": "Prestations",
-    "programs": ["Jour 1", "Jour 2", "Jour 3", "Jour 4"],
+    "programs": [
+      "Jour 1",
+      "Jour 2",
+      "Jour 3",
+      "Jour 4"
+    ],
     "services": [
-      { "title": "Accueil personnalisé" },
-      { "title": "Infusion détox" },
-      { "title": "Installation bungalow vue nature/océan" },
-      { "title": "Bol d’Air Jacquier" },
-      { "title": "Piscine thermale" },
-      { "title": "Sauna purifiant" },
-      { "title": "Bain hydromassant" },
-      { "title": "Enveloppement aux algues" },
-      { "title": "Modelage sous affusion" },
-      { "title": "Douche à jet" },
-      { "title": "Bain au magnésium" },
-      { "title": "Cupping thérapie" },
-      { "title": "Hammam Secret du Désert" },
-      { "title": "Massage relaxant" }
+      {
+        "title": "Accueil personnalisé"
+      },
+      {
+        "title": "Infusion détox"
+      },
+      {
+        "title": "Installation bungalow vue nature/océan"
+      },
+      {
+        "title": "Bol d’Air Jacquier"
+      },
+      {
+        "title": "Piscine thermale"
+      },
+      {
+        "title": "Sauna purifiant"
+      },
+      {
+        "title": "Bain hydromassant"
+      },
+      {
+        "title": "Enveloppement aux algues"
+      },
+      {
+        "title": "Modelage sous affusion"
+      },
+      {
+        "title": "Douche à jet"
+      },
+      {
+        "title": "Bain au magnésium"
+      },
+      {
+        "title": "Cupping thérapie"
+      },
+      {
+        "title": "Hammam Secret du Désert"
+      },
+      {
+        "title": "Massage relaxant"
+      }
     ],
     "availability": {
-      "Accueil personnalisé": [1, 0, 0, 0],
-      "Infusion détox": [1, 0, 0, 0],
-      "Installation bungalow vue nature/océan": [1, 0, 0, 0],
-      "Bol d’Air Jacquier": [1, 1, 0, 1],
-      "Piscine thermale": [1, 1, 1, 1],
-      "Sauna purifiant": [0, 1, 0, 0],
-      "Bain hydromassant": [0, 1, 0, 0],
-      "Enveloppement aux algues": [0, 1, 0, 0],
-      "Modelage sous affusion": [0, 1, 0, 0],
-      "Douche à jet": [0, 0, 1, 0],
-      "Bain au magnésium": [0, 0, 1, 0],
-      "Cupping thérapie": [0, 0, 1, 0],
-      "Hammam Secret du Désert": [0, 0, 0, 1],
-      "Massage relaxant": [0, 0, 0, 1],
-      "Objectifs thérapeutiques": [1, 1, 1, 1],
-      "Bénéfices attendus": [1, 1, 1, 1]
+      "Accueil personnalisé": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "Infusion détox": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "Installation bungalow vue nature/océan": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "Bol d’Air Jacquier": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "Piscine thermale": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "Sauna purifiant": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "Bain hydromassant": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "Enveloppement aux algues": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "Modelage sous affusion": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "Douche à jet": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "Bain au magnésium": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "Cupping thérapie": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "Hammam Secret du Désert": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "Massage relaxant": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "Objectifs thérapeutiques": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "Bénéfices attendus": [
+        1,
+        1,
+        1,
+        1
+      ]
     }
   },
-
   "offer5": {
     "home": {
       "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
@@ -511,7 +629,6 @@
         }
       ]
     },
-
     "chatbot5": {
       "welcome": {
         "greeting": "👋 Bonjour ! Je suis votre assistant personnel pour l'**Évasion Holistique 5 Nuits** au Dakhla Club.",
@@ -577,7 +694,6 @@
           "contact": "📞 Votre nom et numéro de téléphone (format : Prénom Nom – 06xx xx xx xx)"
         }
       },
-
       "info": {
         "followUp": "Autres informations souhaitées ?",
         "options": {
@@ -589,7 +705,6 @@
         "title": "ℹ️ **Informations Pratiques - Évasion 5 Nuits**",
         "details": "**📍 Lieu :** Dakhla Club, Point de Dragon PK28\n**⏰ Durée :** 6 jours / 5 nuits\n**🏠 Hébergement :** Inclus en pension complète\n**🍽️ Repas :** Cuisine santé et détox\n**👥 Capacité :** Groupes de 2 à 8 personnes\n**📞 Contact :** +212 652 881 921"
       },
-
       "testimonials": {
         "title": "🌟 **Ce que disent nos clients :**",
         "reviews": "**Sarah, 34 ans :** *\"Les 7 jours ont littéralement changé ma vie. Je me sens complètement régénérée !\"*\n\n**Marc, 42 ans :** *\"Un programme exceptionnel sur 5 nuits. Les thérapeutes sont d'un professionnalisme remarquable.\"*\n\n**Fatima, 38 ans :** *\"J'ai retrouvé mon énergie et ma joie de vivre. Cette semaine de transformation est magique !\"*",
@@ -611,7 +726,6 @@
         "title": "🤝 **Parler avec un conseiller spécialisé**",
         "contact2": "📞 **Ligne directe**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Disponibilité**: Tous les jours de 9h à 20h\n⚡ **Réponse rapide**: WhatsApp < 2h • Email < 4h"
       },
-
       "faq": {
         "title": "❓ **Questions Fréquentes :**",
         "content": "**Q: Puis-je venir seul(e) ?**\nR: Absolument ! 40% de nos clients viennent seuls.\n\n**Q: Y a-t-il des contre-indications ?**\nR: Nous adaptons selon votre état de santé.\n\n**Q: Le transport est-il inclus ?**\nR: Navette aéroport disponible (supplément).\n\n**Q: Puis-je modifier mes dates ?**\nR: Oui, sous conditions selon disponibilités.",
@@ -634,7 +748,6 @@
         "pastDate": "❌ La date d'arrivée ne peut pas être dans le passé.",
         "chooseToday": "Veuillez choisir une date à partir d'aujourd'hui."
       },
-
       "summary": {
         "perfect": "✅ **Parfait {name} !**",
         "complete": "📋 **Récapitulatif complet :**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adulte{plural}\n🌙 5 nuits d'évasion holistique",
@@ -656,66 +769,287 @@
         "online": "En ligne • Répond rapidement"
       }
     },
-
     "servicesTable5": {
       "header": "PROGRAMME ÉVASION HOLISTIQUE 5 NUITS – DAKHLA",
       "servicesLabel": "Prestations",
-      "programs": ["Jour 1", "Jour 2", "Jour 3", "Jour 4", "Jour 5", "Jour 6"],
+      "programs": [
+        "Jour 1",
+        "Jour 2",
+        "Jour 3",
+        "Jour 4",
+        "Jour 5",
+        "Jour 6"
+      ],
       "services": [
-        { "title": "Accueil personnalisé" },
-        { "title": "Infusion d’ancrage" },
-        { "title": "Bungalow vue nature/océan" },
-        { "title": "Yoga doux au lever du soleil" },
-        { "title": "Sauna sec" },
-        { "title": "Piscine thermale chauffée" },
-        { "title": "Gommage détox au sel de l’Himalaya" },
-        { "title": "Hammam marocain Mille et Une Nuits" },
-        { "title": "Respiration & Yoga énergisant" },
-        { "title": "Bol d’Air Jacquier" },
-        { "title": "Douche à jet" },
-        { "title": "Bain hydromassant" },
-        { "title": "Enveloppement aux algues" },
-        { "title": "Modelage sous affusion" },
-        { "title": "Yoga méditatif" },
-        { "title": "Bain au magnésium" },
-        { "title": "Massage traditionnel profond" },
-        { "title": "Yoga énergisant" },
-        { "title": "Soin visage détox à la spiruline" },
-        { "title": "Cupping thérapie serviette chaude" },
-        { "title": "Manucure & pédicure" },
-        { "title": "Rituel de clôture" },
-        { "title": "Conseils d’intégration" },
-        { "title": "Carnet bien-être à emporter" }
+        {
+          "title": "Accueil personnalisé"
+        },
+        {
+          "title": "Infusion d’ancrage"
+        },
+        {
+          "title": "Bungalow vue nature/océan"
+        },
+        {
+          "title": "Yoga doux au lever du soleil"
+        },
+        {
+          "title": "Sauna sec"
+        },
+        {
+          "title": "Piscine thermale chauffée"
+        },
+        {
+          "title": "Gommage détox au sel de l’Himalaya"
+        },
+        {
+          "title": "Hammam marocain Mille et Une Nuits"
+        },
+        {
+          "title": "Respiration & Yoga énergisant"
+        },
+        {
+          "title": "Bol d’Air Jacquier"
+        },
+        {
+          "title": "Douche à jet"
+        },
+        {
+          "title": "Bain hydromassant"
+        },
+        {
+          "title": "Enveloppement aux algues"
+        },
+        {
+          "title": "Modelage sous affusion"
+        },
+        {
+          "title": "Yoga méditatif"
+        },
+        {
+          "title": "Bain au magnésium"
+        },
+        {
+          "title": "Massage traditionnel profond"
+        },
+        {
+          "title": "Yoga énergisant"
+        },
+        {
+          "title": "Soin visage détox à la spiruline"
+        },
+        {
+          "title": "Cupping thérapie serviette chaude"
+        },
+        {
+          "title": "Manucure & pédicure"
+        },
+        {
+          "title": "Rituel de clôture"
+        },
+        {
+          "title": "Conseils d’intégration"
+        },
+        {
+          "title": "Carnet bien-être à emporter"
+        }
       ],
       "availability": {
-        "Accueil personnalisé": [1, 0, 0, 0, 0, 0],
-        "Infusion d’ancrage": [1, 0, 0, 0, 0, 0],
-        "Bungalow vue nature/océan": [1, 0, 0, 0, 0, 0],
-        "Yoga doux au lever du soleil": [0, 1, 0, 0, 0, 0],
-        "Sauna sec": [0, 1, 0, 1, 0, 0],
-        "Piscine thermale chauffée": [0, 1, 1, 1, 0, 0],
-        "Gommage détox au sel de l’Himalaya": [0, 1, 0, 0, 0, 0],
-        "Hammam marocain Mille et Une Nuits": [0, 1, 0, 0, 0, 0],
-        "Respiration & Yoga énergisant": [0, 0, 1, 0, 0, 0],
-        "Bol d’Air Jacquier": [0, 0, 1, 1, 1, 0],
-        "Douche à jet": [0, 0, 1, 0, 0, 0],
-        "Bain hydromassant": [0, 0, 1, 0, 0, 0],
-        "Enveloppement aux algues": [0, 0, 1, 0, 0, 0],
-        "Modelage sous affusion": [0, 0, 1, 0, 0, 0],
-        "Yoga méditatif": [0, 0, 0, 1, 0, 0],
-        "Bain au magnésium": [0, 0, 0, 1, 0, 0],
-        "Massage traditionnel profond": [0, 0, 0, 1, 0, 0],
-        "Yoga énergisant": [0, 0, 0, 0, 1, 0],
-        "Soin visage détox à la spiruline": [0, 0, 0, 0, 1, 0],
-        "Cupping thérapie serviette chaude": [0, 0, 0, 0, 1, 0],
-        "Manucure & pédicure": [0, 0, 0, 0, 1, 0],
-        "Rituel de clôture": [0, 0, 0, 0, 0, 1],
-        "Conseils d’intégration": [0, 0, 0, 0, 0, 1],
-        "Carnet bien-être à emporter": [0, 0, 0, 0, 0, 1]
+        "Accueil personnalisé": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Infusion d’ancrage": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Bungalow vue nature/océan": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Yoga doux au lever du soleil": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Sauna sec": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Piscine thermale chauffée": [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "Gommage détox au sel de l’Himalaya": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Hammam marocain Mille et Une Nuits": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Respiration & Yoga énergisant": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Bol d’Air Jacquier": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Douche à jet": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Bain hydromassant": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Enveloppement aux algues": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Modelage sous affusion": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Yoga méditatif": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Bain au magnésium": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Massage traditionnel profond": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Yoga énergisant": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Soin visage détox à la spiruline": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Cupping thérapie serviette chaude": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Manucure & pédicure": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Rituel de clôture": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "Conseils d’intégration": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "Carnet bien-être à emporter": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
       }
     }
   },
-
   "offer7": {
     "home": {
       "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
@@ -794,7 +1128,12 @@
         "5": {
           "title": "Énergie & Revitalisation",
           "description": "Une journée pour activer la vitalité et stimuler l'énergie. Pratiques dynamiques et soins ciblés pour booster le corps et l'esprit, et ressentir une nouvelle force intérieure.",
-          "activities": ["Sport coaching class", "Yoga", "Bol d'air Jacquier", "Douche à jet"],
+          "activities": [
+            "Sport coaching class",
+            "Yoga",
+            "Bol d'air Jacquier",
+            "Douche à jet"
+          ],
           "objective": "Activer la vitalité profonde et stimuler l'énergie corporelle.",
           "ctaText": "J'ACCÈDE À MON SÉJOUR"
         },
@@ -832,7 +1171,11 @@
         "8": {
           "title": "Clôture & Départ",
           "description": "C'est le moment du départ. Vous repartez avec des outils concrets pour prolonger les bienfaits, une énergie renouvelée et une sérénité profonde.",
-          "activities": ["Rituel de fermeture", "Carnet bien-être", "Départ en conscience"],
+          "activities": [
+            "Rituel de fermeture",
+            "Carnet bien-être",
+            "Départ en conscience"
+          ],
           "objective": "Intégrer les apprentissages, repartir avec des clés de prolongement chez soi.",
           "ctaText": "J'ACCÈDE À MON SÉJOUR"
         }
@@ -878,56 +1221,318 @@
     "servicesTable7": {
       "header": "PROGRAMME ÉVASION HOLISTIQUE 7 NUITS – DAKHLA",
       "servicesLabel": "Prestations",
-      "programs": ["Jour 1", "Jour 2", "Jour 3", "Jour 4", "Jour 5", "Jour 6", "Jour 7", "Jour 8"],
+      "programs": [
+        "Jour 1",
+        "Jour 2",
+        "Jour 3",
+        "Jour 4",
+        "Jour 5",
+        "Jour 6",
+        "Jour 7",
+        "Jour 8"
+      ],
       "services": [
-        { "title": "Accueil & Installation" },
-        { "title": "Yoga" },
-        { "title": "Sauna" },
-        { "title": "Piscine thermale" },
-        { "title": "Scrub detox sel himalaya" },
-        { "title": "Hammam mille et une nuit" },
-        { "title": "Bol d'air Jacquier" },
-        { "title": "Bain hydromassant" },
-        { "title": "Enveloppement aux algues" },
-        { "title": "Modelage affusion" },
-        { "title": "Massage traditionnel relaxant" },
-        { "title": "Coaching sport class" },
-        { "title": "Douche à jet" },
-        { "title": "Cupping thérapie" },
-        { "title": "Manucure + Pédicure" },
-        { "title": "Stretching" },
-        { "title": "Massage pierre chaude" },
-        { "title": "Soin lissant détoxifiant spiruline" },
-        { "title": "Bain magnésium" },
-        { "title": "Ice bath" },
-        { "title": "Rituel de fermeture" },
-        { "title": "Carnet bien-être" },
-        { "title": "Départ en conscience" }
+        {
+          "title": "Accueil & Installation"
+        },
+        {
+          "title": "Yoga"
+        },
+        {
+          "title": "Sauna"
+        },
+        {
+          "title": "Piscine thermale"
+        },
+        {
+          "title": "Scrub detox sel himalaya"
+        },
+        {
+          "title": "Hammam mille et une nuit"
+        },
+        {
+          "title": "Bol d'air Jacquier"
+        },
+        {
+          "title": "Bain hydromassant"
+        },
+        {
+          "title": "Enveloppement aux algues"
+        },
+        {
+          "title": "Modelage affusion"
+        },
+        {
+          "title": "Massage traditionnel relaxant"
+        },
+        {
+          "title": "Coaching sport class"
+        },
+        {
+          "title": "Douche à jet"
+        },
+        {
+          "title": "Cupping thérapie"
+        },
+        {
+          "title": "Manucure + Pédicure"
+        },
+        {
+          "title": "Stretching"
+        },
+        {
+          "title": "Massage pierre chaude"
+        },
+        {
+          "title": "Soin lissant détoxifiant spiruline"
+        },
+        {
+          "title": "Bain magnésium"
+        },
+        {
+          "title": "Ice bath"
+        },
+        {
+          "title": "Rituel de fermeture"
+        },
+        {
+          "title": "Carnet bien-être"
+        },
+        {
+          "title": "Départ en conscience"
+        }
       ],
       "availability": {
-        "Accueil & Installation": [1, 0, 0, 0, 0, 0, 0, 0],
-        "Yoga": [0, 1, 1, 1, 1, 1, 1, 0],
-        "Sauna": [0, 1, 0, 1, 0, 0, 0, 0],
-        "Piscine thermale": [0, 1, 0, 1, 0, 1, 0, 0],
-        "Scrub detox sel himalaya": [0, 1, 0, 0, 0, 0, 0, 0],
-        "Hammam mille et une nuit": [0, 1, 0, 0, 0, 0, 0, 0],
-        "Bol d'air Jacquier": [0, 0, 1, 1, 1, 1, 1, 0],
-        "Bain hydromassant": [0, 0, 1, 0, 0, 0, 0, 0],
-        "Enveloppement aux algues": [0, 0, 1, 0, 0, 0, 1, 0],
-        "Modelage affusion": [0, 0, 1, 0, 0, 0, 0, 0],
-        "Massage traditionnel relaxant": [0, 0, 0, 1, 0, 0, 0, 0],
-        "Coaching sport class": [0, 0, 0, 0, 1, 1, 0, 0],
-        "Douche à jet": [0, 0, 0, 0, 1, 1, 0, 0],
-        "Cupping thérapie": [0, 0, 0, 0, 0, 1, 0, 0],
-        "Manucure + Pédicure": [0, 0, 0, 0, 0, 1, 0, 0],
-        "Stretching": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Massage pierre chaude": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Soin lissant détoxifiant spiruline": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Bain magnésium": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Ice bath": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Rituel de fermeture": [0, 0, 0, 0, 0, 0, 0, 1],
-        "Carnet bien-être": [0, 0, 0, 0, 0, 0, 0, 1],
-        "Départ en conscience": [0, 0, 0, 0, 0, 0, 0, 1]
+        "Accueil & Installation": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Yoga": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Sauna": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Piscine thermale": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Scrub detox sel himalaya": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Hammam mille et une nuit": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Bol d'air Jacquier": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Bain hydromassant": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Enveloppement aux algues": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Modelage affusion": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Massage traditionnel relaxant": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Coaching sport class": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "Douche à jet": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "Cupping thérapie": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Manucure + Pédicure": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Stretching": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Massage pierre chaude": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Soin lissant détoxifiant spiruline": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Bain magnésium": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Ice bath": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Rituel de fermeture": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "Carnet bien-être": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "Départ en conscience": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
       }
     },
     "faq": {
@@ -960,7 +1565,6 @@
         }
       ]
     },
-
     "chatbot7": {
       "welcome": {
         "greeting": "👋 Bonjour ! Je suis votre assistant personnel pour l'**Évasion Holistique 7 Nuits** au Dakhla Club.",
@@ -1048,7 +1652,6 @@
           "contact": "📞 Votre nom et numéro de téléphone (format : Prénom Nom – 06xx xx xx xx)"
         }
       },
-
       "info": {
         "followUp": "Autres informations souhaitées ?",
         "options": {
@@ -1060,7 +1663,6 @@
         "title": "ℹ️ **Informations Pratiques - Évasion 7 Nuits**",
         "details": "**📍 Lieu :** Dakhla Club, Point de Dragon PK28\n**⏰ Durée :** 8 jours / 7 nuits\n**🏠 Hébergement :** Inclus en pension complète\n**🍽️ Repas :** Cuisine santé et détox\n**👥 Capacité :** Groupes de 2 à 8 personnes\n**📞 Contact :** +212 652 881 921"
       },
-
       "testimonials": {
         "title": "🌟 **Ce que disent nos clients :**",
         "reviews": "**Sarah, 34 ans :** *\"Les 8 jours ont littéralement changé ma vie. Je me sens complètement régénérée !\"*\n\n**Marc, 42 ans :** *\"Un programme exceptionnel sur 7 nuits. Les thérapeutes sont d'un professionnalisme remarquable.\"*\n\n**Fatima, 38 ans :** *\"J'ai retrouvé mon énergie et ma joie de vivre. Cette semaine de transformation est magique !\"*",
@@ -1082,7 +1684,6 @@
         "title": "🤝 **Parler avec un conseiller spécialisé**",
         "contact2": "📞 **Ligne directe**: +212 652 88 1921\n💬 **WhatsApp**: +212 652 88 1921\n📧 **Email**: reservation@dakhlaclub.com\n🕘 **Disponibilité**: Tous les jours de 9h à 20h\n⚡ **Réponse rapide**: WhatsApp < 2h • Email < 4h"
       },
-
       "faq": {
         "title": "❓ **Questions Fréquentes :**",
         "content": "**Q: Puis-je venir seul(e) ?**\nR: Absolument ! 40% de nos clients viennent seuls.\n\n**Q: Y a-t-il des contre-indications ?**\nR: Nous adaptons selon votre état de santé.\n\n**Q: Le transport est-il inclus ?**\nR: Navette aéroport disponible (supplément).\n\n**Q: Puis-je modifier mes dates ?**\nR: Oui, sous conditions selon disponibilités.",
@@ -1105,7 +1706,6 @@
         "pastDate": "❌ La date d'arrivée ne peut pas être dans le passé.",
         "chooseToday": "Veuillez choisir une date à partir d'aujourd'hui."
       },
-
       "summary": {
         "perfect": "✅ **Parfait {name} !**",
         "complete": "📋 **Récapitulatif complet :**\n👤 {name}\n📞 {phone}\n📅 {checkInDate} → {checkOutDate}\n👥 {adults} adulte{plural}\n🌙 7 nuits d'évasion holistique",
@@ -1128,7 +1728,6 @@
       }
     }
   },
-
   "terms": {
     "meta": {
       "title": "Conditions de Vente - Dakhla Club",
@@ -1195,7 +1794,6 @@
     "lastUpdated": "Dernière mise à jour : Juillet 2025",
     "backToHome": "Retour à l'accueil"
   },
-
   "chatbot": {
     "welcome": {
       "greeting": "🌿 Bonjour et bienvenue au Dakhla Club – votre refuge de bien-être au bord de l'océan.",
@@ -1246,7 +1844,11 @@
       },
       "mental": {
         "title": "🧠 **Mentaux**",
-        "items": ["• Esprit plus clair", "• Stress relâché", "• Reconnexion à soi-même"]
+        "items": [
+          "• Esprit plus clair",
+          "• Stress relâché",
+          "• Reconnexion à soi-même"
+        ]
       },
       "lasting": {
         "title": "⏳ **Et après le séjour ?**",
@@ -1382,7 +1984,6 @@
       "online": "En ligne • Répond rapidement"
     }
   },
-
   "legal": {
     "cgu": {
       "title": "Conditions Générales d'Utilisation",
@@ -1567,8 +2168,7 @@
         }
       }
     }
-  }
-,
+  },
   "halloween": {
     "nav": {
       "home": "ACCUEIL",
@@ -1576,11 +2176,12 @@
       "about": "À PROPOS"
     },
     "hero": {
-      "title": "Hello,",
+      "title": "Hello",
       "titleLine2": "Halloween !",
       "subtitle": "Séjour Exceptionnel",
       "description": "Vivez une expérience unique entre frissons et détente à Dakhla Club. Soirée costumée, dîner thématique, animations et spa face à la lagune.",
       "button": "RÉSERVER MAINTENANT",
+      "button2": "Boo ! Réservez votre séjour ",
       "dates": "Du 30 Octobre au 2 Novembre 2025"
     },
     "limitedOffer": {
@@ -1674,6 +2275,43 @@
         "secure": "Paiement sécurisé",
         "phone": "+212 652 88 19 21",
         "instant": "Confirmation immédiate"
+      },
+      "alerts": {
+        "validation": {
+          "invalidName": {
+            "title": "❌ Nom invalide",
+            "text": "Veuillez saisir un nom valide (2-50 caractères).",
+            "button": "Corriger"
+          },
+          "invalidEmail": {
+            "title": "❌ Email invalide",
+            "text": "Veuillez saisir une adresse email valide.",
+            "button": "Corriger"
+          },
+          "invalidPhone": {
+            "title": "❌ Téléphone invalide",
+            "text": "Entrez entre 7 et 15 chiffres pour votre numéro de téléphone.",
+            "button": "Corriger"
+          }
+        },
+        "success": {
+          "title": "🎃 Réservation envoyée !",
+          "message": "Votre demande de réservation Halloween a été envoyée avec succès !",
+          "submessage": "Nous vous contacterons très bientôt pour confirmer votre séjour.",
+          "button": "Parfait !"
+        },
+        "error": {
+          "title": "❌ Erreur",
+          "text": "Une erreur est survenue. Veuillez réessayer ou nous contacter.",
+          "button": "Réessayer",
+          "footer": "📞 Appelez-nous: +212 652 88 19 21"
+        },
+        "connectionError": {
+          "title": "❌ Erreur de connexion",
+          "text": "Impossible d'envoyer votre réservation. Vérifiez votre connexion internet.",
+          "button": "Réessayer",
+          "footer": "📞 Appelez-nous: +212 652 88 19 21"
+        }
       }
     },
     "footer": {

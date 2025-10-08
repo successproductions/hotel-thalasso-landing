@@ -5,10 +5,12 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { UtensilsCrossed, Music, Trophy, Smile, Sparkles, Gift } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HalloweenOffer() {
+  const t = useTranslations('halloween');
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -77,39 +79,39 @@ export default function HalloweenOffer() {
   const offers = [
     {
       Icon: UtensilsCrossed,
-      title: 'Dîner effrayant & menu thématique',
-      description: 'Savourez un menu spécial Halloween préparé par nos chefs',
-      image: '/images/Restaurant.jpg',
+      title: t('offer.items.dinner.title'),
+      description: t('offer.items.dinner.desc'),
+      image: '/images/hallowenn/halloween-monster-black-burger.jpg',
     },
     {
       Icon: Music,
-      title: 'Soirée costumée avec DJ',
-      description: 'Danse face à la lagune avec notre DJ sous les étoiles',
-      image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&q=80',
+      title: t('offer.items.party.title'),
+      description: t('offer.items.party.desc'),
+      image: '/images/hallowenn/IMG_0432.png',
     },
     {
       Icon: Trophy,
-      title: 'Concours de costumes & prix',
-      description: 'Participez au concours et gagnez des prix incroyables',
-      image: '/images/1.jpg',
+      title: t('offer.items.contest.title'),
+      description: t('offer.items.contest.desc'),
+      image: '/images/hallowenn/man-dressed-up-like-drunk-medieval-pirate-halloween-party-with-group-people.jpg',
     },
     {
       Icon: Smile,
-      title: 'Activités & maquillage enfants',
-      description: 'Animations spéciales et maquillage pour les plus jeunes',
-      image: '/images/3.jpg',
+      title: t('offer.items.kids.title'),
+      description: t('offer.items.kids.desc'),
+      image: '/images/hallowenn/portrait-young-man-with-friends-home.jpg',
     },
     {
       Icon: Sparkles,
-      title: 'Massage relaxant post-frissons',
-      description: 'Détendez-vous avec un massage à 500 DHS seulement',
+      title: t('offer.items.massage.title'),
+      description: t('offer.items.massage.desc'),
       image: '/images/Salle-de-massage.png',
     },
     {
       Icon: Gift,
-      title: '500 DHS offerts au Spa Shop',
-      description: 'Un bon d\'achat de 500 DHS à utiliser dans notre boutique spa',
-      image: '/images/2.jpg',
+      title: t('offer.items.voucher.title'),
+      description: t('offer.items.voucher.desc'),
+      image: '/images/hallowenn/halloween-bathroom-decor-with-ghost-lights-jackolantern.jpg',
     },
   ];
 
@@ -129,7 +131,7 @@ export default function HalloweenOffer() {
             WebkitTextFillColor: 'transparent'
           }}
         >
-          Offre Halloween
+          {t('offer.title')}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

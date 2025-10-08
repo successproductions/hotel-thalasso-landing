@@ -49,12 +49,10 @@
       "You want to enjoy a full holistic treatment—guilt-free"
     ]
   },
-
   "servicesSection": {
     "title": "OUR SIGNATURE TREATMENTS",
     "description": "Discover a range of treatments designed for your physical and mental well-being"
   },
-
   "programSection": {
     "header": {
       "title": "THE PROGRAM",
@@ -115,7 +113,6 @@
     "nextSession": "📅 Next session: 15–18 July 2025",
     "callButton": "I Reserve My Place"
   },
-
   "carousel": {
     "overlay": {
       "description": "Discover our exceptional spaces dedicated to your well-being and relaxation",
@@ -249,10 +246,18 @@
   "rewards": {
     "title": "WE HAVE BEEN AWARDED BY",
     "logos": {
-      "tripadvisor": { "alt": "TripAdvisor" },
-      "tripdotcom": { "alt": "Trip.com" },
-      "spaAward": { "alt": "Spa Award" },
-      "kayakBadge": { "alt": "Kayak badge" }
+      "tripadvisor": {
+        "alt": "TripAdvisor"
+      },
+      "tripdotcom": {
+        "alt": "Trip.com"
+      },
+      "spaAward": {
+        "alt": "Spa Award"
+      },
+      "kayakBadge": {
+        "alt": "Kayak badge"
+      }
     }
   },
   "footer": {
@@ -288,40 +293,153 @@
   "servicesTable": {
     "header": "HOLISTIC ESCAPE PROGRAM – DAKHLA",
     "servicesLabel": "Services",
-    "programs": ["Day 1", "Day 2", "Day 3", "Day 4"],
+    "programs": [
+      "Day 1",
+      "Day 2",
+      "Day 3",
+      "Day 4"
+    ],
     "services": [
-      { "title": "Personalized Welcome" },
-      { "title": "Detox Infusion" },
-      { "title": "Bungalow with Nature/Ocean View" },
-      { "title": "Bol d’Air Jacquier" },
-      { "title": "Thermal Pool Access" },
-      { "title": "Purifying Sauna" },
-      { "title": "Hydro-Massage Bath" },
-      { "title": "Seaweed Body Wrap" },
-      { "title": "Affusion Massage" },
-      { "title": "Jet Shower" },
-      { "title": "Magnesium Bath" },
-      { "title": "Cupping Therapy" },
-      { "title": "Desert Secret Hammam" },
-      { "title": "Relaxing Massage" }
+      {
+        "title": "Personalized Welcome"
+      },
+      {
+        "title": "Detox Infusion"
+      },
+      {
+        "title": "Bungalow with Nature/Ocean View"
+      },
+      {
+        "title": "Bol d’Air Jacquier"
+      },
+      {
+        "title": "Thermal Pool Access"
+      },
+      {
+        "title": "Purifying Sauna"
+      },
+      {
+        "title": "Hydro-Massage Bath"
+      },
+      {
+        "title": "Seaweed Body Wrap"
+      },
+      {
+        "title": "Affusion Massage"
+      },
+      {
+        "title": "Jet Shower"
+      },
+      {
+        "title": "Magnesium Bath"
+      },
+      {
+        "title": "Cupping Therapy"
+      },
+      {
+        "title": "Desert Secret Hammam"
+      },
+      {
+        "title": "Relaxing Massage"
+      }
     ],
     "availability": {
-      "Personalized Welcome": [1, 0, 0, 0],
-      "Detox Infusion": [1, 0, 0, 0],
-      "Bungalow with Nature/Ocean View": [1, 0, 0, 0],
-      "Bol d’Air Jacquier": [1, 1, 0, 1],
-      "Thermal Pool Access": [1, 1, 1, 1],
-      "Purifying Sauna": [0, 1, 0, 0],
-      "Hydro-Massage Bath": [0, 1, 0, 0],
-      "Seaweed Body Wrap": [0, 1, 0, 0],
-      "Affusion Massage": [0, 1, 0, 0],
-      "Jet Shower": [0, 0, 1, 0],
-      "Magnesium Bath": [0, 0, 1, 0],
-      "Cupping Therapy": [0, 0, 1, 0],
-      "Desert Secret Hammam": [0, 0, 0, 1],
-      "Relaxing Massage": [0, 0, 0, 1],
-      "Therapeutic Objectives": [1, 1, 1, 1],
-      "Expected Benefits": [1, 1, 1, 1]
+      "Personalized Welcome": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "Detox Infusion": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "Bungalow with Nature/Ocean View": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "Bol d’Air Jacquier": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "Thermal Pool Access": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "Purifying Sauna": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "Hydro-Massage Bath": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "Seaweed Body Wrap": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "Affusion Massage": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "Jet Shower": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "Magnesium Bath": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "Cupping Therapy": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "Desert Secret Hammam": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "Relaxing Massage": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "Therapeutic Objectives": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "Expected Benefits": [
+        1,
+        1,
+        1,
+        1
+      ]
     }
   },
   "ProgrammeFonctionne": {
@@ -335,13 +453,15 @@
       "Naturally refined and drained silhouette",
       "Mental clarity & stable energy"
     ],
-    "points1": ["Certified and caring therapists", "An environment that heals all by itself"],
+    "points1": [
+      "Certified and caring therapists",
+      "An environment that heals all by itself"
+    ],
     "points2": [
       "Synergy between modern treatments & ancient rituals",
       "A sequence designed around physiological & emotional logic"
     ]
   },
-
   "offer5": {
     "home": {
       "title": "WELCOME TO DAKHLA CLUB",
@@ -526,94 +646,280 @@
       "services": [
         {
           "title": "Personalized Welcome & Check-in",
-          "subItems": ["Grounding herbal tea", "Bungalow assignment", "Orientation"]
+          "subItems": [
+            "Grounding herbal tea",
+            "Bungalow assignment",
+            "Orientation"
+          ]
         },
         {
           "title": "Yoga Sessions",
-          "subItems": ["Gentle sunrise practice", "Body-mind alignment", "Breathing techniques"]
+          "subItems": [
+            "Gentle sunrise practice",
+            "Body-mind alignment",
+            "Breathing techniques"
+          ]
         },
         {
           "title": "Jacquier's Oxygen Therapy (Bol d'air)",
-          "subItems": ["Cellular oxygenation", "Enhanced vitality", "Natural detox boost"]
+          "subItems": [
+            "Cellular oxygenation",
+            "Enhanced vitality",
+            "Natural detox boost"
+          ]
         },
         {
           "title": "Thermal Pool Access",
-          "subItems": ["Heated mineral water", "Muscle relaxation", "Improved circulation"]
+          "subItems": [
+            "Heated mineral water",
+            "Muscle relaxation",
+            "Improved circulation"
+          ]
         },
         {
           "title": "Dry Sauna",
-          "subItems": ["Deep detoxification", "Stress relief", "Skin purification"]
+          "subItems": [
+            "Deep detoxification",
+            "Stress relief",
+            "Skin purification"
+          ]
         },
         {
           "title": "Himalayan Salt Scrub",
-          "subItems": ["Exfoliation treatment", "Mineral absorption", "Skin renewal"]
+          "subItems": [
+            "Exfoliation treatment",
+            "Mineral absorption",
+            "Skin renewal"
+          ]
         },
         {
           "title": "1001 Nights Moroccan Hammam",
-          "subItems": ["Traditional ritual", "Deep cleansing", "Cultural wellness experience"]
+          "subItems": [
+            "Traditional ritual",
+            "Deep cleansing",
+            "Cultural wellness experience"
+          ]
         },
         {
           "title": "Jet Shower",
-          "subItems": ["Hydrotherapy treatment", "Circulation boost", "Muscle tension relief"]
+          "subItems": [
+            "Hydrotherapy treatment",
+            "Circulation boost",
+            "Muscle tension relief"
+          ]
         },
         {
           "title": "Hydromassage Bath",
-          "subItems": ["Underwater massage", "Joint mobility", "Deep relaxation"]
+          "subItems": [
+            "Underwater massage",
+            "Joint mobility",
+            "Deep relaxation"
+          ]
         },
         {
           "title": "Seaweed Body Wrap",
-          "subItems": ["Marine minerals", "Skin nourishment", "Detox acceleration"]
+          "subItems": [
+            "Marine minerals",
+            "Skin nourishment",
+            "Detox acceleration"
+          ]
         },
         {
           "title": "Affusion Massage",
-          "subItems": ["Water therapy", "Gentle pressure points", "Stress release"]
+          "subItems": [
+            "Water therapy",
+            "Gentle pressure points",
+            "Stress release"
+          ]
         },
         {
           "title": "Magnesium Bath",
-          "subItems": ["Muscle recovery", "Nervous system calm", "Sleep enhancement"]
+          "subItems": [
+            "Muscle recovery",
+            "Nervous system calm",
+            "Sleep enhancement"
+          ]
         },
         {
           "title": "Traditional Relaxing Massage",
-          "subItems": ["Full body treatment", "Tension release", "Energy rebalancing"]
+          "subItems": [
+            "Full body treatment",
+            "Tension release",
+            "Energy rebalancing"
+          ]
         },
         {
           "title": "Detoxifying Spirulina Facial",
-          "subItems": ["Anti-aging treatment", "Skin smoothing", "Natural glow enhancement"]
+          "subItems": [
+            "Anti-aging treatment",
+            "Skin smoothing",
+            "Natural glow enhancement"
+          ]
         },
         {
           "title": "Fire Towel Cupping Therapy",
-          "subItems": ["Traditional technique", "Deep tissue release", "Energy circulation"]
+          "subItems": [
+            "Traditional technique",
+            "Deep tissue release",
+            "Energy circulation"
+          ]
         },
         {
           "title": "Manicure & Pedicure",
-          "subItems": ["Complete nail care", "Hand & foot treatment", "Beauty wellness"]
+          "subItems": [
+            "Complete nail care",
+            "Hand & foot treatment",
+            "Beauty wellness"
+          ]
         },
         {
           "title": "Closing Ritual & Wellness Journal",
-          "subItems": ["Integration session", "Take-home guide", "Wellness tips"]
+          "subItems": [
+            "Integration session",
+            "Take-home guide",
+            "Wellness tips"
+          ]
         }
       ],
       "availability": {
-        "Personalized Welcome & Check-in": [1, 0, 0, 0, 0, 0],
-        "Yoga Sessions": [0, 1, 1, 1, 1, 0],
-        "Jacquier's Oxygen Therapy (Bol d'air)": [0, 0, 1, 1, 1, 0],
-        "Thermal Pool Access": [0, 1, 0, 1, 0, 0],
-        "Dry Sauna": [0, 1, 0, 1, 0, 0],
-        "Himalayan Salt Scrub": [0, 1, 0, 0, 0, 0],
-        "1001 Nights Moroccan Hammam": [0, 1, 0, 0, 0, 0],
-        "Jet Shower": [0, 0, 1, 0, 0, 0],
-        "Hydromassage Bath": [0, 0, 1, 0, 0, 0],
-        "Seaweed Body Wrap": [0, 0, 1, 0, 0, 0],
-        "Affusion Massage": [0, 0, 1, 0, 0, 0],
-        "Magnesium Bath": [0, 0, 0, 1, 0, 0],
-        "Traditional Relaxing Massage": [0, 0, 0, 1, 0, 0],
-        "Detoxifying Spirulina Facial": [0, 0, 0, 0, 1, 0],
-        "Fire Towel Cupping Therapy": [0, 0, 0, 0, 1, 0],
-        "Manicure & Pedicure": [0, 0, 0, 0, 1, 0],
-        "Closing Ritual & Wellness Journal": [0, 0, 0, 0, 0, 1]
+        "Personalized Welcome & Check-in": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Yoga Sessions": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Jacquier's Oxygen Therapy (Bol d'air)": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Thermal Pool Access": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Dry Sauna": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Himalayan Salt Scrub": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "1001 Nights Moroccan Hammam": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Jet Shower": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Hydromassage Bath": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Seaweed Body Wrap": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Affusion Massage": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "Magnesium Bath": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Traditional Relaxing Massage": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Detoxifying Spirulina Facial": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Fire Towel Cupping Therapy": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Manicure & Pedicure": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Closing Ritual & Wellness Journal": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
       }
     },
-
     "chatbot5": {
       "welcome": {
         "greeting": "👋 Hello! I'm your personal assistant for the **5-Nights Holistic Escape** at Dakhla Club.",
@@ -695,7 +1001,6 @@
       },
       "info": {
         "followUp": "What other information would you like?",
-
         "options": {
           "program": "🔸 View detailed program",
           "reserve": "🔸 Book now",
@@ -804,7 +1109,6 @@
       "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
     }
   },
-
   "offer7": {
     "home": {
       "title": "WELCOME TO DAKHLA CLUB",
@@ -942,7 +1246,11 @@
         "8": {
           "title": "Closure & Departure",
           "description": "It's time to leave. You go home with practical tools to prolong the benefits, renewed energy and deep serenity.",
-          "activities": ["Closing ritual", "Wellness journal", "Conscious departure"],
+          "activities": [
+            "Closing ritual",
+            "Wellness journal",
+            "Conscious departure"
+          ],
           "objective": "Integrate learnings, leave with keys to continue at home.",
           "ctaText": "ACCESS MY RETREAT"
         }
@@ -951,56 +1259,318 @@
     "servicesTable7": {
       "header": "7-NIGHT HOLISTIC ESCAPE PROGRAM – DAKHLA",
       "servicesLabel": "Services",
-      "programs": ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8"],
+      "programs": [
+        "Day 1",
+        "Day 2",
+        "Day 3",
+        "Day 4",
+        "Day 5",
+        "Day 6",
+        "Day 7",
+        "Day 8"
+      ],
       "services": [
-        { "title": "Arrival & Check-in" },
-        { "title": "Yoga" },
-        { "title": "Sauna" },
-        { "title": "Thermal pool" },
-        { "title": "Himalayan salt detox scrub" },
-        { "title": "\"1001 Nights\" Oriental Hammam Ritual" },
-        { "title": "Jacquier's Oxygen Therapy" },
-        { "title": "Hydromassage bath" },
-        { "title": "Seaweed wrap" },
-        { "title": "Affusion massage" },
-        { "title": "Traditional relaxing massage" },
-        { "title": "Fitness coaching session" },
-        { "title": "Jet shower" },
-        { "title": "Fire cupping therapy" },
-        { "title": "Manicure & Pedicure" },
-        { "title": "Stretching session" },
-        { "title": "Hot stone massage" },
-        { "title": "Detoxifying & smoothing spirulina facial" },
-        { "title": "Magnesium bath" },
-        { "title": "Ice bath immersion" },
-        { "title": "Closing ritual" },
-        { "title": "Wellness journal" },
-        { "title": "Conscious departure" }
+        {
+          "title": "Arrival & Check-in"
+        },
+        {
+          "title": "Yoga"
+        },
+        {
+          "title": "Sauna"
+        },
+        {
+          "title": "Thermal pool"
+        },
+        {
+          "title": "Himalayan salt detox scrub"
+        },
+        {
+          "title": "\"1001 Nights\" Oriental Hammam Ritual"
+        },
+        {
+          "title": "Jacquier's Oxygen Therapy"
+        },
+        {
+          "title": "Hydromassage bath"
+        },
+        {
+          "title": "Seaweed wrap"
+        },
+        {
+          "title": "Affusion massage"
+        },
+        {
+          "title": "Traditional relaxing massage"
+        },
+        {
+          "title": "Fitness coaching session"
+        },
+        {
+          "title": "Jet shower"
+        },
+        {
+          "title": "Fire cupping therapy"
+        },
+        {
+          "title": "Manicure & Pedicure"
+        },
+        {
+          "title": "Stretching session"
+        },
+        {
+          "title": "Hot stone massage"
+        },
+        {
+          "title": "Detoxifying & smoothing spirulina facial"
+        },
+        {
+          "title": "Magnesium bath"
+        },
+        {
+          "title": "Ice bath immersion"
+        },
+        {
+          "title": "Closing ritual"
+        },
+        {
+          "title": "Wellness journal"
+        },
+        {
+          "title": "Conscious departure"
+        }
       ],
       "availability": {
-        "Arrival & Check-in": [1, 0, 0, 0, 0, 0, 0, 0],
-        "Yoga": [0, 1, 1, 1, 1, 1, 1, 0],
-        "Sauna": [0, 1, 0, 1, 0, 0, 0, 0],
-        "Thermal pool": [0, 1, 0, 1, 0, 1, 0, 0],
-        "Himalayan salt detox scrub": [0, 1, 0, 0, 0, 0, 0, 0],
-        "\"1001 Nights\" Oriental Hammam Ritual": [0, 1, 0, 0, 0, 0, 0, 0],
-        "Jacquier's Oxygen Therapy": [0, 0, 1, 1, 1, 1, 1, 0],
-        "Hydromassage bath": [0, 0, 1, 0, 0, 0, 0, 0],
-        "Seaweed wrap": [0, 0, 1, 0, 0, 0, 1, 0],
-        "Affusion massage": [0, 0, 1, 0, 0, 0, 0, 0],
-        "Traditional relaxing massage": [0, 0, 0, 1, 0, 0, 0, 0],
-        "Fitness coaching session": [0, 0, 0, 0, 1, 1, 0, 0],
-        "Jet shower": [0, 0, 0, 0, 1, 1, 0, 0],
-        "Fire cupping therapy": [0, 0, 0, 0, 0, 1, 0, 0],
-        "Manicure & Pedicure": [0, 0, 0, 0, 0, 1, 0, 0],
-        "Stretching session": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Hot stone massage": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Detoxifying & smoothing spirulina facial": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Magnesium bath": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Ice bath immersion": [0, 0, 0, 0, 0, 0, 1, 0],
-        "Closing ritual": [0, 0, 0, 0, 0, 0, 0, 1],
-        "Wellness journal": [0, 0, 0, 0, 0, 0, 0, 1],
-        "Conscious departure": [0, 0, 0, 0, 0, 0, 0, 1]
+        "Arrival & Check-in": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Yoga": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Sauna": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Thermal pool": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Himalayan salt detox scrub": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "\"1001 Nights\" Oriental Hammam Ritual": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Jacquier's Oxygen Therapy": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Hydromassage bath": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Seaweed wrap": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Affusion massage": [
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Traditional relaxing massage": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Fitness coaching session": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "Jet shower": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "Fire cupping therapy": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Manicure & Pedicure": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Stretching session": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Hot stone massage": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Detoxifying & smoothing spirulina facial": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Magnesium bath": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Ice bath immersion": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Closing ritual": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "Wellness journal": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "Conscious departure": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
       }
     },
     "ProgrammeFonctionne": {
@@ -1145,7 +1715,6 @@
       },
       "info": {
         "followUp": "What other information would you like?",
-
         "options": {
           "program": "🔸 View detailed program",
           "reserve": "🔸 Book now",
@@ -1220,7 +1789,6 @@
       }
     }
   },
-
   "terms": {
     "meta": {
       "title": "Terms of Sale - Dakhla Club",
@@ -1287,7 +1855,6 @@
     "lastUpdated": "Last updated: July 2025",
     "backToHome": "Back to Home"
   },
-
   "chatbot": {
     "welcome": {
       "greeting": "🌿 Hello and welcome to Dakhla Club – your wellness refuge by the ocean.",
@@ -1338,7 +1905,11 @@
       },
       "mental": {
         "title": "🧠 **Mental**",
-        "items": ["• Clearer mind", "• Released stress", "• Reconnection with yourself"]
+        "items": [
+          "• Clearer mind",
+          "• Released stress",
+          "• Reconnection with yourself"
+        ]
       },
       "lasting": {
         "title": "⏳ **And after the stay?**",
@@ -1436,7 +2007,12 @@
       },
       "bring": {
         "title": "**To bring:**",
-        "items": ["• Swimsuit", "• Comfortable clothing", "• Non-slip sandals", "• Sun protection"]
+        "items": [
+          "• Swimsuit",
+          "• Comfortable clothing",
+          "• Non-slip sandals",
+          "• Sun protection"
+        ]
       }
     },
     "errors": {
@@ -1469,7 +2045,6 @@
       "online": "Online • Responds quickly"
     }
   },
-
   "legal": {
     "cgu": {
       "title": "Terms of Use",
@@ -1654,8 +2229,7 @@
         }
       }
     }
-  }
-,
+  },
   "halloween": {
     "nav": {
       "home": "HOME",
@@ -1663,11 +2237,12 @@
       "about": "ABOUT US"
     },
     "hero": {
-      "title": "Hello,",
+      "title": "Hello",
       "titleLine2": "Halloween!",
       "subtitle": "Exceptional Stay!",
       "description": "Experience a unique blend of thrills and relaxation at Dakhla Club. Costume party, themed dinner, activities and spa facing the lagoon.",
       "button": "BOOK NOW",
+      "button2": "Boo ! Reserve Today",
       "dates": "From October 30 to November 2, 2025"
     },
     "limitedOffer": {
@@ -1761,6 +2336,43 @@
         "secure": "Secure payment",
         "phone": "+212 652 88 19 21",
         "instant": "Instant confirmation"
+      },
+      "alerts": {
+        "validation": {
+          "invalidName": {
+            "title": "❌ Invalid Name",
+            "text": "Please enter a valid name (2-50 characters).",
+            "button": "Fix"
+          },
+          "invalidEmail": {
+            "title": "❌ Invalid Email",
+            "text": "Please enter a valid email address.",
+            "button": "Fix"
+          },
+          "invalidPhone": {
+            "title": "❌ Invalid Phone",
+            "text": "Enter between 7 and 15 digits for your phone number.",
+            "button": "Fix"
+          }
+        },
+        "success": {
+          "title": "🎃 Reservation Sent!",
+          "message": "Your Halloween reservation request has been sent successfully!",
+          "submessage": "We will contact you very soon to confirm your stay.",
+          "button": "Perfect!"
+        },
+        "error": {
+          "title": "❌ Error",
+          "text": "An error occurred. Please try again or contact us.",
+          "button": "Try Again",
+          "footer": "📞 Call us: +212 652 88 19 21"
+        },
+        "connectionError": {
+          "title": "❌ Connection Error",
+          "text": "Unable to send your reservation. Check your internet connection.",
+          "button": "Try Again",
+          "footer": "📞 Call us: +212 652 88 19 21"
+        }
       }
     },
     "footer": {

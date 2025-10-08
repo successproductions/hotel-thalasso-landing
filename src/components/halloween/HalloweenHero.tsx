@@ -5,10 +5,12 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HalloweenHero() {
+  const t = useTranslations('halloween');
   const heroRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -69,7 +71,7 @@ export default function HalloweenHero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center py-8 bg-white"
+      className="relative min-h-screen flex items-center pt-24 pb-12 md:py-8 bg-white"
     >
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full">
@@ -97,18 +99,17 @@ export default function HalloweenHero() {
                   WebkitTextFillColor: 'transparent'
                 }}
               >
-                Hello,
+                {t('hero.title')}
                 <br />
-                Halloween !
+                {t('hero.titleLine2')}
               </h1>
 
               <h2 className="text-3xl md:text-4xl font-normal drop-shadow-md" style={{ fontFamily: 'var(--font-creepster)', color: '#5ea7aa' }}>
-                Séjour Exceptionnel
+                {t('hero.subtitle')}
               </h2>
 
               <p className="text-white text-lg leading-relaxed max-w-md" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>
-                Vivez une expérience unique entre frissons et détente à Dakhla Club.
-                Soirée costumée, dîner thématique, animations et spa face à la lagune.
+                {t('hero.description')}
               </p>
 
               <button
@@ -118,7 +119,7 @@ export default function HalloweenHero() {
                 style={{ borderColor: '#84bbca', color: '#84bbca' }}
               >
                 <span className="relative z-10 flex items-center gap-3 hover:text-white">
-                  <span style={{ fontFamily: 'var(--font-creepster)' }}>RÉSERVER MAINTENANT</span>
+                  <span style={{ fontFamily: 'var(--font-creepster)' }}>{t('hero.button2')}</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" style={{ background: 'linear-gradient(to right, #5ea7aa , #a0d2de)' }} />
@@ -126,7 +127,7 @@ export default function HalloweenHero() {
 
               <div className="pt-4">
                 <p className="text-sm font-semibold uppercase tracking-wider" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#5ea7aa' }}>
-                  Du 30 Octobre au 2 Novembre 2025
+                  {t('hero.dates')}
                 </p>
               </div>
             </div>
