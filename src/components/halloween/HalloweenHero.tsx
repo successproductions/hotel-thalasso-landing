@@ -91,7 +91,7 @@ export default function HalloweenHero() {
             {/* Left Content */}
             <div ref={textRef} className="space-y-6 lg:col-span-2">
               <h1
-                className="text-5xl  md:text-6xl lg:text-7xl font-normal text-transparent bg-clip-text drop-shadow-lg"
+                className="text-5xl md:mt-4  md:text-6xl lg:text-7xl font-normal text-transparent bg-clip-text drop-shadow-lg"
                 style={{
                   fontFamily: 'var(--font-creepster)',
                   background: 'linear-gradient(to right, #5ea7aa, #5ea7aa, #5ea7aa)',
@@ -139,7 +139,7 @@ export default function HalloweenHero() {
                 alt="Halloween Dakhla Club"
                 width={1200}
                 height={1200}
-                className="w-[90%] h-auto scale-125"
+                className="w-[88%] h-auto scale-125"
                 priority
               />
             </div>
