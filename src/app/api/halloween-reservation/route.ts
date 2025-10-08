@@ -176,7 +176,7 @@ export async function POST(req: Request) {
     // Send email via Gmail
     const mailOptions = {
       from: `"Dakhla Club - Halloween 🎃" <${process.env.EMAIL_USER}>`,
-      to: 'w.master@successproductions.ma',
+      to: 'reservation@dakhlaclub.com',
       subject: `🎃 Nouvelle Réservation Halloween - ${name}`,
       html: emailHtml,
       replyTo: email,

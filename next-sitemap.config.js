@@ -7,6 +7,16 @@ module.exports = {
   exclude: ['/api/*', '/admin/*', '/_next/*', '/404', '/500', '/fr', '/en', '/'],
 
   transform: async (config, path) => {
+    // Handle Halloween special event (highest priority)
+    if (path === '/fr/halloween' || path === '/en/halloween') {
+      return {
+        loc: path,
+        changefreq: 'daily',
+        priority: 1.0,
+        lastmod: new Date().toISOString(),
+      };
+    }
+
     // Handle 3-day offers
     if (path === '/fr/evasion-holistique-3-jours' || path === '/en/evasion-holistique-3-jours') {
       return {
@@ -57,6 +67,19 @@ module.exports = {
 
   additionalPaths: async () => {
     return [
+      // Halloween special event
+      {
+        loc: '/fr/halloween',
+        changefreq: 'daily',
+        priority: 1.0,
+        lastmod: new Date().toISOString(),
+      },
+      {
+        loc: '/en/halloween',
+        changefreq: 'daily',
+        priority: 1.0,
+        lastmod: new Date().toISOString(),
+      },
       // 3-day programs
       {
         loc: '/fr/evasion-holistique-3-jours',
