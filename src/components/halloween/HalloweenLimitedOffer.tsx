@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,7 @@ interface TimeLeft {
 }
 
 export default function HalloweenLimitedOffer() {
+  const t = useTranslations('halloween');
   const sectionRef = useRef<HTMLElement>(null);
   const timerRef = useRef<HTMLDivElement>(null);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
@@ -80,7 +82,7 @@ export default function HalloweenLimitedOffer() {
   return (
     <section
       ref={sectionRef}
-      className="py-6 md:py-9 relative overflow-hidden"
+      className="pt-12 md:py-9 relative overflow-hidden"
     >
 
       <div className="container mx-auto px-4 relative z-10">
@@ -100,15 +102,15 @@ export default function HalloweenLimitedOffer() {
                     filter: 'drop-shadow(0 0 20px rgba(132, 187, 202, 0.6))'
                   }}>
                 <Image src="/images/pumpkinIcon.png" alt="" width={60} height={60} className="inline-block drop-shadow-[0_0_15px_rgba(234,179,8,0.8)]" />
-                Offre Spéciale Halloween
+                {t('limitedOffer.title')}
                 <Image src="/images/pumpkinIcon.png" alt="" width={60} height={60} className="inline-block drop-shadow-[0_0_15px_rgba(234,179,8,0.8)]" />
               </h2>
             </div>
             <p className="text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>
-              Du 30 Octobre au 2 Novembre 2025
+              {t('limitedOffer.dates')}
             </p>
             <div className="inline-block bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-3 rounded-full border-2 border-yellow-400 shadow-lg shadow-orange-500/50 animate-pulse">
-              <span className="font-bold text-lg">⚠️ Places Limitées ⚠️</span>
+              <span className="font-bold text-lg">{t('limitedOffer.limitedPlaces')}</span>
             </div>
           </div>
 
@@ -130,17 +132,17 @@ export default function HalloweenLimitedOffer() {
                      WebkitTextFillColor: 'transparent',
                      filter: 'drop-shadow(0 0 15px rgba(132, 187, 202, 0.5))'
                    }}>
-                  Le Compte à Rebours Commence...
+                  {t('limitedOffer.countdown.title')}
                 </p>
-                <p className="font-semibold" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>Ne ratez pas cette occasion unique !</p>
+                <p className="font-semibold" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>{t('limitedOffer.countdown.subtitle')}</p>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
                 {[
-                  { value: timeLeft.days, label: 'Jours', icon: '/images/pumpkinIcon.png' },
-                  { value: timeLeft.hours, label: 'Heures', icon: '/images/hallowenn/gostIcon.png' },
-                  { value: timeLeft.minutes, label: 'Minutes', icon: '/images/hallowenn/batIcon.png' },
-                  { value: timeLeft.seconds, label: 'Secondes', icon: '/images/hallowenn/spider.png' },
+                  { value: timeLeft.days, label: t('limitedOffer.countdown.days'), icon: '/images/pumpkinIcon.png' },
+                  { value: timeLeft.hours, label: t('limitedOffer.countdown.hours'), icon: '/images/hallowenn/gostIcon.png' },
+                  { value: timeLeft.minutes, label: t('limitedOffer.countdown.minutes'), icon: '/images/hallowenn/batIcon.png' },
+                  { value: timeLeft.seconds, label: t('limitedOffer.countdown.seconds'), icon: '/images/hallowenn/spider.png' },
                 ].map((item, index) => (
                   <div
                     key={index}
@@ -165,43 +167,13 @@ export default function HalloweenLimitedOffer() {
             </div>
           </div>
 
-          {/* Halloween Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {[
-              { emoji: '🎃', title: 'Soirée Costumée', desc: 'DJ & Animations' },
-              { emoji: '🍽️', title: 'Menu Thématique', desc: 'Dîner Spécial' },
-              { emoji: '🎁', title: 'Cadeaux Offerts', desc: '500 DHS Spa' }
-            ].map((item, index) => (
-              <div key={index} className="relative group rounded-2xl p-6 border-2 transition-all duration-300 transform hover:scale-105 shadow-lg bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-sm"
-                   style={{
-                     borderColor: 'rgba(132, 187, 202, 0.5)',
-                   }}
-                   onMouseEnter={(e) => e.currentTarget.style.borderColor = '#84bbca'}
-                   onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(132, 187, 202, 0.5)'}>
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'linear-gradient(to bottom right, rgba(132, 187, 202, 0.1), rgba(132, 187, 202, 0.1))' }}></div>
-                <div className="relative">
-                  <div className="text-5xl mb-4 text-center">{item.emoji}</div>
-                  <h3 className="text-xl font-normal mb-2 text-center"
-                      style={{
-                        fontFamily: 'var(--font-creepster)',
-                        color: '#84bbca',
-                        textShadow: '0 0 10px rgba(132, 187, 202, 0.3)'
-                      }}>
-                    {item.title}
-                  </h3>
-                  <p className="text-center" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
           {/* CTA Button */}
           <div className="text-center">
             <div className="relative inline-block group">
               <div className="absolute -inset-2 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{ background: 'linear-gradient(to right, #84bbca, #84bbca, #84bbca)' }}></div>
               <button
                 onClick={scrollToForm}
-                className="relative text-white font-normal text-xl md:text-2xl px-12 py-6 rounded-full shadow-2xl transform transition-all duration-300 border-2 hover:brightness-110"
+                className="relative text-white font-normal text-xl md:text-2xl px-6 py-6 rounded-full shadow-2xl transform transition-all duration-300 border-2 hover:brightness-110"
                 style={{
                   fontFamily: 'var(--font-creepster)',
                   textShadow: '0 2px 4px rgba(0,0,0,0.3)',
@@ -211,11 +183,11 @@ export default function HalloweenLimitedOffer() {
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
               >
-                🎃 Réservez Votre Séjour Halloween 🎃
+                {t('limitedOffer.button')}
               </button>
             </div>
             <p className="mt-6 text-lg font-semibold" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>
-              ⏰ Offre limitée • 🔒 Paiement sécurisé • ⚡ Confirmation immédiate
+              {t('limitedOffer.info')}
             </p>
           </div>
         </div>

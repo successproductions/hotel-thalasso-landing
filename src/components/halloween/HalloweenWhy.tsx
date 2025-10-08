@@ -4,10 +4,12 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HalloweenWhy() {
+  const t = useTranslations('halloween');
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -54,22 +56,22 @@ export default function HalloweenWhy() {
   const reasons = [
     {
       icon: '/images/1.jpg',
-      text: 'Séjour All Inclusive au bord de la lagune',
+      text: t('why.reasons.allInclusive'),
     },
     {
       icon: '/images/5.jpg',
-      text: 'Atmosphère unique, festive et familiale',
+      text: t('why.reasons.atmosphere'),
     },
     {
       icon: '/images/8.jpg',
-      text: 'Expérience combinant détente & animations',
+      text: t('why.reasons.experience'),
     },
   ];
 
   return (
     <section
       ref={sectionRef}
-      className="py-8 bg-white"
+      className="pt-8 bg-white"
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
@@ -82,7 +84,7 @@ export default function HalloweenWhy() {
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent'
                 }}>
-              Pourquoi choisir Dakhla Club ?
+              {t('why.title')}
             </h2>
 
             <div className="space-y-6">
@@ -105,14 +107,12 @@ export default function HalloweenWhy() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="text-lg text-gray-800 pt-2" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>{reason.text}</p>
+                  <p className="text-lg text-gray-800 pt-1 md:pt-4" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>{reason.text}</p>
                 </div>
               ))}
             </div>
 
-            <p className="text-gray-600 italic text-center mt-8 text-lg" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>
-              &ldquo;Une expérience magique entre frissons et détente, dans le cadre exceptionnel de Dakhla&rdquo;
-            </p>
+            
           </div>
 
           {/* Image Section */}

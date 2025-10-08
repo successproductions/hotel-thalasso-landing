@@ -62,17 +62,35 @@ export default function HalloweenReservation() {
 
     // Validate fields
     if (!nameRegex.test(formData.name)) {
-      Swal.fire('Nom invalide', 'Veuillez saisir un nom valide.', 'error');
+      Swal.fire({
+        icon: 'error',
+        title: t('reservation.alerts.validation.invalidName.title'),
+        text: t('reservation.alerts.validation.invalidName.text'),
+        confirmButtonColor: '#5ea7aa',
+        confirmButtonText: t('reservation.alerts.validation.invalidName.button'),
+      });
       setIsSubmitting(false);
       return;
     }
     if (!emailRegex.test(formData.email)) {
-      Swal.fire('Email invalide', 'Veuillez saisir une adresse email valide.', 'error');
+      Swal.fire({
+        icon: 'error',
+        title: t('reservation.alerts.validation.invalidEmail.title'),
+        text: t('reservation.alerts.validation.invalidEmail.text'),
+        confirmButtonColor: '#5ea7aa',
+        confirmButtonText: t('reservation.alerts.validation.invalidEmail.button'),
+      });
       setIsSubmitting(false);
       return;
     }
     if (!phoneRegex.test(formData.phoneNumber)) {
-      Swal.fire('Numéro de téléphone invalide', 'Entrez au moins 7 chiffres et maximum 15.', 'error');
+      Swal.fire({
+        icon: 'error',
+        title: t('reservation.alerts.validation.invalidPhone.title'),
+        text: t('reservation.alerts.validation.invalidPhone.text'),
+        confirmButtonColor: '#5ea7aa',
+        confirmButtonText: t('reservation.alerts.validation.invalidPhone.button'),
+      });
       setIsSubmitting(false);
       return;
     }
@@ -86,7 +104,22 @@ export default function HalloweenReservation() {
       const result = await response.json();
 
       if (result.status === 'success') {
-        Swal.fire('Réservation soumise !', '', 'success');
+        Swal.fire({
+          icon: 'success',
+          title: t('reservation.alerts.success.title'),
+          html: `
+            <p style="font-size: 16px; margin-bottom: 10px;">
+              ${t('reservation.alerts.success.message')}
+            </p>
+            <p style="font-size: 14px; color: #666;">
+              ${t('reservation.alerts.success.submessage')}
+            </p>
+          `,
+          confirmButtonColor: '#5ea7aa',
+          confirmButtonText: t('reservation.alerts.success.button'),
+          timer: 5000,
+          timerProgressBar: true,
+        });
         setFormData({
           name: '',
           email: '',
@@ -97,11 +130,25 @@ export default function HalloweenReservation() {
           guests: '2',
         });
       } else {
-        Swal.fire('Erreur', 'Une erreur est survenue. Veuillez réessayer ou nous contacter.', 'error');
+        Swal.fire({
+          icon: 'error',
+          title: t('reservation.alerts.error.title'),
+          text: t('reservation.alerts.error.text'),
+          confirmButtonColor: '#5ea7aa',
+          confirmButtonText: t('reservation.alerts.error.button'),
+          footer: `<a href="tel:+212652881921" style="color: #5ea7aa;">${t('reservation.alerts.error.footer')}</a>`
+        });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      Swal.fire('Erreur', 'Une erreur est survenue. Veuillez réessayer ou nous contacter.', 'error');
+      Swal.fire({
+        icon: 'error',
+        title: t('reservation.alerts.connectionError.title'),
+        text: t('reservation.alerts.connectionError.text'),
+        confirmButtonColor: '#5ea7aa',
+        confirmButtonText: t('reservation.alerts.connectionError.button'),
+        footer: `<a href="tel:+212652881921" style="color: #5ea7aa;">${t('reservation.alerts.connectionError.footer')}</a>`
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -126,9 +173,7 @@ export default function HalloweenReservation() {
                 }}>
               {t('reservation.title')}
             </h2>
-            <p className="text-xl text-gray-700" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>
-              {t('reservation.subtitle')}
-            </p>
+            
           </div>
 
           {/* Form */}

@@ -68,28 +68,22 @@ export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
           <nav className="hidden md:flex items-center gap-8" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
             <button
               onClick={() => scrollToSection('hero')}
-              className={`text-sm transition-colors ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+              className={`text-sm transition-colors hover:text-[#5ea7aa] ${isScrolled ? 'text-gray-800' : 'text-white'}`}
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#5ea7aa'}
-              onMouseLeave={(e) => e.currentTarget.style.color = isScrolled ? 'rgb(31, 41, 55)' : 'rgb(255, 255, 255)'}
             >
               {t('nav.home')}
             </button>
             <button
               onClick={() => scrollToSection('offre')}
-              className={`text-sm transition-colors ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+              className={`text-sm transition-colors hover:text-[#5ea7aa] ${isScrolled ? 'text-gray-800' : 'text-white'}`}
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#5ea7aa'}
-              onMouseLeave={(e) => e.currentTarget.style.color = isScrolled ? 'rgb(31, 41, 55)' : 'rgb(255, 255, 255)'}
             >
               {t('nav.offer')}
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className={`text-sm transition-colors ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+              className={`text-sm transition-colors hover:text-[#5ea7aa] ${isScrolled ? 'text-gray-800' : 'text-white'}`}
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#5ea7aa'}
-              onMouseLeave={(e) => e.currentTarget.style.color = isScrolled ? 'rgb(31, 41, 55)' : 'rgb(255, 255, 255)'}
             >
               {t('nav.about')}
             </button>
@@ -155,28 +149,22 @@ export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
           <nav className="md:hidden pb-6 space-y-4 bg-white px-4 py-4 rounded-lg mt-2 shadow-lg">
             <button
               onClick={() => scrollToSection('hero')}
-              className="block w-full text-left font-semibold py-2 text-gray-800"
+              className="block w-full text-left font-semibold py-2 text-gray-800 hover:text-[#5ea7aa] transition-colors"
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#5ea7aa'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(31, 41, 55)'}
             >
               {t('nav.home')}
             </button>
             <button
               onClick={() => scrollToSection('offre')}
-              className="block w-full text-left font-semibold py-2 text-gray-800"
+              className="block w-full text-left font-semibold py-2 text-gray-800 hover:text-[#5ea7aa] transition-colors"
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#5ea7aa'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(31, 41, 55)'}
             >
               {t('nav.offer')}
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="block w-full text-left font-semibold py-2 text-gray-800"
+              className="block w-full text-left font-semibold py-2 text-gray-800 hover:text-[#5ea7aa] transition-colors"
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#5ea7aa'}
-              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(31, 41, 55)'}
             >
               {t('nav.about')}
             </button>
