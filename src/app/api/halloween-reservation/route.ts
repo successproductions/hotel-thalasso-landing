@@ -321,7 +321,7 @@ export async function POST(req: Request) {
           <div class="container">
             <div class="header">
               <div class="pumpkin">🎃</div>
-              <h1>Merci pour votre réservation !</h1>
+              <h1>Merci pour votre demande !</h1>
               <p style="margin: 0; font-size: 16px;">Dakhla Club - Séjour Halloween 2025</p>
             </div>
 
