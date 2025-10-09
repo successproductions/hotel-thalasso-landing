@@ -145,7 +145,7 @@ export default function HalloweenWhy() {
           {/* Image Section */}
           <div ref={imageRef} className="relative">
             <Image
-              src="/images/hallowenn/DSC09978-Edit.png"
+              src="/images/hallowenn/DSC09978-Edit1.png"
               alt="Halloween Dakhla Club"
               width={800}
               height={800}

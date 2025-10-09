@@ -130,7 +130,7 @@ export default function HalloweenHero() {
             {/* Right side - Image */}
             <div ref={imageRef} className="flex justify-center items-center lg:col-span-3">
               <Image
-                src="/images/imagehalloween.png"
+                src="/images/imagehalloween1.png"
                 alt="Halloween Dakhla Club"
                 width={1200}
                 height={1200}
