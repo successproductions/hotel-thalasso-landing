@@ -36,4 +36,4 @@ jobs:
           
     - name: Deployment notification
       if: success()
-      run: echo "Deployment completed successfully!"
+      run: echo "Deployment completed successfully !"
