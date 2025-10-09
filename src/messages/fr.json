@@ -2176,18 +2176,18 @@
       "about": "À PROPOS"
     },
     "hero": {
-      "title": "Hello",
-      "titleLine2": "Halloween !",
-      "subtitle": "Séjour Exceptionnel",
-      "description": "Vivez une expérience unique entre frissons et détente à Dakhla Club. Soirée costumée, dîner thématique, animations et spa face à la lagune.",
+      "title": "HALLOWEEN",
+      "titleLine2": "FÉERIQUE",
+      "subtitle": "AU DAKHLA CLUB",
+      "description": "Du 29 octobre au 2 novembre, DAKHLA CLUB vous réserve un Séjour Halloween Exceptionnel clé en main: Soirée costumée, Dîner Thématique, SPA et Animations face à la lagune",
       "button": "RÉSERVER MAINTENANT",
-      "button2": "Boo ! Réservez votre séjour ",
-      "dates": "Du 30 Octobre au 2 Novembre 2025"
+      "button2": "Je découvre cette offre",
+      "dates": "LE TOUT EST INCLUS !"
     },
     "limitedOffer": {
-      "title": "Offre Spéciale Halloween",
+      "title": "LE SORT EST LANCÉ …",
       "dates": "Du 30 Octobre au 2 Novembre 2025",
-      "limitedPlaces": "⚠️ Places Limitées ⚠️",
+      "limitedPlaces": "Places Limitées",
       "countdown": {
         "title": "Le Compte à Rebours Commence...",
         "subtitle": "Ne ratez pas cette occasion unique !",
@@ -2210,37 +2210,51 @@
           "desc": "500 DHS Spa"
         }
       },
-      "button": "🎃 Réservez Votre Séjour Halloween 🎃",
+      "button": "🎃 Je dis oui à mon séjour 🎃",
       "info": "⏰ Offre limitée • 🔒 Paiement sécurisé • ⚡ Confirmation immédiate"
     },
     "offer": {
-      "title": "Offre Halloween",
+      "title": "UNE ÉVASION INOUBLIABLE ENTRE MYSTÈRE ET MAGIE A LA LAGUNE ",
+      "buttoncall": "Je réserve maintenant !",
       "items": {
         "dinner": {
           "title": "Dîner effrayant & menu thématique",
-          "desc": "Savourez un menu spécial Halloween préparé par nos chefs"
+          "desc": "Savourez un festin mystique préparé par nos chefs pour une soirée pleine de frissons"
         },
         "party": {
-          "title": "Soirée costumée avec DJ",
-          "desc": "Danse face à la lagune avec notre DJ sous les étoiles"
+          "title": "Soirée costumée sous les étoiles",
+          "desc": "Dansez face à la lagune au rythme de notre DJ… sous la lune d’Halloween"
         },
         "contest": {
-          "title": "Concours de costumes & prix",
-          "desc": "Participez au concours et gagnez des prix incroyables"
+          "title": "Concours de costumes & prix enchantés",
+          "desc": "Déguisez-vous, surprenez et remportez des cadeaux ensorcelants !"
         },
         "kids": {
-          "title": "Activités & maquillage enfants",
-          "desc": "Animations spéciales et maquillage pour les plus jeunes"
+          "title": "Atelier & maquillage enfants",
+          "desc": "Moments magiques pour les petits : rires, couleurs et transformations féériques"
         },
         "massage": {
           "title": "Massage relaxant post-frissons",
-          "desc": "Détendez-vous avec un massage à 500 DHS seulement"
+          "desc": "Après la fête, détendez-vous avec un massage exclusif pour retrouver une sérénité totale"
         },
         "voucher": {
-          "title": "500 DHS offerts au Spa Shop",
-          "desc": "Un bon d'achat de 500 DHS à utiliser dans notre boutique spa"
+          "title": "500 DHS offerts à la boutique Spa",
+          "desc": "Profitez d’un bon d’achat pour prolonger la magie dans notre Spa Shop"
         }
       }
+    },
+    "scarcity": {
+      "headline": " Les places sont limitées et la magie ne dure qu'une nuit…",
+      "body": "Chaque année, les séjours d'Halloween au Dakhla Club affichent complet en quelques jours.",
+      "urgency": "Ne manquez pas l'événement le plus envoûtant de l'année — réservez avant qu'il ne disparaisse dans la brume !",
+      "cta": "Je réserve maintenant avant la fin des disponibilités !",
+      "limitedPlaces": "Places Limitées",
+      "fillingFast": "Se remplit rapidement",
+      "bookToday": "Réservez aujourd'hui",
+      "limitedSpots": "Places disponibles limitées",
+      "remaining": "Quelques places restantes",
+      "instantConfirm": "Confirmation instantanée",
+      "securePayment": "Paiement sécurisé"
     },
     "why": {
       "title": "Pourquoi choisir Dakhla Club ?",
@@ -2249,7 +2263,8 @@
         "atmosphere": "Atmosphère unique, festive et familiale",
         "experience": "Expérience combinant détente & animations"
       },
-      "quote": "Une expérience magique entre frissons et détente, dans le cadre exceptionnel de Dakhla"
+      "quote": "Une expérience magique entre frissons et détente, dans le cadre exceptionnel de Dakhla",
+      "cta": "Je veux vivre l'expérience Halloween au Dakhla Club !"
     },
     "reservation": {
       "title": "Réservez maintenant",

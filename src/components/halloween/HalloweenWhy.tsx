@@ -53,6 +53,13 @@ export default function HalloweenWhy() {
     return () => ctx.revert();
   }, []);
 
+  const scrollToForm = () => {
+    const formSection = document.getElementById('reservation-form');
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const reasons = [
     {
       icon: '/images/1.jpg',
@@ -107,12 +114,32 @@ export default function HalloweenWhy() {
                       className="object-cover"
                     />
                   </div>
-                  <p className="text-lg text-gray-800 pt-1 md:pt-4" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>{reason.text}</p>
+                  <p className="md:text-lg text-xs  text-gray-800 pt-5 md:pt-4" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>{reason.text}</p>
                 </div>
               ))}
             </div>
 
-            
+            {/* CTA Button */}
+            <div className="">
+              <button
+                onClick={scrollToForm}
+                className="w-full md:w-auto px-10 py-5 rounded-full text-white font-normal text-lg md:text-xl transition-all duration-300 shadow-lg hover:shadow-2xl"
+                style={{
+                  background: 'linear-gradient(135deg, #5ea7aa, #84bbca)',
+                  fontFamily: 'var(--font-creepster)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                  e.currentTarget.style.boxShadow = '0 15px 35px rgba(94, 167, 170, 0.5)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 10px 25px rgba(94, 167, 170, 0.3)';
+                }}
+              >
+                {t('why.cta')}
+              </button>
+            </div>
           </div>
 
           {/* Image Section */}

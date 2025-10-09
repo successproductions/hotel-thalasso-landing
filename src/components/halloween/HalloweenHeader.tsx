@@ -65,24 +65,24 @@ export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
           </div>
 
           {/* Desktop Navigation - Center */}
-          <nav className="hidden md:flex items-center gap-8" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+          <nav className="hidden md:flex  items-center gap-8" style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
             <button
               onClick={() => scrollToSection('hero')}
-              className={`text-sm transition-colors hover:text-[#5ea7aa] ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+              className={`text-lg font-normal transition-colors hover:text-[#5ea7aa] ${isScrolled ? 'text-gray-800' : 'text-white'}`}
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
             >
               {t('nav.home')}
             </button>
             <button
               onClick={() => scrollToSection('offre')}
-              className={`text-sm transition-colors hover:text-[#5ea7aa] ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+              className={`text-lg font-normal transition-colors hover:text-[#5ea7aa] ${isScrolled ? 'text-gray-800' : 'text-white'}`}
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
             >
               {t('nav.offer')}
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className={`text-sm transition-colors hover:text-[#5ea7aa] ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+              className={`text-lg font-normal transition-colors hover:text-[#5ea7aa] ${isScrolled ? 'text-gray-800' : 'text-white'}`}
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
             >
               {t('nav.about')}
@@ -94,13 +94,13 @@ export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className={`flex items-center gap-2 px-4 py-2 font-normal rounded-full transition-all ${
+              className={`flex items-center gap-2 px-4 py-2 text-lg font-normal rounded-full transition-all ${
                 isScrolled ? 'text-gray-800 hover:bg-gray-100' : 'text-white hover:bg-white/10'
               }`}
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
             >
               <Globe size={18} />
-              <span className="font-bold">{locale.toUpperCase()}</span>
+              <span>{locale.toUpperCase()}</span>
             </button>
 
             {/* Reservation Button */}
@@ -149,21 +149,21 @@ export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
           <nav className="md:hidden pb-6 space-y-4 bg-white px-4 py-4 rounded-lg mt-2 shadow-lg">
             <button
               onClick={() => scrollToSection('hero')}
-              className="block w-full text-left font-semibold py-2 text-gray-800 hover:text-[#5ea7aa] transition-colors"
+              className="block w-full text-left text-lg font-normal py-2 text-gray-800 hover:text-[#5ea7aa] transition-colors"
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
             >
               {t('nav.home')}
             </button>
             <button
               onClick={() => scrollToSection('offre')}
-              className="block w-full text-left font-semibold py-2 text-gray-800 hover:text-[#5ea7aa] transition-colors"
+              className="block w-full text-left text-lg font-normal py-2 text-gray-800 hover:text-[#5ea7aa] transition-colors"
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
             >
               {t('nav.offer')}
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="block w-full text-left font-semibold py-2 text-gray-800 hover:text-[#5ea7aa] transition-colors"
+              className="block w-full text-left text-lg font-normal py-2 text-gray-800 hover:text-[#5ea7aa] transition-colors"
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}
             >
               {t('nav.about')}
@@ -172,11 +172,11 @@ export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
             {/* Language Toggle - Mobile */}
             <button
               onClick={toggleLanguage}
-              className="flex items-center justify-center gap-2 w-full px-4 py-2 font-normal rounded-full border-2 text-gray-800 hover:bg-gray-100 transition-all"
+              className="flex items-center justify-center gap-2 w-full px-4 py-2 text-lg font-normal rounded-full border-2 text-gray-800 hover:bg-gray-100 transition-all"
               style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', borderColor: '#5ea7aa' }}
             >
               <Globe size={18} />
-              <span className="font-bold">{locale === 'fr' ? 'FR / EN' : 'EN / FR'}</span>
+              <span>{locale === 'fr' ? 'FR / EN' : 'EN / FR'}</span>
             </button>
 
             <button
