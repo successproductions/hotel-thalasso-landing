@@ -3,6 +3,7 @@ import HalloweenHeader from '@/components/halloween/HalloweenHeader';
 import HalloweenFooter from '@/components/halloween/HalloweenFooter';
 import HalloweenHero from '@/components/halloween/HalloweenHero';
 import HalloweenOffer from '@/components/halloween/HalloweenOffer';
+import HalloweenScarcity from '@/components/halloween/HalloweenScarcity';
 import HalloweenWhy from '@/components/halloween/HalloweenWhy';
 import HalloweenLimitedOffer from '@/components/halloween/HalloweenLimitedOffer';
 import HalloweenReservation from '@/components/halloween/HalloweenReservation';
@@ -111,6 +112,7 @@ export default async function HalloweenPage({
         <div id="offre">
           <HalloweenOffer />
         </div>
+        <HalloweenScarcity />
         <div id="about">
           <HalloweenWhy />
         </div>

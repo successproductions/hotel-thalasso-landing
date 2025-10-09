@@ -2237,18 +2237,18 @@
       "about": "ABOUT US"
     },
     "hero": {
-      "title": "Hello",
-      "titleLine2": "Halloween!",
-      "subtitle": "Exceptional Stay!",
-      "description": "Experience a unique blend of thrills and relaxation at Dakhla Club. Costume party, themed dinner, activities and spa facing the lagoon.",
+      "title": "MAGICAL ",
+      "titleLine2": "HALLOWEEN",
+      "subtitle": "AT THE DAKHLA CLUB",
+      "description": "From October 29 to November 2, DAKHLA CLUB offers you an exceptional turnkey Halloween stay: Costume party, Themed dinner, SPA and Animations facing the lagoon",
       "button": "BOOK NOW",
-      "button2": "Boo ! Reserve Today",
+      "button2": "I am discovering this offer",
       "dates": "From October 30 to November 2, 2025"
     },
     "limitedOffer": {
       "title": "Halloween Special Offer",
       "dates": "From October 30 to November 2, 2025",
-      "limitedPlaces": "⚠️ Limited Places ⚠️",
+      "limitedPlaces": "Limited Places ",
       "countdown": {
         "title": "The Countdown Begins...",
         "subtitle": "Don't miss this unique opportunity!",
@@ -2279,29 +2279,42 @@
       "items": {
         "dinner": {
           "title": "Spooky Dinner & Themed Menu",
-          "desc": "Enjoy a special Halloween menu prepared by our chefs"
+          "desc": "Savor a mystical feast prepared by our chefs for a thrilling evening full of chills"
         },
         "party": {
-          "title": "Costume Party with DJ",
-          "desc": "Dance facing the lagoon with our DJ under the stars"
+          "title": "Costume Party Under the Stars",
+          "desc": "Dance facing the lagoon to the rhythm of our DJ… under the Halloween moon"
         },
         "contest": {
-          "title": "Costume Contest & Prizes",
-          "desc": "Participate in the contest and win amazing prizes"
+          "title": "Costume Contest & Enchanted Prizes",
+          "desc": "Dress up, amaze and win bewitching gifts!"
         },
         "kids": {
-          "title": "Activities & Kids Face Painting",
-          "desc": "Special activities and face painting for the little ones"
+          "title": "Workshop & Kids Face Painting",
+          "desc": "Magical moments for the little ones: laughter, colors and fairy-tale transformations"
         },
         "massage": {
-          "title": "Post-Thrill Relaxing Massage",
-          "desc": "Relax with a massage for only 500 DHS"
+          "title": "Relaxing Post-Thrills Massage",
+          "desc": "After the party, relax with an exclusive massage to regain complete serenity"
         },
         "voucher": {
-          "title": "500 DHS Spa Shop Voucher",
-          "desc": "A 500 DHS voucher to use in our spa shop"
+          "title": "500 DHS Gift at Spa Boutique",
+          "desc": "Enjoy a voucher to extend the magic in our Spa Shop"
         }
       }
+    },
+    "scarcity": {
+      "headline": "⚠️ Limited spaces and the magic lasts only one night…",
+      "body": "Every year, Halloween stays at Dakhla Club sell out in just a few days.",
+      "urgency": "Don't miss the most enchanting event of the year — book before it disappears into the mist!",
+      "cta": "I'm booking now before availability ends!",
+      "limitedPlaces": "Limited Places",
+      "fillingFast": "Filling up fast",
+      "bookToday": "Book today",
+      "limitedSpots": "Limited spots available",
+      "remaining": "Few spots remaining",
+      "instantConfirm": "Instant confirmation",
+      "securePayment": "Secure payment"
     },
     "why": {
       "title": "Why Choose Dakhla Club?",
@@ -2310,7 +2323,8 @@
         "atmosphere": "Unique, festive and family atmosphere",
         "experience": "Experience combining relaxation & activities"
       },
-      "quote": "A magical experience between thrills and relaxation, in the exceptional setting of Dakhla"
+      "quote": "A magical experience between thrills and relaxation, in the exceptional setting of Dakhla",
+      "cta": "I want to experience Halloween at Dakhla Club!"
     },
     "reservation": {
       "title": "Book Now",

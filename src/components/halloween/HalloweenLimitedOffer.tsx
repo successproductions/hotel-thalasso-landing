@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { AlertTriangle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -91,26 +92,38 @@ export default function HalloweenLimitedOffer() {
           <div className="text-center mb-12">
             <div className="inline-block mb-6 relative">
               {/* Glow effect */}
-              <div className="absolute inset-0 blur-3xl opacity-30" style={{ background: 'linear-gradient(to right, #84bbca, #84bbca, #84bbca)' }}></div>
-
               <h2 className="relative text-5xl md:text-6xl lg:text-7xl font-normal text-transparent bg-clip-text flex items-center gap-4 justify-center"
                   style={{
                     fontFamily: 'var(--font-creepster)',
-                    background: 'linear-gradient(to right, #84bbca, #a0d2de, #84bbca)',
+                    background: 'linear-gradient(to right, #5ea7aa, #5ea7aa, #84bbca)',
                     WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    filter: 'drop-shadow(0 0 20px rgba(132, 187, 202, 0.6))'
+                    WebkitTextFillColor: 'transparent'
                   }}>
                 <Image src="/images/pumpkinIcon.png" alt="" width={60} height={60} className="inline-block drop-shadow-[0_0_15px_rgba(234,179,8,0.8)]" />
                 {t('limitedOffer.title')}
                 <Image src="/images/pumpkinIcon.png" alt="" width={60} height={60} className="inline-block drop-shadow-[0_0_15px_rgba(234,179,8,0.8)]" />
               </h2>
             </div>
-            <p className="text-xl md:text-2xl font-semibold mb-4" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>
+            <p className="text-sm md:text-2xl  mb-4" style={{ fontFamily: 'Futura', color: '#84bbca' }}>
               {t('limitedOffer.dates')}
             </p>
-            <div className="inline-block bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-3 rounded-full border-2 border-yellow-400 shadow-lg shadow-orange-500/50 animate-pulse">
-              <span className="font-bold text-lg">{t('limitedOffer.limitedPlaces')}</span>
+            <div
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-sm border-2"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 159, 64, 0.1))',
+                borderColor: 'rgba(255, 107, 107, 0.3)',
+              }}
+            >
+              <AlertTriangle size={24} style={{ color: '#ff6b6b' }} />
+              <span
+                className="text-lg"
+                style={{
+                  color: '#ff6b6b',
+                  fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif'
+                }}
+              >
+                {t('limitedOffer.limitedPlaces')}
+              </span>
             </div>
           </div>
 
@@ -120,9 +133,9 @@ export default function HalloweenLimitedOffer() {
             className="relative mb-12"
           >
             {/* Spooky Border */}
-            <div className="absolute inset-0 rounded-3xl opacity-30 blur-2xl" style={{ background: 'linear-gradient(to right, #84bbca, #84bbca, #84bbca)' }}></div>
+            <div className="absolute inset-0 rounded-3xl opacity-30 blur-2xl" ></div>
 
-            <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border-4" style={{ borderColor: 'rgba(132, 187, 202, 0.5)' }}>
+            <div className="relative bg-gradient-to-br  rounded-3xl p-8 md:p-12 shadow-2xl border-4" style={{ borderColor: '#5ea7aa' }}>
               <div className="text-center mb-8">
                 <p className="text-2xl md:text-3xl font-normal text-transparent bg-clip-text mb-2"
                    style={{
@@ -134,7 +147,7 @@ export default function HalloweenLimitedOffer() {
                    }}>
                   {t('limitedOffer.countdown.title')}
                 </p>
-                <p className="font-semibold" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>{t('limitedOffer.countdown.subtitle')}</p>
+                <p className="" style={{ fontFamily: 'Futura', color: '#84bbca' }}>{t('limitedOffer.countdown.subtitle')}</p>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
@@ -148,8 +161,8 @@ export default function HalloweenLimitedOffer() {
                     key={index}
                     className="relative group"
                   >
-                    <div className="absolute inset-0 rounded-2xl transform group-hover:scale-105 transition-transform duration-300 opacity-50" style={{ background: 'linear-gradient(to bottom right, #84bbca, #84bbca)' }}></div>
-                    <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 m-1 rounded-xl p-4 md:p-6 border-2 shadow-xl" style={{ borderColor: 'rgba(132, 187, 202, 0.5)' }}>
+                    <div className="absolute inset-0 rounded-2xl transform group-hover:scale-105 transition-transform duration-300 opacity-50" ></div>
+                    <div className="relative  m-1 rounded-xl p-4 md:p-6 border-2 shadow-xl" style={{ borderColor: '#5ea7aa' }}>
                       <div className="relative w-10 h-10 mx-auto mb-2">
                         <Image src={item.icon} alt="" fill className="object-contain" />
                       </div>
@@ -157,9 +170,9 @@ export default function HalloweenLimitedOffer() {
                            style={{ color: '#84bbca', textShadow: '0 0 10px rgba(132, 187, 202, 0.5)' }}>
                         {String(item.value).padStart(2, '0')}
                       </div>
-                      <div className="text-xs md:text-sm text-center uppercase font-semibold" style={{ color: '#84bbca' }}>
-                        {item.label}
-                      </div>
+                        <div className="text-xs md:text-sm text-center uppercase " style={{ color: '#84bbca' }}>
+                          {item.label}
+                        </div>
                     </div>
                   </div>
                 ))}
@@ -170,14 +183,14 @@ export default function HalloweenLimitedOffer() {
           {/* CTA Button */}
           <div className="text-center">
             <div className="relative inline-block group">
-              <div className="absolute -inset-2 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" style={{ background: 'linear-gradient(to right, #84bbca, #84bbca, #84bbca)' }}></div>
+              <div className="absolute -inset-2 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" ></div>
               <button
                 onClick={scrollToForm}
                 className="relative text-white font-normal text-xl md:text-2xl px-6 py-6 rounded-full shadow-2xl transform transition-all duration-300 border-2 hover:brightness-110"
                 style={{
                   fontFamily: 'var(--font-creepster)',
                   textShadow: '0 2px 4px rgba(0,0,0,0.3)',
-                  background: 'linear-gradient(to right, #84bbca, #a0d2de)',
+                  background: 'linear-gradient(to right, #5ea7aa, #5ea7aa)',
                   borderColor: '#a0d2de'
                 }}
                 onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
@@ -186,7 +199,7 @@ export default function HalloweenLimitedOffer() {
                 {t('limitedOffer.button')}
               </button>
             </div>
-            <p className="mt-6 text-lg font-semibold" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>
+            <p className="mt-6 text-lg " style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>
               {t('limitedOffer.info')}
             </p>
           </div>

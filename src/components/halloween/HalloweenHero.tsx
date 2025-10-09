@@ -91,7 +91,7 @@ export default function HalloweenHero() {
             {/* Left Content */}
             <div ref={textRef} className="space-y-6 lg:col-span-2">
               <h1
-                className="text-5xl md:mt-4  md:text-6xl lg:text-7xl font-normal text-transparent bg-clip-text drop-shadow-lg"
+                className="text-5xl md:mt-1  md:text-6xl lg:text-7xl font-normal text-transparent bg-clip-text drop-shadow-lg"
                 style={{
                   fontFamily: 'var(--font-creepster)',
                   background: 'linear-gradient(to right, #5ea7aa, #5ea7aa, #5ea7aa)',
@@ -104,7 +104,7 @@ export default function HalloweenHero() {
                 {t('hero.titleLine2')}
               </h1>
 
-              <h2 className="text-3xl md:text-4xl font-normal drop-shadow-md" style={{ fontFamily: 'var(--font-creepster)', color: '#5ea7aa' }}>
+              <h2 className="text-3xl md:text-4xl  font-normal drop-shadow-md" style={{ fontFamily: 'var(--font-creepster)', color: '#5ea7aa' }}>
                 {t('hero.subtitle')}
               </h2>
 
@@ -125,11 +125,6 @@ export default function HalloweenHero() {
                 <div className="absolute inset-0 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" style={{ background: 'linear-gradient(to right, #5ea7aa , #a0d2de)' }} />
               </button>
 
-              <div className="pt-4">
-                <p className="text-sm font-semibold uppercase tracking-wider" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#5ea7aa' }}>
-                  {t('hero.dates')}
-                </p>
-              </div>
             </div>
 
             {/* Right side - Image */}
