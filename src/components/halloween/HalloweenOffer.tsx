@@ -123,7 +123,7 @@ export default function HalloweenOffer() {
       <div className="container mx-auto px-4">
         <h2
           ref={titleRef}
-          className="text-4xl md:text-5xl lg:text-6xl font-normal text-center mb-4 text-transparent bg-clip-text"
+          className="text-4xl md:text-5xl lg:text-6xl font-normal text-center mb-1 text-transparent bg-clip-text"
           style={{
             fontFamily: 'var(--font-creepster)',
             background: 'linear-gradient(to right, #5ea7aa, #a0d2de, #5ea7aa)',
@@ -133,7 +133,7 @@ export default function HalloweenOffer() {
         >
           {t('offer.title')}
         </h2>
-<p className="mb-5 text-center" style={{ fontFamily: 'Futura', color: '#84bbca' }}>{t('offer.description')}</p>
+<p className="mb-5 text-sm md:text-xl  text-center text-gray-800" style={{ fontFamily: 'Futura' }}>{t('offer.description')}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {offers.map((offer, index) => {

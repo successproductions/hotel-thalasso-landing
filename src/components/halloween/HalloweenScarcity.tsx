@@ -74,7 +74,29 @@ export default function HalloweenScarcity() {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
 
-<p className="mb-5 text-center text-sm font-light md:text-xl" style={{ fontFamily: 'Futura', color: '#84bbca' }}>{t('scarcity.description')}</p>
+<p className="mb-5 text-center text-sm font-light md:text-xl text-gray-800" style={{ fontFamily: 'Futura' }}>{t('scarcity.description')}</p>
+<div className="pt-2 text-center">
+                <button
+                  ref={buttonRef}
+                  onClick={scrollToForm}
+                  className="w-full md:w-auto px-10 py-5 rounded-full text-white font-normal text-lg md:text-xl transition-all duration-300 shadow-lg hover:shadow-2xl"
+                  style={{
+                    background: 'linear-gradient(135deg, #5ea7aa, #84bbca)',
+                    fontFamily: 'var(--font-creepster)',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.boxShadow = '0 15px 35px rgba(94, 167, 170, 0.5)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 10px 25px rgba(94, 167, 170, 0.3)';
+                  }}
+                >
+                  {t('scarcity.button')}
+                </button>
+              </div>
+
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Image Side */}

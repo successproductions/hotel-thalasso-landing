@@ -2315,7 +2315,8 @@
       "limitedSpots": "Limited spots available",
       "remaining": "Few spots remaining",
       "instantConfirm": "Instant confirmation",
-      "securePayment": "Secure payment"
+      "securePayment": "Secure payment",
+          "button": "I book now!"
     },
     "why": {
       "title": "Why Choose Dakhla Club?",

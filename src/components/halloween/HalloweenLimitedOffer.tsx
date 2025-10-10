@@ -120,10 +120,9 @@ export default function HalloweenLimitedOffer() {
 
             <div className="relative bg-gradient-to-br  rounded-3xl p-8 md:p-12 shadow-2xl border-4" style={{ borderColor: '#5ea7aa' }}>
               <div className="text-center mb-8">
-                <p className="text-2xl md:text-3xl font-normal text-transparent bg-clip-text mb-2"
+                <p className="text-2xl md:text-3xl font-normal text-gray-800 text-transparent bg-clip-text mb-2"
                    style={{
-                     fontFamily: 'var(--font-creepster)',
-                     background: 'linear-gradient(to right, #84bbca, #a0d2de, #84bbca)',
+                     background: 'linear-gradient(to right, #1e2b38, #1e2b38, #1e2b38)',
                      WebkitBackgroundClip: 'text',
                      WebkitTextFillColor: 'transparent',
                      filter: 'drop-shadow(0 0 15px rgba(132, 187, 202, 0.5))'
@@ -190,7 +189,7 @@ export default function HalloweenLimitedOffer() {
               <div className="absolute -inset-2 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" ></div>
               <button
                 onClick={scrollToForm}
-                className="relative text-white font-normal text-xl md:text-2xl px-6 py-6 rounded-full shadow-2xl transform transition-all duration-300 border-2 hover:brightness-110"
+                className="relative mb-4 md:mb-2 text-white font-normal text-xl md:text-2xl px-6 py-6 rounded-full shadow-1xl transform transition-all duration-300 border-2 hover:brightness-110"
                 style={{
                   fontFamily: 'var(--font-creepster)',
                   textShadow: '0 2px 4px rgba(0,0,0,0.3)',
@@ -208,7 +207,9 @@ export default function HalloweenLimitedOffer() {
             </p> */}
           </div>
         </div>
-      </div>
+       {/* CTA Button */}
+
+            </div>
 
       <style jsx>{`
         @keyframes float {
