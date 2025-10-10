@@ -162,7 +162,7 @@ export default function HalloweenOffer() {
 
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-normal mb-3 text-center" style={{ fontFamily: 'var(--font-creepster)', color: '#5ea7aa' }}>
+                  <h3 className="text-xl font-normal  text-center" style={{ fontFamily: 'var(--font-creepster)', color: '#5ea7aa' }}>
                     {offer.title}
                   </h3>
                   <p className="text-gray-700 text-center text-sm" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>{offer.description}</p>

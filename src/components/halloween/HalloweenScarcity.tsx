@@ -70,16 +70,15 @@ export default function HalloweenScarcity() {
   };
 
   return (
-    <section ref={sectionRef} className="py-2 pt-6  md:py-12 ">
+    <section ref={sectionRef} className="py-2  md:py-12 ">
+      <p className="mb-1 text-center text-sm font-light md:text-xl text-gray-800" style={{ fontFamily: 'Futura' }}>{t('scarcity.description')}</p>
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-
-<p className="mb-5 text-center text-sm font-light md:text-xl text-gray-800" style={{ fontFamily: 'Futura' }}>{t('scarcity.description')}</p>
 <div className="pt-2 text-center">
                 <button
                   ref={buttonRef}
                   onClick={scrollToForm}
-                  className="w-full md:w-auto px-10 py-5 rounded-full text-white font-normal text-lg md:text-xl transition-all duration-300 shadow-lg hover:shadow-2xl"
+                  className="w-full mb-3 md:w-auto px-10 py-5 rounded-full text-white font-normal text-lg md:text-xl transition-all duration-300 shadow-lg hover:shadow-2xl"
                   style={{
                     background: 'linear-gradient(135deg, #5ea7aa, #84bbca)',
                     fontFamily: 'var(--font-creepster)',
