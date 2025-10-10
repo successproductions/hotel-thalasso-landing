@@ -71,7 +71,7 @@ export default function HalloweenScarcity() {
 
   return (
     <section ref={sectionRef} className="py-2  md:py-12 ">
-      <p className="mb-1 text-center text-sm font-light md:text-xl text-gray-800" style={{ fontFamily: 'Futura' }}>{t('scarcity.description')}</p>
+      <p className="mb-1 md:mb-5 text-center text-xl font-light md:text-2xl text-gray-800" style={{ fontFamily: 'Futura' }}>{t('scarcity.description')}</p>
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
 <div className="pt-2 text-center">
@@ -145,7 +145,7 @@ export default function HalloweenScarcity() {
                 <p
                   className="text-base md:text-lg "
                   style={{
-                    color: '#5ea7aa',
+                    color: '#1e2b38',
                     fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif',
                   }}
                 >
