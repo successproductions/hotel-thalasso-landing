@@ -111,6 +111,9 @@ export default function HalloweenHero() {
               <p className="text-white text-lg leading-relaxed max-w-md" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>
                 {t('hero.description')}
               </p>
+                  <p className="text-white text-lg leading-relaxed max-w-md" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>
+                {t('hero.dates')}
+              </p>
 
               <button
                 ref={buttonRef}

@@ -2251,7 +2251,7 @@
       "limitedPlaces": "Limited Places ",
       "countdown": {
         "title": "The Countdown Begins...",
-        "subtitle": "Don't miss this unique opportunity!",
+        "subtitle": "Time flies by before the most magical weekend of the year!",
         "days": "Days",
         "hours": "Hours",
         "minutes": "Minutes",
@@ -2304,6 +2304,7 @@
       }
     },
     "scarcity": {
+            "description": "I can’t believe all these surprises... ",
       "headline": "⚠️ Limited spaces and the magic lasts only one night…",
       "body": "Every year, Halloween stays at Dakhla Club sell out in just a few days.",
       "urgency": "Don't miss the most enchanting event of the year — book before it disappears into the mist!",

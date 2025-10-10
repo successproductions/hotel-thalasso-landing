@@ -162,7 +162,7 @@ export default function HalloweenReservation() {
     >
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Title */}
+          {/* Title
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-6 text-transparent bg-clip-text"
                 style={{
@@ -174,7 +174,7 @@ export default function HalloweenReservation() {
               {t('reservation.title')}
             </h2>
             
-          </div>
+          </div> */}
 
           {/* Form */}
           <form

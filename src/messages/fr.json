@@ -1868,7 +1868,7 @@
         "whatsapp": "💬 WhatsApp : +212 652 88 1921",
         "email": "📧 Email : reservation@dakhlaclub.com",
         "hours": "🕘 Disponibilité : Tous les jours de 9h à 20h",
-        "response": "⚡ Réponse rapide : WhatsApp < 2h • Email < 4h"
+        "response": "⚡ Réponse rapide : WhatsApp < 2h • Email <br 4h"
       }
     },
     "booking": {
@@ -2179,18 +2179,18 @@
       "title": "HALLOWEEN",
       "titleLine2": "FÉERIQUE",
       "subtitle": "AU DAKHLA CLUB",
-      "description": "Du 29 octobre au 2 novembre, DAKHLA CLUB vous réserve un Séjour Halloween Exceptionnel clé en main: Soirée costumée, Dîner Thématique, SPA et Animations face à la lagune",
+      "description": "Du 29 octobre au 2 novembre, DAKHLA CLUB vous réserve un Séjour Halloween Exceptionnel clé en main: Soirée costumée, Dîner Thématique, SPA et Animations face à la lagune. ",
       "button": "RÉSERVER MAINTENANT",
       "button2": "Je découvre cette offre",
       "dates": "LE TOUT EST INCLUS !"
     },
     "limitedOffer": {
       "title": "LE SORT EST LANCÉ …",
-      "dates": "Du 30 Octobre au 2 Novembre 2025",
+      "dates": "Le temps file avant le week-end le plus magique de l’année !",
       "limitedPlaces": "Places Limitées",
       "countdown": {
-        "title": "Le Compte à Rebours Commence...",
-        "subtitle": "Ne ratez pas cette occasion unique !",
+        "title": "Le temps file avant le week-end le plus magique de l’année !",
+        "subtitle": "Le temps file avant le weekend le plus magique de l’année!",
         "days": "Jours",
         "hours": "Heures",
         "minutes": "Minutes",
@@ -2215,6 +2215,7 @@
     },
     "offer": {
       "title": "UNE ÉVASION INOUBLIABLE ENTRE MYSTÈRE ET MAGIE A LA LAGUNE ",
+      "description": "Dakhla Club vous ouvre ses portes pour un Halloween hors du temps Votre séjour comprend toutes ces magnifiques surprises :",
       "buttoncall": "Je réserve maintenant !",
       "items": {
         "dinner": {
@@ -2244,6 +2245,7 @@
       }
     },
     "scarcity": {
+      "description": "Je n’en reviens pas de toutes ces surprises… ",
       "headline": " Les places sont limitées et la magie ne dure qu'une nuit…",
       "body": "Chaque année, les séjours d'Halloween au Dakhla Club affichent complet en quelques jours.",
       "urgency": "Ne manquez pas l'événement le plus envoûtant de l'année — réservez avant qu'il ne disparaisse dans la brume !",

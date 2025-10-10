@@ -118,9 +118,22 @@ export default function HalloweenWhy() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Image Section */}
+          <div ref={imageRef} className="relative">
+            <Image
+              src="/images/hallowenn/DSC09978-Edit1.png"
+              alt="Halloween Dakhla Club"
+              width={800}
+              height={800}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </div>
 
             {/* CTA Button */}
-            <div className="">
+            <div className="text-center mt-6">
               <button
                 onClick={scrollToForm}
                 className="w-full md:w-auto px-10 py-5 rounded-full text-white font-normal text-lg md:text-xl transition-all duration-300 shadow-lg hover:shadow-2xl"
@@ -140,19 +153,6 @@ export default function HalloweenWhy() {
                 {t('why.cta')}
               </button>
             </div>
-          </div>
-
-          {/* Image Section */}
-          <div ref={imageRef} className="relative">
-            <Image
-              src="/images/hallowenn/DSC09978-Edit1.png"
-              alt="Halloween Dakhla Club"
-              width={800}
-              height={800}
-              className="w-full h-auto object-contain"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );

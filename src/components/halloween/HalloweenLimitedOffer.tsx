@@ -89,7 +89,7 @@ export default function HalloweenLimitedOffer() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Title Section */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-2">
             <div className="inline-block mb-6 relative">
               {/* Glow effect */}
               <h2 className="relative text-5xl md:text-6xl lg:text-7xl font-normal text-transparent bg-clip-text flex items-center gap-4 justify-center"
@@ -104,27 +104,10 @@ export default function HalloweenLimitedOffer() {
                 <Image src="/images/pumpkinIcon.png" alt="" width={60} height={60} className="inline-block drop-shadow-[0_0_15px_rgba(234,179,8,0.8)]" />
               </h2>
             </div>
-            <p className="text-sm md:text-2xl  mb-4" style={{ fontFamily: 'Futura', color: '#84bbca' }}>
+            {/* <p className="text-sm md:text-2xl  mb-4" style={{ fontFamily: 'Futura', color: '#84bbca' }}>
               {t('limitedOffer.dates')}
-            </p>
-            <div
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-sm border-2"
-              style={{
-                background: 'linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 159, 64, 0.1))',
-                borderColor: 'rgba(255, 107, 107, 0.3)',
-              }}
-            >
-              <AlertTriangle size={24} style={{ color: '#ff6b6b' }} />
-              <span
-                className="text-lg"
-                style={{
-                  color: '#ff6b6b',
-                  fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif'
-                }}
-              >
-                {t('limitedOffer.limitedPlaces')}
-              </span>
-            </div>
+            </p> */}
+
           </div>
 
           {/* Countdown Timer */}
@@ -147,7 +130,7 @@ export default function HalloweenLimitedOffer() {
                    }}>
                   {t('limitedOffer.countdown.title')}
                 </p>
-                <p className="" style={{ fontFamily: 'Futura', color: '#84bbca' }}>{t('limitedOffer.countdown.subtitle')}</p>
+                {/* <p className="" style={{ fontFamily: 'Futura', color: '#84bbca' }}>{t('limitedOffer.countdown.subtitle')}</p> */}
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
@@ -179,9 +162,30 @@ export default function HalloweenLimitedOffer() {
               </div>
             </div>
           </div>
+          <div className='text-center mb-6'>
+                        <div
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-sm border-2"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 159, 64, 0.1))',
+                borderColor: 'rgba(255, 107, 107, 0.3)',
+              }}
+            >
+              <AlertTriangle size={24} style={{ color: '#ff6b6b' }} />
+              <span
+                className="text-lg"
+                style={{
+                  color: '#ff6b6b',
+                  fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif'
+                }}
+              >
+                {t('limitedOffer.limitedPlaces')}
+              </span>
+            </div>
+          </div>
 
           {/* CTA Button */}
           <div className="text-center">
+            
             <div className="relative inline-block group">
               <div className="absolute -inset-2 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" ></div>
               <button
@@ -199,9 +203,9 @@ export default function HalloweenLimitedOffer() {
                 {t('limitedOffer.button')}
               </button>
             </div>
-            <p className="mt-6 text-lg " style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>
+            {/* <p className="mt-6 text-lg " style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif', color: '#84bbca' }}>
               {t('limitedOffer.info')}
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

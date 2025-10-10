@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { AlertTriangle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -74,28 +73,8 @@ export default function HalloweenScarcity() {
     <section ref={sectionRef} className="py-2 pt-6  md:py-12 ">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          {/* Warning Badge */}
-          <div className="flex justify-center mb-8">
-            <div
-              className="flex items-center gap-3 px-6 py-3 rounded-full backdrop-blur-sm border-2"
-              style={{
-                background: 'linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 159, 64, 0.1))',
-                borderColor: 'rgba(255, 107, 107, 0.3)',
-              }}
-            >
-              <AlertTriangle size={24} style={{ color: '#ff6b6b' }} />
-              <span
-                className=" text-lg"
-                style={{
-                  color: '#ff6b6b',
-                  fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif'
-                }}
-              >
-                {t('scarcity.limitedPlaces')}
-              </span>
-            </div>
-          </div>
 
+<p className="mb-5 text-center text-sm font-light md:text-xl" style={{ fontFamily: 'Futura', color: '#84bbca' }}>{t('scarcity.description')}</p>
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Image Side */}
