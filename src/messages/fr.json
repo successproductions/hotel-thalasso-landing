@@ -2291,7 +2291,7 @@
       "buttonSending": "Envoi en cours...",
       "trust": {
         "secure": "Paiement sécurisé",
-        "phone": "+212 652 88 19 21",
+        "phone": "+212 661-807293",
         "instant": "Confirmation immédiate"
       },
       "alerts": {
@@ -2322,20 +2322,20 @@
           "title": "❌ Erreur",
           "text": "Une erreur est survenue. Veuillez réessayer ou nous contacter.",
           "button": "Réessayer",
-          "footer": "📞 Appelez-nous: +212 652 88 19 21"
+          "footer": "📞 Appelez-nous: +212 661-807293"
         },
         "connectionError": {
           "title": "❌ Erreur de connexion",
           "text": "Impossible d'envoyer votre réservation. Vérifiez votre connexion internet.",
           "button": "Réessayer",
-          "footer": "📞 Appelez-nous: +212 652 88 19 21"
+          "footer": "📞 Appelez-nous: +212 661-807293"
         }
       }
     },
     "footer": {
       "description": "Vivez une expérience Halloween unique entre frissons et détente à Dakhla Club.",
       "contact": "Contact",
-      "phone": "+212 652 88 19 21",
+      "phone": "+212 661-807293",
       "email": "reservation@dakhlaclub.com",
       "address": "POINT DE DRAGON PK 28\nDakhla 73000, Maroc",
       "follow": "Suivez-nous",
