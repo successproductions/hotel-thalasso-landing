@@ -15,6 +15,7 @@ export default function HalloweenHero() {
   const textRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (!heroRef.current || !textRef.current) return;
@@ -56,6 +57,56 @@ export default function HalloweenHero() {
           ease: 'power3.out',
         }
       );
+
+      // Badge entrance animation - bounce in with rotation
+      gsap.fromTo(
+        badgeRef.current,
+        {
+          scale: 0,
+          rotation: -90,
+          opacity: 0,
+          y: -50,
+        },
+        {
+          scale: 1,
+          rotation: 0,
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.7,
+          ease: 'elastic.out(1, 0.6)',
+        }
+      );
+
+      // Continuous animations - pulse and slight wiggle
+      const tl = gsap.timeline({ repeat: -1, delay: 1.7 });
+
+      tl.to(badgeRef.current, {
+        scale: 1.1,
+        duration: 0.4,
+        ease: 'power2.out',
+      })
+      .to(badgeRef.current, {
+        scale: 1,
+        duration: 0.4,
+        ease: 'power2.in',
+      })
+      .to(badgeRef.current, {
+        rotation: -3,
+        duration: 0.3,
+        ease: 'sine.inOut',
+      })
+      .to(badgeRef.current, {
+        rotation: 3,
+        duration: 0.6,
+        ease: 'sine.inOut',
+      })
+      .to(badgeRef.current, {
+        rotation: 0,
+        duration: 0.3,
+        ease: 'sine.inOut',
+      })
+      .to(badgeRef.current, {}, '+=1'); // Pause for 1 second before repeating
     }, heroRef);
 
     return () => ctx.revert();
@@ -118,9 +169,48 @@ export default function HalloweenHero() {
               <button
                 ref={buttonRef}
                 onClick={scrollToForm}
-                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 font-bold text-lg rounded-md overflow-hidden transition-all duration-300 hover:text-white shadow-lg"
+                className="group relative inline-flex items-center gap-3 px-8 py-4 bg-transparent border-2 font-bold text-lg rounded-md overflow-visible transition-all duration-300 hover:text-white shadow-lg"
                 style={{ borderColor: '#84bbca', color: '#84bbca' }}
               >
+                {/* Price Badge - Circular Stamp Style */}
+                <span
+                  ref={badgeRef}
+                  className="absolute -top-16 -right-24 md:-right-18 z-20 pointer-events-none"
+                >
+                  <span
+                    className="relative block w-28 h-28 rounded-full flex items-center justify-center"
+                    style={{
+                      background: 'linear-gradient(135deg, #efa210 40%, #84bbca 100%)',
+                      boxShadow: '0 8px 24px rgba(94,167,170,0.5), inset 0 2px 8px rgba(255,255,255,0.2)',
+                      border: '4px solid #fff',
+                    }}
+                  >
+                    {/* Rotating dashed circle border */}
+                    <span
+                      className="absolute inset-2 rounded-full"
+                      style={{
+                        border: '2px dashed rgba(255,255,255,0.6)',
+                        animation: 'spin-slow 20s linear infinite',
+                      }}
+                    />
+
+                    {/* Text Content */}
+                    <span
+                      className="relative z-10 text-center px-3"
+                      style={{
+                        fontFamily: 'var(--font-creepster)',
+                        color: '#fff',
+                        textShadow: '0 2px 6px rgba(0,0,0,0.3)',
+                        fontSize: '17px',
+                        lineHeight: '1.2',
+                        fontWeight: 'bold',
+                      }}
+                    >
+                      {t('hero.badge')}
+                    </span>
+                  </span>
+                </span>
+
                 <span className="relative z-10 flex items-center gap-3 hover:text-white">
                   <span style={{ fontFamily: 'var(--font-creepster)' }}>{t('hero.button2')}</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -133,7 +223,7 @@ export default function HalloweenHero() {
             {/* Right side - Image */}
             <div ref={imageRef} className="flex justify-center items-center lg:col-span-3">
               <Image
-                src="/images/imagehalloween1.png"
+                src="/images/hallowenn/imagehotel.png"
                 alt="Halloween Dakhla Club"
                 width={1200}
                 height={1200}
