@@ -196,14 +196,14 @@ export default function HalloweenHero() {
 
                     {/* Text Content */}
                     <span
-                      className="relative z-10 text-center px-3"
+                      className="relative z-10 text-center font-normal  uppercase px-3"
                       style={{
-                        fontFamily: 'var(--font-creepster)',
+                  fontFamily: 'Futura',
                         color: '#fff',
                         textShadow: '0 2px 6px rgba(0,0,0,0.3)',
-                        fontSize: '17px',
+                        fontSize: '18px',
                         lineHeight: '1.2',
-                        fontWeight: 'bold',
+             
                       }}
                     >
                       {t('hero.badge')}
