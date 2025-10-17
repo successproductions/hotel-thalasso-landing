@@ -73,10 +73,10 @@
         "activities": [
           "Bol d'Air Jacquier",
           "Piscine thermale",
-          "Sauna purifiant",
-          "Bain hydromassant",
-          "Enveloppement aux algues",
-          "Modelage sous affusion"
+          "ICE BATH ou Sauna",
+          "Bain magnésium",
+          "Hammam",
+          "Massage tonique"
         ],
         "objective": "Lâcher-prise profond, oxygénation cellulaire, relâchement musculaire.",
         "ctaText": "ENTRER DANS L’UNIVERS"
@@ -87,9 +87,11 @@
         "activities": [
           "Piscine thermale",
           "Douche à jet",
-          "Bain au magnésium",
-          "Cupping thérapie",
-          "Massage relaxant"
+          "Enveloppement algue",
+          "Bain sel minéraux ",
+          "Massage relaxant",
+          "Modelage douche affusion",
+          "Cupping Thérapie Classique"
         ],
         "objective": "Relancer la circulation, affiner la silhouette, recharge énergétique.",
         "ctaText": "JE VEUX VIVRE L'EXPÉRIENCE"
@@ -327,37 +329,40 @@
         "title": "Installation bungalow vue nature/océan"
       },
       {
-        "title": "Bol d’Air Jacquier"
+        "title": "Bol d'Air Jacquier"
       },
       {
         "title": "Piscine thermale"
       },
       {
-        "title": "Sauna purifiant"
+        "title": "ICE BATH ou Sauna"
       },
       {
-        "title": "Bain hydromassant"
+        "title": "Bain magnésium"
       },
       {
-        "title": "Enveloppement aux algues"
+        "title": "Hammam"
       },
       {
-        "title": "Modelage sous affusion"
+        "title": "Massage tonique"
       },
       {
         "title": "Douche à jet"
       },
       {
-        "title": "Bain au magnésium"
+        "title": "Enveloppement algue"
       },
       {
-        "title": "Cupping thérapie"
-      },
-      {
-        "title": "Hammam Secret du Désert"
+        "title": "Bain sel minéraux"
       },
       {
         "title": "Massage relaxant"
+      },
+      {
+        "title": "Modelage douche affusion"
+      },
+      {
+        "title": "Cupping Thérapie Classique"
       }
     ],
     "availability": {
@@ -379,37 +384,37 @@
         0,
         0
       ],
-      "Bol d’Air Jacquier": [
-        1,
+      "Bol d'Air Jacquier": [
+        0,
         1,
         0,
-        1
+        0
       ],
       "Piscine thermale": [
+        0,
         1,
         1,
-        1,
-        1
+        0
       ],
-      "Sauna purifiant": [
+      "ICE BATH ou Sauna": [
         0,
         1,
         0,
         0
       ],
-      "Bain hydromassant": [
+      "Bain magnésium": [
         0,
         1,
         0,
         0
       ],
-      "Enveloppement aux algues": [
+      "Hammam": [
         0,
         1,
         0,
         0
       ],
-      "Modelage sous affusion": [
+      "Massage tonique": [
         0,
         1,
         0,
@@ -421,29 +426,35 @@
         1,
         0
       ],
-      "Bain au magnésium": [
+      "Enveloppement algue": [
         0,
         0,
         1,
         0
       ],
-      "Cupping thérapie": [
+      "Bain sel minéraux": [
         0,
         0,
         1,
         0
-      ],
-      "Hammam Secret du Désert": [
-        0,
-        0,
-        0,
-        1
       ],
       "Massage relaxant": [
         0,
         0,
+        1,
+        0
+      ],
+      "Modelage douche affusion": [
         0,
-        1
+        0,
+        1,
+        0
+      ],
+      "Cupping Thérapie Classique": [
+        0,
+        0,
+        1,
+        0
       ],
       "Objectifs thérapeutiques": [
         1,
@@ -514,11 +525,11 @@
           "title": "Lâcher-prise & Équilibre",
           "description": "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins.",
           "activities": [
-            "Yoga doux au lever du soleil",
-            "Sauna sec",
-            "Piscine thermale ",
-            "Scrub detox sel himalaya ",
-            "Hammam mille et une nuit"
+            "Bol d'air Jacquier",
+            "Piscine thermale",
+            "Ice Bath ou sauna ",
+            "Hamam mille et une nuit ",
+            "Massage Traditionnel tonique"
           ],
           "objective": "Libérer le système nerveux, relancer le drainage, préparer à la transformation.",
           "ctaText": "ENTRER DANS L’UNIVERS"
@@ -527,11 +538,11 @@
           "title": "Oxygénation & Régénération",
           "description": "Aujourd’hui, le corps se régénère en profondeur. Les soins ciblés relâchent les tensions et rééquilibrent l’énergie pour une détente totale.",
           "activities": [
-            "Yoga respiration & énergie",
-            "Bol d’Air Jacquier",
+            "Bol d'air Jacquier",
             "Douche à jet",
-            "Bain hydromassant",
-            "Enveloppement aux algues",
+            "Massage visage",
+            "bain hydromassant",
+            "Enveloppement algue",
             "Modelage sous affusion"
           ],
           "objective": "Stimuler les cellules, éliminer, reconnecter au corps vivant.",
@@ -541,12 +552,14 @@
           "title": "Sérénité & Détente Profonde",
           "description": "Le séjour touche à sa fin, mais les effets se prolongent bien au-delà de ces quelques jours. Vous repartez avec un esprit plus clair, un corps détendu, et une énergie rééquilibrée.",
           "activities": [
-            "Yoga méditatif",
-            "Bol d’Air Jacquier",
+            "Bol d'air Jacquier",
+            "Scrub detox sel Himalaya",
+            "Bain sel Hymalaya",
+            "Massage sel Himalaya",
+            "Piscine thermale",
             "Sauna",
-            "piscine thermale",
-            "Bain au magnésium",
-            "Massage traditionnel profond"
+            "Bain magnésium",
+            "Manicure Pédicure"
           ],
           "objective": "Sommeil réparateur, ancrage et relâchement durable.",
           "ctaText": "J'ACCÈDE À MON SÉJOUR"
@@ -555,11 +568,12 @@
           "title": "Stimulation & Vitalité",
           "description": "Une journée pour activer la vitalité et stimuler l’énergie. Pratiques dynamiques et soins ciblés pour booster le corps et l’esprit, et ressentir une nouvelle force intérieure.",
           "activities": [
-            "Yoga dynamisant",
-            "Bol d’Air Jacquier",
-            "Soin lissant détoxifiant spiruline",
-            "Cupping thérapie serviette de feu",
-            "Manucure + Pédicure "
+            "Piscine thermale",
+            "Sauna",
+            "Bol d'air Jacquier",
+            "Massage visage",
+            "Massage pochon ",
+            "Cupping thérapie serviette de feu"
           ],
           "objective": "Activation complète de la vitalité, drainage profond.",
           "ctaText": "J'ACCÈDE À MON SÉJOUR"
@@ -644,38 +658,38 @@
         }
       },
       "program": {
-        "title": "🌟 **5-Night Holistic Escape Program**\n\nA complete mind-body transformation journey:",
+        "title": "🌟 **Programme Évasion Holistique 5 Nuits**\n\nUn voyage complet de transformation corps-esprit :",
         "day1": {
-          "title": "**🌅 Day 1 - Arrival at Dakhla Club**",
-          "activities": "• Personalized welcome\n• Grounding herbal tea\n• Bungalow check-in with nature/ocean view\n• Gentle start in pristine natural setting",
-          "objective": "**Objective:** Grounding, breathing, opening body and mind"
+          "title": "**🌅 Jour 1 - Arrivée au Dakhla Club**",
+          "activities": "• Accueil personnalisé\n• Infusion d'ancrage\n• Installation dans votre bungalow\n• Un début tout en douceur, dans un environnement pur et naturel",
+          "objective": "**Objectif :** Ancrage, respiration, ouverture du corps et de l'esprit"
         },
         "day2": {
-          "title": "**🧘‍♀️ Day 2 - Release & Balance**",
-          "activities": "• Gentle sunrise yoga\n• Dry sauna\n• Heated thermal pool\n• Himalayan salt detox scrub\n• 1001 Nights Moroccan hammam",
-          "objective": "**Objective:** Free the nervous system, activate drainage, prepare for transformation"
+          "title": "**🧘‍♀️ Jour 2 - Lâcher-prise & Équilibre**",
+          "activities": "• Bol d'air Jacquier\n• Piscine thermale\n• Ice Bath ou sauna\n• Hamam mille et une nuit\n• Massage Traditionnel tonique",
+          "objective": "**Objectif :** Libérer le système nerveux, relancer le drainage, préparer à la transformation"
         },
         "day3": {
-          "title": "**💆‍♀️ Day 3 - Oxygenation & Regeneration**",
-          "activities": "• Breathwork & energizing yoga\n• Bol d'Air Jacquier\n• Jet shower\n• Hydromassage bath\n• Seaweed body wrap\n• Affusion massage",
-          "objective": "**Objective:** Stimulate cells, eliminate toxins, reconnect to the living body"
+          "title": "**💆‍♀️ Jour 3 - Oxygénation & Régénération**",
+          "activities": "• Bol d'air Jacquier\n• Douche à jet\n• Massage visage\n• Bain hydromassant\n• Enveloppement algue\n• Modelage sous affusion",
+          "objective": "**Objectif :** Stimuler les cellules, éliminer, reconnecter au corps vivant"
         },
         "day4": {
-          "title": "**🌊 Day 4 - Serenity & Deep Relaxation**",
-          "activities": "• Meditative yoga\n• Bol d'Air Jacquier\n• Sauna\n• Thermal pool\n• Magnesium bath\n• Deep traditional massage",
-          "objective": "**Objective:** Restorative sleep, grounding and lasting relaxation"
+          "title": "**🌊 Jour 4 - Sérénité & Détente Profonde**",
+          "activities": "• Bol d'air Jacquier\n• Scrub detox sel Himalaya\n• Bain sel Hymalaya\n• Massage sel Himalaya\n• Piscine thermale\n• Sauna\n• Bain magnésium\n• Manicure Pédicure",
+          "objective": "**Objectif :** Sommeil réparateur, ancrage et relâchement durable"
         },
         "day5": {
-          "title": "**⚡ Day 5 - Stimulation & Vitality**",
-          "activities": "• Energizing yoga\n• Bol d'Air Jacquier\n• Detoxifying spirulina facial treatment\n• Fire towel cupping therapy\n• Manicure & pedicure",
-          "objective": "**Objective:** Complete vitality activation, deep drainage"
+          "title": "**⚡ Jour 5 - Stimulation & Vitalité**",
+          "activities": "• Piscine thermale\n• Sauna\n• Bol d'air Jacquier\n• Massage visage\n• Massage pochon\n• Cupping thérapie serviette de feu",
+          "objective": "**Objectif :** Activation complète de la vitalité, drainage profond"
         },
         "day6": {
-          "title": "**🏡 Day 6 - Departure from Dakhla Club**",
-          "activities": "• Closing ritual\n• Integration tips\n• Wellness journal to take home\n• Departure with renewed energy and deep serenity",
-          "objective": "**Objective:** Integration tips, closing ritual, wellness journal to take home"
+          "title": "**🏡 Jour 6 - Départ du Dakhla Club**",
+          "activities": "• Rituel de clôture\n• Conseils de prolongation\n• Carnet de bien-être à emporter\n• Départ avec une énergie renouvelée et une sérénité profonde",
+          "objective": "**Objectif :** Conseils de prolongation, rituel de clôture, carnet de bien-être à emporter"
         },
-        "followUp": "**✨ Result:** Complete transformation in 6 days (5 nights) to regain your energy and natural balance!"
+        "followUp": "**✨ Résultat :** Transformation complète en 6 jours (5 nuits) pour retrouver votre énergie et votre équilibre naturel !"
       },
       "booking": {
         "title": "📅 **Je réserve**",
@@ -785,70 +799,70 @@
           "title": "Accueil personnalisé"
         },
         {
-          "title": "Infusion d’ancrage"
+          "title": "Infusion d'ancrage"
         },
         {
           "title": "Bungalow vue nature/océan"
         },
         {
-          "title": "Yoga doux au lever du soleil"
+          "title": "Bol d'air Jacquier"
         },
         {
-          "title": "Sauna sec"
+          "title": "Piscine thermale"
         },
         {
-          "title": "Piscine thermale chauffée"
+          "title": "Ice Bath ou sauna"
         },
         {
-          "title": "Gommage détox au sel de l’Himalaya"
+          "title": "Hamam mille et une nuit"
         },
         {
-          "title": "Hammam marocain Mille et Une Nuits"
-        },
-        {
-          "title": "Respiration & Yoga énergisant"
-        },
-        {
-          "title": "Bol d’Air Jacquier"
+          "title": "Massage Traditionnel tonique"
         },
         {
           "title": "Douche à jet"
         },
         {
+          "title": "Massage visage"
+        },
+        {
           "title": "Bain hydromassant"
         },
         {
-          "title": "Enveloppement aux algues"
+          "title": "Enveloppement algue"
         },
         {
           "title": "Modelage sous affusion"
         },
         {
-          "title": "Yoga méditatif"
+          "title": "Scrub detox sel Himalaya"
         },
         {
-          "title": "Bain au magnésium"
+          "title": "Bain sel Hymalaya"
         },
         {
-          "title": "Massage traditionnel profond"
+          "title": "Massage sel Himalaya"
         },
         {
-          "title": "Yoga énergisant"
+          "title": "Sauna"
         },
         {
-          "title": "Soin visage détox à la spiruline"
+          "title": "Bain magnésium"
         },
         {
-          "title": "Cupping thérapie serviette chaude"
+          "title": "Manicure Pédicure"
         },
         {
-          "title": "Manucure & pédicure"
+          "title": "Massage pochon"
+        },
+        {
+          "title": "Cupping thérapie serviette de feu"
         },
         {
           "title": "Rituel de clôture"
         },
         {
-          "title": "Conseils d’intégration"
+          "title": "Conseils d'intégration"
         },
         {
           "title": "Carnet bien-être à emporter"
@@ -863,7 +877,7 @@
           0,
           0
         ],
-        "Infusion d’ancrage": [
+        "Infusion d'ancrage": [
           1,
           0,
           0,
@@ -879,7 +893,23 @@
           0,
           0
         ],
-        "Yoga doux au lever du soleil": [
+        "Bol d'air Jacquier": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "Piscine thermale": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "Ice Bath ou sauna": [
           0,
           1,
           0,
@@ -887,23 +917,7 @@
           0,
           0
         ],
-        "Sauna sec": [
-          0,
-          1,
-          0,
-          1,
-          0,
-          0
-        ],
-        "Piscine thermale chauffée": [
-          0,
-          1,
-          1,
-          1,
-          0,
-          0
-        ],
-        "Gommage détox au sel de l’Himalaya": [
+        "Hamam mille et une nuit": [
           0,
           1,
           0,
@@ -911,28 +925,12 @@
           0,
           0
         ],
-        "Hammam marocain Mille et Une Nuits": [
+        "Massage Traditionnel tonique": [
           0,
           1,
           0,
           0,
           0,
-          0
-        ],
-        "Respiration & Yoga énergisant": [
-          0,
-          0,
-          1,
-          0,
-          0,
-          0
-        ],
-        "Bol d’Air Jacquier": [
-          0,
-          0,
-          1,
-          1,
-          1,
           0
         ],
         "Douche à jet": [
@@ -943,6 +941,14 @@
           0,
           0
         ],
+        "Massage visage": [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
         "Bain hydromassant": [
           0,
           0,
@@ -951,7 +957,7 @@
           0,
           0
         ],
-        "Enveloppement aux algues": [
+        "Enveloppement algue": [
           0,
           0,
           1,
@@ -967,7 +973,7 @@
           0,
           0
         ],
-        "Yoga méditatif": [
+        "Scrub detox sel Himalaya": [
           0,
           0,
           0,
@@ -975,7 +981,7 @@
           0,
           0
         ],
-        "Bain au magnésium": [
+        "Bain sel Hymalaya": [
           0,
           0,
           0,
@@ -983,7 +989,7 @@
           0,
           0
         ],
-        "Massage traditionnel profond": [
+        "Massage sel Himalaya": [
           0,
           0,
           0,
@@ -991,7 +997,31 @@
           0,
           0
         ],
-        "Yoga énergisant": [
+        "Sauna": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "Bain magnésium": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Manicure Pédicure": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Massage pochon": [
           0,
           0,
           0,
@@ -999,23 +1029,7 @@
           1,
           0
         ],
-        "Soin visage détox à la spiruline": [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
-        "Cupping thérapie serviette chaude": [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
-        "Manucure & pédicure": [
+        "Cupping thérapie serviette de feu": [
           0,
           0,
           0,
@@ -1031,7 +1045,7 @@
           0,
           1
         ],
-        "Conseils d’intégration": [
+        "Conseils d'intégration": [
           0,
           0,
           0,
@@ -1090,10 +1104,9 @@
           "title": "Vitalité & Pureté",
           "description": "Une journée dédiée à l'éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l'eau et des soins.",
           "activities": [
-            "Yoga",
+            "Bol d'air Jacquier",
             "Sauna",
             "Piscine thermale",
-            "Scrub detox sel himalaya",
             "Hammam mille et une nuit"
           ],
           "objective": "Stimuler les voies d'élimination, relancer la circulation lymphatique, reconnecter au corps.",
@@ -1103,10 +1116,11 @@
           "title": "Sérénité Marine",
           "description": "Aujourd'hui, le corps se régénère en profondeur. Les soins ciblés relâchent les tensions et rééquilibrent l'énergie pour une détente totale.",
           "activities": [
-            "Yoga",
             "Bol d'air Jacquier",
+            "Piscine thermale",
+            "Sauna",
             "Bain hydromassant",
-            "Enveloppement aux algues",
+            "Enveloppement algue",
             "Modelage affusion"
           ],
           "objective": "Oxygéner les cellules, nourrir les tissus en profondeur, réveiller l'énergie vitale.",
@@ -1116,11 +1130,11 @@
           "title": "Équilibre & Relaxation",
           "description": "Le séjour touche à sa fin, mais les effets se prolongent bien au-delà de ces quelques jours. Vous repartez avec un esprit plus clair, un corps détendu, et une énergie rééquilibrée.",
           "activities": [
-            "Yoga",
             "Bol d'air Jacquier",
-            "Sauna",
+            "Ice bath ou Sauna",
             "Piscine thermale",
-            "Massage Traditionnel Relaxant"
+            "Massage Tonique",
+            "Massage Visage"
           ],
           "objective": "Apaiser le système nerveux, relâcher les tensions enfouies, favoriser un sommeil réparateur.",
           "ctaText": "J'ACCÈDE À MON SÉJOUR"
@@ -1129,10 +1143,11 @@
           "title": "Énergie & Revitalisation",
           "description": "Une journée pour activer la vitalité et stimuler l'énergie. Pratiques dynamiques et soins ciblés pour booster le corps et l'esprit, et ressentir une nouvelle force intérieure.",
           "activities": [
-            "Sport coaching class",
-            "Yoga",
             "Bol d'air Jacquier",
-            "Douche à jet"
+            "Piscine thermale",
+            "Sauna",
+            "Douche à jet",
+            "Massage pierre chaude"
           ],
           "objective": "Activer la vitalité profonde et stimuler l'énergie corporelle.",
           "ctaText": "J'ACCÈDE À MON SÉJOUR"
@@ -1141,13 +1156,13 @@
           "title": "Dynamisme & Purification",
           "description": "Une journée pour purifier le corps et intégrer tous les bienfaits du séjour. Pratiques d'intégration, hammam et soins pour repartir aligné(e), apaisé(e) et plein(e) d'énergie.",
           "activities": [
-            "Cupping thérapie",
-            "Coaching sport class",
-            "Yoga",
             "Bol d'air Jacquier",
-            "Douche à jet",
             "Piscine thermale",
-            "Manucure + Pédicure"
+            "Sauna",
+            "Douche à jet",
+            "Soin de visage",
+            "Manucure",
+            "Pédicure"
           ],
           "objective": "Consolider les bienfaits, éliminer les derniers blocages, stabiliser la transformation.",
           "ctaText": "J'ACCÈDE À MON SÉJOUR"
@@ -1157,13 +1172,12 @@
           "description": "Le jour le plus intense de votre séjour. Une journée complète de soins pour une régénération profonde et durable.",
           "activities": [
             "Bol d'air Jacquier",
-            "Stretching",
-            "Massage pierre chaude",
-            "Soin lissant détoxifiant spiruline",
-            "Bain magnésium",
-            "Yoga",
-            "Ice bath",
-            "Enveloppement aux algues"
+            "Piscine thermale ",
+            "Sauna",
+            "Scrub sel Himalaya ",
+            "Bain Sel Himalaya",
+            "Massage sel Himalaya ",
+            "Cupping thérapie serviette de feu"
           ],
           "objective": "Régénération cellulaire maximale, détox profonde, équilibre énergétique optimal.",
           "ctaText": "J'ACCÈDE À MON SÉJOUR"
@@ -1233,10 +1247,7 @@
       ],
       "services": [
         {
-          "title": "Accueil & Installation"
-        },
-        {
-          "title": "Yoga"
+          "title": "Bol d'air Jacquier"
         },
         {
           "title": "Sauna"
@@ -1245,52 +1256,52 @@
           "title": "Piscine thermale"
         },
         {
-          "title": "Scrub detox sel himalaya"
-        },
-        {
           "title": "Hammam mille et une nuit"
-        },
-        {
-          "title": "Bol d'air Jacquier"
         },
         {
           "title": "Bain hydromassant"
         },
         {
-          "title": "Enveloppement aux algues"
+          "title": "Enveloppement algue"
         },
         {
           "title": "Modelage affusion"
         },
         {
-          "title": "Massage traditionnel relaxant"
+          "title": "Ice bath ou Sauna"
         },
         {
-          "title": "Coaching sport class"
+          "title": "Massage Tonique"
+        },
+        {
+          "title": "Massage Visage"
         },
         {
           "title": "Douche à jet"
         },
         {
-          "title": "Cupping thérapie"
-        },
-        {
-          "title": "Manucure + Pédicure"
-        },
-        {
-          "title": "Stretching"
-        },
-        {
           "title": "Massage pierre chaude"
         },
         {
-          "title": "Soin lissant détoxifiant spiruline"
+          "title": "Soin de visage"
         },
         {
-          "title": "Bain magnésium"
+          "title": "Manucure"
         },
         {
-          "title": "Ice bath"
+          "title": "Pédicure"
+        },
+        {
+          "title": "Scrub sel Himalaya"
+        },
+        {
+          "title": "Bain Sel Himalaya"
+        },
+        {
+          "title": "Massage sel Himalaya"
+        },
+        {
+          "title": "Cupping thérapie serviette de feu"
         },
         {
           "title": "Rituel de fermeture"
@@ -1303,17 +1314,7 @@
         }
       ],
       "availability": {
-        "Accueil & Installation": [
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "Yoga": [
+        "Bol d'air Jacquier": [
           0,
           1,
           1,
@@ -1326,31 +1327,21 @@
         "Sauna": [
           0,
           1,
-          0,
           1,
           0,
-          0,
-          0,
+          1,
+          1,
+          1,
           0
         ],
         "Piscine thermale": [
           0,
           1,
-          0,
           1,
-          0,
           1,
-          0,
-          0
-        ],
-        "Scrub detox sel himalaya": [
-          0,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
           0
         ],
         "Hammam mille et une nuit": [
@@ -1363,16 +1354,6 @@
           0,
           0
         ],
-        "Bol d'air Jacquier": [
-          0,
-          0,
-          1,
-          1,
-          1,
-          1,
-          1,
-          0
-        ],
         "Bain hydromassant": [
           0,
           0,
@@ -1383,14 +1364,14 @@
           0,
           0
         ],
-        "Enveloppement aux algues": [
+        "Enveloppement algue": [
           0,
           0,
           1,
           0,
           0,
           0,
-          1,
+          0,
           0
         ],
         "Modelage affusion": [
@@ -1403,7 +1384,7 @@
           0,
           0
         ],
-        "Massage traditionnel relaxant": [
+        "Ice bath ou Sauna": [
           0,
           0,
           0,
@@ -1413,13 +1394,23 @@
           0,
           0
         ],
-        "Coaching sport class": [
-          0,
+        "Massage Tonique": [
           0,
           0,
           0,
           1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "Massage Visage": [
+          0,
+          0,
+          0,
           1,
+          0,
+          0,
           0,
           0
         ],
@@ -1433,67 +1424,77 @@
           0,
           0
         ],
-        "Cupping thérapie": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0
-        ],
-        "Manucure + Pédicure": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0
-        ],
-        "Stretching": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
         "Massage pierre chaude": [
           0,
           0,
           0,
           0,
-          0,
-          0,
           1,
+          0,
+          0,
           0
         ],
-        "Soin lissant détoxifiant spiruline": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
-        "Bain magnésium": [
-          0,
+        "Soin de visage": [
           0,
           0,
           0,
           0,
           0,
           1,
+          0,
           0
         ],
-        "Ice bath": [
+        "Manucure": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Pédicure": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "Scrub sel Himalaya": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Bain Sel Himalaya": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Massage sel Himalaya": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "Cupping thérapie serviette de feu": [
           0,
           0,
           0,
@@ -1583,37 +1584,37 @@
         "title": "🌟 **Programme Évasion Holistique 7 Nuits**\n\n**Une transformation profonde en 8 jours :**",
         "day1": {
           "title": "**🌅 Jour 1 - Accueil & Premiers Pas**",
-          "activities": "• Accueil personnalisé\n• Infusion d'ancrage\n• Installation dans votre bungalow\n• Début en douceur dans un environnement pur",
-          "objective": "**Objectif:** Créer un cocon sécurisant et initier la déconnexion mentale"
+          "activities": "• Accueil personnalisé\n• Infusion d'ancrage\n• Installation dans votre cocon\n• Début en douceur dans un environnement pur",
+          "objective": "**Objectif:** Créer un espace de sécurité et amorcer la déconnexion mentale"
         },
         "day2": {
           "title": "**🧘‍♀️ Jour 2 - Vitalité & Pureté**",
-          "activities": "• Yoga matinal doux\n• Sauna sec\n• Piscine thermale chauffée\n• Scrub détox sel himalaya\n• Hammam mille et une nuits",
-          "objective": "**Objectif:** Stimuler les émonctoires, relancer la circulation lymphatique"
+          "activities": "• Bol d'air Jacquier\n• Sauna\n• Piscine thermale\n• Hammam mille et une nuit",
+          "objective": "**Objectif:** Stimuler les voies d'élimination, relancer la circulation lymphatique, reconnecter au corps"
         },
         "day3": {
           "title": "**💆‍♀️ Jour 3 - Sérénité Marine**",
-          "activities": "• Yoga breathwork énergisant\n• Bol d'Air Jacquier\n• Douche à jet\n• Bain hydromassant\n• Enveloppement aux algues\n• Massage sous affusion",
-          "objective": "**Objectif:** Oxygéner les cellules, éliminer les toxines, reconnecter au corps vivant"
+          "activities": "• Bol d'air Jacquier\n• Piscine thermale\n• Sauna\n• Bain hydromassant\n• Enveloppement algue\n• Modelage affusion",
+          "objective": "**Objectif:** Oxygéner les cellules, nourrir les tissus en profondeur, réveiller l'énergie vitale"
         },
         "day4": {
-          "title": "**🌊 Jour 4 - Détente & Relaxation Profonde**",
-          "activities": "• Yoga méditatif\n• Bol d'Air Jacquier\n• Sauna\n• Piscine thermale\n• Bain magnésium\n• Massage traditionnel profond",
-          "objective": "**Objectif:** Sommeil réparateur, ancrage et détente durable"
+          "title": "**🌊 Jour 4 - Équilibre & Relaxation**",
+          "activities": "• Bol d'air Jacquier\n• Ice bath ou Sauna\n• Piscine thermale\n• Massage Tonique\n• Massage Visage",
+          "objective": "**Objectif:** Apaiser le système nerveux, relâcher les tensions enfouies, favoriser un sommeil réparateur"
         },
         "day5": {
           "title": "**⚡ Jour 5 - Énergie & Revitalisation**",
-          "activities": "• Yoga énergisant\n• Bol d'Air Jacquier\n• Douche à jet\n• Coaching sport class",
+          "activities": "• Bol d'air Jacquier\n• Piscine thermale\n• Sauna\n• Douche à jet\n• Massage pierre chaude",
           "objective": "**Objectif:** Activer la vitalité profonde et stimuler l'énergie corporelle"
         },
         "day6": {
           "title": "**🔥 Jour 6 - Dynamisme & Purification**",
-          "activities": "• Cupping thérapie\n• Coaching sport class\n• Yoga\n• Bol d'Air Jacquier\n• Douche à jet\n• Piscine thermale\n• Manucure + Pédicure",
-          "objective": "**Objectif:** Consolider les bienfaits, éliminer les derniers blocages"
+          "activities": "• Bol d'air Jacquier\n• Piscine thermale\n• Sauna\n• Douche à jet\n• Soin de visage\n• Manucure\n• Pédicure",
+          "objective": "**Objectif:** Consolider les bienfaits, éliminer les derniers blocages, stabiliser la transformation"
         },
         "day7": {
           "title": "**💎 Jour 7 - Régénération Intense**",
-          "activities": "• Bol d'Air Jacquier\n• Stretching\n• Massage pierre chaude\n• Soin lissant détoxifiant spiruline\n• Bain magnésium\n• Yoga\n• Ice bath\n• Enveloppement aux algues",
+          "activities": "• Bol d'air Jacquier\n• Piscine thermale\n• Sauna\n• Scrub sel Himalaya\n• Bain Sel Himalaya\n• Massage sel Himalaya\n• Cupping thérapie serviette de feu",
           "objective": "**Objectif:** Régénération cellulaire maximale, détox profonde, équilibre énergétique optimal"
         },
         "day8": {
@@ -1817,10 +1818,12 @@
         "title": "🛬 **Jour 1** : Arrivée douce, installation dans votre cocon"
       },
       "day2": {
-        "title": "🧘 **Jour 2** : Soins détox & relaxation profonde"
+        "title": "🧘 **Jour 2** : Vitalité & Détente sensorielle",
+        "description": "Journée d'éveil des sens avec : Bol d'Air Jacquier, Piscine thermale, ICE BATH ou Sauna, Bain magnésium, Hammam, et Massage tonique pour un lâcher-prise profond."
       },
       "day3": {
-        "title": "💆 **Jour 3** : Massage, bains & vitalité retrouvée"
+        "title": "💆 **Jour 3** : Régénération & Équilibre",
+        "description": "Le corps se régénère en profondeur avec : Piscine thermale, Douche à jet, Enveloppement algue, Bain sel minéraux, Massage relaxant, Modelage douche affusion, et Cupping Thérapie Classique."
       },
       "day4": {
         "title": "🌅 **Jour 4** : Départ aligné(e), léger(e), apaisé(e)"
