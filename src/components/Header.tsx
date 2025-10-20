@@ -36,9 +36,9 @@ export default function Header() {
   ];
 
   const allEvasionLinks = [
-    { name: t('evasion3'), href: '/evasion-holistique-3-jours' },
-    { name: t('evasion5'), href: '/evasion-holistique-5-jours' },
-    { name: t('evasion7'), href: '/evasion-holistique-7-jours' },
+    { name: t('evasion3'), href: '/evasion-holistique-3-jours' as const },
+    { name: t('evasion5'), href: '/evasion-holistique-5-jours' as const },
+    { name: t('evasion7'), href: '/evasion-holistique-7-jours' as const },
   ];
 
   // Filter out the current page from dropdown

@@ -7,6 +7,7 @@ import { ProgramsSection } from '@/components/ProgramsSection';
 import { ServicesTable } from '@/components/ServicesTable';
 import { ProgrammeFonctionne } from '@/components/ProgrammeFonctionne';
 import { ObjectivesSection } from '@/components/ObjectivesSection';
+import { OtherOffersSection } from '@/components/OtherOffersSection';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import FAQSection from '@/components/FAQ';
 import { RewardsSection } from '@/components/RewardsSection';
@@ -111,6 +112,7 @@ export default function Page() {
       <ServicesTable />
       <ProgrammeFonctionne />
       <ObjectivesSection />
+      <OtherOffersSection />
       <TestimonialsCarousel />
       <RewardsSection />
       <FAQSection />

@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Hero7 from '@/components/offer-7/Hero7';
 import { About7 } from '@/components/offer-7/About7';
 import { RewardsSection } from '@/components/RewardsSection';
+import { OtherOffersSection } from '@/components/OtherOffersSection';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import { NewsletterSection7 } from '@/components/offer-7/NewsletterSection7';
 import { ProgramsSection7 } from '@/components/offer-7/ProgramsSection7';
@@ -113,6 +114,7 @@ export default function Page() {
       <ServicesTable7 />
       <ProgrammeFonctionne7 />
       <ObjectivesSection7 />
+      <OtherOffersSection />
       <TestimonialsCarousel />
       <RewardsSection />
       <FAQ7 />

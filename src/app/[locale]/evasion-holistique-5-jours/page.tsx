@@ -11,6 +11,7 @@ import { ProgramsSection5 } from '@/components/offer-5/ProgramsSection5';
 import { ServicesTable5 } from '@/components/offer-5/ServicesTable5';
 import WhatsAppChatbot5 from '@/components/offer-5/WhatsAppChatbot5';
 import { RewardsSection } from '@/components/RewardsSection';
+import { OtherOffersSection } from '@/components/OtherOffersSection';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 
 import type { Metadata } from 'next';
@@ -114,6 +115,7 @@ export default function Page() {
       <ServicesTable5 />
       <ProgrammeFonctionne5 />
       <ObjectivesSection5 />
+      <OtherOffersSection />
       <TestimonialsCarousel />
       <RewardsSection />
       <FAQ5 />

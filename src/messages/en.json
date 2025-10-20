@@ -9,9 +9,9 @@
     "services": "RETREAT",
     "offers": "OFFERS",
     "evasion": "HOLISTIC ESCAPE",
-    "evasion3": "3 DAYS",
-    "evasion5": "5 DAYS",
-    "evasion7": "7 DAYS",
+    "evasion3": "3 NIGHTS",
+    "evasion5": "5 NIGHTS",
+    "evasion7": "7 NIGHTS",
     "button": {
       "book": "BOOK NOW"
     }
@@ -2400,6 +2400,23 @@
       "address": "POINT DE DRAGON PK 28\nDakhla 73000, Morocco",
       "follow": "Follow Us",
       "copyright": "© 2025 Dakhla Club. All rights reserved. | Halloween Special Event"
+    }
+  },
+  "otherOffers": {
+    "heading": "Discover Our Other Offers",
+    "subheading": "Explore other wellness programs tailored to your needs",
+    "buttonText": "Discover This Offer",
+    "offer3": {
+      "title": "3-Night Holistic Escape",
+      "description": "A short rejuvenating stay to quickly recharge your batteries"
+    },
+    "offer5": {
+      "title": "5-Night Holistic Escape",
+      "description": "A perfect balance between deep relaxation and lasting transformation"
+    },
+    "offer7": {
+      "title": "7-Night Holistic Escape",
+      "description": "The complete experience for total mind and body regeneration"
     }
   }
 }
