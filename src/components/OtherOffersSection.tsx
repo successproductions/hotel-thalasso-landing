@@ -28,10 +28,9 @@ export function OtherOffersSection() {
     },
   ];
 
-  // Filter out the current page from offers
+
   const otherOffers = allOffers.filter((offer) => !pathname.includes(offer.href));
 
-  // Only show if there are other offers to display
   if (otherOffers.length === 0) return null;
 
   return (
