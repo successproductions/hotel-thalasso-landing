@@ -181,7 +181,7 @@ export default async function LocaleLayout({
         />
       </head>
 
-      <body className={`${playfair.className} ${cinzel.variable} ${creepster.variable}`}>
+      <body className={`${playfair.className} ${cinzel.variable} ${creepster.variable} overflow-x-hidden`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
