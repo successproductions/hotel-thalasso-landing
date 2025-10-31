@@ -211,7 +211,6 @@ export default function BlackFridayCountdown() {
                        shadow-2xl hover:shadow-[#5ba6a9]/50 cursor-pointer uppercase tracking-wider"
             >
               {t('cta')}
-              <span className="inline-block ml-2">→</span>
             </a>
           </div>
         </div>

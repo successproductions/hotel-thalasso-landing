@@ -161,7 +161,7 @@ export default function BlackFridayHero() {
             <div className="hidden lg:block">
               <button
                 onClick={() => scrollToSection('reservation')}
-                className="px-6 py-2 bg-bf-turquoise text-white font-semibold hover:bg-[#d7c9ad] transition-all duration-300 text-xs tracking-wider uppercase rounded-1xl"
+                className="px-6 py-2 bg-bf-turquoise text-white font-medium hover:bg-[#d7c9ad] transition-all duration-300 text-sm tracking-wider uppercase rounded-1xl"
               >
                 {tNav('reservation')}
               </button>
@@ -250,17 +250,17 @@ export default function BlackFridayHero() {
                 {t('tagline').replace('🖤 ', '')}
               </h1>
               <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white uppercase tracking-wide">
-                BOUTIQUE & RESORTS
+                ÉVASION EXCLUSIVE À -30 %
               </p>
             </div>
 
             {/* Description */}
             <div className="md:space-y-4 max-w-xl">
               <p className="text-sm md:text-xl text-white/80 leading-relaxed">
-                {t('description')}
+                  {t('highlight')}
               </p>
               <p className="text-sm md:text-xl text-white/80 leading-relaxed">
-                {t('highlight')}
+                {t('description')}
               </p>
             </div>
 
@@ -279,9 +279,9 @@ export default function BlackFridayHero() {
                 </a>
 
                 {/* Discount Badge Image - Overlapping */}
-                <div className="absolute -right-8 -top-16 md:-right-28 md:-top-16 w-28 h-28 md:w-44 md:h-44  z-20 pointer-events-none">
+                <div className="absolute -right-8 -top-16 md:-right-52 md:top-62 w-28 h-36 md:w-72 md:h-80  z-20 pointer-events-none">
                   <Image
-                    src="/images/black-friday/30Offe1.png"
+                    src="/images/black-friday/-30Offe1.png"
                     alt="-30% Off"
                     fill
                     className="object-contain drop-shadow-2xl"

@@ -19,27 +19,23 @@ export default function BlackFridayExperience() {
   const experiences = [
     {
       key: 'rooms',
-      image: '/images/1.jpg',
+      image: '/images/black-friday/chambres.jpg',
     },
     {
       key: 'restaurant',
-      image: '/images/2.jpg',
+      image: '/images/black-friday/restaurant.jpeg',
     },
     {
       key: 'spa',
-      image: '/images/3.jpg',
+      image: '/images/black-friday/spa.jpg',
     },
     {
       key: 'kitesurf',
-      image: '/images/4.jpg',
+      image: '/images/black-friday/kitesurf.jpg',
     },
     {
       key: 'pool',
-      image: '/images/6.jpg',
-    },
-    {
-      key: 'luxury',
-      image: '/images/7.jpg',
+      image: '/images/black-friday/piscine.jpg',
     },
   ];
 
@@ -132,10 +128,10 @@ export default function BlackFridayExperience() {
                 key={exp.key}
                 className={`experience-card group relative overflow-hidden  shadow-lg hover:shadow-2xl
                           transition-all duration-500 ${
-                            // Card 1: tall (2 rows), Card 5: extra tall (3 rows), Card 6: tall + spans 2 columns
-                            index === 0 ? 'lg:row-span-2' :
-                            index === 4 ? 'lg:row-span-3' :
-                            index === 5 ? 'lg:col-span-2 lg:row-span-2' : ''
+                            // Card 0 (rooms): 3 rows, Card 2 (spa): 2 rows, Card 3 (kitesurf): 2 rows
+                            index === 0 ? 'lg:row-span-3' :
+                            index === 2 ? 'lg:row-span-3' :
+                            index === 3 ? 'lg:row-span-1' : ''
                           }`}
               >
                 {/* Image */}
@@ -152,7 +148,7 @@ export default function BlackFridayExperience() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
                   {/* Hover Color Overlay */}
-                  <div className="absolute inset-0 bg-[#5ba6a9]/0 group-hover:bg-[#5ba6a9]/30 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-[#5ba6a9]/0 group-hover:bg-[#5ba6a9]/10 transition-all duration-500" />
                 </div>
 
                 {/* Content Overlay */}
@@ -177,19 +173,18 @@ export default function BlackFridayExperience() {
           </div>
         </div>
 
+
         {/* CTA Section */}
         <div className="text-center">
           <a
             ref={ctaRef}
             href="#reservation"
             className="inline-block px-4 md:px-12 py-6 bg-[#5ba6a9] text-white text-xl md:text-2xl font-normal
-                     hover:bg-[#4a9599] transition-all duration-500 transform hover:scale-105
-                     shadow-2xl hover:shadow-[#5ba6a9]/50 cursor-pointer uppercase tracking-wider"
+                    hover:bg-[#4a9599] transition-all duration-500 transform hover:scale-105
+                    shadow-2xl hover:shadow-[#5ba6a9]/50 cursor-pointer uppercase tracking-wider"
           >
             {t('cta')}
-            <span className="inline-block ml-3 transition-transform duration-300 group-hover:translate-x-2">
-              →
-            </span>
+      
           </a>
         </div>
       </div>

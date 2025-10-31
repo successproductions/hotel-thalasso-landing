@@ -27,7 +27,7 @@ export default function BlackFridayFooter() {
               />
             </div>
             
-            <p className="text-gray-300 text-sm leading-relaxed md:mb-4">
+            <p className="text-gray-300 text-sm text-center leading-relaxed md:mb-4">
               {t('description')}
             </p>
             
