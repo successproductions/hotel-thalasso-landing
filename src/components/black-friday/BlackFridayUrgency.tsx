@@ -109,7 +109,7 @@ export default function BlackFridayUrgency() {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="group flex-1 px-4 py-4 bg-[#5ba6a9] uppercase text-white text-lg font-medium 
+                  className="group flex-1 px-4 py-4 bg-[#5ba6a9] uppercase text-white text-xl font-medium 
                           transition-all duration-300 transform hover:scale-105
                            shadow-2xl hover:bg-[#d7c9ad] cursor-pointer flex items-center justify-center gap-2"
                 >
