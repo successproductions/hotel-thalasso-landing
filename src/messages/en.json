@@ -2418,5 +2418,96 @@
       "title": "7-Night Holistic Escape",
       "description": "The complete experience for total mind and body regeneration"
     }
+  },
+  "blackFriday": {
+    "nav": {
+      "home": "HOME",
+      "offer": "THE OFFER",
+      "experience": "THE EXPERIENCE",
+      "reservation": "BOOK NOW"
+    },
+    "hero": {
+      "tagline": "🖤 BLACK FRIDAY AT DAKHLA CLUB",
+      "title": "EXCLUSIVE ESCAPE AT -30%",
+      "subtitle": "From [start date] to [end date]",
+      "description": "A suspended moment between lagoon, ocean and desert, where raw luxury meets absolute freedom.",
+      "highlight": "Limited-time offer – accommodation only.",
+      "cta": "🎯 Discover this exclusive offer"
+    },
+    "countdown": {
+      "title": "⏳ THE COUNTDOWN HAS BEGUN…",
+      "description": "Time is running out before the most beautiful escape of the year.",
+      "subtitle": "Every minute brings us closer to the end of this window of privilege.",
+      "limitedPlaces": "⚡ LIMITED AVAILABILITY!",
+      "cta": "➡️ Yes to my stay at -30%",
+      "days": "DAYS",
+      "hours": "HOURS",
+      "minutes": "MINUTES",
+      "seconds": "SECONDS"
+    },
+    "experience": {
+      "title": "🌊 A UNIQUE ESCAPE BETWEEN DESERT AND OCEAN",
+      "subtitle": "Dakhla Club opens its doors for an experience where nature, sports and wellness meet.",
+      "description": "Your stay includes everything that makes this place legendary:",
+      "items": {
+        "rooms": {
+          "icon": "🏝️",
+          "title": "Rooms & Suites facing the lagoon",
+          "description": "Sleep to the rhythm of the waves, in comfort and serenity."
+        },
+        "restaurant": {
+          "icon": "🍽️",
+          "title": "Restaurant & world flavors",
+          "description": "Taste refined gastronomy, between Moroccan inspiration and international cuisine."
+        },
+        "spa": {
+          "icon": "💆‍♀️",
+          "title": "Spa & absolute wellness",
+          "description": "Let water, warmth and light soothe your senses."
+        },
+        "kitesurf": {
+          "icon": "🏄‍♂️",
+          "title": "Kitesurf & water sports",
+          "description": "Experience the lightness of the wind and the power of the ocean on a legendary spot."
+        },
+        "pool": {
+          "icon": "🏊‍♀️",
+          "title": "Panoramic pool & relaxation moments",
+          "description": "Recharge under the golden sun of Dakhla."
+        },
+        "luxury": {
+          "icon": "💎",
+          "title": "An invitation to breathe differently",
+          "description": "This is not just a promotion, it's an invitation to breathe differently."
+        }
+      },
+      "cta": "✨ I book my escape at -30%!"
+    },
+    "urgency": {
+      "badge": "⚠️ SCARCITY MARKETING / ELEGANT URGENCY",
+      "title": "This Black Friday offer disappears as soon as the counter reaches zero.",
+      "subtitle": "Every year, our rooms are booked in just a few hours.",
+      "warning": "Don't let this chance fade away with the tide.",
+      "cta1": "⏰ I book now before availability runs out!",
+      "cta2": "✈️ I want to live the Dakhla Club experience at -30%"
+    },
+    "seo": {
+      "title": "Black Friday Dakhla Club - Exclusive Stay at -30%",
+      "description": "Take advantage of our exclusive Black Friday offer: -30% on your stay at Dakhla Club. Between lagoon, ocean and desert. Limited offer.",
+      "keywords": "black friday, dakhla club, exclusive offer, 30% discount, luxury stay, kitesurf, spa, dakhla morocco"
+    },
+    "footer": {
+      "description": "Exclusive escape between lagoon, ocean and desert. Live the ultimate experience in the heart of Dakhla.",
+      "contactTitle": "Contact Us",
+      "followTitle": "Follow Us",
+      "quickLinks": "Quick Links",
+      "links": {
+        "home": "Home",
+        "offer": "Offer",
+        "experience": "Experience"
+      },
+      "copyright": "© 2025 Dakhla Club. All rights reserved.",
+      "specialEvent": "Black Friday Special Event"
+    }
   }
 }

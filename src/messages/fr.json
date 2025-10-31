@@ -2366,5 +2366,96 @@
       "title": "Évasion Holistique 7 Nuits",
       "description": "L'expérience complète pour une régénération totale corps et esprit"
     }
+  },
+  "blackFriday": {
+    "nav": {
+      "home": "ACCUEIL",
+      "offer": "L'OFFRE",
+      "experience": "L'EXPÉRIENCE",
+      "reservation": "RÉSERVER"
+    },
+    "hero": {
+      "tagline": "🖤 BLACK FRIDAY AU DAKHLA CLUB",
+      "title": "ÉVASION EXCLUSIVE À -30%",
+      "subtitle": "Du [date début] au [date fin]",
+      "description": "Un moment suspendu entre lagune, océan et désert, où le luxe brut rencontre la liberté absolue",
+      "highlight": "Offre éphémère – hébergement uniquement",
+      "cta": "Je découvre cette offre exclusive"
+    },
+    "countdown": {
+      "title": "LE COMPTE À REBOURS EST LANCÉ…",
+      "description": "Le temps s'écoule avant la plus belle évasion de l'année",
+      "subtitle": "Chaque minute rapproche la fin de cette fenêtre de privilège",
+      "limitedPlaces": "⚡ PLACES LIMITÉES !",
+      "cta": "Je dis oui à mon séjour à -30 %",
+      "days": "JOURS",
+      "hours": "HEURES",
+      "minutes": "MINUTES",
+      "seconds": "SECONDES"
+    },
+    "experience": {
+      "title": "UNE ÉVASION INÉDITE ENTRE DÉSERT ET OCÉAN",
+      "subtitle": "Dakhla Club vous ouvre ses portes pour une expérience où la nature, le sport et le bien-être se rencontrent",
+      "description": "Votre séjour comprend tout ce qui fait la légende du lieu :",
+      "items": {
+        "rooms": {
+          "icon": "🏝️",
+          "title": "Chambres & Suites face à la lagune",
+          "description": "Dormez au rythme des vagues, dans le confort et la sérénité"
+        },
+        "restaurant": {
+          "icon": "🍽️",
+          "title": "Restaurant & saveurs du monde",
+          "description": "Goûtez à une gastronomie raffinée, entre inspiration marocaine et cuisine internationale"
+        },
+        "spa": {
+          "icon": "💆‍♀️",
+          "title": "Spa & bien-être absolu",
+          "description": "Laissez l'eau, la chaleur et la lumière apaiser vos sens"
+        },
+        "kitesurf": {
+          "icon": "🏄‍♂️",
+          "title": "Kitesurf & sports nautiques",
+          "description": "Vivez la légèreté du vent et la puissance de l'océan sur un spot mythique"
+        },
+        "pool": {
+          "icon": "🏊‍♀️",
+          "title": "Piscine panoramique & instants farniente",
+          "description": "Ressourcez-vous sous le soleil doré de Dakhla"
+        },
+        "luxury": {
+          "icon": "💎",
+          "title": "Une invitation à respirer autrement",
+          "description": "Ce n'est pas une simple promotion, c'est une invitation à respirer autrement"
+        }
+      },
+      "cta": "Je réserve mon évasion à -30 % !"
+    },
+    "urgency": {
+      "badge": " SCARCITY MARKETING / URGENCE ÉLÉGANTE",
+      "title": "Cette offre Black Friday disparaît dès que le compteur atteint zéro",
+      "subtitle": "Chaque année, nos chambres se réservent en quelques heures seulement",
+      "warning": "Ne laissez pas cette chance s'évanouir avec la marée.",
+      "cta1": "Je réserve maintenant avant la fin des disponibilités !",
+      "cta2": "Je veux vivre l'expérience Dakhla Club à -30 %"
+    },
+    "seo": {
+      "title": "Black Friday Dakhla Club - Séjour Exclusif à -30%",
+      "description": "Profitez de notre offre Black Friday exclusive : -30% sur votre séjour au Dakhla Club. Entre lagune, océan et désert. Offre limitée",
+      "keywords": "black friday, dakhla club, offre exclusive, réduction 30%, séjour luxe, kitesurf, spa, dakhla maroc"
+    },
+    "footer": {
+      "description": "Évasion exclusive entre lagune, océan et désert. Vivez l'expérience ultime au cœur de Dakhla",
+      "contactTitle": "Nous Contacter",
+      "followTitle": "Suivez-Nous",
+      "quickLinks": "Liens Rapides",
+      "links": {
+        "home": "Accueil",
+        "offer": "L'Offre",
+        "experience": "Expérience"
+      },
+      "copyright": "© 2025 Dakhla Club. Tous droits réservés",
+      "specialEvent": "Black Friday Special Event"
+    }
   }
 }

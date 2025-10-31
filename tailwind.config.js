@@ -25,6 +25,8 @@ module.exports = {
           800: '#075985',
           900: '#0c4a6e',
         },
+        'bf-turquoise': '#5ba6a9',
+        'bf-sand': '#d7c9ad',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
