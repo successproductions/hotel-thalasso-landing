@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
+// import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { Menu, X } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,7 +26,7 @@ export default function BlackFridayHero() {
     '/images/black-friday/carousel-1.jpg',
     '/images/black-friday/carousel-2.jpg',
     '/images/black-friday/carousel-3.jpg',
-    '/images/black-friday/carousel-4.jpg',
+    '/images/Restaurant.jpg',
   ];
 
   // Auto-play carousel
@@ -292,7 +292,7 @@ export default function BlackFridayHero() {
           </div>
 
           {/* Social Media Icons - Bottom */}
-          <div className="flex gap-6 mt-4 md:mt-12">
+          {/* <div className="flex gap-6 mt-4 md:mt-12">
             <a
               href="https://www.facebook.com/DakhlaClub/"
               target="_blank"
@@ -323,7 +323,7 @@ export default function BlackFridayHero() {
             >
               <FaYoutube className="text-2xl text-gray-900 group-hover:text-white" />
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* RIGHT SIDE - Image Carousel with Border (Order 1 on mobile, Order 2 on desktop) */}

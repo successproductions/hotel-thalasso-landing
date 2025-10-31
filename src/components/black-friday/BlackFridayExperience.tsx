@@ -111,9 +111,7 @@ export default function BlackFridayExperience() {
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal  text-[#5ba6a9] mb-4 md:mb-6 uppercase">
             {t('title')}
           </h2>
-          <p className="text-xl md:text-2xl text-[#d7c9ad] mb-4">
-            {t('subtitle')}
-          </p>
+
           <p className="text-sm md:text-xl text-gray-600 font-normal">
             {t('description')}
           </p>
