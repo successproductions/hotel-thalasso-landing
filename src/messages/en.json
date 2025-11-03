@@ -2422,12 +2422,13 @@
   "blackFriday": {
     "nav": {
       "home": "HOME",
-      "offer": "THE OFFER",
-      "experience": "THE EXPERIENCE",
+      "offer": "OFFER",
+      "experience": "EXPERIENCE",
       "reservation": "BOOK NOW"
     },
     "hero": {
       "tagline": "🖤 BLACK FRIDAY AT DAKHLA CLUB",
+
       "title": "EXCLUSIVE ESCAPE AT -30%",
       "subtitle": "From [start date] to [end date]",
       "description": "A suspended moment between lagoon, ocean and desert, where raw luxury meets absolute freedom.",
@@ -2508,6 +2509,30 @@
       },
       "copyright": "© 2025 Dakhla Club. All rights reserved.",
       "specialEvent": "Black Friday Special Event"
+    },
+    "modal": {
+      "form": {
+        "fullName": "Full Name *",
+        "email": "Email *",
+        "phone": "Phone *",
+        "guests": "Number of guests *",
+        "person": "person",
+        "people": "people",
+        "checkIn": "Check-in Date *",
+        "namePlaceholder": "Your full name",
+        "emailPlaceholder": "your@email.com",
+        "phoneNumberPlaceholder": "6 XX XX XX XX",
+        "requiredFields": "* Required fields"
+      },
+      "button": "Book Now -30%",
+      "buttonSending": "Sending...",
+      "alerts": {
+        "error": {
+          "title": "Error",
+          "text": "An error occurred. Please try again.",
+          "button": "OK"
+        }
+      }
     }
   }
 }

@@ -2456,6 +2456,30 @@
       },
       "copyright": "© 2025 Dakhla Club. Tous droits réservés",
       "specialEvent": "Black Friday Special Event"
+    },
+    "modal": {
+      "form": {
+        "fullName": "Nom complet *",
+        "email": "Email *",
+        "phone": "Téléphone *",
+        "guests": "Nombre de personnes *",
+        "person": "personne",
+        "people": "personnes",
+        "checkIn": "Date d'arrivée *",
+        "namePlaceholder": "Votre nom complet",
+        "emailPlaceholder": "votre@email.com",
+        "phoneNumberPlaceholder": "6 XX XX XX XX",
+        "requiredFields": "* Champs obligatoires"
+      },
+      "button": "Réserver Maintenant -30%",
+      "buttonSending": "Envoi en cours...",
+      "alerts": {
+        "error": {
+          "title": "Erreur",
+          "text": "Une erreur est survenue. Veuillez réessayer.",
+          "button": "OK"
+        }
+      }
     }
   }
 }

@@ -2,17 +2,23 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useParams, useRouter, usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 // import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BlackFridayHero() {
   const t = useTranslations('blackFriday.hero');
   const tNav = useTranslations('blackFriday.nav');
+  const params = useParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = (params?.locale as string) || 'fr';
+
   const heroRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
@@ -20,6 +26,12 @@ export default function BlackFridayHero() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleLanguage = () => {
+    const newLocale = currentLocale === 'fr' ? 'en' : 'fr';
+    const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
+    router.push(newPath);
+  };
 
   // Carousel images - Update these paths with your actual images
   const carouselImages = [
@@ -122,7 +134,7 @@ export default function BlackFridayHero() {
         isMobileMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}>
         <div className="max-w-xl mx-auto">
-          <div className="flex items-center justify-between gap-2 md:gap-12 h-16 md:h-18">
+          <div className="flex items-center justify-between gap-2 md:gap-8 h-16 md:h-18">
             {/* Left - Logo */}
             <div className="flex-shrink-0">
               <Image
@@ -157,8 +169,16 @@ export default function BlackFridayHero() {
               </button>
             </div>
 
-            {/* Right - Reserve Button (Desktop) */}
-            <div className="hidden lg:block">
+            {/* Right - Language Toggle & Reserve Button (Desktop) */}
+            <div className="hidden lg:flex items-center gap-4">
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-2 px-4 py-2 text-gray-800 hover:text-bf-turquoise transition-colors text-sm font-medium tracking-wider uppercase"
+                aria-label="Toggle language"
+              >
+                <Globe size={18} />
+                <span>{currentLocale === 'fr' ? 'EN' : 'FR'}</span>
+              </button>
               <button
                 onClick={() => scrollToSection('reservation')}
                 className="px-6 py-2 bg-bf-turquoise text-white font-medium hover:bg-[#d7c9ad] transition-all duration-300 text-sm tracking-wider uppercase rounded-1xl"
@@ -168,7 +188,15 @@ export default function BlackFridayHero() {
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="lg:hidden">
+            <div className="lg:hidden flex items-center gap-2">
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-1 px-3 py-2 text-gray-800 hover:text-bf-turquoise transition-colors text-xs font-medium"
+                aria-label="Toggle language"
+              >
+                <Globe size={16} />
+                <span>{currentLocale === 'fr' ? 'EN' : 'FR'}</span>
+              </button>
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-gray-800 hover:text-bf-turquoise  transition-colors p-2"
@@ -226,6 +254,15 @@ export default function BlackFridayHero() {
                   {tNav('experience')}
                 </button>
 
+                {/* Language Toggle */}
+                <button
+                  onClick={toggleLanguage}
+                  className="flex items-center justify-center gap-3 w-full text-gray-800 hover:text-bf-turquoise transition-colors py-4 px-4 text-xl font-medium uppercase border-b border-gray-100"
+                >
+                  <Globe size={24} />
+                  <span>{currentLocale === 'fr' ? 'English' : 'Français'}</span>
+                </button>
+
                 {/* Reserve Button */}
                 <button
                   onClick={() => scrollToSection('reservation')}
@@ -250,7 +287,7 @@ export default function BlackFridayHero() {
                 {t('tagline').replace('🖤 ', '')}
               </h1>
               <p className="text-2xl md:text-3xl lg:text-4xl font-light text-white uppercase tracking-wide">
-                ÉVASION EXCLUSIVE À -30 %
+                {t('title')}
               </p>
             </div>
 

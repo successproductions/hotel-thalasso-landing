@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import Swal from 'sweetalert2';
@@ -14,6 +15,7 @@ interface ReservationModalProps {
 export default function BlackFridayReservationModal({ isOpen, onClose }: ReservationModalProps) {
   const params = useParams();
   const locale = params?.locale || 'fr';
+  const t = useTranslations('blackFriday.modal');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -89,8 +91,8 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
       console.error('Error submitting reservation:', error);
       await Swal.fire({
         icon: 'error',
-        title: 'Erreur',
-        text: 'Une erreur est survenue. Veuillez réessayer.',
+        title: t('alerts.error.title'),
+        text: t('alerts.error.text'),
         confirmButtonColor: '#5ba6a9',
       });
     } finally {
@@ -126,7 +128,7 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
           {/* Name */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-              Nom complet *
+              {t('form.fullName')}
             </label>
             <input
               type="text"
@@ -135,14 +137,14 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               className="w-full px-4 py-3 border-1 border-gray-200  focus:border-[#5ba6a9] focus:outline-none transition-colors"
-              placeholder="Votre nom complet"
+              placeholder={t('form.namePlaceholder')}
             />
           </div>
 
           {/* Email */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-              Email *
+              {t('form.email')}
             </label>
             <input
               type="email"
@@ -151,14 +153,14 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               className="w-full px-4 py-3 border-1 border-gray-200  focus:border-[#5ba6a9] focus:outline-none transition-colors"
-              placeholder="votre@email.com"
+              placeholder={t('form.emailPlaceholder')}
             />
           </div>
 
           {/* Phone with Country Code */}
           <div>
             <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-2">
-              Téléphone *
+              {t('form.phone')}
             </label>
             <div className="flex gap-2">
               {/* Country Code Selector */}
@@ -204,7 +206,7 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
                 onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                 className="flex-1 px-4 py-3 border-1 border-gray-200  focus:border-[#5ba6a9]
                          focus:outline-none focus:ring-2 focus:ring-[#5ba6a9]/20 transition-colors"
-                placeholder="6 XX XX XX XX"
+                placeholder={t('form.phoneNumberPlaceholder')}
               />
             </div>
           </div>
@@ -212,7 +214,7 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
           {/* Guests */}
           <div>
             <label htmlFor="guests" className="block text-sm font-medium text-gray-700 mb-2">
-              Nombre de personnes *
+              {t('form.guests')}
             </label>
             <select
               id="guests"
@@ -223,7 +225,7 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
             >
               {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                 <option key={num} value={num}>
-                  {num} {num === 1 ? 'personne' : 'personnes'}
+                  {num} {num === 1 ? t('form.person') : t('form.people')}
                 </option>
               ))}
             </select>
@@ -232,7 +234,7 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
           {/* Check-in Date */}
           <div>
             <label htmlFor="checkIn" className="block text-sm font-medium text-gray-700 mb-2">
-              Date d&apos;arrivée *
+              {t('form.checkIn')}
             </label>
             <input
               type="date"
@@ -250,15 +252,15 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-4 bg-[#5ba6a9] text-white font-medium text-lg 
+            className="w-full py-4 bg-[#5ba6a9] text-white font-medium text-lg
                      hover:bg-[#c4b89a] disabled:bg-gray-400 disabled:cursor-not-allowed
                      transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            {isSubmitting ? '⏳ Envoi en cours...' : '✨ Réserver Maintenant -30%'}
+            {isSubmitting ? `⏳ ${t('buttonSending')}` : `✨ ${t('button')}`}
           </button>
 
           <p className="text-xs text-gray-500 text-center">
-            * Champs obligatoires
+            {t('form.requiredFields')}
           </p>
         </form>
       </div>
