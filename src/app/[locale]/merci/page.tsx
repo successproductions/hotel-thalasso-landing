@@ -90,11 +90,11 @@ export default async function MerciPage({
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href={`mailto:${text.contact.email}`}
+                href={`mailto:reservation@dakhlaclub.com`}
                 className="flex items-center gap-2 text-[#5ba6a9] hover:text-[#c4b89a] transition-colors"
               >
                 <Mail size={20} />
-                <span>{text.contact.email}</span>
+                <span>reservation@dakhlaclub.com</span>
               </a>
               <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
               <a
