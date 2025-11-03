@@ -241,7 +241,8 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
               value={formData.checkIn}
               onChange={(e) => setFormData({ ...formData, checkIn: e.target.value })}
               className="w-full px-4 py-3 border-1 border-gray-200  focus:border-[#5ba6a9] focus:outline-none transition-colors"
-              min={new Date().toISOString().split('T')[0]}
+              min="2025-11-27"
+              max="2025-12-30"
             />
           </div>
 
