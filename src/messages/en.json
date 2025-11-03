@@ -2427,27 +2427,27 @@
       "reservation": "BOOK NOW"
     },
     "hero": {
-      "tagline": "🖤 BLACK FRIDAY AT DAKHLA CLUB",
+      "tagline": " BLACK FRIDAY AT DAKHLA CLUB",
 
       "title": "EXCLUSIVE ESCAPE AT -30%",
       "subtitle": "From [start date] to [end date]",
       "description": "A suspended moment between lagoon, ocean and desert, where raw luxury meets absolute freedom.",
       "highlight": "Limited-time offer – accommodation only.",
-      "cta": "🎯 Discover this exclusive offer"
+      "cta": " Discover this exclusive offer"
     },
     "countdown": {
-      "title": "⏳ THE COUNTDOWN HAS BEGUN…",
+      "title": " THE COUNTDOWN HAS BEGUN…",
       "description": "Time is running out before the most beautiful escape of the year.",
       "subtitle": "Every minute brings us closer to the end of this window of privilege.",
       "limitedPlaces": "⚡ LIMITED AVAILABILITY!",
-      "cta": "➡️ Yes to my stay at -30%",
+      "cta": "Yes to my stay at -30%",
       "days": "DAYS",
       "hours": "HOURS",
       "minutes": "MINUTES",
       "seconds": "SECONDS"
     },
     "experience": {
-      "title": "🌊 A UNIQUE ESCAPE BETWEEN DESERT AND OCEAN",
+      "title": " A UNIQUE ESCAPE BETWEEN DESERT AND OCEAN",
       "subtitle": "Dakhla Club opens its doors for an experience where nature, sports and wellness meet.",
       "description": "Your stay includes everything that makes this place legendary:",
       "items": {
@@ -2482,15 +2482,15 @@
           "description": "This is not just a promotion, it's an invitation to breathe differently."
         }
       },
-      "cta": "✨ I book my escape at -30%!"
+      "cta": "I book my escape at -30%!"
     },
     "urgency": {
-      "badge": "⚠️ SCARCITY MARKETING / ELEGANT URGENCY",
+      "badge": " SCARCITY MARKETING / ELEGANT URGENCY",
       "title": "This Black Friday offer disappears as soon as the counter reaches zero.",
       "subtitle": "Every year, our rooms are booked in just a few hours.",
       "warning": "Don't let this chance fade away with the tide.",
-      "cta1": "⏰ I book now before availability runs out!",
-      "cta2": "✈️ I want to live the Dakhla Club experience at -30%"
+      "cta1": " I book now before availability runs out!",
+      "cta2": " I want to live the Dakhla Club experience at -30%"
     },
     "seo": {
       "title": "Black Friday Dakhla Club - Exclusive Stay at -30%",
