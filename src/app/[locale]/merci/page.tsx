@@ -102,7 +102,7 @@ export default async function MerciPage({
                 className="flex items-center gap-2 text-[#5ba6a9] hover:text-[#c4b89a] transition-colors"
               >
                 <Phone size={20} />
-                <span>{text.contact.phone}</span>
+                <span>+212 661-807293</span>
               </a>
             </div>
           </div>
