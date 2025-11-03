@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useParams } from 'next/navigation';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import Swal from 'sweetalert2';
@@ -11,6 +12,8 @@ interface ReservationModalProps {
 }
 
 export default function BlackFridayReservationModal({ isOpen, onClose }: ReservationModalProps) {
+  const params = useParams();
+  const locale = params?.locale || 'fr';
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -80,29 +83,8 @@ export default function BlackFridayReservationModal({ isOpen, onClose }: Reserva
         }),
       });
 
-      // Success message
-      await Swal.fire({
-        icon: 'success',
-        title: '✅ Réservation Reçue!',
-        html: `
-          <p>Merci <strong>${formData.name}</strong>!</p>
-          <p>Nous avons bien reçu votre demande de réservation Black Friday.</p>
-          <p>Notre équipe vous contactera dans les plus brefs délais</p>
-        `,
-        confirmButtonColor: '#5ba6a9',
-        confirmButtonText: 'Parfait!',
-      });
-
-      // Reset form and close modal
-      setFormData({
-        name: '',
-        email: '',
-        countryCode: 'MA',
-        phoneNumber: '',
-        guests: '2',
-        checkIn: '',
-      });
-      onClose();
+      // Redirect to thank you page with locale
+      window.location.href = `/${locale}/merci`;
     } catch (error) {
       console.error('Error submitting reservation:', error);
       await Swal.fire({
