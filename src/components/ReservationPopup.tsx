@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import Swal from 'sweetalert2';
+import { useLocale } from 'next-intl';
 
 interface ReservationPopupProps {
   isOpen: boolean;
@@ -19,6 +20,7 @@ interface FormData {
 }
 
 export default function ReservationPopup({ isOpen, onClose }: ReservationPopupProps) {
+  const locale = useLocale();
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
@@ -73,31 +75,8 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         throw new Error('Failed to submit reservation');
       }
 
-      // Show success message
-      await Swal.fire({
-        icon: 'success',
-        title: 'Réservation envoyée !',
-        html: `
-          <p><strong>Merci ${formData.fullName} !</strong></p>
-          <p>Votre demande de réservation a été envoyée avec succès.</p>
-          <p>Vous recevrez un email de confirmation à <strong>${formData.email}</strong></p>
-          <p>Notre équipe vous contactera dans les plus brefs délais.</p>
-        `,
-        confirmButtonText: 'Fermer',
-        confirmButtonColor: '#139584',
-      });
-
-      // Reset form
-      setFormData({
-        fullName: '',
-        email: '',
-        countryCode: '+212',
-        phone: '',
-        numberOfPeople: '1',
-        arrivalDate: '',
-      });
-
-      onClose();
+      // Redirect to thank you page
+      window.location.href = `/${locale}/evasion-3/thank-you`;
     } catch (error) {
       console.error('Submission error:', error);
 
