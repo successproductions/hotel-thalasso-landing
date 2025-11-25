@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-// Type definition for reservation data
+
 interface ReservationData {
   fullName: string;
   email: string;
@@ -180,7 +180,7 @@ export async function POST(request: NextRequest) {
         });
       } catch (sheetsError) {
         console.error('Google Sheets error:', sheetsError);
-        // Continue even if sheets fail
+        
       }
     }
 

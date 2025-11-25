@@ -19,7 +19,7 @@
   "home": {
     "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
     "title2": "ÉVASION HOLISTIQUE À DAKHLA",
-    "description": "3 Nuits pour Ressourcer Corps & Esprit",
+    "description": "Rechargez Votre Corps, Votre Esprit et Votre Énergie en 3 Nuits",
     "duration": "Durée",
     "days": "3 Jours",
     "callButton": " Je veux vivre  l’expérience",
@@ -45,12 +45,12 @@
   "about": {
     "title": "Pour qui est ce séjour ?",
     "description1": [
-      "Vous êtes mentalement et physiquement épuisés",
-      "Vous cherchez une pause sans partir loin ni trop longtemps",
-      "Vous avez accumulé des tensions, de la fatigue, du stress",
-      "Vous voulez vivre une cure courte mais puissante",
-      "Vous avez besoin de revenir à vous, à votre souffle, à l’essentiel",
-      "Vous voulez vous offrir un soin holistique complet sans culpabilité"
+      "Déconnecter profondément du stress et du quotidien",
+      "Réinitialiser votre énergie vitale",
+      "Soulager les tensions physiques et mentales",
+      "Retrouver clarté, apaisement et sérénité",
+      "Libérer le poids émotionnel accumulé",
+      "Expérimenter un protocole holistique complet dans un cadre océanique exceptionnel"
     ]
   },
   "programSection": {
@@ -65,15 +65,15 @@
     },
     "days": {
       "1": {
-        "title": "Accueil personnalisé",
-        "description": "Installation en douceur pour commencer votre parenthèse bien-être. Prenez le temps de vous détendre et de vous recentrer, loin du rythme quotidien",
+        "title": "On Relâche",
+        "description": "L’accueil personnalisé vous plonge dans une atmosphère de calme total. Votre corps commence à se déposer, votre système nerveux se relâche, votre respiration s’apaise",
         "activities": [],
-        "objective": "Ancrage, respiration, ouverture du corps et de l'esprit.",
+        "objective": "décompression immédiate, transition douce vers l’expérience",
         "ctaText": "JE CHOISIS DE ME RÉGÉNÉRER"
       },
       "2": {
-        "title": "Vitalité & Détente sensorielle",
-        "description": "Une journée dédiée à l’éveil des sens et à la revitalisation du corps. Respirez, relâchez, et laissez-vous porter par les bienfaits de l’eau et des soins",
+        "title": "On Rééquilibre",
+        "description": "Vous recevez vos premiers soins sensoriels, marins et holistiques. La circulation se relance, les tensions se dissolvent, votre esprit se clarifie",
         "activities": [
           "Bol d'Air Jacquier",
           "Piscine thermale",
@@ -82,12 +82,12 @@
           "Hammam",
           "Massage tonique"
         ],
-        "objective": "Lâcher-prise profond, oxygénation cellulaire, relâchement musculaire.",
+        "objective": "détente profonde, harmonisation intérieure",
         "ctaText": "ENTRER DANS L’UNIVERS"
       },
       "3": {
-        "title": "Régénération & Équilibre",
-        "description": "Aujourd’hui, le corps se régénère en profondeur. Les soins ciblés relâchent les tensions et rééquilibrent l’énergie pour une détente totale.",
+        "title": "On Détoxifie & On Libère",
+        "description": "Les soins nettoient, détoxifient et réoxygènent vos tissus. Votre énergie se réinstalle progressivement. Votre corps respire, votre esprit s’allège.",
         "activities": [
           "Piscine thermale",
           "Douche à jet",
@@ -97,7 +97,7 @@
           "Modelage douche affusion",
           "Cupping Thérapie Classique"
         ],
-        "objective": "Relancer la circulation, affiner la silhouette, recharge énergétique.",
+        "objective": "élimination, purification, sensation de renouveau.",
         "ctaText": "JE VEUX VIVRE L'EXPÉRIENCE"
       },
       "4": {
@@ -111,7 +111,7 @@
   },
   "exclusiveOffer": {
     "title": "⏳ Offre exclusive – 10 places par session",
-    "description": "Pour préserver la qualité et l’intimité de l’expérience, nous limitons chaque retraite à 10 personnes",
+    "description": "Nos retraites se remplissent rapidement. Réservez dès maintenant votre place pour garantir votre participation",
     "nextSession": "📅 Prochaine session : 15 au 18 juillet 2025",
     "callButton": "Je Réserve Ma Place"
   },
@@ -297,12 +297,14 @@
     "title": " Pourquoi ce programme fonctionne",
     "title2": " CE QUE VOUS ALLEZ VRAIMENT RESSENTIR",
     "points": [
-      "Oxygénation intérieure & peau rayonnante",
-      "Corps léger, tensions relâchées",
-      "Détente musculaire & sommeil retrouvé",
-      "Peau lissée, dégonflée, reminéralisée",
-      "Silhouette affinée et drainée naturellement",
-      "Clarté mentale & énergie stable"
+      "Reset nerveux profond",
+      "Sensation immédiate de lâcher-prise",
+      "Sommeil réparateur et apaisement mental",
+      "Soulagement du stress & des tensions",
+      "Détox cellulaire en douceur",
+      "Clarté mentale, esprit plus léger",
+      "Energie retrouvée",
+      "Impression de renouveau complet — corps + esprit"
     ],
     "points1": [
       "Thérapeutes certifiés et attentionnés",

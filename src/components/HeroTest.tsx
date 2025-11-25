@@ -46,9 +46,9 @@ export default function HeroTest() {
           <div className="rounded-lg bg-white/50 px-6 py-4 shadow-lg backdrop-blur-sm md:px-12 md:py-6">
             <button
               onClick={() => setIsPopupOpen(true)}
-              className="rounded-full bg-[#139584] px-8 py-3 text-center font-medium text-white transition hover:bg-[#d6bb8e] cursor-pointer hover:shadow-lg md:px-12 md:py-4 md:text-lg"
+              className="rounded-full bg-[#139584]  px-4 py-3 text-center font-medium text-white transition hover:bg-[#d6bb8e] cursor-pointer hover:shadow-lg md:px-12 md:py-4 md:text-lg"
             >
-              Réserver maintenant
+             Réserver Ma Retraite — 10 Places / Session
             </button>
           </div>
         </div>
