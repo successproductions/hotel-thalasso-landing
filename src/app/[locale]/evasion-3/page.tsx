@@ -12,7 +12,6 @@ import { ProgramsSectionV2 } from '@/components/offer-3-v2/ProgramsSectionV2';
 import { ProgrammeFonctionneV2 } from '@/components/offer-3-v2/ProgrammeFonctionneV2';
 import TestimonialsCarouselV2 from '@/components/offer-3-v2/TestimonialsCarouselV2';
 import { RewardsSectionV2 } from '@/components/offer-3-v2/RewardsSectionV2';
-import { OtherOffersSectionV2 } from '@/components/offer-3-v2/OtherOffersSectionV2';
 import { AboutV2Reverse } from '@/components/offer-3-v2/AboutV2Reverse';
 import FAQSectionV2 from '@/components/FAQV2';
 import { ObjectivesSectionV2 } from '@/components/offer-3-v2/ObjectivesSectionV2';
