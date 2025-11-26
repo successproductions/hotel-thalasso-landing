@@ -44,6 +44,7 @@
   },
   "about": {
     "title": "Is this retreat for you?",
+    "stitle": "This stay is for you if you wish to:",
     "description1": [
       "You feel mentally and physically drained",
       "You need a break without going far or too long",
@@ -51,6 +52,17 @@
       "You want a short but powerful wellness reset",
       "You need to reconnect with your breath and what truly matters",
       "You want to enjoy a full holistic treatment—guilt-free"
+    ]
+  },
+  "about2": {
+    "title": "YOU MAY BE HERE BECAUSE...",
+    "description1": [
+      "You feel exhausted physically and mentally",
+      "Your sleep is no longer restorative",
+      "Your nervous system is overloaded",
+      "You feel deep emotional exhaustion",
+      "You need to truly let go",
+      "You long for a pause to breathe, relax, and reconnect"
     ]
   },
   "servicesSection": {

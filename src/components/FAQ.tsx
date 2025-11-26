@@ -58,7 +58,7 @@ export default function FAQSection() {
       <div className="relative py-12 md:py-14">
         {/* Full-width pale background sliding in from left (same as ProgramsSection) */}
         <motion.div
-          className="absolute inset-x-0 inset-y-0 bg-[#f4f4f4]"
+          className="absolute inset-x-0 inset-y-0 bg-[#faf9f5]"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
@@ -97,8 +97,8 @@ export default function FAQSection() {
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="absolute -inset-4 rotate-3 transform rounded-3xl bg-slate-200 transition-transform duration-300 group-hover:rotate-6 dark:bg-slate-700"></div>
-                  <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <div className="absolute -inset-4 rotate-3 transform rounded-3xl "></div>
+                  <div className="relative overflow-hidden rounded-sm shadow-2xl">
                     <Image
                       src="/images/centrethalassoDakhla.jpg"
                       alt={contact.alt}
@@ -124,7 +124,7 @@ export default function FAQSection() {
                     >
                       <AccordionItem value={`item-${index}`} className="border-none">
                         <motion.div
-                          className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800"
+                          className="overflow-hidden rounded-sm border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800"
                           whileHover={{
                             boxShadow: '0 10px 40px -10px rgba(0, 0, 0, 0.1)',
                             y: -2,

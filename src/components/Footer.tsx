@@ -18,7 +18,7 @@ export function Footer() {
     <footer className="bg-gray-100 text-gray-700">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-5">
         {/* Column 1 */}
-        <div>
+        <div className="text-center md:text-left">
           <h3 className="mb-4 text-sm font-semibold uppercase">DakhlaClub</h3>
           <ul className="space-y-2">
             <li className="cursor-pointer hover:underline">
@@ -34,7 +34,7 @@ export function Footer() {
         </div>
 
         {/* Column 2 */}
-        <div>
+        <div className="text-center md:text-left">
           <h3 className="mb-4 text-sm font-semibold uppercase">{t('column2')}</h3>
           <ul className="space-y-2">
             <li className="cursor-pointer hover:underline">
@@ -50,7 +50,7 @@ export function Footer() {
         </div>
 
         {/* Column 3 */}
-        <div>
+        <div className="text-center md:text-left">
           <h3 className="mb-4 text-sm font-semibold uppercase">{t('column4')}</h3>
           <ul className="space-y-2">
             <li className="cursor-pointer hover:underline">
@@ -66,9 +66,9 @@ export function Footer() {
         </div>
 
         {/* Column 4 */}
-        <div>
+        <div className="text-center md:text-left">
           <h3 className="mb-4 text-sm font-semibold uppercase">Follow Us</h3>
-          <div className="flex space-x-4">
+          <div className="flex justify-center space-x-4 md:justify-start">
             <a
               href="https://www.facebook.com/DakhlaClub/"
               aria-label="Facebook"
@@ -94,7 +94,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center space-y-4 md:justify-end">
-          <div className="mr-auto text-center md:mx-auto">
+          <div className="text-center md:mx-auto">
             <p className="mb-2 text-xs text-gray-600">{t('scanBrochure')}</p>
             <div className="relative aspect-square w-32 overflow-hidden rounded-lg bg-white shadow-md sm:w-28 md:w-24">
               <Image

@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import HeaderTest from '@/components/HeaderTest';
-import { HealthPrograms } from '@/components/HealthPrograms';
 import HeroTest from '@/components/HeroTest';
-import { About } from '@/components/About';
-import { ProgramsSection } from '@/components/ProgramsSection';
 import { ServicesTable } from '@/components/ServicesTable';
-import { ProgrammeFonctionne } from '@/components/ProgrammeFonctionne';
-import { ObjectivesSection } from '@/components/ObjectivesSection';
-import { OtherOffersSection } from '@/components/OtherOffersSection';
-import TestimonialsCarousel from '@/components/TestimonialsCarousel';
-import FAQSection from '@/components/FAQ';
-import { RewardsSection } from '@/components/RewardsSection';
 import { Footer } from '@/components/Footer';
 import { NewsletterSectionTest } from '@/components/NewsletterSectionTest';
 import WhatsAppChatbot from '@/components/WhatsAppChatbot';
+import { HealthProgramsV2 } from '@/components/offer-3-v2/HealthProgramsV2';
+import { AboutV2 } from '@/components/offer-3-v2/AboutV2';
+import { ProgramsSectionV2 } from '@/components/offer-3-v2/ProgramsSectionV2';
+import { ProgrammeFonctionneV2 } from '@/components/offer-3-v2/ProgrammeFonctionneV2';
+import TestimonialsCarouselV2 from '@/components/offer-3-v2/TestimonialsCarouselV2';
+import { RewardsSectionV2 } from '@/components/offer-3-v2/RewardsSectionV2';
+import { OtherOffersSectionV2 } from '@/components/offer-3-v2/OtherOffersSectionV2';
+import { AboutV2Reverse } from '@/components/offer-3-v2/AboutV2Reverse';
+import FAQSectionV2 from '@/components/FAQV2';
+import { ObjectivesSectionV2 } from '@/components/offer-3-v2/ObjectivesSectionV2';
 
 export async function generateMetadata({
   params,
@@ -26,16 +27,16 @@ export async function generateMetadata({
 
   const metadataTest = {
     fr: {
-      title: 'Test - Évasion Holistique 3 Jours à Dakhla – Cure Détox & Bien-être',
+      title: ' Évasion Holistique 3 Jours à Dakhla – Cure Détox & Bien-être',
       description:
-        'Page de test - Offrez-vous 3 jours de bien-être au centre DC Thermes à Dakhla. Cure détox, soins thalasso, spa entre désert et océan.',
+        'Page de  Offrez-vous 3 jours de bien-être au centre DC Thermes à Dakhla. Cure détox, soins thalasso, spa entre désert et océan.',
       keywords:
         'séjour bien-être Dakhla, cure détox Maroc, spa haut de gamme Maroc, centre thalasso Dakhla',
     },
     en: {
-      title: 'Test - 3-Day Holistic Escape in Dakhla – Detox Cure & Wellness',
+      title: ' 3-Day Holistic Escape in Dakhla – Detox Cure & Wellness',
       description:
-        'Test page - Treat yourself to 3 days of wellness at DC Thermes center in Dakhla. Detox cure, thalasso treatments, spa between desert and ocean.',
+        'Treat yourself to 3 days of wellness at DC Thermes center in Dakhla. Detox cure, thalasso treatments, spa between desert and ocean.',
       keywords:
         'Dakhla wellness stay, Morocco detox cure, luxury spa Morocco, Dakhla thalasso center',
     },
@@ -122,16 +123,17 @@ export default function Page() {
       <main>
         <HeaderTest />
         <HeroTest />
-        <HealthPrograms />
-        <About />
-        <ProgramsSection />
+        <HealthProgramsV2 />
+        <AboutV2 />
+        <AboutV2Reverse />
+        <ProgramsSectionV2 />
+        <ProgrammeFonctionneV2 />
+        <ObjectivesSectionV2 />
         <ServicesTable />
-        <ProgrammeFonctionne />
-        <ObjectivesSection />
-        <OtherOffersSection />
-        <TestimonialsCarousel />
-        <RewardsSection />
-        <FAQSection />
+        <OtherOffersSectionV2 />
+        <TestimonialsCarouselV2 />
+        <RewardsSectionV2 />
+        <FAQSectionV2 />
         <NewsletterSectionTest />
         <Footer />
         <WhatsAppChatbot />
@@ -159,7 +161,7 @@ export default function Page() {
                 telephone: '+212652881921',
               },
               name: 'Évasion Holistique Test',
-              alternateName: 'Test - 3-Day Holistic Escape',
+              alternateName: ' 3-Day Holistic Escape',
               description:
                 "Page de test pour le programme de bien-être holistique 3 jours combinant cure détox, soins thalasso et relaxation.",
               offers: {

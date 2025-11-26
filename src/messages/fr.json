@@ -19,7 +19,7 @@
   "home": {
     "title": "ÉVASION HOLISTIQUE À DAKHLA CLUB",
     "title2": "ÉVASION HOLISTIQUE À DAKHLA",
-    "description": "Rechargez Votre Corps, Votre Esprit et Votre Énergie en 3 Nuits",
+    "description": "Rechargez Votre Corps Votre Esprit et Votre Énergie en 3 Nuits",
     "duration": "Durée",
     "days": "3 Jours",
     "callButton": " Je veux vivre  l’expérience",
@@ -44,6 +44,7 @@
   },
   "about": {
     "title": "Pour qui est ce séjour ?",
+    "stitle": "Ce séjour est fait pour vous si vous souhaitez :",
     "description1": [
       "Déconnecter profondément du stress et du quotidien",
       "Réinitialiser votre énergie vitale",
@@ -51,6 +52,17 @@
       "Retrouver clarté, apaisement et sérénité",
       "Libérer le poids émotionnel accumulé",
       "Expérimenter un protocole holistique complet dans un cadre océanique exceptionnel"
+    ]
+  },
+  "about2": {
+    "title": "VOUS ÊTES PEUT-ÊTRE ICI PARCE QUE…",
+    "description1": [
+      "Vous vous sentez épuisée physiquement et mentalement",
+      "Votre sommeil n’est plus réparateur",
+      "Votre système nerveux est saturé",
+      "Vous ressentez une fatigue émotionnelle profonde",
+      "Vous avez besoin d’un vrai lâcher-prise",
+      "Vous aspirez à une parenthèse où respirer, relâcher et vous reconnecter"
     ]
   },
   "programSection": {
@@ -304,7 +316,7 @@
       "Détox cellulaire en douceur",
       "Clarté mentale, esprit plus léger",
       "Energie retrouvée",
-      "Impression de renouveau complet — corps + esprit"
+      "Impression de renouveau complet corps esprit énergie"
     ],
     "points1": [
       "Thérapeutes certifiés et attentionnés",
