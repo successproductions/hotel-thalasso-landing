@@ -13,7 +13,7 @@ export function ProgramsSectionV2() {
     '/images/offer-3/dji2.jpg',
     '/images/offer-3/dji3.jpg',
     '/images/offer-3/dji4.jpg',
-    '/images/offer-3/dji5.jpg',
+    '/images/offer-3/dji7.jpg',
   ];
 
   const programs = days.map((dayNum, index) => {

@@ -130,7 +130,7 @@ export default function Page() {
         <ProgrammeFonctionneV2 />
         <ObjectivesSectionV2 />
         <ServicesTable />
-        <OtherOffersSectionV2 />
+        {/* <OtherOffersSectionV2 /> */}
         <TestimonialsCarouselV2 />
         <RewardsSectionV2 />
         <FAQSectionV2 />
