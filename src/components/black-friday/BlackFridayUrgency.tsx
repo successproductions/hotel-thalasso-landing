@@ -106,17 +106,26 @@ export default function BlackFridayUrgency() {
 
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col  gap-4 pt-4">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="group flex-1 px-4 py-4 bg-[#5ba6a9] uppercase text-white text-xl font-medium 
+                  className="group flex-1 px-4 py-4 bg-[#5ba6a9] uppercase text-white text-xl font-medium
                           transition-all duration-300 transform hover:scale-105
                            shadow-2xl hover:bg-[#d7c9ad] cursor-pointer flex items-center justify-center gap-2"
                 >
                   <span>{t('cta1')}</span>
                 </button>
 
-                
+                <a
+                  href="https://direct-book.com/properties/DakhlaClubDIRECT?locale=fr&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&items[0][rateId]=694496&_gl=1*cvqln3*_ga*ODc5NTg4MDQwLjE3NjQyNTcyMzE.*_ga_WJT53Y3H61*czE3NjQyNTcyMzEkbzEkZzAkdDE3NjQyNTcyMzEkajYwJGwwJGgw*_ga_6WNV2FHXCM*czE3NjQyNTcyMzEkbzEkZzAkdDE3NjQyNTcyMzEkajYwJGwwJGgw&currency=MAD&checkInDate=2025-11-27&checkOutDate=2025-11-29&trackPage=yes&selected=0&promocode=BLACKFRIDAYDC2025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex-1 px-4 py-4 bg-[#d7c9ad] uppercase text-white text-xl font-medium
+                          transition-all duration-300 transform hover:scale-105
+                           shadow-2xl hover:bg-[#5ba6a9] cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <span>{t('cta2')}</span>
+                </a>
               </div>
             </div>
 

@@ -130,11 +130,11 @@ export default function BlackFridayHero() {
       className="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden"
     >
       {/* Navbar - Fixed/Sticky */}
-      <nav className={`fixed top-2 md:top-4 left-1/2 -translate-x-1/2 z-50 bg-white shadow-lg rounded-2xl px-6 md:px-16 transition-opacity duration-300 ${
+      <nav className={`fixed top-2 md:top-4 left-1/2 -translate-x-1/2 z-50 bg-white shadow-lg rounded-2xl px-2 md:px-16 transition-opacity duration-300 ${
         isMobileMenuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}>
         <div className="max-w-xl mx-auto">
-          <div className="flex items-center justify-between gap-2 md:gap-8 h-16 md:h-18">
+          <div className="flex items-center justify-between gap-1 md:gap-8 h-16 md:h-18">
             {/* Left - Logo */}
             <div className="flex-shrink-0">
               <Image
