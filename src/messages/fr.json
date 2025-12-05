@@ -29,7 +29,8 @@
       "invalidDurationTitle": "Durée de séjour invalide",
       "invalidDurationText": "Votre séjour doit être exactement de 4 jours. Veuillez ajuster vos dates",
       "confirmButton": "OK"
-    }
+    },
+    "ctaText": "Réserver Ma Retraite — 10 Places / Session"
   },
   "hero": {
     "tagline": "Évasion Holistique",
@@ -210,15 +211,20 @@
         "placeholder": "exemple@mail.com"
       },
       "date": {
-        "label": "Date souhaitée",
+        "label": "Date d'arrivée",
         "placeholder": "Sélectionnez une date"
+      },
+      "numberOfPeople": {
+        "label": "Nombre de personnes",
+        "singular": "personne",
+        "plural": "personnes"
       },
       "message": {
         "label": "Message",
         "placeholder": "Bonjour !"
       }
     },
-    "submit": "ENVOYER",
+    "submit": "Envoyer la réservation",
     "errors": {
       "missingFields": "Veuillez remplir tous les champs obligatoires.",
       "server": "Erreur serveur",

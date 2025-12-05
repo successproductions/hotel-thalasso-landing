@@ -48,7 +48,7 @@ export default function HeroTest() {
               onClick={() => setIsPopupOpen(true)}
               className="w-full rounded-full bg-[#d6bb8e] px-4 py-3 text-center font-medium text-white transition hover:bg-[#139584] cursor-pointer hover:shadow-lg md:w-auto md:px-12 md:py-4 md:text-lg"
             >
-             Réserver Ma Retraite — 10 Places / Session
+           {t('ctaText')}
             </button>
           </div>
         </div>

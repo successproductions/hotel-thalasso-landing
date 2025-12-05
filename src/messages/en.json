@@ -29,7 +29,8 @@
       "invalidDurationTitle": "Invalid Stay Duration",
       "invalidDurationText": "Your stay must be exactly 4 days. Please adjust your dates.",
       "confirmButton": "OK"
-    }
+    },
+    "ctaText": "Book My Retreat — 10 Places / Session"
   },
   "hero": {
     "tagline": "Holistic Escape",
@@ -213,15 +214,20 @@
         "placeholder": "example@mail.com"
       },
       "date": {
-        "label": "Preferred Date",
+        "label": "Arrival Date",
         "placeholder": "Select a date"
+      },
+      "numberOfPeople": {
+        "label": "Number of People",
+        "singular": "person",
+        "plural": "people"
       },
       "message": {
         "label": "Message",
         "placeholder": "Hello there!"
       }
     },
-    "submit": "SEND",
+    "submit": "Send Reservation",
     "errors": {
       "missingFields": "Please fill in all required fields.",
       "server": "Server error",

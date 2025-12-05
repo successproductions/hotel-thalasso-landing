@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import Swal from 'sweetalert2';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 interface ReservationPopupProps {
   isOpen: boolean;
@@ -21,6 +21,7 @@ interface FormData {
 
 export default function ReservationPopup({ isOpen, onClose }: ReservationPopupProps) {
   const locale = useLocale();
+  const t = useTranslations('contactForm');
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
@@ -83,9 +84,9 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
       // Show error message
       await Swal.fire({
         icon: 'error',
-        title: 'Erreur',
-        text: 'Une erreur est survenue lors de l\'envoi de votre réservation. Veuillez réessayer ou nous contacter directement.',
-        confirmButtonText: 'Fermer',
+        title: t('errors.server'),
+        text: t('errors.unknown'),
+        confirmButtonText: t('submit'),
         confirmButtonColor: '#ef4444',
       });
     } finally {
@@ -118,14 +119,14 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         </button>
 
         {/* Title */}
-        <h2 className="mb-6 text-2xl font-semibold text-gray-800">Réservation</h2>
+        <h2 className="mb-6 text-2xl font-semibold text-gray-800">{t('header.title')}</h2>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Full Name */}
           <div>
             <label htmlFor="fullName" className="mb-1 block text-sm font-medium text-gray-700">
-              Nom complet <span className="text-red-500">*</span>
+              {t('fields.name.label')} <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -134,14 +135,14 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
               value={formData.fullName}
               onChange={(e) => handleInputChange('fullName', e.target.value)}
               className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Votre nom complet"
+              placeholder={t('fields.name.placeholder')}
             />
           </div>
 
           {/* Email */}
           <div>
             <label htmlFor="email" className="mb-1 block text-sm font-medium text-gray-700">
-              Email <span className="text-red-500">*</span>
+              {t('fields.email.label')} <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
@@ -150,14 +151,14 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
               className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="votre@email.com"
+              placeholder={t('fields.email.placeholder')}
             />
           </div>
 
           {/* Phone */}
           <div>
             <label htmlFor="phone" className="mb-1 block text-sm font-medium text-gray-700">
-              Téléphone <span className="text-red-500">*</span>
+              {t('fields.phone.label')} <span className="text-red-500">*</span>
             </label>
             <div className="flex space-x-2">
               <select
@@ -178,7 +179,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
                 className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="123456789"
+                placeholder={t('fields.phone.placeholder')}
               />
             </div>
           </div>
@@ -186,7 +187,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
           {/* Number of People */}
           <div>
             <label htmlFor="numberOfPeople" className="mb-1 block text-sm font-medium text-gray-700">
-              Nombre de personnes <span className="text-red-500">*</span>
+              {t('fields.numberOfPeople.label')} <span className="text-red-500">*</span>
             </label>
             <select
               id="numberOfPeople"
@@ -197,7 +198,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
             >
               {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                 <option key={num} value={num}>
-                  {num} {num === 1 ? 'personne' : 'personnes'}
+                  {num} {t(`fields.numberOfPeople.${num === 1 ? 'singular' : 'plural'}`)}
                 </option>
               ))}
             </select>
@@ -206,7 +207,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
           {/* Arrival Date */}
           <div>
             <label htmlFor="arrivalDate" className="mb-1 block text-sm font-medium text-gray-700">
-              Date d&apos;arrivée <span className="text-red-500">*</span>
+              {t('fields.date.label')} <span className="text-red-500">*</span>
             </label>
             <input
               type="date"
@@ -247,10 +248,10 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   ></path>
                 </svg>
-                Envoi en cours...
+                {t('submit')}
               </span>
             ) : (
-              'Envoyer la réservation'
+              t('submit')
             )}
           </button>
         </form>
