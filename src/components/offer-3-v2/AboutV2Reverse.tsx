@@ -21,7 +21,7 @@ export function AboutV2Reverse() {
 
         {/* Text Column - Now on the right */}
         <div className="space-y-4 px-4 xl:px-28">
-          <h2 className="text-3xl font-medium text-gray-800 md:text-4xl">
+          <h2 className="text-3xl font-normal text-gray-800 md:text-4xl">
             {msg.about2.title.toUpperCase()}
           </h2>
 

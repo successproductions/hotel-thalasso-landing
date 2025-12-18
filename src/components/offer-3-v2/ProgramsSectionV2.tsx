@@ -60,7 +60,7 @@ export function ProgramsSectionV2() {
             show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] } },
           }}
         >
-          <h2 className="mb-4 text-3xl font-medium text-gray-800 md:text-4xl">
+          <h2 className="mb-4 text-3xl font-normal text-gray-800 md:text-4xl">
             {t('header.title')}
           </h2>
           <h3 className="text-xl font-light text-teal-600 md:text-2xl">{t('header.subheading')}</h3>
@@ -116,12 +116,12 @@ export function ProgramsSectionV2() {
                 }}
               >
                 <div className="mb-2">
-                  <span className="text-sm font-semibold uppercase tracking-wide text-teal-600">
+                  <span className="text-sm font-medium uppercase tracking-wide text-teal-600">
                     {t('header.jour')} {program.dayNumber}
                   </span>
                 </div>
 
-                <h3 className="mb-2 text-2xl font-semibold text-gray-800 md:text-3xl">
+                <h3 className="mb-2 text-2xl font-normal text-gray-800 md:text-3xl">
                   {program.title.toUpperCase()}
                 </h3>
 
@@ -130,7 +130,7 @@ export function ProgramsSectionV2() {
                 {/* Activities - only show if activities exist */}
                 {program.activities && program.activities.length > 0 && (
                   <div className="mb-6">
-                    <h5 className="mb-3 font-semibold text-gray-800">
+                    <h5 className="mb-3 font-medium text-gray-800">
                       {t('header.activitiesTitle')}
                     </h5>
                     <ul className="space-y-2">
@@ -146,7 +146,7 @@ export function ProgramsSectionV2() {
 
                 {/* Objective */}
                 <div className="mb-6">
-                  <h5 className="mb-3 font-semibold text-gray-800">{t('header.objectiveTitle')}</h5>
+                  <h5 className="mb-3 font-medium text-gray-800">{t('header.objectiveTitle')}</h5>
                   <p className="font-medium italic text-gray-700">{program.objective}</p>
                 </div>
               </motion.div>
@@ -158,7 +158,7 @@ export function ProgramsSectionV2() {
       <div className="flex justify-center mt-10">
         <a
           href="#contact"
-          className="inline-block px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-400 text-white text-lg font-semibold rounded-full shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-teal-300"
+          className="inline-block px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-400 text-white text-lg font-medium rounded-full shadow-lg hover:from-teal-600 hover:to-emerald-500 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-teal-300"
         >
           Entrer dans l’univers holistique du Dakhla Club
         </a>

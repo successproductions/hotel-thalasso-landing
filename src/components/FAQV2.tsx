@@ -80,7 +80,7 @@ export default function FAQSectionV2() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              <h2 className="mb-4 text-5xl font-medium tracking-tight text-slate-800 dark:text-slate-100 md:text-5xl">
+              <h2 className="mb-4 text-5xl font-normal tracking-tight text-slate-800 dark:text-slate-100 md:text-5xl">
                 {t('title')}
               </h2>
               <div className="mx-auto h-1 w-24 rounded-full bg-slate-800 dark:bg-slate-100"></div>
@@ -119,7 +119,7 @@ export default function FAQSectionV2() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: 'spring', stiffness: 300 }}
                 >
-                  <h2 className="mb-4 text-5xl font-medium tracking-tight text-slate-800 dark:text-slate-100">
+                  <h2 className="mb-4 text-5xl font-normal tracking-tight text-slate-800 dark:text-slate-100">
                     {t('title')}
                   </h2>
                   <div className="mx-auto h-1 w-24 rounded-full bg-slate-800 dark:bg-slate-100"></div>

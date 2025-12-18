@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import './styles.css';
 import HeaderTest from '@/components/HeaderTest';
 import HeroTest from '@/components/HeroTest';
 import { ServicesTable } from '@/components/ServicesTable';

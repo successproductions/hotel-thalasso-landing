@@ -74,7 +74,7 @@ export default function HeaderTest() {
             {/* Center: Navigation */}
             <nav
               className={clsx(
-                'flex justify-center gap-1 font-medium transition-colors',
+                'flex justify-center gap-3 font-medium transition-colors',
                 active ? 'text-gray-800 dark:text-gray-200' : 'text-white',
               )}
             >
@@ -83,7 +83,7 @@ export default function HeaderTest() {
                   key={l.href}
                   href={l.href}
                   className={clsx(
-                    'group relative px-2 py-2 text-xs transition-colors',
+                    'group relative whitespace-nowrap px-2 py-2 text-xs transition-colors',
                     active ? 'hover:text-teal-700' : 'hover:text-white/80',
                   )}
                 >
@@ -100,7 +100,7 @@ export default function HeaderTest() {
               >
                 <button
                   className={clsx(
-                    'group relative flex items-center gap-1 px-2 py-2 text-xs transition-colors',
+                    'group relative flex items-center whitespace-nowrap gap-1 px-2 py-2 text-xs transition-colors',
                     active ? 'hover:text-teal-700' : 'hover:text-white/80',
                   )}
                 >

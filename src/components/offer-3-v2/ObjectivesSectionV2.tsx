@@ -13,7 +13,7 @@ export function ObjectivesSectionV2() {
     <section id="fonctionnement" className="bg-white py-6 md:py-6">
       <div className="mx-auto max-w-4xl px-0.5 md:px-4 text-center">
         {/* Title */}
-        <h2 className="text-3xl font-medium text-gray-800 md:text-4xl">
+        <h2 className="text-3xl font-normal text-gray-800 md:text-4xl">
           {t('title').toUpperCase()}
         </h2>
 
