@@ -54,7 +54,7 @@ export default function Page() {
       </noscript>
 
       {/* Booking Form Popup */}
-      <ReservationPopup isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+      {/* <ReservationPopup isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} /> */}
 
       <main>
         <HeaderTest />

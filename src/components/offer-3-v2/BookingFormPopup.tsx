@@ -117,7 +117,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
         <div className="mb-6">
           <h2 className="text-2xl font-semibold text-gray-800">Réservez votre séjour</h2>
           <p className="mt-1 text-sm text-gray-600">
-            Complétez vos informations pour continuer vers le paiement
+            Complétez vos informations pour continuer vers le paiement 
           </p>
         </div>
 
