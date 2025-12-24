@@ -252,6 +252,41 @@
       }
     }
   },
+  "paymentForm": {
+    "title": "Secure Payment",
+    "securePayment": "100% secure payment",
+    "cmiNotice": "Secure payment via CMI - Your data is protected",
+    "fields": {
+      "cardNumber": {
+        "label": "Card number"
+      },
+      "expiryDate": {
+        "label": "Expiry date"
+      },
+      "cvv": {
+        "label": "CVV"
+      },
+      "cardholderName": {
+        "label": "Cardholder name",
+        "placeholder": "Name as on card"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com"
+      }
+    },
+    "submit": "Proceed to Payment",
+    "processing": "Processing...",
+    "errors": {
+      "invalidCard": "Invalid card number (16 digits required)",
+      "invalidExpiry": "Invalid expiry date",
+      "cardExpired": "This card has expired",
+      "invalidCvv": "Invalid CVV (3 or 4 digits)",
+      "invalidName": "Invalid cardholder name",
+      "invalidEmail": "Invalid email"
+    },
+    "securityNotice": "🔒 Your payment information is encrypted and secure"
+  },
   "clientsCarousel": {
     "title": "What They Say ",
     "testimonial1": "I tried the ice baths and loved it!",

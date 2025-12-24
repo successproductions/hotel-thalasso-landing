@@ -52,44 +52,28 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
     setIsSubmitting(true);
 
     try {
-      // Prepare the data to send
-      const fullPhone = `${formData.countryCode} ${formData.phone}`;
-      const submissionData = {
-        fullName: formData.fullName,
+      // Split fullName into firstName and lastName
+      const nameParts = formData.fullName.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || nameParts[0];
+
+      // Prepare the booking data for payment page
+      const bookingData = {
+        firstName: firstName,
+        lastName: lastName,
         email: formData.email,
-        phone: fullPhone,
-        numberOfPeople: formData.numberOfPeople,
+        phone: `${formData.countryCode} ${formData.phone}`,
         arrivalDate: formData.arrivalDate,
-        timestamp: new Date().toISOString(),
+        numberOfPeople: formData.numberOfPeople,
       };
 
-      // Send to API endpoint (handles emails and Google Sheets)
-      const response = await fetch('/api/reservations/offer3', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submissionData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit reservation');
-      }
-
-      // Redirect to thank you page
-      window.location.href = `/${locale}/evasion-3/thank-you`;
+      // Store booking data in sessionStorage
+      sessionStorage.setItem('bookingFormData', JSON.stringify(bookingData));
+      
+      // Redirect to payment page
+      window.location.href = `/${locale}/evasion-3/payment`;
     } catch (error) {
       console.error('Submission error:', error);
-
-      // Show error message
-      await Swal.fire({
-        icon: 'error',
-        title: t('errors.server'),
-        text: t('errors.unknown'),
-        confirmButtonText: t('submit'),
-        confirmButtonColor: '#ef4444',
-      });
-    } finally {
       setIsSubmitting(false);
     }
   };
@@ -107,7 +91,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+    <div className="fixed inset-0 z-50 flex items-center  justify-center bg-black/50 p-4">
       <div className="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
         {/* Close button */}
         <button
@@ -119,7 +103,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         </button>
 
         {/* Title */}
-        <h2 className="mb-6 text-2xl font-semibold text-gray-800">{t('header.title')}</h2>
+        <h2 className="mb-6 text-2xl font-normal font-graphik text-gray-800">{t('header.title')}</h2>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -251,7 +235,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                 {t('submit')}
               </span>
             ) : (
-              t('submit')
+              'Continuer le paiement'
             )}
           </button>
         </form>

@@ -1,4 +1,6 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { useState, useEffect } from 'react';
 import Script from 'next/script';
 import './styles.css';
 import HeaderTest from '@/components/HeaderTest';
@@ -16,85 +18,16 @@ import { RewardsSectionV2 } from '@/components/offer-3-v2/RewardsSectionV2';
 import { AboutV2Reverse } from '@/components/offer-3-v2/AboutV2Reverse';
 import FAQSectionV2 from '@/components/FAQV2';
 import { ObjectivesSectionV2 } from '@/components/offer-3-v2/ObjectivesSectionV2';
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: 'fr' | 'en' }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const baseUrl = 'https://offer.dakhlaclub.com';
-
-  const metadataTest = {
-    fr: {
-      title: ' Évasion Holistique 3 Jours à Dakhla – Cure Détox & Bien-être',
-      description:
-        'Page de  Offrez-vous 3 jours de bien-être au centre DC Thermes à Dakhla. Cure détox, soins thalasso, spa entre désert et océan.',
-      keywords:
-        'séjour bien-être Dakhla, cure détox Maroc, spa haut de gamme Maroc, centre thalasso Dakhla',
-    },
-    en: {
-      title: ' 3-Day Holistic Escape in Dakhla – Detox Cure & Wellness',
-      description:
-        'Treat yourself to 3 days of wellness at DC Thermes center in Dakhla. Detox cure, thalasso treatments, spa between desert and ocean.',
-      keywords:
-        'Dakhla wellness stay, Morocco detox cure, luxury spa Morocco, Dakhla thalasso center',
-    },
-  };
-
-  const currentMeta = metadataTest[locale];
-  const currentUrl =
-    locale === 'en'
-      ? `${baseUrl}/en/evasion-test`
-      : `${baseUrl}/fr/evasion-test`;
-
-  return {
-    title: currentMeta.title,
-    description: currentMeta.description,
-    keywords: currentMeta.keywords,
-
-    openGraph: {
-      title: currentMeta.title,
-      description: currentMeta.description,
-      url: currentUrl,
-      siteName: 'Dakhla Club - Évasion Holistique Test',
-      locale: locale === 'fr' ? 'fr_FR' : 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: `${baseUrl}/images/cure-detox-3-jours-dakhla.jpg`,
-          width: 1200,
-          height: 630,
-          alt: currentMeta.title,
-          type: 'image/jpeg',
-        },
-      ],
-    },
-
-    twitter: {
-      card: 'summary_large_image',
-      title: currentMeta.title,
-      description: currentMeta.description,
-      images: [`${baseUrl}/images/cure-detox-3-jours-dakhla.jpg`],
-    },
-
-    alternates: {
-      canonical: currentUrl,
-      languages: {
-        'fr-FR': `${baseUrl}/fr/evasion-test`,
-        'en-US': `${baseUrl}/en/evasion-test`,
-        'x-default': `${baseUrl}/fr/evasion-test`,
-      },
-    },
-
-    robots: {
-      index: false, // Don't index test page
-      follow: false,
-    },
-  };
-}
+import ReservationPopup from '@/components/ReservationPopup';
 
 export default function Page() {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  useEffect(() => {
+    // Show booking form popup on page load
+    setIsFormOpen(true);
+  }, []);
+
   return (
     <>
       {/* Google Tag Manager - Evasion Test */}
@@ -119,6 +52,9 @@ export default function Page() {
           style={{ display: 'none', visibility: 'hidden' }}
         ></iframe>
       </noscript>
+
+      {/* Booking Form Popup */}
+      <ReservationPopup isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
 
       <main>
         <HeaderTest />

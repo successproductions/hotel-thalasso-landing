@@ -93,7 +93,7 @@ export default function HeaderTest() {
               ))}
 
               {/* Dropdown for Evasion Holistique */}
-              <div
+              {/* <div
                 className="relative"
                 onMouseEnter={() => setDropdownOpen(true)}
                 onMouseLeave={() => setDropdownOpen(false)}
@@ -122,7 +122,7 @@ export default function HeaderTest() {
                     ))}
                   </div>
                 )}
-              </div>
+              </div> */}
             </nav>
 
             {/* Right: Language + Button */}
@@ -183,7 +183,6 @@ export default function HeaderTest() {
                 className="h-auto max-w-full"
               />
             </Link>
-
             <Button
               size="sm"
               className={clsx(
@@ -225,7 +224,7 @@ export default function HeaderTest() {
                 ))}
 
                 {/* Mobile Dropdown for Evasion Holistique */}
-                <div className="flex flex-col">
+                {/* <div className="flex flex-col">
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     className="flex items-center justify-between text-base font-medium text-gray-800 hover:text-teal-700 dark:text-gray-200"
@@ -255,7 +254,7 @@ export default function HeaderTest() {
                       ))}
                     </div>
                   )}
-                </div>
+                </div> */}
 
                 <div className="mt-6 flex gap-4 border-t border-gray-200 pt-4 dark:border-gray-700">
                   <Link
