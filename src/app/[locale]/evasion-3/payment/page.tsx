@@ -240,7 +240,7 @@ export default function PaymentPage() {
                     </div>
                   )}
                   <div className="flex justify-between py-2">
-                    <span className="text-gray-600">Date d'arrivée</span>
+                    <span className="text-gray-600">Date d&apos;arrivée</span>
                     <span className="font-medium text-gray-800">{new Date(bookingInfo.arrivalDate).toLocaleDateString('fr-FR')}</span>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ export default function PaymentPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <Check size={18} className="mt-0.5 text-teal-600 flex-shrink-0" />
-                    <span>Bol d'Air Jacquier & ICE BATH/Sauna</span>
+                    <span>Bol d&apos;Air Jacquier & ICE BATH/Sauna</span>
                   </li>
                 </ul>
                 

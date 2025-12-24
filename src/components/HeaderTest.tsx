@@ -37,11 +37,11 @@ export default function HeaderTest() {
     { name: 'FAQ', href: '#faq' },
   ];
 
-  const allEvasionLinks = [
-    { name: t('evasion3'), href: '/evasion-holistique-3-jours' as const },
-    { name: t('evasion5'), href: '/evasion-holistique-5-jours' as const },
-    { name: t('evasion7'), href: '/evasion-holistique-7-jours' as const },
-  ];
+  // const allEvasionLinks = [
+  //   { name: t('evasion3'), href: '/evasion-holistique-3-jours' as const },
+  //   { name: t('evasion5'), href: '/evasion-holistique-5-jours' as const },
+  //   { name: t('evasion7'), href: '/evasion-holistique-7-jours' as const },
+  // ];
 
   // Filter out the current page from dropdown
   // const evasionLinks = allEvasionLinks.filter((link) => !pathname.includes(link.href));

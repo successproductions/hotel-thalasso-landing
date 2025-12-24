@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { X, User, Mail, Phone, Calendar } from 'lucide-react';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
 interface BookingFormPopupProps {
