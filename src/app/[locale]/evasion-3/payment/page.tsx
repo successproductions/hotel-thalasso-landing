@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { CreditCard, Lock, ArrowLeft, Check } from 'lucide-react';
+import { Lock, ArrowLeft, Check } from 'lucide-react';
 import { Footer } from '@/components/Footer';
 // @ts-expect-error - react-credit-cards doesn't have TypeScript types
 import Cards from 'react-credit-cards';

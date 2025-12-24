@@ -44,7 +44,7 @@ export default function HeaderTest() {
   ];
 
   // Filter out the current page from dropdown
-  const evasionLinks = allEvasionLinks.filter((link) => !pathname.includes(link.href));
+  // const evasionLinks = allEvasionLinks.filter((link) => !pathname.includes(link.href));
 
   return (
     <>

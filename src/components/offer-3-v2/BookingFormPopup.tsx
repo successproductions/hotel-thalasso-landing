@@ -21,7 +21,7 @@ interface FormData {
 export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupProps) {
   const locale = useLocale();
   const router = useRouter();
-  const t = useTranslations('bookingForm');
+  // const t = useTranslations('bookingForm');
   
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
