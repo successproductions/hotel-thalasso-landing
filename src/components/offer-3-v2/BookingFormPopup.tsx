@@ -230,7 +230,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
           {/* Arrival Date */}
           <div>
             <label htmlFor="arrivalDate" className="mb-1 block text-sm font-medium text-gray-700">
-              Date d'arrivée <span className="text-red-500">*</span>
+              Date d&apos;arrivée <span className="text-red-500">*</span>
             </label>
             <div className="relative">
               <Calendar className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />

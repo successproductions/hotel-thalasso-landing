@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import clsx from 'clsx';
 
 import { Button } from '@/components/ui/button';
@@ -13,7 +13,7 @@ import ReservationPopup from './ReservationPopup';
 export default function HeaderTest() {
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {

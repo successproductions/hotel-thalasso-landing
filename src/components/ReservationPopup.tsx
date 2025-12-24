@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
-import Swal from 'sweetalert2';
+
 import { useLocale, useTranslations } from 'next-intl';
 
 interface ReservationPopupProps {

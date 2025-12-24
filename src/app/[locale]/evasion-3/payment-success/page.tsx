@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Link } from '@/i18n/navigation';
-import { CheckCircle2, Mail, ExternalLink, ArrowRight, Calendar, MapPin, Phone } from 'lucide-react';
+import { CheckCircle2, Mail, ExternalLink, ArrowRight, Phone } from 'lucide-react';
 import Image from 'next/image';
 import '../styles.css';
 

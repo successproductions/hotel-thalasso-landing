@@ -4,9 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { CreditCard, Lock, ArrowLeft, Check } from 'lucide-react';
-import HeaderTest from '@/components/HeaderTest';
 import { Footer } from '@/components/Footer';
-// @ts-ignore - react-credit-cards doesn't have TypeScript types
+// @ts-expect-error - react-credit-cards doesn't have TypeScript types
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
 import '../styles.css';
@@ -277,7 +276,7 @@ export default function PaymentPage() {
                   <p className="text-xs text-gray-600 flex items-start gap-2">
                     <span className="text-teal-600 font-bold">ℹ️</span>
                     <span>
-                      <strong>Important :</strong> L'hébergement se règle séparément à l'hôtel.
+                      <strong>Important :</strong> L&apos;hébergement se règle séparément à l&apos;hôtel.
                     </span>
                   </p>
                 </div>

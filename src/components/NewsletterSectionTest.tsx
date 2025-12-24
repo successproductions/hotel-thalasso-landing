@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import PaymentPopupV3 from './offer-3-v2/PaymentPopupV3';
+
 import ReservationPopup from './ReservationPopup';
 
 export function NewsletterSectionTest() {
