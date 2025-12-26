@@ -98,10 +98,13 @@ export function Footer() {
             <p className="mb-2 text-xs text-gray-600">{t('scanBrochure')}</p>
             <div className="relative aspect-square w-32 overflow-hidden rounded-lg bg-white shadow-md sm:w-28 md:w-24">
               <Image
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(brochureUrl)}`}
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
+                  brochureUrl
+                )}`}
                 alt={t('qrAlt')}
                 fill
-                className="object-cover p-1"
+                unoptimized
+                className="object-contain p-1"
               />
             </div>
           </div>

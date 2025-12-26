@@ -144,7 +144,7 @@ export default function FAQSectionV2() {
                           }}
                           transition={{ duration: 0.2 }}
                         >
-                          <AccordionTrigger className="px-6 py-5 text-left font-medium text-slate-800 transition-colors duration-200 dark:text-slate-100 dark:hover:bg-slate-600">
+                          <AccordionTrigger className="px-4 py-5 text-left font-medium text-slate-800 transition-colors duration-200 dark:text-slate-100 dark:hover:bg-slate-600">
                             <div className="flex w-full items-center justify-between dark:hover:bg-slate-600">
                               <span className="pr-4 text-base md:text-lg">{item.question}</span>
                               <motion.div

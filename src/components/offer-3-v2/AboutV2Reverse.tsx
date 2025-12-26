@@ -25,7 +25,7 @@ export function AboutV2Reverse() {
             {msg.about2.title.toUpperCase()}
           </h2>
 
-          <ul className="list-disc space-y-2 pl-6">
+          <ul className="list-disc space-y-2 pl-6 md:text-lg">
             {descriptionList.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}

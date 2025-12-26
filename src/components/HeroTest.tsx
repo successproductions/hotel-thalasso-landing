@@ -26,7 +26,7 @@ export default function HeroTest() {
         {/* animated two-line headline */}
         <div className="relative z-20 flex h-full flex-col items-center justify-center space-y-4 md:px-4 pb-0 text-center text-white md:pb-0">
           {/* Line 1: big italic serif */}
-          <h1 className="text-2xl font-normal md:text-4xl lg:text-5xl xl:text-6xl">
+          <h1 className="text-[26px] font-normal md:text-4xl lg:text-5xl xl:text-[52px]">
             <span className="hidden md:block">
               <WavyText text={t('title')} />
             </span>

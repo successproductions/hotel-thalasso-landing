@@ -60,10 +60,10 @@ export function ProgramsSectionV2() {
             show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] } },
           }}
         >
-          <h2 className="mb-4 text-3xl font-normal text-gray-800 md:text-4xl">
-            {t('header.title')}
+          <h2 className="mb-4 text-3xl font-normal uppercase text-gray-800 md:text-4xl">
+            {t('header.title2')}
           </h2>
-          <h3 className="text-xl font-light text-teal-600 md:text-2xl">{t('header.subheading')}</h3>
+          {/* <h3 className="text-xl font-light text-teal-600 md:text-2xl">{t('header.subheading')}</h3> */}
         </motion.div>
       </div>
 

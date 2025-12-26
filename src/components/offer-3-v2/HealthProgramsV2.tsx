@@ -11,13 +11,13 @@ export function HealthProgramsV2() {
         <h2 className="text-3xl font-normal text-gray-800 md:text-4xl">
           {t('title').toUpperCase()}
         </h2>
-        <p className="mt-4 text-base font-light leading-relaxed text-gray-600 md:text-lg">
-          {t('title2')}
+        <p className="mt-4 text-base font-normal leading-relaxed text-gray-900 md:text-lg">
+          {t('title3')}
         </p>
         {/* Note */}
-        <p className="mt-2 text-sm font-light  leading-snug text-gray-500 md:text-base">
+        {/* <p className="mt-2 text-sm font-normal  leading-snug text-gray-900 md:text-lg">
           {t('description1')}
-        </p>
+        </p> */}
       </div>
     </section>
   );
