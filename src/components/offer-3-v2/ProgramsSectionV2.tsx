@@ -4,7 +4,7 @@ import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-export function ProgramsSectionV2() {
+export function   ProgramsSectionV2() {
   const t = useTranslations('programSection');
 
   const days = ['1', '2', '3', '4'];
@@ -125,7 +125,10 @@ export function ProgramsSectionV2() {
                   {program.title.toUpperCase()}
                 </h3>
 
-                <p className="mb-6 leading-relaxed text-gray-600">{program.description}</p>
+                <p 
+                  className="mb-6 leading-relaxed text-gray-600"
+                  dangerouslySetInnerHTML={{ __html: program.description }}
+                />
 
                 {/* Activities - only show if activities exist */}
                 {program.activities && program.activities.length > 0 && (
