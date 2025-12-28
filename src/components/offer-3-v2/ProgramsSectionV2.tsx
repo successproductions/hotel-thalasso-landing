@@ -168,7 +168,7 @@ export function   ProgramsSectionV2() {
       </div>
     */}
       <div
-        className="px-4 text-center md:px-0"
+        className="px-4 text-center mb-3 md:mb-0 md:px-0"
         style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}
       >
         <a

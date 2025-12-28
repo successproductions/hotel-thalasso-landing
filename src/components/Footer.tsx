@@ -20,8 +20,8 @@ export function Footer() {
         {/* Column 1 */}
         <div className="text-center md:text-left">
           <h3 className="mb-4 text-sm font-semibold uppercase">DakhlaClub</h3>
-          <ul className="space-y-2">
-            <li className="cursor-pointer hover:underline">
+          <ul className="space-y-2 ">
+            <li className=" cursor-pointer hover:underline">
               <a href="#">{t('footerNav.home')}</a>
             </li>
             <li className="cursor-pointer hover:underline">
