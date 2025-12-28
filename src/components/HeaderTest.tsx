@@ -74,7 +74,7 @@ export default function HeaderTest() {
             {/* Center: Navigation */}
             <nav
               className={clsx(
-                'flex justify-center gap-3 font-medium transition-colors',
+                'flex justify-center gap-3 font-normal transition-colors',
                 active ? 'text-gray-800 dark:text-gray-200' : 'text-white',
               )}
             >
@@ -217,7 +217,7 @@ export default function HeaderTest() {
                     key={l.href}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="text-base font-medium text-gray-800 hover:text-teal-700 dark:text-gray-200"
+                    className="text-base font-normal text-gray-800 hover:text-teal-700 dark:text-gray-200"
                   >
                     {l.name}
                   </a>
