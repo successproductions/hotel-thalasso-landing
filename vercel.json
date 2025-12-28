@@ -2,7 +2,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "npm ci",
+  "installCommand": "pnpm install",
   "regions": ["fra1"],
   "functions": {
     "app/**/*.{js,ts}": {
