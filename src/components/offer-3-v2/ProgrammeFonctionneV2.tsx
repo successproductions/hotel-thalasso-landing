@@ -22,13 +22,13 @@ export function ProgrammeFonctionneV2() {
 
         {/* Text Column */}
         <div className="space-y-6 px-4 md:px-0">
-          <h2 className="block pt-6 text-center text-3xl font-normal text-gray-800 md:hidden md:pt-14 md:text-4xl">
+          <h2 className="block pt-6 md:text-center text-[27px] font-normal text-gray-800 md:hidden md:pt-14 md:text-4xl">
             {te('title2')}
           </h2>
           <h2 className="hidden pt-6 text-3xl font-normal text-gray-900 md:block md:pt-14 md:text-4xl">
             {te('title2').toUpperCase()}
           </h2>
-          <ul className="list-disc space-y-3 pl-5 text-base leading-relaxed text-gray-900 md:text-lg">
+          <ul className="list-disc space-y-3 pl-5 font-extralight text-gray-700 md:text-lg">
             {[0, 1, 2, 3, 4, 5,6,7].map((i) => {
               const point = t(`${i}`);
               return <li key={i}>{point}</li>;

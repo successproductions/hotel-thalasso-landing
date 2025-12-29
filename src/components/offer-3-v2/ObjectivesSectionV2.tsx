@@ -11,16 +11,16 @@ export function ObjectivesSectionV2() {
 
   return (
     <section id="fonctionnement" className="bg-white py-6 md:py-6">
-      <div className="mx-auto max-w-4xl px-0.5 md:px-4 text-center">
+      <div className="mx-auto max-w-4xl px-4 md:text-center">
         {/* Title */}
-        <h2 className="text-3xl font-normal text-gray-900 md:text-4xl">
+        <h2 className="text-[27px] font-normal text-gray-900 md:text-4xl">
           {t('title').toUpperCase()}
         </h2>
 
         {/* Points from card1 */}
         <div className="md:mt-6 mt-3 space-y-1">
           {card1.map((text, i) => (
-            <p key={i} className="text-base font-normal leading-relaxed text-gray-900 md:text-lg">
+            <p key={i} className="text-[18px] font-extralight leading-relaxed text-gray-700 md:text-lg">
               {text}
             </p>
           ))}
@@ -29,7 +29,7 @@ export function ObjectivesSectionV2() {
         {/* Points from card2 */}
         <div className="mt-1 space-y-1">
           {card2.map((text, i) => (
-            <p key={i} className="text-base font-normal leading-relaxed text-gray-900 md:text-lg">
+            <p key={i} className="text-[18px] font-extralight leading-relaxed text-gray-700 md:text-lg">
               {text}
             </p>
           ))}

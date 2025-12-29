@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Link } from '@/i18n/navigation';
-import { CheckCircle2, Mail, ExternalLink, ArrowRight, Phone } from 'lucide-react';
+import { CheckCircle2, Mail, ExternalLink, ArrowRight, Phone, Lock } from 'lucide-react';
 import Image from 'next/image';
 import '../styles.css';
 
@@ -150,11 +150,17 @@ export default async function PaymentSuccessPage({
                   href={bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border-2 border-white bg-transparent px-8 py-3 font-medium text-white transition hover:bg-white hover:text-gray-900"
+                  className="inline-flex items-center gap-2 border-2 border-white bg-transparent px-8 py-3 font-medium text-white transition hover:border-2 hover:text-black"
                 >
                   {text.bookButton}
                   <ExternalLink className="h-4 w-4" />
                 </a>
+                <p className="mt-6 flex items-center justify-center gap-2 text-xs text-gray-300">
+                  <Lock className="h-4 w-4" />
+                  {locale === 'fr' 
+                    ? 'Vos données de paiement sont entièrement cryptées et traitées de manière sécurisée' 
+                    : 'Your payment data is fully encrypted and processed securely'}
+                </p>
               </div>
             </div>
           </div>
@@ -194,7 +200,7 @@ export default async function PaymentSuccessPage({
         {/* Back Button */}
         <div className="text-center">
           <Link
-            href="/"
+            href="/evasion-3"
             className="inline-flex items-center gap-2 text-gray-600 transition hover:text-gray-900"
           >
             <ArrowRight className="h-4 w-4 rotate-180" />

@@ -50,7 +50,7 @@ export function   ProgramsSectionV2() {
   return (
     <section id="services" className="overflow-hidden">
       {/* Header Section */}
-      <div className="mx-auto max-w-6xl px-4 py-1 text-center md:py-8">
+      <div className="mx-auto max-w-6xl px-4 py-1 md:text-center md:py-8">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -60,7 +60,7 @@ export function   ProgramsSectionV2() {
             show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] } },
           }}
         >
-          <h2 className="mb-4 text-3xl font-normal uppercase text-gray-800 md:text-4xl">
+          <h2 className="mb-4 text-[27px] font-normal uppercase text-gray-800 md:text-4xl">
             {t('header.title2')}
           </h2>
           {/* <h3 className="text-xl font-light text-teal-600 md:text-2xl">{t('header.subheading')}</h3> */}
@@ -121,12 +121,12 @@ export function   ProgramsSectionV2() {
                   </span>
                 </div>
 
-                <h3 className="mb-2 text-2xl font-normal text-gray-800 md:text-3xl">
+                <h3 className="mb-2 text-2xl font-normal text-gray-900 md:text-3xl">
                   {program.title.toUpperCase()}
                 </h3>
 
                 <p 
-                  className="mb-6 leading-relaxed text-gray-600"
+                  className="mb-6 leading-relaxed text-[18px] font-extralight text-gray-700"
                   dangerouslySetInnerHTML={{ __html: program.description }}
                 />
 
@@ -136,7 +136,7 @@ export function   ProgramsSectionV2() {
                     <h5 className="mb-3 font-medium text-gray-800">
                       {t('header.activitiesTitle')}
                     </h5>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 text-[18px] font-extralight text-gray-700">
                       {program.activities.map((activity: string, idx: number) => (
                         <li key={idx} className="flex items-start">
                           <span className="mr-2 text-teal-600">•</span>
@@ -150,7 +150,7 @@ export function   ProgramsSectionV2() {
                 {/* Objective */}
                 <div className="mb-6">
                   <h5 className="mb-3 font-medium text-gray-800">{t('header.objectiveTitle')}</h5>
-                  <p className="font-medium italic text-gray-700">{program.objective}</p>
+                  <p className="text-[17px] font-extralight text-gray-700">{program.objective}</p>
                 </div>
               </motion.div>
             </div>
@@ -168,18 +168,18 @@ export function   ProgramsSectionV2() {
       </div>
     */}
       <div
-        className="px-4 text-center mb-3 md:mb-0 md:px-0"
+        className="px-4 text-center  mb-3 md:mb-0 md:px-0"
         style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}
       >
         <a
           href="#contact"
+          className="rounded-sm"
           style={{
             padding: '12px 32px',
             background: '#14b8a6',
             color: '#fff',
             fontSize: '1.325rem',
             fontWeight: 500,
-            borderRadius: '9999px',
             textDecoration: 'none',
             boxShadow: '0 2px 8px rgba(20,184,166,0.15)',
           }}

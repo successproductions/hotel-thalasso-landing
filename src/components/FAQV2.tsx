@@ -74,16 +74,16 @@ export default function FAQSectionV2() {
           viewport={{ once: true, margin: '-50px' }}
         >
           {/* Header Section - Only on mobile */}
-          <motion.div className="mb-5 px-6 text-center lg:hidden" variants={itemVariants}>
+          <motion.div className="mb-5 px-6 md:text-center lg:hidden" variants={itemVariants}>
             <motion.div
               className="inline-block"
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              <h2 className="mb-4 text-5xl font-normal tracking-tight text-slate-800 dark:text-slate-100 md:text-5xl">
+              <h2 className="mb-4 text-[27px] font-normal tracking-tight text-slate-800 dark:text-slate-100 md:text-5xl">
                 {t('title')}
               </h2>
-              <div className="mx-auto h-1 w-24 rounded-full bg-slate-800 dark:bg-slate-100"></div>
+              <div className="hidden md:block mx-auto h-1 w-24 rounded-full bg-slate-800 dark:bg-slate-100"></div>
             </motion.div>
           </motion.div>
 
@@ -146,7 +146,7 @@ export default function FAQSectionV2() {
                         >
                           <AccordionTrigger className="px-4 py-5 text-left font-medium text-slate-800 transition-colors duration-200 dark:text-slate-100 dark:hover:bg-slate-600">
                             <div className="flex w-full items-center justify-between dark:hover:bg-slate-600">
-                              <span className="pr-4 text-base md:text-lg">{item.question}</span>
+                              <span className="pr-4 text-[19px] font-normal md:text-lg">{item.question}</span>
                               <motion.div
                                 animate={{
                                   rotate: openItem === `item-${index}` ? 45 : 0,
@@ -164,7 +164,7 @@ export default function FAQSectionV2() {
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.3 }}
-                                className="leading-relaxed text-slate-600 dark:text-slate-300"
+                                className="leading-[22px] font-extralight text-[18px] text-slate-700 dark:text-slate-300"
                               >
                                 <div className="border-t border-slate-100 pt-2">{item.answer}</div>
                               </motion.div>

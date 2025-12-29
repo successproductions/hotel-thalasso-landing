@@ -20,51 +20,71 @@ const getClientEmailTemplate = (data: ReservationData) => `
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
     .header { background: linear-gradient(135deg, #139584 0%, #0d9488 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
-    .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+    .content { background: #f9f9f9; padding: 20px; border-radius: 0 0 10px 10px; }
     .info-box { background: white; padding: 20px; margin: 20px 0; border-left: 4px solid #139584; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
     .info-row { margin: 10px 0; padding: 8px 0; }
     .label { font-weight: bold; color: #139584; }
     .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #139584; color: #666; }
     .button { display: inline-block; padding: 12px 30px; background: #139584; color: white; text-decoration: none; border-radius: 5px; margin: 20px 0; }
-    h1 { margin: 0; font-size: 28px; }
+    h1 { margin: 0; font-size: 24px; }
     h2 { color: #139584; margin-top: 0; }
     h3 { color: #139584; margin-top: 0; font-size: 18px; }
+    .next-step { background: #e6f7f5; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    .note { font-size: 14px; color: #666; font-style: italic; margin-top: 15px; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🌴 Dakhla Club - DC Thermes</h1>
-      <p style="margin: 10px 0 0 0; font-size: 16px;">Évasion Holistique 3 Jours</p>
+      <h1>Dakhla Club – DC Thermes</h1>
+      <p style="margin: 10px 0 0 0; font-size: 16px;">Séjours Thalasso & Bien-Être Premium</p>
     </div>
     <div class="content">
-      <h2>Bonjour ${data.fullName},</h2>
-      <p>Nous avons bien reçu votre demande de réservation pour notre programme <strong>Évasion Holistique 3 Jours</strong>.</p>
+      <h2>Votre demande de séjour Thalasso à Dakhla Club est bien reçue</h2>
+      
+      <p>Bonjour ${data.fullName},</p>
+      
+      <p>Nous avons bien reçu votre demande pour le programme<br>
+      <strong>Évasion Holistique – 3 jours</strong> au Dakhla Club Hotel & Spa.</p>
+      
+      <p>🌿 <strong>Votre demande a été transmise à notre équipe bien-être.</strong><br>
+      Chaque séjour est préparé de manière personnalisée afin de garantir<br>
+      une expérience calme, efficace et adaptée à vos besoins.</p>
 
       <div class="info-box">
-        <h3>📋 Récapitulatif de votre demande</h3>
+        <h3>Récapitulatif de votre demande :</h3>
         <div class="info-row">
-          <span class="label">Nom complet:</span> ${data.fullName}
+          <span class="label">Nom :</span> ${data.fullName}
         </div>
         <div class="info-row">
-          <span class="label">Email:</span> ${data.email}
+          <span class="label">Email :</span> ${data.email}
         </div>
         <div class="info-row">
-          <span class="label">Téléphone:</span> ${data.phone}
+          <span class="label">Téléphone :</span> ${data.phone}
         </div>
         <div class="info-row">
-          <span class="label">Nombre de personnes:</span> ${data.numberOfPeople}
+          <span class="label">Nombre de personnes :</span> ${data.numberOfPeople}
         </div>
         <div class="info-row">
-          <span class="label">Date d'arrivée souhaitée:</span> ${data.arrivalDate}
+          <span class="label">Date d'arrivée souhaitée :</span> ${new Date(data.arrivalDate).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
         </div>
       </div>
 
-      <p>Notre équipe vous contactera dans les plus brefs délais pour confirmer votre réservation et finaliser les détails de votre séjour.</p>
+      <div class="next-step">
+        <strong>⏳ Prochaine étape :</strong><br>
+        Un membre de notre équipe vous contactera sous 24 à 48 heures<br>
+        afin de confirmer la disponibilité et finaliser votre séjour.
+      </div>
+      
+      <p class="note">Nous limitons volontairement le nombre de curistes<br>
+      pour préserver la qualité de l'expérience.</p>
 
       <div style="text-align: center;">
-        <a href="https://offer.dakhlaclub.com" class="button">Découvrir nos offres</a>
+        <a href="https://offer.dakhlaclub.com/fr/evasion-3" class="button">Consulter les détails du séjour</a>
       </div>
+      
+      <p style="margin-top: 20px;">🌊 À très bientôt à Dakhla Club,<br>
+      <strong>L'équipe Dakhla Club – DC Thermes</strong></p>
 
       <div class="footer">
         <p style="margin: 5px 0;"><strong>Dakhla Club - DC Thermes</strong></p>
@@ -79,6 +99,7 @@ const getClientEmailTemplate = (data: ReservationData) => `
 </body>
 </html>
 `;
+
 
 const getAdminEmailTemplate = (data: ReservationData) => `
 <!DOCTYPE html>
@@ -167,24 +188,7 @@ export async function POST(request: NextRequest) {
       timestamp,
     };
 
-    // Step 1: Send data to Google Sheets
-    const sheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL_OFFER3;
-    if (sheetsUrl) {
-      try {
-        await fetch(sheetsUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(reservationData),
-        });
-      } catch (sheetsError) {
-        console.error('Google Sheets error:', sheetsError);
-        
-      }
-    }
-
-    // Step 2: Send emails
+    // Send emails
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 587,
@@ -200,7 +204,7 @@ export async function POST(request: NextRequest) {
       await transporter.sendMail({
         from: `"Dakhla Club - DC Thermes" <${process.env.EMAIL_USER}>`,
         to: data.email,
-        subject: '✅ Confirmation de votre demande de réservation - Dakhla Club',
+        subject: '✅ Votre demande de séjour Thalasso à Dakhla Club est bien reçue',
         html: getClientEmailTemplate(reservationData),
       });
     } catch (emailError) {

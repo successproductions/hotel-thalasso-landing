@@ -6,18 +6,14 @@ export function HealthProgramsV2() {
   const t = useTranslations('healthProgram');
   return (
     <section id="about" className="bg-white pb-12">
-      <div className="mx-auto max-w-4xl px-0.5 md:px-4 text-center">
+      <div className="mx-auto max-w-4xl px-4 md:px-4 md:text-center">
         {/* Title */}
-        <h2 className="text-3xl font-normal text-gray-800 md:text-4xl">
-          {t('title').toUpperCase()}
+        <h2 className="text-[27px] font-normal text-gray-800 md:text-4xl">
+          {t('title2').toUpperCase()}
         </h2>
-        <p className="mt-4 text-base font-normal leading-relaxed text-gray-900 md:text-lg">
+        <p className="mt-4 text-[18px] font-extralight leading-relaxed text-gray-700 md:text-lg">
           {t('title3')}
         </p>
-        {/* Note */}
-        {/* <p className="mt-2 text-sm font-normal  leading-snug text-gray-900 md:text-lg">
-          {t('description1')}
-        </p> */}
       </div>
     </section>
   );

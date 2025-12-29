@@ -67,6 +67,25 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         numberOfPeople: formData.numberOfPeople,
       };
 
+      // Send confirmation email via API
+      const emailResponse = await fetch('/api/reservations/offer3', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: `${formData.countryCode} ${formData.phone}`,
+          numberOfPeople: formData.numberOfPeople,
+          arrivalDate: formData.arrivalDate,
+        }),
+      });
+
+      if (!emailResponse.ok) {
+        console.error('Email API error:', await emailResponse.text());
+      }
+
       // Store booking data in sessionStorage
       sessionStorage.setItem('bookingFormData', JSON.stringify(bookingData));
       
@@ -208,7 +227,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full rounded-full bg-[#d6bb8e] px-6 py-3 font-medium text-white transition hover:bg-[#139584] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full rounded-sm bg-[#d6bb8e] px-6 py-3 font-medium text-white transition hover:bg-[#139584] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center">

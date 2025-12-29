@@ -31,6 +31,7 @@ export function NewsletterSectionTest() {
           {/* Just the button, opens popup */}
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
             <button
+            className="rounded-sm"
               onClick={() => setIsPopupOpen(true)}
               style={{
                 padding: '12px 32px',
@@ -38,7 +39,6 @@ export function NewsletterSectionTest() {
                 color: '#fff',
                 fontSize: '1.325rem',
                 fontWeight: 400,
-                borderRadius: '9999px',
                 textDecoration: 'none',
                 boxShadow: '0 2px 8px rgba(20,184,166,0.15)',
                 border: 'none',

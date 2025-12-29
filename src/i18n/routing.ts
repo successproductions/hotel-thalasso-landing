@@ -30,5 +30,21 @@ export const routing = defineRouting({
       fr: '/legal/cgv',
       en: '/legal/cgv',
     },
+    '/evasion-3': {
+      fr: '/evasion-3',
+      en: '/evasion-3',
+    },
+    '/evasion-3/payment': {
+      fr: '/evasion-3/payment',
+      en: '/evasion-3/payment',
+    },
+    '/evasion-3/payment-success': {
+      fr: '/evasion-3/payment-success',
+      en: '/evasion-3/payment-success',
+    },
+    '/evasion-3/payment-error': {
+      fr: '/evasion-3/payment-error',
+      en: '/evasion-3/payment-error',
+    },
   },
 });

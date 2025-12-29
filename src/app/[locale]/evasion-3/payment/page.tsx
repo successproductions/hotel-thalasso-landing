@@ -474,7 +474,7 @@ export default function PaymentPage() {
 
                 {/* Security Notice */}
                 <div className="mt-6 flex items-center justify-center gap-2 text-xs text-gray-500">
-                  <Lock className="h-3 w-3" />
+                  <Lock className="h-4 w-4" />
                   <p>Vos données de paiement sont entièrement cryptées et traitées de manière sécurisée</p>
                 </div>
               </div>

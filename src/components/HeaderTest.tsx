@@ -131,7 +131,7 @@ export default function HeaderTest() {
                 href={pathname}
                 locale={otherLocale}
                 className={clsx(
-                  'flex items-center gap-1 rounded-full border px-3 py-1 text-sm transition-colors',
+                  'flex items-center gap-1 rounded-sm border px-3 py-1 text-sm transition-colors',
                   active
                     ? 'border-gray-300 text-gray-800 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800'
                     : 'border-white text-white hover:bg-white hover:text-gray-800',
@@ -144,7 +144,7 @@ export default function HeaderTest() {
               <Button
                 size="sm"
                 className={clsx(
-                  'rounded-full border px-5 py-5 transition-transform',
+                  'rounded-sm border px-5 py-5 transition-transform',
                   active
                     ? 'bg-[#139584] text-white hover:scale-105 hover:bg-[#d6bb8e] hover:shadow-xl'
                     : 'border-white bg-transparent text-white hover:bg-gray-100 dark:bg-gray-800 dark:text-white',
@@ -186,7 +186,7 @@ export default function HeaderTest() {
             <Button
               size="sm"
               className={clsx(
-                'flex-shrink-0 whitespace-nowrap rounded-full border px-2 py-1 text-xs transition-transform',
+                'flex-shrink-0 whitespace-nowrap rounded-sm border px-2 py-1 text-xs transition-transform',
                 active
                   ? 'bg-[#139584] text-white hover:scale-105 hover:bg-[#d6bb8e] hover:shadow-xl'
                   : 'border-white bg-transparent text-white hover:bg-gray-100 dark:bg-gray-800 dark:text-white',
@@ -260,7 +260,7 @@ export default function HeaderTest() {
                   <Link
                     href={pathname}
                     locale={otherLocale}
-                    className="flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 text-sm transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
+                    className="flex items-center gap-2 rounded-sm border border-gray-300 px-4 py-2 text-sm transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
                   >
                     <Globe className="h-4 w-4" />
                     {otherLocale.toUpperCase()}

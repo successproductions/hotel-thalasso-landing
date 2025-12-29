@@ -11,10 +11,10 @@ export default function HeroTest() {
 
   return (
     <>
-      <section id="accueil" className="relative h-[70vh] w-screen overflow-hidden md:h-screen">
+      <section id="accueil" className="relative h-[65vh] w-screen overflow-hidden md:h-screen">
         {/* Background Video */}
         <video
-          className="absolute inset-0 h-[57vh] w-full object-cover lg:h-[80vh] xl:h-[92vh]"
+          className="absolute inset-0 h-[58vh] w-full object-cover lg:h-[80vh] xl:h-[92vh]"
           src="/videos/DC-Thermes.mov"
           autoPlay
           loop
@@ -42,11 +42,11 @@ export default function HeroTest() {
         </div>
 
         {/* Bottom Info Panel - Just Button */}
-        <div className="absolute bottom-12 left-1/2 z-20 w-[90%] -translate-x-1/2 transform md:w-auto lg:bottom-9 xl:bottom-8">
+        <div className="absolute bottom-1 left-1/2 z-20 w-[90%] -translate-x-1/2 transform md:w-auto lg:bottom-9 xl:bottom-8">
           <div className="py-4 md:px-12 md:py-6">
             <button
               onClick={() => setIsPopupOpen(true)}
-              className="w-full rounded-full bg-[#d6bb8e] px-4 py-3 text-center font-medium text-white transition hover:bg-[#139584] cursor-pointer hover:shadow-lg md:w-auto md:px-12 md:py-4 md:text-lg"
+              className="w-full rounded-sm bg-[#d6bb8e] px-4 py-3 text-center font-medium text-white transition hover:bg-[#139584] cursor-pointer hover:shadow-lg md:w-auto md:px-12 md:py-4 md:text-lg"
             >
            {t('ctaText')}
             </button>
