@@ -24,8 +24,7 @@ export default function HeroTest() {
         <div className="absolute inset-0" />
 
         {/* animated two-line headline */}
-        <div className="relative z-20 flex h-full flex-col items-center justify-center space-y-4 md:px-4 pb-0 text-center text-white md:pb-0">
-          {/* Line 1: big italic serif */}
+        {/* <div className="relative z-20 flex h-full flex-col items-center justify-center space-y-4 md:px-4 pb-0 text-center text-white md:pb-0">
           <h1 className="text-[26px] font-normal md:text-4xl lg:text-5xl xl:text-[52px]">
             <span className="hidden md:block">
               <WavyText text={t('title')} />
@@ -35,11 +34,10 @@ export default function HeroTest() {
             </span>
           </h1>
 
-          {/* Line 2: uppercase tracking-wide */}
           <h2 className="w-full max-w-full overflow-hidden  whitespace-normal break-words text-sm  tracking-wide md:px-0 md:tracking-widest md:text-lg">
             <WavyText text={t('description')} />
           </h2>
-        </div>
+        </div> */}
 
         {/* Bottom Info Panel - Just Button */}
         <div className="absolute bottom-1 left-1/2 z-20 w-[90%] -translate-x-1/2 transform md:w-auto lg:bottom-9 xl:bottom-8">

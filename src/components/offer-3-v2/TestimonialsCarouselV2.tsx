@@ -92,8 +92,8 @@ export default function TestimonialsCarouselV2() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-1 md:px-2 py-4 md:py-6">
         <div className="mb-4 md:mb-10 px-4 md:text-center">
-          <h2 className="text-[27px] font-normal text-gray-900 md:text-4xl lg:text-4xl">
-            {t('title')}
+          <h2 className="text-[27px] uppercase font-normal text-gray-900 md:text-4xl lg:text-4xl">
+            {t('title2')}
           </h2>
         </div>
 
@@ -164,7 +164,7 @@ export default function TestimonialsCarouselV2() {
           </div>
 
           {/* Dots */}
-          <div className="mt-4 flex justify-center gap-2">
+          {/* <div className="mt-4 flex justify-center gap-2">
             {testimonials.map((_, i) => (
               <button
                 key={i}
@@ -176,7 +176,8 @@ export default function TestimonialsCarouselV2() {
                 onClick={() => goToSlide(i)}
               />
             ))}
-          </div>
+          </div> */}
+          <p className="px-4 md:px-4 text-[18px] md:text-center mt-4 text-gray-800">{t('description')}</p>
         </div>
       </div>
     </section>

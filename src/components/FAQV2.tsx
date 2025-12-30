@@ -9,18 +9,92 @@ import {
 } from '@/components/ui/accordion';
 import { useTranslations, useMessages } from 'next-intl';
 import { useState } from 'react';
+import ReservationPopup from './ReservationPopup';
 
 interface FAQItem {
   question: string;
   answer: string;
 }
 
-export default function FAQSectionV2() {
+interface FAQSectionV2Props {
+  onOpenReservation?: () => void;
+}
+
+export default function FAQSectionV2({ onOpenReservation }: FAQSectionV2Props) {
   const t = useTranslations('faq');
   const messages = useMessages();
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const { contact, items } = messages.faq;
+
+  // Function to handle reservation click
+  const handleReservationClick = () => {
+    if (onOpenReservation) {
+      onOpenReservation();
+    } else {
+      setIsPopupOpen(true);
+    }
+  };
+
+  // Function to render answer with proper formatting
+  const renderAnswer = (answer: string) => {
+    const lines = answer.split('\n');
+    
+    return lines.map((line, index) => {
+      // Check if line starts with 👉 or 🎯 - make it a clickable link
+      if (line.startsWith('👉')) {
+        return (
+          <p key={index} className="mt-3">
+            <button
+              onClick={handleReservationClick}
+              className="inline-flex items-start gap-1 text-teal-600 hover:text-teal-700 hover:underline cursor-pointer font-medium transition-colors"
+            >
+              {line}
+            </button>
+          </p>
+        );
+      }
+      
+      if (line.startsWith('🎯')) {
+        return (
+          <p key={index} className="mt-3">
+            <button
+              onClick={handleReservationClick}
+              className="inline-flex items-start gap-1 text-teal-600 hover:text-teal-700 hover:underline cursor-pointer font-medium transition-colors"
+            >
+              {line}
+            </button>
+          </p>
+        );
+      }
+      
+      // Check if line is a bullet point
+      if (line.startsWith('•')) {
+        return (
+          <li key={index} className="ml-4 list-none">
+            {line}
+          </li>
+        );
+      }
+      
+      // Regular paragraph or empty line
+      if (line.trim() === '') {
+        return <br key={index} />;
+      }
+      
+      // Check if line ends with colon (it's a subtitle)
+      if (line.endsWith(':')) {
+        return (
+          <p key={index} className="mt-3 font-medium text-slate-800">
+            {line}
+          </p>
+        );
+      }
+      
+      return <p key={index}>{line}</p>;
+    });
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -53,9 +127,10 @@ export default function FAQSectionV2() {
   };
 
   return (
-    <section id="faq" className="overflow-hidden xl:h-[60dvh]">
+    <>
+    <section id="faq" className="overflow-hidden">
       {/* Animated Background */}
-      <div className="relative py-12 md:pt-14">
+      <div className={`relative py-8 md:pt-14 ${openItem ? 'pb-16' : 'pb-8'} transition-all duration-300`}>
         {/* Full-width pale background sliding in from left (same as ProgramsSection) */}
         <motion.div
           className="absolute inset-x-0 inset-y-0 bg-[#faf9f5]"
@@ -88,12 +163,12 @@ export default function FAQSectionV2() {
           </motion.div>
 
           {/* Main Content Grid */}
-          <div className="grid items-stretch gap-8 md:gap-16 lg:grid-cols-5">
+          <div className="grid items-start gap-8 md:gap-16 lg:grid-cols-5">
             {/* Image Section - Left Side */}
             <motion.div className="lg:col-span-2" variants={imageVariants}>
               <div className="lg:sticky lg:top-8">
                 <motion.div
-                  className="group relative h-full lg:min-h-[850px]"
+                  className="group relative h-full"
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -166,7 +241,7 @@ export default function FAQSectionV2() {
                                 transition={{ duration: 0.3 }}
                                 className="leading-[22px] font-extralight text-[18px] text-slate-700 dark:text-slate-300"
                               >
-                                <div className="border-t border-slate-100 pt-2">{item.answer}</div>
+                                <div className="border-t border-slate-100 pt-2">{renderAnswer(item.answer)}</div>
                               </motion.div>
                             </AccordionContent>
                           </AnimatePresence>
@@ -181,5 +256,7 @@ export default function FAQSectionV2() {
         </motion.div>
       </div>
     </section>
+      <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+    </>
   );
 }

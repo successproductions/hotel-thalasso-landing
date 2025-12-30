@@ -45,8 +45,7 @@
     "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne. Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante"
   },
   "about": {
-    "title": "Pour qui est ce séjour ?",
-    "stitle": "Vous ressentez le besoin de :",
+    "title": "Ce séjour thalasso est fait pour vous si… Vous ressentez le besoin de :",
     "description1": [
       "déconnecter profondément du stress quotidien",
       "soulager des tensions physiques et mentales persistantes",
@@ -56,7 +55,7 @@
     ]
   },
   "about2": {
-    "title": "VOUS ÊTES PEUT-ÊTRE ICI PARCE QUE…",
+    "title": "Vous êtes peut-être ici parce que votre corps vous parle",
     "description1": [
       "fatigue physique et mentale persistante",
       "sommeil non réparateur",
@@ -123,10 +122,10 @@
     }
   },
   "exclusiveOffer": {
-    "title": "⏳ Places limitées à 10 curistes par session",
-    "description": "Nos retraites se remplissent rapidement. Réservez dès maintenant votre place pour garantir votre participation",
+    "title": "Prêt(e) à offrir à votre corps ce dont il a vraiment besoin ?",
+    "description": "Places limitées à 10 curistes par session",
     "nextSession": "📅 Prochaine session : 15 au 18 juillet 2025",
-    "callButton": "Je Réserve Ma Place"
+    "callButton": "Réserver ma retraite thalasso à Dakhla"
   },
   "test": {},
   "carousel": {
@@ -168,23 +167,23 @@
     "items": [
       {
         "question": "Qu’est-ce que je vais vivre pendant ce séjour thalasso de 3 nuits au Dakhla Club ?",
-        "answer": "Pendant ces 3 nuits de thalassothérapie au Dakhla Club Hotel & Spa, vous vivez une expérience de récupération globale pensée pour le corps et le système nerveux. Ce séjour combine : des soins marins thérapeutiques, des moments de relâchement profond, un environnement naturel unique entre océan et désert."
+        "answer": "Pendant ces 3 nuits de thalassothérapie au Dakhla Club Hotel & Spa, vous vivez une expérience de récupération globale pensée pour le corps et le système nerveux.\n\nCe séjour combine :\n• des soins marins thérapeutiques\n• des moments de relâchement profond\n• un environnement naturel unique entre océan et désert\n\nDès les premiers jours, nos curistes ressentent :\n• un sommeil plus profond\n• une diminution des tensions physiques\n• une baisse du stress et de la charge mentale\n• une sensation de déconnexion et de recentrage\n\n👉 Il ne s'agit pas d'un simple spa, mais d'un véritable séjour thalasso de remise à niveau."
       },
       {
         "question": "Quels types de soins vais-je recevoir pendant ce séjour thalasso ?",
-        "answer": "Le programme inclut une sélection de soins de thalassothérapie et de bien-être holistique, adaptés à votre état et à vos besoins. Selon votre programme, vous pouvez bénéficier de : bain hydromassant à l’eau de mer, enveloppement aux algues marines, massage sous affusion, soins de récupération musculaire, techniques de relaxation et de stimulation circulatoire."
+        "answer": "Le programme inclut une sélection de soins de thalassothérapie et de bien-être holistique, adaptés à votre état et à vos besoins.\n\nSelon votre programme, vous pouvez bénéficier de :\n• bain hydromassant à l'eau de mer\n• enveloppement aux algues marines\n• massage sous affusion\n• soins de récupération musculaire\n• techniques de relaxation et de stimulation circulatoire\n\nTous les soins sont réalisés par des professionnels qualifiés, dans un cadre calme et sécurisé.\n\n🎯 L'objectif est de revitaliser le corps, d'apaiser le système nerveux et de favoriser une récupération durable."
       },
       {
         "question": "Est-ce que ce séjour thalasso est adapté si je n’ai jamais fait de cure ou de spa ?",
-        "answer": "Oui, absolument, Ce séjour thalasso est parfaitement adapté aux personnes qui découvrent la thalassothérapie. Le programme a été conçu pour être : progressif, accessible, encadré, sans contrainte physique excessive. Notre équipe prend le temps de vous accompagner, de vous expliquer chaque soin et de respecter votre rythme."
+        "answer": "Oui, absolument.\n\nCe séjour thalasso est parfaitement adapté aux personnes qui découvrent la thalassothérapie.\n\nLe programme a été conçu pour être :\n• progressif\n• accessible\n• encadré\n• sans contrainte physique excessive\n\nNotre équipe prend le temps de vous accompagner, de vous expliquer chaque soin et de respecter votre rythme.\n\n👉 Vous n'avez aucune expérience préalable à avoir pour profiter pleinement du séjour."
       },
       {
         "question": "Pourquoi faut-il réserver rapidement ce séjour thalasso ?",
-        "answer": "Les séjours thalasso au Dakhla Club sont proposés en petits groupes volontairement limités. Nous accueillons un nombre restreint de curistes par session afin de garantir :une qualité de soins optimale, une atmosphère calme et apaisante, une attention personnalisée. Les places sont donc rapidement réservées, surtout sur les périodes les plus demandées."
+        "answer": "Les séjours thalasso au Dakhla Club sont proposés en petits groupes volontairement limités.\n\nNous accueillons un nombre restreint de curistes par session afin de garantir :\n• une qualité de soins optimale\n• une atmosphère calme et apaisante\n• une attention personnalisée\n\nLes places sont donc rapidement réservées, surtout sur les périodes les plus demandées.\n\n👉 Réserver à l'avance vous permet de sécuriser votre place et de préparer sereinement votre séjour."
       },
       {
         "question": "Où vais-je loger pendant mon séjour thalasso à Dakhla ?",
-        "answer": "Vous serez hébergé(e) directement au Dakhla Club Hotel & Spa, au sein même de l’établissement. L’hébergement fait partie intégrante de l’expérience : chambres confortables, environnement calme, accès direct aux espaces de soins, cadre propice au repos et à la récupération. Tout est pensé pour prolonger les bienfaits de la thalassothérapie, sans déplacements inutiles."
+        "answer": "Vous serez hébergé(e) directement au Dakhla Club Hotel & Spa, au sein même de l'établissement.\n\nL'hébergement fait partie intégrante de l'expérience :\n• chambres confortables\n• environnement calme\n• accès direct aux espaces de soins\n• cadre propice au repos et à la récupération\n\n👉 Tout est pensé pour prolonger les bienfaits de la thalassothérapie, sans déplacements inutiles."
       }
     ]
   },
@@ -291,7 +290,8 @@
     "testimonial2": "Après avoir fait du cerf-volant, c’est tellement relaxant",
     "testimonial3": "Le meilleur spa que j'aie fait de toute ma vie",
     "testimonial4": "Dakhla offre un cadre unique pour se reconnecter avec soi-même.",
-    "testimonial5": "Je sens que ma peau est bien hydratée"
+    "testimonial5": "Je sens que ma peau est bien hydratée",
+    "description": "Ce que nos curistes ressentent dès les premiers jours"
   },
   "introduction": {
     "whyTitle": "Pourquoi cette cure ?",
@@ -302,6 +302,8 @@
   },
   "rewards": {
     "title": "NOUS AVONS ÉTÉ PRIMÉS PAR",
+    "title2": "Un établissement reconnu pour la qualité de son expérience",
+    "description": "Ces distinctions reflètent la qualité de l’accueil, des soins et l’expérience globale vécue par nos curistes",
     "logos": {
       "tripadvisor": {
         "alt": "TripAdvisor"
@@ -348,8 +350,8 @@
     "copyright": "DakhlaClub et ses filiales associées | Luxury Fitness, Health & Wellness Vacation Retreat."
   },
   "ProgrammeFonctionne": {
-    "title": " Pourquoi ce programme fonctionne",
-    "title2": " CE QUE VOUS ALLEZ VRAIMENT RESSENTIR",
+    "title": " Une approche thalasso structurée et cohérente",
+    "title2": " Résultats ressentis par nos curistes",
     "points": [
       "Résultats ressentis par nos curistes :",
       "apaisement nerveux profond",
