@@ -95,6 +95,7 @@ export default function TestimonialsCarouselV2() {
           <h2 className="text-[27px] uppercase font-normal text-gray-900 md:text-4xl lg:text-4xl">
             {t('title2')}
           </h2>
+          <p className="text-[18px] mt-4 text-gray-800">{t('title3')}</p>
         </div>
 
         <div className="relative">
