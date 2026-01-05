@@ -147,7 +147,7 @@ export default function TestimonialsCarouselV2() {
                             src={item.thumbnail}
                             alt={item.title}
                             fill
-                            className="object-cover"
+                            className="object-cover rounded-sm"
                           />
                           {/* Play Icon Overlay */}
                           <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-all group-hover:bg-black/30">

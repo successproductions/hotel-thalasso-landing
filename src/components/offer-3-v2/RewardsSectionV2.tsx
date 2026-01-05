@@ -14,7 +14,7 @@ export function RewardsSectionV2() {
     <section id="rewards" className="bg-[#faf9f5] py-1 md:py-12">
       <div className="mx-auto max-w-7xl px-0 md:px-4">
         {/* Title - centered on desktop, shown at top */}
-        <h2 className="pb-4 px-2 md:px-4 md:text-center text-[26px] font-normal uppercase md:text-4xl text-gray-800 md:pb-8">{t('title2')}</h2>
+        <h2 className="pb-4 pl-4 md:px-4 md:text-center text-[26px] font-normal uppercase md:text-4xl text-gray-800 md:pb-8">{t('title2')}</h2>
 
         {/* Images - 2x2 grid on mobile, single row on desktop */}
         <div className="grid grid-cols-2 gap-4 md:flex md:flex-row md:items-center md:justify-center md:gap-8">
@@ -24,7 +24,7 @@ export function RewardsSectionV2() {
             </div>
           ))}
         </div>
-        <p className="px-3 md:px-4 md:text-center text-[16px] font-light md:text-[18px] mt-4 text-gray-700">{t('description')}</p>
+        <p className="pl-4 md:px-4 md:text-center text-[16px] font-light md:text-[18px] mt-4 text-gray-700">{t('description')}</p>
       </div>
     </section>
   );
