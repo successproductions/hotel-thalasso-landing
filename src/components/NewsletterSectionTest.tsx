@@ -21,7 +21,7 @@ export function NewsletterSectionTest() {
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center space-y-4 px-4 text-center">
           {/* Title */}
-          <h2 className="font-serif text-3xl text-white md:text-4xl">{t('title')}</h2>
+          <h2 className="font-serif text-[27px] text-white md:text-4xl">{t('title')}</h2>
 
           {/* Description */}
           <p className="text-sm uppercase tracking-wide text-white/80 md:text-base">
@@ -34,7 +34,7 @@ export function NewsletterSectionTest() {
             className="rounded-sm"
               onClick={() => setIsPopupOpen(true)}
               style={{
-                padding: '12px 32px',
+                padding: '12px 15px',
                 background: '#14b8a6',
                 color: '#fff',
                 fontSize: '1.325rem',
