@@ -1,9 +1,12 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import ReservationPopupV5 from './ReservationPopupV5';
+import { useState } from 'react';
 
 export function NewsletterSectionV2() {
   const t = useTranslations('offer5.exclusiveOffer');
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
     <section
@@ -25,8 +28,9 @@ export function NewsletterSectionV2() {
 
         {/* Just the button, no email input */}
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-          <a
-            href="#accueil"
+          <button
+            
+            onClick={() => setIsPopupOpen(true)}
             style={{
               padding: '12px 32px',
               background: '#14b8a6',
@@ -39,9 +43,10 @@ export function NewsletterSectionV2() {
             }}
           >
             {t('callButton')}
-          </a>
+          </button>
         </div>
       </div>
+      <ReservationPopupV5 isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </section>
   );
 }
