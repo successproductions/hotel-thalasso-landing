@@ -111,13 +111,13 @@ export default function FAQSectionV2() {
           {/* Main Content Grid */}
           <div className="grid items-start gap-2 md:gap-5 lg:grid-cols-5">
             {/* Image Section - Left Side */}
-            <motion.div className="lg:col-span-2" variants={imageVariants}>
+            <motion.div className="lg:col-span-2 -mx-6 md:mx-0" variants={imageVariants}>
               <motion.div
                 className="group relative"
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <div className="relative overflow-hidden shadow-2xl md:rounded-sm">
                   <Image
                     src="/images/sauna_ritual.png"
                     alt={contact.alt}
@@ -142,7 +142,7 @@ export default function FAQSectionV2() {
                     >
                       <AccordionItem value={`item-${index}`} className="border-none">
                         <motion.div
-                          className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800"
+                          className="overflow-hidden rounded-sm border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800"
                           whileHover={{
                             boxShadow: '0 10px 40px -10px rgba(0, 0, 0, 0.1)',
                             y: -2,

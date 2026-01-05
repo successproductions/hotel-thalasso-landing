@@ -9,9 +9,9 @@ export function ProgrammeFonctionneV2() {
 
   return (
     <section id="pourquoi" className="bg-white md:py-12">
-      <div className="max-w-8xl mx-auto grid grid-cols-1 gap-6 px-4 md:grid-cols-2 md:gap-44">
+      <div className="max-w-8xl mx-auto grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-44">
         {/* Image Column */}
-        <div className="relative h-56 w-full overflow-hidden rounded-lg shadow-lg md:h-[30rem] xl:h-[38rem]">
+        <div className="relative -mx-4 h-56 w-[calc(100%+2rem)] overflow-hidden shadow-lg md:mx-0 md:h-[30rem] md:w-full md:rounded-sm xl:h-[38rem]">
           <Image
             src="/images/DJI_0070.png"
             alt="Pourquoi ce programme fonctionne"

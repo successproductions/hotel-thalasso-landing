@@ -95,7 +95,7 @@ export default function TestimonialsCarouselV2() {
           <h2 className="text-[27px] uppercase font-normal text-gray-900 md:text-4xl lg:text-4xl">
             {t('title2')}
           </h2>
-          <p className="text-[18px] mt-4 text-gray-800">{t('title3')}</p>
+          <p className="md:text-[18px] text-[16px] font-light mt-4 text-gray-700">{t('title3')}</p>
         </div>
 
         <div className="relative">
@@ -178,7 +178,7 @@ export default function TestimonialsCarouselV2() {
               />
             ))}
           </div> */}
-          <p className="px-4 md:px-4 text-[18px] md:text-center mt-4 text-gray-800">{t('description')}</p>
+          <p className="px-4 md:px-4 md:text-[18px] text-[16px] md:text-center font-light mt-6 text-gray-700">{t('description')}</p>
         </div>
       </div>
     </section>

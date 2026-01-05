@@ -87,13 +87,13 @@ export function ProgramsSectionV2() {
               } `}
             >
               {/* Image */}
-              <div className={isOdd ? 'md:col-start-2' : ''}>
+              <div className={`${isOdd ? 'md:col-start-2' : ''} -mx-4 md:mx-0`}>
                 <Image
                   src={program.image}
                   alt={`${t('header.jour')} ${program.dayNumber} - ${program.title}`}
                   width={600}
                   height={400}
-                  className="h-[39vh] w-full rounded-lg object-cover shadow-lg md:h-[77] lg:h-[85vh] xl:h-[64vh]"
+                  className="h-[48vh] w-full object-cover shadow-lg md:h-[77] md:rounded-lg lg:h-[85vh] xl:h-[64vh]"
                 />
               </div>
 

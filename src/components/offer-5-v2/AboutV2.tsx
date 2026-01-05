@@ -25,7 +25,7 @@ export function AboutV2() {
         {/* Image Column */}
         <div className="relative h-64 w-full md:h-auto md:min-h-[60vh]">
           <Image
-            src="/images/about5.png"
+            src="/images/offer-3/dji18.jpg"
             alt="Illustration scientifique"
             fill
             className="object-cover"
