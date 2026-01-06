@@ -128,7 +128,7 @@ export function ProgramsSectionV2() {
                     <h5 className="mb-3 font-semibold text-gray-800">
                       {t('header.activitiesTitle')}
                     </h5>
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 md:text-lg">
                       {program.activities.map((activity: string, idx: number) => (
                         <li key={idx} className="flex items-start">
                           <span className="mr-2 text-teal-600">•</span>

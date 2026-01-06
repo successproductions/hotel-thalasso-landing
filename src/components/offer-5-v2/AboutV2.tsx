@@ -15,7 +15,7 @@ export function AboutV2() {
             {msg.about.title.toUpperCase()}
           </h2>
 
-          <ul className="list-disc font-light text-gray-700 space-y-2 pl-6">
+          <ul className="list-disc font-light md:text-lg text-gray-700 space-y-2 pl-6">
             {descriptionList.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}

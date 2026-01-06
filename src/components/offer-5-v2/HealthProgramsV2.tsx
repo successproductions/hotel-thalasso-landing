@@ -12,7 +12,7 @@ export function HealthProgramsV2() {
           {t('title2').toUpperCase()}
         </h2>
         {/* Note */}
-        <p className="mt-2 text-base  leading-snug font-light text-gray-600 md:text-base">
+        <p className="mt-2 text-base  leading-snug font-light text-gray-600 md:text-lg">
           {t('description1')}
         </p>
       </div>
