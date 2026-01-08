@@ -108,7 +108,7 @@ export default function TestimonialsCarouselV2() {
           >
             <ChevronLeft className="h-6 w-6" />
           </Button>
-          <Button
+          <Button 
             variant="ghost"
             size="icon"
             className="absolute right-0 top-1/2 h-12 w-12 -translate-y-1/2 rounded-full border-gray-300 bg-[#faf9f5] text-gray-900 shadow-md hover:bg-gray-200"
