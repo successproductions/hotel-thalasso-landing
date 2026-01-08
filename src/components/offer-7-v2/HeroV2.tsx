@@ -26,12 +26,12 @@ export default function HeroV2() {
         {/* animated two-line headline */}
         <div className="relative z-20 flex h-full flex-col items-center justify-center space-y-4 px-4 pb-12 text-center text-white md:pb-0">
           {/* Line 1: big italic serif */}
-          <h1 className="text-2xl font-normal md:text-4xl lg:text-5xl xl:text-6xl">
+          <h1 className="text-2xl font-normal md:text-4xl lg:text-5xl xl:text-6xl ">
             <span className="hidden md:block">
               <WavyText text={t('title')} />
             </span>
-            <span className="block md:hidden">
-              <WavyText text={t('description')} />
+            <span className="block md:hidden ">
+              <WavyText text={t('title2')} />
             </span>
           </h1>
 
@@ -40,7 +40,7 @@ export default function HeroV2() {
             <span className="hidden md:block">
               <WavyText text={t('description')} />
             </span>
-            <span className="block md:hidden">
+            <span className="block md:hidden text-base">
               <WavyText text={t('description')} />
             </span>
           </h2>
