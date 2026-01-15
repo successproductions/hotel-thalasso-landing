@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-import ReservationPopup from './ReservationPopup';
+import ReservationPopup from './offers/ReservationPopup';
 
 export function NewsletterSectionTest() {
   const t = useTranslations('exclusiveOffer');
@@ -31,13 +31,12 @@ export function NewsletterSectionTest() {
           {/* Just the button, opens popup */}
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
             <button
-            className="rounded-sm"
+            className="rounded-sm md:text-[18px] text-[16px]"
               onClick={() => setIsPopupOpen(true)}
               style={{
                 padding: '12px 15px',
                 background: '#14b8a6',
                 color: '#fff',
-                fontSize: '1.325rem',
                 fontWeight: 400,
                 textDecoration: 'none',
                 boxShadow: '0 2px 8px rgba(20,184,166,0.15)',

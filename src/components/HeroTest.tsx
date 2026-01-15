@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import WavyText from './ui/WavyText';
 import { useTranslations } from 'next-intl';
-import ReservationPopup from './ReservationPopup';
+import ReservationPopup from './offers/ReservationPopup';
 
 export default function HeroTest() {
   const t = useTranslations('home');

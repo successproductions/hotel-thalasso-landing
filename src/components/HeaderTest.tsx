@@ -8,7 +8,7 @@ import clsx from 'clsx';
 import { Button } from '@/components/ui/button';
 import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations, useLocale } from 'next-intl';
-import ReservationPopup from './ReservationPopup';
+import ReservationPopup from '@/components/offers/ReservationPopup';
 
 export default function HeaderTest() {
   const [scrolled, setScrolled] = useState(false);

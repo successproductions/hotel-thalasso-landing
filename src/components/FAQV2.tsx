@@ -173,7 +173,7 @@ export default function FAQSectionV2({ onOpenReservation }: FAQSectionV2Props) {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="absolute -inset-4 rotate-3 transform rounded-3xl "></div>
-                  <div className="relative h-64 overflow-hidden rounded-sm shadow-2xl lg:w-[450px] lg:h-[580px]">
+                  <div className="relative h-64 overflow-hidden  shadow-2xl lg:w-[450px] lg:h-[580px]">
                     <Image
                       src="/images/centrethalassoDakhla.jpg"
                       alt={contact.alt}
