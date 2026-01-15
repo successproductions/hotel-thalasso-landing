@@ -316,7 +316,7 @@ export function ProgramsSectionV2() {
 
   return (
     <>
-    <section id="programs" className="overflow-hidden">
+    <section id="services" className="overflow-hidden">
       {/* Header Section */}
       <div className="mx-auto max-w-6xl px-4 py-1 md:text-center md:py-8">
         <motion.div
