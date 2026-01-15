@@ -492,7 +492,7 @@ export function ProgramsSectionV2() {
                             height={45}
                             className="object-contain md:w-[80px] md:h-[60px]"
                           />
-                          <h5 className="text-base font-light text-[#1a365d] md:text-2xl" style={{ fontFamily: 'serif' }}>
+                          <h5 className="text-base font-light text-[#010a17] md:text-2xl" style={{ fontFamily: 'serif' }}>
                             {offer.programDays}
                           </h5>
                         </div>
@@ -506,7 +506,7 @@ export function ProgramsSectionV2() {
                             >
                               {/* Left box - Service info */}
                               <div className="flex-1 border-r border-gray-200 px-6 py-5">
-                                <h6 className="font-semibold text-[#1a365d] text-[15px] md:text-[16px]">
+                                <h6 className="font-semibold text-[#010a17] text-[15px] md:text-[16px]">
                                   {row.name}
                                 </h6>
                                 {row.description && (
@@ -529,7 +529,7 @@ export function ProgramsSectionV2() {
                     <div className="mt-10 text-center">
                       <button
                         onClick={() => setIsPopupOpen(true)}
-                        className="inline-flex items-center gap-2 bg-[#d6bb8e] px-8 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-[#139584]"
+                        className="inline-flex items-center gap-2 bg-[#d6bb8e] px-8 py-3 text-sm md:text-lg font-medium text-white transition-all duration-300 hover:bg-[#139584]"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
