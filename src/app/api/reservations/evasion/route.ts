@@ -246,6 +246,22 @@ export async function POST(request: NextRequest) {
       console.error('Admin email error:', emailError);
     }
 
+    // Send data to Google Sheets
+    try {
+      const sheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL_OFFER3;
+      if (sheetsUrl) {
+        await fetch(sheetsUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(reservationData),
+        });
+      }
+    } catch (sheetsError) {
+      console.error('Google Sheets error:', sheetsError);
+    }
+
     return NextResponse.json({
       success: true,
       message: 'Réservation enregistrée avec succès',
