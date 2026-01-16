@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/accordion';
 import { useTranslations, useMessages } from 'next-intl';
 import { useState } from 'react';
-import ReservationPopup from './ReservationPopup';
+import ReservationPopup from './offers/ReservationPopup';
 
 interface FAQItem {
   question: string;

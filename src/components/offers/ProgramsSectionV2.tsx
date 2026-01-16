@@ -529,7 +529,7 @@ export function ProgramsSectionV2() {
                     <div className="mt-10 text-center">
                       <button
                         onClick={() => setIsPopupOpen(true)}
-                        className="inline-flex items-center gap-2 bg-[#d6bb8e] px-8 py-3 text-sm md:text-lg font-medium text-white transition-all duration-300 hover:bg-[#139584]"
+                        className="inline-flex items-center gap-2 bg-[#d6bb8e] px-8 py-3 text-sm md:text-lg font-medium rounded-sm text-white transition-all duration-300 hover:bg-[#139584]"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
