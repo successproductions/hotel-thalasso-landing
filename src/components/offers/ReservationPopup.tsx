@@ -122,8 +122,14 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-      <div className="relative w-full max-w-lg overflow-hidden  bg-white shadow-2xl">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto bg-white shadow-2xl "
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close button */}
         <button
           onClick={onClose}
@@ -134,7 +140,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         </button>
 
         {/* Image Slider Banner */}
-        <div className="relative h-48 w-full overflow-hidden">
+        <div className="relative h-36 lg:h-40 w-full overflow-hidden">
           {bannerImages.map((image, index) => (
             <div
               key={index}
@@ -174,8 +180,8 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         </div>
 
         {/* Form Section */}
-        <div className="p-6">
-          <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="p-5">
+          <form onSubmit={handleSubmit} className="space-y-3">
             {/* Offer Selection */}
             <div>
               <label htmlFor="selectedOffer" className="mb-1.5 block text-sm font-medium text-gray-700">
