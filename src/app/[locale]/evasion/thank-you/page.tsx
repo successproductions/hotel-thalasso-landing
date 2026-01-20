@@ -43,7 +43,7 @@ export default async function ThankYouPage({
 
   const content = {
     fr: {
-      title: 'Merci pour votre réservation !',
+      title: 'Nous vous remercions pour votre achat.',
       subtitle: 'Votre demande a été envoyée avec succès',
       message:
         'Notre équipe vous contactera dans les plus brefs délais pour confirmer votre réservation et finaliser les détails de votre séjour.',
@@ -79,7 +79,7 @@ export default async function ThankYouPage({
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner Image */}
-      <div className="relative h-[50vh] w-full overflow-hidden md:h-[60vh]">
+      <div className="relative min-h-[65vh] w-full overflow-hidden md:min-h-[60vh]">
         <Image
           src="/images/offer-3/dji2.jpg"
           alt="Dakhla Club - Thalasso & Wellness"
@@ -88,7 +88,7 @@ export default async function ThankYouPage({
           priority
         />
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/50" />
         
         {/* Logo */}
         <div className="absolute left-6 top-6 z-10 md:left-10 md:top-10">
@@ -104,62 +104,57 @@ export default async function ThankYouPage({
         </div>
 
         {/* Success message on banner */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <div className="mb-6 rounded-full bg-white/20 p-4 backdrop-blur-sm">
-            <CheckCircle2 className="h-16 w-16 text-white md:h-20 md:w-20" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 py-16">
+          <div className="mb-4 md:mb-6 rounded-full bg-white/20 p-3 md:p-4 backdrop-blur-sm">
+            <CheckCircle2 className="h-12 w-12 text-white md:h-20 md:w-20" />
           </div>
-          <h1 className="mb-2 px-4 text-3xl font-light tracking-wide md:text-5xl">
+          <h1 className="mb-2 px-1 text-[24px] font-light uppercase tracking-wide md:text-4xl leading-tight">
             {text.title}
           </h1>
-          <p className="text-lg text-white/90 md:text-xl">{text.subtitle}</p>
+          {/* Thank you message banner */}
+          <div className="mt-4 md:mt-6 mx-1 bg-white/20 backdrop-blur-sm px-4 md:px-6 py-3 md:py-4 rounded-sm max-w-2xl">
+            <p className="text-white/95 font-extralight text-lg md:text-xl leading-relaxed">
+              {locale === 'fr' 
+                ? "Merci de vérifier votre mail. Nous serons ravis de vous accueillir bientôt."
+                : "Thank you for your purchase. Please check your email. We look forward to welcoming you soon."}
+            </p>
+            <p className="mt-2 text-[#d6bb8e] font-extralight text-lg md:text-xl">
+              {locale === 'fr' ? "Next step : réserver l'hôtel" : "Next step: book the hotel"}
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="mx-auto max-w-4xl px-4 py-6 md:py-5">
+      <div className="mx-auto max-w-4xl px-4 py-4 md:py-5">
         {/* Message */}
-        <p className="mb-8 text-center text-lg text-gray-700 md:text-xl">{text.message}</p>
+        <p className="mb-4 md:mb-8 text-center font-extralight text-lg text-gray-700 md:text-xl">{text.message}</p>
 
         {/* Email confirmation notice */}
-        <div className="mb-10 flex items-center justify-center gap-3 bg-[#139584]/10 p-4">
+        <div className="mb-6 flex items-center justify-center gap-3 bg-[#139584]/10 p-4">
           <Mail className="h-5 w-5 text-[#139584]" />
-          <p className="text-[#139584] md:text-lg">{text.emailSent}</p>
+          <p className="text-[#139584] font-extralight text-lg">{text.emailSent}</p>
         </div>
 
-        {/* What's Next Section */}
-        <div className="mb-12 bg-[#faf9f5] py-12 -mx-4 px-4 md:-mx-0 md:px-8">
-          <h2 className="mb-10 text-center text-2xl font-light text-gray-800 md:text-3xl">
-            {text.whatNext}
+        {/* Hotel Booking Section */}
+        <div className="mb-5 md:mb-12 bg-[#faf9f5] py-12 -mx-4 px-0.5 md:-mx-0 md:px-8 text-center">
+          <h2 className="mb-4 text-2xl font-light uppercase text-gray-800 md:text-3xl">
+            {locale === 'fr' ? "Réservez votre hébergement" : "Book your accommodation"}
           </h2>
-          
-          <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-3">
-            {/* Step 1 */}
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center bg-[#139584] text-white">
-                <Mail className="h-7 w-7" />
-              </div>
-              <span className="mb-2 block text-sm font-medium uppercase tracking-wider text-[#d6bb8e]">Étape 1</span>
-              <p className="text-gray-700">{text.step1}</p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center bg-[#139584] text-white">
-                <Phone className="h-7 w-7" />
-              </div>
-              <span className="mb-2 block text-sm font-medium uppercase tracking-wider text-[#d6bb8e]">Étape 2</span>
-              <p className="text-gray-700">{text.step2}</p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center bg-[#139584] text-white">
-                <CheckCircle2 className="h-7 w-7" />
-              </div>
-              <span className="mb-2 block text-sm font-medium uppercase tracking-wider text-[#d6bb8e]">Étape 3</span>
-              <p className="text-gray-700">{text.step3}</p>
-            </div>
-          </div>
+          <p className="mb-8 text-gray-600 font-extralight max-w-xl mx-auto">
+            {locale === 'fr' 
+              ? "Complétez votre expérience en réservant votre chambre au Dakhla Club."
+              : "Complete your experience by booking your room at Dakhla Club."}
+          </p>
+          <a
+            href="https://direct-book.com/properties/DakhlaClubDIRECT"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-md bg-[#139584] px-10 py-4 text-lg text-white font-medium transition-all hover:bg-[#0f7a6d] hover:shadow-lg"
+          >
+            <Home className="h-5 w-5" />
+            {locale === 'fr' ? "Réserver l'hôtel" : "Book the hotel"}
+          </a>
         </div>
 
         {/* Contact Info */}
@@ -173,27 +168,16 @@ export default async function ThankYouPage({
               className="flex items-center gap-3 text-gray-700 transition hover:text-[#139584]"
             >
               <Phone className="h-5 w-5" />
-              <span className="text-lg">{text.phone}</span>
+              <span className="text-lg font-extralight">{text.phone}</span>
             </a>
             <a
               href={`mailto:${text.email}`}
               className="flex items-center gap-3 text-gray-700 transition hover:text-[#139584]"
             >
               <Mail className="h-5 w-5" />
-              <span className="text-lg">{text.email}</span>
+              <span className="text-lg font-extralight">{text.email}</span>
             </a>
           </div>
-        </div>
-
-        {/* Back to Home Button */}
-        <div className="text-center">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 rounded-md bg-[#d6bb8e] px-8 py-3 text-white transition-all hover:bg-[#139584]"
-          >
-            <Home className="h-5 w-5" />
-            {text.backHome}
-          </Link>
         </div>
       </div>
 

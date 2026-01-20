@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Script from 'next/script';
 import './styles.css';
 import HeaderTest from '@/components/HeaderTest';
-import HeroTest from '@/components/HeroTest';
+import HeroTest from '@/components/offers/HeroTest';
 import { Footer } from '@/components/Footer';
 import { NewsletterSectionTest } from '@/components/NewsletterSectionTest';
 import WhatsAppChatbot from '@/components/WhatsAppChatbot';

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import ReservationPopup from './ReservationPopup';
 
 interface Testimonial {
   id: number;
@@ -57,6 +58,7 @@ export default function TestimonialsCarouselV2() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visible, setVisible] = useState(3);
   const [playingVideo, setPlayingVideo] = useState<number | null>(null);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   // Update visible count on mount and resize
   useEffect(() => {
@@ -86,6 +88,7 @@ export default function TestimonialsCarouselV2() {
   };
 
   return (
+    <>
     <section className="relative flex min-h-[50vh] items-center justify-center overflow-hidden">
       {/* Solid color background instead of YouTube video */}
       <div className="absolute inset-0 h-full w-full" style={{ backgroundColor: '#faf9f5' }} />
@@ -179,8 +182,18 @@ export default function TestimonialsCarouselV2() {
             ))}
           </div> */}
           <p className="px-4 md:px-4 md:text-[18px] text-[16px] md:text-center font-light mt-6 text-gray-700">{t('description')}</p>
+          <div className="py-4 text-center md:px-12 md:py-6">
+            <button
+              onClick={() => setIsPopupOpen(true)}
+              className=" rounded-sm bg-[#d6bb8e] px-4 py-3  font-medium text-white transition hover:bg-[#139584] cursor-pointer hover:shadow-lg md:text-lg"
+            >
+           {t('ctaText')}
+            </button>
+          </div>
         </div>
       </div>
     </section>
+    <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+    </>
   );
 }
