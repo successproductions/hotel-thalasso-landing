@@ -23,7 +23,7 @@ interface FormData {
 // Offer data with images and info
 const offerData: Record<string, { image: string; title: string; subtitle: string; includes: string[] }> = {
   '3': {
-    image: '/images/offer-3/dji2.jpg',
+    image: '/images/THERMALE.png',
     title: 'Évasion 3 Nuits',
     subtitle: 'Escapade Bien-être',
     includes: [
@@ -35,7 +35,7 @@ const offerData: Record<string, { image: string; title: string; subtitle: string
     ],
   },
   '5': {
-    image: '/images/offer-3/dji3.jpg',
+    image: '/images/5.jpg',
     title: 'Évasion 5 Nuits',
     subtitle: 'Retraite Revitalisante',
     includes: [
@@ -48,7 +48,7 @@ const offerData: Record<string, { image: string; title: string; subtitle: string
     ],
   },
   '7': {
-    image: '/images/offer-3/dji4.jpg',
+    image: '/images/centrethalassoDakhla.jpg',
     title: 'Évasion 7 Nuits',
     subtitle: 'Cure Holistique',
     includes: [
@@ -200,7 +200,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                 className="object-cover transition-all duration-500"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute" />
             </div>
             
             {/* Bottom: Offer Info */}
