@@ -98,8 +98,8 @@ export async function POST(request: NextRequest) {
     const orderId = generateOrderId();
     const rnd = generateRnd();
 
-    // Get base URL for callbacks
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || request.nextUrl.origin;
+    // Get base URL for callbacks - Force production URL to avoid localhost issues
+    const baseUrl = 'https://offer.dakhlaclub.com';
 
     // Build payment parameters - exact names from CMI documentation
     const params: Record<string, string> = {
