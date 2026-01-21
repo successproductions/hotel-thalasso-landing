@@ -112,10 +112,10 @@ export default async function ThankYouPage({
             {text.title}
           </h1>
           {/* Thank you message banner */}
-          <div className="mt-4 md:mt-6 mx-1 bg-white/20 backdrop-blur-sm px-4 md:px-6 py-3 md:py-4 rounded-sm max-w-2xl">
+          <div className="mt-4 md:mt-6 mx-1 bg-white/20 backdrop-blur-sm px-4 md:px-6 py-3 md:py-4 rounded-sm max-w-3xl">
             <p className="text-white/95 font-extralight text-lg md:text-xl leading-relaxed">
               {locale === 'fr' 
-                ? "Merci de vérifier votre mail. Nous serons ravis de vous accueillir bientôt."
+                ? "Merci de vérifier votre email. Nous serons ravis de vous accueillir bientôt."
                 : "Thank you for your purchase. Please check your email. We look forward to welcoming you soon."}
             </p>
             <p className="mt-2 text-[#d6bb8e] font-extralight text-lg md:text-xl">
@@ -141,9 +141,9 @@ export default async function ThankYouPage({
           <h2 className="mb-4 text-2xl font-light uppercase text-gray-800 md:text-3xl">
             {locale === 'fr' ? "Réservez votre hébergement" : "Book your accommodation"}
           </h2>
-          <p className="mb-8 text-gray-600 font-extralight max-w-xl mx-auto">
+          <p className="mb-8 text-gray-600 font-extralight max-w-2xl mx-auto">
             {locale === 'fr' 
-              ? "Complétez votre expérience en réservant votre chambre au Dakhla Club."
+              ? "Complétez votre expérience en réservant votre chambre au DakhlaClub Hotel."
               : "Complete your experience by booking your room at Dakhla Club."}
           </p>
           <a
