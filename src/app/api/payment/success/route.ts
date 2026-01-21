@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
       
       // Redirect to thank you page
       return NextResponse.redirect(
-        new URL(`/${locale}/evasion/thank-you?order=${orderId}`, request.nextUrl.origin)
+        `https://offer.dakhlaclub.com/${locale}/evasion/thank-you?order=${orderId}`
       );
     } else {
       // Payment failed
