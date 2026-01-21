@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Info } from 'lucide-react';
 import Image from 'next/image';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 interface ReservationPopupProps {
   isOpen: boolean;
@@ -82,7 +82,6 @@ const bannerImages = [
 ];
 
 export default function ReservationPopup({ isOpen, onClose }: ReservationPopupProps) {
-  const _locale = useLocale();
   const t = useTranslations('contactForm');
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
