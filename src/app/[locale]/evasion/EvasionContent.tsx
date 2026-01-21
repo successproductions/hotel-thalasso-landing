@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Script from 'next/script';
 import './styles.css';
 import HeaderTest from '@/components/HeaderTest';
@@ -19,12 +18,6 @@ import FAQSectionV2 from '@/components/FAQV2';
 import { ObjectivesSectionV2 } from '@/components/offers/ObjectivesSectionV2';
 
 export default function EvasionContent() {
-  const [isFormOpen, setIsFormOpen] = useState(false);
-
-  useEffect(() => {
-    setIsFormOpen(true);
-  }, []);
-
   return (
     <>
       <Script

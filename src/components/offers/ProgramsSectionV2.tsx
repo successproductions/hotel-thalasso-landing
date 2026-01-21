@@ -10,20 +10,6 @@ interface ServiceItem {
   title: string;
 }
 
-interface OfferData {
-  id: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  image: string;
-  programTitle: string;
-  programDays: string;
-  intro: string[];
-  forYouIf: string[];
-  benefits: string[];
-  translationKey: string;
-}
-
 export function ProgramsSectionV2() {
   const t = useTranslations();
   const locale = typeof window !== 'undefined' ? window.location.pathname.split('/')[1] : 'fr';

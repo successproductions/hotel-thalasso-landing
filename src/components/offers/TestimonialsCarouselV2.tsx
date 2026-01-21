@@ -81,7 +81,7 @@ export default function TestimonialsCarouselV2() {
 
   const nextSlide = () => setCurrentIndex((i) => (i === maxIndex ? 0 : i + 1));
   const prevSlide = () => setCurrentIndex((i) => (i === 0 ? maxIndex : i - 1));
-  const goToSlide = (i: number) => setCurrentIndex(Math.max(0, Math.min(i, maxIndex)));
+  const _goToSlide = (i: number) => setCurrentIndex(Math.max(0, Math.min(i, maxIndex)));
 
   const handlePlayVideo = (id: number) => {
     setPlayingVideo(id);

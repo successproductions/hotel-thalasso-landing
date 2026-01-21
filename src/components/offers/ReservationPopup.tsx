@@ -82,7 +82,7 @@ const bannerImages = [
 ];
 
 export default function ReservationPopup({ isOpen, onClose }: ReservationPopupProps) {
-  const locale = useLocale();
+  const _locale = useLocale();
   const t = useTranslations('contactForm');
   const [formData, setFormData] = useState<FormData>({
     fullName: '',

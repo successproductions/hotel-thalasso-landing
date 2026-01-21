@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import WavyText from '@/components/ui/WavyText';
 import { useTranslations } from 'next-intl';
 import ReservationPopup from '@/components/offers/ReservationPopup';
 
