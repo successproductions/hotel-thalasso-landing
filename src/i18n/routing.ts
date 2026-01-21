@@ -6,6 +6,10 @@ export const routing = defineRouting({
   localePrefix: 'always', // This ensures all URLs have the locale prefix
   pathnames: {
     '/': '/',
+    '/evasion': {
+      fr: '/evasion',
+      en: '/evasion',
+    },
     '/evasion-holistique-3-jours': {
       fr: '/evasion-holistique-3-jours',
       en: '/evasion-holistique-3-jours',

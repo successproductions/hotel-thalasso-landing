@@ -7,9 +7,10 @@ import '../styles.css';
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: 'fr' | 'en' }>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = (rawLocale === 'en' || rawLocale === 'fr') ? rawLocale : 'fr';
 
   const metadata = {
     fr: {
@@ -37,9 +38,10 @@ export async function generateMetadata({
 export default async function PaymentSuccessPage({
   params,
 }: {
-  params: Promise<{ locale: 'fr' | 'en' }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = (rawLocale === 'en' || rawLocale === 'fr') ? rawLocale : 'fr';
 
   const content = {
     fr: {
@@ -200,7 +202,7 @@ export default async function PaymentSuccessPage({
         {/* Back Button */}
         <div className="text-center">
           <Link
-            href="/evasion-3"
+            href="/evasion"
             className="inline-flex items-center gap-2 text-gray-600 transition hover:text-gray-900"
           >
             <ArrowRight className="h-4 w-4 rotate-180" />

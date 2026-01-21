@@ -5,9 +5,10 @@ import { XCircle, AlertTriangle, Phone, Mail, RefreshCw } from 'lucide-react';
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: 'fr' | 'en' }>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = (rawLocale === 'en' || rawLocale === 'fr') ? rawLocale : 'fr';
 
   const metadata = {
     fr: {
@@ -35,9 +36,10 @@ export async function generateMetadata({
 export default async function PaymentErrorPage({
   params,
 }: {
-  params: Promise<{ locale: 'fr' | 'en' }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = (rawLocale === 'en' || rawLocale === 'fr') ? rawLocale : 'fr';
 
   const content = {
     fr: {
@@ -166,7 +168,7 @@ export default async function PaymentErrorPage({
           {/* Retry Button */}
           <div className="mb-8 flex justify-center">
             <a
-              href={`/${locale}/evasion-3#contact`}
+              href={`/${locale}/evasion#contact`}
               className="inline-flex items-center gap-2 rounded-full bg-teal-600 px-8 py-4 text-lg font-medium text-white shadow-lg transition hover:bg-teal-700 hover:shadow-xl"
             >
               <RefreshCw className="h-5 w-5" />

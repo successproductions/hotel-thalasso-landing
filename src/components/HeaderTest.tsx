@@ -2,18 +2,18 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import clsx from 'clsx';
 
 import { Button } from '@/components/ui/button';
 import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations, useLocale } from 'next-intl';
-import ReservationPopup from './ReservationPopup';
+import ReservationPopup from '@/components/offers/ReservationPopup';
 
 export default function HeaderTest() {
   const [scrolled, setScrolled] = useState(false);
   const [hovered, setHovered] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   useEffect(() => {
@@ -37,14 +37,14 @@ export default function HeaderTest() {
     { name: 'FAQ', href: '#faq' },
   ];
 
-  const allEvasionLinks = [
-    { name: t('evasion3'), href: '/evasion-holistique-3-jours' as const },
-    { name: t('evasion5'), href: '/evasion-holistique-5-jours' as const },
-    { name: t('evasion7'), href: '/evasion-holistique-7-jours' as const },
-  ];
+  // const allEvasionLinks = [
+  //   { name: t('evasion3'), href: '/evasion-holistique-3-jours' as const },
+  //   { name: t('evasion5'), href: '/evasion-holistique-5-jours' as const },
+  //   { name: t('evasion7'), href: '/evasion-holistique-7-jours' as const },
+  // ];
 
   // Filter out the current page from dropdown
-  const evasionLinks = allEvasionLinks.filter((link) => !pathname.includes(link.href));
+  // const evasionLinks = allEvasionLinks.filter((link) => !pathname.includes(link.href));
 
   return (
     <>
@@ -74,7 +74,7 @@ export default function HeaderTest() {
             {/* Center: Navigation */}
             <nav
               className={clsx(
-                'flex justify-center gap-3 font-medium transition-colors',
+                'flex justify-center gap-3 font-normal transition-colors',
                 active ? 'text-gray-800 dark:text-gray-200' : 'text-white',
               )}
             >
@@ -93,7 +93,7 @@ export default function HeaderTest() {
               ))}
 
               {/* Dropdown for Evasion Holistique */}
-              <div
+              {/* <div
                 className="relative"
                 onMouseEnter={() => setDropdownOpen(true)}
                 onMouseLeave={() => setDropdownOpen(false)}
@@ -122,7 +122,7 @@ export default function HeaderTest() {
                     ))}
                   </div>
                 )}
-              </div>
+              </div> */}
             </nav>
 
             {/* Right: Language + Button */}
@@ -131,7 +131,7 @@ export default function HeaderTest() {
                 href={pathname}
                 locale={otherLocale}
                 className={clsx(
-                  'flex items-center gap-1 rounded-full border px-3 py-1 text-sm transition-colors',
+                  'flex items-center gap-1 rounded-sm border px-3 py-1 text-sm transition-colors',
                   active
                     ? 'border-gray-300 text-gray-800 hover:bg-gray-100 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800'
                     : 'border-white text-white hover:bg-white hover:text-gray-800',
@@ -144,7 +144,7 @@ export default function HeaderTest() {
               <Button
                 size="sm"
                 className={clsx(
-                  'rounded-full border px-5 py-5 transition-transform',
+                  'rounded-sm border px-5 py-5 transition-transform',
                   active
                     ? 'bg-[#139584] text-white hover:scale-105 hover:bg-[#d6bb8e] hover:shadow-xl'
                     : 'border-white bg-transparent text-white hover:bg-gray-100 dark:bg-gray-800 dark:text-white',
@@ -183,11 +183,10 @@ export default function HeaderTest() {
                 className="h-auto max-w-full"
               />
             </Link>
-
             <Button
               size="sm"
               className={clsx(
-                'flex-shrink-0 whitespace-nowrap rounded-full border px-2 py-1 text-xs transition-transform',
+                'flex-shrink-0 whitespace-nowrap rounded-sm border px-2 py-1 text-xs transition-transform',
                 active
                   ? 'bg-[#139584] text-white hover:scale-105 hover:bg-[#d6bb8e] hover:shadow-xl'
                   : 'border-white bg-transparent text-white hover:bg-gray-100 dark:bg-gray-800 dark:text-white',
@@ -218,14 +217,14 @@ export default function HeaderTest() {
                     key={l.href}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="text-base font-medium text-gray-800 hover:text-teal-700 dark:text-gray-200"
+                    className="text-base font-normal text-gray-800 hover:text-teal-700 dark:text-gray-200"
                   >
                     {l.name}
                   </a>
                 ))}
 
                 {/* Mobile Dropdown for Evasion Holistique */}
-                <div className="flex flex-col">
+                {/* <div className="flex flex-col">
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     className="flex items-center justify-between text-base font-medium text-gray-800 hover:text-teal-700 dark:text-gray-200"
@@ -255,13 +254,13 @@ export default function HeaderTest() {
                       ))}
                     </div>
                   )}
-                </div>
+                </div> */}
 
                 <div className="mt-6 flex gap-4 border-t border-gray-200 pt-4 dark:border-gray-700">
                   <Link
                     href={pathname}
                     locale={otherLocale}
-                    className="flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 text-sm transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
+                    className="flex items-center gap-2 rounded-sm border border-gray-300 px-4 py-2 text-sm transition-colors hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
                   >
                     <Globe className="h-4 w-4" />
                     {otherLocale.toUpperCase()}

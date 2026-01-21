@@ -40,6 +40,7 @@
   },
   "healthProgram": {
     "title": "Dakhla is calling… Are you ready to refuel your energy?",
+    "title3": "Dakhla is calling… Are you ready to refuel your energy?",
     "title2": "A sanctuary between golden desert, turquoise lagoon, and sacred light",
     "description1": "In the heart of Dakhla, we’ve created a wellness refuge where each treatment becomes a ritual Here, silence heals. The sun warms from within. Our certified therapists welcome you for an immersive and deeply regenerative experience."
   },
@@ -170,24 +171,24 @@
     },
     "items": [
       {
-        "question": "What can I expect during these 3 Nights at Dakhla Club?",
-        "answer": "You’ll experience a true reconnection with yourself through a blend of relaxing treatments, sensory rituals, and a stunning natural setting between the desert and the ocean."
+        "question": "What will I experience during this 3-night thalassotherapy stay at Dakhla Club?",
+        "answer": "During these 3 nights of thalassotherapy at Dakhla Club Hotel & Spa, you'll experience a holistic recovery journey designed for both body and nervous system.\n\nThis stay combines:\n• therapeutic marine treatments\n• moments of deep relaxation\n• a unique natural environment between ocean and desert\n\nFrom the very first days, our guests feel:\n• deeper sleep\n• reduced physical tension\n• lower stress and mental load\n• a sense of disconnection and recentering\n\n👉 This is not just a spa — it's a true thalasso reset experience."
       },
       {
-        "question": "What types of treatments are included in the program?",
-        "answer": "You’ll enjoy a range of holistic therapies such as hydromassage baths, seaweed wraps, cupping therapy, and affusion massages — all designed to deeply relax and recharge your body and mind."
+        "question": "What types of treatments will I receive during this thalasso stay?",
+        "answer": "The program includes a selection of thalassotherapy and holistic wellness treatments, adapted to your condition and needs.\n\nDepending on your program, you may benefit from:\n• seawater hydromassage bath\n• marine algae wrap\n• affusion massage\n• muscle recovery treatments\n• relaxation and circulation stimulation techniques\n\nAll treatments are performed by qualified professionals in a calm and secure environment.\n\n🎯 The goal is to revitalize the body, soothe the nervous system, and promote lasting recovery."
       },
       {
-        "question": "Is this program suitable if I’ve never done a spa or wellness retreat before?",
-        "answer": "Absolutely — it’s the perfect introduction, carefully designed to be gentle, welcoming, and fully guided by wellness professionals."
+        "question": "Is this thalasso stay suitable if I've never done a spa or wellness retreat before?",
+        "answer": "Yes, absolutely.\n\nThis thalasso stay is perfectly suited for those discovering thalassotherapy for the first time.\n\nThe program has been designed to be:\n• progressive\n• accessible\n• supervised\n• without excessive physical demands\n\nOur team takes the time to guide you, explain each treatment, and respect your pace.\n\n👉 You don't need any prior experience to fully enjoy the stay."
       },
       {
-        "question": "Why should I book quickly?",
-        "answer": "Availability is limited to ensure a calm, personalized experience for every guest, so early booking is highly recommended."
+        "question": "Why should I book this thalasso stay quickly?",
+        "answer": "Thalasso stays at Dakhla Club are offered in intentionally small groups.\n\nWe welcome a limited number of guests per session to guarantee:\n• optimal treatment quality\n• a calm and soothing atmosphere\n• personalized attention\n\nSpaces fill up quickly, especially during peak periods.\n\n👉 Booking in advance allows you to secure your spot and prepare for your stay with peace of mind."
       },
       {
-        "question": "Where will I stay during the retreat?",
-        "answer": "You’ll be staying right at the Dakhla Club Hotel & Spa, in a serene setting that perfectly complements and enhances the benefits of your treatments."
+        "question": "Where will I stay during my thalasso stay in Dakhla?",
+        "answer": "You'll be accommodated directly at Dakhla Club Hotel & Spa, within the establishment itself.\n\nAccommodation is an integral part of the experience:\n• comfortable rooms\n• peaceful environment\n• direct access to treatment areas\n• a setting conducive to rest and recovery\n\n👉 Everything is designed to extend the benefits of thalassotherapy, without unnecessary travel."
       }
     ]
   },
@@ -252,13 +253,52 @@
       }
     }
   },
+  "paymentForm": {
+    "title": "Secure Payment",
+    "securePayment": "100% secure payment",
+    "cmiNotice": "Secure payment via CMI - Your data is protected",
+    "fields": {
+      "cardNumber": {
+        "label": "Card number"
+      },
+      "expiryDate": {
+        "label": "Expiry date"
+      },
+      "cvv": {
+        "label": "CVV"
+      },
+      "cardholderName": {
+        "label": "Cardholder name",
+        "placeholder": "Name as on card"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com"
+      }
+    },
+    "submit": "Proceed to Payment",
+    "processing": "Processing...",
+    "errors": {
+      "invalidCard": "Invalid card number (16 digits required)",
+      "invalidExpiry": "Invalid expiry date",
+      "cardExpired": "This card has expired",
+      "invalidCvv": "Invalid CVV (3 or 4 digits)",
+      "invalidName": "Invalid cardholder name",
+      "invalidEmail": "Invalid email"
+    },
+    "securityNotice": "🔒 Your payment information is encrypted and secure"
+  },
   "clientsCarousel": {
     "title": "What They Say ",
+    "title2": "An internationally recognized experience",
+    "title3": "What our guests feel from the very first days",
     "testimonial1": "I tried the ice baths and loved it!",
     "testimonial2": "After kiting, it's so relaxing",
     "testimonial3": "The best spa i've ever been to in my life",
     "testimonial4": "Dakhla offers a unique setting to reconnect with yourself.",
-    "testimonial5": "I feel that my skin is well hydrated"
+    "testimonial5": "I feel that my skin is well hydrated",
+    "description": "Authentic testimonials, felt results, no medical claims.",
+    "ctaText": "I want to live the experience"
   },
   "introduction": {
     "whyTitle": "Why this retreat?",
@@ -269,6 +309,8 @@
   },
   "rewards": {
     "title": "WE HAVE BEEN AWARDED BY",
+    "title2": "An internationally recognized experience",
+    "description": "What our guests feel from the very first days",
     "logos": {
       "tripadvisor": {
         "alt": "TripAdvisor"
@@ -1141,6 +1183,7 @@
     "home": {
       "title": "WELCOME TO DAKHLA CLUB",
       "title2": "WELCOME TO DAKHLACLUB",
+      "description": "A powerful and progressive cure, designed for a deep rest",
       "callButton": " I Want To Live The Experience",
       "Check-in": "Check-in",
       "Check-out": "Check-out",
@@ -2323,7 +2366,7 @@
       }
     },
     "scarcity": {
-            "description": "I can’t believe all these surprises... ",
+      "description": "I can’t believe all these surprises... ",
       "headline": "⚠️ Limited spaces and the magic lasts only one night…",
       "body": "Every year, Halloween stays at Dakhla Club sell out in just a few days.",
       "urgency": "Don't miss the most enchanting event of the year — book before it disappears into the mist!",
@@ -2335,7 +2378,7 @@
       "remaining": "Few spots remaining",
       "instantConfirm": "Instant confirmation",
       "securePayment": "Secure payment",
-          "button": "I book now!"
+      "button": "I book now!"
     },
     "why": {
       "title": "Why Choose Dakhla Club?",
@@ -2446,7 +2489,6 @@
     },
     "hero": {
       "tagline": " BLACK FRIDAY AT DAKHLA CLUB",
-
       "title": "EXCLUSIVE ESCAPE AT -30%",
       "subtitle": "From [start date] to [end date]",
       "description": "A suspended moment between lagoon, ocean and desert, where raw luxury meets absolute freedom.",

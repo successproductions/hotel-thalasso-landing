@@ -97,9 +97,10 @@ export default async function LocaleLayout({
   params,
 }: {
   children: ReactNode;
-  params: Promise<{ locale: 'fr' | 'en' }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const locale = (rawLocale === 'en' || rawLocale === 'fr') ? rawLocale : 'fr';
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
   // ✅ ONLY BUSINESS SCHEMA IN LAYOUT

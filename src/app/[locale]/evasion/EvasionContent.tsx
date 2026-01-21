@@ -6,7 +6,7 @@ import './styles.css';
 import HeaderTest from '@/components/HeaderTest';
 import HeroTest from '@/components/offers/HeroTest';
 import { Footer } from '@/components/Footer';
-import { NewsletterSectionTest } from '@/components/NewsletterSectionTest';
+import { NewsletterSectionV2 } from '@/components/offers/NewsletterSectionV2';
 import WhatsAppChatbot from '@/components/WhatsAppChatbot';
 import { HealthProgramsV2 } from '@/components/offers/HealthProgramsV2';
 import { AboutV2 } from '@/components/offers/AboutV2';
@@ -61,7 +61,7 @@ export default function EvasionContent() {
         <TestimonialsCarouselV2 />
         <RewardsSectionV2 />
         <FAQSectionV2 />
-        <NewsletterSectionTest />
+        <NewsletterSectionV2 />
         <Footer />
         <WhatsAppChatbot />
 
