@@ -182,7 +182,7 @@ export default async function ThankYouPage({
       </div>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 py-8 text-center text-sm text-gray-500">
+      <footer className="border-t border-gray-200 font-extralight py-8 text-center text-sm text-gray-500">
         <p>© 2026 Dakhla Club - DC Thermes | Séjours Thalasso & Bien-Être Premium</p>
       </footer>
     </main>

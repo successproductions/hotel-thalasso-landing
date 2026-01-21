@@ -187,7 +187,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         </button>
 
         {/* Desktop: 2-column layout | Mobile: single column */}
-        <div className="lg:grid lg:grid-cols-2">
+        <div className="lg:grid lg:grid-cols-2"> 
           
           {/* LEFT COLUMN - Image + Offer Info (Desktop only) */}
           <div className="hidden lg:flex lg:flex-col">
