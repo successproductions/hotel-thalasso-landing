@@ -21,11 +21,12 @@ interface FormData {
 }
 
 // Offer data with images and info
-const offerData: Record<string, { image: string; title: string; subtitle: string; includes: string[] }> = {
+const offerData: Record<string, { image: string; title: string; subtitle: string; price: number; includes: string[] }> = {
   '3': {
     image: '/images/THERMALE.png',
     title: 'Évasion 3 Nuits',
     subtitle: 'Escapade Bien-être',
+    price: 5000, // MAD - Update with actual price
     includes: [
       '3 nuits en chambre vue mer',
       '4 soins thalasso',
@@ -38,6 +39,7 @@ const offerData: Record<string, { image: string; title: string; subtitle: string
     image: '/images/5.jpg',
     title: 'Évasion 5 Nuits',
     subtitle: 'Retraite Revitalisante',
+    price: 7500, // MAD - Update with actual price
     includes: [
       '5 nuits en chambre vue mer',
       '6 soins thalasso',
@@ -51,6 +53,7 @@ const offerData: Record<string, { image: string; title: string; subtitle: string
     image: '/images/centrethalassoDakhla.jpg',
     title: 'Évasion 7 Nuits',
     subtitle: 'Cure Holistique',
+    price: 10000, // MAD - Update with actual price
     includes: [
       '7 nuits en chambre vue mer',
       '10 soins thalasso',
@@ -63,11 +66,11 @@ const offerData: Record<string, { image: string; title: string; subtitle: string
   },
 };
 
-// Offer options
+// Offer options with prices
 const offerOptions = [
-  { value: '3', label: 'Évasion 3 Nuits' },
-  { value: '5', label: 'Évasion 5 Nuits' },
-  { value: '7', label: 'Évasion 7 Nuits' },
+  { value: '3', label: 'Évasion 3 Nuits - 5 000 MAD' },
+  { value: '5', label: 'Évasion 5 Nuits - 7 500 MAD' },
+  { value: '7', label: 'Évasion 7 Nuits - 10 000 MAD' },
 ];
 
 // Banner images for mobile slider
@@ -128,7 +131,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
     setIsSubmitting(true);
 
     try {
-      // Send confirmation email via API (single endpoint for all offers)
+      // First, send reservation data to save it
       const emailResponse = await fetch('/api/reservations/evasion', {
         method: 'POST',
         headers: {
@@ -148,11 +151,55 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         console.error('Email API error:', await emailResponse.text());
       }
 
-      // Redirect to thank you page (no payment)
-      window.location.href = `/${locale}/evasion/thank-you`;
+      // Initiate CMI payment
+      const paymentResponse = await fetch('/api/payment/initiate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: `${formData.countryCode} ${formData.phone}`,
+          numberOfPeople: formData.numberOfPeople,
+          arrivalDate: formData.arrivalDate,
+          selectedOffer: formData.selectedOffer,
+        }),
+      });
+
+      if (!paymentResponse.ok) {
+        throw new Error('Payment initiation failed');
+      }
+
+      const paymentData = await paymentResponse.json();
+
+      if (paymentData.success) {
+        // Store booking info in sessionStorage
+        sessionStorage.setItem('bookingInfo', JSON.stringify(paymentData.bookingInfo));
+
+        // Create and submit hidden form to CMI
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = paymentData.gatewayUrl;
+
+        Object.entries(paymentData.params).forEach(([key, value]) => {
+          const input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = key;
+          input.value = value as string;
+          form.appendChild(input);
+        });
+
+        document.body.appendChild(form);
+        form.submit();
+      } else {
+        throw new Error('Payment data invalid');
+      }
     } catch (error) {
       console.error('Submission error:', error);
       setIsSubmitting(false);
+      // Optionally show error to user
+      alert('Une erreur est survenue. Veuillez réessayer.');
     }
   };
 

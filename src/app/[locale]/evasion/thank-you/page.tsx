@@ -144,7 +144,7 @@ export default async function ThankYouPage({
           <p className="mb-8 text-gray-600 font-extralight max-w-2xl mx-auto">
             {locale === 'fr' 
               ? "Complétez votre expérience en réservant votre chambre au DakhlaClub Hotel."
-              : "Complete your experience by booking your room at Dakhla Club."}
+              : "Complete your experience by booking your room at DakhlaClub Hotel."}
           </p>
           <a
             href="https://direct-book.com/properties/DakhlaClubDIRECT"
