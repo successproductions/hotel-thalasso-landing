@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { X, Info, Lock } from 'lucide-react';
+import { X, Info } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
