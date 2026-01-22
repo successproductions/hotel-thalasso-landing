@@ -31,26 +31,16 @@ export function NewsletterSectionV2() {
           {/* Just the button, opens popup */}
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
             <button
-            className="rounded-sm md:text-[18px] text-[16px]"
+            className="rounded-sm md:text-[18px] text-[16px] bg-gray-950 hover:bg-gray-900 px-4 py-3 font-medium text-white transition cursor-pointer hover:shadow-lg"
               onClick={() => setIsPopupOpen(true)}
               style={{
                 padding: '12px 15px',
-                background: '#14b8a6',
-                color: '#fff',
                 fontWeight: 400,
                 textDecoration: 'none',
                 boxShadow: '0 2px 8px rgba(20,184,166,0.15)',
                 border: 'none',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#0d9488';
-                e.currentTarget.style.transform = 'scale(1.05)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#14b8a6';
-                e.currentTarget.style.transform = 'scale(1)';
               }}
             >
               {t('callButton')}

@@ -24,11 +24,11 @@ interface FormData {
 const offerData: Record<string, { image: string; title: string; subtitle: string; price: number; includes: string[] }> = {
   '3': {
     image: '/images/THERMALE.png',
-    title: 'Évasion 3 Nuits',
+    title: 'Thalasso VITALITÉ 3 jours',
     subtitle: 'Escapade Bien-être',
-    price: 5000, // MAD - Update with actual price
+    price: 5000, 
     includes: [
-      '3 nuits en chambre vue mer',
+      '3 jours en chambre vue mer',
       '4 soins thalasso',
       'Pension complète',
       'Accès spa & piscine',
@@ -37,9 +37,9 @@ const offerData: Record<string, { image: string; title: string; subtitle: string
   },
   '5': {
     image: '/images/5.jpg',
-    title: 'Évasion 5 Nuits',
+    title: 'Thalasso RÉGÉNÉRATION 5 jours',
     subtitle: 'Retraite Revitalisante',
-    price: 7500, // MAD - Update with actual price
+    price: 7500, 
     includes: [
       '5 nuits en chambre vue mer',
       '6 soins thalasso',
@@ -51,9 +51,9 @@ const offerData: Record<string, { image: string; title: string; subtitle: string
   },
   '7': {
     image: '/images/centrethalassoDakhla.jpg',
-    title: 'Évasion 7 Nuits',
+    title: 'Thalasso RENAISSANCE 7 jours',
     subtitle: 'Cure Holistique',
-    price: 10000, // MAD - Update with actual price
+    price: 10000, 
     includes: [
       '7 nuits en chambre vue mer',
       '10 soins thalasso',
@@ -68,9 +68,9 @@ const offerData: Record<string, { image: string; title: string; subtitle: string
 
 // Offer options with prices
 const offerOptions = [
-  { value: '3', label: 'Évasion 3 Nuits - 5 000 MAD' },
-  { value: '5', label: 'Évasion 5 Nuits - 7 500 MAD' },
-  { value: '7', label: 'Évasion 7 Nuits - 10 000 MAD' },
+  { value: '3', label: 'Thalasso VITALITÉ 3 jours - 5 000 MAD' },
+  { value: '5', label: 'Thalasso RÉGÉNÉRATION 5 jours - 7 500 MAD' },
+  { value: '7', label: 'Thalasso RENAISSANCE 7 jours - 10 000 MAD' },
 ];
 
 // Banner images for mobile slider
@@ -254,7 +254,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
               <span className="text-sm uppercase tracking-wider text-[#d6bb8e] font-medium">
                 {currentOffer.subtitle}
               </span>
-              <h3 className="mt-2 text-2xl font-light text-gray-900">
+              <h3 className="mt-2 text-2xl font-normal text-gray-900">
                 {currentOffer.title}
               </h3>
               
@@ -319,9 +319,9 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
             </div>
 
             {/* Desktop header */}
-            <div className="hidden lg:block mb-6">
-              <h2 className="text-2xl font-light text-gray-900">Réservez votre séjour</h2>
-              <p className="text-sm text-gray-500 mt-1">Remplissez le formulaire ci-dessous</p>
+            <div className="hidden lg:block mb-2">
+              <h2 className="text-2xl font-normal text-gray-900">Complétez le formulaire ci-dessous pour réserver votre programme thalasso</h2>
+              <p className="text-sm text-gray-500 mt-1">Notre équipe vous accompagnera ensuite pour finaliser votre séjour dans les meilleures conditions.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-3 lg:space-y-4">
@@ -543,6 +543,26 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                   'Continuer vers le paiement'
                 )}
               </button>
+
+              {/* Security and Availability Info */}
+              <div className="mt-1 space-y-3 border-t border-gray-200 pt-1 ">
+                <div className="flex items-start gap-1">
+                  <svg className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Places limitées pour garantir la qualité des soins.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Paiement 100% sécurisé.
+                  </p>
+                </div>
+              </div>
             </form>
           </div>
         </div>

@@ -184,7 +184,7 @@ export default function TestimonialsCarouselV2() {
           <div className="py-4 text-center md:px-12 md:py-6">
             <button
               onClick={() => setIsPopupOpen(true)}
-              className=" rounded-sm bg-[#d6bb8e] px-4 py-3  font-medium text-white transition hover:bg-[#139584] cursor-pointer hover:shadow-lg md:text-lg"
+              className=" rounded-sm bg-gray-950 px-4 py-3  font-medium text-white transition hover:bg-gray-900 cursor-pointer hover:shadow-lg md:text-lg"
             >
            {t('ctaText')}
             </button>

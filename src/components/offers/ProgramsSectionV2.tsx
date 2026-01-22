@@ -25,11 +25,10 @@ export function ProgramsSectionV2() {
       forYouIfTitle: 'CE PROGRAMME EST POUR VOUS SI :',
       benefitsTitle: 'BIENFAITS :',
       detailsTitle: 'DÉTAILS DU PROGRAMME :',
-      reserveButton: 'Réserver cette offre',
       offers: [
         {
           id: 'offer3',
-          title: 'ÉVASION 3 NUITS',
+          title: 'Thalasso VITALITÉ 3 jours',
           subtitle: 'On Relâche',
           description: 'Une parenthèse de 3 nuits pour déconnecter, respirer, renaître. <br/>Le corps commence à se déposer. <br/>Le système nerveux ralentit. <br/>La respiration s\'apaise.',
           image: '/images/offer-3/dji2.jpg',
@@ -55,13 +54,14 @@ export function ProgramsSectionV2() {
             'Vous reconnecter avec vous-même.',
           ],
           translationKey: 'servicesTable',
+          reserveButton: 'Je réserve Thalasso VITALITÉ',
         },
         {
           id: 'offer5',
-          title: 'ÉVASION 5 NUITS',
+          title: 'Thalasso RÉGÉNÉRATION 5 jours',
           subtitle: 'On Rééquilibre',
           description: 'Une cure puissante et progressive, conçue pour un reset profond. <br/>Les soins marins et sensoriels relancent la circulation. <br/>Les tensions musculaires se dissolvent. <br/>L\'esprit devient plus clair.',
-          image: '/images/THERMALE.png',
+          image: '/images/offer-3/dji12.jpg',
           programTitle: 'PROGRAMME DÉCOUVERTE ET RENAISSANCE:',
           programDays: 'Programme 5 jours',
           intro: [
@@ -84,10 +84,11 @@ export function ProgramsSectionV2() {
             'Gagner en confiance dans votre parcours de bien-être.',
           ],
           translationKey: 'offer5.servicesTable5',
+          reserveButton: 'Je choisis THALASSO RÉGÉNÉRATION',
         },
         {
           id: 'offer7',
-          title: 'ÉVASION 7 NUITS',
+          title: 'Thalasso RENAISSANCE 7 jours',
           subtitle: 'On Détoxifie & On Libère',
           description: 'L\'expérience complète pour une régénération totale corps et esprit. <br/>Les soins nettoient, drainent et réoxygènent les tissus. <br/>L\'énergie revient progressivement. <br/>Le corps respire. L\'esprit s\'allège.',
           image: '/images/offer-3/dji7.jpg',
@@ -111,6 +112,7 @@ export function ProgramsSectionV2() {
             'Sensation de légèreté et de renouveau.',
           ],
           translationKey: 'offer7.servicesTable7',
+          reserveButton: 'Je vis la THALASSO RENAISSANCE',
         },
       ],
     },
@@ -121,7 +123,6 @@ export function ProgramsSectionV2() {
       forYouIfTitle: 'THIS PROGRAM IS FOR YOU IF:',
       benefitsTitle: 'BENEFITS:',
       detailsTitle: 'PROGRAM DETAILS:',
-      reserveButton: 'Book this offer',
       offers: [
         {
           id: 'offer3',
@@ -151,6 +152,7 @@ export function ProgramsSectionV2() {
             'Reconnect with yourself.',
           ],
           translationKey: 'servicesTable',
+          reserveButton: 'Book this offer',
         },
         {
           id: 'offer5',
@@ -180,6 +182,7 @@ export function ProgramsSectionV2() {
             'Gain confidence in your wellness journey.',
           ],
           translationKey: 'offer5.servicesTable5',
+          reserveButton: 'Book this offer',
         },
         {
           id: 'offer7',
@@ -207,6 +210,7 @@ export function ProgramsSectionV2() {
             'Feeling of lightness and renewal.',
           ],
           translationKey: 'offer7.servicesTable7',
+          reserveButton: 'Book this offer',
         },
       ],
     },
@@ -346,7 +350,7 @@ export function ProgramsSectionV2() {
                 } `}
               >
                 {/* Image */}
-                <div className={`-mx-4 md:mx-0 ${isOdd ? 'md:col-start-2' : ''}`}>
+                <div className={`-mx-4 md:mx-0 ${isOdd ? 'md:col-start-2' : ''} relative`}>
                   <Image
                     src={offer.image}
                     alt={offer.title}
@@ -354,11 +358,30 @@ export function ProgramsSectionV2() {
                     height={400}
                     className="h-64 w-full rounded-none object-cover shadow-lg md:h-[34rem]"
                   />
+                  
+                  {/* Reserve Button - Mobile Only - Overlapping Image */}
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-center md:hidden" style={{ transform: 'translateY(50%)' }}>
+                    <button
+                      onClick={() => setIsPopupOpen(true)}
+                      className="flex items-center justify-center gap-2 bg-gray-950 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:bg-gray-900"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      {offer.reserveButton}
+                    </button>
+                  </div>
                 </div>
 
                 {/* Text */}
                 <motion.div
-                  className={isOdd ? 'md:col-start-1' : ''}
+                  className={`${isOdd ? 'md:col-start-1' : ''} mt-8 md:mt-0`}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, amount: 0.3 }}
@@ -372,7 +395,7 @@ export function ProgramsSectionV2() {
                   }}
                 >
                   <div className="mb-2">
-                    <span className="text-sm md:text-3xl font-medium uppercase tracking-wide text-teal-950">
+                    <span className="text-[20px] md:text-3xl font-medium uppercase tracking-wide text-teal-950">
                       {offer.title}
                     </span>
                   </div>
@@ -389,7 +412,7 @@ export function ProgramsSectionV2() {
                   {/* Learn More Button */}
                   <button
                     onClick={() => setExpandedOffer(isExpanded ? null : offer.id)}
-                    className="inline-flex items-center gap-2 border border-gray-900 px-6 py-2 text-sm font-medium text-gray-800 transition-all duration-300 hover:bg-[#d6bb8e] hover:border-[#d6bb8e] hover:text-white"
+                    className="inline-flex items-center gap-2 border border-gray-900 px-6 py-2 text-sm font-medium text-gray-800 transition-all duration-300 hover:bg-gray-950  hover:text-white"
                   >
                     {isExpanded ? currentContent.seeLess : currentContent.learnMore}
                     <svg
@@ -418,7 +441,7 @@ export function ProgramsSectionV2() {
                 >
                   <div className="mx-auto max-w-6xl px-6 py-4 md:px-4 font-extralight ">
                     {/* Program Title */}
-                    <h3 className="mb-8 text-xl font-normal tracking-wide text-black md:text-2xl">
+                    <h3 className="mb-8 text-lg font-normal tracking-wide text-black md:text-2xl">
                       {offer.programTitle}
                     </h3>
 
@@ -515,7 +538,7 @@ export function ProgramsSectionV2() {
                     <div className="mt-10 text-center">
                       <button
                         onClick={() => setIsPopupOpen(true)}
-                        className="inline-flex items-center gap-2 bg-[#d6bb8e] px-8 py-3 text-sm md:text-lg font-medium rounded-sm text-white transition-all duration-300 hover:bg-[#139584]"
+                        className="inline-flex items-center gap-2 bg-gray-950 px-8 py-3 text-sm md:text-lg font-medium rounded-sm text-white transition-all duration-300 hover:bg-gray-900"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -526,8 +549,9 @@ export function ProgramsSectionV2() {
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        {currentContent.reserveButton}
+                        {offer.reserveButton}
                       </button>
+                    
                     </div>
                   </div>
                 </motion.div>

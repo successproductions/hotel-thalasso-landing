@@ -63,7 +63,7 @@ export default function HeaderTest() {
             <div className="flex items-center">
               <Link href="/" className="transition-filter">
                 <Image
-                  src="/images/LogoDakhla.png"
+                  src={active ? "/images/offer-3/logoDcBolde.png" : "/images/offer-3/logodc.png"}
                   alt="Dakhla Club - Retour à l'accueil"
                   width={120}
                   height={40}
@@ -146,7 +146,7 @@ export default function HeaderTest() {
                 className={clsx(
                   'rounded-sm border px-5 py-5 transition-transform',
                   active
-                    ? 'bg-[#139584] text-white hover:scale-105 hover:bg-[#d6bb8e] hover:shadow-xl'
+                    ? 'bg-gray-950 text-white hover:scale-105 hover:bg-gray-900 hover:shadow-xl'
                     : 'border-white bg-transparent text-white hover:bg-gray-100 dark:bg-gray-800 dark:text-white',
                 )}
                 onClick={() => setIsPopupOpen(true)}
@@ -176,7 +176,7 @@ export default function HeaderTest() {
               className={clsx('transition-filter mx-2 flex-shrink-0', !active && 'transition-filter')}
             >
               <Image
-                src="/images/LogoDakhla.png"
+                src={active ? "/images/offer-3/logoDcBolde.png" : "/images/offer-3/logodc.png"}
                 alt="Dakhla Club - Accueil"
                 width={80}
                 height={28}

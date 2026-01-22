@@ -1,54 +1,73 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { useEffect, useState, Suspense } from 'react';
 import Image from 'next/image';
-import { Link } from '@/i18n/navigation';
-import { CheckCircle2, Mail, Phone, Home } from 'lucide-react';
+import { Mail, Phone, Home } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 import '../styles.css';
 
-export async function generateMetadata({
+function ThankYouContent({
   params,
 }: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale: rawLocale } = await params;
-  const locale = (rawLocale === 'en' || rawLocale === 'fr') ? rawLocale : 'fr';
-
-  const metadata = {
-    fr: {
-      title: 'Merci pour votre réservation - Dakhla Club',
-      description: 'Votre demande de réservation a été reçue. Notre équipe vous contactera bientôt.',
-    },
-    en: {
-      title: 'Thank you for your reservation - Dakhla Club',
-      description: 'Your reservation request has been received. Our team will contact you soon.',
-    },
-  };
-
-  const currentMeta = metadata[locale];
-
-  return {
-    title: currentMeta.title,
-    description: currentMeta.description,
-    robots: {
-      index: false,
-      follow: false,
-    },
-  };
-}
-
-export default async function ThankYouPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
-  const { locale: rawLocale } = await params;
-  const locale = (rawLocale === 'en' || rawLocale === 'fr') ? rawLocale : 'fr';
+  const searchParams = useSearchParams();
+  const orderId = searchParams.get('order');
+  const [dataProcessed, setDataProcessed] = useState(false);
+  
+  const locale = (params.locale === 'en' || params.locale === 'fr') ? params.locale : 'fr';
+
+  // Process reservation data when page loads
+  useEffect(() => {
+    const processReservation = async () => {
+      if (dataProcessed || !orderId) return;
+
+      try {
+        // Get booking info from sessionStorage
+        const bookingInfoStr = sessionStorage.getItem('bookingInfo');
+        if (!bookingInfoStr) {
+          console.warn('No booking info found in sessionStorage');
+          return;
+        }
+
+        const bookingInfo = JSON.parse(bookingInfoStr);
+
+        // Send to backend to save in Google Sheets and send email
+        const response = await fetch('/api/reservations/evasion', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...bookingInfo,
+            orderId: orderId,
+          }),
+        });
+
+        if (response.ok) {
+          console.log('Reservation processed successfully');
+          // Clear sessionStorage after successful processing
+          sessionStorage.removeItem('bookingInfo');
+        } else {
+          console.error('Failed to process reservation');
+        }
+      } catch (error) {
+        console.error('Error processing reservation:', error);
+      } finally {
+        setDataProcessed(true);
+      }
+    };
+
+    processReservation();
+  }, [orderId, dataProcessed]);
 
   const content = {
     fr: {
       title: 'Nous vous remercions pour votre achat.',
       subtitle: 'Votre demande a été envoyée avec succès',
       message:
-        'Notre équipe vous contactera dans les plus brefs délais pour confirmer votre réservation et finaliser les détails de votre séjour.',
+        'Merci pour votre confiance votre séjour Thalasso a bien été payé et enregistré.',
+      message2: ' Notre équipe vous contactera très prochainement afin de préparer votre arrivée et personnaliser votre expérience',
       emailSent: 'Un email de confirmation vous a été envoyé.',
       contactInfo: 'Informations de contact',
       phone: '+212 652 88 19 21',
@@ -58,12 +77,15 @@ export default async function ThankYouPage({
       step1: 'Consultez votre email de confirmation',
       step2: 'Notre équipe vous contactera sous 24h',
       step3: 'Préparez-vous pour une expérience inoubliable',
+      titleHotel: "je réserve mon mon séjour à l'hôtel Dakhla Club",
+      orderNumber: 'Numéro de commande',
     },
     en: {
       title: 'Thank you for your reservation!',
       subtitle: 'Your request has been sent successfully',
       message:
         'Our team will contact you as soon as possible to confirm your reservation and finalize the details of your stay.',
+        message2: 'Our team will contact you shortly to prepare your arrival and personalize your experience.',
       emailSent: 'A confirmation email has been sent to you.',
       contactInfo: 'Contact Information',
       phone: '+212 652 88 19 21',
@@ -73,6 +95,8 @@ export default async function ThankYouPage({
       step1: 'Check your confirmation email',
       step2: 'Our team will contact you within 24h',
       step3: 'Get ready for an unforgettable experience',
+      titleHotel: 'I book my stay at Dakhla Club hotel',
+      orderNumber: 'Order number',
     },
   };
 
@@ -81,74 +105,48 @@ export default async function ThankYouPage({
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner Image */}
-      <div className="relative min-h-[65vh] w-full overflow-hidden md:min-h-[60vh]">
+      <div className="relative min-h-[65vh]  overflow-hidden md:min-h-[60vh]">
         <Image
-          src="/images/offer-3/dji2.jpg"
+          src="/images/offer-3/dji11.jpeg"
           alt="Dakhla Club - Thalasso & Wellness"
           fill
-          className="object-cover"
+          className="object-cover "
           priority
         />
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/50" />
         
-        {/* Logo */}
-        <div className="absolute left-6 top-6 z-10 md:left-10 md:top-10">
-          <Link href="/">
-            <Image
-              src="/images/LogoDakhla.png"
-              alt="Dakhla Club"
-              width={100}
-              height={50}
-              className="object-contain brightness-0 invert"
-            />
-          </Link>
-        </div>
-
         {/* Success message on banner */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 py-16">
-          <div className="mb-4 md:mb-6 rounded-full bg-white/20 p-3 md:p-4 backdrop-blur-sm">
-            <CheckCircle2 className="h-12 w-12 text-white md:h-20 md:w-20" />
-          </div>
-          <h1 className="mb-2 px-1 text-[24px] font-light uppercase tracking-wide md:text-4xl leading-tight">
+          
+          {/* <h1 className="mb-2 px-1 text-[24px] font-light uppercase tracking-wide md:text-4xl leading-tight">
             {text.title}
-          </h1>
-          {/* Thank you message banner */}
-          <div className="mt-4 md:mt-6 mx-1 bg-white/20 backdrop-blur-sm px-4 md:px-6 py-3 md:py-4 rounded-sm max-w-3xl">
-            <p className="text-white/95 font-extralight text-lg md:text-xl leading-relaxed">
-              {locale === 'fr' 
-                ? "Merci de vérifier votre email. Nous serons ravis de vous accueillir bientôt."
-                : "Thank you for your purchase. Please check your email. We look forward to welcoming you soon."}
+          </h1> */}
+          {orderId && (
+            <p className="text-sm md:text-base text-white/90 mt-2">
+              {text.orderNumber}: <span className="font-medium">{orderId}</span>
             </p>
-            <p className="mt-2 text-[#d6bb8e] font-extralight text-lg md:text-xl">
-              {locale === 'fr' ? "Next step : réserver l'hôtel" : "Next step: book the hotel"}
-            </p>
-          </div>
+          )}
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="mx-auto max-w-4xl px-4 py-4 md:py-5">
+      <div className="mx-auto max-w-4xl px-4 pt-4 md:pt-5">
         {/* Message */}
-        <p className="mb-4 md:mb-8 text-center font-extralight text-lg text-gray-700 md:text-xl">{text.message}</p>
-
-        {/* Email confirmation notice */}
-        <div className="mb-6 flex items-center justify-center gap-3 bg-[#139584]/10 p-4">
-          <Mail className="h-5 w-5 text-[#139584]" />
-          <p className="text-[#139584] font-extralight text-lg">{text.emailSent}</p>
-        </div>
+        <p className="text-center font-extralight text-lg text-gray-700 md:text-xl">{text.message}</p>
+        <p className="mb-4 md:mb-8 text-center font-extralight text-lg text-gray-700 md:text-xl">{text.message2}</p>
 
         {/* Hotel Booking Section */}
-        <div className="mb-5 md:mb-12 bg-[#faf9f5] py-12 -mx-4 px-0.5 md:-mx-0 md:px-8 text-center">
-          <h2 className="mb-4 text-2xl font-light uppercase text-gray-800 md:text-3xl">
-            {locale === 'fr' ? "Réservez votre hébergement" : "Book your accommodation"}
+        <div className="mb-3 md:mb-4 bg-[#faf9f5] py-6 -mx-4 px-0.5 md:-mx-0 md:px-8 text-center">
+          <h2 className="mb-2 text-2xl font-light uppercase text-gray-800 md:text-3xl">
+            {locale === 'fr' ? "Prochaine étape" : "Next step"}
           </h2>
-          <p className="mb-8 text-gray-600 font-extralight max-w-2xl mx-auto">
+          <p className="mb-1 text-gray-600 font-extralight max-w-2xl mx-auto">
             {locale === 'fr' 
-              ? "Complétez votre expérience en réservant votre chambre au DakhlaClub Hotel."
-              : "Complete your experience by booking your room at DakhlaClub Hotel."}
+              ? "Pour profiter pleinement de votre séjour, il vous reste à réserver votre hébergement au Dakhla Club."
+              : "To fully enjoy your stay, you just need to book your accommodation at Dakhla Club."}
           </p>
-          <a
+          {/* <a
             href="https://direct-book.com/properties/DakhlaClubDIRECT"
             target="_blank"
             rel="noopener noreferrer"
@@ -156,7 +154,7 @@ export default async function ThankYouPage({
           >
             <Home className="h-5 w-5" />
             {locale === 'fr' ? "Réserver l'hôtel" : "Book the hotel"}
-          </a>
+          </a> */}
         </div>
 
         {/* Contact Info */}
@@ -182,11 +180,51 @@ export default async function ThankYouPage({
           </div>
         </div>
       </div>
+      <div className="relative min-h-[65vh]  overflow-hidden md:min-h-[60vh]">
+        <Image
+          src="/images/offer-3/dji2.jpg"
+          alt="Dakhla Club - Thalasso & Wellness"
+          fill
+          className="object-cover "
+          priority
+        />
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/50" />
+        
+        {/* Success message on banner */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 py-16">
+          
+          <h1 className="mb-2 px-1 text-[24px] font-light uppercase tracking-wide md:text-4xl leading-tight">
+            {text.titleHotel}
+          </h1>
+          <a
+            href="https://direct-book.com/properties/DakhlaClubDIRECT"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-8 rounded-md bg-[#139584] px-10 py-4 text-lg text-white font-medium transition-all hover:bg-[#0f7a6d] hover:shadow-lg"
+          >
+            <Home className="h-5 w-5" />
+            {locale === 'fr' ? "Réserver l'hôtel" : "Book the hotel"}
+          </a>
+        </div>
+      </div>
 
       {/* Footer */}
       <footer className="border-t border-gray-200 font-extralight py-8 text-center text-sm text-gray-500">
         <p>© 2026 Dakhla Club - DC Thermes | Séjours Thalasso & Bien-Être Premium</p>
       </footer>
     </main>
+  );
+}
+
+export default function ThankYouPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return (
+    <Suspense fallback={<div className="flex min-h-screen items-center justify-center">Loading...</div>}>
+      <ThankYouContent params={params} />
+    </Suspense>
   );
 }

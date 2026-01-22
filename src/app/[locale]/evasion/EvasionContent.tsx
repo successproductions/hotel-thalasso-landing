@@ -14,7 +14,7 @@ import { ProgrammeFonctionneV2 } from '@/components/offers/ProgrammeFonctionneV2
 import TestimonialsCarouselV2 from '@/components/offers/TestimonialsCarouselV2';
 import { RewardsSectionV2 } from '@/components/offers/RewardsSectionV2';
 import { AboutV2Reverse } from '@/components/offers/AboutV2Reverse';
-import FAQSectionV2 from '@/components/FAQV2';
+import FAQSectionV2 from '@/components/offers/FAQV2';
 import { ObjectivesSectionV2 } from '@/components/offers/ObjectivesSectionV2';
 
 export default function EvasionContent() {
