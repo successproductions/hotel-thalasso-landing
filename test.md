@@ -1,7 +1,3 @@
-// ===================================================================
-// UPDATED GOOGLE APPS SCRIPT FOR DAKHLA CLUB RESERVATIONS
-// Now includes Order ID column for payment tracking
-// ===================================================================
 
 const SHEET_NAME = 'Réservations Offer 3';
 const EVASION_SHEET_NAME = 'Reservations 3,5,7';
