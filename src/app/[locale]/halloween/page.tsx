@@ -19,18 +19,18 @@ export async function generateMetadata({
 
   const metadataHalloween = {
     fr: {
-      title: 'Halloween à Dakhla Club 2025 – Séjour Thématique Unique',
+      title: 'Halloween à Dakhla Club 2026 – Séjour Thématique Unique',
       description:
-        'Vivez un Halloween inoubliable à Dakhla Club du 30 octobre au 2 novembre 2025. Soirée costumée, dîner thématique, animations, spa et détente face à la lagune.',
+        'Vivez un Halloween inoubliable à Dakhla Club du 30 octobre au 2 novembre 2026. Soirée costumée, dîner thématique, animations, spa et détente face à la lagune.',
       keywords:
-        'Halloween Dakhla, séjour Halloween Maroc, soirée costumée Dakhla, Halloween 2025, Dakhla Club Halloween, séjour thématique Maroc, vacances Halloween, hôtel Halloween Dakhla, animation Halloween, spa Halloween',
+        'Halloween Dakhla, séjour Halloween Maroc, soirée costumée Dakhla, Halloween 2026, Dakhla Club Halloween, séjour thématique Maroc, vacances Halloween, hôtel Halloween Dakhla, animation Halloween, spa Halloween',
     },
     en: {
-      title: 'Halloween at Dakhla Club 2025 – Unique Themed Stay',
+      title: 'Halloween at Dakhla Club 2026 – Unique Themed Stay',
       description:
-        'Experience an unforgettable Halloween at Dakhla Club from October 30 to November 2, 2025. Costume party, themed dinner, activities, spa and relaxation facing the lagoon.',
+        'Experience an unforgettable Halloween at Dakhla Club from October 30 to November 2, 2026. Costume party, themed dinner, activities, spa and relaxation facing the lagoon.',
       keywords:
-        'Halloween Dakhla, Halloween stay Morocco, Dakhla costume party, Halloween 2025, Dakhla Club Halloween, themed stay Morocco, Halloween vacation, Halloween hotel Dakhla, Halloween activities, Halloween spa',
+        'Halloween Dakhla, Halloween stay Morocco, Dakhla costume party, Halloween 2026, Dakhla Club Halloween, themed stay Morocco, Halloween vacation, Halloween hotel Dakhla, Halloween activities, Halloween spa',
     },
   };
 

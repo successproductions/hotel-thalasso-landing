@@ -127,9 +127,58 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Payment Security Logos - Required by CMI */}
+      <div className="pt-6 border-t border-gray-200">
+        <p className="text-xs text-gray-600 text-center mb-4 uppercase tracking-wide">Paiement 100% Sécurisé</p>
+        <div className="flex items-center justify-center gap-6 flex-wrap">
+          <Image 
+            src="/images/logos_cmi/logo_cmi.png" 
+            alt="CMI Payment" 
+            width={60} 
+            height={36}
+            className="object-contain"
+          />
+          <Image 
+            src="/images/logos_cmi/tn_verified_by_visa.png" 
+            alt="Verified by Visa" 
+            width={60} 
+            height={36}
+            className="object-contain"
+          />
+          <Image 
+            src="/images/logos_cmi/secure_code_logo.png" 
+            alt="MasterCard SecureCode" 
+            width={60} 
+            height={36}
+            className="object-contain"
+          />
+          <Image 
+            src="/images/logos_cmi/AMEX.png" 
+            alt="American Express" 
+            width={60} 
+            height={36}
+            className="object-contain"
+          />
+          <Image 
+            src="/images/logos_cmi/MarocPay.png" 
+            alt="MarocPay" 
+            width={60} 
+            height={36}
+            className="object-contain"
+          />
+          <Image 
+            src="/images/logos_cmi/unionpay.png" 
+            alt="UnionPay" 
+            width={60} 
+            height={36}
+            className="object-contain"
+          />
+        </div>
+      </div>
+
       {/* Copyright */}
       <div className="py-6 text-center text-sm text-gray-600">
-        © 2025 DakhlaClub and its Associated Subsidiaries | Luxury Fitness, Health & Wellness
+        © 2026 DakhlaClub and its Associated Subsidiaries | Luxury Fitness, Health & Wellness
         Vacation Retreat
       </div>
     </footer>

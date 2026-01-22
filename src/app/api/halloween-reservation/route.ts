@@ -422,7 +422,7 @@ export async function POST(req: Request) {
                 <a href="https://youtube.com/@dakhlaclub1745" target="_blank">YouTube</a>
               </div>
               <p style="margin: 10px 0; color: #999;">
-                © 2025 Dakhla Club. Tous droits réservés.
+                © 2026 Dakhla Club. Tous droits réservés.
               </p>
               <p style="margin: 10px 0; font-size: 12px; color: #aaa;">
                 Vous recevez cet email car vous avez effectué une demande de réservation sur offer.dakhlaclub.com

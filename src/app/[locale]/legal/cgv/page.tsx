@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Metadata } from 'next';
 import LegalLayout from '../components/LegalLayout';
+import './styles.css';
 
 export async function generateMetadata({
   params,
@@ -51,84 +52,92 @@ export default function CGVPage() {
 
   return (
     <LegalLayout>
-      <div className="mb-12 text-center">
-        <h1 className="playfair mb-4 text-4xl font-bold md:text-5xl">
-          <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">
-            {t('title')}
-          </span>
+      <div className="mb-16 text-center">
+        <h1 className="mb-6 text-[2rem] font-light tracking-tight text-gray-900 md:text-[2.5rem]">
+          {t('title')}
         </h1>
-        <p className="mx-auto max-w-2xl text-gray-600">{t('lastUpdate')}</p>
-        <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-teal-500 to-transparent"></div>
+        <p className="mx-auto max-w-2xl text-sm text-gray-500">{t('lastUpdate')}</p>
+        <div className="mx-auto mt-6 h-px w-24 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
       </div>
 
       <div className="mx-auto max-w-4xl space-y-8">
+        {/* Introduction */}
+        <div className="rounded-xl bg-blue-50/50 p-6 border-l-4 border-blue-400">
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('intro')}</p>
+        </div>
+
         <section>
-          <h2 className="playfair mb-4 text-2xl font-semibold text-gray-800">
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
             {t('section1.title')}
           </h2>
-          <p className="text-gray-700">{t('section1.content')}</p>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section1.content')}</p>
         </section>
 
         <section>
-          <h2 className="playfair mb-4 text-2xl font-semibold text-gray-800">
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
             {t('section2.title')}
           </h2>
-          <p className="text-gray-700">{t('section2.content')}</p>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section2.content')}</p>
         </section>
 
         <section>
-          <h2 className="playfair mb-4 text-2xl font-semibold text-gray-800">
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
             {t('section3.title')}
           </h2>
-          <p className="mb-4 text-gray-700">{t('section3.content1')}</p>
-          <p className="text-gray-700">{t('section3.content2')}</p>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section3.content')}</p>
         </section>
 
-        <section>
-          <h2 className="playfair mb-4 text-2xl font-semibold text-gray-800">
+        {/* Payment Section - Highlighted as required by CMI */}
+        <section className="rounded-xl bg-amber-50/50 p-6 border-l-4 border-amber-400">
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
             {t('section4.title')}
           </h2>
-          <p className="text-gray-700">{t('section4.content')}</p>
+          <p className="mb-4 text-[1rem] leading-relaxed text-gray-700">{t('section4.content1')}</p>
+          <p className="mb-4 text-[1rem] leading-relaxed text-gray-700">{t('section4.content2')}</p>
+          <p className="mb-4 text-[1rem] leading-relaxed text-gray-700">{t('section4.content3')}</p>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section4.content4')}</p>
         </section>
 
         <section>
-          <h2 className="playfair mb-4 text-2xl font-semibold text-gray-800">
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
             {t('section5.title')}
           </h2>
-          <p className="mb-4 text-gray-700">{t('section5.content')}</p>
-          <ul className="ml-4 list-inside list-disc space-y-2 text-gray-700">
-            <li>{t('section5.list1')}</li>
-            <li>{t('section5.list2')}</li>
-          </ul>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section5.content')}</p>
         </section>
 
         <section>
-          <h2 className="playfair mb-4 text-2xl font-semibold text-gray-800">
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
             {t('section6.title')}
           </h2>
-          <p className="text-gray-700">{t('section6.content')}</p>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section6.content')}</p>
         </section>
 
         <section>
-          <h2 className="playfair mb-4 text-2xl font-semibold text-gray-800">
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
             {t('section7.title')}
           </h2>
-          <p className="mb-4 text-gray-700">{t('section7.content1')}</p>
-          <p className="text-gray-700">{t('section7.content2')}</p>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section7.content')}</p>
         </section>
 
         <section>
-          <h2 className="playfair mb-4 text-2xl font-semibold text-gray-800">
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
             {t('section8.title')}
           </h2>
-          <p className="text-gray-700">{t('section8.content')}</p>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section8.content')}</p>
         </section>
 
         <section>
-          <h2 className="playfair mb-4 text-2xl font-semibold text-gray-800">
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
             {t('section9.title')}
           </h2>
-          <p className="text-gray-700">{t('section9.content')}</p>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section9.content')}</p>
+        </section>
+
+        <section>
+          <h2 className="mb-4 text-[1.5rem] font-light text-gray-900">
+            {t('section10.title')}
+          </h2>
+          <p className="text-[1rem] leading-relaxed text-gray-700">{t('section10.content')}</p>
         </section>
       </div>
     </LegalLayout>

@@ -251,6 +251,10 @@
         "title": "Email",
         "text": "reservation@dakhlaclub.com"
       }
+    },
+    "terms": {
+      "agree": "I have read and accept the",
+      "link": "Terms of Sale"
     }
   },
   "paymentForm": {
@@ -354,7 +358,7 @@
       "cookies": "Cookie Policy",
       "sitemap": "Terms-of-sale"
     },
-    "copyright": "© 2025 DakhlaClub and its Associated Subsidiaries | Luxury Fitness, Health & Wellness Vacation Retreat."
+    "copyright": "© 2026 DakhlaClub and its Associated Subsidiaries | Luxury Fitness, Health & Wellness Vacation Retreat."
   },
   "servicesTable": {
     "header": "HOLISTIC ESCAPE PROGRAM – DAKHLA",
@@ -2460,7 +2464,7 @@
       "email": "reservation@dakhlaclub.com",
       "address": "POINT DE DRAGON PK 28\nDakhla 73000, Morocco",
       "follow": "Follow Us",
-      "copyright": "© 2025 Dakhla Club. All rights reserved. | Halloween Special Event"
+      "copyright": "© 2026 Dakhla Club. All rights reserved. | Halloween Special Event"
     }
   },
   "otherOffers": {
@@ -2567,7 +2571,7 @@
         "offer": "Offer",
         "experience": "Experience"
       },
-      "copyright": "© 2025 Dakhla Club. All rights reserved.",
+      "copyright": "© 2026 Dakhla Club. All rights reserved.",
       "specialEvent": "Black Friday Special Event"
     },
     "modal": {

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { X, Info } from 'lucide-react';
+import { X, Info, Lock } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
@@ -497,6 +497,18 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                 </div>
               </div>
 
+              <div className="flex items-center space-x-2 my-2 px-2.5 ">
+                <input
+                  type="checkbox"
+                  id="acceptTerms"
+                  required
+                  className="h-4 w-4 rounded border-gray-300 text-[#139584] focus:ring-[#d6bb8e]"
+                />
+                <label htmlFor="acceptTerms" className="text-sm text-gray-700">
+                  {t('terms.agree')} <a href="/fr/legal/cgv" target="_blank" className="underline font-medium text-[#139584] hover:text-[#d6bb8e]">{t('terms.link')}</a>
+                </label>
+              </div>
+
               {/* Submit Button */}
               <button
                 type="submit"
@@ -528,7 +540,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                     {t('submit')}
                   </span>
                 ) : (
-                  'Continuer'
+                  'Continuer vers le paiement'
                 )}
               </button>
             </form>
