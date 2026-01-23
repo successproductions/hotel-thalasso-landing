@@ -43,7 +43,7 @@ export default function HeroTest() {
           <div className="py-4  md:px-12 md:py-6">
             <button
               onClick={() => setIsPopupOpen(true)}
-              className="w-full rounded-sm bg-gray-950 px-1.5 py-3 text-center font-medium text-white transition hover:bg-gray-900 cursor-pointer hover:shadow-lg md:w-auto md:px-8 md:py-4 md:text-lg"
+              className="w-full rounded-sm bg-white border border-black px-1.5 py-3 text-center font-medium text-black transition hover:bg-gray-900 hover:text-white cursor-pointer hover:shadow-lg md:w-auto md:px-8 md:py-4 md:text-lg"
             >
            {t('ctaText')}
             </button>

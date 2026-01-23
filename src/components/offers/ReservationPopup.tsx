@@ -23,54 +23,51 @@ interface FormData {
 // Offer data with images and info
 const offerData: Record<string, { image: string; title: string; subtitle: string; price: number; includes: string[] }> = {
   '3': {
-    image: '/images/THERMALE.png',
+    image: '/images/offer-3/dji1.jpg',
     title: 'Thalasso VITALITÉ 3 jours',
-    subtitle: 'Escapade Bien-être',
-    price: 5000, 
+    subtitle: '14 soins inclus',
+    price: 4560, 
     includes: [
-      '3 jours en chambre vue mer',
-      '4 soins thalasso',
-      'Pension complète',
-      'Accès spa & piscine',
-      'Cours de yoga quotidien',
+      'Vous êtes sur le point de réserver le séjour Thalasso Vitalité au Dakhla Club.',
+      'Un programme court et intensif, conçu pour relancer l\'énergie et alléger le corps.',
+      '8 soins d\'activation & régénération stimulation, circulation, libération des tensions',
+      '6 soins de relâchement & intégration détente profonde, apaisement, récupération',
+      'Un séjour structuré pour produire un résultat, pas une simple détente',
     ],
   },
   '5': {
     image: '/images/5.jpg',
     title: 'Thalasso RÉGÉNÉRATION 5 jours',
-    subtitle: 'Retraite Revitalisante',
-    price: 7500, 
+    subtitle: '27 soins inclus',
+    price: 9200, 
     includes: [
-      '5 nuits en chambre vue mer',
-      '6 soins thalasso',
-      'Pension complète',
-      'Accès spa & piscine',
-      'Cours de yoga quotidien',
-      'Excursion en bateau',
+      'Vous êtes sur le point de réserver le séjour Thalasso Régénération au Dakhla Club.',
+      'Un protocole complet pensé pour récupérer, rééquilibrer et recharger durablement le corps.',
+      '14 soins d\'activation & régénération détox, récupération physique, relance des fonctions',
+      '13 soins de relâchement & intégration apaisement du système nerveux, slow-care, récupération profonde',
+      'Chaque soin a une intention. Chaque journée suit une logique',
     ],
   },
   '7': {
     image: '/images/centrethalassoDakhla.jpg',
     title: 'Thalasso RENAISSANCE 7 jours',
-    subtitle: 'Cure Holistique',
-    price: 10000, 
+    subtitle: '37 soins inclus',
+    price: 11250, 
     includes: [
-      '7 nuits en chambre vue mer',
-      '10 soins thalasso',
-      'Pension complète',
-      'Accès spa & piscine',
-      'Cours de yoga quotidien',
-      'Excursion en bateau',
-      'Massage signature offert',
+      'Vous êtes sur le point de réserver le séjour Thalasso Renaissance, l\'expérience la plus complète du Dakhla Club.',
+      'Un parcours holistique conçu pour une transformation profonde du corps et de l\'esprit.',
+      '18 soins d\'activation & régénération purification, stimulation, revitalisation progressive',
+      '19 soins de relâchement & intégration ralentissement, réparation, ancrage des bénéfits',
+      'Ce programme n\'est pas un séjour bien-être classique. C\'est un protocole structuré de renaissance',
     ],
   },
 };
 
 // Offer options with prices
 const offerOptions = [
-  { value: '3', label: 'Thalasso VITALITÉ 3 jours - 5 000 MAD' },
-  { value: '5', label: 'Thalasso RÉGÉNÉRATION 5 jours - 7 500 MAD' },
-  { value: '7', label: 'Thalasso RENAISSANCE 7 jours - 10 000 MAD' },
+  { value: '3', label: 'Thalasso VITALITÉ 3 jours - 4 560 MAD' },
+  { value: '5', label: 'Thalasso RÉGÉNÉRATION 5 jours - 9 200 MAD' },
+  { value: '7', label: 'Thalasso RENAISSANCE 7 jours - 11 250 MAD' },
 ];
 
 // Banner images for mobile slider
@@ -220,7 +217,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-lg lg:max-w-4xl max-h-[90vh] overflow-y-auto bg-white shadow-2xl"
+        className="relative w-full max-w-lg lg:max-w-4xl max-h-[90vh] overflow-y-auto lg:overflow-visible lg:max-h-none bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -233,12 +230,12 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         </button>
 
         {/* Desktop: 2-column layout | Mobile: single column */}
-        <div className="lg:grid lg:grid-cols-2"> 
+        <div className="lg:grid lg:grid-cols-2 lg:items-stretch"> 
           
           {/* LEFT COLUMN - Image + Offer Info (Desktop only) */}
           <div className="hidden lg:flex lg:flex-col">
             {/* Top: Image */}
-            <div className="relative h-[280px] w-full overflow-hidden">
+            <div className="relative h-[280px] w-full overflow-hidden flex-shrink-0">
               <Image
                 src={currentOffer.image}
                 alt={currentOffer.title}
@@ -249,37 +246,41 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
               <div className="absolute" />
             </div>
             
-            {/* Bottom: Offer Info */}
-            <div className="flex-1 bg-[#faf9f5] p-6 flex flex-col justify-center">
-              <span className="text-sm uppercase tracking-wider text-[#d6bb8e] font-medium">
-                {currentOffer.subtitle}
-              </span>
-              <h3 className="mt-2 text-2xl font-normal text-gray-900">
-                {currentOffer.title}
-              </h3>
-              
-              {/* Includes List */}
-              <ul className="mt-4 space-y-2">
-                {currentOffer.includes.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 text-gray-600">
-                    <svg className="w-5 h-5 text-[#139584] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Bottom: Offer Info - Scrollable */}
+            <div className="flex-1 min-h-0 bg-[#faf9f5] flex flex-col">
+              {/* Scrollable content */}
+              <div className="flex-1 overflow-y-auto p-6">
+                <span className="text-sm uppercase tracking-wider text-[#d6bb8e] font-medium">
+                  {currentOffer.subtitle}
+                </span>
+                <h3 className="mt-2 text-2xl font-normal text-gray-900">
+                  {currentOffer.title}
+                </h3>
+                
+                {/* Includes List */}
+                <ul className="mt-4 space-y-2">
+                  {currentOffer.includes.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 text-gray-600">
+                      <svg className="w-5 h-5 text-[#139584] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <div className="mt-4 pt-4 border-t border-gray-200">
+              {/* Footer - Always at bottom */}
+              <div className="flex-shrink-0 px-6 py-4 border-t border-gray-200">
                 <p className="text-sm text-gray-500">Dakhla Club - Wellness & Thalasso</p>
               </div>
             </div>
           </div>
 
           {/* RIGHT COLUMN - Form Section */}
-          <div className="p-3 lg:p-6">
+          <div className="p-4 lg:p-6">
             {/* Mobile Banner Slider */}
-            <div className="lg:hidden relative h-36 w-full overflow-hidden mb-4 -mx-5 -mt-5" style={{ width: 'calc(100% + 2.5rem)' }}>
+            <div className="lg:hidden relative h-36 w-full overflow-hidden mb-4 -mx-4 -mt-4">
               {bannerImages.map((image, index) => (
                 <div
                   key={index}

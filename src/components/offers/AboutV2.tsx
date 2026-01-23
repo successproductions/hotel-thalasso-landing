@@ -11,16 +11,19 @@ export function AboutV2() {
       <div className="mx-auto grid grid-cols-1 items-center gap-8 md:gap-0 md:grid-cols-2">
         {/* Text Column */}
         <div className="order-2 space-y-4 px-4 md:order-1 xl:px-28">
-          <h2 className="text-[27px] font-normal text-gray-800 md:text-4xl">
+          <h2 className="text-[23px] font-normal text-gray-800 md:text-4xl">
             {msg.about.title.toUpperCase()}
           </h2>
+          <p className="text-[16px] text-gray-700 font-extralight">{msg.about.description}</p>
+          <p className="text-[16px] text-gray-700 font-extralight">{msg.about.description2}</p>
 
-          <ul className="list-disc text-[18px] font-extralight leading-relaxed text-gray-700 space-y-2 pl-6 md:text-lg">
-            <p className="text-[18px] font-extralight">{msg.about.stitle}</p>
+          <ul className="list-disc text-[16px] font-extralight leading-relaxed text-gray-700 space-y-2 pl-6 md:text-lg">
+            <p className="text-[16px] font-extralight">{msg.about.stitle}</p>
             {descriptionList.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
+          <p className="text-[16px] text-gray-700 font-extralight">{msg.about.descriptionBottom}</p>
         </div>
 
         {/* Image Column */}

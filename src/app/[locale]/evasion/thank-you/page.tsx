@@ -107,7 +107,7 @@ function ThankYouContent({
       {/* Hero Banner Image */}
       <div className="relative min-h-[65vh]  overflow-hidden md:min-h-[60vh]">
         <Image
-          src="/images/offer-3/dji11.jpeg"
+          src="/images/offer-3/dji10.jpeg"
           alt="Dakhla Club - Thalasso & Wellness"
           fill
           className="object-cover "
@@ -143,8 +143,8 @@ function ThankYouContent({
           </h2>
           <p className="mb-1 text-gray-600 font-extralight max-w-2xl mx-auto">
             {locale === 'fr' 
-              ? "Pour profiter pleinement de votre séjour, il vous reste à réserver votre hébergement au Dakhla Club."
-              : "To fully enjoy your stay, you just need to book your accommodation at Dakhla Club."}
+              ? "Pour profiter pleinement de votre séjour, il vous reste à réserver votre hébergement au Dakhla Club"
+              : "To fully enjoy your stay, you just need to book your accommodation at Dakhla Club"}
           </p>
           {/* <a
             href="https://direct-book.com/properties/DakhlaClubDIRECT"
@@ -192,16 +192,16 @@ function ThankYouContent({
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/50" />
         
         {/* Success message on banner */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 py-16">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center  px-4 py-16">
           
-          <h1 className="mb-2 px-1 text-[24px] font-light uppercase tracking-wide md:text-4xl leading-tight">
+          <h1 className="mb-2 px-1 text-[24px] font-light uppercase tracking-wide text-white md:text-4xl leading-tight">
             {text.titleHotel}
           </h1>
           <a
             href="https://direct-book.com/properties/DakhlaClubDIRECT"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-8 rounded-md bg-[#139584] px-10 py-4 text-lg text-white font-medium transition-all hover:bg-[#0f7a6d] hover:shadow-lg"
+            className="inline-flex items-center gap-2 mt-8 rounded-md bg-white border border-black px-10 py-4 text-lg !text-black font-medium transition-all hover:bg-black hover:!text-white hover:shadow-lg"
           >
             <Home className="h-5 w-5" />
             {locale === 'fr' ? "Réserver l'hôtel" : "Book the hotel"}

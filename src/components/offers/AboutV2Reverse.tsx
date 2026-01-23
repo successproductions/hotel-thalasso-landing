@@ -21,15 +21,18 @@ export function AboutV2Reverse() {
 
         {/* Text Column - Now on the right */}
         <div className="space-y-4 px-4 xl:px-28">
-          <h2 className="text-[27px] font-normal text-gray-800 md:text-4xl">
+          <h2 className="text-[23px] font-normal text-gray-800 md:text-4xl">
             {msg.about2.title.toUpperCase()}
           </h2>
+          <p className="text-[16px] text-gray-700 font-extralight">{msg.about2.description}</p>
+          <p className="text-[16px] text-gray-700 font-extralight">{msg.about2.stitle}</p>
 
-          <ul className="list-disc text-[18px] font-extralight leading-relaxed text-gray-700 space-y-2 pl-6 md:text-lg">
+          <ul className="list-disc text-[16px] font-extralight leading-relaxed text-gray-700 space-y-2 pl-6 md:text-lg">
             {descriptionList.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
+          <p className="text-[16px] text-gray-700 font-extralight">{msg.about2.descriptionBottom}</p>
         </div>
       </div>
     </section>

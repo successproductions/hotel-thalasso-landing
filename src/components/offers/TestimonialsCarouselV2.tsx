@@ -94,7 +94,7 @@ export default function TestimonialsCarouselV2() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-1 md:px-2 py-4 md:py-6">
         <div className="mb-4 md:mb-10 px-4 md:text-center">
-          <h2 className="text-[27px] uppercase font-normal text-gray-900 md:text-4xl lg:text-4xl">
+          <h2 className="text-[23px] uppercase font-normal text-gray-900 md:text-4xl lg:text-4xl">
             {t('title2')}
           </h2>
           <p className="md:text-[18px] text-[16px] font-light mt-4 text-gray-700">{t('title3')}</p>
@@ -184,7 +184,7 @@ export default function TestimonialsCarouselV2() {
           <div className="py-4 text-center md:px-12 md:py-6">
             <button
               onClick={() => setIsPopupOpen(true)}
-              className=" rounded-sm bg-gray-950 px-4 py-3  font-medium text-white transition hover:bg-gray-900 cursor-pointer hover:shadow-lg md:text-lg"
+              className=" rounded-sm bg-transparent border border-black px-4 py-3  font-medium text-black hover:text-white transition hover:bg-gray-900 cursor-pointer hover:shadow-lg md:text-lg"
             >
            {t('ctaText')}
             </button>

@@ -28,91 +28,89 @@ export function ProgramsSectionV2() {
       offers: [
         {
           id: 'offer3',
-          title: 'Thalasso VITALITÉ 3 jours',
+          title: 'THALASSO VITALITÉ 3 JOURS',
           subtitle: 'On Relâche',
-          description: 'Une parenthèse de 3 nuits pour déconnecter, respirer, renaître. <br/>Le corps commence à se déposer. <br/>Le système nerveux ralentit. <br/>La respiration s\'apaise.',
+          description: 'Une parenthèse courte, mais profondément régénérante<br/>Trois jours pour ralentir le rythme, relâcher les tensions et laisser le corps retrouver son équilibre naturel<br/>Ici, rien à performer, rien à optimiser simplement s\'abandonner à un enchaînement de soins marins, de repos guidé et de rituels conçus pour apaiser le système nerveux et relancer l\'énergie en douceur',
           image: '/images/offer-3/dji2.jpg',
-          programTitle: 'PROGRAMME DE RELAXATION ET DÉTENTE:',
+          programTitle: 'PROGRAMME THALASSO VITALITÉ:',
           programDays: 'Programme 3 jours',
           intro: [
-            'Votre quotidien est marqué par un rythme effréné, un flot de responsabilités et de défis, laissant peu de place à la détente ? Ce mode de vie intense impacte négativement votre santé mentale et physique, vos performances et votre bien-être général.',
-            'Nous avons conçu un programme spécialement pour vous : le Programme Relaxation et Détente. Vous pouvez vous déconnecter, relâcher la pression et trouver une sérénité profonde grâce à des thérapies holistiques éprouvées et des soins personnalisés.',
-            'Guidé par une équipe d\'experts en bien-être, chaque étape de votre séjour sera adaptée à vos besoins spécifiques.',
+            'Ce programme est fait pour vous si vous vous sentez fatigué(e), physiquement et mentalement, même après le repos, si votre sommeil manque de profondeur ou de régularité, si votre système nerveux est constamment sollicité, ou si vous ressentez le besoin réel de ralentir et de récupérer, sans pression ni contrainte',
           ],
           forYouIf: [
-            'Vous avez un mode de vie stressant.',
-            'Vous souffrez d\'anxiété.',
-            'Vous avez du mal à créer une routine saine et équilibrée.',
-            'Vous voulez apprendre à gérer votre stress.',
-            'Vous souhaitez vous détendre et profiter de thérapies apaisantes.',
+            'vous vous sentez fatigué(e), physiquement et mentalement, même après le repos',
+            'votre sommeil manque de profondeur ou de régularité',
+            'votre système nerveux est constamment sollicité',
+            'vous ressentez le besoin réel de ralentir et de récupérer, sans pression ni contrainte',
           ],
           benefits: [
-            'Ressentir la paix dans votre corps et votre esprit.',
-            'Expérimenter un sentiment de légèreté et de vitalité.',
-            'Découvrir l\'équilibre émotionnel et mental.',
-            'Améliorer votre concentration et votre clarté mentale.',
-            'Vous reconnecter avec vous-même.',
+            'un relâchement progressif des tensions',
+            'un apaisement durable du système nerveux',
+            'une respiration plus calme, plus fluide',
+            'une énergie plus stable, plus disponible',
           ],
           translationKey: 'servicesTable',
-          reserveButton: 'Je réserve Thalasso VITALITÉ',
+          reserveButton: 'Je m’accorde cette pause maintenant',
         },
         {
           id: 'offer5',
-          title: 'Thalasso RÉGÉNÉRATION 5 jours',
+          title: 'THALASSO RÉGÉNÉRATION 5 JOURS',
           subtitle: 'On Rééquilibre',
-          description: 'Une cure puissante et progressive, conçue pour un reset profond. <br/>Les soins marins et sensoriels relancent la circulation. <br/>Les tensions musculaires se dissolvent. <br/>L\'esprit devient plus clair.',
+          description: 'Une cure progressive et structurée, pensée pour relâcher en profondeur et permettre au corps comme à l\'esprit de se rééquilibrer durablement <br/><br/>Ici, on ne cherche pas la performance ni l\'intensité On laisse le rythme ralentir. Le corps relâche. Le système nerveux redescend<br/><br/>Les soins marins et sensoriels accompagnent ce mouvement naturel. La circulation se relance. Les tensions s\'estompent L\'esprit devient plus clair',
           image: '/images/offer-3/dji12.jpg',
-          programTitle: 'PROGRAMME DÉCOUVERTE ET RENAISSANCE:',
+          programTitle: 'PROGRAMME THALASSO RÉGÉNÉRATION:',
           programDays: 'Programme 5 jours',
           intro: [
-            'Prêt à vous lancer dans un voyage transformateur de découverte de soi ? Notre programme Découverte est conçu pour ceux qui veulent explorer tout le spectre des expériences de bien-être.',
-            'Ce programme complet vous initie à diverses modalités thérapeutiques, de la thalassothérapie traditionnelle aux techniques de bien-être modernes.',
-            'Notre équipe d\'experts vous guidera à travers chaque expérience, vous aidant à découvrir ce qui résonne le plus avec votre corps et votre esprit.',
+            'Une approche thalasso structurée et cohérente : Thérapeutes certifiés et attentifs, environnement naturel qui favorise le lâcher-prise, synergie entre soins marins modernes et rituels essentiels, enchaînement conçu selon une logique physiologique et émotionnelle',
+            'Pourquoi ce format de 5 jours ? Parce que le corps a besoin de temps. Assez pour ralentir. Assez pour relâcher. Assez pour laisser les bénéfices s\'installer au-delà du séjour',
           ],
           forYouIf: [
-            'Vous êtes curieux du bien-être holistique.',
-            'Vous voulez essayer différentes approches thérapeutiques.',
-            'Vous cherchez une introduction complète au bien-être.',
-            'Vous êtes ouvert aux nouvelles expériences.',
-            'Vous voulez trouver votre routine de bien-être idéale.',
+            'Vous ressentez une fatigue physique et mentale persistante, même après le repos',
+            'Votre sommeil manque de profondeur ou de régularité',
+            'Vous avez l\'impression que votre système nerveux est constamment sollicité',
+            'Les tensions s\'accumulent, sans jamais vraiment se libérer',
+            'Vous ressentez un besoin réel de ralentir, de récupérer, sans contrainte',
           ],
           benefits: [
-            'Découvrir de nouvelles modalités de bien-être.',
-            'Éveiller des sens endormis.',
-            'Trouver des approches de bien-être personnalisées.',
-            'Bâtir une base pour un auto-soin continu.',
-            'Gagner en confiance dans votre parcours de bien-être.',
+            'Un apaisement durable, qui ne disparaît pas au retour',
+            'Une sensation de relâchement profond, physique et mental',
+            'Un sommeil plus stable et plus réparateur',
+            'Un corps plus fluide, moins tendu',
+            'Une énergie plus calme, plus régulière',
+            'Une impression de reset intérieur, sans effort',
           ],
           translationKey: 'offer5.servicesTable5',
-          reserveButton: 'Je choisis THALASSO RÉGÉNÉRATION',
+          reserveButton: 'Je commence mon reset profond',
         },
         {
           id: 'offer7',
-          title: 'Thalasso RENAISSANCE 7 jours',
+          title: 'THALASSO RENAISSANCE 7 JOURS',
           subtitle: 'On Détoxifie & On Libère',
-          description: 'L\'expérience complète pour une régénération totale corps et esprit. <br/>Les soins nettoient, drainent et réoxygènent les tissus. <br/>L\'énergie revient progressivement. <br/>Le corps respire. L\'esprit s\'allège.',
+          description: 'Une immersion complète pour restaurer le corps en profondeur Ici, on ne fait pas une pause On remet les compteurs à zéro<br/><br/>Jour après jour, les soins nettoient, drainent et réoxygènent les tissus. Le système interne se rééquilibre. L\'énergie revient, stable, durable. Le corps retrouve sa capacité naturelle à se régénérer L\'esprit se libère du bruit de fond',
           image: '/images/offer-3/dji7.jpg',
           programTitle: 'PROGRAMME REVITALISATION COMPLÈTE:',
           programDays: 'Programme 7 jours',
           intro: [
-            'Vous vous sentez épuisé, vidé de votre énergie ? Le programme Revitalisation est spécialement conçu pour restaurer votre énergie vitale et vous ramener à votre état optimal.',
-            'Ce programme intensif mais bienveillant combine des traitements régénératifs puissants avec des pratiques restauratrices.',
-            'Repartez en vous sentant renouvelé, rechargé et prêt à affronter la vie avec vigueur et enthousiasme.',
+            'Ce programme s\'adresse à celles et ceux qui ne veulent plus "tenir", mais retrouver un fonctionnement optimal, à l\'intérieur comme à l\'extérieur',
+            'Sur 6 jours, le corps entre dans un cycle complet de détoxification, de relance métabolique et de récupération profonde. Les soins agissent en synergie pour alléger la charge physique, clarifier les fonctions internes et restaurer une énergie vitale stable',
+            'Ici, on ne stimule pas artificiellement. On répare, nettoie et relance',
           ],
           forYouIf: [
-            'Vous voulez éliminer les toxines de votre corps.',
-            'Vous vous sentez lourd et avez besoin de purification.',
-            'Vous cherchez un nettoyage et un renouvellement profonds.',
-            'Vous voulez renforcer votre système immunitaire.',
+            'Vous vous sentez épuisé malgré le repos',
+            'Vous ressentez une lourdeur physique ou interne persistante',
+            'Votre corps a besoin d\'un nettoyage en profondeur',
+            'Vous cherchez une régénération réelle, pas un simple bien-être temporaire',
+            'Vous souhaitez renforcer votre terrain et votre vitalité globale',
           ],
           benefits: [
-            'Détoxification complète du corps.',
-            'Rajeunissement et éclat de la peau.',
-            'Amélioration de la digestion et du métabolisme.',
-            'Sensation de légèreté et de renouveau.',
+            'Un corps plus léger',
+            'Une digestion plus fluide',
+            'Une énergie plus constante',
+            'Une sensation de clarté et de renouveau durable, qui continue d\'agir bien après le séjour',
+            'Vous ne repartez pas "reposée". Vous repartez réinitialisée',
           ],
           translationKey: 'offer7.servicesTable7',
-          reserveButton: 'Je vis la THALASSO RENAISSANCE',
+          reserveButton: 'Je m’offre une vraie renaissance',
         },
       ],
     },
@@ -128,28 +126,28 @@ export function ProgramsSectionV2() {
           id: 'offer3',
           title: 'ESCAPE 3 NIGHTS',
           subtitle: 'Release & Relax',
-          description: 'A 3-night escape to disconnect, breathe, and be reborn. <br/>The body begins to settle. <br/>The nervous system slows down. <br/>Breathing calms.',
+          description: 'A 3-night escape to disconnect, breathe, and be reborn. <br/>The body begins to settle. <br/>The nervous system slows down. <br/>Breathing calms',
           image: '/images/offer-3/dji2.jpg',
           programTitle: 'RELAXATION & WELLNESS PROGRAM:',
           programDays: '3-Day Program',
           intro: [
-            'Is your daily life marked by a hectic pace, a flood of responsibilities and challenges, leaving little room for relaxation? This intense lifestyle negatively impacts your mental and physical health, your performance and your overall well-being.',
-            'We have designed a program especially for you: the Relaxation and Wellness Program. You can disconnect, release pressure and find deep serenity through proven holistic therapies and personalized treatments.',
-            'Guided by a team of wellness experts, each step of your stay will be adapted to your specific needs.',
+            'Is your daily life marked by a hectic pace, a flood of responsibilities and challenges, leaving little room for relaxation? This intense lifestyle negatively impacts your mental and physical health, your performance and your overall well-being',
+            'We have designed a program especially for you: the Relaxation and Wellness Program. You can disconnect, release pressure and find deep serenity through proven holistic therapies and personalized treatments',
+            'Guided by a team of wellness experts, each step of your stay will be adapted to your specific needs',
           ],
           forYouIf: [
-            'You have a stressful lifestyle.',
-            'You suffer from anxiety.',
-            'You struggle to create a healthy and balanced routine.',
-            'You want to learn how to manage your stress.',
-            'You want to relax and enjoy soothing therapies.',
+            'You have a stressful lifestyle',
+            'You suffer from anxiety',
+            'You struggle to create a healthy and balanced routine',
+            'You want to learn how to manage your stress',
+            'You want to relax and enjoy soothing therapies',
           ],
           benefits: [
-            'Feel peace in your body and mind.',
-            'Experience a feeling of lightness and vitality.',
-            'Discover emotional and mental balance.',
-            'Improve your concentration and mental clarity.',
-            'Reconnect with yourself.',
+            'Feel peace in your body and mind',
+            'Experience a feeling of lightness and vitality',
+            'Discover emotional and mental balance',
+            'Improve your concentration and mental clarity',
+            'Reconnect with yourself',
           ],
           translationKey: 'servicesTable',
           reserveButton: 'Book this offer',
@@ -168,18 +166,18 @@ export function ProgramsSectionV2() {
             'Our team of experts will guide you through each experience, helping you discover what resonates most with your body and mind.',
           ],
           forYouIf: [
-            'You are curious about holistic wellness.',
-            'You want to try different therapeutic approaches.',
-            'You are looking for a complete introduction to wellness.',
-            'You are open to new experiences.',
-            'You want to find your ideal wellness routine.',
+            'You are curious about holistic wellness',
+            'You want to try different therapeutic approaches',
+            'You are looking for a complete introduction to wellness',
+            'You are open to new experiences',
+            'You want to find your ideal wellness routine',
           ],
           benefits: [
-            'Discover new wellness modalities.',
-            'Awaken dormant senses.',
-            'Find personalized wellness approaches.',
-            'Build a foundation for ongoing self-care.',
-            'Gain confidence in your wellness journey.',
+            'Discover new wellness modalities',
+            'Awaken dormant senses',
+            'Find personalized wellness approaches',
+            'Build a foundation for ongoing self-care',
+            'Gain confidence in your wellness journey',
           ],
           translationKey: 'offer5.servicesTable5',
           reserveButton: 'Book this offer',
@@ -198,16 +196,16 @@ export function ProgramsSectionV2() {
             'Leave feeling renewed, recharged and ready to face life with vigor and enthusiasm.',
           ],
           forYouIf: [
-            'You want to eliminate toxins from your body.',
-            'You feel heavy and need purification.',
-            'You are looking for deep cleansing and renewal.',
-            'You want to strengthen your immune system.',
+            'You want to eliminate toxins from your body',
+            'You feel heavy and need purification',
+            'You are looking for deep cleansing and renewal',
+            'You want to strengthen your immune system',
           ],
           benefits: [
-            'Complete body detoxification.',
-            'Skin rejuvenation and glow.',
-            'Improved digestion and metabolism.',
-            'Feeling of lightness and renewal.',
+            'Complete body detoxification',
+            'Skin rejuvenation and glow',
+            'Improved digestion and metabolism',
+            'Feeling of lightness and renewal',
           ],
           translationKey: 'offer7.servicesTable7',
           reserveButton: 'Book this offer',
@@ -221,56 +219,50 @@ export function ProgramsSectionV2() {
 
   // Service descriptions for the program details table
   const serviceDescriptions: Record<string, string> = {
-    // Offer 3
-    'Accueil personnalisé': 'Prise en charge personnalisée dès votre arrivée.',
-    'Infusion détox': 'Boisson détoxifiante aux plantes naturelles.',
-    'Installation bungalow vue nature/océan': 'Hébergement confortable avec vue exceptionnelle.',
-    "Bol d'Air Jacquier": 'Oxygénation naturelle des cellules par inhalation de principes actifs de résine de pin. Facilite la récupération musculaire, réduit le stress et améliore la concentration et le sommeil.',
-    'Piscine thermale': 'Bain en eau de mer chauffée pour la détente musculaire.',
-    'ICE BATH ou Sauna': 'Thérapie par contraste de température pour la circulation.',
-    'Bain magnésium': 'Absorption minérale pour une relaxation profonde.',
-    'Hammam': 'Bain de vapeur traditionnel pour la détoxification.',
-    'Massage tonique': 'Massage énergisant pour relancer la circulation.',
-    'Douche à jet': 'Massage par pression d\'eau pour améliorer la circulation.',
-    'Enveloppement algue': 'Enveloppement aux algues marines pour détoxifier le corps.',
-    'Bain sel minéraux': 'Bain reminéralisant pour la santé cellulaire.',
-    'Massage relaxant': 'Massage complet du corps pour la relaxation.',
-    'Modelage douche affusion': 'Massage sous affusion d\'eau pour une détente profonde.',
-    'Cupping Thérapie Classique': 'Technique traditionnelle de détoxification par ventouses.',
-    // Offer 5
-    "Infusion d'ancrage": 'Boisson aux plantes pour recentrer corps et esprit.',
-    'Bungalow vue nature/océan': 'Hébergement premium avec vue panoramique.',
-    "Bol d'air Jacquier": 'Oxygénation cellulaire par principes actifs de pin.',
-    'Ice Bath ou sauna': 'Thérapie thermique pour stimuler la circulation.',
-    'Hamam mille et une nuit': 'Expérience hammam traditionnelle orientale.',
-    'Massage Traditionnel tonique': 'Massage énergisant aux techniques ancestrales.',
-    'Massage visage': 'Soin du visage relaxant et rajeunissant.',
-    'Bain hydromassant': 'Hydromassage multi-jets avec chromothérapie.',
-    'Modelage sous affusion': 'Massage sous eau pour une relaxation optimale.',
-    'Scrub detox sel Himalaya': 'Gommage détoxifiant au sel de l\'Himalaya.',
-    'Bain sel Hymalaya': 'Bain reminéralisant aux sels de l\'Himalaya.',
-    'Massage sel Himalaya': 'Massage aux cristaux de sel pour purifier le corps.',
-    'Sauna': 'Séance de sauna pour éliminer les toxines.',
-    'Manicure Pédicure': 'Soins des mains et des pieds.',
-    'Massage pochon': 'Massage aux pochons chauds d\'herbes aromatiques.',
-    'Cupping thérapie serviette de feu': 'Technique avancée de cupping avec chaleur.',
-    'Rituel de clôture': 'Cérémonie de fermeture pour ancrer les bienfaits.',
-    'Conseils d\'intégration': 'Recommandations personnalisées pour le quotidien.',
-    'Carnet bien-être à emporter': 'Guide pratique pour continuer chez vous.',
-    // Offer 7
-    'Hammam mille et une nuit': 'Expérience hammam orientale complète.',
-    'Modelage affusion': 'Massage sous eau thermale.',
-    'Massage Tonique': 'Massage dynamisant pour réveiller le corps.',
-    'Massage Visage': 'Soin visage anti-âge relaxant.',
-    'Massage pierre chaude': 'Massage aux pierres volcaniques chaudes.',
-    'Soin de visage': 'Traitement facial complet personnalisé.',
-    'Manucure': 'Soin des ongles et des mains.',
-    'Pédicure': 'Soin des pieds et des ongles.',
-    'Scrub sel Himalaya': 'Exfoliation purifiante au sel rose.',
-    'Bain Sel Himalaya': 'Immersion reminéralisante aux sels purs.',
-    'Rituel de fermeture': 'Cérémonie finale pour sceller les bienfaits.',
-    'Carnet bien-être': 'Guide personnalisé à emporter.',
-    'Départ en conscience': 'Accompagnement pour un retour serein.',
+    // Common services across all programs
+    "Bol d'air Jacquier": 'Oxygénation naturelle des cellules par inhalation de principes actifs de résine de pin. Facilite la récupération musculaire, réduit le stress et améliore la concentration et le sommeil.',
+    'Piscine thermale': 'Bain en eau de mer chauffée à 32°C pour la détente musculaire et l\'activation de la circulation.',
+    'Sauna': 'Chaleur sèche pour éliminer les toxines, purifier la peau et favoriser la relaxation profonde.',
+    'Bain hydromassant': 'Hydromassage multi-jets avec chromothérapie pour détendre les muscles et apaiser le système nerveux.',
+    'Enveloppement algue': 'Enveloppement aux algues marines riches en minéraux pour détoxifier, reminéraliser et raffermir la peau.',
+    'Modelage douche affusion': 'Massage sous une pluie d\'eau thermale pour une détente profonde et une relaxation sensorielle.',
+    'Modelage affusion': 'Massage sous affusion d\'eau thermale pour une relaxation optimale et une détente sensorielle complète.',
+    'Douche à jet': 'Massage par pression d\'eau pour stimuler la circulation, drainer les toxines et tonifier les tissus.',
+    'Bain magnésium': 'Bain enrichi en magnésium marin pour une relaxation musculaire profonde et un apaisement du système nerveux.',
+    'cupping therapie': 'Thérapie par ventouses pour détoxifier, relancer la circulation et relâcher les tensions profondes.',
+    'hammam secret du desert': 'Rituel de hammam traditionnel du désert avec vapeur, gommage et relaxation dans une ambiance orientale.',
+    'Massage relaxant': 'Massage complet du corps aux huiles essentielles pour une relaxation profonde et un lâcher-prise total.',
+    'Massage Tonique': 'Massage dynamisant et tonifiant pour réveiller le corps, stimuler la circulation et relancer l\'énergie vitale.',
+    'Massage Visage': 'Soin du visage relaxant et rajeunissant pour détendre les traits, stimuler la circulation et illuminer le teint.',
+    
+    // Yoga & Wellness activities
+    'Yoga': 'Séance de yoga adaptée pour renforcer la conscience corporelle, améliorer la souplesse et calmer l\'esprit.',
+    'Yoga stretching': 'Séance de yoga axée sur les étirements pour assouplir le corps, libérer les tensions et favoriser la circulation énergétique.',
+    'streching': 'Séance d\'étirements guidés pour assouplir les muscles, améliorer la mobilité et prévenir les tensions.',
+    'sport coaching class': 'Séance de coaching sportif personnalisé pour renforcer le corps, améliorer la condition physique et booster l\'énergie.',
+    'coaching sport class': 'Cours de sport en groupe pour dynamiser le corps, renforcer la vitalité et favoriser la cohésion.',
+    'marche meditative marine': 'Marche méditative au bord de l\'océan pour se reconnecter à la nature, apaiser l\'esprit et ancrer le corps.',
+    
+    // Himalayan salt treatments
+    'scrub detox sel hymalaly': 'Gommage détoxifiant au sel rose de l\'Himalaya pour exfolier, purifier et reminéraliser la peau en profondeur.',
+    'massage detox sel himalaya': 'Massage aux cristaux de sel de l\'Himalaya pour drainer les toxines, stimuler la circulation et revitaliser le corps.',
+    
+    // Massage treatments
+    'Massage Traditionnel Relaxant': 'Massage complet aux techniques ancestrales pour un relâchement musculaire profond et un rééquilibrage énergétique.',
+    
+    // Facial & beauty treatments
+    'Soin lissant detoxifiant spiruline': 'Soin visage détoxifiant à la spiruline pour purifier, oxygéner et illuminer la peau.',
+    
+    // Cupping therapies
+    'Cupping therapie serviette de feu': 'Technique avancée de cupping combinée à des serviettes chaudes pour une détoxification intense et un relâchement profond.',
+    'cupping thérapie classique et serviette de feu': 'Combinaison de cupping traditionnel et de serviettes chaudes pour une détoxification maximale et un relâchement complet.',
+    
+    // Hammam experiences
+    'Hamam mille et une nuit': 'Expérience hammam orientale complète avec vapeur, gommage au savon noir et relaxation dans une ambiance des mille et une nuits.',
+    
+    // Baths
+    'Bain algue': 'Bain thermal enrichi aux algues marines pour une reminéralisation profonde et une revitalisation cellulaire.',
+    'ice bath': 'Immersion en eau froide pour stimuler la circulation, renforcer le système immunitaire et favoriser la récupération musculaire.',
   };
 
   // Function to get services with their session counts from translations
@@ -318,7 +310,7 @@ export function ProgramsSectionV2() {
             show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] } },
           }}
         >
-          <h2 className="mb-4 text-[27px] font-normal uppercase text-gray-800 md:text-4xl">
+          <h2 className="mb-4 text-[23px] font-normal uppercase text-gray-800 md:text-4xl">
             Nos Programmes Thalasso
           </h2>
         </motion.div>
@@ -363,7 +355,7 @@ export function ProgramsSectionV2() {
                   <div className="absolute bottom-0 left-0 right-0 flex justify-center md:hidden" style={{ transform: 'translateY(50%)' }}>
                     <button
                       onClick={() => setIsPopupOpen(true)}
-                      className="flex items-center justify-center gap-2 bg-gray-950 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:bg-gray-900"
+                      className="flex items-center justify-center gap-2 bg-white border border-gray-950 px-8 py-3 text-base font-medium text-gray-950 shadow-lg transition-all duration-300 hover:text-white hover:bg-gray-950"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -395,7 +387,7 @@ export function ProgramsSectionV2() {
                   }}
                 >
                   <div className="mb-2">
-                    <span className="text-[20px] md:text-3xl font-medium uppercase tracking-wide text-teal-950">
+                    <span className="text-[23px] md:text-3xl font-medium uppercase tracking-wide text-teal-950">
                       {offer.title}
                     </span>
                   </div>
@@ -405,14 +397,14 @@ export function ProgramsSectionV2() {
                   </h3> */}
 
                   <p
-                    className="mb-6 leading-relaxed text-[18px] font-extralight text-gray-700"
+                    className="mb-6 leading-relaxed text-[16px] font-extralight text-gray-700"
                     dangerouslySetInnerHTML={{ __html: offer.description }}
                   />
 
                   {/* Learn More Button */}
                   <button
                     onClick={() => setExpandedOffer(isExpanded ? null : offer.id)}
-                    className="inline-flex items-center gap-2 border border-gray-900 px-6 py-2 text-sm font-medium text-gray-800 transition-all duration-300 hover:bg-gray-950  hover:text-white"
+                    className="inline-flex items-center gap-2 border border-gray-900 px-6 py-2 text-[16px] md:text-lg font-medium text-gray-800 transition-all duration-300 hover:bg-gray-950  hover:text-white"
                   >
                     {isExpanded ? currentContent.seeLess : currentContent.learnMore}
                     <svg
@@ -448,7 +440,7 @@ export function ProgramsSectionV2() {
                     {/* Intro Paragraphs */}
                     <div className="mb-10 space-y-6">
                       {offer.intro.map((paragraph, idx) => (
-                        <p key={idx} className="text-[15px] md:text-[18px] leading-relaxed text-gray-700">
+                        <p key={idx} className="text-[15px] md:text-[16px] leading-relaxed text-gray-700">
                           {paragraph}
                         </p>
                       ))}
@@ -461,7 +453,7 @@ export function ProgramsSectionV2() {
                       </h4>
                       <ul className="space-y-3 pl-4">
                         {offer.forYouIf.map((item, idx) => (
-                          <li key={idx} className="flex items-start text-[15px] md:text-[18px] text-gray-700">
+                          <li key={idx} className="flex items-start text-[15px] md:text-[16px] text-gray-700">
                             <span className="mr-4 text-gray-400">•</span>
                             {item}
                           </li>
@@ -476,7 +468,7 @@ export function ProgramsSectionV2() {
                       </h4>
                       <ul className="space-y-3 pl-4">
                         {offer.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-start text-[15px] md:text-[18px] text-gray-700">
+                          <li key={idx} className="flex items-start text-[15px] md:text-[16px] text-gray-700">
                             <span className="mr-4 text-gray-400">•</span>
                             {benefit}
                           </li>

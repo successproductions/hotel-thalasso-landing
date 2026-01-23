@@ -47,6 +47,8 @@
   "about": {
     "title": "Is this retreat for you?",
     "stitle": "This stay is for you if you wish to:",
+    "description": "Au terme de ce séjour thalasso, vous pourrez :",
+    "description2": "Au terme de ce séjour thalasso, vous pourrez :",
     "description1": [
       "You feel mentally and physically drained",
       "You need a break without going far or too long",
@@ -54,10 +56,13 @@
       "You want a short but powerful wellness reset",
       "You need to reconnect with your breath and what truly matters",
       "You want to enjoy a full holistic treatment—guilt-free"
-    ]
+    ],
+    "descriptionBottom": "Our retreats are designed to help you reconnect with your breath and what truly matters."
   },
   "about2": {
     "title": "YOU MAY BE HERE BECAUSE...",
+    "stitle": "La question est simple : est-ce que ces signaux vous parlent aujourd’hui ?",
+    "description": "Au terme de ce séjour thalasso, vous pourrez :",
     "description1": [
       "You feel exhausted physically and mentally",
       "Your sleep is no longer restorative",
@@ -65,7 +70,8 @@
       "You feel deep emotional exhaustion",
       "You need to truly let go",
       "You long for a pause to breathe, relax, and reconnect"
-    ]
+    ],
+    "descriptionBottom": "These signals are here to invite you to take time for yourself to recover and feel good, in an environment designed for the rest of body and mind, in the hands of experts capable of doing the work for you."
   },
   "servicesSection": {
     "title": "OUR SIGNATURE TREATMENTS",

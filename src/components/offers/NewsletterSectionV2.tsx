@@ -21,7 +21,7 @@ export function NewsletterSectionV2() {
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center space-y-4 px-4 text-center">
           {/* Title */}
-          <h2 className="font-serif text-[27px] text-white md:text-4xl">{t('title')}</h2>
+          <h2 className="font-serif text-[23px] text-white md:text-4xl">{t('title')}</h2>
 
           {/* Description */}
           <p className="text-sm uppercase tracking-wide text-white/80 md:text-base">
@@ -31,14 +31,13 @@ export function NewsletterSectionV2() {
           {/* Just the button, opens popup */}
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
             <button
-            className="rounded-sm md:text-[18px] text-[16px] bg-gray-950 hover:bg-gray-900 px-4 py-3 font-medium text-white transition cursor-pointer hover:shadow-lg"
+            className="rounded-sm md:text-[18px] text-[16px] bg-white border border-black font-medium hover:bg-gray-950 px-4 py-3  text-black hover:text-white transition cursor-pointer hover:shadow-lg"
               onClick={() => setIsPopupOpen(true)}
               style={{
                 padding: '12px 15px',
-                fontWeight: 400,
+                
                 textDecoration: 'none',
                 boxShadow: '0 2px 8px rgba(20,184,166,0.15)',
-                border: 'none',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
               }}

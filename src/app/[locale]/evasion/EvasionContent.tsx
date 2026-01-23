@@ -56,7 +56,7 @@ export default function EvasionContent() {
         <FAQSectionV2 />
         <NewsletterSectionV2 />
         <Footer />
-        <WhatsAppChatbot />
+        {/* <WhatsAppChatbot /> */}
 
         {/* ✅ STRUCTURED DATA */}
         <script

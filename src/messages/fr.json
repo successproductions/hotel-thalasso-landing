@@ -30,7 +30,7 @@
       "invalidDurationText": "Votre séjour doit être exactement de 4 jours. Veuillez ajuster vos dates",
       "confirmButton": "OK"
     },
-    "ctaText": "Réserver ma retraite thalasso places limitées"
+    "ctaText": "Découvrir les séjours thalasso"
   },
   "hero": {
     "tagline": "Évasion Holistique",
@@ -40,29 +40,36 @@
   },
   "healthProgram": {
     "title": "Dakhla is calling… Êtes-vous prêts à recharger vos batteries ?",
-    "title2": "Séjour Thalasso à Dakhla 3 Nuits pour relâcher le stress, rééquilibrer le corps et retrouver l’énergie",
-    "title3": "Un programme de thalassothérapie complet au cœur de Dakhla, pensé pour apaiser le système nerveux, améliorer le sommeil et relancer la vitalité dès les premiers jours.",
+    "title2": "Relâchez le stress Rééquilibrez votre corps Laissez votre énergie revenir naturellement ",
+    "title3": "Des séjours de thalassothérapie à Dakhla, conçus comme de véritables protocoles de récupération et de bien-être Chaque programme associe soins marins, rituels thermaux et temps de repos, pour apaiser le système nerveux, améliorer le sommeil et relancer la vitalité",
+    "title4": "Choisissez le séjour qui correspond à votre besoin 3, 5 ou 7 jours et laissez notre équipe préparer votre expérience dans les moindres détails",
     "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne. Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante"
   },
   "about": {
-    "title": "Ce séjour thalasso est fait pour vous si… Vous ressentez le besoin de :",
+    "title": "CE SÉJOUR THALASSO A ÉTÉ CONÇU POUR VOUS SI…",
+    "description": "Ces derniers temps, votre corps et votre esprit vous envoient des signaux clairs pas l’envie d’un simple moment de détente, mais le besoin d’un véritable temps de récupération, structuré, encadré, efficace",
+    "description2": "Au terme de ce séjour thalasso, vous pourrez :",
     "description1": [
-      "déconnecter profondément du stress quotidien",
-      "soulager des tensions physiques et mentales persistantes",
-      "retrouver un sommeil plus réparateur",
-      "relancer votre énergie vitale sans contrainte",
-      "vivre une vraie cure thalasso dans un environnement naturel exceptionnel"
-    ]
+      "déconnecter profondément le stress accumulé, et retrouver une sensation de relâchement durable",
+      "soulager les tensions physiques et mentales, en laissant le corps se rééquilibrer naturellement",
+      "retrouver un sommeil plus réparateur, plus profond, plus stable, sans effort",
+      "relancer votre énergie vitale progressivement, sans contrainte, sans surcharge, sans performance imposée",
+      "vivre une véritable cure thalasso, dans un environnement naturel d’exception, loin du quotidien"
+    ],
+    "descriptionBottom": "Nos séjours ont été pensés comme une montée en profondeur, du premier apaisement à une véritable renaissance du corps"
   },
   "about2": {
-    "title": "Vous êtes peut-être ici parce que votre corps vous parle",
+    "title": "SI VOUS ÊTES ICI, CE N’EST PAS UN HASARD",
+    "description": "Votre corps ne lâche jamais sans raison quand il est trop sollicité, il commence par ralentir, puis se fatiguer, puis saturer… jusqu’au moment où il vous oblige à l’écouter",
+    "stitle": "La question est simple : est-ce que ces signaux vous parlent aujourd’hui ?",
     "description1": [
-      "fatigue physique et mentale persistante",
-      "sommeil non réparateur",
-      "système nerveux saturé",
-      "tensions émotionnelles accumulées",
-      "besoin réel de lâcher-prise et de respiration"
-    ]
+      "une fatigue physique et mentale persistante, même après le repos",
+      "un sommeil instable, léger ou non réparateur",
+      "un système nerveux constamment sollicité, sans véritable relâchement",
+      "des tensions émotionnelles qui s’accumulent sans pouvoir se libérer",
+      "un besoin profond de ralentir, de respirer, de récupérer vraiment"
+    ],
+    "descriptionBottom": "Ces signaux sont là pour vous inviter à prendre du temps pour vous a récupérer, à vous faire du bien, dans un environnement pensé pour le repos du corps et de l’esprit, entre les mains d’experts, capables de faire le travail pour vous"
   },
   "programSection": {
     "header": {
@@ -289,14 +296,14 @@
   },
   "clientsCarousel": {
     "title": "ILS PARLENT DE NOUS",
-    "title2": "Une expérience reconnue internationalement",
-    "title3": "Ce que nos curistes ressentent dès les premiers jours",
+    "title2": "Ils sont arrivés fatigués",
+    "title3": "Ils repartent profondément apaisés",
     "testimonial1": "J'ai testé kiting et j'ai adoré !",
     "testimonial2": "Après avoir fait du cerf-volant, c’est tellement relaxant",
     "testimonial3": "Le meilleur spa que j'aie fait de toute ma vie",
     "testimonial4": "Dakhla offre un cadre unique pour se reconnecter avec soi-même.",
     "testimonial5": "Je sens que ma peau est bien hydratée",
-    "description": "Témoignages authentiques résultats ressentis, sans promesse médicale.",
+    "description": "Quelques mots, dits à chaud, par des curistes ayant vécu l’expérience thalasso à Dakhla des ressentis sincères qui parlent de relâchement, de récupération et d’un retour progressif à l’équilibre dès les premiers jours",
     "ctaText": "Je veux vivre l'expérience"
   },
   "introduction": {
