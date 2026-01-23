@@ -250,7 +250,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
             <div className="flex-1 min-h-0 bg-[#faf9f5] flex flex-col">
               {/* Scrollable content */}
               <div className="flex-1 overflow-y-auto p-6">
-                <span className="text-sm uppercase tracking-wider text-[#d6bb8e] font-medium">
+                <span className="text-sm uppercase tracking-wider text-[#111111] font-medium">
                   {currentOffer.subtitle}
                 </span>
                 <h3 className="mt-2 text-2xl font-normal text-gray-900">
@@ -506,44 +506,44 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                   className="h-4 w-4 rounded border-gray-300 text-[#139584] focus:ring-[#d6bb8e]"
                 />
                 <label htmlFor="acceptTerms" className="text-sm text-gray-700">
-                  {t('terms.agree')} <a href="/fr/legal/cgv" target="_blank" className="underline font-medium text-[#139584] hover:text-[#d6bb8e]">{t('terms.link')}</a>
+                  {t('terms.agree')} <a href="/fr/legal/cgv" target="_blank" className="underline font-medium text-[#202121] hover:text-[#d6bb8e]">{t('terms.link')}</a>
                 </label>
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="mt-2 w-full rounded-md bg-white px-6 py-3 font-medium border-1  text-black transition-all duration-300 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6bb8e] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center justify-center">
-                    <svg
-                      className="mr-2 h-5 w-5 animate-spin"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      ></circle>
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
-                    </svg>
-                    {t('submit')}
-                  </span>
-                ) : (
-                  'Continuer vers le paiement'
-                )}
-              </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="mt-2 w-full rounded-md bg-white px-6 py-3 font-medium border border-black text-black transition-all duration-300 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6bb8e] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center">
+                      <svg
+                        className="mr-2 h-5 w-5 animate-spin"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      {t('submit')}
+                    </span>
+                  ) : (
+                    'Continuer vers le paiement'
+                  )}
+                </button>
 
               {/* Security and Availability Info */}
               <div className="mt-1 space-y-3 border-t border-gray-200 pt-1 ">
