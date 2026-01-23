@@ -183,9 +183,9 @@ export default function ThankYouContent({
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/50" />
         
         {/* Success message on banner */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 py-16">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center  px-4 py-16">
           
-          <h1 className="mb-2 px-1 text-[24px] font-light uppercase tracking-wide md:text-4xl leading-tight">
+          <h1 className="mb-2 px-1 text-[24px] font-light uppercase tracking-wide md:text-4xl text-white leading-tight">
             {text.titleHotel}
           </h1>
           <a
