@@ -514,7 +514,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-2 w-full rounded-md bg-[#d6bb8e] px-6 py-3 font-medium text-white transition-all duration-300 hover:bg-[#139584] focus:outline-none focus:ring-2 focus:ring-[#d6bb8e] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                className="mt-2 w-full rounded-md bg-white px-6 py-3 font-medium border-1  text-black transition-all duration-300 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6bb8e] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center">
