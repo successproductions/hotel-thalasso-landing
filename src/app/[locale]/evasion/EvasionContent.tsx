@@ -6,7 +6,6 @@ import HeaderTest from '@/components/offers/HeaderTest';
 import HeroTest from '@/components/offers/HeroTest';
 import { Footer } from '@/components/Footer';
 import { NewsletterSectionV2 } from '@/components/offers/NewsletterSectionV2';
-import WhatsAppChatbot from '@/components/WhatsAppChatbot';
 import { HealthProgramsV2 } from '@/components/offers/HealthProgramsV2';
 import { AboutV2 } from '@/components/offers/AboutV2';
 import { ProgramsSectionV2 } from '@/components/offers/ProgramsSectionV2';

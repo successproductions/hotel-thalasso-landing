@@ -217,15 +217,14 @@ function ThankYouContent({
   );
 }
 
-export default async function ThankYouPage({
+export default function ThankYouPage({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
-  const resolvedParams = await params;
   return (
     <Suspense fallback={<div className="flex min-h-screen items-center justify-center">Loading...</div>}>
-      <ThankYouContent params={resolvedParams} />
+      <ThankYouContent params={params} />
     </Suspense>
   );
 }
