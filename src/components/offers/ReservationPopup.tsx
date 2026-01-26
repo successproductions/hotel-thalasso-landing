@@ -36,7 +36,7 @@ const offerData: Record<string, { image: string; title: string; subtitle: string
     ],
   },
   '5': {
-    image: '/images/5.jpg',
+    image: '/images/offer-3/dji20.JPG',
     title: 'Thalasso RÉGÉNÉRATION 5 jours',
     subtitle: '27 soins inclus',
     price: 9200, 
@@ -514,7 +514,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-2 w-full rounded-md bg-white px-6 py-3 font-medium border border-black text-black transition-all duration-300 hover:bg-black hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6bb8e] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="mt-2 w-full rounded-md bg-white px-6 py-3 font-medium border border-black text-black transition-all duration-300 hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#d6bb8e] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center">

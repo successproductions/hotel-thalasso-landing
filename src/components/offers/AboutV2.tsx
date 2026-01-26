@@ -14,16 +14,16 @@ export function AboutV2() {
           <h2 className="text-[23px] font-normal text-gray-800 md:text-4xl">
             {msg.about.title.toUpperCase()}
           </h2>
-          <p className="text-[16px] text-gray-700 font-extralight">{msg.about.description}</p>
-          <p className="text-[16px] text-gray-700 font-extralight">{msg.about.description2}</p>
+          <p className="text-[16px] md:text-lg text-gray-700 font-extralight">{msg.about.description}</p>
+          <p className="text-[16px] md:text-lg text-gray-700 font-extralight">{msg.about.description2}</p>
 
           <ul className="list-disc text-[16px] font-extralight leading-relaxed text-gray-700 space-y-2 pl-6 md:text-lg">
-            <p className="text-[16px] font-extralight">{msg.about.stitle}</p>
+            <p className="text-[16px] md:text-lg font-extralight">{msg.about.stitle}</p>
             {descriptionList.map((item, idx) => (
               <li key={idx}>{item}</li>
             ))}
           </ul>
-          <p className="text-[16px] text-gray-700 font-extralight">{msg.about.descriptionBottom}</p>
+          <p className="text-[16px] md:text-lg text-gray-700 font-extralight">{msg.about.descriptionBottom}</p>
         </div>
 
         {/* Image Column */}

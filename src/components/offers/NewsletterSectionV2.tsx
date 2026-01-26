@@ -31,7 +31,7 @@ export function NewsletterSectionV2() {
           {/* Just the button, opens popup */}
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
             <button
-            className="rounded-sm md:text-[18px] text-[16px] bg-white border border-black font-medium hover:bg-gray-950 px-4 py-3  text-black hover:text-white transition cursor-pointer hover:shadow-lg"
+            className="rounded-sm md:text-[18px] text-[16px] bg-white border border-black font-medium hover:bg-gray-50 px-4 py-3  text-black hover:text-gray-900 transition cursor-pointer hover:shadow-lg"
               onClick={() => setIsPopupOpen(true)}
               style={{
                 padding: '12px 15px',

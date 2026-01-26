@@ -355,7 +355,7 @@ export function ProgramsSectionV2() {
                   <div className="absolute bottom-0 left-0 right-0 flex justify-center md:hidden" style={{ transform: 'translateY(50%)' }}>
                     <button
                       onClick={() => setIsPopupOpen(true)}
-                      className="flex items-center justify-center gap-2 bg-white border border-gray-950 px-3 py-3 text-base font-medium text-gray-950 shadow-lg transition-all duration-300 hover:text-white hover:bg-gray-950"
+                      className="flex items-center justify-center gap-2 bg-white border border-gray-950 px-3 py-3 text-base font-medium text-gray-950 shadow-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-50"
                     >
                      
                       {offer.reserveButton}
@@ -389,14 +389,14 @@ export function ProgramsSectionV2() {
                   </h3> */}
 
                   <p
-                    className="mb-6 leading-relaxed text-[16px] font-extralight text-gray-700"
+                    className="mb-6 leading-relaxed text-[16px] md:text-lg font-extralight text-gray-700"
                     dangerouslySetInnerHTML={{ __html: offer.description }}
                   />
 
                   {/* Learn More Button */}
                   <button
                     onClick={() => setExpandedOffer(isExpanded ? null : offer.id)}
-                    className="inline-flex items-center gap-2 border border-gray-900 px-6 py-2 text-[16px] md:text-lg font-medium text-gray-800 transition-all duration-300 hover:bg-gray-950  hover:text-white"
+                    className="inline-flex items-center gap-2 border border-gray-900 px-6 py-2 text-[16px] md:text-lg font-medium text-gray-800 transition-all duration-300 hover:bg-gray-50  hover:text-gray-900"
                   >
                     {isExpanded ? currentContent.seeLess : currentContent.learnMore}
                     <svg
@@ -432,7 +432,7 @@ export function ProgramsSectionV2() {
                     {/* Intro Paragraphs */}
                     <div className="mb-10 space-y-6">
                       {offer.intro.map((paragraph, idx) => (
-                        <p key={idx} className="text-[15px] md:text-[16px] leading-relaxed text-gray-700">
+                        <p key={idx} className="text-[16px] md:text-lg leading-relaxed text-gray-700">
                           {paragraph}
                         </p>
                       ))}
@@ -445,7 +445,7 @@ export function ProgramsSectionV2() {
                       </h4>
                       <ul className="space-y-3 pl-4">
                         {offer.forYouIf.map((item, idx) => (
-                          <li key={idx} className="flex items-start text-[15px] md:text-[16px] text-gray-700">
+                          <li key={idx} className="flex items-start text-[16px] md:text-lg text-gray-700">
                             <span className="mr-4 text-gray-400">•</span>
                             {item}
                           </li>
@@ -460,7 +460,7 @@ export function ProgramsSectionV2() {
                       </h4>
                       <ul className="space-y-3 pl-4">
                         {offer.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-start text-[15px] md:text-[16px] text-gray-700">
+                          <li key={idx} className="flex items-start text-[16px] md:text-lg text-gray-700">
                             <span className="mr-4 text-gray-400">•</span>
                             {benefit}
                           </li>
@@ -503,7 +503,7 @@ export function ProgramsSectionV2() {
                                   {row.name}
                                 </h6>
                                 {row.description && (
-                                  <p className="mt-1 text-[13px] md:text-[14px] italic text-gray-500 leading-relaxed">
+                                  <p className="mt-1 text-[16px] md:text-lg italic text-gray-500 leading-relaxed">
                                     {row.description}
                                   </p>
                                 )}
@@ -522,7 +522,7 @@ export function ProgramsSectionV2() {
                     <div className="mt-10 text-center">
                       <button
                         onClick={() => setIsPopupOpen(true)}
-                        className="inline-flex items-center gap-2 bg-white border border-black px-3 md:px-4 py-3 text-sm md:text-lg font-medium  text-black transition-all duration-300 hover:bg-black hover:text-white"
+                        className="inline-flex items-center gap-2 bg-white border border-black px-3 md:px-4 py-3 text-sm md:text-lg font-medium  text-black transition-all duration-300 hover:bg-gray-50 hover:text-gray-900"
                       >
                         {offer.reserveButton}
                       </button>

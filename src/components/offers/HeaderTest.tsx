@@ -156,7 +156,7 @@ export default function HeaderTest() {
                 className={clsx(
                   'rounded-sm border px-5 py-5 transition-transform',
                   active
-                    ? 'bg-white text-black hover:scale-105 hover:bg-black border-gray-900 hover:text-white hover:shadow-xl'
+                    ? 'bg-white text-black hover:scale-105 hover:bg-gray-50 border-gray-900 hover:text-gray-900 hover:shadow-xl'
                     : 'border-white bg-transparent text-white hover:bg-gray-100 dark:bg-gray-800 dark:text-white',
                 )}
                 onClick={() => setIsPopupOpen(true)}
@@ -198,7 +198,7 @@ export default function HeaderTest() {
               className={clsx(
                 'flex-shrink-0 whitespace-nowrap rounded-sm border px-2 py-1 text-xs transition-transform',
                 active
-                  ? 'bg-white text-black hover:scale-105 border-gray-900 hover:bg-black hover:text-white hover:shadow-xl'
+                  ? 'bg-white text-black hover:scale-105 border-gray-900 hover:bg-gray-50 hover:text-gray-900 hover:shadow-xl'
                   : 'border-white bg-transparent text-white hover:bg-gray-100 dark:bg-gray-800 dark:text-white',
               )}
               onClick={() => setIsPopupOpen(true)}
