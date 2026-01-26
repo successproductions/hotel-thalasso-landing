@@ -499,7 +499,7 @@ export function ProgramsSectionV2() {
                             >
                               {/* Left box - Service info */}
                               <div className="flex-1 border-r border-gray-200 px-6 py-5">
-                                <h6 className="font-semibold text-[#010a17] text-[15px] md:text-[16px]">
+                                <h6 className="font-semibold text-[#010a17] text-[16px] md:text-lg">
                                   {row.name}
                                 </h6>
                                 {row.description && (

@@ -33,7 +33,7 @@ export default function HeaderTest() {
   const links = [
     { name: t('home'), href: '#accueil' },
     { name: t('about'), href: '#about' },
-    { name: t('services'), href: '#services' },
+    { name: t('offers'), href: '#services' },
     { name: 'FAQ', href: '#faq' },
   ];
 
@@ -94,7 +94,7 @@ export default function HeaderTest() {
                   href={l.href}
                   className={clsx(
                     'group relative whitespace-nowrap px-2 py-2 text-xs transition-colors',
-                    active ? 'hover:text-teal-700' : 'hover:text-white/80',
+                    active ? 'hover:text-black' : 'hover:text-white/80',
                   )}
                 >
                   {l.name}
