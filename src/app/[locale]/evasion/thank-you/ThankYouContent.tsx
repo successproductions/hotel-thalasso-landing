@@ -107,7 +107,7 @@ export default function ThankYouContent({
       {/* Hero Banner Image */}
       <div className="relative min-h-[65vh]  overflow-hidden md:min-h-[60vh]">
         <Image
-          src="/images/offer-3/dji10.jpeg"
+          src="/images/offer-3/dji19.JPG"
           alt="Dakhla Club - Thalasso & Wellness"
           fill
           className="object-cover "

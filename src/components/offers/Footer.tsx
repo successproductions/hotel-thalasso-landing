@@ -15,28 +15,28 @@ export function Footer() {
       : 'https://offer.dakhlaclub.com/brochure/BROCHURE_CH_NUMERIQUE_FR_compressed.pdf';
 
   return (
-    <footer className="bg-gray-100 text-gray-700">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-5">
+    <footer className="bg-gray-100  text-gray-700">
+      <div className="mx-auto p-6  grid max-w-6xl grid-cols-1 gap-8 px-4 py-12 md:grid-cols-5">
         {/* Column 1 */}
-        <div className="text-center md:text-left">
+        <div className="text-left">
           <h3 className="mb-4 text-sm font-semibold uppercase">DakhlaClub</h3>
-          <ul className="space-y-2 ">
-            <li className=" cursor-pointer hover:underline">
+          <ul className="space-y-2 font-light ">
+            <li className=" cursor-pointer  hover:underline">
               <a href="#">{t('footerNav.home')}</a>
             </li>
             <li className="cursor-pointer hover:underline">
               <a href="#about">{t('footerNav.about')}</a>
             </li>
             <li className="cursor-pointer hover:underline">
-              <a href="#services">{t('footerNav.services')}</a>
+              <a href="#services">{t('footerNav.offers')}</a>
             </li>
           </ul>
         </div>
 
         {/* Column 2 */}
-        <div className="text-center md:text-left">
+        <div className="text-left">
           <h3 className="mb-4 text-sm font-semibold uppercase">{t('column2')}</h3>
-          <ul className="space-y-2">
+          <ul className="space-y-2 font-light">
             <li className="cursor-pointer hover:underline">
               <a href="#faq">{t('support.faq')}</a>
             </li>
@@ -50,9 +50,9 @@ export function Footer() {
         </div>
 
         {/* Column 3 */}
-        <div className="text-center md:text-left">
+        <div className="text-left">
           <h3 className="mb-4 text-sm font-semibold uppercase">{t('column4')}</h3>
-          <ul className="space-y-2">
+          <ul className="space-y-2 font-light">
             <li className="cursor-pointer hover:underline">
               <Link href="/legal/privacy">{t('legal.privacy')}</Link>
             </li>
@@ -66,9 +66,9 @@ export function Footer() {
         </div>
 
         {/* Column 4 */}
-        <div className="text-center md:text-left">
+        <div className="text-left">
           <h3 className="mb-4 text-sm font-semibold uppercase">Follow Us</h3>
-          <div className="flex justify-center space-x-4 md:justify-start">
+          <div className="flex justify-start space-x-4">
             <a
               href="https://www.facebook.com/DakhlaClub/"
               aria-label="Facebook"
@@ -93,8 +93,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center space-y-4 md:justify-end">
-          <div className="text-center md:mx-auto">
+        <div className="flex flex-col items-start space-y-4 md:items-center md:justify-end">
+          <div className="text-left md:text-center md:mx-auto">
             <p className="mb-2 text-xs text-gray-600">{t('scanBrochure')}</p>
             <div className="relative aspect-square w-32 overflow-hidden rounded-lg ml-3 md:ml-0 bg-white shadow-md sm:w-28 md:w-24">
               <Image
@@ -128,9 +128,9 @@ export function Footer() {
       </div>
 
       {/* Payment Security Logos - Required by CMI */}
-      <div className="pt-6 border-t border-gray-200">
-        <p className="text-xs text-gray-600 text-center my-2  uppercase tracking-wide">Paiement 100% Sécurisé</p>
-        <div className="flex items-center justify-center gap-6 flex-wrap">
+      <div className="pt-6 pl-6 md:pl-0 border-t border-gray-200">
+        <p className="text-xs text-gray-600 text-left md:text-center my-2 uppercase tracking-wide">Paiement 100% Sécurisé</p>
+        <div className="flex items-center justify-start md:justify-center gap-6 flex-wrap">
           <Image 
             src="/images/logos_cmi/logo_cmi.png" 
             alt="CMI Payment" 
@@ -177,7 +177,7 @@ export function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="py-6 text-center text-sm text-gray-600">
+      <div className="py-6 pl-6 md:pl-0 font-normal text-left md:text-center text-sm text-gray-600">
         © 2026 DakhlaClub and its Associated Subsidiaries | Luxury Fitness, Health & Wellness
         Vacation Retreat
       </div>
