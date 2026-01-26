@@ -37,6 +37,16 @@ export default function HeaderTest() {
     { name: 'FAQ', href: '#faq' },
   ];
 
+  // Mobile navigation - replace SERVICES with 3 offer links
+  const mobileLinks = [
+    { name: t('home'), href: '#accueil' },
+    { name: t('about'), href: '#about' },
+    { name: t('offers1'), href: '#offer3' },
+    { name: t('offers2'), href: '#offer5' },
+    { name: t('offers3'), href: '#offer7' },
+    { name: 'FAQ', href: '#faq' },
+  ];
+
   // const allEvasionLinks = [
   //   { name: t('evasion3'), href: '/evasion-holistique-3-jours' as const },
   //   { name: t('evasion5'), href: '/evasion-holistique-5-jours' as const },
@@ -212,7 +222,7 @@ export default function HeaderTest() {
               )}
             >
               <nav className="flex flex-col gap-4">
-                {links.map((l) => (
+                {mobileLinks.map((l) => (
                   <a
                     key={l.href}
                     href={l.href}

@@ -279,11 +279,20 @@ export default function FAQSectionV2() {
                             </div>
                           </AccordionTrigger>
 
-                          <AccordionContent className="px-6 pb-5">
-                            <div className="leading-relaxed text-slate-600 dark:text-slate-300">
-                              <div className="border-t border-slate-100 pt-2 whitespace-pre-line">{item.answer}</div>
+                          {/* SEO Fix: Answer always in HTML, visually hidden when collapsed */}
+                          <div 
+                            className="overflow-hidden transition-all duration-300 ease-in-out"
+                            style={{
+                              maxHeight: openItem === `item-${index}` ? '1000px' : '0',
+                              opacity: openItem === `item-${index}` ? 1 : 0
+                            }}
+                          >
+                            <div className="px-6 pb-5">
+                              <div className="leading-relaxed text-slate-600 dark:text-slate-300">
+                                <div className="border-t border-slate-100 pt-2 whitespace-pre-line">{item.answer}</div>
+                              </div>
                             </div>
-                          </AccordionContent>
+                          </div>
                         </motion.div>
                       </AccordionItem>
                     </Accordion>

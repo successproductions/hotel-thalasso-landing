@@ -4,7 +4,7 @@ import Script from 'next/script';
 import './styles.css';
 import HeaderTest from '@/components/offers/HeaderTest';
 import HeroTest from '@/components/offers/HeroTest';
-import { Footer } from '@/components/Footer';
+import { Footer } from '@/components/offers/Footer';
 import { NewsletterSectionV2 } from '@/components/offers/NewsletterSectionV2';
 import { HealthProgramsV2 } from '@/components/offers/HealthProgramsV2';
 import { AboutV2 } from '@/components/offers/AboutV2';

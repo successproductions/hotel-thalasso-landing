@@ -323,7 +323,7 @@ export function ProgramsSectionV2() {
         const isExpanded = expandedOffer === offer.id;
 
         return (
-          <div key={offer.id}>
+          <div key={offer.id} id={offer.id}>
             {/* Offer Card */}
             <div className="relative py-2 md:py-6 xl:py-8">
               {/* full-width, pale-green bg sliding in */}
@@ -355,17 +355,9 @@ export function ProgramsSectionV2() {
                   <div className="absolute bottom-0 left-0 right-0 flex justify-center md:hidden" style={{ transform: 'translateY(50%)' }}>
                     <button
                       onClick={() => setIsPopupOpen(true)}
-                      className="flex items-center justify-center gap-2 bg-white border border-gray-950 px-8 py-3 text-base font-medium text-gray-950 shadow-lg transition-all duration-300 hover:text-white hover:bg-gray-950"
+                      className="flex items-center justify-center gap-2 bg-white border border-gray-950 px-3 py-3 text-base font-medium text-gray-950 shadow-lg transition-all duration-300 hover:text-white hover:bg-gray-950"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
+                     
                       {offer.reserveButton}
                     </button>
                   </div>
@@ -530,17 +522,8 @@ export function ProgramsSectionV2() {
                     <div className="mt-10 text-center">
                       <button
                         onClick={() => setIsPopupOpen(true)}
-                        className="inline-flex items-center gap-2 bg-gray-950 px-8 py-3 text-sm md:text-lg font-medium rounded-sm text-white transition-all duration-300 hover:bg-gray-900"
+                        className="inline-flex items-center gap-2 bg-white border border-black px-3 md:px-4 py-3 text-sm md:text-lg font-medium  text-black transition-all duration-300 hover:bg-black hover:text-white"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
                         {offer.reserveButton}
                       </button>
                     

@@ -7,6 +7,9 @@
     "home": "ACCUEIL",
     "about": "À PROPOS",
     "services": "SÉJOUR",
+    "offers1": "VITALITÉ",
+    "offers2": "RÉGÉNÉRATION",
+    "offers3": "RENAISSANCE",
     "offers": "OFFRES",
     "evasion": "ÉVASION HOLISTIQUE",
     "evasion3": "3 NUITS",
@@ -50,7 +53,7 @@
     "description": "Ces derniers temps, votre corps et votre esprit vous envoient des signaux clairs pas l’envie d’un simple moment de détente, mais le besoin d’un véritable temps de récupération, structuré, encadré, efficace",
     "description2": "Au terme de ce séjour thalasso, vous pourrez :",
     "description1": [
-      "déconnecter profondément le stress accumulé, et retrouver une sensation de relâchement durable",
+      "déconnecter profondément du stress accumulé, et retrouver une sensation de relâchement durable",
       "soulager les tensions physiques et mentales, en laissant le corps se rééquilibrer naturellement",
       "retrouver un sommeil plus réparateur, plus profond, plus stable, sans effort",
       "relancer votre énergie vitale progressivement, sans contrainte, sans surcharge, sans performance imposée",
@@ -69,7 +72,7 @@
       "des tensions émotionnelles qui s’accumulent sans pouvoir se libérer",
       "un besoin profond de ralentir, de respirer, de récupérer vraiment"
     ],
-    "descriptionBottom": "Ces signaux sont là pour vous inviter à prendre du temps pour vous a récupérer, à vous faire du bien, dans un environnement pensé pour le repos du corps et de l’esprit, entre les mains d’experts, capables de faire le travail pour vous"
+    "descriptionBottom": "Ces signaux sont là pour vous inviter à prendre du temps pour vous, à récupérer, à vous faire du bien, dans un environnement pensé pour le repos du corps et de l'esprit, entre les mains d'experts capables de faire le travail pour vous"
   },
   "programSection": {
     "header": {

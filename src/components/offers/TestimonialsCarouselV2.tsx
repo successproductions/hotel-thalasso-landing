@@ -95,9 +95,8 @@ export default function TestimonialsCarouselV2() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-1 md:px-2 py-4 md:py-6">
         <div className="mb-4 md:mb-10 px-4 md:text-center">
           <h2 className="text-[23px] uppercase font-normal text-gray-900 md:text-4xl lg:text-4xl">
-            {t('title2')}
+            {t('title2')} {t('title3')}
           </h2>
-          <p className="md:text-[18px] text-[16px] font-light mt-4 text-gray-700">{t('title3')}</p>
         </div>
 
         <div className="relative">
@@ -130,7 +129,7 @@ export default function TestimonialsCarouselV2() {
               {testimonials.map((item) => (
                 <div key={item.id} className="flex-shrink-0" style={{ width: `${100 / visible}%` }}>
                   <Card className="overflow-hidden border-0 bg-transparent shadow-2xl">
-                    <div className="relative h-[60vh] bg-black md:h-[75vh] lg:h-[52vh] xl:h-[50vh]">
+                    <div className="relative h-[60vh] bg-white md:h-[75vh] lg:h-[52vh] xl:h-[50vh]">
                       {playingVideo === item.id ? (
                         // Show video player when playing
                         <video
@@ -184,7 +183,7 @@ export default function TestimonialsCarouselV2() {
           <div className="py-4 text-center md:px-12 md:py-6">
             <button
               onClick={() => setIsPopupOpen(true)}
-              className=" rounded-sm bg-transparent border border-black px-4 py-3  font-medium text-black hover:text-white transition hover:bg-gray-900 cursor-pointer hover:shadow-lg md:text-lg"
+              className=" bg-transparent border border-black px-4 py-3  font-medium text-black hover:text-white transition hover:bg-gray-900 cursor-pointer hover:shadow-lg md:text-lg"
             >
            {t('ctaText')}
             </button>
