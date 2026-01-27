@@ -26,9 +26,15 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // WWW to non-WWW redirect - SEO Canonicalization
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'www.offer.dakhlaclub.com' }],
+        has: [
+          {
+            type: 'host',
+            value: 'www.offer.dakhlaclub.com',
+          },
+        ],
         destination: 'https://offer.dakhlaclub.com/:path*',
         permanent: true,
       },
