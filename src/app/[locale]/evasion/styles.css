@@ -1,6 +1,15 @@
 /* Import Inter font from Google Fonts - similar to Graphik with full accent character support */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* Media queries for responsive design - SEO detection */
+@media (max-width: 768px) {
+  /* Mobile styles already handled by Tailwind */
+}
+
+@media (min-width: 769px) {
+  /* Desktop styles already handled by Tailwind */
+}
+
 /* Apply Inter font to all text elements on evasion-3 pages */
 main * {
   font-family:

@@ -11,9 +11,9 @@ export function AboutV2() {
       <div className="mx-auto grid grid-cols-1 items-center gap-8 md:gap-0 md:grid-cols-2">
         {/* Text Column */}
         <div className="order-2 space-y-4 px-4 md:order-1 xl:px-28">
-          <h2 className="text-[23px] font-normal text-gray-800 md:text-4xl">
+          <h1 className="text-[23px] font-normal text-gray-800 md:text-4xl">
             {msg.about.title.toUpperCase()}
-          </h2>
+          </h1>
           <p className="text-[16px] md:text-lg text-gray-700 font-extralight">{msg.about.description}</p>
           <p className="text-[16px] md:text-lg text-gray-700 font-extralight">{msg.about.description2}</p>
 
