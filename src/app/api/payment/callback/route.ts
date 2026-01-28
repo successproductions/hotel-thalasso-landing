@@ -64,8 +64,63 @@ export async function POST(request: NextRequest) {
       // Payment successful - Auto capture
       console.log(`Payment successful for order: ${orderId}`);
       
-      // TODO: Update database with payment status
-      // TODO: Send confirmation email
+      // Send confirmation emails
+      try {
+        // Extract customer info from callback params
+        const customerEmail = params['email'];
+        const customerName = params['BillToName'];
+        
+        // Send email to customer
+        if (customerEmail) {
+          const emailResponse = await fetch(`${request.nextUrl.origin}/api/email/send-confirmation`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              to: customerEmail,
+              fullName: customerName || 'Client',
+              selectedOffer: '3', // Default, will be updated from stored data
+              arrivalDate: new Date().toISOString(),
+              numberOfPeople: '1',
+              orderId: orderId,
+            }),
+          });
+
+          if (emailResponse.ok) {
+            console.log(`Confirmation email sent to: ${customerEmail}`);
+          } else {
+            console.error('Failed to send customer email:', await emailResponse.text());
+          }
+        }
+
+        // Send notification to admin
+        const adminEmail = 'w.master@successproductions.ma';
+        const adminEmailResponse = await fetch(`${request.nextUrl.origin}/api/email/send-confirmation`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            to: adminEmail,
+            fullName: customerName || 'Client',
+            selectedOffer: '3',
+            arrivalDate: new Date().toISOString(),
+            numberOfPeople: '1',
+            orderId: orderId,
+          }),
+        });
+
+        if (adminEmailResponse.ok) {
+          console.log(`Admin notification sent to: ${adminEmail}`);
+        } else {
+          console.error('Failed to send admin email:', await adminEmailResponse.text());
+        }
+
+      } catch (emailError) {
+        console.error('Error sending confirmation emails:', emailError);
+        // Don't fail the callback if email fails
+      }
       
       return new NextResponse('ACTION=POSTAUTH', { status: 200 });
     } else {
