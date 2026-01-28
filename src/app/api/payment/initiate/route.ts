@@ -11,9 +11,9 @@ const CMI_CONFIG = {
 
 // Offer prices in MAD - Update with actual prices
 const OFFER_PRICES: Record<string, number> = {
-  '3': 5000,
-  '5': 7500,
-  '7': 10000,
+  '3': 4560,
+  '5': 9200,
+  '7': 11250,
 };
 
 interface PaymentRequest {
