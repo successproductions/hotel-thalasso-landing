@@ -18,20 +18,20 @@ const getClientEmailTemplate = (data: ReservationData) => `
 <head>
   <style>
     body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #111; margin: 0; padding: 0; background-color: #f5f5f5; }
-    .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #ddd; }
-    .header { background: #000; color: white; padding: 40px 20px; text-align: center; }
-    .header h1 { margin: 0; font-size: 24px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
-    .header p { margin: 10px 0 0; opacity: 0.8; font-size: 14px; font-weight: 300; letter-spacing: 1px; }
+    .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .header { background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%); color: white; padding: 40px 20px; text-align: center; }
+    .header h1 { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+    .header p { margin: 10px 0 0; opacity: 0.9; font-size: 16px; font-weight: 400; }
     .content { padding: 40px; }
-    .info-section { margin: 30px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 20px 0; }
-    .info-section h3 { margin: 0 0 20px; color: #111; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
-    .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+    .info-section { margin: 30px 0; background: #f9fafb; padding: 25px; border-radius: 12px; border: 1px solid #e5e7eb; }
+    .info-section h3 { margin: 0 0 20px; color: #0f766e; font-size: 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #e5e7eb; }
     .info-row:last-child { border-bottom: none; }
-    .info-label { color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; min-width: 150px; padding-right: 15px; }
-    .info-value { color: #000; font-weight: 500; font-size: 14px; text-align: right; margin-left: auto; }
-    .button { display: inline-block; background: #000; color: #fff !important; text-decoration: none; padding: 16px 32px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; border: 1px solid #000; }
-    .button:hover { background: #333; }
-    .footer { background: #f5f5f5; padding: 30px; text-align: center; border-top: 1px solid #ddd; color: #888; font-size: 12px; font-weight: 300; }
+    .info-label { color: #666; font-size: 14px; font-weight: 500; min-width: 150px; padding-right: 15px; }
+    .info-value { color: #111; font-weight: 600; font-size: 14px; text-align: right; margin-left: auto; }
+    .button { display: inline-block; background: #0f766e; color: #fff !important; text-decoration: none; padding: 16px 32px; font-size: 14px; font-weight: 600; border-radius: 8px; transition: all 0.3s; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 4px rgba(15, 118, 110, 0.2); }
+    .button:hover { background: #0d9488; transform: translateY(-1px); box-shadow: 0 4px 6px rgba(15, 118, 110, 0.3); }
+    .footer { background: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 12px; }
   </style>
 </head>
 <body>
@@ -76,9 +76,9 @@ const getClientEmailTemplate = (data: ReservationData) => `
     </div>
     
     <div class="footer">
-      <p style="margin: 5px 0;">Dakhla Club - DC Thermes</p>
+      <p style="margin: 5px 0; font-weight: 600; color: #111;">Dakhla Club - DC Thermes</p>
       <p style="margin: 5px 0;">POINT DE DRAGON PK 28, Dakhla 73000, Maroc</p>
-      <p style="margin-top: 20px; opacity: 0.6;">© 2026 Dakhla Club</p>
+      <p style="margin-top: 20px; opacity: 0.8;">© 2026 Dakhla Club</p>
     </div>
   </div>
 </body>
@@ -91,27 +91,27 @@ const getAdminEmailTemplate = (data: ReservationData) => `
 <head>
   <style>
     body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #111; margin: 0; padding: 0; background-color: #f5f5f5; }
-    .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #ddd; }
-    .header { background: #000; color: white; padding: 30px; text-align: center; }
-    .header h1 { margin: 0; font-size: 20px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
+    .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .header { background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%); color: white; padding: 30px; text-align: center; }
+    .header h1 { margin: 0; font-size: 20px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
     .content { padding: 40px; }
-    .alert-box { border: 1px solid #000; padding: 20px; margin-bottom: 30px; text-align: center; background: #fff; }
-    .info-section { margin: 30px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 20px 0; }
-    .info-section h3 { margin: 0 0 20px; color: #111; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
-    .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+    .alert-box { border: 1px solid #fcd34d; background: #fffbeb; color: #92400e; padding: 15px; margin-bottom: 30px; text-align: center; border-radius: 8px; }
+    .info-section { margin: 30px 0; background: #f9fafb; padding: 25px; border-radius: 12px; border: 1px solid #e5e7eb; }
+    .info-section h3 { margin: 0 0 20px; color: #0f766e; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #e5e7eb; }
     .info-row:last-child { border-bottom: none; }
-    .info-label { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; min-width: 150px; padding-right: 15px; }
-    .info-value { color: #000; font-weight: 500; font-size: 14px; text-align: right; margin-left: auto; }
-    .button { display: inline-block; background: #fff; color: #000 !important; text-decoration: none; padding: 14px 28px; border: 1px solid #000; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0; }
-    .button:hover { background: #000; color: #fff !important; }
-    .footer { background: #f5f5f5; padding: 20px; text-align: center; border-top: 1px solid #ddd; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+    .info-label { color: #666; font-size: 13px; font-weight: 500; min-width: 150px; padding-right: 15px; }
+    .info-value { color: #111; font-weight: 600; font-size: 14px; text-align: right; margin-left: auto; }
+    .button { display: inline-block; background: #fff; color: #0f766e !important; text-decoration: none; padding: 14px 28px; border: 1px solid #0f766e; font-size: 13px; font-weight: 600; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0; transition: all 0.3s; }
+    .button:hover { background: #0f766e; color: #fff !important; }
+    .footer { background: #f9fafb; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 11px; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <h1>Nouvelle Réservation</h1>
-      <p style="margin: 5px 0 0; font-size: 12px; opacity: 0.7;">Évasion Holistique 3 Jours</p>
+      <p style="margin: 5px 0 0; font-size: 13px; opacity: 0.9;">Évasion Holistique 3 Jours</p>
     </div>
     
     <div class="content">
@@ -128,11 +128,11 @@ const getAdminEmailTemplate = (data: ReservationData) => `
         </div>
         <div class="info-row">
           <span class="info-label">Email</span>
-          <span class="info-value"><a href="mailto:${data.email}" style="color: #000; text-decoration: none;">${data.email}</a></span>
+          <span class="info-value"><a href="mailto:${data.email}" style="color: #111; text-decoration: none;">${data.email}</a></span>
         </div>
         <div class="info-row">
           <span class="info-label">Téléphone</span>
-          <span class="info-value"><a href="tel:${data.phone.replace(/\s/g, '')}" style="color: #000; text-decoration: none;">${data.phone}</a></span>
+          <span class="info-value"><a href="tel:${data.phone.replace(/\s/g, '')}" style="color: #111; text-decoration: none;">${data.phone}</a></span>
         </div>
       </div>
 
