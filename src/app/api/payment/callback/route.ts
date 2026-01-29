@@ -50,8 +50,8 @@ const getPaymentConfirmationEmail = (customerName: string, orderId: string, pack
     .info-section h3 { margin: 0 0 20px; color: #111; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
     .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
     .info-row:last-child { border-bottom: none; }
-    .info-label { color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .info-value { color: #000; font-weight: 500; font-size: 14px; }
+    .info-label { color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; min-width: 150px; padding-right: 15px; }
+    .info-value { color: #000; font-weight: 500; font-size: 14px; text-align: right; margin-left: auto; }
     .highlight { color: #000; font-weight: 600; }
     .hotel-box { background: #f9f9f9; border: 1px solid #ddd; padding: 30px; margin: 30px 0; text-align: center; }
     .hotel-box h3 { margin: 0 0 10px; color: #000; font-size: 18px; font-weight: 300; text-transform: uppercase; letter-spacing: 1px; }
@@ -197,7 +197,7 @@ export async function POST(request: NextRequest) {
             await transporter.sendMail({
               from: `"Dakhla Club - DC Thermes" <${process.env.EMAIL_USER}>`,
               to: customerEmail,
-              subject: `✅ Paiement confirmé - Commande ${orderId}`,
+              subject: `✅ Confirmation Réservation - ${packType}`,
               html: getPaymentConfirmationEmail(customerName, orderId, packType, amount),
             });
             console.log(`Confirmation email sent to: ${customerEmail}`);
@@ -224,8 +224,8 @@ export async function POST(request: NextRequest) {
     .info-section h2 { margin: 0 0 20px; color: #111; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
     .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
     .info-row:last-child { border-bottom: none; }
-    .info-label { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .info-value { color: #000; font-weight: 500; font-size: 14px; }
+    .info-label { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; min-width: 150px; padding-right: 15px; }
+    .info-value { color: #000; font-weight: 500; font-size: 14px; text-align: right; margin-left: auto; }
     .button { display: inline-block; background: #fff; color: #000 !important; text-decoration: none; padding: 14px 28px; border: 1px solid #000; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0; }
     .button:hover { background: #000; color: #fff !important; }
     .footer { background: #f5f5f5; padding: 20px; text-align: center; border-top: 1px solid #ddd; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }

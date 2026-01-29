@@ -27,8 +27,8 @@ const getClientEmailTemplate = (data: ReservationData) => `
     .info-section h3 { margin: 0 0 20px; color: #111; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
     .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
     .info-row:last-child { border-bottom: none; }
-    .info-label { color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .info-value { color: #000; font-weight: 500; font-size: 14px; }
+    .info-label { color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; min-width: 150px; padding-right: 15px; }
+    .info-value { color: #000; font-weight: 500; font-size: 14px; text-align: right; margin-left: auto; }
     .button { display: inline-block; background: #000; color: #fff !important; text-decoration: none; padding: 16px 32px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; border: 1px solid #000; }
     .button:hover { background: #333; }
     .footer { background: #f5f5f5; padding: 30px; text-align: center; border-top: 1px solid #ddd; color: #888; font-size: 12px; font-weight: 300; }
@@ -100,8 +100,8 @@ const getAdminEmailTemplate = (data: ReservationData) => `
     .info-section h3 { margin: 0 0 20px; color: #111; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
     .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
     .info-row:last-child { border-bottom: none; }
-    .info-label { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .info-value { color: #000; font-weight: 500; font-size: 14px; }
+    .info-label { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; min-width: 150px; padding-right: 15px; }
+    .info-value { color: #000; font-weight: 500; font-size: 14px; text-align: right; margin-left: auto; }
     .button { display: inline-block; background: #fff; color: #000 !important; text-decoration: none; padding: 14px 28px; border: 1px solid #000; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0; }
     .button:hover { background: #000; color: #fff !important; }
     .footer { background: #f5f5f5; padding: 20px; text-align: center; border-top: 1px solid #ddd; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }

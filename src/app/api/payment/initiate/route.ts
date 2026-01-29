@@ -108,8 +108,10 @@ export async function POST(request: NextRequest) {
     const orderId = generateOrderId(selectedOffer);
     const rnd = generateRnd();
 
-    // Get base URL for callbacks - Force production URL to avoid localhost issues
-    const baseUrl = 'https://offer.dakhlaclub.com';
+    // Get base URL for callbacks - Support localhost for internal testing, force production for others
+    const origin = request.nextUrl.origin;
+    const isLocal = origin.includes('localhost') || origin.includes('127.0.0.1');
+    const baseUrl = isLocal ? origin : 'https://offer.dakhlaclub.com';
 
     // Build payment parameters - exact names from CMI documentation
     const params: Record<string, string> = {
