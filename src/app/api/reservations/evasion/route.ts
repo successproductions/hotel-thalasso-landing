@@ -48,32 +48,9 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Send confirmation email
-    try {
-      const emailResponse = await fetch(`${request.nextUrl.origin}/api/email/send-confirmation`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          to: data.email,
-          fullName: data.fullName,
-          selectedOffer: data.selectedOffer,
-          arrivalDate: data.arrivalDate,
-          numberOfPeople: data.numberOfPeople,
-          orderId: data.orderId,
-        }),
-      });
 
-      if (!emailResponse.ok) {
-        console.error('Email API error:', await emailResponse.text());
-      } else {
-        console.log('Confirmation email sent successfully');
-      }
-    } catch (emailError) {
-      console.error('Email sending error:', emailError);
-      // Continue even if email fails
-    }
+    // Email confirmation will be sent after successful payment via callback
+    // No email sent here to avoid duplicate emails
 
     return NextResponse.json({
       success: true,

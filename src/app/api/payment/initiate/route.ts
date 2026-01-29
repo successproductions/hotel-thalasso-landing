@@ -26,10 +26,10 @@ interface PaymentRequest {
 }
 
 // Generate unique order ID
-function generateOrderId(): string {
+function generateOrderId(offerType: string): string {
   const timestamp = Date.now().toString(36);
   const randomPart = Math.random().toString(36).substring(2, 8);
-  return `EVA${timestamp}${randomPart}`.toUpperCase();
+  return `EVA${offerType}-${timestamp}${randomPart}`.toUpperCase();
 }
 
 // Generate random string for rnd parameter
@@ -86,16 +86,26 @@ export async function POST(request: NextRequest) {
     const { fullName, email, phone, selectedOffer, arrivalDate, numberOfPeople } = body;
 
     // Get price for selected offer
-    const amount = OFFER_PRICES[selectedOffer];
-    if (!amount) {
+    const basePrice = OFFER_PRICES[selectedOffer];
+    if (!basePrice) {
       return NextResponse.json(
         { error: 'Invalid offer selected' },
         { status: 400 }
       );
     }
 
+    // Calculate total amount based on number of people
+    const count = parseInt(numberOfPeople, 10);
+    if (isNaN(count) || count < 1) {
+      return NextResponse.json(
+        { error: 'Invalid number of people' },
+        { status: 400 }
+      );
+    }
+    const amount = basePrice * count;
+
     // Generate unique order ID and random string
-    const orderId = generateOrderId();
+    const orderId = generateOrderId(selectedOffer);
     const rnd = generateRnd();
 
     // Get base URL for callbacks - Force production URL to avoid localhost issues

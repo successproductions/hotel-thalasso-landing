@@ -1,37 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import crypto from 'crypto';
 import nodemailer from 'nodemailer';
 
-// CMI Configuration
-const CMI_CONFIG = {
-  storeKey: process.env.CMI_STORE_KEY || 'TEST1234',
-};
-
-// Generate hash for verification
-function generateHash(params: Record<string, string>, storeKey: string): string {
-  const sortedKeys = Object.keys(params).sort((a, b) => 
-    a.toLowerCase().localeCompare(b.toLowerCase())
-  );
-
-  let hashString = '';
-  for (const key of sortedKeys) {
-    const lowerKey = key.toLowerCase();
-    if (lowerKey !== 'hash' && lowerKey !== 'encoding') {
-      const value = params[key] || '';
-      const escapedValue = value.replace(/\\/g, '\\\\').replace(/\|/g, '\\|');
-      hashString += escapedValue + '|';
-    }
-  }
-
-  const escapedStoreKey = storeKey.replace(/\\/g, '\\\\').replace(/\|/g, '\\|');
-  hashString += escapedStoreKey;
-
-  const hash = crypto.createHash('sha512').update(hashString).digest('hex');
-  const packedHash = Buffer.from(hash, 'hex').toString('base64');
-
-  return packedHash;
-}
-
+// Import the same email template from callback
 // Email template for payment confirmation
 const getPaymentConfirmationEmail = (customerName: string, orderId: string, packType: string, amount: string) => `
 <!DOCTYPE html>
@@ -125,91 +95,72 @@ const getPaymentConfirmationEmail = (customerName: string, orderId: string, pack
 
 export async function POST(request: NextRequest) {
   try {
-    // Parse form data from CMI
-    const formData = await request.formData();
-    const params: Record<string, string> = {};
-    
-    formData.forEach((value, key) => {
-      params[key] = value.toString();
+    const data = await request.json();
+    const { customerEmail, customerName, orderId, amount } = data;
+
+    console.log('Testing email sending with:', { customerEmail, customerName, orderId, amount });
+
+    // Setup nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
     });
 
-    // Get the hash sent by CMI
-    const receivedHash = params['HASH'] || params['hash'];
-    
-    // Generate our own hash for verification
-    const calculatedHash = generateHash(params, CMI_CONFIG.storeKey);
+    const results = {
+      clientEmail: { success: false, error: null as string | null },
+      adminEmail: { success: false, error: null as string | null },
+    };
 
-    // Verify hash
-    if (receivedHash !== calculatedHash) {
-      console.error('Hash verification failed');
-      return new NextResponse('FAILURE', { status: 200 });
+    // Determine pack type based on amount (used for both emails)
+    // Determine pack type from Order ID (Format: EVA{type}-...)
+    let packType = 'Programme Évasion';
+    if (orderId && orderId.startsWith('EVA')) {
+        const match = orderId.match(/^EVA(\d+)-/);
+        if (match && match[1]) {
+            const type = match[1];
+            if (type === '3') packType = 'Évasion 3 Nuits';
+            else if (type === '5') packType = 'Évasion 5 Nuits';
+            else if (type === '7') packType = 'Évasion 7 Nuits';
+        }
     }
 
-    // Check payment result
-    const procReturnCode = params['ProcReturnCode'];
-    const orderId = params['oid'];
-    const amount = params['amount'];
+    const amountFloat = parseFloat(amount);
+    if (packType === 'Programme Évasion') {
+        if (amountFloat === 4560) {
+            packType = 'Évasion 3 Nuits';
+        } else if (amountFloat === 9200) {
+            packType = 'Évasion 5 Nuits';
+        } else if (amountFloat === 11250) {
+            packType = 'Évasion 7 Nuits';
+        }
+    }
 
-    console.log(`Payment callback received - Order: ${orderId}, Amount: ${amount}, Result: ${procReturnCode}`);
-
-    if (procReturnCode === '00') {
-      // Payment successful - Auto capture
-      console.log(`Payment successful for order: ${orderId}`);
-      
-      // Send confirmation emails using nodemailer
+    // Send email to customer
+    if (customerEmail) {
       try {
-        // Extract customer info from callback params
-        const customerEmail = params['email'];
-        const customerName = params['BillToName'] || 'Client';
-        
-        // Determine pack type based on amount (used for both emails)
-        // Determine pack type from Order ID (Format: EVA{type}-...)
-        let packType = 'Programme Évasion';
-        if (orderId && orderId.startsWith('EVA')) {
-           // We expect EVA3-, EVA5-, or EVA7-
-           // Extract the number between EVA and -
-           const match = orderId.match(/^EVA(\d+)-/);
-           if (match && match[1]) {
-             const type = match[1];
-             if (type === '3') packType = 'Évasion 3 Nuits';
-             else if (type === '5') packType = 'Évasion 5 Nuits';
-             else if (type === '7') packType = 'Évasion 7 Nuits';
-           }
-        }
-        
-        // Fallback or keep amountFloat for logging if needed
-        // const amountFloat = parseFloat(amount);
-        
-        // Setup nodemailer transporter (same as offer3)
-        const transporter = nodemailer.createTransport({
-          host: 'smtp.gmail.com',
-          port: 587,
-          secure: false,
-          auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
-          },
+        await transporter.sendMail({
+          from: `"Dakhla Club - DC Thermes" <${process.env.EMAIL_USER}>`,
+          to: customerEmail,
+          subject: `✅ Paiement confirmé - Commande ${orderId}`,
+          html: getPaymentConfirmationEmail(customerName, orderId, packType, amount),
         });
+        console.log(`✅ Confirmation email sent to: ${customerEmail}`);
+        results.clientEmail.success = true;
+      } catch (emailError: unknown) {
+        console.error('❌ Failed to send customer email:', emailError);
+        results.clientEmail.error = (emailError as Error).message;
+      }
+    }
 
-        // Send email to customer
-        if (customerEmail) {
-          try {
-            await transporter.sendMail({
-              from: `"Dakhla Club - DC Thermes" <${process.env.EMAIL_USER}>`,
-              to: customerEmail,
-              subject: `✅ Paiement confirmé - Commande ${orderId}`,
-              html: getPaymentConfirmationEmail(customerName, orderId, packType, amount),
-            });
-            console.log(`Confirmation email sent to: ${customerEmail}`);
-          } catch (emailError) {
-            console.error('Failed to send customer email:', emailError);
-          }
-        }
+    // Send notification to admin
+    const adminEmail = 'w.master@successproductions.ma';
 
-        // Send notification to admin with enhanced template
-        const adminEmail = 'w.master@successproductions.ma';
-
-        const adminEmailHtml = `
+    const adminEmailHtml = `
 <!DOCTYPE html>
 <html>
 <head>
@@ -289,39 +240,44 @@ export async function POST(request: NextRequest) {
   </div>
 </body>
 </html>
-        `;
+    `;
 
-        try {
-          await transporter.sendMail({
-            from: `"Dakhla Club Payments" <${process.env.EMAIL_USER}>`,
-            to: adminEmail,
-            subject: `💰 Nouveau paiement reçu - ${orderId} - ${amount} MAD`,
-            html: adminEmailHtml,
-          });
-          console.log(`Admin notification sent to: ${adminEmail}`);
-        } catch (emailError) {
-          console.error('Failed to send admin email:', emailError);
-        }
-
-      } catch (emailError) {
-        console.error('Error sending confirmation emails:', emailError);
-        // Don't fail the callback if email fails
-      }
-      
-      return new NextResponse('ACTION=POSTAUTH', { status: 200 });
-    } else {
-      // Payment failed
-      console.log(`Payment failed for order: ${orderId} with code: ${procReturnCode}`);
-      return new NextResponse('APPROVED', { status: 200 });
+    try {
+      await transporter.sendMail({
+        from: `"Dakhla Club Payments" <${process.env.EMAIL_USER}>`,
+        to: adminEmail,
+        subject: `💰 Nouveau paiement reçu - ${orderId} - ${amount} MAD`,
+        html: adminEmailHtml,
+      });
+      console.log(`✅ Admin notification sent to: ${adminEmail}`);
+      results.adminEmail.success = true;
+    } catch (emailError: unknown) {
+      console.error('❌ Failed to send admin email:', emailError);
+      results.adminEmail.error = (emailError as Error).message;
     }
 
-  } catch (error) {
-    console.error('Callback processing error:', error);
-    return new NextResponse('FAILURE', { status: 200 });
-  }
-}
+    return NextResponse.json({
+      success: true,
+      message: 'Email test completed',
+      results,
+      config: {
+        emailUser: process.env.EMAIL_USER,
+        hasEmailPass: !!process.env.EMAIL_PASS,
+      },
+    });
 
-// Handle GET requests (not expected, but handle gracefully)
-export async function GET() {
-  return new NextResponse('Method not allowed', { status: 405 });
+  } catch (error: unknown) {
+    console.error('Email test error:', error);
+    return NextResponse.json(
+      { 
+        success: false, 
+        error: (error as Error).message,
+        config: {
+          emailUser: process.env.EMAIL_USER,
+          hasEmailPass: !!process.env.EMAIL_PASS,
+        },
+      },
+      { status: 500 }
+    );
+  }
 }

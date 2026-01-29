@@ -17,63 +17,68 @@ const getClientEmailTemplate = (data: ReservationData) => `
 <html>
 <head>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background: linear-gradient(135deg, #139584 0%, #0d9488 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
-    .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
-    .info-box { background: white; padding: 20px; margin: 20px 0; border-left: 4px solid #139584; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .info-row { margin: 10px 0; padding: 8px 0; }
-    .label { font-weight: bold; color: #139584; }
-    .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #139584; color: #666; }
-    .button { display: inline-block; padding: 12px 30px; background: #139584; color: white; text-decoration: none; border-radius: 5px; margin: 20px 0; }
-    h1 { margin: 0; font-size: 28px; }
-    h2 { color: #139584; margin-top: 0; }
-    h3 { color: #139584; margin-top: 0; font-size: 18px; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #111; margin: 0; padding: 0; background-color: #f5f5f5; }
+    .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #ddd; }
+    .header { background: #000; color: white; padding: 40px 20px; text-align: center; }
+    .header h1 { margin: 0; font-size: 24px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
+    .header p { margin: 10px 0 0; opacity: 0.8; font-size: 14px; font-weight: 300; letter-spacing: 1px; }
+    .content { padding: 40px; }
+    .info-section { margin: 30px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 20px 0; }
+    .info-section h3 { margin: 0 0 20px; color: #111; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
+    .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { color: #666; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .info-value { color: #000; font-weight: 500; font-size: 14px; }
+    .button { display: inline-block; background: #000; color: #fff !important; text-decoration: none; padding: 16px 32px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; border: 1px solid #000; }
+    .button:hover { background: #333; }
+    .footer { background: #f5f5f5; padding: 30px; text-align: center; border-top: 1px solid #ddd; color: #888; font-size: 12px; font-weight: 300; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🌴 Dakhla Club - DC Thermes</h1>
-      <p style="margin: 10px 0 0 0; font-size: 16px;">Évasion Holistique 3 Jours</p>
+      <h1>Dakhla Club - DC Thermes</h1>
+      <p>Évasion Holistique 3 Jours</p>
     </div>
     <div class="content">
-      <h2>Bonjour ${data.fullName},</h2>
+      <p>Bonjour ${data.fullName},</p>
       <p>Nous avons bien reçu votre demande de réservation pour notre programme <strong>Évasion Holistique 3 Jours</strong>.</p>
 
-      <div class="info-box">
-        <h3>📋 Récapitulatif de votre demande</h3>
+      <div class="info-section">
+        <h3>Récapitulatif de votre demande</h3>
         <div class="info-row">
-          <span class="label">Nom complet:</span> ${data.fullName}
+          <span class="info-label">Nom complet</span>
+          <span class="info-value">${data.fullName}</span>
         </div>
         <div class="info-row">
-          <span class="label">Email:</span> ${data.email}
+          <span class="info-label">Email</span>
+          <span class="info-value">${data.email}</span>
         </div>
         <div class="info-row">
-          <span class="label">Téléphone:</span> ${data.phone}
+          <span class="info-label">Téléphone</span>
+          <span class="info-value">${data.phone}</span>
         </div>
         <div class="info-row">
-          <span class="label">Nombre de personnes:</span> ${data.numberOfPeople}
+          <span class="info-label">Personnes</span>
+          <span class="info-value">${data.numberOfPeople}</span>
         </div>
         <div class="info-row">
-          <span class="label">Date d'arrivée souhaitée:</span> ${data.arrivalDate}
+          <span class="info-label">Date d'arrivée</span>
+          <span class="info-value">${data.arrivalDate}</span>
         </div>
       </div>
 
       <p>Notre équipe vous contactera dans les plus brefs délais pour confirmer votre réservation et finaliser les détails de votre séjour.</p>
 
-      <div style="text-align: center;">
+      <div style="text-align: center; margin-top: 40px;">
         <a href="https://offer.dakhlaclub.com" class="button">Découvrir nos offres</a>
       </div>
-
-      <div class="footer">
-        <p style="margin: 5px 0;"><strong>Dakhla Club - DC Thermes</strong></p>
-        <p style="margin: 5px 0;">📍 POINT DE DRAGON PK 28, Dakhla 73000, Maroc</p>
-        <p style="margin: 5px 0;">📞 +212 652 88 19 21 | ✉️ reservation@dakhlaclub.com</p>
-        <p style="margin-top: 15px; font-size: 12px; color: #999;">
-          Ce message vous a été envoyé car vous avez effectué une demande de réservation sur notre site.
-        </p>
-      </div>
+    </div>
+    
+    <div class="footer">
+      <p style="margin: 5px 0;">Dakhla Club - DC Thermes</p>
+      <p style="margin: 5px 0;">POINT DE DRAGON PK 28, Dakhla 73000, Maroc</p>
+      <p style="margin-top: 20px; opacity: 0.6;">© 2026 Dakhla Club</p>
     </div>
   </div>
 </body>
@@ -85,63 +90,75 @@ const getAdminEmailTemplate = (data: ReservationData) => `
 <html>
 <head>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background: #1e293b; color: white; padding: 20px; text-align: center; border-radius: 10px 10px 0 0; }
-    .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
-    .info-box { background: white; padding: 20px; margin: 20px 0; border-left: 4px solid #ef4444; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .info-row { margin: 10px 0; padding: 8px; background: #f8f8f8; border-radius: 3px; }
-    .label { font-weight: bold; color: #1e293b; display: inline-block; width: 180px; }
-    .urgent { background: #fee2e2; border: 2px solid #ef4444; padding: 15px; border-radius: 5px; margin: 20px 0; }
-    .action-box { margin-top: 20px; padding: 15px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 5px; }
-    h1 { margin: 0; font-size: 24px; }
-    h3 { color: #1e293b; margin-top: 0; font-size: 18px; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #111; margin: 0; padding: 0; background-color: #f5f5f5; }
+    .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #ddd; }
+    .header { background: #000; color: white; padding: 30px; text-align: center; }
+    .header h1 { margin: 0; font-size: 20px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
+    .content { padding: 40px; }
+    .alert-box { border: 1px solid #000; padding: 20px; margin-bottom: 30px; text-align: center; background: #fff; }
+    .info-section { margin: 30px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 20px 0; }
+    .info-section h3 { margin: 0 0 20px; color: #111; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
+    .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .info-value { color: #000; font-weight: 500; font-size: 14px; }
+    .button { display: inline-block; background: #fff; color: #000 !important; text-decoration: none; padding: 14px 28px; border: 1px solid #000; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0; }
+    .button:hover { background: #000; color: #fff !important; }
+    .footer { background: #f5f5f5; padding: 20px; text-align: center; border-top: 1px solid #ddd; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>🔔 NOUVELLE RÉSERVATION</h1>
-      <p style="margin: 10px 0 0 0;">Évasion Holistique 3 Jours</p>
+      <h1>Nouvelle Réservation</h1>
+      <p style="margin: 5px 0 0; font-size: 12px; opacity: 0.7;">Évasion Holistique 3 Jours</p>
     </div>
+    
     <div class="content">
-      <div class="urgent">
-        <strong>⚠️ Action requise:</strong> Un client attend une confirmation de réservation.
+      <div class="alert-box">
+        <strong>ACTION REQUISE</strong><br>
+        Un client attend une confirmation de réservation.
       </div>
 
-      <div class="info-box">
-        <h3>📋 Détails de la réservation</h3>
+      <div class="info-section">
+        <h3>Détails du client</h3>
         <div class="info-row">
-          <span class="label">📅 Date de demande:</span>
-          ${new Date(data.timestamp).toLocaleString('fr-FR', { dateStyle: 'full', timeStyle: 'short' })}
+          <span class="info-label">Nom complet</span>
+          <span class="info-value">${data.fullName}</span>
         </div>
         <div class="info-row">
-          <span class="label">👤 Nom complet:</span> ${data.fullName}
+          <span class="info-label">Email</span>
+          <span class="info-value"><a href="mailto:${data.email}" style="color: #000; text-decoration: none;">${data.email}</a></span>
         </div>
         <div class="info-row">
-          <span class="label">✉️ Email:</span> <a href="mailto:${data.email}">${data.email}</a>
-        </div>
-        <div class="info-row">
-          <span class="label">📞 Téléphone:</span> <a href="tel:${data.phone.replace(/\s/g, '')}">${data.phone}</a>
-        </div>
-        <div class="info-row">
-          <span class="label">👥 Nombre de personnes:</span> ${data.numberOfPeople}
-        </div>
-        <div class="info-row">
-          <span class="label">📆 Date d'arrivée:</span> ${new Date(data.arrivalDate).toLocaleDateString('fr-FR', { dateStyle: 'long' })}
+          <span class="info-label">Téléphone</span>
+          <span class="info-value"><a href="tel:${data.phone.replace(/\s/g, '')}" style="color: #000; text-decoration: none;">${data.phone}</a></span>
         </div>
       </div>
 
-      <div class="action-box">
-        <strong>💡 Action suivante:</strong> Contactez le client dans les 24h pour confirmer la disponibilité et finaliser la réservation.
+      <div class="info-section">
+        <h3>Détails de la réservation</h3>
+        <div class="info-row">
+          <span class="info-label">Date (demande)</span>
+          <span class="info-value">${new Date(data.timestamp).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Personnes</span>
+          <span class="info-value">${data.numberOfPeople}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Date d'arrivée</span>
+          <span class="info-value">${new Date(data.arrivalDate).toLocaleDateString('fr-FR', { dateStyle: 'short' })}</span>
+        </div>
       </div>
 
-      <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #139584;">
-        <p style="color: #666; font-size: 12px; margin: 5px 0;">
-          Ce message a été généré automatiquement par le système de réservation en ligne.<br>
-          Dakhla Club - DC Thermes
-        </p>
+      <div style="text-align: center; margin: 40px 0;">
+        <span style="display: block; font-size: 12px; color: #666; mb: 10px;">Vérifiez les détails dans Google Sheets</span>
       </div>
+    </div>
+
+    <div class="footer">
+      <p>Dakhla Club - DC Thermes</p>
     </div>
   </div>
 </body>
