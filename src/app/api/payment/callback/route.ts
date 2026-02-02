@@ -133,6 +133,42 @@ export async function POST(request: NextRequest) {
       params[key] = value.toString();
     });
 
+    // ============================================
+    // LOG ALL CMI PARAMETERS FOR TEST DOCUMENTATION
+    // ============================================
+    console.log('\n========== CMI CALLBACK - TEST DATA ==========');
+    console.log('📅 Timestamp:', new Date().toISOString());
+    console.log('\n--- TRANSACTION IDS ---');
+    console.log('TransId (Request):', params['TransId'] || params['transId'] || 'N/A');
+    console.log('Order ID (oid):', params['oid'] || 'N/A');
+    console.log('AuthCode:', params['AuthCode'] || 'N/A');
+    console.log('HostRefNum:', params['HostRefNum'] || 'N/A');
+    
+    console.log('\n--- STATUS CODES ---');
+    console.log('ProcReturnCode:', params['ProcReturnCode'] || 'N/A');
+    console.log('Response:', params['Response'] || 'N/A');
+    console.log('ErrMsg:', params['ErrMsg'] || 'N/A');
+    console.log('mdStatus:', params['mdStatus'] || 'N/A');
+    
+    console.log('\n--- PAYMENT DETAILS ---');
+    console.log('Amount:', params['amount'] || 'N/A');
+    console.log('Currency:', params['currency'] || 'N/A');
+    console.log('Card Brand:', params['EXTRA_CARDBRAND'] || params['EXTRA.CARDBRAND'] || 'N/A');
+    console.log('Card Issuer:', params['EXTRA_CARDISSUER'] || params['EXTRA.CARDISSUER'] || 'N/A');
+    
+    console.log('\n--- SECURITY ---');
+    console.log('HASH (received):', params['HASH'] || params['hash'] || 'N/A');
+    console.log('HASHPARAMS:', params['HASHPARAMS'] || 'N/A');
+    console.log('Hash Algorithm:', params['HASHPARAMS']?.includes('SHA512') ? 'SHA512' : 'SHA1');
+    
+    console.log('\n--- ALL PARAMETERS ---');
+    Object.keys(params).sort().forEach(key => {
+      if (!['HASH', 'hash'].includes(key)) { // Don't log full hash twice
+        console.log(`${key}:`, params[key]);
+      }
+    });
+    console.log('==============================================\n');
+
     // Get the hash sent by CMI
     const receivedHash = params['HASH'] || params['hash'];
     

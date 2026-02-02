@@ -19,7 +19,7 @@ export default async function NotFound() {
 
           <div className="space-y-4">
             <Link
-              href="/fr/evasion-holistique-3-jours"
+              href="/fr/evasion"
               className="inline-block w-full rounded-lg bg-teal-600 px-6 py-3 font-medium text-white transition-colors hover:bg-teal-700"
             >
               Retour à l accueil

@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
 export default function Page() {
-  redirect('/fr/evasion-holistique-3-jours');
+  redirect('/fr/evasion');
   return null;
 }

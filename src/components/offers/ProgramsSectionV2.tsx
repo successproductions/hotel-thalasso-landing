@@ -34,6 +34,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji2.jpg',
           programTitle: 'PROGRAMME THALASSO VITALITÉ:',
           programDays: 'Programme 3 jours',
+          price: 'Prix du programme : 5400 MAD 540 €',
           intro: [
             'Ce programme est fait pour vous si vous vous sentez fatigué(e), physiquement et mentalement, même après le repos, si votre sommeil manque de profondeur ou de régularité, si votre système nerveux est constamment sollicité, ou si vous ressentez le besoin réel de ralentir et de récupérer, sans pression ni contrainte',
           ],
@@ -60,6 +61,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji12.jpg',
           programTitle: 'PROGRAMME THALASSO RÉGÉNÉRATION:',
           programDays: 'Programme 5 jours',
+          price: 'Prix du programme : 8400 MAD 840 €',
           intro: [
             'Une approche thalasso structurée et cohérente : Thérapeutes certifiés et attentifs, environnement naturel qui favorise le lâcher-prise, synergie entre soins marins modernes et rituels essentiels, enchaînement conçu selon une logique physiologique et émotionnelle',
             'Pourquoi ce format de 5 jours ? Parce que le corps a besoin de temps. Assez pour ralentir. Assez pour relâcher. Assez pour laisser les bénéfices s\'installer au-delà du séjour',
@@ -90,6 +92,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji7.jpg',
           programTitle: 'PROGRAMME REVITALISATION COMPLÈTE:',
           programDays: 'Programme 7 jours',
+          price: 'Prix du programme : 11400 MAD 1140 €',
           intro: [
             'Ce programme s\'adresse à celles et ceux qui ne veulent plus "tenir", mais retrouver un fonctionnement optimal, à l\'intérieur comme à l\'extérieur',
             'Sur 6 jours, le corps entre dans un cycle complet de détoxification, de relance métabolique et de récupération profonde. Les soins agissent en synergie pour alléger la charge physique, clarifier les fonctions internes et restaurer une énergie vitale stable',
@@ -121,6 +124,7 @@ export function ProgramsSectionV2() {
       forYouIfTitle: 'THIS PROGRAM IS FOR YOU IF:',
       benefitsTitle: 'BENEFITS:',
       detailsTitle: 'PROGRAM DETAILS:',
+      price: 'Price of the program : 5400 MAD 540 €',
       offers: [
         {
           id: 'offer3',
@@ -160,6 +164,7 @@ export function ProgramsSectionV2() {
           image: '/images/THERMALE.png',
           programTitle: 'DISCOVERY & RENAISSANCE PROGRAM:',
           programDays: '5-Day Program',
+          price: 'Price of the program : 8400 MAD 840 €',
           intro: [
             'Ready to embark on a transformative journey of self-discovery? Our Discovery program is designed for those who want to explore the full spectrum of wellness experiences.',
             'This comprehensive program introduces you to various therapeutic modalities, from traditional thalassotherapy to modern wellness techniques.',
@@ -190,6 +195,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji7.jpg',
           programTitle: 'COMPLETE REVITALIZATION PROGRAM:',
           programDays: '7-Day Program',
+          price: 'Price of the program : 11400 MAD 1140 €',
           intro: [
             'Do you feel exhausted, drained of your energy? The Revitalization program is specially designed to restore your vital energy and bring you back to your optimal state.',
             'This intensive but caring program combines powerful regenerative treatments with restorative practices.',
@@ -470,9 +476,13 @@ export function ProgramsSectionV2() {
 
                     {/* DÉTAILS DU PROGRAMME */}
                     <div>
-                      <h4 className="mb-8 text-lg font-normal tracking-wide text-black">
+                      <h4 className=" text-lg font-normal tracking-wide text-black mb-2">
                         {currentContent.detailsTitle}
                       </h4>
+
+                      <p className="text-[16px] md:text-lg leading-relaxed text-gray-700 mb-8">
+                        {offer.price}
+                      </p>
 
                       {/* Table Container */}
                       <div className="border border-gray-200">

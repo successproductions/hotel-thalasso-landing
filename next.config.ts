@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/',
-        destination: '/fr/evasion-holistique-3-jours',
+        destination: '/fr/evasion',
         permanent: true,
       },
       {
