@@ -93,7 +93,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
       cta: {
         pay: (amount: string) => `Confirmer la réservation - ${amount} MAD`
       },
-      accommodationDisclaimer: "* Ce pack n'inclut pas l'hébergement"
+      accommodationDisclaimer: "Ce pack n'inclut pas l'hébergement"
     },
     en: {
       offers: {
@@ -345,7 +345,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                 ))}
               </ul>
               <p className="mt-2 text-xs italic text-gray-500">
-                {tLocal.accommodationDisclaimer}
+                <span className="text-red-500">*</span> {tLocal.accommodationDisclaimer}
               </p>
 
               <div className="mt-4 pt-4 border-t border-gray-200">
@@ -468,7 +468,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                         ))}
                       </ul>
                       <p className="mt-2 text-xs italic text-gray-500">
-                        {tLocal.accommodationDisclaimer}
+                        <span className="text-red-500">*</span> {tLocal.accommodationDisclaimer}
                       </p>
                       <p className="mt-4 pt-4 border-t border-gray-200 text-sm text-gray-500">
                         Dakhla Club - Wellness & Thalasso
