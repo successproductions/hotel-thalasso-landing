@@ -148,15 +148,15 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   const offerStaticData: Record<string, { image: string; price: number }> = {
     '3': {
       image: '/images/THERMALE.png',
-      price: 5000,
+      price: 5450,
     },
     '5': {
       image: '/images/5.jpg',
-      price: 7500,
+      price: 10350,
     },
     '7': {
       image: '/images/centrethalassoDakhla.jpg',
-      price: 10000,
+      price: 11700,
     },
   };
 

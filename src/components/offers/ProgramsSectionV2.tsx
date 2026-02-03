@@ -34,7 +34,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji2.jpg',
           programTitle: 'PROGRAMME THALASSO VITALITÉ:',
           programDays: 'Programme 3 jours',
-          price: 'Prix du programme : 5400 <b>MAD</b> / 540 <b>€</b>',
+          price: 'Prix du programme : 5450 <b>MAD</b> / 545 <b>€</b>',
           intro: [
             'Ce programme est fait pour vous si vous vous sentez fatigué(e), physiquement et mentalement, même après le repos, si votre sommeil manque de profondeur ou de régularité, si votre système nerveux est constamment sollicité, ou si vous ressentez le besoin réel de ralentir et de récupérer, sans pression ni contrainte',
           ],
@@ -61,7 +61,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji12.jpg',
           programTitle: 'PROGRAMME THALASSO RÉGÉNÉRATION:',
           programDays: 'Programme 5 jours',
-          price: 'Prix du programme : 8400 <b>MAD</b> / 840 <b>€</b>',
+          price: 'Prix du programme : 10350 <b>MAD</b> / 1035 <b>€</b>',
           intro: [
             'Une approche thalasso structurée et cohérente : Thérapeutes certifiés et attentifs, environnement naturel qui favorise le lâcher-prise, synergie entre soins marins modernes et rituels essentiels, enchaînement conçu selon une logique physiologique et émotionnelle',
             'Pourquoi ce format de 5 jours ? Parce que le corps a besoin de temps. Assez pour ralentir. Assez pour relâcher. Assez pour laisser les bénéfices s\'installer au-delà du séjour',
@@ -92,7 +92,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji7.jpg',
           programTitle: 'PROGRAMME REVITALISATION COMPLÈTE:',
           programDays: 'Programme 7 jours',
-          price: 'Prix du programme : 11400 <b>MAD</b> / 1140 <b>€</b>',
+          price: 'Prix du programme : 11700 <b>MAD</b> / 1170 <b>€</b>',
           intro: [
             'Ce programme s\'adresse à celles et ceux qui ne veulent plus "tenir", mais retrouver un fonctionnement optimal, à l\'intérieur comme à l\'extérieur',
             'Sur 6 jours, le corps entre dans un cycle complet de détoxification, de relance métabolique et de récupération profonde. Les soins agissent en synergie pour alléger la charge physique, clarifier les fonctions internes et restaurer une énergie vitale stable',
@@ -133,7 +133,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji2.jpg',
           programTitle: 'RELAXATION & WELLNESS PROGRAM:',
           programDays: '3-Day Program',
-          price: 'Price of the program : 5400 <b>MAD</b> / 540 <b>€</b>',
+          price: 'Price of the program : 5450 <b>MAD</b> / 545 <b>€</b>',
           intro: [
             'Is your daily life marked by a hectic pace, a flood of responsibilities and challenges, leaving little room for relaxation? This intense lifestyle negatively impacts your mental and physical health, your performance and your overall well-being',
             'We have designed a program especially for you: the Relaxation and Wellness Program. You can disconnect, release pressure and find deep serenity through proven holistic therapies and personalized treatments',
@@ -164,7 +164,7 @@ export function ProgramsSectionV2() {
           image: '/images/THERMALE.png',
           programTitle: 'DISCOVERY & RENAISSANCE PROGRAM:',
           programDays: '5-Day Program',
-          price: 'Price of the program : 8400 <b>MAD</b> / 840 <b>€</b>',
+          price: 'Price of the program : 10350 <b>MAD</b> / 1035 <b>€</b>',
           intro: [
             'Ready to embark on a transformative journey of self-discovery? Our Discovery program is designed for those who want to explore the full spectrum of wellness experiences.',
             'This comprehensive program introduces you to various therapeutic modalities, from traditional thalassotherapy to modern wellness techniques.',
@@ -195,7 +195,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji7.jpg',
           programTitle: 'COMPLETE REVITALIZATION PROGRAM:',
           programDays: '7-Day Program',
-          price: 'Price of the program : 11400 <b>MAD</b> / 1140 <b>€</b>',
+          price: 'Price of the program : 11700 <b>MAD</b> / 1170 <b>€</b>',
           intro: [
             'Do you feel exhausted, drained of your energy? The Revitalization program is specially designed to restore your vital energy and bring you back to your optimal state.',
             'This intensive but caring program combines powerful regenerative treatments with restorative practices.',
