@@ -235,6 +235,7 @@ export function ProgramsSectionV2() {
     'Modelage affusion': 'Massage sous affusion d\'eau thermale pour une relaxation optimale et une détente sensorielle complète.',
     'Douche à jet': 'Massage par pression d\'eau pour stimuler la circulation, drainer les toxines et tonifier les tissus.',
     'Bain magnésium': 'Bain enrichi en magnésium marin pour une relaxation musculaire profonde et un apaisement du système nerveux.',
+    'Bain magnesium': 'Bain enrichi en magnésium marin pour une relaxation musculaire profonde et un apaisement du système nerveux.',
     'cupping therapie': 'Thérapie par ventouses pour détoxifier, relancer la circulation et relâcher les tensions profondes.',
     'hammam secret du desert': 'Rituel de hammam traditionnel du désert avec vapeur, gommage et relaxation dans une ambiance orientale.',
     'Massage relaxant': 'Massage complet du corps aux huiles essentielles pour une relaxation profonde et un lâcher-prise total.',
@@ -250,41 +251,188 @@ export function ProgramsSectionV2() {
     'marche meditative marine': 'Marche méditative au bord de l\'océan pour se reconnecter à la nature, apaiser l\'esprit et ancrer le corps.',
     
     // Himalayan salt treatments
+    'Scrub detox sel Himalaya': 'Gommage détoxifiant au sel rose de l\'Himalaya pour exfolier, purifier et reminéraliser la peau en profondeur.',
     'scrub detox sel hymalaly': 'Gommage détoxifiant au sel rose de l\'Himalaya pour exfolier, purifier et reminéraliser la peau en profondeur.',
+    'Massage detox sel Himalaya': 'Massage aux cristaux de sel de l\'Himalaya pour drainer les toxines, stimuler la circulation et revitaliser le corps.',
     'massage detox sel himalaya': 'Massage aux cristaux de sel de l\'Himalaya pour drainer les toxines, stimuler la circulation et revitaliser le corps.',
     
     // Massage treatments
     'Massage Traditionnel Relaxant': 'Massage complet aux techniques ancestrales pour un relâchement musculaire profond et un rééquilibrage énergétique.',
+    'Massage traditionnel relaxant': 'Massage complet aux techniques ancestrales pour un relâchement musculaire profond et un rééquilibrage énergétique.',
+    'Massage pochons': 'Massage ayurvédique aux pochons d\'herbes chaudes pour soulager les douleurs musculaires, réduire l\'inflammation et revitaliser le corps.',
     
     // Facial & beauty treatments
     'Soin lissant detoxifiant spiruline': 'Soin visage détoxifiant à la spiruline pour purifier, oxygéner et illuminer la peau.',
+    'Soin lissant spiruline': 'Soin visage détoxifiant à la spiruline pour purifier, oxygéner et illuminer la peau.',
     
     // Cupping therapies
     'Cupping therapie serviette de feu': 'Technique avancée de cupping combinée à des serviettes chaudes pour une détoxification intense et un relâchement profond.',
+    'Cupping + serviette de feu': 'Technique avancée de cupping combinée à des serviettes chaudes pour une détoxification intense et un relâchement profond.',
+    'cupping therapie serviette de feu': 'Technique avancée de cupping combinée à des serviettes chaudes pour une détoxification intense et un relâchement profond.',
     'cupping thérapie classique et serviette de feu': 'Combinaison de cupping traditionnel et de serviettes chaudes pour une détoxification maximale et un relâchement complet.',
     
     // Hammam experiences
     'Hamam mille et une nuit': 'Expérience hammam orientale complète avec vapeur, gommage au savon noir et relaxation dans une ambiance des mille et une nuits.',
+    'Hammam mille et une nuit': 'Expérience hammam orientale complète avec vapeur, gommage au savon noir et relaxation dans une ambiance des mille et une nuits.',
     
     // Baths
     'Bain algue': 'Bain thermal enrichi aux algues marines pour une reminéralisation profonde et une revitalisation cellulaire.',
     'ice bath': 'Immersion en eau froide pour stimuler la circulation, renforcer le système immunitaire et favoriser la récupération musculaire.',
+    'Ice bath': 'Immersion en eau froide pour stimuler la circulation, renforcer le système immunitaire et favoriser la récupération musculaire.',
+    
+    'Massage Tonique aux huiles essentielles': 'Massage dynamisant et tonifiant pour réveiller le corps, stimuler la circulation et relancer l\'énergie vitale.',
+    'Massage visage huile d\'argan': 'Soin du visage relaxant et rajeunissant pour détendre les traits, stimuler la circulation et illuminer le teint.',
+    'Stretching': 'Séance d\'étirements guidés pour assouplir les muscles, améliorer la mobilité et prévenir les tensions.',
   };
 
-  // Function to get services with their session counts from translations
+  // Hardcoded service data to match screenshots exactly
+  const programsData: Record<string, { services: ServiceItem[], availability: Record<string, number> }> = {
+    'servicesTable': { // 3 days
+      services: [
+        { title: "Bol d'air Jacquier" },
+        { title: "Piscine thermale" },
+        { title: "Hammam mille et une nuit" },
+        { title: "Massage relaxant" },
+        { title: "Sauna" },
+        { title: "Bain hydromassant" },
+        { title: "Enveloppement algue" },
+        { title: "Modelage douche affusion" },
+        { title: "Douche à jet" },
+        { title: "Bain magnésium" },
+        { title: "Cupping therapie serviette de feu" }
+      ],
+      availability: {
+        "Bol d'air Jacquier": 2,
+        "Piscine thermale": 3,
+        "Hammam mille et une nuit": 1,
+        "Massage relaxant": 1,
+        "Sauna": 1,
+        "Bain hydromassant": 1,
+        "Enveloppement algue": 1,
+        "Modelage douche affusion": 1,
+        "Douche à jet": 1,
+        "Bain magnésium": 1,
+        "Cupping therapie serviette de feu": 1
+      }
+    },
+    'offer5.servicesTable5': { // 5 days
+      services: [
+        { title: "Yoga" },
+        { title: "Bol d'air Jacquier" },
+        { title: "Douche à jet" },
+        { title: "Sauna" },
+        { title: "Piscine thermale" },
+        { title: "Hammam mille et une nuit" },
+        { title: "Massage relaxant" },
+        { title: "Bain hydromassant" },
+        { title: "Enveloppement algue" },
+        { title: "Modelage affusion" },
+        { title: "Ice bath" },
+        { title: "Bain magnésium" },
+        { title: "Massage Tonique aux huiles essentielles" },
+        { title: "Scrub detox sel Himalaya" },
+        { title: "Massage detox sel Himalaya" },
+        { title: "Soin lissant detoxifiant spiruline" },
+        { title: "Cupping + serviette de feu" }
+      ],
+      availability: {
+        "Yoga": 4,
+        "Bol d'air Jacquier": 4,
+        "Douche à jet": 2,
+        "Sauna": 4,
+        "Piscine thermale": 3,
+        "Hammam mille et une nuit": 1,
+        "Massage relaxant": 1,
+        "Bain hydromassant": 1,
+        "Enveloppement algue": 1,
+        "Modelage affusion": 1,
+        "Ice bath": 1,
+        "Bain magnésium": 1,
+        "Massage Tonique aux huiles essentielles": 1,
+        "Scrub detox sel Himalaya": 1,
+        "Massage detox sel Himalaya": 1,
+        "Soin lissant detoxifiant spiruline": 1,
+        "Cupping + serviette de feu": 1
+      }
+    },
+    'offer7.servicesTable7': { // 7 days
+      services: [
+        { title: "Sport coaching class" },
+        { title: "Douche à jet" },
+        { title: "Piscine thermale" },
+        { title: "Hammam mille et une nuit" },
+        { title: "Yoga" },
+        { title: "Bol d'air Jacquier" },
+        { title: "Bain hydromassant" },
+        { title: "Enveloppement algue" },
+        { title: "Modelage affusion" },
+        { title: "Sauna" },
+        { title: "Massage traditionnel relaxant" },
+        { title: "Scrub detox sel Himalaya" },
+        { title: "Massage detox sel Himalaya" },
+        { title: "Sport coaching class" },
+        { title: "Massage pochons" },
+        { title: "Marche méditative marine" },
+        { title: "Yoga stretching" },
+        { title: "Ice bath" },
+        { title: "Massage visage huile d'argan" },
+        { title: "Bain magnésium" },
+        { title: "Stretching" },
+        { title: "Cupping + serviette de feu" },
+        { title: "Soin lissant spiruline" }
+      ],
+      availability: {
+        "Sport coaching class": 2,
+        "Douche à jet": 2,
+        "Piscine thermale": 4,
+        "Hammam mille et une nuit": 1,
+        "Yoga": 3,
+        "Bol d'air Jacquier": 3,
+        "Bain hydromassant": 1,
+        "Enveloppement algue": 1,
+        "Modelage affusion": 1,
+        "Sauna": 3,
+        "Massage traditionnel relaxant": 1,
+        "Scrub detox sel Himalaya": 1,
+        "Massage detox sel Himalaya": 1,
+
+        "Massage pochons": 1,
+        "Marche méditative marine": 1,
+        "Yoga stretching": 1,
+        "Ice bath": 1,
+        "Massage visage huile d'argan": 1,
+        "Bain magnésium": 1,
+        "Stretching": 1,
+        "Cupping + serviette de feu": 1,
+        "Soin lissant spiruline": 1
+      }
+    }
+  };
+
+  // Function to get services with their session counts from local data
   const getServicesForOffer = (translationKey: string) => {
     try {
-      const services = t.raw(`${translationKey}.services`) as ServiceItem[];
-      const availability = t.raw(`${translationKey}.availability`) as Record<string, number[]>;
+      // Use local program data first, fallback to translation file if not found (or return empty)
+      const program = programsData[translationKey];
+      
+      if (!program) {
+         // Fallback to original method behavior if needed, or just return empty
+         // For now, sticking to the requirement to use the new data
+         return [];
+      }
+
+      const services = program.services;
+      const availability = program.availability;
 
       if (!services || !availability) return [];
 
       return services.map((service) => {
         const sessions = availability[service.title];
-        const totalSessions = sessions ? sessions.reduce((sum: number, val: number) => sum + val, 0) : 0;
+        const totalSessions = sessions || 0;
+        
         return {
           name: service.title,
-          description: serviceDescriptions[service.title] || '',
+          description: serviceDescriptions[service.title] || serviceDescriptions[service.title.toLowerCase()] || '',
           sessions: totalSessions,
         };
       }).filter(s => s.sessions > 0);
