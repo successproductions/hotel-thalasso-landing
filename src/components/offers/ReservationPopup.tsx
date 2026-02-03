@@ -57,36 +57,30 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
           title: 'THALASSO VITALITÉ 3 JOURS',
           subtitle: 'Escapade Bien-être',
           includes: [
-            '3 nuits en chambre vue mer',
-            '4 soins thalasso',
-            'Pension complète',
-            'Accès spa & piscine',
-            'Cours de yoga quotidien',
+            '14 soins thalasso',
+            '423 minutes de soins ',
+            '8 soins softs et 6 hards',
+            'Accès spa et piscine',
           ]
         },
         '5': {
           title: 'THALASSO RÉGÉNÉRATION 5 JOURS',
           subtitle: 'Retraite Revitalisante',
           includes: [
-            '5 nuits en chambre vue mer',
-            '6 soins thalasso',
-            'Pension complète',
-            'Accès spa & piscine',
-            'Cours de yoga quotidien',
-            'Excursion en bateau',
+            '29 soins thalasso',
+            '954 minutes de soins',
+            '17 soins softs et 12 hards',
+            'Accès spa et piscine',
           ]
         },
         '7': {
           title: 'THALASSO RENAISSANCE 7 JOURS',
           subtitle: 'Cure Holistique',
           includes: [
-            '7 nuits en chambre vue mer',
-            '10 soins thalasso',
-            'Pension complète',
-            'Accès spa & piscine',
-            'Cours de yoga quotidien',
-            'Excursion en bateau',
-            'Massage signature offert',
+            '33 soins thalasso ',
+            '1270 minutes de soins ',
+            '16 soins softs et 17 hards ',
+            'Accès spa et piscine',
           ]
         }
       },
@@ -101,36 +95,30 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
           title: 'THALASSO VITALITY 3 DAYS',
           subtitle: 'Wellness Getaway',
           includes: [
-            '3 nights in sea view room',
-            '4 thalasso treatments',
-            'Full board',
-            'Spa & pool access',
-            'Daily yoga class',
+            '14 thalasso treatments',
+            '423 minutes of treatments',
+            '8 soft treatments and 6 hard treatments',
+            'Spa and pool access',
           ]
         },
         '5': {
           title: 'THALASSO REGENERATION 5 DAYS',
           subtitle: 'Revitalizing Retreat',
           includes: [
-            '5 nights in sea view room',
-            '6 thalasso treatments',
-            'Full board',
-            'Spa & pool access',
-            'Daily yoga class',
-            'Boat excursion',
+            '29 thalasso treatments',
+            '954 minutes of treatments',
+            '17 soft treatments and 12 hard treatments',
+            'Spa and pool access',
           ]
         },
         '7': {
           title: 'THALASSO RENAISSANCE 7 DAYS',
           subtitle: 'Holistic Cure',
           includes: [
-            '7 nights in sea view room',
-            '10 thalasso treatments',
-            'Full board',
-            'Spa & pool access',
-            'Daily yoga class',
-            'Boat excursion',
-            'Signature massage included',
+            '33 thalasso treatments',
+            '1270 minutes of treatments',
+            '16 soft treatments and 17 hard treatments',
+            'Spa and pool access',
           ]
         }
       },
