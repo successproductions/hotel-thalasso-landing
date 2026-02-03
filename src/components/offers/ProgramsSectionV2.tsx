@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+
 import ReservationPopup from '@/components/offers/ReservationPopup';
 
 interface ServiceItem {
@@ -11,7 +11,7 @@ interface ServiceItem {
 }
 
 export function ProgramsSectionV2() {
-  const t = useTranslations();
+
   const locale = typeof window !== 'undefined' ? window.location.pathname.split('/')[1] : 'fr';
   const [expandedOffer, setExpandedOffer] = useState<string | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
