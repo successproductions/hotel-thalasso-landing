@@ -16,7 +16,7 @@ export function ProgramsSectionV2() {
   const [expandedOffer, setExpandedOffer] = useState<string | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  // Content for both languages
+ 
   const content = {
     fr: {
       sectionTitle: 'Nos Programmes Thalasso',
