@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Info } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
+import Swal from 'sweetalert2';
 
 interface ReservationPopupProps {
   isOpen: boolean;
@@ -47,6 +48,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showMobileInfo, setShowMobileInfo] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
 
   // Internal translation data for ReservationPopup specific content
   // adhering to user request to keep changes within this component
@@ -190,6 +192,28 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (isSubmitting) return;
+
+    // Validate all fields before submission
+    const nameError = validateNoSpecialChars(formData.fullName);
+
+    if (nameError) {
+      setValidationErrors({ fullName: nameError });
+      await Swal.fire({
+        icon: 'error',
+        title: locale === 'fr' ? 'Erreur de validation' : 'Validation Error',
+        text: locale === 'fr' 
+          ? 'Veuillez corriger les erreurs avant de continuer.'
+          : 'Please correct the errors before continuing.',
+        confirmButtonColor: '#d6bb8e',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
+
+    console.log('Form submitted with data:', formData);
+
     setIsSubmitting(true);
 
     try {
@@ -260,12 +284,55 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
     } catch (error) {
       console.error('Submission error:', error);
       setIsSubmitting(false);
-      // Optionally show error to user
-      alert('Une erreur est survenue. Veuillez réessayer.');
+      // Show error to user with SweetAlert2
+      await Swal.fire({
+        icon: 'error',
+        title: locale === 'fr' ? 'Erreur' : 'Error',
+        text: locale === 'fr' 
+          ? 'Une erreur est survenue. Veuillez réessayer.'
+          : 'An error occurred. Please try again.',
+        confirmButtonColor: '#d6bb8e',
+        confirmButtonText: 'OK'
+      });
     }
   };
 
+  // Validation function to check for valid name format
+  const validateNoSpecialChars = (value: string): string | null => {
+    // Name should only contain letters (including accents), spaces, hyphens, and periods
+    // This regex allows:
+    // - Letters from any language (including accents: é, è, à, ñ, etc.)
+    // - Spaces
+    // - Hyphens (-)
+    // - Periods (.)
+    const validNamePattern = /^[a-zA-ZÀ-ÿ\s\-\.]+$/;
+    
+    if (!validNamePattern.test(value)) {
+      const errorMessage = locale === 'fr' 
+        ? `Seuls les lettres, espaces, tirets et points sont autorisés`
+        : `Only letters, spaces, hyphens and periods allowed`;
+      return errorMessage;
+    }
+    
+    return null;
+  };
+
   const handleInputChange = (field: keyof FormData, value: string) => {
+    // Validate fields that should not contain special characters
+    if (field === 'fullName') {
+      const error = validateNoSpecialChars(value);
+      
+      setValidationErrors((prev) => {
+        const newErrors = { ...prev };
+        if (error) {
+          newErrors[field] = error;
+        } else {
+          delete newErrors[field];
+        }
+        return newErrors;
+      });
+    }
+
     setFormData((prev) => ({
       ...prev,
       [field]: value,
@@ -477,9 +544,14 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                   required
                   value={formData.fullName}
                   onChange={(e) => handleInputChange('fullName', e.target.value)}
-                  className="w-full rounded-md border border-gray-300 px-4 py-2.5 focus:border-[#d6bb8e] focus:outline-none focus:ring-2 focus:ring-[#d6bb8e]/30"
+                  className={`w-full rounded-md border ${validationErrors.fullName ? 'border-red-500' : 'border-gray-300'} px-4 py-2.5 focus:border-[#d6bb8e] focus:outline-none focus:ring-2 focus:ring-[#d6bb8e]/30`}
                   placeholder={t('fields.name.placeholder')}
                 />
+                {validationErrors.fullName && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {validationErrors.fullName}
+                  </p>
+                )}
               </div>
 
               {/* Email */}
