@@ -16,18 +16,14 @@ export async function POST(request: NextRequest) {
 
     console.log(`Payment failed redirect - Order: ${orderId}, Code: ${errorCode}, Message: ${errorMessage}`);
 
-    const locale = 'fr';
-    
-    // Redirect to payment error page
-    return NextResponse.redirect(
-      new URL(`/${locale}/evasion/payment-error?order=${orderId}&code=${errorCode}`, request.nextUrl.origin)
-    );
+    // Construct safe redirect URL
+    const targetUrl = `/${locale}/evasion/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
+    return NextResponse.redirect(new URL(targetUrl, request.url));
 
   } catch (error) {
     console.error('Fail redirect error:', error);
-    return NextResponse.redirect(
-      new URL('/fr/evasion/payment-error', request.nextUrl.origin)
-    );
+    // Fallback safe redirect
+    return NextResponse.redirect(new URL('/fr/evasion/payment-error', request.url));
   }
 }
 
@@ -38,7 +34,6 @@ export async function GET(request: NextRequest) {
   const errorCode = searchParams.get('ProcReturnCode') || 'unknown';
   const locale = 'fr';
 
-  return NextResponse.redirect(
-    new URL(`/${locale}/evasion/payment-error?order=${orderId}&code=${errorCode}`, request.nextUrl.origin)
-  );
+  const targetUrl = `/${locale}/evasion/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
+  return NextResponse.redirect(new URL(targetUrl, request.url));
 }
