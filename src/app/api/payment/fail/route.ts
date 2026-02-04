@@ -18,14 +18,21 @@ export async function POST(request: NextRequest) {
 
     const locale = 'fr';
     
+    // Get the proper base URL from the request
+    const host = request.headers.get('host') || 'localhost:3000';
+    const protocol = host.includes('localhost') ? 'http' : 'https';
+    const baseUrl = `${protocol}://${host}`;
+    
     // Construct safe redirect URL
-    const targetUrl = `/${locale}/evasion/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
-    return NextResponse.redirect(new URL(targetUrl, request.url));
+    const targetUrl = `${baseUrl}/${locale}/evasion/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
+    return NextResponse.redirect(targetUrl);
 
   } catch (error) {
     console.error('Fail redirect error:', error);
     // Fallback safe redirect
-    return NextResponse.redirect(new URL('/fr/evasion/payment-error', request.url));
+    const host = request.headers.get('host') || 'localhost:3000';
+    const protocol = host.includes('localhost') ? 'http' : 'https';
+    return NextResponse.redirect(`${protocol}://${host}/fr/evasion/payment-error`);
   }
 }
 
@@ -36,6 +43,11 @@ export async function GET(request: NextRequest) {
   const errorCode = searchParams.get('ProcReturnCode') || 'unknown';
   const locale = 'fr';
 
-  const targetUrl = `/${locale}/evasion/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
-  return NextResponse.redirect(new URL(targetUrl, request.url));
+  // Get the proper base URL from the request
+  const host = request.headers.get('host') || 'localhost:3000';
+  const protocol = host.includes('localhost') ? 'http' : 'https';
+  const baseUrl = `${protocol}://${host}`;
+
+  const targetUrl = `${baseUrl}/${locale}/evasion/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
+  return NextResponse.redirect(targetUrl);
 }
