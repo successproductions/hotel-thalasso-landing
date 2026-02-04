@@ -16,6 +16,8 @@ export async function POST(request: NextRequest) {
 
     console.log(`Payment failed redirect - Order: ${orderId}, Code: ${errorCode}, Message: ${errorMessage}`);
 
+    const locale = 'fr';
+    
     // Construct safe redirect URL
     const targetUrl = `/${locale}/evasion/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
     return NextResponse.redirect(new URL(targetUrl, request.url));
