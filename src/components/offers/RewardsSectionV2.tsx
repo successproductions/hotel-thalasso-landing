@@ -11,7 +11,7 @@ const logos = [
 export function RewardsSectionV2() {
     const t = useTranslations('rewards');
   return (
-    <section id="rewards" className="bg-[#faf9f5] py-1 md:py-12">
+    <section id="rewards" className="bg-[#faf9f5] py-1 md:py-9">
       <div className="mx-auto max-w-7xl px-0 md:px-4">
         {/* Title - centered on desktop, shown at top */}
         <h2 className="pb-4 pl-4 md:px-4 md:text-center text-[23px] font-normal uppercase md:text-4xl text-gray-800 md:pb-8">{t('title2')}</h2>

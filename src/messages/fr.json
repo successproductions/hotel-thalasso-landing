@@ -33,7 +33,7 @@
       "invalidDurationText": "Votre séjour doit être exactement de 4 jours. Veuillez ajuster vos dates",
       "confirmButton": "OK"
     },
-    "ctaText": "Découvrir les séjours thalasso"
+    "ctaText": "Réserver ma cure thalasso maintenant"
   },
   "hero": {
     "tagline": "Évasion Holistique",
@@ -319,7 +319,7 @@
   "rewards": {
     "title": "NOUS AVONS ÉTÉ PRIMÉS PAR",
     "title2": "Un établissement reconnu pour la qualité de son expérience",
-    "description": "Ces distinctions reflètent la qualité de l’accueil, des soins et l’expérience globale vécue par nos curistes",
+    "description": "Ces distinctions récompensent non seulement la qualité des soins, mais surtout la transformation vécue par nos curistes : moins de fatigue, plus de calme, un vrai reset physique et mental.",
     "logos": {
       "tripadvisor": {
         "alt": "TripAdvisor"
