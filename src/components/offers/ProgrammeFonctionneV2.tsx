@@ -29,7 +29,7 @@ export function ProgrammeFonctionneV2() {
             {te('title2').toUpperCase()}
           </h2>
           <ul className="list-disc space-y-3 pl-5 font-extralight text-[16px] text-gray-700 md:text-lg">
-            {[0, 1, 2, 3, 4, 5,6,7].map((i) => {
+            {[0, 1, 2, 3, 4, 5].map((i) => {
               const point = t(`${i}`);
               return <li key={i}>{point}</li>;
             })}
