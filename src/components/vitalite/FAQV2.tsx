@@ -103,6 +103,9 @@ export default function FAQSectionV2() {
                       src="/images/spa/_DSC2314.JPG"
                       alt={contact.alt}
                       fill
+                      quality={85}
+                      sizes="(max-width: 768px) 100vw, 450px"
+                      loading="lazy"
                       className="contrast-110 object-cover"
                     />
                   </div>

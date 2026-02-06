@@ -15,6 +15,9 @@ export function AboutV2Reverse() {
             src="/images/offer-3/dji20.JPG"
             alt="Illustration scientifique"
             fill
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading="lazy"
             className="object-cover"
           />
         </div>

@@ -16,6 +16,9 @@ export function ProgrammeFonctionneV2() {
             src="/images/spa/IMG_9895.JPG"
             alt="Pourquoi ce programme fonctionne"
             fill
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading="lazy"
             className="object-cover"
           />
         </div>

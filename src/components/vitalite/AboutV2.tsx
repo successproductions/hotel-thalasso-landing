@@ -32,6 +32,9 @@ export function AboutV2() {
             src="/images/offer-3/dji1.jpg"
             alt="Illustration scientifique"
             fill
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            loading="lazy"
             className="object-cover"
           />
         </div>

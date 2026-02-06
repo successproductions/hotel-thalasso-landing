@@ -181,7 +181,10 @@ export function ProgramsSection() {
                   src={program.image}
                   alt={program.title}
                   width={800}
-                  height={400}
+                  height={500}
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  loading="lazy"
                   className="w-full object-cover shadow-lg md:h-[500px]"
                 />
               </div>
