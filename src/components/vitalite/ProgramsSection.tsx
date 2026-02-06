@@ -182,9 +182,12 @@ export function ProgramsSection() {
                   alt={program.title}
                   width={800}
                   height={500}
-                  quality={85}
+                  quality={75}
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  loading="lazy"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  priority={i === 0}
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2Y1ZjVmNSIvPjwvc3ZnPg=="
                   className="w-full object-cover shadow-lg md:h-[500px]"
                 />
               </div>

@@ -16,9 +16,11 @@ export function ProgrammeFonctionneV2() {
             src="/images/spa/IMG_9895.JPG"
             alt="Pourquoi ce programme fonctionne"
             fill
-            quality={85}
+            quality={75}
             sizes="(max-width: 768px) 100vw, 50vw"
             loading="lazy"
+            placeholder="blur"
+            blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2Y1ZjVmNSIvPjwvc3ZnPg=="
             className="object-cover"
           />
         </div>

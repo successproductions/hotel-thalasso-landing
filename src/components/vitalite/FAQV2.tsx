@@ -103,9 +103,11 @@ export default function FAQSectionV2() {
                       src="/images/spa/_DSC2314.JPG"
                       alt={contact.alt}
                       fill
-                      quality={85}
+                      quality={75}
                       sizes="(max-width: 768px) 100vw, 450px"
                       loading="lazy"
+                      placeholder="blur"
+                      blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUwIiBoZWlnaHQ9IjU4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDUwIiBoZWlnaHQ9IjU4MCIgZmlsbD0iI2Y1ZjVmNSIvPjwvc3ZnPg=="
                       className="contrast-110 object-cover"
                     />
                   </div>
