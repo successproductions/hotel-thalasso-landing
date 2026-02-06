@@ -208,7 +208,7 @@ export function ProgramsSection() {
                 }}
               >
                 <div className="mb-2">
-                  <span className="text-sm font-semibold uppercase tracking-wide text-teal-600">
+                  <span className="text-sm font-semibold uppercase tracking-wide text-gray-800">
                     {program.title}
                   </span>
                 </div>
