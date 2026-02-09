@@ -12,7 +12,6 @@ export async function POST(request: NextRequest) {
 
     const orderId = params['oid'] || '';
     const errorCode = params['ProcReturnCode'] || 'unknown';
-    const _errorMessage = params['ErrMsg'] || ''; // Extracted but not currently used in redirect
 
     const locale = 'fr';
     
