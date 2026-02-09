@@ -14,11 +14,9 @@ export async function POST(request: NextRequest) {
     const errorCode = params['ProcReturnCode'] || 'unknown';
     const errorMessage = params['ErrMsg'] || '';
 
-    console.log(`Payment failed redirect - Order: ${orderId}, Code: ${errorCode}, Message: ${errorMessage}`);
-
     const locale = 'fr';
     
-    // Get the proper base URL from the request
+    // Redirect to evasion error page with error details the proper base URL from the request
     const host = request.headers.get('host') || 'localhost:3000';
     const protocol = host.includes('localhost') ? 'http' : 'https';
     const baseUrl = `${protocol}://${host}`;

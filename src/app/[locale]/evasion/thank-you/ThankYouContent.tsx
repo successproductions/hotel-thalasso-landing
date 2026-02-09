@@ -45,7 +45,6 @@ export default function ThankYouContent({
         });
 
         if (response.ok) {
-          console.log('Reservation processed successfully');
           // Clear sessionStorage after successful processing
           sessionStorage.removeItem('bookingInfo');
         } else {

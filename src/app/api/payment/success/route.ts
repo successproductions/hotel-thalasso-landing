@@ -158,7 +158,7 @@ async function sendEmails(params: Record<string, string>) {
         subject: `✅ Confirmation Réservation - ${packType}`,
         html: getPaymentConfirmationEmail(customerName, orderId, packType, amount),
       });
-      console.log(`✅ [Success Route] Client email sent to: ${customerEmail}`);
+
     } catch (error) {
       console.error('❌ [Success Route] Client email failed:', error);
     }
@@ -255,7 +255,7 @@ async function sendEmails(params: Record<string, string>) {
       subject: `💰 Nouveau paiement reçu - ${orderId} - ${amount} MAD`,
       html: adminEmailHtml,
     });
-    console.log(`✅ [Success Route] Admin email sent to: ${adminEmail}`);
+
   } catch (error) {
     console.error('❌ [Success Route] Admin email failed:', error);
   }
@@ -279,15 +279,13 @@ export async function POST(request: NextRequest) {
 
     if (procReturnCode === '00') {
       // Payment successful
-      console.log(`Payment success redirect for order: ${orderId}`);
 
       // Verify Hash
       const receivedHash = params['HASH'] || params['hash'];
       const calculatedHash = generateHash(params, CMI_CONFIG.storeKey);
 
       if (receivedHash === calculatedHash) {
-          console.log('✅ Hash verified in Success Route. Sending Emails...');
-          // Trigger email sending asynchronously (don't block redirect too long, but ideally wait just a bit)
+          // Hash verified, proceed with emails sending asynchronously (don't block redirect too long, but ideally wait just a bit)
           // Since this is a serverless function, we should verify it completes or just fire and forget if platform allows.
           // For safety, we await it here to ensure it sends. The user can wait 1-2s.
           await sendEmails(params);
@@ -302,7 +300,6 @@ export async function POST(request: NextRequest) {
       );
     } else {
       // Payment failed
-      console.log(`Payment failed redirect for order: ${orderId}`);
       return NextResponse.redirect(
         `https://offer.dakhlaclub.com/${locale}/evasion/payment-error?order=${orderId}`,
         { status: 303 }

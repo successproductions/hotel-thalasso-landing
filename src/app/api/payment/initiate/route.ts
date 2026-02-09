@@ -166,13 +166,6 @@ export async function POST(request: NextRequest) {
       HASH: hash,
     };
 
-    console.log('CMI Payment initiated:', {
-      orderId,
-      amount,
-      clientId: CMI_CONFIG.clientId,
-      gatewayUrl: CMI_CONFIG.gatewayUrl,
-    });
-
     // Return payment data for form submission
     return NextResponse.json({
       success: true,

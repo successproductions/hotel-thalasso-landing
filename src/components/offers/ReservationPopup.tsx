@@ -43,8 +43,6 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
     selectedOffer: '3',
   });
 
-  console.log('ReservationPopup formData:', formData);
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showMobileInfo, setShowMobileInfo] = useState(false);
@@ -211,8 +209,6 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
       });
       return;
     }
-
-    console.log('Form submitted with data:', formData);
 
     setIsSubmitting(true);
 
