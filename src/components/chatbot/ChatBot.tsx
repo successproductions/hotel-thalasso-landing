@@ -107,7 +107,7 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
         case 'program_7':
           const programId = button.action.split('_')[1] as '3' | '5' | '7';
           setSelectedProgram(programId);
-          addBotMessage(getEmailCapturePrompt());
+          addBotMessage(getEmailCapturePrompt(programId));
           break;
         case 'program_details_3':
         case 'program_details_5':
@@ -126,9 +126,16 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
             onOpenReservation(button.data?.programId);
           }
           addBotMessage({ text: '✅ Ouverture du formulaire de réservation...'});
+          
+          // Close chatbot on mobile after opening reservation
+          if (window.innerWidth <= 768) {
+            setTimeout(() => {
+              setIsOpen(false);
+            }, 500);
+          }
           break;
         case 'conseiller':
-          window.location.href = 'tel:+212652881921';
+          window.location.href = 'tel:+212661807293';
           break;
         case 'capture_whatsapp':
           // Open WhatsApp directly with pre-filled message
@@ -136,7 +143,7 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
                              selectedProgram === '5' ? 'Régénération 5 jours' : 
                              'Renaissance 7 jours';
           const message = `Bonjour, je suis intéressé(e) par le programme ${programName}. Pouvez-vous m'envoyer plus d'informations ?`;
-          window.open(`https://wa.me/212652881921?text=${encodeURIComponent(message)}`, '_blank');
+          window.open(`https://wa.me/212661807293?text=${encodeURIComponent(message)}`, '_blank');
           addBotMessage({ text: '✅ Redirection vers WhatsApp...' });
           break;
         case 'qualification_detendre':
@@ -177,11 +184,11 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
     ],
   });
 
-  const getEmailCapturePrompt = (): Omit<Message, 'id' | 'type' | 'timestamp'> => ({
+  const getEmailCapturePrompt = (programId: '3' | '5' | '7'): Omit<Message, 'id' | 'type' | 'timestamp'> => ({
     text: 'Souhaitez-vous que je vous accompagne jusqu\'à la réservation ou vous envoyer les informations détaillées sur nos séjours ?',
     buttons: [
       { id: '1', label: 'Recevoir les infos par WhatsApp', emoji: '📱', action: 'capture_whatsapp' },
-      { id: '2', label: 'Voir les détails maintenant', emoji: '👀', action: `program_details_${selectedProgram}` },
+      { id: '2', label: 'Voir les détails maintenant', emoji: '👀', action: `program_details_${programId}` },
     ],
   });
 
