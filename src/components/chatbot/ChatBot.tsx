@@ -165,7 +165,7 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
 
   // Message templates
   const getWelcomeMessage = (): Omit<Message, 'id' | 'type' | 'timestamp'> => ({
-    text: '👋 Bienvenue au Dakhla Club Hotel & Spa\n🌊 Des séjours thalasso conçus pour relâcher, régénérer et transformer le corps et l\'esprit.\n\n👉 Dites-moi ce que vous souhaitez faire, je vous guide.',
+    text: '👋 Bienvenue au DC Thermes Spa\n🌊 Des séjours thalasso conçus pour relâcher, régénérer et transformer le corps et l\'esprit.\n\n👉 Dites-moi ce que vous souhaitez faire, je vous guide.',
     buttons: [
       { id: '1', label: 'Découvrir les programmes', emoji: '🔹', action: 'programs' },
       { id: '2', label: 'Voir les tarifs', emoji: '🔹', action: 'tarifs' },
@@ -277,7 +277,7 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
           <div className={styles.chatHeader}>
             <div className={styles.headerContent}>
               <MessageCircle size={20} />
-              <span>Assistant Dakhla Club</span>
+              <span>Assistant DC Thermes Spa</span>
             </div>
             <button
               onClick={() => setIsOpen(false)}
