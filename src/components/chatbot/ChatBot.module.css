@@ -78,7 +78,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background: #d3b786;
+  background: linear-gradient(90deg,rgba(191, 176, 172, 1) 0%, rgba(191, 176, 172, 1) 17%, rgba(232, 206, 202, 1) 100%);
   color: white;
   border-radius: 16px 16px 0 0;
 }
@@ -214,7 +214,7 @@
 }
 
 .userMessage .messageText {
-  background: #000000;
+  background: linear-gradient(90deg,rgba(191, 176, 172, 1) 0%, rgba(191, 176, 172, 1) 17%, rgba(232, 206, 202, 1) 100%);
   color: white;
   padding: 15px 18px;
   border-radius: 18px;
@@ -231,7 +231,7 @@
   bottom: -0.1rem;
   right: -0.35rem;
   border-bottom-left-radius: 0.8rem 0.7rem;
-  border-right: 1rem solid #000000;
+  border-right: 1rem solid #E8CECA;
   height: 1rem;
   transform: translate(0, -0.1rem);
 }
