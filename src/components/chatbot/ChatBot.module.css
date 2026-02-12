@@ -78,7 +78,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background: #000000;
+  background: #d3b786;
   color: white;
   border-radius: 16px 16px 0 0;
 }
@@ -180,18 +180,72 @@
 .botMessage .messageText {
   background: rgba(255, 255, 255, 0.25);
   color: #000000;
-  border-radius: 20px 20px 20px 2px;
+  border-radius: 18px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-  /* backdrop-filter: blur(2px); */
   font-weight: 600;
+  position: relative;
+  width: fit-content;
+  max-width: 85%;
+  margin: 0.5rem 0;
+}
+
+/* Bot message tail (left side) */
+.botMessage .messageText::before {
+  content: "";
+  position: absolute;
+  bottom: -0.1rem;
+  left: -0.35rem;
+  border-bottom-right-radius: 0.8rem 0.7rem;
+  border-left: 1rem solid rgba(255, 255, 255, 0.25);
+  height: 1rem;
+  transform: translate(0, -0.1rem);
+}
+
+.botMessage .messageText::after {
+  content: "";
+  position: absolute;
+  bottom: -0.1rem;
+  left: 20px;
+  background-color: #faf9f5;
+  border-bottom-right-radius: 0.5rem;
+  height: 1rem;
+  width: 10px;
+  transform: translate(-30px, -2px);
 }
 
 .userMessage .messageText {
   background: #000000;
   color: white;
-  padding: 14px 18px;
-  border-radius: 18px 18px 1px 18px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 15px 18px;
+  border-radius: 18px;
+  position: relative;
+  width: fit-content;
+  /* max-width: 95%; */
+  margin: 0.5rem 0;
+}
+
+/* User message tail (right side) */
+.userMessage .messageText::before {
+  content: "";
+  position: absolute;
+  bottom: -0.1rem;
+  right: -0.35rem;
+  border-bottom-left-radius: 0.8rem 0.7rem;
+  border-right: 1rem solid #000000;
+  height: 1rem;
+  transform: translate(0, -0.1rem);
+}
+
+.userMessage .messageText::after {
+  content: "";
+  position: absolute;
+  bottom: -0.1rem;
+  right: -40px;
+  background-color: #faf9f5;
+  border-bottom-left-radius: 0.5rem;
+  height: 1rem;
+  width: 10px;
+  transform: translate(-30px, -2px);
 }
 
 /* Button Group */
@@ -226,7 +280,7 @@
 }
 
 .emoji {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* Email/Phone Capture Form */
