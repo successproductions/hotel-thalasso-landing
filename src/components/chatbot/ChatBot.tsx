@@ -28,6 +28,8 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [selectedProgram, setSelectedProgram] = useState<'3' | '5' | '7' | null>(null);
+  const [isTyping, setIsTyping] = useState(false);
+  const [hasNotification, setHasNotification] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [sessionStart, setSessionStart] = useState<Date | null>(null);
 
@@ -40,43 +42,67 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
     scrollToBottom();
   }, [messages]);
 
+  // Start session timer on component mount (page load)
+  useEffect(() => {
+    setSessionStart(new Date());
+  }, []);
+
   // Welcome message on open
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      setSessionStart(new Date());
       setTimeout(() => {
-        addBotMessage(getWelcomeMessage());
+        // If notification was shown, display relance message instead of welcome
+        if (hasNotification) {
+          addBotMessage(getRelanceMessage());
+        } else {
+          addBotMessage(getWelcomeMessage());
+        }
       }, 500);
     }
   }, [isOpen]);
 
-  // Auto-relance after 30 minutes of inactivity
+  // Auto-relance after 1 minute of inactivity (change to 30 for production)
   useEffect(() => {
-    if (!isOpen || !sessionStart) return;
+    if (!sessionStart) return;
+
+    console.log('Timer started. Session start:', sessionStart);
 
     const checkAbandonment = setInterval(() => {
       const now = new Date();
       const timeDiff = now.getTime() - sessionStart.getTime();
       const minutesPassed = timeDiff / 1000 / 60;
 
-      // If 30+ minutes passed and chatbot is still open
-      if (minutesPassed >= 30 && messages.length > 0) {
-        addBotMessage(getRelanceMessage());
+      console.log('Checking abandonment. Minutes passed:', minutesPassed, 'isOpen:', isOpen);
+
+      // If 1+ minutes passed (TESTING - change back to 30 for production)
+      if (minutesPassed >= 1 && !isOpen && !hasNotification) {
+        console.log('Triggering notification badge!');
+        setHasNotification(true);
         clearInterval(checkAbandonment);
       }
-    }, 60000); // Check every minute
+    }, 10000); // Check every 10 seconds for testing
 
-    return () => clearInterval(checkAbandonment);
-  }, [isOpen, sessionStart]);
+    return () => {
+      console.log('Cleaning up timer');
+      clearInterval(checkAbandonment);
+    };
+  }, [sessionStart, isOpen, hasNotification]);
 
   const addBotMessage = (messageData: Omit<Message, 'id' | 'type' | 'timestamp'>) => {
-    const newMessage: Message = {
-      ...messageData,
-      id: Date.now().toString(),
-      type: 'bot',
-      timestamp: new Date(),
-    };
-    setMessages((prev) => [...prev, newMessage]);
+    // Show typing indicator
+    setIsTyping(true);
+    
+    // Simulate typing delay
+    setTimeout(() => {
+      const newMessage: Message = {
+        ...messageData,
+        id: Date.now().toString(),
+        type: 'bot',
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, newMessage]);
+      setIsTyping(false);
+    }, 1000); // 1 second typing delay
   };
 
   const addUserMessage = (text: string) => {
@@ -135,7 +161,8 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
           }
           break;
         case 'conseiller':
-          window.location.href = 'tel:+212661807293';
+          // Open WhatsApp with pre-filled message
+          window.open('https://wa.me/212661807293?text=Bonjour,%20je%20souhaite%20être%20conseillé(e)%20pour%20un%20séjour%20thalasso%20au%20Dakhla%20Club.', '_blank');
           break;
         case 'capture_whatsapp':
           // Open WhatsApp directly with pre-filled message
@@ -145,6 +172,18 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
           const message = `Bonjour, je suis intéressé(e) par le programme ${programName}. Pouvez-vous m'envoyer plus d'informations ?`;
           window.open(`https://wa.me/212661807293?text=${encodeURIComponent(message)}`, '_blank');
           addBotMessage({ text: '✅ Redirection vers WhatsApp...' });
+          break;
+        case 'qualification':
+          addBotMessage(getQualificationMessage());
+          break;
+        case 'objective_detente':
+          addBotMessage(getProgramDetails('3'));
+          break;
+        case 'objective_recuperation':
+          addBotMessage(getProgramDetails('5'));
+          break;
+        case 'objective_transformation':
+          addBotMessage(getProgramDetails('7'));
           break;
         case 'qualification_detendre':
           addBotMessage(getProgramDetails('3'));
@@ -199,21 +238,21 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
         title: 'THALASSO VITALITÉ — 3 jours',
         intro: 'Idéal si vous manquez de temps mais ressentez le besoin de souffler, dénouer les tensions et relancer votre énergie.',
         results: '• Corps détendu\n• Esprit apaisé\n• Sensation de légèreté immédiate',
-        soins: '🧖♀️ 11 soins inclus, dont :\nBol d\'air Jacquier, piscine thermale, hammam, massage relaxant, enveloppement aux algues, bain magnésium, cupping & serviette de feu…',
+        soins: '🧖 14 soins inclus, dont :\nBol d\'air Jacquier, piscine thermale, hammam, massage relaxant, enveloppement aux algues, bain magnésium, cupping & serviette de feu…',
       },
       '5': {
         emoji: '🌊',
         title: 'THALASSO RÉGÉNÉRATION — 5 jours',
         intro: 'Une cure progressive pour défatiguer en profondeur, relancer les fonctions vitales et retrouver un équilibre durable.',
         results: '• Récupération physique complète\n• Stress fortement réduit\n• Énergie plus stable au quotidien',
-        soins: '🧖♀️ 17 soins inclus, dont :\nYoga, ice bath, massages detox, scrub sel Himalaya, spiruline, bain magnésium, cupping & serviette de feu…',
+        soins: '🧖 29 soins inclus, dont :\nMorning Flow, ice bath, massages detox, scrub sel Himalaya, spiruline, bain magnésium, cupping & serviette de feu…',
       },
       '7': {
         emoji: '🔥',
         title: 'THALASSO RENAISSANCE — 7 jours',
         intro: 'Une immersion complète pour remettre les compteurs à zéro.\nIci, on ne fait pas une pause : on se transforme.',
         results: '• Corps régénéré\n• Énergie renouvelée\n• Clarté mentale et ancrage durable',
-        soins: '🧖♀️ 23 soins inclus, dont :\nCoaching sportif, yoga, marche méditative marine, massages ciblés, ice bath, soins visage, spiruline, bains thérapeutiques…',
+        soins: '🧖 33 soins inclus, dont :\nCoaching sportif, Morning Flow, marche méditative marine, massages ciblés, ice bath, soins visage, spiruline, bains thérapeutiques…',
       },
     };
 
@@ -239,7 +278,7 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
   });
 
   const getFAQMessage = (): Omit<Message, 'id' | 'type' | 'timestamp'> => ({
-    text: '**Qu\'est-ce qu\'un séjour thalasso au Dakhla Club ?**\n👉 Une expérience complète combinant eau de mer, soins marins et accompagnement bien-être pour relancer le corps et apaiser l\'esprit.\n\n**Quelle durée choisir ?**\n👉 3 jours pour décompresser, 5 jours pour récupérer en profondeur, 7 jours pour une transformation globale.\n\n**Les soins sont-ils inclus ?**\n👉 Oui, chaque programme inclut un nombre précis de soins adaptés à l\'objectif du séjour.\n\n**Comment réserver ?**\n👉 Choisissez votre programme, réservez en ligne de façon sécurisée et recevez votre confirmation immédiate.',
+    text: '**Qu\'est-ce qu\'un séjour thalasso au Dakhla Club ?**\n👉 Une expérience complète combinant eau de mer, soins marins et accompagnement bien-être pour relancer le corps et apaiser l\'esprit.\n\n**Quelle durée choisir ?**\n👉 3 jours pour décompresser, 5 jours pour récupérer en profondeur, 7 jours pour une transformation globale.\n\n**En combien de temps je peux ressentir les effets du programme ?**\n👉 Certaines client(e)s perçoivent un apaisement dès les premiers jours, notamment grâce au cadre, aux soins et au rythme du séjour. Le programme est conçu pour accompagner progressivement la détente et la récupération tout au long de votre expérience \n\n**Comment réserver ?**\n👉 Choisissez votre programme, réservez en ligne de façon sécurisée et recevez votre confirmation immédiate.',
     buttons: [
       { id: '1', label: 'Réserver mon séjour', emoji: '🗓️', action: 'reserver' },
       { id: '2', label: 'Être conseillé(e)', emoji: '📞', action: 'conseiller' },
@@ -250,9 +289,18 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
   const getRelanceMessage = (): Omit<Message, 'id' | 'type' | 'timestamp'> => ({
     text: '👋 Je me permets de revenir vers vous.\n\nVous avez consulté nos séjours thalasso au Dakhla Club, mais vous n\'avez pas encore finalisé votre réservation.\n\n💡 Si vous hésitez entre plusieurs programmes ou si vous avez une question, je suis là pour vous aider à faire le bon choix, simplement.',
     buttons: [
-      { id: '1', label: 'M\'aider à choisir', emoji: '🤝', action: 'programs' },
+      { id: '1', label: 'M\'aider à choisir', emoji: '🤝', action: 'qualification' },
       { id: '2', label: 'Voir les programmes', emoji: '👀', action: 'programs' },
       { id: '3', label: 'Réserver maintenant', emoji: '🗓️', action: 'reserver' },
+    ],
+  });
+
+  const getQualificationMessage = (): Omit<Message, 'id' | 'type' | 'timestamp'> => ({
+    text: '🎯 Pour vous orienter au mieux, quel est votre objectif principal aujourd\'hui ?',
+    buttons: [
+      { id: '1', label: 'Me détendre et décompresser', emoji: '🌿', action: 'objective_detente' },
+      { id: '2', label: 'Récupérer physiquement et mentalement', emoji: '🌊', action: 'objective_recuperation' },
+      { id: '3', label: 'Vivre une vraie transformation', emoji: '🔥', action: 'objective_transformation' },
     ],
   });
 
@@ -261,12 +309,18 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
       {/* Floating Chat Button */}
       {!isOpen && (
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={() => {
+            setIsOpen(true);
+            setHasNotification(false); // Clear notification when opening
+          }}
           className={styles.floatingButton}
           aria-label="Ouvrir le chat"
         >
           <MessageCircle size={24} />
           <span className={styles.pulse}></span>
+          {hasNotification && (
+            <span className={styles.notificationBadge}>1</span>
+          )}
         </button>
       )}
 
@@ -316,6 +370,17 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
             ))}
 
 
+
+            {/* Typing Indicator */}
+            {isTyping && (
+              <div className={`${styles.message} ${styles.botMessage}`}>
+                <div className={styles.typingIndicator}>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            )}
 
             <div ref={messagesEndRef} />
           </div>
