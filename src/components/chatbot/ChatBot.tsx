@@ -30,6 +30,7 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
   const [selectedProgram, setSelectedProgram] = useState<'3' | '5' | '7' | null>(null);
   const [isTyping, setIsTyping] = useState(false);
   const [hasNotification, setHasNotification] = useState(false);
+  const hadNotificationRef = useRef(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [sessionStart, setSessionStart] = useState<Date | null>(null);
 
@@ -51,8 +52,9 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       setTimeout(() => {
-        // If notification was shown, display relance message instead of welcome
-        if (hasNotification) {
+        // Check ref (not state) because state is already cleared by onClick
+        if (hadNotificationRef.current) {
+          hadNotificationRef.current = false;
           addBotMessage(getRelanceMessage());
         } else {
           addBotMessage(getWelcomeMessage());
@@ -61,31 +63,23 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
     }
   }, [isOpen]);
 
-  // Auto-relance after 1 minute of inactivity (change to 30 for production)
+  // Auto-relance after 10 minutes of inactivity
   useEffect(() => {
     if (!sessionStart) return;
-
-    console.log('Timer started. Session start:', sessionStart);
 
     const checkAbandonment = setInterval(() => {
       const now = new Date();
       const timeDiff = now.getTime() - sessionStart.getTime();
       const minutesPassed = timeDiff / 1000 / 60;
 
-      console.log('Checking abandonment. Minutes passed:', minutesPassed, 'isOpen:', isOpen);
-
-      // If 1+ minutes passed (TESTING - change back to 30 for production)
       if (minutesPassed >= 1 && !isOpen && !hasNotification) {
-        console.log('Triggering notification badge!');
         setHasNotification(true);
+        hadNotificationRef.current = true;
         clearInterval(checkAbandonment);
       }
-    }, 10000); // Check every 10 seconds for testing
+    }, 60000); // Check every minute
 
-    return () => {
-      console.log('Cleaning up timer');
-      clearInterval(checkAbandonment);
-    };
+    return () => clearInterval(checkAbandonment);
   }, [sessionStart, isOpen, hasNotification]);
 
   const addBotMessage = (messageData: Omit<Message, 'id' | 'type' | 'timestamp'>) => {
@@ -289,9 +283,8 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
   const getRelanceMessage = (): Omit<Message, 'id' | 'type' | 'timestamp'> => ({
     text: '👋 Je me permets de revenir vers vous.\n\nVous avez consulté nos séjours thalasso au Dakhla Club, mais vous n\'avez pas encore finalisé votre réservation.\n\n💡 Si vous hésitez entre plusieurs programmes ou si vous avez une question, je suis là pour vous aider à faire le bon choix, simplement.',
     buttons: [
-      { id: '1', label: 'M\'aider à choisir', emoji: '🤝', action: 'qualification' },
-      { id: '2', label: 'Voir les programmes', emoji: '👀', action: 'programs' },
-      { id: '3', label: 'Réserver maintenant', emoji: '🗓️', action: 'reserver' },
+      { id: '1', label: 'Voir les programmes', emoji: '�', action: 'programs' },
+      { id: '2', label: 'Réserver maintenant', emoji: '�', action: 'reserver' },
     ],
   });
 
