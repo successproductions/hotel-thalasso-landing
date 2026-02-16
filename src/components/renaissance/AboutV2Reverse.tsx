@@ -12,7 +12,7 @@ export function AboutV2Reverse() {
         {/* Image Column - Now on the left */}
         <div className="relative h-64 w-full md:h-auto md:min-h-[60vh]">
           <Image
-            src="/images/offer-3/dji9.jpg"
+            src="/images/offer-7/DSC07524.JPG"
             alt="Illustration scientifique"
             fill
             className="object-cover"

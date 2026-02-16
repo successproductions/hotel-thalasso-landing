@@ -8,7 +8,8 @@ import clsx from 'clsx';
 import { Button } from '@/components/ui/button';
 import { Link, usePathname } from '@/i18n/navigation';
 import { useTranslations, useLocale } from 'next-intl';
-import ReservationPopup from '@/components/offers/ReservationPopup';
+import BookingFormPopup from './BookingFormPopup';
+
 
 export default function HeaderTest() {
   const [scrolled, setScrolled] = useState(false);
@@ -283,7 +284,7 @@ export default function HeaderTest() {
       </header>
 
       {/* Reservation Popup */}
-      <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <BookingFormPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>
   );
 }

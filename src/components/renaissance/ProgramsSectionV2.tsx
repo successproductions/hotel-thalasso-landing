@@ -216,12 +216,12 @@ export function ProgramsSectionV2() {
 
   const dayImages = [
     '/images/offer-3/dji7.jpg',
-    '/images/offer-3/dji2.jpg',
-    '/images/offer-3/dji12.jpg',
+    '/images/offer-7/IMG_6360.jpg',
+    '/images/offer-7/DSC07763.jpg',
     '/images/spa/_DSC2297.JPG',
     '/images/spa/_DSC2301.JPG',
     '/images/spa/IMG_9868.JPG',
-    '/images/spa/_DSC2302.JPG',
+    '/images/offer-7/DSC02457.jpg',
   ];
 
   const programs = currentContent.days.map((day, index) => ({

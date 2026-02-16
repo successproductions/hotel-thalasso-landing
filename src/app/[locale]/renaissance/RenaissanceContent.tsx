@@ -13,8 +13,8 @@ import { ProgrammeFonctionneV2 } from '@/components/renaissance/ProgrammeFonctio
 import TestimonialsCarouselV2 from '@/components/renaissance/TestimonialsCarouselV2';
 import { RewardsSectionV2 } from '@/components/renaissance/RewardsSectionV2';
 import { AboutV2Reverse } from '@/components/renaissance/AboutV2Reverse';
-import FAQSectionV2 from '@/components/renaissance/FAQV2';
 import { ObjectivesSectionV2 } from '@/components/renaissance/ObjectivesSectionV2';
+import FAQ7 from '@/components/renaissance/FAQ7';
 
 export default function RenaissanceContent() {
   return (
@@ -52,7 +52,7 @@ export default function RenaissanceContent() {
         <ObjectivesSectionV2 />
         <TestimonialsCarouselV2 />
         <RewardsSectionV2 />
-        <FAQSectionV2 />
+        <FAQ7/>
         <NewsletterSectionV2 />
         <Footer />
 

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-import ReservationPopup from './ReservationPopup';
+import BookingFormPopup from './BookingFormPopup';
 
 export function NewsletterSectionV2() {
   const t = useTranslations('exclusiveOffer');
@@ -14,10 +14,10 @@ export function NewsletterSectionV2() {
       <section
         id="contact"
         className="relative h-[400px] bg-cover bg-center md:h-[500px]"
-        style={{ backgroundImage: `url("/images/Piscine_thermale.png")` }}
+        style={{ backgroundImage: `url("/images/spa/IMG_9868.JPG")` }}
       >
         {/* dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/10" />
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center space-y-4 px-4 text-center">
           {/* Title */}
@@ -49,7 +49,7 @@ export function NewsletterSectionV2() {
       </section>
 
       {/* Reservation Popup */}
-      <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <BookingFormPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>
   );
 }

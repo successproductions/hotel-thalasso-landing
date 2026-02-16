@@ -13,7 +13,7 @@ export function ProgrammeFonctionneV2() {
         {/* Image Column */}
         <div className="relative h-56 w-full overflow-hidden  shadow-lg md:h-[30rem]  xl:h-[38rem]">
           <Image
-            src="/images/offer-3/dji18.jpg"
+            src="/images/spa/IMG_9902.JPG"
             alt="Pourquoi ce programme fonctionne"
             fill
             className="object-cover"
