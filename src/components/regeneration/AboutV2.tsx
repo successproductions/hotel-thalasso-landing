@@ -29,7 +29,7 @@ export function AboutV2() {
         {/* Image Column */}
         <div className="order-1 relative h-64 w-full md:order-2 md:h-auto md:min-h-[60vh]">
           <Image
-            src="/images/offer-3/dji1.jpg"
+            src="/images/offer-5/DSC03450.jpg"
             alt="Illustration scientifique"
             fill
             className="object-cover"
