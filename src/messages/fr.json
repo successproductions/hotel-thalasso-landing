@@ -88,14 +88,14 @@
     "days": {
       "1": {
         "title": "On Relâche",
-        "description": "Votre accueil personnalisé marque la transition <br/> Le corps commence à se déposer <br/> Le système nerveux ralentit <br/> La respiration s’apaise.",
+        "description": "Votre accueil personnalisé marque la transition Le corps commence à se déposer Le système nerveux ralentit La respiration s’apaise.",
         "activities": [],
         "objective": "Décompression immédiate, sortie du mode “alerte”.",
         "ctaText": "JE CHOISIS DE ME RÉGÉNÉRER"
       },
       "2": {
         "title": "On Rééquilibre",
-        "description": "Les soins marins et sensoriels relancent la circulation. <br/> Les tensions musculaires se dissolvent. <br/> L’esprit devient plus clair.",
+        "description": "Les soins marins et sensoriels relancent la circulation. Les tensions musculaires se dissolvent. L’esprit devient plus clair.",
         "activities": [
           "Bol d'Air Jacquier",
           "Piscine thermale",
@@ -109,7 +109,7 @@
       },
       "3": {
         "title": "On Détoxifie & On Libère",
-        "description": "Les soins nettoient, drainent et réoxygènent les tissus. <br/> L’énergie revient progressivement. <br/> Le corps respire. L’esprit s’allège.",
+        "description": "Les soins nettoient, drainent et réoxygènent les tissus. L’énergie revient progressivement. Le corps respire. L’esprit s’allège.",
         "activities": [
           "Piscine thermale",
           "Douche à jet",
