@@ -84,7 +84,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
       cta: {
         pay: (amount: string) => `Confirm Reservation - ${amount} MAD`
       },
-      accommodationDisclaimer: "* This pack does not include accommodation"
+      accommodationDisclaimer: "This pack does not include accommodation"
     }
   };
 

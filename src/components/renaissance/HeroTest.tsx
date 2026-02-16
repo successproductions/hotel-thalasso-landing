@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import ReservationPopup from '@/components/offers/ReservationPopup';
+import BookingFormPopup from './BookingFormPopup';
 
 export default function HeroTest() {
   const t = useTranslations('home');
@@ -14,7 +14,7 @@ export default function HeroTest() {
         {/* Background Video */}
         <video
           className="absolute inset-0 h-[58vh] w-full object-cover lg:h-[80vh] xl:h-[92vh]"
-          src="/videos/DC-Thermes.mov"
+          src="/videos/VIDEO_LANDING_PAGE_5.mp4"
           autoPlay
           loop
           muted
@@ -52,7 +52,7 @@ export default function HeroTest() {
       </section>
 
       {/* Reservation Popup */}
-      <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <BookingFormPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>
   );
 }
