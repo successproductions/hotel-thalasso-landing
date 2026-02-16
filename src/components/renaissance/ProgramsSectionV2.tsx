@@ -2,9 +2,10 @@
 
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 
 export function ProgramsSectionV2() {
-  const locale = typeof window !== 'undefined' ? window.location.pathname.split('/')[1] : 'fr';
+  const locale = useLocale();
 
   // Content for both languages organized by days
   const content = {
