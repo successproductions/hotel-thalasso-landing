@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import ReservationPopup from './ReservationPopup';
+import BookingFormPopup from './BookingFormPopup';
 
 interface Testimonial {
   id: number;
@@ -191,7 +191,7 @@ export default function TestimonialsCarouselV2() {
         </div>
       </div>
     </section>
-    <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+    <BookingFormPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>
   );
 }
