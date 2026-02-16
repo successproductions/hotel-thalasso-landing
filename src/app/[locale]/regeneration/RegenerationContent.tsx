@@ -13,8 +13,8 @@ import { ProgrammeFonctionneV2 } from '@/components/regeneration/ProgrammeFoncti
 import TestimonialsCarouselV2 from '@/components/regeneration/TestimonialsCarouselV2';
 import { RewardsSectionV2 } from '@/components/regeneration/RewardsSectionV2';
 import { AboutV2Reverse } from '@/components/regeneration/AboutV2Reverse';
-import FAQSectionV2 from '@/components/regeneration/FAQV2';
 import { ObjectivesSectionV2 } from '@/components/regeneration/ObjectivesSectionV2';
+import FAQSection5 from '@/components/regeneration/FAQSection5';
 
 export default function RegenerationContent() {
   return (
@@ -52,7 +52,7 @@ export default function RegenerationContent() {
         <ObjectivesSectionV2 />
         <TestimonialsCarouselV2 />
         <RewardsSectionV2 />
-        <FAQSectionV2 />
+        <FAQSection5 />
         <NewsletterSectionV2 />
         <Footer />
 

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-import ReservationPopup from './ReservationPopup';
+import BookingFormPopup from './BookingFormPopup';
 
 export function NewsletterSectionV2() {
   const t = useTranslations('exclusiveOffer');
@@ -49,7 +49,7 @@ export function NewsletterSectionV2() {
       </section>
 
       {/* Reservation Popup */}
-      <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      <BookingFormPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>
   );
 }
