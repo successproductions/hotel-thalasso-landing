@@ -15,7 +15,7 @@ export function HealthProgramsV2() {
           {t('title3')}
         </p>
          <p className="text-[16px] font-extralight leading-relaxed text-gray-700 md:text-lg">
-          {t('title4')}
+          {t('title7')}
         </p>
       </div>
     </section>
