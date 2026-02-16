@@ -23,10 +23,10 @@ interface FormData {
 
 // Banner images for mobile slider
 const bannerImages = [
-  '/images/spa/_DSC2301.JPG',
-  '/images/spa/_DSC2302.JPG',
-  '/images/spa/_DSC2303.JPG',
-  '/images/spa/_DSC2304.JPG',
+  '/images/offer-5/DSC09732.jpg',
+  '/images/offer-5/DSC07579.JPG',
+  '/images/offer-5/DSC09716.jpg',
+  '/images/offer-5/DSC01046.jpg',
 ];
 
 export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupProps) {
@@ -94,7 +94,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
   // Offer static data - Fixed to program 5
   const offerStaticData: Record<string, { image: string; price: number }> = {
     '5': {
-      image: '/images/spa/_DSC2301.JPG',
+      image: '/images/offer-5/DSC02450.jpg',
       price: 10350,
     },
   };
