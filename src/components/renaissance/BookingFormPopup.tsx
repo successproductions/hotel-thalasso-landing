@@ -24,7 +24,7 @@ interface FormData {
 // Banner images for mobile slider
 const bannerImages = [
   '/images/offer-3/dji7.jpg',
-  '/images/offer-3/dji2.jpg',
+  '/images/spa/_DSC2301.JPG',
   '/images/offer-3/dji12.jpg',
   '/images/spa/_DSC2297.JPG',
 ];
