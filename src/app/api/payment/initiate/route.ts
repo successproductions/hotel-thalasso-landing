@@ -23,13 +23,23 @@ interface PaymentRequest {
   numberOfPeople: string;
   arrivalDate: string;
   selectedOffer: string;
+  pageSlug?: string; // 'evasion' | 'regeneration' | 'renaissance' | 'vitalite'
 }
 
-// Generate unique order ID
-function generateOrderId(offerType: string): string {
+// Page slug → order ID prefix mapping
+const PAGE_PREFIXES: Record<string, string> = {
+  'evasion': 'EVA',
+  'regeneration': 'REG',
+  'renaissance': 'REN',
+  'vitalite': 'VIT',
+};
+
+// Generate unique order ID with page-specific prefix
+function generateOrderId(offerType: string, pageSlug?: string): string {
   const timestamp = Date.now().toString(36);
   const randomPart = Math.random().toString(36).substring(2, 8);
-  return `EVA${offerType}-${timestamp}${randomPart}`.toUpperCase();
+  const prefix = PAGE_PREFIXES[pageSlug || 'evasion'] || 'EVA';
+  return `${prefix}${offerType}-${timestamp}${randomPart}`.toUpperCase();
 }
 
 // Generate random string for rnd parameter
@@ -85,7 +95,7 @@ function generateHash(params: Record<string, string>, storeKey: string): string 
 export async function POST(request: NextRequest) {
   try {
     const body: PaymentRequest = await request.json();
-    const { fullName, email, phone, selectedOffer, arrivalDate, numberOfPeople } = body;
+    const { fullName, email, phone, selectedOffer, arrivalDate, numberOfPeople, pageSlug } = body;
 
     // Get price for selected offer
     const basePrice = OFFER_PRICES[selectedOffer];
@@ -107,7 +117,7 @@ export async function POST(request: NextRequest) {
     const amount = basePrice * count;
 
     // Generate unique order ID and random string
-    const orderId = generateOrderId(selectedOffer);
+    const orderId = generateOrderId(selectedOffer, pageSlug);
     const rnd = generateRnd();
 
     // Get base URL for callbacks
@@ -146,12 +156,11 @@ export async function POST(request: NextRequest) {
       email: email,
       tel: phone.replace(/\s/g, ''),
       
-      // Billing info - cleaned
+      // Billing info - client personal info (street not collected, using city)
       BillToName: cleanBillingString(fullName),
-      BillToCompany: 'Dakhla Club',
-      BillToStreet1: 'Dakhla Evasion',
+      BillToStreet1: 'Dakhla',
       BillToCity: 'Dakhla',
-      BillToStateProv: 'Dakhla',
+      BillToStateProv: 'Dakhla-Oued Ed-Dahab',
       BillToPostalCode: '73000',
       BillToCountry: '504',
       

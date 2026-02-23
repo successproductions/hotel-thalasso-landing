@@ -1,5 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Detect source page from order ID prefix
+function getPageFromOrderId(orderId: string): string {
+  if (orderId.startsWith('REG')) return 'regeneration';
+  if (orderId.startsWith('REN')) return 'renaissance';
+  if (orderId.startsWith('VIT')) return 'vitalite';
+  return 'evasion';
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Parse form data from CMI failUrl redirect
@@ -21,7 +29,8 @@ export async function POST(request: NextRequest) {
     const baseUrl = `${protocol}://${host}`;
     
     // Construct safe redirect URL
-    const targetUrl = `${baseUrl}/${locale}/evasion/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
+    const page = getPageFromOrderId(orderId);
+    const targetUrl = `${baseUrl}/${locale}/${page}/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
     return NextResponse.redirect(targetUrl);
 
   } catch (error) {
@@ -45,6 +54,7 @@ export async function GET(request: NextRequest) {
   const protocol = host.includes('localhost') ? 'http' : 'https';
   const baseUrl = `${protocol}://${host}`;
 
-  const targetUrl = `${baseUrl}/${locale}/evasion/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
+  const page = getPageFromOrderId(orderId);
+  const targetUrl = `${baseUrl}/${locale}/${page}/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
   return NextResponse.redirect(targetUrl);
 }

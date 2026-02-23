@@ -121,6 +121,14 @@ const getPaymentConfirmationEmail = (customerName: string, orderId: string, pack
 </html>
 `;
 
+// Detect source page from order ID prefix
+function getPageFromOrderId(orderId: string): string {
+  if (orderId.startsWith('REG')) return 'regeneration';
+  if (orderId.startsWith('REN')) return 'renaissance';
+  if (orderId.startsWith('VIT')) return 'vitalite';
+  return 'evasion'; // default (EVA prefix or unknown)
+}
+
 async function sendEmails(params: Record<string, string>) {
   const orderId = params['oid'];
   const amount = params['amount'];
@@ -294,14 +302,16 @@ export async function POST(request: NextRequest) {
       }
       
       // Redirect to thank you page with 303 See Other to force GET method
+      const page = getPageFromOrderId(orderId || '');
       return NextResponse.redirect(
-        `https://offer.dakhlaclub.com/${locale}/evasion/thank-you?order=${orderId}`,
+        `https://offer.dakhlaclub.com/${locale}/${page}/thank-you?order=${orderId}`,
         { status: 303 }
       );
     } else {
       // Payment failed
+      const page = getPageFromOrderId(orderId || '');
       return NextResponse.redirect(
-        `https://offer.dakhlaclub.com/${locale}/evasion/payment-error?order=${orderId}`,
+        `https://offer.dakhlaclub.com/${locale}/${page}/payment-error?order=${orderId}`,
         { status: 303 }
       );
     }
@@ -326,12 +336,14 @@ export async function GET(request: NextRequest) {
   const locale = 'fr';
 
   if (procReturnCode === '00') {
+    const page = getPageFromOrderId(orderId);
     return NextResponse.redirect(
-      new URL(`/${locale}/evasion/thank-you?order=${orderId}`, request.nextUrl.origin)
+      new URL(`/${locale}/${page}/thank-you?order=${orderId}`, request.nextUrl.origin)
     );
   } else {
+    const page = getPageFromOrderId(orderId);
     return NextResponse.redirect(
-      new URL(`/${locale}/evasion/payment-error?order=${orderId}`, request.nextUrl.origin)
+      new URL(`/${locale}/${page}/payment-error?order=${orderId}`, request.nextUrl.origin)
     );
   }
 }
