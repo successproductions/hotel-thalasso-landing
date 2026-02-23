@@ -173,61 +173,63 @@ export async function POST(request: NextRequest) {
     const amount = params['amount'];
 
     if (procReturnCode === '00') {
-      // Payment successful - Auto capture
-      
-      // Send confirmation emails using nodemailer
-      try {
-        // Extract customer info from callback params
-        const customerEmail = params['email'];
-        // BillToName can be empty if user entered only special chars (sanitization)
-        const customerName = params['BillToName'] || params['cardHolderName'] || 'Client';
-        
-        // Determine pack type based on amount (used for both emails)
-        // Determine pack type from Order ID (Format: EVA{type}-...)
-        let packType = 'Programme Évasion';
-        if (orderId && orderId.startsWith('EVA')) {
-           // We expect EVA3-, EVA5-, or EVA7-
-           // Extract the number between EVA and -
-           const match = orderId.match(/^EVA(\d+)-/);
-           if (match && match[1]) {
-             const type = match[1];
-             if (type === '3') packType = 'Évasion 3 Nuits';
-             else if (type === '5') packType = 'Évasion 5 Nuits';
-             else if (type === '7') packType = 'Évasion 7 Nuits';
-           }
+      // ─────────────────────────────────────────────────────────────────────
+      // CRITICAL: Return ACTION=POSTAUTH to CMI IMMEDIATELY.
+      // CMI has a short callback timeout (~3s). If we await emails first,
+      // CMI times out and shows "vérifier l'état de votre commande" even
+      // though the payment succeeded. Emails are sent fire-and-forget below.
+      // ─────────────────────────────────────────────────────────────────────
+
+      // --- Determine pack type from order ID prefix ---
+      const customerEmail = params['email'];
+      const customerName = params['BillToName'] || params['cardHolderName'] || 'Client';
+
+      let packType = 'Programme Thalasso';
+      if (orderId) {
+        if (orderId.startsWith('EVA')) {
+          const match = orderId.match(/^EVA(\d+)-/);
+          if (match?.[1] === '3') packType = 'Évasion 3 Nuits';
+          else if (match?.[1] === '5') packType = 'Évasion 5 Nuits';
+          else if (match?.[1] === '7') packType = 'Évasion 7 Nuits';
+          else packType = 'Programme Évasion';
+        } else if (orderId.startsWith('REG')) {
+          packType = 'Thalasso Régénération';
+        } else if (orderId.startsWith('REN')) {
+          packType = 'Thalasso Renaissance';
+        } else if (orderId.startsWith('VIT')) {
+          packType = 'Thalasso Vitalité 3 Jours';
         }
-        
-        // Fallback or keep amountFloat for logging if needed
-        // const amountFloat = parseFloat(amount);
-        
-        // Setup nodemailer transporter (same as offer3)
-        const transporter = nodemailer.createTransport({
-          host: 'smtp.gmail.com',
-          port: 587,
-          secure: false,
-          auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS,
-          },
-        });
+      }
 
-        // Send email to customer
-        if (customerEmail) {
-          try {
-            await transporter.sendMail({
-              from: `"Dakhla Club - DC Thermes" <${process.env.EMAIL_USER}>`,
-              to: customerEmail,
-              subject: `✅ Confirmation Réservation - ${packType}`,
-              html: getPaymentConfirmationEmail(customerName, orderId, packType, amount),
-            });
+      // --- Fire-and-forget: send emails AFTER returning POSTAUTH ---
+      (async () => {
+        try {
+          const transporter = nodemailer.createTransport({
+            host: 'smtp.gmail.com',
+            port: 587,
+            secure: false,
+            auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
+            },
+          });
 
-          } catch (emailError) {
-            console.error('Failed to send customer email:', emailError);
+          // Email to customer
+          if (customerEmail) {
+            try {
+              await transporter.sendMail({
+                from: `"Dakhla Club - DC Thermes" <${process.env.EMAIL_USER}>`,
+                to: customerEmail,
+                subject: `✅ Confirmation Réservation - ${packType}`,
+                html: getPaymentConfirmationEmail(customerName, orderId, packType, amount),
+              });
+            } catch (emailError) {
+              console.error('Failed to send customer email:', emailError);
+            }
           }
-        }
 
-        // Send notification to admin with enhanced template
-        const adminEmail = 'w.master@successproductions.ma';
+          // Email to admin
+          const adminEmail = 'w.master@successproductions.ma';
 
         const adminEmailHtml = `
 <!DOCTYPE html>
@@ -311,23 +313,23 @@ export async function POST(request: NextRequest) {
 </html>
         `;
 
-        try {
-          await transporter.sendMail({
-            from: `"Dakhla Club Payments" <${process.env.EMAIL_USER}>`,
-            to: adminEmail,
-            subject: `💰 Nouveau paiement reçu - ${orderId} - ${amount} MAD`,
-            html: adminEmailHtml,
-          });
+          try {
+            await transporter.sendMail({
+              from: `"Dakhla Club Payments" <${process.env.EMAIL_USER}>`,
+              to: adminEmail,
+              subject: `💰 Nouveau paiement reçu - ${orderId} - ${amount} MAD`,
+              html: adminEmailHtml,
+            });
+          } catch (emailError) {
+            console.error('Failed to send admin email:', emailError);
+          }
 
-        } catch (emailError) {
-          console.error('Failed to send admin email:', emailError);
+        } catch (err) {
+          console.error('Error in fire-and-forget email sending:', err);
         }
+      })(); // fire-and-forget — does NOT block the POSTAUTH response
 
-      } catch (emailError) {
-        console.error('Error sending confirmation emails:', emailError);
-        // Don't fail the callback if email fails
-      }
-      
+      // Return POSTAUTH immediately (before emails complete)
       return new NextResponse('ACTION=POSTAUTH', { status: 200 });
     } else {
       // Payment failed

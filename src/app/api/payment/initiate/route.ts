@@ -150,7 +150,7 @@ export async function POST(request: NextRequest) {
       okUrl: `${baseUrl}/api/payment/success`,
       failUrl: `${baseUrl}/api/payment/fail`,
       callbackUrl: `${baseUrl}/api/payment/callback`,
-      shopurl: `${baseUrl}/fr/evasion`,
+      shopurl: `${baseUrl}/fr/${pageSlug || 'evasion'}`,
       
       // Customer info
       email: email,
