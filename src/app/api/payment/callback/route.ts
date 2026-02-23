@@ -162,19 +162,8 @@ export async function POST(request: NextRequest) {
     // Generate our own hash for verification
     const calculatedHash = generateHash(params, CMI_CONFIG.storeKey);
 
-    // DIAGNOSTIC: Log all params and hash comparison
-    console.log('=== CMI CALLBACK RECEIVED ===');
-    console.log('All params keys:', Object.keys(params).sort());
-    console.log('Received HASH:', receivedHash);
-    console.log('Calculated HASH:', calculatedHash);
-    console.log('Hash match:', receivedHash === calculatedHash);
-    console.log('ProcReturnCode:', params['ProcReturnCode']);
-    console.log('encoding field present:', 'encoding' in params, '| value:', params['encoding']);
-    console.log('=== END CALLBACK ===');
-
     // Verify hash
     if (receivedHash !== calculatedHash) {
-      console.error('Hash verification FAILED - receivedHash:', receivedHash, '| calculatedHash:', calculatedHash);
       return new NextResponse('FAILURE', { status: 200 });
     }
 
