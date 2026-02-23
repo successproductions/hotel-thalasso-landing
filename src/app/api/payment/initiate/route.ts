@@ -133,7 +133,7 @@ export async function POST(request: NextRequest) {
       lang: 'fr',
       storetype: '3D_PAY_HOSTING',
       hashAlgorithm: 'ver3',
-      TranType: 'PostAuth',
+      TranType: 'PreAuth',
       refreshtime: '5',
       
       // URLs - must be accessible from CMI servers
