@@ -7,8 +7,21 @@ const CMI_CONFIG = {
   storeKey: process.env.CMI_STORE_KEY || 'TEST1234',
 };
 
-// Generate hash for verification (ver3 algorithm - includes encoding)
+// Decode HTML entities (equivalent to PHP html_entity_decode)
+function decodeHtmlEntities(str: string): string {
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/&apos;/g, "'");
+}
+
+// Generate hash matching exactly the official CMI PHP callback reference
+// PHP: natcasesort + html_entity_decode + preg_replace("\n$") + exclude hash & encoding
 function generateHash(params: Record<string, string>, storeKey: string): string {
+  // Sort keys case-insensitively (matches PHP natcasesort for typical CMI keys)
   const sortedKeys = Object.keys(params).sort((a, b) => 
     a.toLowerCase().localeCompare(b.toLowerCase())
   );
@@ -16,22 +29,29 @@ function generateHash(params: Record<string, string>, storeKey: string): string 
   let hashString = '';
   for (const key of sortedKeys) {
     const lowerKey = key.toLowerCase();
-    // ver3: only exclude 'hash' field, include 'encoding'
-    if (lowerKey !== 'hash') {
-      const value = params[key] || '';
+    // Exclude 'hash' and 'encoding' — matches PHP callback.php line 21
+    if (lowerKey !== 'hash' && lowerKey !== 'encoding') {
+      // Strip trailing newlines (PHP: preg_replace("/\n$/","",value))
+      let value = (params[key] || '').replace(/\n$/, '');
+      // Decode HTML entities (PHP: html_entity_decode(..., ENT_QUOTES, 'UTF-8'))
+      value = decodeHtmlEntities(value);
+      // Escape backslash first, then pipe (PHP: str_replace)
       const escapedValue = value.replace(/\\/g, '\\\\').replace(/\|/g, '\\|');
       hashString += escapedValue + '|';
     }
   }
 
+  // Escape store key and append
   const escapedStoreKey = storeKey.replace(/\\/g, '\\\\').replace(/\|/g, '\\|');
   hashString += escapedStoreKey;
 
+  // SHA512 → hex → pack('H*') → base64 (matches PHP exactly)
   const hash = crypto.createHash('sha512').update(hashString).digest('hex');
   const packedHash = Buffer.from(hash, 'hex').toString('base64');
 
   return packedHash;
 }
+
 
 // Email template for payment confirmation
 const getPaymentConfirmationEmail = (customerName: string, orderId: string, packType: string, amount: string) => `
@@ -142,9 +162,19 @@ export async function POST(request: NextRequest) {
     // Generate our own hash for verification
     const calculatedHash = generateHash(params, CMI_CONFIG.storeKey);
 
+    // DIAGNOSTIC: Log all params and hash comparison
+    console.log('=== CMI CALLBACK RECEIVED ===');
+    console.log('All params keys:', Object.keys(params).sort());
+    console.log('Received HASH:', receivedHash);
+    console.log('Calculated HASH:', calculatedHash);
+    console.log('Hash match:', receivedHash === calculatedHash);
+    console.log('ProcReturnCode:', params['ProcReturnCode']);
+    console.log('encoding field present:', 'encoding' in params, '| value:', params['encoding']);
+    console.log('=== END CALLBACK ===');
+
     // Verify hash
     if (receivedHash !== calculatedHash) {
-      console.error('Hash verification failed');
+      console.error('Hash verification FAILED - receivedHash:', receivedHash, '| calculatedHash:', calculatedHash);
       return new NextResponse('FAILURE', { status: 200 });
     }
 
