@@ -38,13 +38,15 @@ function generateRnd(): string {
 }
 
 // Clean string for billing info (remove special characters)
-function cleanBillingString(str: string): string {
-  return str
+// Returns a fallback if the result is empty (e.g. user entered only special chars)
+function cleanBillingString(str: string, fallback: string = 'Client'): string {
+  const cleaned = str
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^a-zA-Z0-9\s]/g, '')
     .trim()
     .substring(0, 50);
+  return cleaned || fallback;
 }
 
 // Generate CMI hash following the exact algorithm from the integration kit
@@ -54,11 +56,11 @@ function generateHash(params: Record<string, string>, storeKey: string): string 
     a.toLowerCase().localeCompare(b.toLowerCase())
   );
 
-  // Build hash string
+  // Build hash string (exclude 'hash' and 'encoding' for outgoing payment request)
   let hashString = '';
   for (const key of sortedKeys) {
     const lowerKey = key.toLowerCase();
-    // Exclude hash and encoding from the hash calculation
+    // Exclude hash and encoding from the hash calculation for payment initiation
     if (lowerKey !== 'hash' && lowerKey !== 'encoding') {
       const value = params[key] || '';
       // Escape backslash first, then pipe

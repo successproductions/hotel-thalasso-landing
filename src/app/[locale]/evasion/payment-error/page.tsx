@@ -12,11 +12,11 @@ export async function generateMetadata({
 
   const metadata = {
     fr: {
-      title: 'Erreur de Paiement - Dakhla Club',
+      title: 'Paiement Échoué - Dakhla Club',
       description: 'Une erreur est survenue lors du traitement de votre paiement.',
     },
     en: {
-      title: 'Payment Error - Dakhla Club',
+      title: 'Payment Failed - Dakhla Club',
       description: 'An error occurred while processing your payment.',
     },
   };
@@ -35,18 +35,25 @@ export async function generateMetadata({
 
 export default async function PaymentErrorPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ order?: string; code?: string }>;
 }) {
   const { locale: rawLocale } = await params;
   const locale = (rawLocale === 'en' || rawLocale === 'fr') ? rawLocale : 'fr';
+  const { order: orderId, code: errorCode } = await searchParams;
 
   const content = {
     fr: {
-      title: 'Erreur de Paiement',
+      title: 'Paiement Échoué',
       subtitle: 'Le paiement n\'a pas pu être traité',
       message:
-        'Nous sommes désolés, mais une erreur est survenue lors du traitement de votre paiement. Veuillez réessayer ou nous contacter pour obtenir de l\'aide.',
+        'Nous sommes désolés, mais votre paiement n\'a pas abouti. Veuillez réessayer ou nous contacter pour obtenir de l\'aide.',
+      orderRef: 'Référence commande',
+      errorCode: 'Code erreur',
+      paymentStatus: 'Statut du paiement',
+      statusFailed: 'Échoué',
       possibleReasons: 'Raisons Possibles',
       reason1: 'Informations de carte incorrectes ou incomplètes',
       reason2: 'Fonds insuffisants',
@@ -66,10 +73,14 @@ export default async function PaymentErrorPage({
       backHome: "Retour à l'accueil",
     },
     en: {
-      title: 'Payment Error',
+      title: 'Payment Failed',
       subtitle: 'The payment could not be processed',
       message:
-        'We apologize, but an error occurred while processing your payment. Please try again or contact us for assistance.',
+        'We apologize, but your payment was not successful. Please try again or contact us for assistance.',
+      orderRef: 'Order reference',
+      errorCode: 'Error code',
+      paymentStatus: 'Payment status',
+      statusFailed: 'Failed',
       possibleReasons: 'Possible Reasons',
       reason1: 'Incorrect or incomplete card information',
       reason2: 'Insufficient funds',
@@ -116,6 +127,31 @@ export default async function PaymentErrorPage({
           <div className="mb-8 flex items-start gap-3 rounded-lg bg-red-50 p-4">
             <AlertTriangle className="h-5 w-5 flex-shrink-0 text-red-600" />
             <p className="text-sm text-red-800 md:text-base">{text.message}</p>
+          </div>
+
+          {/* Order Details - shown when order info is available */}
+          <div className="mb-8 rounded-lg border border-gray-200 bg-gray-50 p-5">
+            <h2 className="mb-4 text-base font-semibold uppercase tracking-wide text-gray-700">
+              {text.paymentStatus}
+            </h2>
+            <div className="space-y-3">
+              {orderId && (
+                <div className="flex justify-between border-b border-gray-200 pb-2">
+                  <span className="text-sm text-gray-500">{text.orderRef}</span>
+                  <span className="font-mono text-sm font-medium text-gray-800">{orderId}</span>
+                </div>
+              )}
+              <div className="flex justify-between border-b border-gray-200 pb-2">
+                <span className="text-sm text-gray-500">{text.paymentStatus}</span>
+                <span className="font-medium text-red-600">{text.statusFailed}</span>
+              </div>
+              {errorCode && errorCode !== 'unknown' && (
+                <div className="flex justify-between">
+                  <span className="text-sm text-gray-500">{text.errorCode}</span>
+                  <span className="font-mono text-sm text-gray-700">{errorCode}</span>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Possible Reasons */}
@@ -168,7 +204,7 @@ export default async function PaymentErrorPage({
           {/* Retry Button */}
           <div className="mb-8 flex justify-center">
             <a
-              href={`/${locale}/evasion#contact`}
+              href={`/${locale}/evasion`}
               className="inline-flex items-center gap-2 rounded-full bg-teal-600 px-8 py-4 text-lg font-medium text-white shadow-lg transition hover:bg-teal-700 hover:shadow-xl"
             >
               <RefreshCw className="h-5 w-5" />

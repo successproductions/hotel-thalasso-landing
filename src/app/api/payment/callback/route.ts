@@ -7,7 +7,7 @@ const CMI_CONFIG = {
   storeKey: process.env.CMI_STORE_KEY || 'TEST1234',
 };
 
-// Generate hash for verification
+// Generate hash for verification (ver3 algorithm - includes encoding)
 function generateHash(params: Record<string, string>, storeKey: string): string {
   const sortedKeys = Object.keys(params).sort((a, b) => 
     a.toLowerCase().localeCompare(b.toLowerCase())
@@ -16,7 +16,8 @@ function generateHash(params: Record<string, string>, storeKey: string): string 
   let hashString = '';
   for (const key of sortedKeys) {
     const lowerKey = key.toLowerCase();
-    if (lowerKey !== 'hash' && lowerKey !== 'encoding') {
+    // ver3: only exclude 'hash' field, include 'encoding'
+    if (lowerKey !== 'hash') {
       const value = params[key] || '';
       const escapedValue = value.replace(/\\/g, '\\\\').replace(/\|/g, '\\|');
       hashString += escapedValue + '|';
@@ -159,7 +160,8 @@ export async function POST(request: NextRequest) {
       try {
         // Extract customer info from callback params
         const customerEmail = params['email'];
-        const customerName = params['BillToName'] || 'Client';
+        // BillToName can be empty if user entered only special chars (sanitization)
+        const customerName = params['BillToName'] || params['cardHolderName'] || 'Client';
         
         // Determine pack type based on amount (used for both emails)
         // Determine pack type from Order ID (Format: EVA{type}-...)
