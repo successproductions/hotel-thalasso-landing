@@ -31,14 +31,14 @@ export async function POST(request: NextRequest) {
     // Construct safe redirect URL
     const page = getPageFromOrderId(orderId);
     const targetUrl = `${baseUrl}/${locale}/${page}/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
-    return NextResponse.redirect(targetUrl);
+    return NextResponse.redirect(targetUrl, { status: 302 });
 
   } catch (error) {
     console.error('Fail redirect error:', error);
     // Fallback safe redirect
     const host = request.headers.get('host') || 'localhost:3000';
     const protocol = host.includes('localhost') ? 'http' : 'https';
-    return NextResponse.redirect(`${protocol}://${host}/fr/evasion/payment-error`);
+    return NextResponse.redirect(`${protocol}://${host}/fr/evasion/payment-error`, { status: 302 });
   }
 }
 
@@ -56,5 +56,5 @@ export async function GET(request: NextRequest) {
 
   const page = getPageFromOrderId(orderId);
   const targetUrl = `${baseUrl}/${locale}/${page}/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
-  return NextResponse.redirect(targetUrl);
+  return NextResponse.redirect(targetUrl, { status: 302 });
 }

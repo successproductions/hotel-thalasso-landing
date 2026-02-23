@@ -9,15 +9,29 @@ const CMI_CONFIG = {
 
 // Generate hash for verification (Exact same function as in callback)
 function generateHash(params: Record<string, string>, storeKey: string): string {
-  const sortedKeys = Object.keys(params).sort((a, b) => 
-    a.toLowerCase().localeCompare(b.toLowerCase())
-  );
+  // Sort keys case-insensitively using direct code-point comparison
+  // (same fix as callback/route.ts — avoids ICU locale collation differences)
+  const sortedKeys = Object.keys(params).sort((a, b) => {
+    const la = a.toLowerCase();
+    const lb = b.toLowerCase();
+    if (la < lb) return -1;
+    if (la > lb) return 1;
+    return 0;
+  });
 
   let hashString = '';
   for (const key of sortedKeys) {
     const lowerKey = key.toLowerCase();
     if (lowerKey !== 'hash' && lowerKey !== 'encoding') {
-      const value = params[key] || '';
+      let value = (params[key] || '').replace(/\n$/, '');
+      // Decode HTML entities (matches PHP html_entity_decode)
+      value = value
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&quot;/g, '"')
+        .replace(/&#039;/g, "'")
+        .replace(/&apos;/g, "'");
       const escapedValue = value.replace(/\\/g, '\\\\').replace(/\|/g, '\\|');
       hashString += escapedValue + '|';
     }

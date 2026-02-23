@@ -21,10 +21,19 @@ function decodeHtmlEntities(str: string): string {
 // Generate hash matching exactly the official CMI PHP callback reference
 // PHP: natcasesort + html_entity_decode + preg_replace("\n$") + exclude hash & encoding
 function generateHash(params: Record<string, string>, storeKey: string): string {
-  // Sort keys case-insensitively (matches PHP natcasesort for typical CMI keys)
-  const sortedKeys = Object.keys(params).sort((a, b) => 
-    a.toLowerCase().localeCompare(b.toLowerCase())
-  );
+  // Sort keys case-insensitively using direct code-point comparison.
+  // This matches PHP's ksort(SORT_STRING | SORT_FLAG_CASE) which does
+  // byte-by-byte comparison of lowercased strings — NOT locale-aware.
+  // JavaScript's localeCompare() uses ICU collation which can treat
+  // punctuation (dots, underscores) differently on Vercel's Linux runtime,
+  // reordering keys like EXTRA.CVVVERIFICATION and causing hash mismatches.
+  const sortedKeys = Object.keys(params).sort((a, b) => {
+    const la = a.toLowerCase();
+    const lb = b.toLowerCase();
+    if (la < lb) return -1;
+    if (la > lb) return 1;
+    return 0;
+  });
 
   let hashString = '';
   for (const key of sortedKeys) {
