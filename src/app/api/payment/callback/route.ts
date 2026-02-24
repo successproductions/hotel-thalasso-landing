@@ -197,9 +197,9 @@ export async function POST(request: NextRequest) {
       if (orderId) {
         if (orderId.startsWith('EVA')) {
           const match = orderId.match(/^EVA(\d+)-/);
-          if (match?.[1] === '3') packType = 'Évasion 3 Nuits';
-          else if (match?.[1] === '5') packType = 'Évasion 5 Nuits';
-          else if (match?.[1] === '7') packType = 'Évasion 7 Nuits';
+          if (match?.[1] === '3') packType = 'Thalasso Vitalité 3 Jours';
+          else if (match?.[1] === '5') packType = 'Thalasso Régénération 5 Jours';
+          else if (match?.[1] === '7') packType = 'Thalasso Renaissance 7 Jours';
           else packType = 'Programme Évasion';
         } else if (orderId.startsWith('REG')) {
           packType = 'Thalasso Régénération';

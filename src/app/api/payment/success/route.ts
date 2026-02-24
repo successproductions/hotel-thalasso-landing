@@ -155,9 +155,9 @@ async function sendEmails(params: Record<string, string>) {
       const match = orderId.match(/^EVA(\d+)-/);
       if (match && match[1]) {
         const type = match[1];
-        if (type === '3') packType = 'Évasion 3 Nuits';
-        else if (type === '5') packType = 'Évasion 5 Nuits';
-        else if (type === '7') packType = 'Évasion 7 Nuits';
+        if (type === '3') packType = 'Thalasso Vitalité 3 Jours';
+        else if (type === '5') packType = 'Thalasso Régénération 5 Jours';
+        else if (type === '7') packType = 'Thalasso Renaissance 7 Jours';
       }
   }
 

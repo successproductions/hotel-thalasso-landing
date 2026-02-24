@@ -121,11 +121,11 @@ export default function ThankYouContent({
           {/* <h1 className="mb-2 px-1 text-[24px] font-light uppercase tracking-wide md:text-4xl leading-tight">
             {text.title}
           </h1> */}
-          {orderId && (
+          {/* {orderId && (
             <p className="text-sm md:text-base text-white/90 mt-2">
               {text.orderNumber}: <span className="font-medium">{orderId}</span>
             </p>
-          )}
+          )} */}
         </div>
       </div>
 
