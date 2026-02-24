@@ -226,6 +226,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
           numberOfPeople: formData.numberOfPeople,
           arrivalDate: formData.arrivalDate,
           selectedOffer: formData.selectedOffer,
+          pageSlug: 'evasion',
         }),
       });
 
