@@ -21,7 +21,7 @@ interface FormData {
   selectedOffer: string;
 }
 
-// Banner images for mobile slider
+// Banner images for mobile 
 const bannerImages = [
   '/images/offer-3/dji2.jpg',
   '/images/offer-3/dji3.jpg',
@@ -49,7 +49,6 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
 
   // Internal translation data for ReservationPopup specific content
-  // adhering to user request to keep changes within this component
   const popupTranslations = {
     fr: {
       offers: {
