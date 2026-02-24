@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 // CMI Configuration (must match initiate/callback)
 const CMI_CONFIG = {
-  storeKey: process.env.CMI_STORE_KEY || 'TEST1234',
+  storeKey: process.env.CMI_STORE_KEY_PROD || 'TEST1234',
 };
 
 // Generate hash for verification (Exact same function as in callback)
