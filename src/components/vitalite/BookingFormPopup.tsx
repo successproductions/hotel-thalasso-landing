@@ -113,6 +113,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
           numberOfPeople: formData.numberOfPeople,
           arrivalDate: formData.arrivalDate,
           selectedOffer: '3',
+          pageSlug: 'vitalite',
         }),
       });
 

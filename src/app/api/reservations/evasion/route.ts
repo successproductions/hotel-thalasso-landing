@@ -23,7 +23,8 @@ export async function POST(request: NextRequest) {
       numberOfPeople: data.numberOfPeople || '1',
       arrivalDate: data.arrivalDate || '',
       selectedOffer: data.selectedOffer || '3',
-      orderId: data.orderId || '', // Add order ID
+      pageSlug: data.pageSlug || 'evasion',
+      orderId: data.orderId || '',
     };
 
     console.log('Sending to Google Sheets:', reservationData);

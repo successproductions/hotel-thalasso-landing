@@ -171,6 +171,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
           numberOfPeople: formData.numberOfPeople,
           arrivalDate: formData.arrivalDate,
           selectedOffer: formData.selectedOffer,
+          pageSlug: 'renaissance',
         }),
       });
 
