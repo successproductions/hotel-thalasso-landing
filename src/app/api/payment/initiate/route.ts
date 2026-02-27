@@ -5,13 +5,14 @@ import crypto from 'crypto';
 const CMI_CONFIG = {
   clientId: process.env.CMI_CLIENT_ID_PROD || '900010002',
   storeKey: process.env.CMI_STORE_KEY_PROD || 'TEST1234',
-  gatewayUrl: process.env.CMI_GATEWAY_URL_PROD || 'https://test-alfilahicash.cmi.co.ma/fim/est3Dgate',
+  gatewayUrl:
+    process.env.CMI_GATEWAY_URL_PROD || 'https://test-alfilahicash.cmi.co.ma/fim/est3Dgate',
   currency: process.env.CMI_CURRENCY_PROD || '504',
 };
 
 // Offer prices in MAD - Update with actual prices
 const OFFER_PRICES: Record<string, number> = {
-  '3': 1, // ⚠️ TEST ONLY — revert to 5450 before going live
+  '3': 5450,
   '5': 10350,
   '7': 11700,
 };
@@ -28,10 +29,10 @@ interface PaymentRequest {
 
 // Page slug → order ID prefix mapping
 const PAGE_PREFIXES: Record<string, string> = {
-  'evasion': 'EVA',
-  'regeneration': 'REG',
-  'renaissance': 'REN',
-  'vitalite': 'VIT',
+  evasion: 'EVA',
+  regeneration: 'REG',
+  renaissance: 'REN',
+  vitalite: 'VIT',
 };
 
 // Generate unique order ID with page-specific prefix
@@ -62,8 +63,8 @@ function cleanBillingString(str: string, fallback: string = 'Client'): string {
 // Generate CMI hash following the exact algorithm from the integration kit
 function generateHash(params: Record<string, string>, storeKey: string): string {
   // Get all parameter keys and sort them alphabetically (case-insensitive)
-  const sortedKeys = Object.keys(params).sort((a, b) => 
-    a.toLowerCase().localeCompare(b.toLowerCase())
+  const sortedKeys = Object.keys(params).sort((a, b) =>
+    a.toLowerCase().localeCompare(b.toLowerCase()),
   );
 
   // Build hash string (exclude 'hash' and 'encoding' for outgoing payment request)
@@ -85,7 +86,7 @@ function generateHash(params: Record<string, string>, storeKey: string): string 
 
   // Generate SHA512 hash
   const hash = crypto.createHash('sha512').update(hashString).digest('hex');
-  
+
   // Pack the hex string and encode as base64
   const packedHash = Buffer.from(hash, 'hex').toString('base64');
 
@@ -100,21 +101,19 @@ export async function POST(request: NextRequest) {
     // Get price for selected offer
     const basePrice = OFFER_PRICES[selectedOffer];
     if (!basePrice) {
-      return NextResponse.json(
-        { error: 'Invalid offer selected' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Invalid offer selected' }, { status: 400 });
     }
 
     // Calculate total amount based on number of people
     const count = parseInt(numberOfPeople, 10);
     if (isNaN(count) || count < 1) {
-      return NextResponse.json(
-        { error: 'Invalid number of people' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Invalid number of people' }, { status: 400 });
     }
-    const amount = basePrice * count;
+    const baseAmount = basePrice * count;
+
+    // Apply 2.70% CMI bank fee on every transaction
+    const CMI_FEE_RATE = 0.027;
+    const amount = Math.round(baseAmount * (1 + CMI_FEE_RATE) * 100) / 100;
 
     // Generate unique order ID and random string
     const orderId = generateOrderId(selectedOffer, pageSlug);
@@ -145,17 +144,17 @@ export async function POST(request: NextRequest) {
       hashAlgorithm: 'ver3',
       TranType: 'PreAuth',
       refreshtime: '5',
-      
+
       // URLs - must be accessible from CMI servers
       okUrl: `${baseUrl}/api/payment/success`,
       failUrl: `${baseUrl}/api/payment/fail`,
       callbackUrl: `${baseUrl}/api/payment/callback`,
       shopurl: `${baseUrl}/fr/${pageSlug || 'evasion'}`,
-      
+
       // Customer info
       email: email,
       tel: phone.replace(/\s/g, ''),
-      
+
       // Billing info - client personal info (street not collected, using city)
       BillToName: cleanBillingString(fullName),
       BillToStreet1: 'Dakhla',
@@ -163,7 +162,7 @@ export async function POST(request: NextRequest) {
       BillToStateProv: 'Dakhla-Oued Ed-Dahab',
       BillToPostalCode: '73000',
       BillToCountry: '504',
-      
+
       // Encoding
       encoding: 'UTF-8',
     };
@@ -194,12 +193,8 @@ export async function POST(request: NextRequest) {
         orderId,
       },
     });
-
   } catch (error) {
     console.error('Payment initiation error:', error);
-    return NextResponse.json(
-      { error: 'Failed to initiate payment' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to initiate payment' }, { status: 500 });
   }
 }

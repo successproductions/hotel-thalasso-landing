@@ -396,6 +396,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
                 </label>
               </div>
 
+
               {/* Submit Button */}
               <button
                 type="submit"
@@ -410,7 +411,14 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
                     </svg>
                     {t('submit')}
                   </span>
-                ) : ctaLabel}
+                ) : (
+                  <span className="flex flex-col items-center leading-tight gap-0.5">
+                    <span>{ctaLabel}</span>
+                    <span className="text-xs font-normal opacity-90">
+                      {(Math.round(5450 * (parseInt(formData.numberOfPeople || '1', 10) || 1) * 1.027 * 100) / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} MAD <span className="opacity-75">(frais CMI 2,70% inclus)</span>
+                    </span>
+                  </span>
+                )}
               </button>
             </form>
           </div>

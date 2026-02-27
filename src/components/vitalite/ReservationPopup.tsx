@@ -576,7 +576,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                     onChange={(e) => handleInputChange('numberOfPeople', e.target.value)}
                     className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2.5 focus:border-[#d6bb8e] focus:outline-none focus:ring-2 focus:ring-[#d6bb8e]/30"
                   >
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                    {[1, 2, 3, 4].map((num) => (
                       <option key={num} value={num}>
                         {num} {t(`fields.numberOfPeople.${num === 1 ? 'singular' : 'plural'}`)}
                       </option>

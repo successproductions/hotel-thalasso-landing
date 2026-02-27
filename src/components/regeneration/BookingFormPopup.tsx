@@ -510,7 +510,6 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
                   />
                 </div>
               </div>
-
               {/* Number of People & Arrival Date - Side by side */}
               <div className="grid grid-cols-2 gap-3">
                 {/* Number of People */}
@@ -525,7 +524,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
                     onChange={(e) => handleInputChange('numberOfPeople', e.target.value)}
                     className="w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2.5 focus:border-[#d6bb8e] focus:outline-none focus:ring-2 focus:ring-[#d6bb8e]/30"
                   >
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                    {[1, 2, 3, 4].map((num) => (
                       <option key={num} value={num}>
                         {num} {t(`fields.numberOfPeople.${num === 1 ? 'singular' : 'plural'}`)}
                       </option>
@@ -593,7 +592,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
                     {t('submit')}
                   </span>
                 ) : (
-                  tLocal.cta.pay((currentOffer.price * parseInt(formData.numberOfPeople)).toLocaleString('fr-FR'))
+                  tLocal.cta.pay((Math.round(currentOffer.price * (parseInt(formData.numberOfPeople) || 1) * 1.027 * 100) / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }))
                 )}
               </button>
             </form>
