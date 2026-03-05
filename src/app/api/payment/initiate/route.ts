@@ -12,7 +12,7 @@ const CMI_CONFIG = {
 
 // Offer prices in MAD - Update with actual prices
 const OFFER_PRICES: Record<string, number> = {
-  '3': 5450,
+  '3': 1,
   '5': 10350,
   '7': 11700,
 };
