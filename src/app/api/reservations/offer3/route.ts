@@ -228,7 +228,7 @@ export async function POST(request: NextRequest) {
     try {
       await transporter.sendMail({
         from: `"Dakhla Club Reservations" <${process.env.EMAIL_USER}>`,
-        to: 'w.master@successproductions.ma',
+        to: 'closer@dakhlaclub.com',
         subject: '🔔 Nouvelle demande de réservation - Évasion Holistique 3 Jours',
         html: getAdminEmailTemplate(reservationData),
       });
