@@ -10,12 +10,14 @@ const CMI_CONFIG = {
   currency: process.env.CMI_CURRENCY_PROD || '504',
 };
 
-// Offer prices in MAD - Update with actual prices
-const OFFER_PRICES: Record<string, number> = {
-  '3': 1,
-  '5': 10350,
-  '7': 11700,
+// Prices in EUR. Final MAD per person = Math.floor(EUR × 1.027 × 10.90)
+const OFFER_PRICES_EUR: Record<string, number> = {
+  '3': 545,   // Math.floor(545  × 1.027 × 10.90) = 6 100 MAD
+  '5': 1035,  // Math.floor(1035 × 1.027 × 10.90) = 11 589 MAD
+  '7': 1170,  // Math.floor(1170 × 1.027 × 10.90) = 13 097 MAD
 };
+const EUR_TO_MAD = 10.90;
+const CMI_FEE_RATE = 0.027;
 
 interface PaymentRequest {
   fullName: string;
@@ -98,22 +100,19 @@ export async function POST(request: NextRequest) {
     const body: PaymentRequest = await request.json();
     const { fullName, email, phone, selectedOffer, arrivalDate, numberOfPeople, pageSlug } = body;
 
-    // Get price for selected offer
-    const basePrice = OFFER_PRICES[selectedOffer];
-    if (!basePrice) {
+    // Get EUR price for selected offer
+    const eurPrice = OFFER_PRICES_EUR[selectedOffer];
+    if (!eurPrice) {
       return NextResponse.json({ error: 'Invalid offer selected' }, { status: 400 });
     }
 
-    // Calculate total amount based on number of people
+    // Calculate total: (EUR × 1.027 CMI fee × 10.90 MAD rate), floored, × number of people
     const count = parseInt(numberOfPeople, 10);
     if (isNaN(count) || count < 1) {
       return NextResponse.json({ error: 'Invalid number of people' }, { status: 400 });
     }
-    const baseAmount = basePrice * count;
-
-    // Apply 2.70% CMI bank fee on every transaction
-    const CMI_FEE_RATE = 0.027;
-    const amount = Math.round(baseAmount * (1 + CMI_FEE_RATE) * 100) / 100;
+    const pricePerPersonMAD = Math.floor(eurPrice * (1 + CMI_FEE_RATE) * EUR_TO_MAD);
+    const amount = pricePerPersonMAD * count;
 
     // Generate unique order ID and random string
     const orderId = generateOrderId(selectedOffer, pageSlug);

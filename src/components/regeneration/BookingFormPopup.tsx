@@ -95,7 +95,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
   const offerStaticData: Record<string, { image: string; price: number }> = {
     '5': {
       image: '/images/offer-5/DSC02450.jpg',
-      price: 10350,
+      price: Math.floor(1035 * 1.027 * 10.90),  // 11 589 MAD (fee included)
     },
   };
 
@@ -592,7 +592,7 @@ export default function BookingFormPopup({ isOpen, onClose }: BookingFormPopupPr
                     {t('submit')}
                   </span>
                 ) : (
-                  tLocal.cta.pay((Math.round(currentOffer.price * (parseInt(formData.numberOfPeople) || 1) * 1.027 * 100) / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }))
+                  tLocal.cta.pay((currentOffer.price * (parseInt(formData.numberOfPeople) || 1)).toLocaleString('fr-FR', { maximumFractionDigits: 0 }))
                 )}
               </button>
             </form>

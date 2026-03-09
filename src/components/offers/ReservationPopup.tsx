@@ -131,19 +131,19 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   const currentLocale = (locale === 'en' || locale === 'fr') ? locale : 'fr';
   const tLocal = popupTranslations[currentLocale];
 
-  // Offer static data (images and prices) - Shared across languages
+  // Final MAD price per person = Math.floor(EUR × 1.027 × 10.90), fee included
   const offerStaticData: Record<string, { image: string; price: number }> = {
     '3': {
       image: '/images/THERMALE.png',
-      price: 5450,
+      price: Math.floor(545 * 1.027 * 10.90),   // 6 100 MAD
     },
     '5': {
       image: '/images/5.jpg',
-      price: 10350,
+      price: Math.floor(1035 * 1.027 * 10.90),  // 11 589 MAD
     },
     '7': {
       image: '/images/centrethalassoDakhla.jpg',
-      price: 11700,
+      price: Math.floor(1170 * 1.027 * 10.90),  // 13 097 MAD
     },
   };
 
@@ -677,7 +677,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                     {t('submit')}
                   </span>
                 ) : (
-                  tLocal.cta.pay((Math.round(currentOffer.price * (parseInt(formData.numberOfPeople) || 1) * 1.027 * 100) / 100).toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }))
+                  tLocal.cta.pay((currentOffer.price * (parseInt(formData.numberOfPeople) || 1)).toLocaleString('fr-FR', { maximumFractionDigits: 0 }))
                 )}
               </button>
             </form>
