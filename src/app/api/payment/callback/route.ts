@@ -155,16 +155,27 @@ const getPaymentConfirmationEmail = (customerName: string, orderId: string, pack
 
 export async function POST(request: NextRequest) {
   try {
-    // Parse form data from CMI
-    const formData = await request.formData();
+    // ─────────────────────────────────────────────────────────────────
+    // 1. SAFELY PARSE FORM DATA (Vercel/NextJS robust handling for CMI)
+    // ─────────────────────────────────────────────────────────────────
+    const contentType = request.headers.get('content-type') || '';
     const params: Record<string, string> = {};
-    
-    formData.forEach((value, key) => {
-      params[key] = value.toString();
-    });
+
+    if (contentType.includes('application/x-www-form-urlencoded')) {
+      const text = await request.text();
+      const searchParams = new URLSearchParams(text);
+      searchParams.forEach((value, key) => {
+        params[key] = value;
+      });
+    } else {
+      const formData = await request.formData();
+      formData.forEach((value, key) => {
+        params[key] = value.toString();
+      });
+    }
 
     console.log('=== CMI CALLBACK RECEIVED ===');
-    console.log('Order ID:', params['oid'], '| Return Code:', params['ProcReturnCode']);
+    console.log('Parameters Received via Callback:', JSON.stringify(params));
 
 
 
@@ -190,163 +201,17 @@ export async function POST(request: NextRequest) {
     if (procReturnCode === '00') {
       console.log('✅ CMI Callback Success (00) - Returning ACTION=POSTAUTH');
       // ─────────────────────────────────────────────────────────────────────
-      // CRITICAL: Return ACTION=POSTAUTH to CMI IMMEDIATELY.
-      // CMI has a short callback timeout (~3s). If we await emails first,
-      // CMI times out and shows "vérifier l'état de votre commande" even
-      // though the payment succeeded. Emails are sent fire-and-forget below.
+      // CRITICAL: Return ACTION=POSTAUTH immediately! 
+      // If we delay or fail parsing, CMI will abort AutoReturn.
       // ─────────────────────────────────────────────────────────────────────
-
-      // --- Determine pack type from order ID prefix ---
-      const customerEmail = params['email'];
-      const customerName = params['BillToName'] || params['cardHolderName'] || 'Client';
-
-      let packType = 'Programme Thalasso';
-      if (orderId) {
-        if (orderId.startsWith('EVA')) {
-          const match = orderId.match(/^EVA(\d+)-/);
-          if (match?.[1] === '3') packType = 'Thalasso Vitalité 3 Jours';
-          else if (match?.[1] === '5') packType = 'Thalasso Régénération 5 Jours';
-          else if (match?.[1] === '7') packType = 'Thalasso Renaissance 7 Jours';
-          else packType = 'Programme Évasion';
-        } else if (orderId.startsWith('REG')) {
-          packType = 'Thalasso Régénération';
-        } else if (orderId.startsWith('REN')) {
-          packType = 'Thalasso Renaissance';
-        } else if (orderId.startsWith('VIT')) {
-          packType = 'Thalasso Vitalité 3 Jours';
-        }
-      }
-
-      // --- Fire-and-forget: send emails AFTER returning POSTAUTH ---
-      (async () => {
-        try {
-          const transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 587,
-            secure: false,
-            auth: {
-              user: process.env.EMAIL_USER,
-              pass: process.env.EMAIL_PASS,
-            },
-          });
-
-          // Email to customer
-          if (customerEmail) {
-            try {
-              await transporter.sendMail({
-                from: `"Dakhla Club - DC Thermes" <${process.env.EMAIL_USER}>`,
-                to: customerEmail,
-                subject: `✅ Confirmation Réservation - ${packType}`,
-                html: getPaymentConfirmationEmail(customerName, orderId, packType, amount),
-              });
-            } catch (emailError) {
-              console.error('Failed to send customer email:', emailError);
-            }
-          }
-
-          // Email to admin
-          const adminEmail = 'w.master@successproductions.ma';
-
-        const adminEmailHtml = `
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #111; margin: 0; padding: 0; background-color: #f5f5f5; }
-    .container { max-width: 600px; margin: 0 auto; background: white; border: 1px solid #ddd; }
-    .header { background: #000; color: white; padding: 30px; text-align: center; }
-    .header h1 { margin: 0; font-size: 20px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; }
-    .content { padding: 40px; }
-    .alert-box { border: 1px solid #000; padding: 20px; margin-bottom: 30px; text-align: center; background: #fff; }
-    .info-section { margin: 30px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 20px 0; }
-    .info-section h2 { margin: 0 0 20px; color: #111; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; font-weight: 400; }
-    .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
-    .info-row:last-child { border-bottom: none; }
-    .info-label { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; min-width: 150px; padding-right: 15px; }
-    .info-value { color: #000; font-weight: 500; font-size: 14px; text-align: right; margin-left: auto; }
-    .button { display: inline-block; background: #fff; color: #000 !important; text-decoration: none; padding: 14px 28px; border: 1px solid #000; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 20px 0; }
-    .button:hover { background: #000; color: #fff !important; }
-    .footer { background: #f5f5f5; padding: 20px; text-align: center; border-top: 1px solid #ddd; color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>Nouveau Paiement</h1>
-      <p style="margin: 5px 0 0; font-size: 12px; opacity: 0.7;">Système de réservation</p>
-    </div>
-    
-    <div class="content">
-      <div class="alert-box">
-        <strong>ACTION REQUISE</strong><br>
-        Un paiement a été validé. Merci de traiter la réservation.
-      </div>
-
-      <div class="info-section">
-        <h2>Détails Transaction</h2>
-        <div class="info-row">
-          <span class="info-label">Commande</span>
-          <span class="info-value">${orderId}</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">Montant</span>
-          <span class="info-value">${amount} MAD</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">Programme</span>
-          <span class="info-value">${packType}</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">Date</span>
-          <span class="info-value">${new Date().toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })}</span>
-        </div>
-      </div>
-
-      <div class="info-section">
-        <h2>Client</h2>
-        <div class="info-row">
-          <span class="info-label">Nom</span>
-          <span class="info-value">${customerName}</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">Email</span>
-          <span class="info-value"><a href="mailto:${customerEmail}" style="color: #000; text-decoration: none;">${customerEmail}</a></span>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin: 40px 0;">
-        <a href="https://docs.google.com/spreadsheets/d/14OV3S9DgB56O0pS41BL-CPt3Drc_b9mMireh1xE_6hw/edit?gid=1039439884#gid=1039439884" class="button">
-          Ouvrir Google Sheets
-        </a>
-      </div>
-    </div>
-
-    <div class="footer">
-      <p>Dakhla Club - DC Thermes</p>
-    </div>
-  </div>
-</body>
-</html>
-        `;
-
-          try {
-            await transporter.sendMail({
-              from: `"Dakhla Club Payments" <${process.env.EMAIL_USER}>`,
-              to: adminEmail,
-              subject: `💰 Nouveau paiement reçu - ${orderId} - ${amount} MAD`,
-              html: adminEmailHtml,
-            });
-          } catch (emailError) {
-            console.error('Failed to send admin email:', emailError);
-          }
-
-        } catch (err) {
-          console.error('Error in fire-and-forget email sending:', err);
-        }
-      })(); // fire-and-forget — does NOT block the POSTAUTH response
-
-      // Return POSTAUTH immediately (before emails complete)
-      return new NextResponse('ACTION=POSTAUTH', { status: 200, headers: { 'Content-Type': 'text/plain' } });
+      return new NextResponse('ACTION=POSTAUTH', { 
+        status: 200, 
+        headers: { 
+          'Content-Type': 'text/plain',
+          // Prevent caching of this server-to-server webhook
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
+        } 
+      });
     } else {
       // Payment failed
       console.warn('⚠️ CMI Callback - Payment Failed. Return Code:', procReturnCode);
