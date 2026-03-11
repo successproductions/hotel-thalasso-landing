@@ -3,11 +3,11 @@ import crypto from 'crypto';
 
 // CMI Configuration
 const CMI_CONFIG = {
-  clientId: process.env.CMI_CLIENT_ID || '900010002',
-  storeKey: process.env.CMI_STORE_KEY || 'TEST1234',
+  clientId: process.env.CMI_CLIENT_ID_PROD || '900010002',
+  storeKey: process.env.CMI_STORE_KEY_PROD || 'TEST1234',
   gatewayUrl:
     'https://test-alfilahicash.cmi.co.ma/fim/est3Dgate',
-  currency: process.env.CMI_CURRENCY || '504',
+  currency: process.env.CMI_CURRENCY_PROD || '504',
 };
 
 const OFFER_PRICES_EUR: Record<string, number> = {
