@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 
 // CMI Configuration
 const CMI_CONFIG = {
-  storeKey: 'DakhlaTest@2026',
+  storeKey: process.env.CMI_STORE_KEY || 'DakhlaTest@2026',
 };
 
 // Decode HTML entities (equivalent to PHP html_entity_decode)
