@@ -163,6 +163,9 @@ export async function POST(request: NextRequest) {
       params[key] = value.toString();
     });
 
+    console.log('=== CMI CALLBACK RECEIVED ===');
+    console.log('Order ID:', params['oid'], '| Return Code:', params['ProcReturnCode']);
+
 
 
     // Get the hash sent by CMI
@@ -173,7 +176,8 @@ export async function POST(request: NextRequest) {
 
     // Verify hash
     if (receivedHash !== calculatedHash) {
-      return new NextResponse('FAILURE', { status: 200 });
+      console.error('❌ CMI Callback Hash Mismatch!', { receivedHash, calculatedHash });
+      return new NextResponse('FAILURE', { status: 200, headers: { 'Content-Type': 'text/plain' } });
     }
 
     // Check payment result
@@ -182,6 +186,7 @@ export async function POST(request: NextRequest) {
     const amount = params['amount'];
 
     if (procReturnCode === '00') {
+      console.log('✅ CMI Callback Success (00) - Returning ACTION=POSTAUTH');
       // ─────────────────────────────────────────────────────────────────────
       // CRITICAL: Return ACTION=POSTAUTH to CMI IMMEDIATELY.
       // CMI has a short callback timeout (~3s). If we await emails first,
@@ -339,16 +344,16 @@ export async function POST(request: NextRequest) {
       })(); // fire-and-forget — does NOT block the POSTAUTH response
 
       // Return POSTAUTH immediately (before emails complete)
-      return new NextResponse('ACTION=POSTAUTH', { status: 200 });
+      return new NextResponse('ACTION=POSTAUTH', { status: 200, headers: { 'Content-Type': 'text/plain' } });
     } else {
       // Payment failed
-
-      return new NextResponse('APPROVED', { status: 200 });
+      console.warn('⚠️ CMI Callback - Payment Failed. Return Code:', procReturnCode);
+      return new NextResponse('APPROVED', { status: 200, headers: { 'Content-Type': 'text/plain' } });
     }
 
   } catch (error) {
-    console.error('Callback processing error:', error);
-    return new NextResponse('FAILURE', { status: 200 });
+    console.error('❌ Callback processing error:', error);
+    return new NextResponse('FAILURE', { status: 200, headers: { 'Content-Type': 'text/plain' } });
   }
 }
 
