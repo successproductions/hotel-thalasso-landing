@@ -141,6 +141,7 @@ export async function POST(request: NextRequest) {
       hashAlgorithm: 'ver3',
       TranType: 'PreAuth',
       refreshtime: '5',
+      AutoReturn: '1',
 
       // URLs - must be accessible from CMI servers
       okUrl: `${baseUrl}/api/payment/success`,

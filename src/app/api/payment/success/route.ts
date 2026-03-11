@@ -318,14 +318,14 @@ export async function POST(request: NextRequest) {
       // Redirect to thank you page with 303 See Other to force GET method
       const page = getPageFromOrderId(orderId || '');
       return NextResponse.redirect(
-        `https://offer.dakhlaclub.com/${locale}/${page}/thank-you?order=${orderId}`,
+        new URL(`/${locale}/${page}/thank-you?order=${orderId}`, request.nextUrl.origin),
         { status: 303 }
       );
     } else {
       // Payment failed
       const page = getPageFromOrderId(orderId || '');
       return NextResponse.redirect(
-        `https://offer.dakhlaclub.com/${locale}/${page}/payment-error?order=${orderId}`,
+        new URL(`/${locale}/${page}/payment-error?order=${orderId}`, request.nextUrl.origin),
         { status: 303 }
       );
     }
@@ -333,7 +333,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Success redirect error:', error);
     return NextResponse.redirect(
-      'https://offer.dakhlaclub.com/fr/evasion/payment-error',
+      new URL('/fr/evasion/payment-error', request.nextUrl.origin),
       { status: 303 }
     );
   }
