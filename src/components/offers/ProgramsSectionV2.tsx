@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Image from 'next/image';
 
-import ReservationPopup from '@/components/offers/ReservationPopup';
 
 interface ServiceItem {
   title: string;
@@ -14,7 +13,6 @@ export function ProgramsSectionV2() {
 
   const locale = typeof window !== 'undefined' ? window.location.pathname.split('/')[1] : 'fr';
   const [expandedOffer, setExpandedOffer] = useState<string | null>(null);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
  
   const content = {
@@ -28,6 +26,7 @@ export function ProgramsSectionV2() {
       offers: [
         {
           id: 'offer3',
+          slug: 'vitalite',
           title: 'THALASSO VITALITÉ 3 JOURS',
           subtitle: 'On Relâche',
           description: 'Une parenthèse courte, mais profondément régénérante<br/>Trois jours pour ralentir le rythme, relâcher les tensions et laisser le corps retrouver son équilibre naturel<br/>Ici, rien à performer, rien à optimiser simplement s\'abandonner à un enchaînement de soins marins, de repos guidé et de rituels conçus pour apaiser le système nerveux et relancer l\'énergie en douceur',
@@ -55,6 +54,7 @@ export function ProgramsSectionV2() {
         },
         {
           id: 'offer5',
+          slug: 'regeneration',
           title: 'THALASSO RÉGÉNÉRATION 5 JOURS',
           subtitle: 'On Rééquilibre',
           description: 'Une cure progressive et structurée, pensée pour relâcher en profondeur et permettre au corps comme à l\'esprit de se rééquilibrer durablement <br/><br/>Ici, on ne cherche pas la performance ni l\'intensité On laisse le rythme ralentir. Le corps relâche. Le système nerveux redescend<br/><br/>Les soins marins et sensoriels accompagnent ce mouvement naturel. La circulation se relance. Les tensions s\'estompent L\'esprit devient plus clair',
@@ -86,6 +86,7 @@ export function ProgramsSectionV2() {
         },
         {
           id: 'offer7',
+          slug: 'renaissance',
           title: 'THALASSO RENAISSANCE 7 JOURS',
           subtitle: 'On Détoxifie & On Libère',
           description: 'Une immersion complète pour restaurer le corps en profondeur Ici, on ne fait pas une pause On remet les compteurs à zéro<br/><br/>Jour après jour, les soins nettoient, drainent et réoxygènent les tissus. Le système interne se rééquilibre. L\'énergie revient, stable, durable. Le corps retrouve sa capacité naturelle à se régénérer L\'esprit se libère du bruit de fond',
@@ -158,6 +159,7 @@ export function ProgramsSectionV2() {
         },
         {
           id: 'offer5',
+          slug: 'regeneration',
           title: 'ESCAPE 5 NIGHTS',
           subtitle: 'Rebalance',
           description: 'A powerful and progressive cure, designed for a deep reset. <br/>Marine and sensory treatments restart circulation. <br/>Muscle tensions dissolve. <br/>The mind becomes clearer.',
@@ -189,6 +191,7 @@ export function ProgramsSectionV2() {
         },
         {
           id: 'offer7',
+          slug: 'renaissance',
           title: 'ESCAPE 7 NIGHTS',
           subtitle: 'Detox & Release',
           description: 'The complete experience for total body and mind regeneration. <br/>Treatments cleanse, drain and re-oxygenate tissues. <br/>Energy gradually returns. <br/>The body breathes. The mind lightens.',
@@ -507,13 +510,13 @@ export function ProgramsSectionV2() {
                   
                   {/* Reserve Button - Mobile Only - Overlapping Image */}
                   <div className="absolute bottom-0 left-0 right-0 flex justify-center md:hidden" style={{ transform: 'translateY(50%)' }}>
-                    <button
-                      onClick={() => setIsPopupOpen(true)}
+                    <a
+                      href={`/${locale}/${offer.slug}`}
                       className="flex items-center justify-center gap-2 bg-white border border-gray-950 px-3 py-3 text-base font-medium text-gray-950 shadow-lg transition-all duration-300 hover:text-gray-900 hover:bg-gray-50"
                     >
                      
                       {offer.reserveButton}
-                    </button>
+                    </a>
                   </div>
                 </div>
 
@@ -679,12 +682,12 @@ export function ProgramsSectionV2() {
 
                     {/* Reserve Button */}
                     <div className="mt-10 text-center">
-                      <button
-                        onClick={() => setIsPopupOpen(true)}
+                      <a
+                        href={`/${locale}/${offer.slug}`}
                         className="inline-flex items-center gap-2 bg-white border border-black px-3 md:px-4 py-3 text-sm md:text-lg font-medium  text-black transition-all duration-300 hover:bg-gray-50 hover:text-gray-900"
                       >
                         {offer.reserveButton}
-                      </button>
+                      </a>
                     
                     </div>
                   </div>
@@ -697,7 +700,7 @@ export function ProgramsSectionV2() {
     </section>
 
       {/* Reservation Popup */}
-      <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      {/* <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} /> */}
     </>
   );
 }

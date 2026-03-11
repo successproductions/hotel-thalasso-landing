@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import ReservationPopup from '@/components/offers/ReservationPopup';
+import EvasionPackSelectionPopup from '@/components/offers/EvasionPackSelectionPopup';
 
 export default function HeroTest() {
   const t = useTranslations('home');
@@ -51,8 +51,8 @@ export default function HeroTest() {
         </div>
       </section>
 
-      {/* Reservation Popup */}
-      <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+      {/* Pack Selection Popup */}
+      <EvasionPackSelectionPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     </>
   );
 }

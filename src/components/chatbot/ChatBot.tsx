@@ -61,7 +61,7 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
         }
       }, 500);
     }
-  }, [isOpen]);
+  }, [isOpen, messages.length]);
 
   // Auto-relance after 10 minutes of inactivity
   useEffect(() => {

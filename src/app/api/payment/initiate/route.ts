@@ -10,13 +10,11 @@ const CMI_CONFIG = {
   currency: process.env.CMI_CURRENCY_PROD || '504',
 };
 
-// Prices in EUR. Final MAD per person = Math.floor(EUR × 1.027 × 10.90)
 const OFFER_PRICES_EUR: Record<string, number> = {
-  '3': 545,   // Math.floor(545  × 1.027 × 10.90) = 6 100 MAD
-  '5': 1035,  // Math.floor(1035 × 1.027 × 10.90) = 11 589 MAD
-  '7': 1170,  // Math.floor(1170 × 1.027 × 10.90) = 13 097 MAD
+  '3': 5450,   // Math.floor(545  × 1.027 ) = 5595 MAD
+  '5': 10350,  // Math.floor(1035 × 1.027 ) = 10624 MAD
+  '7': 11700,  // Math.floor(1170 × 1.027 ) = 12013 MAD
 };
-const EUR_TO_MAD = 10.90;
 const CMI_FEE_RATE = 0.027;
 
 interface PaymentRequest {
@@ -26,7 +24,7 @@ interface PaymentRequest {
   numberOfPeople: string;
   arrivalDate: string;
   selectedOffer: string;
-  pageSlug?: string; // 'evasion' | 'regeneration' | 'renaissance' | 'vitalite'
+  pageSlug?: string; 
 }
 
 // Page slug → order ID prefix mapping
@@ -111,7 +109,7 @@ export async function POST(request: NextRequest) {
     if (isNaN(count) || count < 1) {
       return NextResponse.json({ error: 'Invalid number of people' }, { status: 400 });
     }
-    const pricePerPersonMAD = Math.floor(eurPrice * (1 + CMI_FEE_RATE) * EUR_TO_MAD);
+    const pricePerPersonMAD = Math.floor(eurPrice * (1 + CMI_FEE_RATE));
     const amount = pricePerPersonMAD * count;
 
     // Generate unique order ID and random string

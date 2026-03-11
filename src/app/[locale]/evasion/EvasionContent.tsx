@@ -16,14 +16,10 @@ import { AboutV2Reverse } from '@/components/offers/AboutV2Reverse';
 import FAQSectionV2 from '@/components/offers/FAQV2';
 import { ObjectivesSectionV2 } from '@/components/offers/ObjectivesSectionV2';
 import ChatBot from '@/components/chatbot/ChatBot';
-import { useState } from 'react';
-import ReservationPopup from '@/components/offers/ReservationPopup';
 
 export default function EvasionContent() {
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
   const handleOpenReservation = () => {
-    setIsPopupOpen(true);
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -112,9 +108,6 @@ export default function EvasionContent() {
 
         {/* Chatbot - Only on evasion page */}
         <ChatBot onOpenReservation={handleOpenReservation} />
-
-        {/* Reservation Popup */}
-        <ReservationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
       </main>
     </>
   );
