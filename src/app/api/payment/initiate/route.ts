@@ -6,7 +6,7 @@ const CMI_CONFIG = {
   // clientId: process.env.CMI_CLIENT_ID_PROD || '900010002',
   // storeKey: process.env.CMI_STORE_KEY_PROD || 'TEST1234',
   clientId:  '900010002',
-  storeKey:  'TEST1234',
+  storeKey:  'DakhlaTest@2026',
   gatewayUrl:
     'https://test-alfilahicash.cmi.co.ma/fim/est3Dgate',
   currency: '504',
