@@ -33,7 +33,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji2.jpg',
           programTitle: 'PROGRAMME THALASSO VITALITÉ:',
           programDays: 'Programme 3 jours',
-          price: 'Prix du programme : 6100 <b>MAD</b> / 560 <b>€</b>',
+          price: 'Prix du programme : 5450 <b>MAD</b> / 545 <b>€</b>',
           intro: [
             'Ce programme est fait pour vous si vous vous sentez fatigué(e), physiquement et mentalement, même après le repos, si votre sommeil manque de profondeur ou de régularité, si votre système nerveux est constamment sollicité, ou si vous ressentez le besoin réel de ralentir et de récupérer, sans pression ni contrainte',
           ],
@@ -134,7 +134,7 @@ export function ProgramsSectionV2() {
           image: '/images/offer-3/dji2.jpg',
           programTitle: 'RELAXATION & WELLNESS PROGRAM:',
           programDays: '3-Day Program',
-          price: 'Price of the program : 6100 <b>MAD</b> / 560 <b>€</b>',
+          price: 'Price of the program : 5450 <b>MAD</b> / 545 <b>€</b>',
           intro: [
             'Is your daily life marked by a hectic pace, a flood of responsibilities and challenges, leaving little room for relaxation? This intense lifestyle negatively impacts your mental and physical health, your performance and your overall well-being',
             'We have designed a program especially for you: the Relaxation and Wellness Program. You can disconnect, release pressure and find deep serenity through proven holistic therapies and personalized treatments',
