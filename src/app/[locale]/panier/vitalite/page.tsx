@@ -12,6 +12,7 @@ interface FormData {
   phone: string;
   numberOfPeople: string;
   arrivalDate: string;
+  optIn: boolean;
 }
 
 export default function VitalitePanierPage() {
@@ -25,6 +26,7 @@ export default function VitalitePanierPage() {
     phone: '',
     numberOfPeople: '1',
     arrivalDate: '',
+    optIn: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -101,6 +103,7 @@ export default function VitalitePanierPage() {
           arrivalDate: formData.arrivalDate,
           selectedOffer: '3',
           pageSlug: 'vitalite',
+          optIn: formData.optIn,
         }),
       });
 
@@ -117,6 +120,7 @@ export default function VitalitePanierPage() {
           arrivalDate: formData.arrivalDate,
           selectedOffer: '3',
           pageSlug: 'vitalite',
+          optIn: formData.optIn,
         }),
       });
 
@@ -158,9 +162,9 @@ export default function VitalitePanierPage() {
     }
   };
 
-  const handleInputChange = (field: keyof FormData, value: string) => {
+  const handleInputChange = (field: keyof FormData, value: string | boolean) => {
     if (field === 'fullName') {
-      const error = validateNoSpecialChars(value);
+      const error = validateNoSpecialChars(value as string);
       setValidationErrors((prev) => {
         const newErrors = { ...prev };
         if (error) {
@@ -242,12 +246,23 @@ export default function VitalitePanierPage() {
               </div>
 
               <div className="pt-6 pb-2">
-                <div className="flex items-start space-x-3 bg-gray-50 border border-gray-100 p-4 rounded-xl">
+                <div className="flex items-start space-x-3 bg-gray-50 border border-gray-100 p-4 rounded-xl mb-4">
                   <div className="flex items-center h-5 mt-0.5">
                     <input type="checkbox" id="acceptTerms" required className="h-5 w-5 rounded border-gray-300 text-[#139584] focus:ring-[#d6bb8e] transition-all" />
                   </div>
                   <label htmlFor="acceptTerms" className="text-sm text-gray-600 leading-relaxed">
                     {t('terms.agree')} <a href="/fr/legal/cgv" target="_blank" className="font-medium text-[#139584] hover:text-[#0f7668] underline transition-colors">{t('terms.link')}</a>
+                  </label>
+                </div>
+
+                <div className="flex items-start space-x-3 bg-gray-50 border border-gray-100 p-4 rounded-xl">
+                  <div className="flex items-center h-5 mt-0.5">
+                    <input type="checkbox" id="optIn" checked={formData.optIn} onChange={(e) => handleInputChange('optIn', e.target.checked)} className="h-5 w-5 rounded border-gray-300 text-[#139584] focus:ring-[#d6bb8e] transition-all" />
+                  </div>
+                  <label htmlFor="optIn" className="text-sm text-gray-600 leading-relaxed">
+                    {locale === 'fr' 
+                      ? "J'accepte de recevoir des offres exclusives et des communications personnalisées de la part de Dakhla Club." 
+                      : "I agree to receive exclusive offers and personalized communications from Dakhla Club."}
                   </label>
                 </div>
               </div>
