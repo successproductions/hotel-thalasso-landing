@@ -244,7 +244,7 @@ export default function ${data.componentName}() {
                 </div>
               </div>
 
-              <div className="pt-6 pb-2">
+              <div className="pt-1 pb-2">
                 <div className="flex items-start space-x-3 bg-gray-50 border border-gray-100 p-4 rounded-xl">
                   <div className="flex items-center h-5 mt-0.5">
                     <input type="checkbox" id="acceptTerms" required className="h-5 w-5 rounded border-gray-300 text-[#139584] focus:ring-[#d6bb8e] transition-all" />
