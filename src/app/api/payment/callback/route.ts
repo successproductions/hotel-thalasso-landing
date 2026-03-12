@@ -82,8 +82,8 @@ const getPaymentConfirmationEmail = (customerName: string, orderId: string, pack
     .info-section { margin: 30px 0; border-top: 1px solid #111; border-bottom: 1px solid #111; padding: 20px 0; }
     .info-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
     .info-row:last-child { border-bottom: none; }
-    .info-label { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .info-value { color: #000; font-weight: 500; font-size: 14px; text-align: right; }
+    .info-label { color: #666; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; min-width: 150px; padding-right: 15px; }
+    .info-value { color: #000; font-weight: 500; font-size: 14px; text-align: right; margin-left: auto; }
     .button { display: inline-block; background: #fff; color: #000 !important; text-decoration: none; padding: 14px 28px; border: 1px solid #000; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-top: 15px; }
     .button:hover { background: #000; color: #fff !important; }
     .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; border-top: 1px solid #ddd; }
