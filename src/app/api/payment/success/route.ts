@@ -296,6 +296,15 @@ export async function POST(request: NextRequest) {
     const procReturnCode = params['ProcReturnCode'];
     const orderId = params['oid'];
 
+    // Determine Base URL correctly for production behind a proxy
+    let baseUrl = 'https://offer.dakhlaclub.com';
+    if (process.env.NODE_ENV === 'development') {
+      const origin = request.nextUrl.origin;
+      if (origin && (origin.includes('localhost') || origin.includes('127.0.0.1'))) {
+        baseUrl = origin;
+      }
+    }
+
     // Get locale from stored booking info or default to 'fr'
     const locale = 'fr';
 
@@ -318,22 +327,23 @@ export async function POST(request: NextRequest) {
       // Redirect to thank you page with 303 See Other to force GET method
       const page = getPageFromOrderId(orderId || '');
       return NextResponse.redirect(
-        new URL(`/${locale}/${page}/thank-you?order=${orderId}`, request.nextUrl.origin),
+        new URL(`/${locale}/${page}/thank-you?order=${orderId}`, baseUrl),
         { status: 303 }
       );
     } else {
       // Payment failed
       const page = getPageFromOrderId(orderId || '');
       return NextResponse.redirect(
-        new URL(`/${locale}/${page}/payment-error?order=${orderId}`, request.nextUrl.origin),
+        new URL(`/${locale}/${page}/payment-error?order=${orderId}`, baseUrl),
         { status: 303 }
       );
     }
 
   } catch (error) {
     console.error('Success redirect error:', error);
+    // Hard fallback just in case baseUrl isn't defined
     return NextResponse.redirect(
-      new URL('/fr/evasion/payment-error', request.nextUrl.origin),
+      new URL('/fr/evasion/payment-error', 'https://offer.dakhlaclub.com'),
       { status: 303 }
     );
   }
@@ -349,15 +359,23 @@ export async function GET(request: NextRequest) {
   const procReturnCode = searchParams.get('ProcReturnCode') || '';
   const locale = 'fr';
 
+  let baseUrl = 'https://offer.dakhlaclub.com';
+  if (process.env.NODE_ENV === 'development') {
+    const origin = request.nextUrl.origin;
+    if (origin && (origin.includes('localhost') || origin.includes('127.0.0.1'))) {
+      baseUrl = origin;
+    }
+  }
+
   if (procReturnCode === '00') {
     const page = getPageFromOrderId(orderId);
     return NextResponse.redirect(
-      new URL(`/${locale}/${page}/thank-you?order=${orderId}`, request.nextUrl.origin)
+      new URL(`/${locale}/${page}/thank-you?order=${orderId}`, baseUrl)
     );
   } else {
     const page = getPageFromOrderId(orderId);
     return NextResponse.redirect(
-      new URL(`/${locale}/${page}/payment-error?order=${orderId}`, request.nextUrl.origin)
+      new URL(`/${locale}/${page}/payment-error?order=${orderId}`, baseUrl)
     );
   }
 }
