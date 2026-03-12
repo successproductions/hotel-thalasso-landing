@@ -285,14 +285,26 @@ async function sendEmails(params: Record<string, string>) {
 
 export async function POST(request: NextRequest) {
   try {
-    // Parse form data from CMI okUrl redirect
-    const formData = await request.formData();
+    // ─────────────────────────────────────────────────────────────────
+    // 1. SAFELY PARSE FORM DATA (Vercel/NextJS robust handling for CMI)
+    // ─────────────────────────────────────────────────────────────────
+    const contentType = request.headers.get('content-type') || '';
     const params: Record<string, string> = {};
-    
-    formData.forEach((value, key) => {
-      params[key] = value.toString();
-    });
 
+    if (contentType.includes('application/x-www-form-urlencoded')) {
+      const text = await request.text();
+      const searchParams = new URLSearchParams(text);
+      searchParams.forEach((value, key) => {
+        params[key] = value;
+      });
+    } else {
+      const formData = await request.formData();
+      formData.forEach((value, key) => {
+        params[key] = value.toString();
+      });
+    }
+
+    console.log('=== CMI SUCCESS REDIRECT RECEIVED ===');
     const procReturnCode = params['ProcReturnCode'];
     const orderId = params['oid'];
 
@@ -321,7 +333,11 @@ export async function POST(request: NextRequest) {
           // For safety, we await it here to ensure it sends. The user can wait 1-2s.
           await sendEmails(params);
       } else {
-          console.error('❌ Hash verification failed in Success Route. Emails not sent.');
+          console.error('❌ [Success Route] Hash verification failed. Emails not sent.', {
+            receivedHash,
+            calculatedHash,
+            storeKeyUsed: CMI_CONFIG.storeKey
+          });
       }
       
       // Redirect to thank you page with 303 See Other to force GET method
