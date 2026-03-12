@@ -23,35 +23,13 @@ export default function ThankYouContent({
       if (dataProcessed || !orderId) return;
 
       try {
-        // Get booking info from sessionStorage
+        // Clear sessionStorage since the reservation was already processed and saved during checkout
         const bookingInfoStr = sessionStorage.getItem('bookingInfo');
-        if (!bookingInfoStr) {
-          console.warn('No booking info found in sessionStorage');
-          return;
-        }
-
-        const bookingInfo = JSON.parse(bookingInfoStr);
-
-        // Send to backend to save in Google Sheets and send email
-        const response = await fetch('/api/reservations/evasion', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ...bookingInfo,
-            orderId: orderId,
-          }),
-        });
-
-        if (response.ok) {
-          // Clear sessionStorage after successful processing
+        if (bookingInfoStr) {
           sessionStorage.removeItem('bookingInfo');
-        } else {
-          console.error('Failed to process reservation');
         }
       } catch (error) {
-        console.error('Error processing reservation:', error);
+        console.error('Error clearing reservation info:', error);
       } finally {
         setDataProcessed(true);
       }
