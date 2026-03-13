@@ -8,6 +8,7 @@ import ReservationPopup from './ReservationPopup';
 export default function HeroTest() {
   const t = useTranslations('home');
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  
 
   return (
     <>
