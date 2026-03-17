@@ -17,11 +17,30 @@ interface FormData {
   phone: string;
   numberOfPeople: string;
   arrivalDate: string;
+  selectedPack: string;
 }
 
 export default function ReservationPopup({ isOpen, onClose }: ReservationPopupProps) {
   const locale = useLocale();
   const t = useTranslations('contactForm');
+  const packs = [
+    {
+      value: '3',
+      label: locale === 'fr' ? 'Programme 3 jours — 545 € / 5 450 MAD' : '3-Day Program — 545 € / 5,450 MAD',
+      sheetLabel: locale === 'fr' ? 'Programme 3 jours' : '3-Day Program',
+    },
+    {
+      value: '5',
+      label: locale === 'fr' ? 'Programme 5 jours — 1 035 € / 10 350 MAD' : '5-Day Program — 1,035 € / 10,350 MAD',
+      sheetLabel: locale === 'fr' ? 'Programme 5 jours' : '5-Day Program',
+    },
+    {
+      value: '7',
+      label: locale === 'fr' ? 'Programme 7 jours — 1 170 € / 11 700 MAD' : '7-Day Program — 1,170 € / 11,700 MAD',
+      sheetLabel: locale === 'fr' ? 'Programme 7 jours' : '7-Day Program',
+    },
+  ];
+
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
@@ -29,6 +48,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
     phone: '',
     numberOfPeople: '1',
     arrivalDate: '',
+    selectedPack: '3',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -54,12 +74,14 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
     try {
       // Prepare the data to send
       const fullPhone = `${formData.countryCode} ${formData.phone}`;
+      const selectedPackObj = packs.find(p => p.value === formData.selectedPack);
       const submissionData = {
         fullName: formData.fullName,
         email: formData.email,
         phone: fullPhone,
         numberOfPeople: formData.numberOfPeople,
         arrivalDate: formData.arrivalDate,
+        selectedPack: selectedPackObj?.sheetLabel ?? formData.selectedPack,
         timestamp: new Date().toISOString(),
       };
 
@@ -199,6 +221,26 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
               {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                 <option key={num} value={num}>
                   {num} {t(`fields.numberOfPeople.${num === 1 ? 'singular' : 'plural'}`)}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {/* Programme / Pack */}
+          <div>
+            <label htmlFor="selectedPack" className="mb-1 block text-sm font-medium text-gray-700">
+              {locale === 'fr' ? 'Programme' : 'Program'} <span className="text-red-500">*</span>
+            </label>
+            <select
+              id="selectedPack"
+              required
+              value={formData.selectedPack}
+              onChange={(e) => handleInputChange('selectedPack', e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              {packs.map((pack) => (
+                <option key={pack.value} value={pack.value}>
+                  {pack.label}
                 </option>
               ))}
             </select>
