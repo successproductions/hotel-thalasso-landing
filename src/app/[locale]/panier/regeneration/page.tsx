@@ -43,7 +43,7 @@ export default function RegenerationPanierPage() {
     accommodationDisclaimer: locale === 'fr' ? "* Ce pack n'inclut pas l'hébergement" : "* This pack does not include accommodation"
   };
 
-  const currentPriceMAD = Math.floor(currentOffer.basePriceMAD * 1.027);
+  const currentPriceMAD = Math.floor(currentOffer.basePriceMAD * 1.0297);
   const basePriceMAD = currentOffer.basePriceMAD;
 
   const countryCodes = [
@@ -329,7 +329,7 @@ export default function RegenerationPanierPage() {
                 <span className="font-medium text-gray-900">x {formData.numberOfPeople}</span>
               </div>
               <div className="flex justify-between text-sm text-gray-600">
-                <span>{locale === 'fr' ? 'Frais de transaction CMI' : 'CMI Transaction Fees'} (2.7%)</span>
+                <span>{locale === 'fr' ? 'Frais de transaction CMI' : 'CMI Transaction Fees'} (2.97%)</span>
                 <span className="text-[#139584] text-xs px-2 py-0.5 bg-[#139584]/10 rounded font-medium">{locale === 'fr' ? 'Inclus' : 'Included'}</span>
               </div>
               

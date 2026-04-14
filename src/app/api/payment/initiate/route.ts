@@ -15,7 +15,7 @@ const OFFER_PRICES_EUR: Record<string, number> = {
   '5': 1035,  // Math.floor(1035 × 1.027 ) = 10624 MAD
   '7': 1170,  // Math.floor(1170 × 1.027 ) = 12013 MAD
 };
-const CMI_FEE_RATE = 0.027;
+const CMI_FEE_RATE = 0.0297;
 
 interface PaymentRequest {
   fullName: string;
