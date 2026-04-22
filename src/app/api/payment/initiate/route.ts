@@ -48,7 +48,6 @@ function generateRnd(): string {
   return crypto.randomBytes(10).toString('hex');
 }
 
-// Clean string for billing info (remove special characters)
 // Returns a fallback if the result is empty (e.g. user entered only special chars)
 function cleanBillingString(str: string, fallback: string = 'Client'): string {
   const cleaned = str
