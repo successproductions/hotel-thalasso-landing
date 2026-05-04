@@ -368,7 +368,7 @@ const data = {
     includesFr: ['14 soins thalasso', '423 minutes de soins ', '8 soins softs et 6 hards', 'Accès spa et piscine'],
     includesEn: ['14 thalasso treatments', '423 minutes of treatments', '8 soft treatments and 6 hard treatments', 'Spa and pool access'],
     image: '/images/spa/_DSC2301.JPG',
-    basePriceMAD: 5450
+    basePriceMAD: 4950
   },
   regeneration: {
     componentName: 'RegenerationPanierPage',
@@ -381,7 +381,7 @@ const data = {
     includesFr: ['29 soins thalasso', '954 minutes de soins', '17 soins softs et 12 hards', 'Accès spa et piscine'],
     includesEn: ['29 thalasso treatments', '954 minutes of treatments', '17 soft treatments and 12 hard treatments', 'Spa and pool access'],
     image: '/images/offer-5/DSC02450.jpg',
-    basePriceMAD: 10350
+    basePriceMAD: 9270
   },
   renaissance: {
     componentName: 'RenaissancePanierPage',
@@ -394,7 +394,7 @@ const data = {
     includesFr: ['33 soins thalasso', '1270 minutes de soins', '16 soins softs et 17 hards', 'Accès spa et piscine'],
     includesEn: ['33 thalasso treatments', '1270 minutes of treatments', '16 soft treatments and 17 hard treatments', 'Spa and pool access'],
     image: '/images/offer-7/DSC00843.jpg',
-    basePriceMAD: 11700
+    basePriceMAD: 10620
   },
   evasion: {
     componentName: 'EvasionPanierPage',
@@ -407,7 +407,7 @@ const data = {
     includesFr: ['14 soins thalasso', '423 minutes de soins', '8 soins softs et 6 hards', 'Accès spa et piscine'],
     includesEn: ['14 thalasso treatments', '423 minutes of treatments', '8 soft and 6 hard treatments', 'Spa and pool access'],
     image: '/images/THERMALE.png',
-    basePriceMAD: 5450
+    basePriceMAD: 4950
   }
 };
 

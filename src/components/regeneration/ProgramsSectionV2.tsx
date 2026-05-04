@@ -20,9 +20,10 @@ export function ProgramsSectionV2() {
           subtitle: 'ON RELÂCHE',
           description: 'Le corps commence à se poser. Le système nerveux ralentit. La respiration se calme.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
+            "Douche à jet",
             "Piscine thermale",
+            "Ice bath",
             "Hammam mille et une nuit",
             "Massage relaxant"
           ],
@@ -34,12 +35,12 @@ export function ProgramsSectionV2() {
           subtitle: 'ON RÉÉQUILIBRE',
           description: 'Les soins marins et sensoriels relancent la circulation. Les tensions musculaires se dissolvent. L\'esprit devient plus clair.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
-            "Sauna",
             "Piscine thermale",
+            "Douche à jet",
             "Bain hydromassant",
-            "Enveloppement algue"
+            "Enveloppement algue",
+            "Modelage affusion"
           ],
           objectif: 'Harmonisation intérieure, rééquilibrage profond.'
         },
@@ -49,12 +50,11 @@ export function ProgramsSectionV2() {
           subtitle: 'ON PURIFIE',
           description: 'Le corps entre dans une phase de nettoyage. Les soins détox éliminent les toxines accumulées. L\'énergie commence à circuler plus librement.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
+            "Piscine thermale",
             "Douche à jet",
-            "Sauna",
-            "Modelage affusion",
-            "Scrub detox sel Himalaya"
+            "Pédicure",
+            "Massage After kite"
           ],
           objectif: 'Détoxification active, purification en profondeur.'
         },
@@ -64,13 +64,11 @@ export function ProgramsSectionV2() {
           subtitle: 'ON RÉGÉNÈRE',
           description: 'Les tissus se régénèrent. Le corps se reconstruit de l\'intérieur. La vitalité se réinstalle progressivement.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
-            "Sauna",
             "Piscine thermale",
-            "Ice bath",
-            "Bain magnésium",
-            "Massage Tonique aux huiles essentielles"
+            "Sauna",
+            "Scrub detox sel Himalaya",
+            "Massage detox sel Himalaya"
           ],
           objectif: 'Régénération cellulaire, relance métabolique.'
         },
@@ -80,11 +78,11 @@ export function ProgramsSectionV2() {
           subtitle: 'ON RECHARGE',
           description: 'L\'énergie revient, stable et durable. Le corps retrouve sa capacité naturelle à se régénérer. Vous repartez rééquilibré(e), réinitialisé(e).',
           services: [
-            "Massage detox sel Himalaya",
-            "Soin lissant detoxifiant spiruline",
-            "Cupping + serviette de feu",
-            "Douche à jet",
-            "Sauna"
+            "Bol d'air Jacquier",
+            "Piscine thermale",
+            "Massage pouchons",
+            "Soin raffirmissant siliciuam lift",
+            "Cupping + serviette de feu"
           ],
           objectif: 'Vitalité durable, reset complet.'
         }
@@ -101,9 +99,10 @@ export function ProgramsSectionV2() {
           subtitle: 'RELEASE',
           description: 'The body begins to settle. The nervous system slows down. Breathing calms.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
+            "Jet shower",
             "Thermal pool",
+            "Ice bath",
             "Hammam Arabian Nights",
             "Relaxing massage"
           ],
@@ -115,12 +114,12 @@ export function ProgramsSectionV2() {
           subtitle: 'REBALANCE',
           description: 'Marine and sensory treatments boost circulation. Muscle tensions dissolve. The mind becomes clearer.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
-            "Sauna",
             "Thermal pool",
+            "Jet shower",
             "Hydromassage bath",
-            "Seaweed wrap"
+            "Seaweed wrap",
+            "Affusion shower massage"
           ],
           objectif: 'Inner harmonization, deep rebalancing.'
         },
@@ -130,12 +129,11 @@ export function ProgramsSectionV2() {
           subtitle: 'PURIFY',
           description: 'The body enters a cleansing phase. Detox treatments eliminate accumulated toxins. Energy begins to flow more freely.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
+            "Thermal pool",
             "Jet shower",
-            "Sauna",
-            "Affusion shower massage",
-            "Himalayan salt detox scrub"
+            "Pedicure",
+            "Massage After kite"
           ],
           objectif: 'Active detoxification, deep purification.'
         },
@@ -145,13 +143,11 @@ export function ProgramsSectionV2() {
           subtitle: 'REGENERATE',
           description: 'Tissues regenerate. The body rebuilds from within. Vitality gradually returns.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
-            "Sauna",
             "Thermal pool",
-            "Ice bath",
-            "Magnesium bath",
-            "Tonic massage with essential oils"
+            "Sauna",
+            "Himalayan salt detox scrub",
+            "Himalayan salt detox massage"
           ],
           objectif: 'Cellular regeneration, metabolic boost.'
         },
@@ -161,11 +157,11 @@ export function ProgramsSectionV2() {
           subtitle: 'RECHARGE',
           description: 'Energy returns, stable and lasting. The body regains its natural ability to regenerate. You leave rebalanced, reset.',
           services: [
-            "Himalayan salt detox massage",
-            "Spirulina detox smoothing treatment",
-            "Cupping + fire towel",
-            "Jet shower",
-            "Sauna"
+            "Bol d'air Jacquier",
+            "Thermal pool",
+            "Hot poultice massage",
+            "Silicium lift firming treatment",
+            "Cupping + fire towel"
           ],
           objectif: 'Lasting vitality, complete reset.'
         }

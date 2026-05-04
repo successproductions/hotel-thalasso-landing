@@ -85,7 +85,7 @@ export default function RegenerationContent() {
                 '@type': 'Offer',
                 availability: 'https://schema.org/InStock',
                 priceCurrency: 'MAD',
-                price: '10350',
+                price: '9270',
                 category: 'Thalasso Treatment',
                 validFrom: new Date().toISOString(),
                 validThrough: '2025-12-31T23:59:59Z',

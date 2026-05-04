@@ -21,9 +21,9 @@ export function ProgramsSection() {
           description: 'Les tensions s\'évaporent. Le corps retrouve sa légèreté. L\'esprit suit.',
           services: [
             "Bol d'air Jacquier",
+            "Hammam secret desert",
             "Piscine thermale",
-            "Hammam mille et une nuit",
-            "Massage relaxant"
+            "Massage tonique"
           ],
           objectif: 'Relâchement profond, détente musculaire immédiate.'
         },
@@ -48,10 +48,11 @@ export function ProgramsSection() {
           subtitle: 'ON RECHARGE',
           description: 'Le corps se régénère. L\'énergie revient, fluide et stable. Vous repartez ancré(e), disponible.',
           services: [
+            "Bol d’air Jacquier",
             "Piscine thermale",
-            "Douche à jet",
-            "Bain magnésium",
-            "Cupping therapie serviette de feu"
+            "Massage visage huille d'argan",
+            "Soin combleur hyalu procolagene ",
+            "Cupping thérapie dos"
           ],
           objectif: 'Régénération cellulaire, vitalité durable.'
         }
@@ -68,10 +69,10 @@ export function ProgramsSection() {
           subtitle: 'RELEASE',
           description: 'Tensions evaporate. The body regains its lightness. The mind follows.',
           services: [
-            "Bol d'air Jacquier",
-            "Thermal pool",
-            "Hammam Arabian Nights",
-            "Relaxing massage"
+            "Bol d’air Jacquier",
+            "Piscine thermale",
+            "Hammam secret desert",
+            "Massage tonique"
           ],
           objectif: 'Deep release, immediate muscle relaxation.'
         },

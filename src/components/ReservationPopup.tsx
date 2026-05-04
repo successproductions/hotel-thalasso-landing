@@ -26,7 +26,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   const packs = [
     {
       value: '3',
-      label: locale === 'fr' ? 'Programme 3 jours — 545 € / 5 450 MAD' : '3-Day Program — 545 € / 5,450 MAD',
+      label: locale === 'fr' ? 'Programme 3 jours — 495 € / 5 450 MAD' : '3-Day Program — 495 € / 5,450 MAD',
       sheetLabel: locale === 'fr' ? 'Programme 3 jours' : '3-Day Program',
     },
     {

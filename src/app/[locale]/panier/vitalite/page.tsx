@@ -39,7 +39,7 @@ export default function VitalitePanierPage() {
       ? ["14 soins thalasso","423 minutes de soins ","8 soins softs et 6 hards","Accès spa et piscine"]
       : ["14 thalasso treatments","423 minutes of treatments","8 soft treatments and 6 hard treatments","Spa and pool access"],
     image: "/images/spa/_DSC2301.JPG",
-    basePriceMAD: 5450,
+    basePriceMAD: 4950,
     accommodationDisclaimer: locale === 'fr' ? "* Ce pack n'inclut pas l'hébergement" : "* This pack does not include accommodation"
   };
 
@@ -322,7 +322,7 @@ export default function VitalitePanierPage() {
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-4">
               <div className="flex justify-between text-sm text-gray-600">
                 <span>{locale === 'fr' ? 'Prix par personne' : 'Price per person'}</span>
-                <span className="font-medium text-gray-900">{basePriceMAD.toLocaleString('fr-FR')} MAD / 545 €</span>
+                <span className="font-medium text-gray-900">{basePriceMAD.toLocaleString('fr-FR')} MAD / 495 €</span>
               </div>
               <div className="flex justify-between text-sm text-gray-600">
                 <span>{locale === 'fr' ? 'Nombre de personnes' : 'Number of people'}</span>

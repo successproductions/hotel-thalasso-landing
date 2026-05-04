@@ -39,7 +39,7 @@ export default function RenaissancePanierPage() {
       ? ["33 soins thalasso","1270 minutes de soins","16 soins softs et 17 hards","Accès spa et piscine"]
       : ["33 thalasso treatments","1270 minutes of treatments","16 soft treatments and 17 hard treatments","Spa and pool access"],
     image: "/images/offer-7/dji3.jpg",
-    basePriceMAD: 11700,
+    basePriceMAD: 10620,
     accommodationDisclaimer: locale === 'fr' ? "* Ce pack n'inclut pas l'hébergement" : "* This pack does not include accommodation"
   };
 
@@ -322,7 +322,7 @@ export default function RenaissancePanierPage() {
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-4">
               <div className="flex justify-between text-sm text-gray-600">
                 <span>{locale === 'fr' ? 'Prix par personne' : 'Price per person'}</span>
-                <span className="font-medium text-gray-900">{basePriceMAD.toLocaleString('fr-FR')} MAD / 1170 €</span>
+                <span className="font-medium text-gray-900">{basePriceMAD.toLocaleString('fr-FR')} MAD / 1062 €</span>
               </div>
               <div className="flex justify-between text-sm text-gray-600">
                 <span>{locale === 'fr' ? 'Nombre de personnes' : 'Number of people'}</span>

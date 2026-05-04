@@ -20,10 +20,11 @@ export function ProgramsSectionV2() {
           subtitle: 'ON SE POSE',
           description: 'Le corps commence à se déposer. Le système nerveux ralentit. La respiration s\'apaise. On entre dans le processus.',
           services: [
-            "Sport coaching class",
+            "Bol d'air Jacquier",
             "Douche à jet",
             "Piscine thermale",
-            "Hammam mille et une nuit"
+            "Hammam mille et une nuit",
+            "Massage relaxant"
           ],
           objectif: 'Décompression immédiate, sortie du mode "alerte".'
         },
@@ -33,10 +34,12 @@ export function ProgramsSectionV2() {
           subtitle: 'ON RELÂCHE',
           description: 'Les tensions profondes commencent à se libérer. Le corps retrouve sa mobilité. L\'esprit s\'allège.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
+            "Piscine thermale",
+            "Douche à jet",
             "Bain hydromassant",
-            "Enveloppement algue"
+            "Enveloppement algue",
+            "Modelage affusion"
           ],
           objectif: 'Relâchement musculaire profond, libération des tensions.'
         },
@@ -46,11 +49,10 @@ export function ProgramsSectionV2() {
           subtitle: 'ON RÉÉQUILIBRE',
           description: 'Les soins marins et sensoriels relancent la circulation. Les tensions musculaires se dissolvent. L\'esprit devient plus clair.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
-            "Modelage affusion",
-            "Sauna",
-            "Massage traditionnel relaxant"
+            "Piscine thermale",
+            "Douche à jet",
+            "Massage After kite"
           ],
           objectif: 'Harmonisation intérieure, rééquilibrage profond.'
         },
@@ -60,10 +62,10 @@ export function ProgramsSectionV2() {
           subtitle: 'ON DÉTOXIFIE',
           description: 'Les soins nettoient, drainent et réoxygènent les tissus. L\'énergie revient progressivement. Le corps respire. L\'esprit s\'allège.',
           services: [
-            "Scrub detox sel Himalaya",
-            "Massage detox sel Himalaya",
+            "Bol d'air Jacquier",
             "Piscine thermale",
-            "Sauna"
+            "Scrub detox sel Himalaya",
+            "Massage detox sel Himalaya"
           ],
           objectif: 'Détoxification active, purification en profondeur.'
         },
@@ -73,10 +75,10 @@ export function ProgramsSectionV2() {
           subtitle: 'ON RÉGÉNÈRE',
           description: 'Les tissus se régénèrent. Le corps se reconstruit de l\'intérieur. La vitalité se réinstalle progressivement.',
           services: [
-            "Sport coaching class",
-            "Massage pochons",
-            "Marche méditative marine",
-            "Piscine thermale"
+            "Bol d'air Jacquier",
+            "Piscine thermale",
+            "Douche à jet",
+            "Massage pouchons"
           ],
           objectif: 'Régénération cellulaire, relance métabolique.'
         },
@@ -86,11 +88,12 @@ export function ProgramsSectionV2() {
           subtitle: 'ON LIBÈRE',
           description: 'Le corps entre dans une phase de nettoyage profond. Les blocages se lèvent. L\'énergie circule librement.',
           services: [
-            "Yoga stretching",
+            "Bol d'air Jacquier",
+            "Piscine thermale",
             "Ice bath",
-            "Massage visage huile d'argan",
-            "Bain magnésium",
-            "Sauna"
+            "Sauna",
+            "Pédicure",
+            "Massage visage huile d'argan"
           ],
           objectif: 'Libération complète, fluidité retrouvée.'
         },
@@ -100,11 +103,10 @@ export function ProgramsSectionV2() {
           subtitle: 'ON RECHARGE',
           description: 'L\'énergie revient, stable et durable. Le corps retrouve sa capacité naturelle à se régénérer. Vous repartez réinitialisé(e).',
           services: [
-            "Stretching",
             "Bol d'air Jacquier",
-            "Cupping + serviette de feu",
+            "Piscine thermale",
             "Soin lissant spiruline",
-            "Douche à jet"
+            "Cupping + serviette de feu"
           ],
           objectif: 'Vitalité durable, renaissance complète.'
         }
@@ -121,10 +123,11 @@ export function ProgramsSectionV2() {
           subtitle: 'SETTLE IN',
           description: 'The body begins to settle. The nervous system slows down. Breathing calms. The process begins.',
           services: [
-            "Sport coaching class",
+            "Bol d'air Jacquier",
             "Jet shower",
             "Thermal pool",
-            "Hammam Arabian Nights"
+            "Hammam Arabian Nights",
+            "Relaxing massage"
           ],
           objectif: 'Immediate decompression, switching off "alert mode".'
         },
@@ -134,10 +137,12 @@ export function ProgramsSectionV2() {
           subtitle: 'RELEASE',
           description: 'Deep tensions begin to release. The body regains its mobility. The mind lightens.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
+            "Thermal pool",
+            "Jet shower",
             "Hydromassage bath",
-            "Seaweed wrap"
+            "Seaweed wrap",
+            "Affusion shower massage"
           ],
           objectif: 'Deep muscle release, tension liberation.'
         },
@@ -147,11 +152,10 @@ export function ProgramsSectionV2() {
           subtitle: 'REBALANCE',
           description: 'Marine and sensory treatments boost circulation. Muscle tensions dissolve. The mind becomes clearer.',
           services: [
-            "Yoga",
             "Bol d'air Jacquier",
-            "Affusion shower massage",
-            "Sauna",
-            "Traditional relaxing massage"
+            "Thermal pool",
+            "Jet shower",
+            "Massage After kite"
           ],
           objectif: 'Inner harmonization, deep rebalancing.'
         },
@@ -161,10 +165,10 @@ export function ProgramsSectionV2() {
           subtitle: 'DETOXIFY',
           description: 'Treatments cleanse, drain and re-oxygenate tissues. Energy gradually returns. The body breathes. The mind lightens.',
           services: [
-            "Himalayan salt detox scrub",
-            "Himalayan salt detox massage",
+            "Bol d'air Jacquier",
             "Thermal pool",
-            "Sauna"
+            "Himalayan salt detox scrub",
+            "Himalayan salt detox massage"
           ],
           objectif: 'Active detoxification, deep purification.'
         },
@@ -174,10 +178,10 @@ export function ProgramsSectionV2() {
           subtitle: 'REGENERATE',
           description: 'Tissues regenerate. The body rebuilds from within. Vitality gradually returns.',
           services: [
-            "Sport coaching class",
-            "Hot poultice massage",
-            "Meditative ocean walk",
-            "Thermal pool"
+            "Bol d'air Jacquier",
+            "Thermal pool",
+            "Jet shower",
+            "Hot poultice massage"
           ],
           objectif: 'Cellular regeneration, metabolic boost.'
         },
@@ -187,11 +191,12 @@ export function ProgramsSectionV2() {
           subtitle: 'LIBERATE',
           description: 'The body enters a deep cleansing phase. Blockages lift. Energy flows freely.',
           services: [
-            "Yoga stretching",
+            "Bol d'air Jacquier",
+            "Thermal pool",
             "Ice bath",
-            "Argan oil facial massage",
-            "Magnesium bath",
-            "Sauna"
+            "Sauna",
+            "Pedicure",
+            "Argan oil facial massage"
           ],
           objectif: 'Complete liberation, restored fluidity.'
         },
@@ -201,11 +206,10 @@ export function ProgramsSectionV2() {
           subtitle: 'RECHARGE',
           description: 'Energy returns, stable and lasting. The body regains its natural ability to regenerate. You leave reset.',
           services: [
-            "Stretching",
             "Bol d'air Jacquier",
-            "Cupping + fire towel",
+            "Thermal pool",
             "Spirulina smoothing treatment",
-            "Jet shower"
+            "Cupping + fire towel"
           ],
           objectif: 'Lasting vitality, complete renaissance.'
         }

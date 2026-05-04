@@ -86,7 +86,7 @@ export default function VitaliteContent() {
                 '@type': 'Offer',
                 availability: 'https://schema.org/InStock',
                 priceCurrency: 'MAD',
-                price: '5450',
+                price: '4950',
                 category: 'Thalasso Treatment',
                 validFrom: new Date().toISOString(),
                 validThrough: '2025-12-31T23:59:59Z',

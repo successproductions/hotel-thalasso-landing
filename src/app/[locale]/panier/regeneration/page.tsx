@@ -39,7 +39,7 @@ export default function RegenerationPanierPage() {
       ? ["29 soins thalasso","954 minutes de soins","17 soins softs et 12 hards","Accès spa et piscine"]
       : ["29 thalasso treatments","954 minutes of treatments","17 soft treatments and 12 hard treatments","Spa and pool access"],
     image: "/images/offer-5/DSC02450.jpg",
-    basePriceMAD: 10350,
+    basePriceMAD: 9270,
     accommodationDisclaimer: locale === 'fr' ? "* Ce pack n'inclut pas l'hébergement" : "* This pack does not include accommodation"
   };
 
@@ -322,7 +322,7 @@ export default function RegenerationPanierPage() {
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 space-y-4">
               <div className="flex justify-between text-sm text-gray-600">
                 <span>{locale === 'fr' ? 'Prix par personne' : 'Price per person'}</span>
-                <span className="font-medium text-gray-900">{basePriceMAD.toLocaleString('fr-FR')} MAD / 1035 €</span>
+                <span className="font-medium text-gray-900">{basePriceMAD.toLocaleString('fr-FR')} MAD / 927 €</span>
               </div>
               <div className="flex justify-between text-sm text-gray-600">
                 <span>{locale === 'fr' ? 'Nombre de personnes' : 'Number of people'}</span>

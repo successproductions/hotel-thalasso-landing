@@ -39,7 +39,7 @@ export default function EvasionPanierPage() {
       ? ["14 soins thalasso","423 minutes de soins","8 soins softs et 6 hards","Accès spa et piscine"]
       : ["14 thalasso treatments","423 minutes of treatments","8 soft and 6 hard treatments","Spa and pool access"],
     image: "/images/THERMALE.png",
-    basePriceMAD: 545,
+    basePriceMAD: 495,
     accommodationDisclaimer: locale === 'fr' ? "* Ce pack n'inclut pas l'hébergement" : "* This pack does not include accommodation"
   };
 
