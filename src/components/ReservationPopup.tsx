@@ -26,17 +26,17 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   const packs = [
     {
       value: '3',
-      label: locale === 'fr' ? 'Programme 3 jours — 495 € / 5 450 MAD' : '3-Day Program — 495 € / 5,450 MAD',
+      label: locale === 'fr' ? 'Programme 3 jours — 495 € / 4 950 MAD' : '3-Day Program — 495 € / 4,950 MAD',
       sheetLabel: locale === 'fr' ? 'Programme 3 jours' : '3-Day Program',
     },
     {
       value: '5',
-      label: locale === 'fr' ? 'Programme 5 jours — 1 035 € / 10 350 MAD' : '5-Day Program — 1,035 € / 10,350 MAD',
+      label: locale === 'fr' ? 'Programme 5 jours — 927 € / 9 270 MAD' : '5-Day Program — 927 € / 9,270 MAD',
       sheetLabel: locale === 'fr' ? 'Programme 5 jours' : '5-Day Program',
     },
     {
       value: '7',
-      label: locale === 'fr' ? 'Programme 7 jours — 1 170 € / 11 700 MAD' : '7-Day Program — 1,170 € / 11,700 MAD',
+      label: locale === 'fr' ? 'Programme 7 jours — 1 062 € / 10 620 MAD' : '7-Day Program — 1,062 € / 10,620 MAD',
       sheetLabel: locale === 'fr' ? 'Programme 7 jours' : '7-Day Program',
     },
   ];

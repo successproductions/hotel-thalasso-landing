@@ -85,7 +85,7 @@ export default function RenaissanceContent() {
                 '@type': 'Offer',
                 availability: 'https://schema.org/InStock',
                 priceCurrency: 'MAD',
-                price: '10620',
+                price: '11700',
                 category: 'Thalasso Treatment',
                 validFrom: new Date().toISOString(),
                 validThrough: '2025-12-31T23:59:59Z',

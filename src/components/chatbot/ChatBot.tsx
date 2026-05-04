@@ -263,7 +263,7 @@ export default function ChatBot({ onOpenReservation }: ChatBotProps) {
   };
 
   const getTarifsMessage = (): Omit<Message, 'id' | 'type' | 'timestamp'> => ({
-    text: 'Voici les tarifs de nos séjours thalasso :\n\n🌿 Vitalité — 3 jours : 5 450 MAD / 495 €\n🌊 Régénération — 5 jours : 10 350 MAD / 1 035 €\n🔥 Renaissance — 7 jours : 11 700 MAD / 1 170 €\n\n💡 Les soins sont inclus. L\'hébergement est choisi séparément selon vos préférences.',
+    text: 'Voici les tarifs de nos séjours thalasso :\n\n🌿 Vitalité — 3 jours : 4 950 MAD / 495 €\n🌊 Régénération — 5 jours : 10 350 MAD / 1 035 €\n🔥 Renaissance — 7 jours : 11 700 MAD / 1 170 €\n\n💡 Les soins sont inclus. L\'hébergement est choisi séparément selon vos préférences.',
     buttons: [
       { id: '1', label: 'Réserver maintenant', emoji: '🗓️', action: 'reserver' },
       { id: '2', label: 'Parler à un conseiller', emoji: '📞', action: 'conseiller' },
