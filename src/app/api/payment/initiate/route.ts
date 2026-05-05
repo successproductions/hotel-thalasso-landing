@@ -11,7 +11,7 @@ const CMI_CONFIG = {
 };
 
 const OFFER_PRICES_EUR: Record<string, number> = {
-  '3': 1,   // Math.floor(495  × 1.027 ) = 5595 MAD
+  '3': 4950,   // Math.floor(495  × 1.027 ) = 5595 MAD
   '5': 9270,  // Math.floor(927 × 1.027 ) = 10624 MAD
   '7': 10620,  // Math.floor(1062 × 1.027 ) = 12013 MAD
 };
