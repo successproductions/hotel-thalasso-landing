@@ -11,7 +11,7 @@ const CMI_CONFIG = {
 };
 
 const OFFER_PRICES_EUR: Record<string, number> = {
-  '3': 4950,   // Math.floor(495  × 1.027 ) = 5595 MAD
+  '3': 1,   // Math.floor(495  × 1.027 ) = 5595 MAD
   '5': 9270,  // Math.floor(927 × 1.027 ) = 10624 MAD
   '7': 10620,  // Math.floor(1062 × 1.027 ) = 12013 MAD
 };
@@ -24,7 +24,8 @@ interface PaymentRequest {
   numberOfPeople: string;
   arrivalDate: string;
   selectedOffer: string;
-  pageSlug?: string; 
+  pageSlug?: string;
+  orderId?: string; // optional pre-generated orderId from the panier page
 }
 
 // Page slug → order ID prefix mapping
@@ -112,7 +113,7 @@ export async function POST(request: NextRequest) {
     const amount = pricePerPersonMAD * count;
 
     // Generate unique order ID and random string
-    const orderId = generateOrderId(selectedOffer, pageSlug);
+    const orderId = body.orderId || generateOrderId(selectedOffer, pageSlug);
     const rnd = generateRnd();
 
     // Get base URL for callbacks

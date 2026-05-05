@@ -92,6 +92,12 @@ export default function VitalitePanierPage() {
     setIsSubmitting(true);
 
     try {
+      // Generate orderId upfront so it's shared between reservation save and CMI payment
+      // Format matches the prefix logic in /api/payment/initiate (VIT = vitalite, offer 3)
+      const timestamp = Date.now().toString(36);
+      const randomPart = Math.random().toString(36).substring(2, 8);
+      const orderId = `VIT3-${timestamp}${randomPart}`.toUpperCase();
+
       const emailResponse = await fetch('/api/reservations/evasion', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -104,6 +110,7 @@ export default function VitalitePanierPage() {
           selectedOffer: '3',
           pageSlug: 'vitalite',
           optIn: formData.optIn,
+          orderId,
         }),
       });
 
@@ -121,6 +128,7 @@ export default function VitalitePanierPage() {
           selectedOffer: '3',
           pageSlug: 'vitalite',
           optIn: formData.optIn,
+          orderId,
         }),
       });
 

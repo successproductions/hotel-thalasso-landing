@@ -92,6 +92,12 @@ export default function RenaissancePanierPage() {
     setIsSubmitting(true);
 
     try {
+      // Generate orderId upfront so it's shared between reservation save and CMI payment
+      // Format matches the prefix logic in /api/payment/initiate (REN = renaissance, offer 7)
+      const timestamp = Date.now().toString(36);
+      const randomPart = Math.random().toString(36).substring(2, 8);
+      const orderId = `REN7-${timestamp}${randomPart}`.toUpperCase();
+
       const emailResponse = await fetch('/api/reservations/evasion', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -104,6 +110,7 @@ export default function RenaissancePanierPage() {
           selectedOffer: '7',
           pageSlug: 'renaissance',
           optIn: formData.optIn,
+          orderId,
         }),
       });
 
@@ -121,6 +128,7 @@ export default function RenaissancePanierPage() {
           selectedOffer: '7',
           pageSlug: 'renaissance',
           optIn: formData.optIn,
+          orderId,
         }),
       });
 

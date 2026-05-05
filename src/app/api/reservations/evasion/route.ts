@@ -15,6 +15,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Add timestamp and format data for Google Sheets
+    // orderId is generated upfront in the panier page and passed here
+    // so it can be used later to update the status after payment confirmation
     const reservationData = {
       timestamp: new Date().toISOString(),
       fullName: data.fullName,
@@ -25,6 +27,7 @@ export async function POST(request: NextRequest) {
       selectedOffer: data.selectedOffer || '3',
       pageSlug: data.pageSlug || 'evasion',
       orderId: data.orderId || '',
+      status: 'En attente', // Initial status — updated to "Paiement confirmé" after CMI confirms
     };
 
     console.log('Sending to Google Sheets:', reservationData);
@@ -49,10 +52,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-
-    // Email confirmation will be sent after successful payment via callback
-    // No email sent here to avoid duplicate emails
-
+    // Email confirmation will be sent after successful payment via callback/success route
     return NextResponse.json({
       success: true,
       message: 'Reservation saved successfully',

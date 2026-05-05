@@ -332,6 +332,26 @@ export async function POST(request: NextRequest) {
           // Since this is a serverless function, we should verify it completes or just fire and forget if platform allows.
           // For safety, we await it here to ensure it sends. The user can wait 1-2s.
           await sendEmails(params);
+
+          // Update lead status in Google Sheets to "Paiement confirmé"
+          const googleScriptUrl = process.env.GOOGLE_SHEET_EVASION_URL;
+          if (googleScriptUrl && orderId) {
+            try {
+              await fetch(googleScriptUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  action: 'updateStatus',
+                  orderId: orderId,
+                  status: 'Paiement confirmé',
+                }),
+                redirect: 'follow',
+              });
+              console.log(`✅ [Success Route] Status updated to "Paiement confirmé" for order ${orderId}`);
+            } catch (statusError) {
+              console.error('❌ [Success Route] Failed to update status in Google Sheets:', statusError);
+            }
+          }
       } else {
           console.error('❌ [Success Route] Hash verification failed. Emails not sent.', {
             receivedHash,
