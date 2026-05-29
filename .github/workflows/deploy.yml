@@ -15,7 +15,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           timeout: 60s
           command_timeout: 10m
@@ -30,13 +30,13 @@ jobs:
             echo "==> Node version: $(node -v)"
             echo "==> NPM version: $(npm -v)"
 
-            # Go to project folder (uses $HOME — no hardcoded username)
+            # Go to project folder
             cd $HOME/htdocs/offer.dakhlaclub.com
 
-            # Pull latest code
+            # Server pulls from GitHub using its own deploy key
             git pull origin main
 
-            # Install dependencies (clean install)
+            # Install dependencies
             npm ci --prefer-offline || npm ci
 
             # Build the Next.js app
