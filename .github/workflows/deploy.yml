@@ -1,4 +1,4 @@
-# Trigger workflow update
+name: Deploy to Production
 
 on:
   push:
@@ -7,24 +7,42 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
-      - name: Deploy to server
+      - name: Deploy to production server
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: 95.216.6.6
-          username: dakhlaclub-offer
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          timeout: 60s
+          command_timeout: 10m
           script: |
+            # Load Node.js via NVM
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             export PATH="$HOME/.nvm/versions/node/$(ls $HOME/.nvm/versions/node/ | tail -1)/bin:$PATH"
             source ~/.bashrc || true
             source ~/.profile || true
 
-            cd htdocs/offer.dakhlaclub.com
+            echo "==> Node version: $(node -v)"
+            echo "==> NPM version: $(npm -v)"
+
+            # Go to project folder (uses $HOME — no hardcoded username)
+            cd $HOME/htdocs/offer.dakhlaclub.com
+
+            # Pull latest code
             git pull origin main
-            npm ci
+
+            # Install dependencies (clean install)
+            npm ci --prefer-offline || npm ci
+
+            # Build the Next.js app
             npm run build
 
+            # Restart or start with PM2
             if command -v pm2 >/dev/null 2>&1; then
               pm2 restart offer-dakhlaclub || pm2 start npm --name "offer-dakhlaclub" -- start
             else
@@ -33,7 +51,12 @@ jobs:
             fi
 
             pm2 save || true
+            echo "==> Deployment done!"
 
-      - name: Deployment notification
+      - name: Deployment success
         if: success()
-        run: echo "Deployment completed successfully !"
+        run: echo "Deployment completed successfully!"
+
+      - name: Deployment failed
+        if: failure()
+        run: echo "Deployment FAILED! Check the logs above."
