@@ -22,7 +22,7 @@
   "home": {
     "title": "SÉJOUR THALASSO À DAKHLA",
     "title2": "SÉJOUR THALASSO À DAKHLA",
-    "description": "3 Nuits pour relâcher le stress, rééquilibrer le corps et retrouver l’énergie ",
+    "description": "4 Nuits pour relâcher le stress, rééquilibrer le corps et retrouver l’énergie ",
     "duration": "Durée",
     "days": "3 Jours",
     "callButton": " Je veux vivre  l’expérience",
@@ -49,7 +49,6 @@
     "title5": "Choisissez le séjour qui correspond à votre besoin 3 jours et laissez notre équipe préparer votre expérience dans les moindres détails",
     "title6": "Choisissez le séjour qui correspond à votre besoin 5 jours et laissez notre équipe préparer votre expérience dans les moindres détails",
     "title7": "Choisissez le séjour qui correspond à votre besoin 7 jours et laissez notre équipe préparer votre expérience dans les moindres détails",
-
     "description1": "Au cœur de Dakhla, nous avons créé un refuge de bien-être où chaque soin devient rituel. Ici, le silence soigne. Le soleil réchauffe de l’intérieur. Nos thérapeutes certifiés vous accueillent pour une expérience immersive et profondément régénérante"
   },
   "about": {
@@ -1880,7 +1879,7 @@
   "chatbot": {
     "welcome": {
       "greeting": "🌿 Bonjour et bienvenue au Dakhla Club – votre refuge de bien-être au bord de l'océan.",
-      "description": "En seulement 3 nuits, vous offrez à votre corps et à votre esprit le redémarrage qu'ils attendaient depuis trop longtemps.",
+      "description": "En seulement 4 nuits, vous offrez à votre corps et à votre esprit le redémarrage qu'ils attendaient depuis trop longtemps.",
       "instruction": "Prenez une grande inspiration… Je suis là pour vous guider.",
       "question": "Que souhaitez-vous découvrir ?"
     },
@@ -1895,7 +1894,7 @@
     },
     "program": {
       "title": "🌙 **Programme – Séjour 3 nuits**",
-      "description": "🌿 Une parenthèse de 3 nuits pour déconnecter, respirer, renaître.",
+      "description": "🌿 Une parenthèse de 4 nuits pour déconnecter, respirer, renaître.",
       "day1": {
         "title": "🛬 **Jour 1** : Arrivée douce, installation dans votre cocon"
       },
@@ -1918,7 +1917,7 @@
     },
     "benefits": {
       "title": "✨ **Bienfaits de votre évasion**",
-      "description": "🌟 En seulement 3 nuits, votre corps et votre esprit vous diront merci :",
+      "description": "🌟 En seulement 4 nuits, votre corps et votre esprit vous diront merci :",
       "physical": {
         "title": "💪 **Physiques**",
         "items": [
@@ -1949,8 +1948,8 @@
       "title": "❓ **Poser une question pratique à notre équipe**",
       "subtitle": "🤝 Parler à un conseiller bien-être ",
       "contact": {
-        "phone": "📞 Ligne directe : +212 652 88 1921",
-        "whatsapp": "💬 WhatsApp : +212 652 88 1921",
+        "phone": "📞 Ligne directe : +212 662 548 762",
+        "whatsapp": "💬 WhatsApp : +212 662 548 762",
         "email": "📧 Email : reservation@dakhlaclub.com",
         "hours": "🕘 Disponibilité : Tous les jours de 9h à 20h",
         "response": "⚡ Réponse rapide : WhatsApp < 2h • Email <br 4h"
@@ -2023,7 +2022,7 @@
         "title": "**Inclus dans votre séjour :**",
         "items": [
           "✅ Tous les soins programmés",
-          "✅ 3 nuits d'hébergement",
+          "✅ 4 nuits d'hébergement",
           "✅ Pension complète bio",
           "✅ Transferts aéroport",
           "✅ Infusions détox & collations"

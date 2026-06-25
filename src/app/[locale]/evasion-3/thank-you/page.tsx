@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Link } from '@/i18n/navigation';
 import { CheckCircle2, Mail, Phone, Home } from 'lucide-react';
+import Script from 'next/script';
 
 export async function generateMetadata({
   params,
@@ -75,7 +76,29 @@ export default async function ThankYouPage({
   const text = content[locale];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-amber-50">
+    <>
+      {/* Google Tag Manager */}
+      <Script
+        id="gtm-evasion3-thankyou"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MFVNMQCG');`,
+        }}
+      />
+      {/* Google Tag Manager (noscript) */}
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-MFVNMQCG"
+          height="0"
+          width="0"
+          style={{ display: 'none', visibility: 'hidden' }}
+        />
+      </noscript>
+      <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-amber-50">
       <div className="mx-auto max-w-4xl px-4 py-16 md:py-24">
         {/* Success Icon */}
         <div className="mb-8 flex justify-center">
@@ -160,5 +183,6 @@ export default async function ThankYouPage({
         </div>
       </div>
     </div>
+    </>
   );
 }
