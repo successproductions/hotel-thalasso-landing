@@ -201,7 +201,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                 value={formData.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
                 className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder={t('fields.phone.placeholder')}
+                placeholder="XXXXXXXX"
               />
             </div>
           </div>
