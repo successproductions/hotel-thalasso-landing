@@ -10,6 +10,10 @@ export const routing = defineRouting({
       fr: '/evasion',
       en: '/evasion',
     },
+    '/evasion-3': {
+      fr: '/evasion-3',
+      en: '/evasion-3',
+    },
     '/evasion-holistique-3-jours': {
       fr: '/evasion-holistique-3-jours',
       en: '/evasion-holistique-3-jours',
