@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import Swal from 'sweetalert2';
 import { useLocale, useTranslations } from 'next-intl';
+import { captureAttribution, getAttribution } from '@/lib/metaTracking';
 
 interface ReservationPopupProps {
   isOpen: boolean;
@@ -67,6 +68,12 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
     { code: '+971', flag: '🇦🇪', country: 'AE' },
   ];
 
+  // Capture Meta ad attribution (fbclid / utm_*) from the landing URL on mount,
+  // before the visitor navigates away from it. Fail-soft, never throws.
+  useEffect(() => {
+    captureAttribution();
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -75,6 +82,10 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
       // Prepare the data to send
       const fullPhone = `${formData.countryCode} ${formData.phone}`;
       const selectedPackObj = packs.find(p => p.value === formData.selectedPack);
+      // ISO country from the already-selected dial code (no geolocation).
+      const selectedCountry = countryCodes.find(c => c.code === formData.countryCode);
+      // 8 Meta attribution fields; every one degrades to '' when unavailable.
+      const attribution = getAttribution(selectedCountry?.country ?? '');
       const submissionData = {
         fullName: formData.fullName,
         email: formData.email,
@@ -83,6 +94,7 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
         arrivalDate: formData.arrivalDate,
         selectedPack: selectedPackObj?.sheetLabel ?? formData.selectedPack,
         timestamp: new Date().toISOString(),
+        ...attribution,
       };
 
       // Send to API endpoint (handles emails and Google Sheets)
