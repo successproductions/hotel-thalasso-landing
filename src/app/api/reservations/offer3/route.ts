@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { upsertBrevoContact, sendWhatsAppTemplate } from '@/lib/brevo';
 
 
 interface ReservationData {
@@ -197,9 +198,16 @@ export async function POST(request: NextRequest) {
         });
       } catch (sheetsError) {
         console.error('Google Sheets error:', sheetsError);
-        
+
       }
     }
+
+    // Step 1.5: Create/update the contact in Brevo (never throws)
+    await upsertBrevoContact(reservationData);
+
+    // Step 1.6: Send the WhatsApp template. Must run after the contact upsert:
+    // Brevo reads the template placeholders from the contact record.
+    await sendWhatsAppTemplate(data.phone);
 
     // Step 2: Send emails
     const transporter = nodemailer.createTransport({
