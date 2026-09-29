@@ -8,8 +8,15 @@ interface ReservationData {
   phone: string;
   numberOfPeople: string;
   arrivalDate: string;
+  // Label of the programme chosen in the form: "Programme 3/5/7 jours".
+  // Optional so a payload from an older client still renders.
+  selectedPack?: string;
   timestamp: string;
 }
+
+/** The programme the client actually picked, never a hardcoded default. */
+const getProgramme = (data: ReservationData) =>
+  data.selectedPack?.trim() || 'Programme 3 jours';
 
 // Email templates
 const getClientEmailTemplate = (data: ReservationData) => `
@@ -38,11 +45,11 @@ const getClientEmailTemplate = (data: ReservationData) => `
   <div class="container">
     <div class="header">
       <h1>Dakhla Club - DC Thermes</h1>
-      <p>Évasion Holistique 3 Jours</p>
+      <p>${getProgramme(data)}</p>
     </div>
     <div class="content">
       <p>Bonjour ${data.fullName},</p>
-      <p>Nous avons bien reçu votre demande de réservation pour notre programme <strong>Évasion Holistique 3 Jours</strong>.</p>
+      <p>Nous avons bien reçu votre demande de réservation pour le <strong>${getProgramme(data)}</strong>.</p>
 
       <div class="info-section">
         <h3>Récapitulatif de votre demande</h3>
@@ -57,6 +64,10 @@ const getClientEmailTemplate = (data: ReservationData) => `
         <div class="info-row">
           <span class="info-label">Téléphone</span>
           <span class="info-value">${data.phone}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Programme</span>
+          <span class="info-value">${getProgramme(data)}</span>
         </div>
         <div class="info-row">
           <span class="info-label">Personnes</span>
@@ -111,7 +122,7 @@ const getAdminEmailTemplate = (data: ReservationData) => `
   <div class="container">
     <div class="header">
       <h1>Nouvelle Réservation</h1>
-      <p style="margin: 5px 0 0; font-size: 13px; opacity: 0.9;">Évasion Holistique 3 Jours</p>
+      <p style="margin: 5px 0 0; font-size: 13px; opacity: 0.9;">${getProgramme(data)}</p>
     </div>
     
     <div class="content">
@@ -141,6 +152,10 @@ const getAdminEmailTemplate = (data: ReservationData) => `
         <div class="info-row">
           <span class="info-label">Date (demande)</span>
           <span class="info-value">${new Date(data.timestamp).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Programme</span>
+          <span class="info-value">${getProgramme(data)}</span>
         </div>
         <div class="info-row">
           <span class="info-label">Personnes</span>
@@ -229,7 +244,7 @@ export async function POST(request: NextRequest) {
       await transporter.sendMail({
         from: `"Dakhla Club Reservations" <${process.env.EMAIL_USER}>`,
         to: 'closer@dakhlaclub.com',
-        subject: '🔔 Nouvelle demande de réservation - Évasion Holistique 3 Jours',
+        subject: `🔔 Nouvelle demande de réservation - ${getProgramme(reservationData)}`,
         html: getAdminEmailTemplate(reservationData),
       });
     } catch (emailError) {
