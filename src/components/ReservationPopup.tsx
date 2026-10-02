@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
 import Swal from 'sweetalert2';
 import { useLocale, useTranslations } from 'next-intl';
@@ -53,20 +53,85 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneBlurred, setPhoneBlurred] = useState(false);
+  // Set as soon as the visitor picks an indicative themselves, so the async
+  // IP detection can never overwrite their choice.
+  const countryTouchedRef = useRef(false);
 
+  // min/max = number of digits of the national number, trunk "0" excluded.
   const countryCodes = [
-    { code: '+212', flag: '🇲🇦', country: 'MA' },
-    { code: '+33', flag: '🇫🇷', country: 'FR' },
-    { code: '+34', flag: '🇪🇸', country: 'ES' },
-    { code: '+1', flag: '🇺🇸', country: 'US' },
-    { code: '+44', flag: '🇬🇧', country: 'GB' },
-    { code: '+49', flag: '🇩🇪', country: 'DE' },
-    { code: '+39', flag: '🇮🇹', country: 'IT' },
-    { code: '+32', flag: '🇧🇪', country: 'BE' },
-    { code: '+31', flag: '🇳🇱', country: 'NL' },
-    { code: '+966', flag: '🇸🇦', country: 'SA' },
-    { code: '+971', flag: '🇦🇪', country: 'AE' },
+    { code: '+212', flag: '🇲🇦', country: 'MA', min: 9, max: 9 },
+    { code: '+33', flag: '🇫🇷', country: 'FR', min: 9, max: 9 },
+    { code: '+34', flag: '🇪🇸', country: 'ES', min: 9, max: 9 },
+    { code: '+1', flag: '🇺🇸', country: 'US', min: 10, max: 10 },
+    { code: '+44', flag: '🇬🇧', country: 'GB', min: 9, max: 10 },
+    { code: '+49', flag: '🇩🇪', country: 'DE', min: 10, max: 11 },
+    { code: '+39', flag: '🇮🇹', country: 'IT', min: 9, max: 10 },
+    { code: '+32', flag: '🇧🇪', country: 'BE', min: 9, max: 9 },
+    { code: '+31', flag: '🇳🇱', country: 'NL', min: 9, max: 9 },
+    { code: '+966', flag: '🇸🇦', country: 'SA', min: 9, max: 9 },
+    { code: '+971', flag: '🇦🇪', country: 'AE', min: 9, max: 9 },
   ];
+
+  const currentCountry =
+    countryCodes.find((c) => c.code === formData.countryCode) ?? countryCodes[0];
+
+  // Country code pre-selected from the visitor's IP. Cloudflare already fronts
+  // the site, so /cdn-cgi/trace gives the country same-origin: no third-party
+  // call, no API key, no rate limit. Never overrides a manual choice.
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch('/cdn-cgi/trace')
+      .then((res) => (res.ok ? res.text() : Promise.reject()))
+      .then((text) => {
+        const loc = text.match(/^loc=([A-Z]{2})$/m)?.[1];
+        const match = countryCodes.find((c) => c.country === loc);
+        if (cancelled || !match || countryTouchedRef.current) return;
+        setFormData((prev) => ({ ...prev, countryCode: match.code }));
+      })
+      .catch(() => {
+        // Visitor keeps the default indicative. Detection is a convenience,
+        // never a requirement.
+      });
+
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const digits = formData.phone;
+
+  // Shown as soon as it happens: a leading 0 is an unambiguous mistake and the
+  // visitor can act on it straight away.
+  const phoneZeroError = digits.startsWith('0')
+    ? locale === 'fr'
+      ? 'Vérifiez votre indicatif pays, puis tapez votre numéro sans le 0'
+      : 'Check your country code, then type your number without the leading 0'
+    : '';
+
+  // Held back until the field loses focus: an incomplete number is the normal
+  // state while typing, and flagging it on the first keystroke is just noise.
+  const phoneLengthError =
+    digits && (digits.length < currentCountry.min || digits.length > currentCountry.max)
+      ? locale === 'fr'
+        ? `Le numéro doit contenir ${
+            currentCountry.min === currentCountry.max
+              ? currentCountry.min
+              : `${currentCountry.min} à ${currentCountry.max}`
+          } chiffres`
+        : `The number must contain ${
+            currentCountry.min === currentCountry.max
+              ? currentCountry.min
+              : `${currentCountry.min} to ${currentCountry.max}`
+          } digits`
+      : '';
+
+  // What the user sees now…
+  const phoneError = phoneZeroError || (phoneBlurred ? phoneLengthError : '');
+  // …and what actually blocks the submit.
+  const phoneInvalid = Boolean(phoneZeroError || phoneLengthError);
 
   // Capture Meta ad attribution (fbclid / utm_*) from the landing URL on mount,
   // before the visitor navigates away from it. Fail-soft, never throws.
@@ -76,6 +141,15 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // The field is `required`, so the browser already blocks an empty value;
+    // this stops a filled but malformed number from reaching the API. Reveal
+    // the length error too, in case the visitor never left the field.
+    if (phoneInvalid) {
+      setPhoneBlurred(true);
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -129,10 +203,18 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
   };
 
   const handleInputChange = (field: keyof FormData, value: string) => {
+    if (field === 'countryCode') countryTouchedRef.current = true;
+
     setFormData((prev) => ({
       ...prev,
       [field]: value,
     }));
+  };
+
+  /** Keeps digits only and caps the length for the selected country. */
+  const handlePhoneChange = (value: string) => {
+    const digits = value.replace(/\D/g, '').slice(0, currentCountry.max);
+    setFormData((prev) => ({ ...prev, phone: digits }));
   };
 
   // Get today's date in YYYY-MM-DD format
@@ -210,12 +292,27 @@ export default function ReservationPopup({ isOpen, onClose }: ReservationPopupPr
                 type="tel"
                 id="phone"
                 required
+                inputMode="numeric"
+                autoComplete="tel-national"
+                maxLength={currentCountry.max}
                 value={formData.phone}
-                onChange={(e) => handleInputChange('phone', e.target.value)}
-                className="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="XXXXXXXX"
+                onChange={(e) => handlePhoneChange(e.target.value)}
+                onBlur={() => setPhoneBlurred(true)}
+                aria-invalid={phoneError ? true : undefined}
+                aria-describedby={phoneError ? 'phone-error' : undefined}
+                className={`flex-1 rounded-lg border px-4 py-2 focus:outline-none focus:ring-2 ${
+                  phoneError
+                    ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
+                    : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'
+                }`}
+                placeholder={'X'.repeat(currentCountry.max)}
               />
             </div>
+            {phoneError && (
+              <p id="phone-error" className="mt-1 text-sm text-red-600">
+                {phoneError}
+              </p>
+            )}
           </div>
 
           {/* Number of People */}
