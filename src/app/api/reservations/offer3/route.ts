@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { upsertBrevoContact } from '@/lib/brevo';
 
 
 interface ReservationData {
@@ -213,9 +214,20 @@ export async function POST(request: NextRequest) {
         });
       } catch (sheetsError) {
         console.error('Google Sheets error:', sheetsError);
-        
+
       }
     }
+
+    // Step 1.5: Create/update the contact in Brevo and add it to the leads
+    // list (never throws). Adding it to the list is what starts the WhatsApp
+    // journey: a Brevo automation owns the whole sequence from there.
+    //
+    // The first WhatsApp message is deliberately NOT sent from here. It used to
+    // be (sendWhatsAppTemplate, still exported from @/lib/brevo), but the Brevo
+    // automation now opens the conversation with its own recap template, so
+    // sending one here too would reach the client twice. Keeping the sequence
+    // entirely in Brevo also means it can be changed without redeploying.
+    await upsertBrevoContact(reservationData);
 
     // Step 2: Send emails
     const transporter = nodemailer.createTransport({
