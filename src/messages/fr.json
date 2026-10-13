@@ -2320,16 +2320,16 @@
           "desc": "Déguisez-vous, surprenez et remportez des cadeaux ensorcelants !"
         },
         "kids": {
-          "title": "Atelier & maquillage enfants",
+          "title": "Atelier & maquillage ",
           "desc": "Moments magiques pour les petits : rires, couleurs et transformations féériques"
         },
         "massage": {
-          "title": "Massage relaxant post-frissons",
-          "desc": "Après la fête, détendez-vous avec un massage exclusif pour retrouver une sérénité totale"
+          "title": "Prêt à vivre un Halloween inoubliable au Dakhla Club ?",
+          "desc": "Prolongez la magie d’Halloween avec une parenthèse de détente au spa. Après les frissons de la soirée, place à la relaxation."
         },
         "voucher": {
-          "title": "500 DHS offerts à la boutique Spa",
-          "desc": "Profitez d’un bon d’achat pour prolonger la magie dans notre Spa Shop"
+          "title": "Cadeau tickets de consommation de 500 dhs ",
+          "desc": "La remise du prix sera effectuée publiquement à la fin du concours, avec une photo du gagnant et de l’équipe de l’hôtel."
         }
       }
     },

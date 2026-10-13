@@ -20,17 +20,7 @@ export default function HalloweenFooter() {
                 height={50}
                 className='w-24 h-12'
               />
-              <h3
-                className="text-2xl font-normal text-transparent bg-clip-text"
-                style={{
-                  fontFamily: 'var(--font-creepster)',
-                  background: 'linear-gradient(to right, #84bbca, #a0d2de)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}
-              >
-                Dakhla Club
-              </h3>
+
             </div>
             <p className="text-gray-400" style={{ fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif' }}>
               {t('footer.description')}
