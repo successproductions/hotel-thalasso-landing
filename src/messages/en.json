@@ -2360,32 +2360,33 @@
       "info": "⏰ Limited offer • 🔒 Secure payment • ⚡ Instant confirmation"
     },
     "offer": {
-      "description": "Your stay includes all these wonderful extras, starting from €495:",
-      "title": "Halloween Offer",
+      "title": "AN UNFORGETTABLE ESCAPE BETWEEN MYSTERY AND MAGIC AT THE LAGOON",
+      "description": "Experience an exceptional evening full of surprises at Dakhla Club:",
+      "buttoncall": "Book now!",
       "items": {
         "dinner": {
-          "title": "Spooky Dinner & Themed Menu",
-          "desc": "Savor a mystical feast prepared by our chefs for a thrilling evening full of chills"
+          "title": "Halloween dinner & themed menu",
+          "desc": "Savour a mysterious feast prepared by our chefs for an evening full of thrills."
         },
         "party": {
-          "title": "Costume Party Under the Stars",
-          "desc": "Dance facing the lagoon to the rhythm of our DJ… under the Halloween moon"
+          "title": "Evening under the stars",
+          "desc": "Dance facing the lagoon to our DJ\u2019s rhythm, under the Halloween moon."
         },
         "contest": {
-          "title": "Costume Contest & Enchanted Prizes",
-          "desc": "Dress up, amaze and win bewitching gifts!"
+          "title": "Costume contest",
+          "desc": "Dress up, surprise everyone and try to win bewitching prizes!"
         },
-        "kids": {
-          "title": "Workshop & Kids Face Painting",
-          "desc": "Magical moments for the little ones: laughter, colors and fairy-tale transformations"
+        "makeup": {
+          "title": "Make-up workshop",
+          "desc": "Let yourself be transformed and step into the world of Halloween. Make-up workshop for everyone."
         },
-        "massage": {
-          "title": "Ready to live an unforgettable Halloween at the Dakhla Club ?",
-          "desc": "Costumes, music, surprises and bewitching atmosphere. All the ingredients are there for a memorable night!"
+        "dance": {
+          "title": "African dance show",
+          "desc": "Experience a spellbinding performance carried by powerful, authentic rhythms."
         },
-        "voucher": {
-          "title": "Gift: 500 dhs consumption tickets ",
-          "desc": "The prize will be awarded publicly at the end of the contest, with a photo of the winner and the hotel team."
+        "ambiance": {
+          "title": "A bewitching atmosphere",
+          "desc": "A unique setting, a magical atmosphere and surprises all evening long."
         }
       }
     },

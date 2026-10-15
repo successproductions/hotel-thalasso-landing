@@ -2261,9 +2261,18 @@
     "rewards": {
       "title": "Ils nous ont distingu\u00e9s",
       "subtitle": "Des distinctions qui r\u00e9compensent l'accueil et l'exp\u00e9rience que nous offrons \u00e0 nos h\u00f4tes, toute l'ann\u00e9e.",
-      "award1": { "label": "Travellers' Choice", "alt": "Distinction Travellers' Choice" },
-      "award2": { "label": "TripAdvisor", "alt": "Distinction TripAdvisor" },
-      "award3": { "label": "Certificat d'excellence", "alt": "Certificat d'excellence TripAdvisor" }
+      "award1": {
+        "label": "Travellers' Choice",
+        "alt": "Distinction Travellers' Choice"
+      },
+      "award2": {
+        "label": "TripAdvisor",
+        "alt": "Distinction TripAdvisor"
+      },
+      "award3": {
+        "label": "Certificat d'excellence",
+        "alt": "Certificat d'excellence TripAdvisor"
+      }
     },
     "nav": {
       "home": "ACCUEIL",
@@ -2274,7 +2283,7 @@
       "title": "HALLOWEEN",
       "titleLine2": "FÉERIQUE",
       "subtitle": "AU DAKHLA CLUB",
-      "description": "Du 29 octobre au 2 novembre, DAKHLA CLUB vous réserve un Séjour Halloween Exceptionnel clé en main: Soirée costumée, Dîner Thématique, SPA et Animations face à la lagune. ",
+      "description": "Du 29 octobre au 2 novembre, DAKHLA CLUB vous réserve un Séjour Halloween Exceptionnel clé en main : Soirée costumée, Dîner Thématique, DJ et Animations face à la lagune. ",
       "button": "RÉSERVER MAINTENANT",
       "button2": "Je découvre cette offre",
       "dates": "LE TOUT EST INCLUS !",
@@ -2310,33 +2319,33 @@
       "info": "⏰ Offre limitée • 🔒 Paiement sécurisé • ⚡ Confirmation immédiate"
     },
     "offer": {
-      "title": "UNE ÉVASION INOUBLIABLE ENTRE MYSTÈRE ET MAGIE A LA LAGUNE ",
-      "description": "Votre séjour comprend toutes ces magnifiques surprises, à partir de 495 € :",
-      "buttoncall": "Je réserve maintenant !",
+      "title": "UNE \u00c9VASION INOUBLIABLE ENTRE MYST\u00c8RE ET MAGIE \u00c0 LA LAGUNE",
+      "description": "Vivez une soir\u00e9e exceptionnelle pleine de surprises au Dakhla Club :",
+      "buttoncall": "Je r\u00e9serve maintenant !",
       "items": {
         "dinner": {
-          "title": "Dîner effrayant & menu thématique",
-          "desc": "Savourez un festin mystique préparé par nos chefs pour une soirée pleine de frissons"
+          "title": "D\u00eener Halloween & menu th\u00e9matique",
+          "desc": "Savourez un festin myst\u00e9rieux pr\u00e9par\u00e9 par nos chefs pour une soir\u00e9e pleine de frissons."
         },
         "party": {
-          "title": "Soirée costumée sous les étoiles",
-          "desc": "Dansez face à la lagune au rythme de notre DJ… sous la lune d’Halloween"
+          "title": "Soir\u00e9e sous les \u00e9toiles",
+          "desc": "Dansez face \u00e0 la lagune au rythme de notre DJ, sous la lune d\u2019Halloween."
         },
         "contest": {
-          "title": "Concours de costumes & prix enchantés",
-          "desc": "Déguisez-vous, surprenez et remportez des cadeaux ensorcelants !"
+          "title": "Concours de costumes",
+          "desc": "D\u00e9guisez-vous, surprenez et tentez de remporter des cadeaux ensorcelants !"
         },
-        "kids": {
-          "title": "Atelier & maquillage ",
-          "desc": "Moments magiques pour les petits : rires, couleurs et transformations féériques"
+        "makeup": {
+          "title": "Atelier maquillage",
+          "desc": "Laissez-vous transformer et entrez dans l\u2019univers d\u2019Halloween. Atelier maquillage pour tous."
         },
-        "massage": {
-          "title": "Prêt à vivre un Halloween inoubliable au Dakhla Club ?",
-          "desc": "Costumes, musique, surprises et ambiance ensorcelante. Tous les ingrédients sont réunis pour une nuit mémorable !"
+        "dance": {
+          "title": "Spectacle de danse africaine",
+          "desc": "Vivez une performance envo\u00fbtante et laissez-vous emporter par des rythmes puissants et authentiques."
         },
-        "voucher": {
-          "title": "Cadeau tickets de consommation de 500 dhs ",
-          "desc": "La remise du prix sera effectuée publiquement à la fin du concours, avec une photo du gagnant et de l’équipe de l’hôtel."
+        "ambiance": {
+          "title": "Une ambiance ensorcelante",
+          "desc": "Un d\u00e9cor unique, une atmosph\u00e8re magique et des surprises tout au long de la soir\u00e9e."
         }
       }
     },

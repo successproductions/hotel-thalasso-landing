@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { UtensilsCrossed, Music, Trophy, Smile, Sparkles, Gift } from 'lucide-react';
+import { UtensilsCrossed, Music, Trophy, Brush, Drum, Sparkles } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -81,37 +81,37 @@ export default function HalloweenOffer() {
       Icon: UtensilsCrossed,
       title: t('offer.items.dinner.title'),
       description: t('offer.items.dinner.desc'),
-      image: '/images/hallowenn/halloween-monster-black-burger.jpg',
+      image: '/images/hallowenn/menu.png',
     },
     {
       Icon: Music,
       title: t('offer.items.party.title'),
       description: t('offer.items.party.desc'),
-      image: '/images/hallowenn/IMG_0432.png',
+      image: '/images/hallowenn/SOIREE.png',
     },
     {
       Icon: Trophy,
       title: t('offer.items.contest.title'),
       description: t('offer.items.contest.desc'),
-      image: '/images/hallowenn/man-dressed-up-like-drunk-medieval-pirate-halloween-party-with-group-people.jpg',
+      image: '/images/hallowenn/MAQUILLAGE.png',
     },
     {
-      Icon: Smile,
-      title: t('offer.items.kids.title'),
-      description: t('offer.items.kids.desc'),
-      image: '/images/hallowenn/portrait-young-man-with-friends-home.jpg',
+      Icon: Brush,
+      title: t('offer.items.makeup.title'),
+      description: t('offer.items.makeup.desc'),
+      image: '/images/hallowenn/COSTUMES.png',
+    },
+    {
+      Icon: Drum,
+      title: t('offer.items.dance.title'),
+      description: t('offer.items.dance.desc'),
+      image: '/images/hallowenn/DANSE.png',
     },
     {
       Icon: Sparkles,
-      title: t('offer.items.massage.title'),
-      description: t('offer.items.massage.desc'),
-      image: '/images/hallowenn/ATTESTATIO.png',
-    },
-    {
-      Icon: Gift,
-      title: t('offer.items.voucher.title'),
-      description: t('offer.items.voucher.desc'),
-      image: '/images/hallowenn/halloween-bathroom-decor-with-ghost-lights-jackolantern.jpg',
+      title: t('offer.items.ambiance.title'),
+      description: t('offer.items.ambiance.desc'),
+      image: '/images/hallowenn/ENSORCELANTE.png',
     },
   ];
 
