@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { openHalloweenBooking } from './bookingUrl';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,11 +113,10 @@ export default function HalloweenHero() {
     return () => ctx.revert();
   }, []);
 
+  // The on-page form was removed: CTAs now hand the visitor to the booking
+  // engine, with dates and occupancy already filled in.
   const scrollToForm = () => {
-    const formSection = document.getElementById('reservation-form');
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    openHalloweenBooking();
   };
 
   return (

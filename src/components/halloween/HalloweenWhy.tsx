@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslations } from 'next-intl';
+import { openHalloweenBooking } from './bookingUrl';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,11 +54,10 @@ export default function HalloweenWhy() {
     return () => ctx.revert();
   }, []);
 
+  // The on-page form was removed: CTAs now hand the visitor to the booking
+  // engine, with dates and occupancy already filled in.
   const scrollToForm = () => {
-    const formSection = document.getElementById('reservation-form');
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    openHalloweenBooking();
   };
 
   const reasons = [
@@ -85,12 +85,12 @@ export default function HalloweenWhy() {
           {/* Content Section */}
           <div ref={contentRef} className="space-y-8">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal text-transparent bg-clip-text"
-                style={{
-                  fontFamily: 'var(--font-creepster)',
-                  background: 'linear-gradient(to right, #5ea7aa, #a0d2de, #5ea7aa)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}>
+              style={{
+                fontFamily: 'var(--font-creepster)',
+                background: 'linear-gradient(to right, #5ea7aa, #a0d2de, #5ea7aa)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
               {t('why.title')}
             </h2>
 
@@ -132,27 +132,27 @@ export default function HalloweenWhy() {
           </div>
         </div>
 
-            {/* CTA Button */}
-            <div className="text-center mt-6">
-              <button
-                onClick={scrollToForm}
-                className="w-full md:w-auto px-10 py-5 rounded-full text-white font-normal text-lg md:text-xl transition-all duration-300 shadow-lg hover:shadow-2xl"
-                style={{
-                  background: 'linear-gradient(135deg, #5ea7aa, #84bbca)',
-                  fontFamily: 'var(--font-creepster)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 15px 35px rgba(94, 167, 170, 0.5)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 10px 25px rgba(94, 167, 170, 0.3)';
-                }}
-              >
-                {t('why.cta')}
-              </button>
-            </div>
+        {/* CTA Button */}
+        <div className="text-center my-6">
+          <button
+            onClick={scrollToForm}
+            className="w-full md:w-auto px-10 py-5 rounded-full text-white font-normal text-lg md:text-xl transition-all duration-300 shadow-lg hover:shadow-2xl"
+            style={{
+              background: 'linear-gradient(135deg, #5ea7aa, #84bbca)',
+              fontFamily: 'var(--font-creepster)',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = '0 15px 35px rgba(94, 167, 170, 0.5)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 10px 25px rgba(94, 167, 170, 0.3)';
+            }}
+          >
+            {t('why.cta')}
+          </button>
+        </div>
       </div>
     </section>
   );

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Menu, X, Globe } from 'lucide-react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { openHalloweenBooking } from './bookingUrl';
 
 export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
   const t = useTranslations('halloween');
@@ -105,7 +106,10 @@ export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
 
             {/* Reservation Button */}
             <button
-              onClick={() => scrollToSection('reservation-form')}
+              onClick={() => {
+                openHalloweenBooking();
+                setIsMenuOpen(false);
+              }}
               className={`px-6 py-2 font-normal rounded-full ${
                 isScrolled
                   ? 'bg-transparent border-2 text-white'
@@ -180,7 +184,10 @@ export default function HalloweenHeader({ locale }: { locale: 'fr' | 'en' }) {
             </button>
 
             <button
-              onClick={() => scrollToSection('reservation-form')}
+              onClick={() => {
+                openHalloweenBooking();
+                setIsMenuOpen(false);
+              }}
               className="w-full px-6 py-3 font-normal rounded-full text-white"
               style={{
                 fontFamily: 'var(--font-creepster)',
