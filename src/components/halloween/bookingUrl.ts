@@ -7,7 +7,7 @@
  * through five components.
  */
 export const HALLOWEEN_BOOKING_URL =
-  'https://direct-book.com/properties/DakhlaClubDIRECT?locale=fr&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=MAD&checkInDate=2026-10-15&checkOutDate=2026-10-17';
+  'https://direct-book.com/properties/DakhlaClubDIRECT?locale=fr&items[0][adults]=1&items[0][children]=0&items[0][infants]=0&currency=EUR&checkInDate=2026-10-29&checkOutDate=2026-10-31&trackPage=yes';
 
 /** Opens the booking engine in a new tab, keeping the landing page behind. */
 export function openHalloweenBooking(): void {
