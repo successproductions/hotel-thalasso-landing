@@ -2258,6 +2258,13 @@
     }
   },
   "halloween": {
+    "rewards": {
+      "title": "Ils nous ont distingu\u00e9s",
+      "subtitle": "Des distinctions qui r\u00e9compensent l'accueil et l'exp\u00e9rience que nous offrons \u00e0 nos h\u00f4tes, toute l'ann\u00e9e.",
+      "award1": { "label": "Travellers' Choice", "alt": "Distinction Travellers' Choice" },
+      "award2": { "label": "TripAdvisor", "alt": "Distinction TripAdvisor" },
+      "award3": { "label": "Certificat d'excellence", "alt": "Certificat d'excellence TripAdvisor" }
+    },
     "nav": {
       "home": "ACCUEIL",
       "offer": "OFFRE",
@@ -2271,7 +2278,7 @@
       "button": "RÉSERVER MAINTENANT",
       "button2": "Je découvre cette offre",
       "dates": "LE TOUT EST INCLUS !",
-      "badge": "À partir de 495 €"
+      "badge": "À partir de 310 €"
     },
     "limitedOffer": {
       "title": "LE SORT EST LANCÉ …",
@@ -2325,7 +2332,7 @@
         },
         "massage": {
           "title": "Prêt à vivre un Halloween inoubliable au Dakhla Club ?",
-          "desc": "Prolongez la magie d’Halloween avec une parenthèse de détente au spa. Après les frissons de la soirée, place à la relaxation."
+          "desc": "Costumes, musique, surprises et ambiance ensorcelante. Tous les ingrédients sont réunis pour une nuit mémorable !"
         },
         "voucher": {
           "title": "Cadeau tickets de consommation de 500 dhs ",

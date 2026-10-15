@@ -7,6 +7,7 @@ import HalloweenOffer from '@/components/halloween/HalloweenOffer';
 import HalloweenScarcity from '@/components/halloween/HalloweenScarcity';
 import HalloweenWhy from '@/components/halloween/HalloweenWhy';
 import HalloweenLimitedOffer from '@/components/halloween/HalloweenLimitedOffer';
+import HalloweenRewards from '@/components/halloween/HalloweenRewards';
 
 export async function generateMetadata({
   params,
@@ -139,6 +140,7 @@ export default async function HalloweenPage({
         <div id="about">
           <HalloweenWhy />
         </div>
+        <HalloweenRewards />
       </main>
       <HalloweenFooter />
 
