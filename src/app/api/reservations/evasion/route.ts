@@ -1,6 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { upsertBrevoContact } from '@/lib/brevo';
 
 const GOOGLE_APPS_SCRIPT_URL = process.env.GOOGLE_SHEET_EVASION_URL || '';
+
+/**
+ * Human-readable programme name, mirroring the label the Apps Script writes to
+ * the sheet so the CRM and the spreadsheet agree. Brevo resolves the WhatsApp
+ * template's {{PROGRAMME}} from this value.
+ */
+function getProgrammeLabel(pageSlug: string, selectedOffer: string): string {
+  switch (pageSlug) {
+    case 'vitalite':
+      return 'Thalasso Vitalité 3 Jours';
+    case 'regeneration':
+      return `Thalasso Régénération ${selectedOffer} Jours`;
+    case 'renaissance':
+      return `Thalasso Renaissance ${selectedOffer} Jours`;
+    default:
+      return `Évasion ${selectedOffer} Nuits`;
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -51,6 +70,22 @@ export async function POST(request: NextRequest) {
         // Continue even if sheets fail - don't block the response
       }
     }
+
+    // Create/update the contact in Brevo and add it to the leads list (never
+    // throws). The list membership is what starts the WhatsApp journey: a Brevo
+    // automation owns the sequence from there, the same one the evasion-3 form
+    // feeds.
+    await upsertBrevoContact({
+      fullName: reservationData.fullName,
+      email: reservationData.email,
+      phone: reservationData.phone,
+      numberOfPeople: reservationData.numberOfPeople,
+      arrivalDate: reservationData.arrivalDate,
+      selectedPack: getProgrammeLabel(
+        reservationData.pageSlug,
+        reservationData.selectedOffer
+      ),
+    });
 
     // Email confirmation will be sent after successful payment via callback/success route
     return NextResponse.json({
