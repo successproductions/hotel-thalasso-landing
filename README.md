@@ -10,7 +10,7 @@ A fast, multilingual (FR/EN) landing page for Dakhla Club’s spa & wellness off
 - **next-intl** (i18n routing `/fr` and `/en`)
 - **next-themes** (light/dark)
 - **Framer Motion**, **Embla Carousel**
-- **Vercel Analytics**, **next-sitemap**
+- **next-sitemap**
 
 ### Features
 
@@ -91,7 +91,7 @@ npm run build && npm start
 
 ### Deployment
 
-- Recommended: Vercel. Ensure `GSCRIPT_URL` is configured in project settings.
+- Pushing to `main` deploys to the production server over SSH with PM2 (`.github/workflows/deploy.yml`). Ensure `GSCRIPT_URL` is configured on the server.
 - `next-sitemap` runs postbuild to generate `sitemap.xml` and `robots.txt`.
 
 ### License
