@@ -4,10 +4,14 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
 
     steps:
       - name: Deploy to production server
@@ -18,7 +22,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           timeout: 60s
-          command_timeout: 10m
+          command_timeout: 20m
           script: |
             # Load Node.js via NVM
             export NVM_DIR="$HOME/.nvm"
@@ -33,14 +37,29 @@ jobs:
             # Go to project folder
             cd $HOME/htdocs/offer.dakhlaclub.com
 
+            echo "==> Server resources"
+            df -h . || true
+            free -m || true
+
+            # Stop the app and anything an interrupted deploy left running, to free memory for the build
+            pm2 stop offer-dakhlaclub || true
+            pkill -f "$PWD/node_modules/" || true
+            rm -f .git/index.lock
+
             # Server pulls from GitHub using its own deploy key
+            echo "==> $(date +%T) git pull"
             git pull origin main
+            git log -1 --oneline
 
             # Install dependencies
+            echo "==> $(date +%T) npm ci"
             npm ci --prefer-offline || npm ci
 
             # Build the Next.js app
-            npm run build
+            echo "==> $(date +%T) build"
+            timeout 900 npm run build
+            BUILD_STATUS=$?
+            echo "==> $(date +%T) build exit code: $BUILD_STATUS"
 
             # Restart or start with PM2
             if command -v pm2 >/dev/null 2>&1; then
@@ -52,6 +71,7 @@ jobs:
 
             pm2 save || true
             echo "==> Deployment done!"
+            exit $BUILD_STATUS
 
       - name: Deployment success
         if: success()
