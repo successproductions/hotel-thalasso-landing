@@ -1,0 +1,92 @@
+/* DC Therme — version Tailwind CSS v4.
+   Inspirée de Lanserhof (panneaux en demi-écran, titres italique + capitales, pastilles)
+   et de Chenot (cartes de programmes, bande noire). Greige clair, encre graphite, noir chaud.
+   Cormorant Garamond italique pour la voix, Jost pour les capitales et le texte.
+
+   Les styles sont écrits en classes Tailwind dans les composants (src/dc-thermes/*.tsx).
+   Ce fichier ne garde que les tokens (@theme), la base et les quelques règles
+   qui ne s'écrivent pas en classes (Lenis, mouvement réduit). */
+
+@import 'tailwindcss' source(none);
+@source './*.ts';
+@source './*.tsx';
+
+
+/* Le site est pensé « desktop d'abord » : on écrit max-md:, max-xl:… pour les petits écrans.
+   max-sm = ≤ 600px · max-md = ≤ 860px · max-lg = ≤ 960px · max-xl = ≤ 1100px */
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 601px;
+  --breakpoint-md: 861px;
+  --breakpoint-lg: 961px;
+  --breakpoint-xl: 1101px;
+
+  --color-page: #f3f2ef;
+  --color-panel: #ebe8e3;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-ink: #26282b;
+  --color-muted: #57524c;
+  --color-soft: #7a746c;
+  --color-line: rgb(38 40 43 / 0.12);
+  --color-dark: #1c1b19;
+  --color-on-dark: #f3f1ec;
+  --color-on-dark-muted: #c4bdb3;
+  --color-line-dark: rgb(243 241 236 / 0.16);
+
+  --font-serif: var(--font-dc-serif), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-dc-sans), 'Futura', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Marge latérale, respiration des sections, gouttière */
+  --spacing-m: var(--m);
+  --spacing-section: var(--section);
+  --spacing-gap: var(--gap);
+
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-slow: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-nudge: nudge 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  --animate-story-in: story-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-inc-open: incOpen 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-qcbar: qcbar linear forwards;
+
+  @keyframes nudge { 0%, 100% { transform: translateY(-2px) rotate(45deg); } 50% { transform: translateY(2px) rotate(45deg); } }
+  @keyframes story-in { from { opacity: 0; transform: translateY(8px); } }
+  @keyframes incOpen { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  @keyframes qcbar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+
+:root {
+  --m: max(20px, env(safe-area-inset-left, 0px), clamp(20px, 4vw, 64px));
+  --section: clamp(96px, 11vw, 168px);
+  --gap: clamp(16px, 2vw, 28px);
+}
+@media (width < 861px) {
+  :root { --section: 64px; }
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  a, button, summary, label { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  button, summary { -webkit-user-select: none; user-select: none; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+  body {
+    background: var(--color-page); color: var(--color-ink);
+    font: 400 1.0625rem/1.7 var(--font-sans); letter-spacing: 0.005em;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  p { text-wrap: pretty; }
+  a { color: inherit; }
+  button { cursor: pointer; }
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  input::placeholder, textarea::placeholder { color: #757575; }
+  ::selection { background: var(--color-ink); color: var(--color-page); }
+  :focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; border-radius: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation: none !important; }
+}
