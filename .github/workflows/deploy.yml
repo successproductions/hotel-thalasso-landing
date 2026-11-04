@@ -46,9 +46,17 @@ jobs:
             pkill -f "$PWD/node_modules/" || true
             rm -f .git/index.lock
 
-            # Server pulls from GitHub using its own deploy key
+            # Server pulls from GitHub using its own deploy key.
+            # Each build rewrites the sitemap and robots.txt (next-sitemap): drop the server's copies first,
+            # or git refuses to pull a commit that changes them and the old code gets rebuilt.
             echo "==> $(date +%T) git pull"
-            git pull origin main
+            git checkout -- public/sitemap.xml public/sitemap-0.xml public/robots.txt 2>/dev/null || true
+            if ! git pull origin main; then
+              echo "==> git pull failed: local changes on the server? Restarting the current version."
+              git status --short || true
+              pm2 restart offer-dakhlaclub || true
+              exit 1
+            fi
             git log -1 --oneline
 
             # Install dependencies
