@@ -8,7 +8,7 @@ export type ConfirmedOrder = {
   orderId: string
   lang: Lang
   cure: CureKey
-  start: string
+  arrival: string // date d'arrivée (AAAA-MM-JJ) ; le premier soin a lieu le lendemain
   guests: number
   firstName: string
   paid: number

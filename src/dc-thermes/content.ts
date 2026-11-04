@@ -23,14 +23,13 @@ export const site = {
     ['YouTube', 'https://youtube.com/@dakhlaclub1745'],
   ],
   address: ['Dakhla Club', 'Point de Dragon, PK 28', 'Dakhla, Maroc'],
-  // Cure avec chambre : moteur Direct-Book du Dakhla Club, tarif « pack thalasso » présélectionné.
-  // Un seul tarif pour les trois cures : la durée du séjour choisit le pack (4 nuits = 3 jours, 6 = 5, 8 = 7).
-  // Direct-Book affiche le prix selon la chambre choisie, ou indique qu'aucune chambre n'est libre.
-  packRateId: 999765,
+  // Cure avec chambre : moteur Direct-Book du Dakhla Club, aux dates du séjour. Aucun tarif ni chambre n'est présélectionné :
+  // avec items[0][rateId], Direct-Book mettait d'office une chambre au panier. Le client y choisit sa chambre et son pack,
+  // ou Direct-Book indique qu'aucune chambre n'est libre.
   nights: (days: number) => days + 1, // arrivée la veille du premier soin, départ le lendemain du dernier
   // Sans dates (page de confirmation sans la réservation en mémoire), Direct-Book les demande
-  hotel: ({ checkIn, checkOut, adults, rateId }: HotelQuery) =>
-    `https://direct-book.com/properties/DakhlaClubDIRECT?locale=fr&items[0][adults]=${adults}&items[0][children]=0&items[0][infants]=0${rateId ? `&items[0][rateId]=${rateId}` : ''}&currency=MAD${checkIn && checkOut ? `&checkInDate=${checkIn}&checkOutDate=${checkOut}` : ''}&trackPage=yes${rateId ? '&selected=0' : ''}`,
+  hotel: ({ checkIn, checkOut, adults }: HotelQuery) =>
+    `https://direct-book.com/properties/DakhlaClubDIRECT?locale=fr&currency=MAD${checkIn && checkOut ? `&checkInDate=${checkIn}&checkOutDate=${checkOut}` : ''}&trackPage=yes&selected=0&items[0][adults]=${adults}&items[0][children]=0&items[0][infants]=0`,
   cmiFee: 0.0297, // frais de transaction CMI ajoutés au paiement en ligne, comme sur les paniers des cures
   // Page « Offrir » : la demande part par e-mail à l'équipe, ou par WhatsApp
   giftPage: (q: Record<string, string> = {}) => '/dc-thermes/offrir' + (Object.keys(q).length ? '?' + new URLSearchParams(q).toString() : ''),
@@ -409,7 +408,7 @@ export const ui = {
   hoursShort: 'h de soins',
   // Composeur et réservation
   cure: 'La cure',
-  firstDay: 'Premier jour de soins',
+  arrivalDate: 'Date d’arrivée',
   guests: 'Participants',
   lodgingField: 'Hébergement',
   person: (n: number) => `${n} ${n > 1 ? 'personnes' : 'personne'}`,
@@ -428,7 +427,7 @@ export const ui = {
   firstTreatment: 'Premier soin',
   lastTreatment: 'Dernier soin',
   dates: 'Dates',
-  pickDay: 'Choisissez votre premier jour',
+  pickDay: 'Choisissez votre date d’arrivée',
   total: 'Total de la cure',
   depositLine: 'Acompte de 50 %',
   fee: 'Frais de paiement CMI (2,97 %)',
@@ -441,7 +440,7 @@ export const ui = {
   departure: 'Départ de l’hôtel',
   packRow: (n: number) => `Cure et hébergement en pension complète, ${n} nuits`,
   packPrice: 'Prix sur Direct-Book',
-  packNote: 'Le prix du pack, cure et chambre comprises, s’affiche à l’étape suivante selon la chambre choisie. Si aucune chambre n’est libre à ces dates, Direct-Book vous l’indique : choisissez un autre premier jour, ou réservez la cure seule.',
+  packNote: 'Le prix du pack, cure et chambre comprises, s’affiche à l’étape suivante selon la chambre choisie. Si aucune chambre n’est libre à ces dates, Direct-Book vous l’indique : choisissez une autre date d’arrivée, ou réservez la cure seule.',
   packCta: 'Choisir ma chambre et voir le prix',
   packTicketNote: 'Votre hébergement est réservé en même temps que votre cure, sur Direct-Book, le site officiel du Dakhla Club · Confirmation de réservation par e-mail',
   ticketNote: 'Paiement sécurisé CMI · Confirmation de réservation par e-mail · Annulation sans frais jusqu’à 30 jours avant l’arrivée',

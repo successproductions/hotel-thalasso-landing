@@ -5,7 +5,7 @@ import { amounts, bookingHref } from './funnel'
 import type { CureKey, Funnel } from './types'
 import { pf, pfRow, pfLabel, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow } from './forms'
 
-// Le composeur de cure : cure, premier jour, nombre de curistes, acompte ou totalité, chambre en option.
+// Le composeur de cure : cure, date d'arrivée, nombre de curistes, acompte ou totalité, chambre en option.
 // Il calcule les dates de soins et ce qui est réglé aujourd'hui puis à l'arrivée.
 // Avec une chambre, cure et chambre se réservent ensemble sur Direct-Book (tarif pack, prix et disponibilités affichés là-bas).
 // Version « contact » (lead) : pas de choix de règlement, seulement le prix de la cure et le lien vers la demande.
@@ -28,7 +28,7 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
   const { cures, site, ui } = t
   const mad = (n: number) => money(t, n)
   const longDate = (d: Date) => ld(t, d)
-  const [start, setStart] = useState('')
+  const [arrival, setArrival] = useState('')
   const [minDate, setMinDate] = useState('')
   const [guests, setGuests] = useState(1)
   const [deposit, setDeposit] = useState(false)
@@ -37,8 +37,9 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
   // Dates calculées dans le navigateur seulement, pour que le HTML pré-rendu reste identique
   useEffect(() => {
     const today = new Date()
-    setMinDate(iso(addDays(today, 2)))
-    setStart(iso(addDays(today, 14)))
+    // Arrivée au plus tôt demain : le premier soin, le lendemain, reste à deux jours au moins
+    setMinDate(iso(addDays(today, 1)))
+    setArrival(iso(addDays(today, 14)))
   }, [])
 
   const cure = cures.find((c) => c.key === cureKey) || cures[1]
@@ -46,15 +47,16 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
   const { total, base, fee, now, balance } = amounts(cure.price, guests, deposit && !lead, site.cmiFee)
   const nights = site.nights(cure.days)
 
+  // Le client choisit sa date d'arrivée ; le premier soin a lieu le lendemain, le départ le lendemain du dernier soin
   const plan = useMemo(() => {
-    if (!start) return null
-    const first = parse(start)
+    if (!arrival) return null
+    const checkIn = parse(arrival)
+    const first = addDays(checkIn, 1)
     const last = addDays(first, cure.days - 1)
-    const checkIn = addDays(first, -1)
     return { first, last, checkIn, checkOut: addDays(checkIn, nights) }
-  }, [start, cure.days, nights])
+  }, [arrival, cure.days, nights])
 
-  const hotelUrl = plan ? site.hotel({ checkIn: iso(plan.checkIn), checkOut: iso(plan.checkOut), adults: guests, rateId: site.packRateId }) : null
+  const hotelUrl = plan ? site.hotel({ checkIn: iso(plan.checkIn), checkOut: iso(plan.checkOut), adults: guests }) : null
 
   return (
     <div className="grid grid-cols-[minmax(0,7fr)_minmax(0,5fr)] gap-[clamp(24px,3vw,48px)] max-w-[1200px] mx-auto items-start max-xl:grid-cols-[minmax(0,1fr)]">
@@ -74,8 +76,8 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
 
         <div className={pfRow}>
           <label className={pf} htmlFor="planner-start">
-            <span className={pfLabel}>{ui.firstDay}</span>
-            <input className={pfInput()} id="planner-start" type="date" value={start} min={minDate} onChange={(e) => e.target.value && setStart(e.target.value)} />
+            <span className={pfLabel}>{ui.arrivalDate}</span>
+            <input className={pfInput()} id="planner-start" type="date" value={arrival} min={minDate} onChange={(e) => e.target.value && setArrival(e.target.value)} />
           </label>
           <div className={pf}>
             <span className={pfLabel} id="guests-label">{ui.guests}</span>
@@ -125,7 +127,7 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
         <dl className={ticketRows}>
           {plan ? (
             <>
-              {room && <div className={ticketRow()}><dt>{ui.arrival}</dt><dd>{longDate(plan.checkIn)}</dd></div>}
+              <div className={ticketRow()}><dt>{ui.arrival}</dt><dd>{longDate(plan.checkIn)}</dd></div>
               <div className={ticketRow()}><dt>{ui.firstTreatment}</dt><dd>{longDate(plan.first)}</dd></div>
               <div className={ticketRow()}><dt>{ui.lastTreatment}</dt><dd>{longDate(plan.last)}</dd></div>
               {room && <div className={ticketRow()}><dt>{ui.departure}</dt><dd>{longDate(plan.checkOut)}</dd></div>}
@@ -153,7 +155,7 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
           <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{mad(now)}</dd></div>
           </>}
         </dl>
-        <a className={pill('dark', { block: true })} href={bookingHref(funnel, t.lang, { cure: cure.key, debut: start, curistes: String(guests), paiement: deposit && !lead ? 'acompte' : 'total', chambre: room ? '1' : '0' })}>
+        <a className={pill('dark', { block: true })} href={bookingHref(funnel, t.lang, { cure: cure.key, debut: arrival, curistes: String(guests), paiement: deposit && !lead ? 'acompte' : 'total', chambre: room ? '1' : '0' })}>
           {lead ? ui.ctaLead : deposit ? ui.ctaDeposit : ui.ctaFull}
         </a>
           </>

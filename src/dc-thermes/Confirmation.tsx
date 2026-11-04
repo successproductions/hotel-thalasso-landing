@@ -31,7 +31,7 @@ export default function Confirmation({ paid }: { paid: boolean }) {
   const { cures, site, ui, bookingPage: b, confirmPage: c } = t
   const cure = cures.find((x) => x.key === (order?.cure || cureFromOrderId(orderId)))
   const mad = (n: number) => money(t, n)
-  const first = order?.start ? parse(order.start) : null
+  const first = order?.arrival ? addDays(parse(order.arrival), 1) : null
 
   useEffect(() => {
     document.documentElement.lang = lang
@@ -51,7 +51,7 @@ export default function Confirmation({ paid }: { paid: boolean }) {
 
   // Réessayer : la page de réservation reprend la cure, les dates et le règlement choisis
   const retryHref = bookingHref('main', lang, order
-    ? { cure: order.cure, debut: order.start, curistes: String(order.guests), paiement: order.balance ? 'acompte' : 'total' }
+    ? { cure: order.cure, debut: order.arrival, curistes: String(order.guests), paiement: order.balance ? 'acompte' : 'total' }
     : cure ? { cure: cure.key } : {})
 
   return (

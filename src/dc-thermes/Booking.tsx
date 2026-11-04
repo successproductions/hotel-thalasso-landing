@@ -15,7 +15,7 @@ import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInpu
 
 // Page de réservation : dernière étape avant le paiement CMI.
 // Reprend les champs des paniers des cures (nom, e-mail, téléphone, date, personnes, CGV, offres)
-// et les choix faits sur la page (cure, premier jour, curistes, totalité ou acompte, chambre).
+// et les choix faits sur la page (cure, date d'arrivée, curistes, totalité ou acompte, chambre).
 // Avec une chambre, la réservation continue sur Direct-Book (tarif pack) : coordonnées et paiement y sont demandés.
 // Selon la version de la page (funnel.ts) : paiement CMI direct (main, cmi) ou demande sans paiement (lead).
 
@@ -45,7 +45,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
   const mad = (n: number) => money(t, n)
   const longDate = (d: Date) => ld(t, d)
   const [cureKey, setCureKey] = useState<CureKey>('regeneration')
-  const [start, setStart] = useState('')
+  const [arrival, setArrival] = useState('')
   const [minDate, setMinDate] = useState('')
   const [guests, setGuests] = useState(1)
   const [deposit, setDeposit] = useState(false)
@@ -61,11 +61,13 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
     document.title = lead ? t.meta.leadTitle : t.meta.bookingTitle
     const q = new URLSearchParams(window.location.search)
     const today = new Date()
-    setMinDate(iso(addDays(today, 2)))
+    // Arrivée au plus tôt demain : le premier soin, le lendemain, reste à deux jours au moins
+    setMinDate(iso(addDays(today, 1)))
     const wanted = cures.find((c) => c.key === q.get('cure'))
     if (wanted) setCureKey(wanted.key)
+    // debut : date d'arrivée choisie sur la page des cures
     const debut = q.get('debut')
-    setStart(debut && /^\d{4}-\d{2}-\d{2}$/.test(debut) ? debut : iso(addDays(today, 14)))
+    setArrival(debut && /^\d{4}-\d{2}-\d{2}$/.test(debut) ? debut : iso(addDays(today, 14)))
     const g = Number(q.get('curistes'))
     if (Number.isInteger(g) && g >= 1) setGuests(g)
     setDeposit(!lead && q.get('paiement') === 'acompte')
@@ -81,15 +83,16 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
   const { total, base, fee, now, balance } = amounts(cure.price, guests, deposit, site.cmiFee)
   const nights = site.nights(cure.days)
 
+  // Le client choisit sa date d'arrivée ; le premier soin a lieu le lendemain, le départ le lendemain du dernier soin
   const plan = useMemo(() => {
-    if (!start) return null
-    const first = parse(start)
+    if (!arrival) return null
+    const checkIn = parse(arrival)
+    const first = addDays(checkIn, 1)
     const last = addDays(first, cure.days - 1)
-    const checkIn = addDays(first, -1)
     return { first, last, checkIn, checkOut: addDays(checkIn, nights) }
-  }, [start, cure.days, nights])
+  }, [arrival, cure.days, nights])
 
-  const hotelUrl = plan ? site.hotel({ checkIn: iso(plan.checkIn), checkOut: iso(plan.checkOut), adults: guests, rateId: site.packRateId }) : null
+  const hotelUrl = plan ? site.hotel({ checkIn: iso(plan.checkIn), checkOut: iso(plan.checkOut), adults: guests }) : null
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -106,7 +109,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
       // Vérifié selon le pays par PhoneField : « +212 612345678 »
       phone: field('telephone_complet'),
       numberOfPeople: String(guests),
-      arrivalDate: start,
+      arrivalDate: arrival,
       optIn: f.get('offres') === 'on',
     }
 
@@ -138,7 +141,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
       if (!payment.success) throw new Error('Réponse de paiement invalide')
       sessionStorage.setItem('bookingInfo', JSON.stringify(payment.bookingInfo))
       // Pour la page de confirmation, dans la langue de la réservation
-      const order: ConfirmedOrder = { orderId, lang, cure: cure.key, start, guests, firstName: field('prenom'), paid: now, balance: deposit ? balance : 0 }
+      const order: ConfirmedOrder = { orderId, lang, cure: cure.key, arrival, guests, firstName: field('prenom'), paid: now, balance: deposit ? balance : 0 }
       sessionStorage.setItem(orderStorageKey, JSON.stringify(order))
       const cmi = document.createElement('form')
       cmi.method = 'POST'
@@ -197,8 +200,8 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
             </div>
             <div className={pfRow}>
               <label className={pf} htmlFor="bk-start">
-                <span className={pfLabel}>{ui.firstDay}</span>
-                <input className={pfInput({ inGroup: true })} id="bk-start" name="debut" type="date" required value={start} min={minDate} onChange={(e) => e.target.value && setStart(e.target.value)} />
+                <span className={pfLabel}>{ui.arrivalDate}</span>
+                <input className={pfInput({ inGroup: true })} id="bk-start" name="debut" type="date" required value={arrival} min={minDate} onChange={(e) => e.target.value && setArrival(e.target.value)} />
               </label>
               <div className={pf}>
                 <span className={pfLabel} id="bk-guests">{ui.guests}</span>
@@ -271,7 +274,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
             <p className={cx(ticketTitle, 'text-ink')}>{cure.name}</p>
             <p className={ticketSub}>{cure.days} {ui.days} · {cure.treatments} {ui.treatments} · {cure.hours} {ui.hoursShort} · {b.access}</p>
             <dl className={ticketRows}>
-              {plan && room && <div className={ticketRow()}><dt>{ui.arrival}</dt><dd>{longDate(plan.checkIn)}</dd></div>}
+              {plan && <div className={ticketRow()}><dt>{ui.arrival}</dt><dd>{longDate(plan.checkIn)}</dd></div>}
               {plan && <div className={ticketRow()}><dt>{ui.firstTreatment}</dt><dd>{longDate(plan.first)}</dd></div>}
               {plan && <div className={ticketRow()}><dt>{ui.lastTreatment}</dt><dd>{longDate(plan.last)}</dd></div>}
               {plan && room && <div className={ticketRow()}><dt>{ui.departure}</dt><dd>{longDate(plan.checkOut)}</dd></div>}
