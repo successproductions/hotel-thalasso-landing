@@ -1,4 +1,4 @@
-// English version of the page. Same structure as content.js; each fact appears only once.
+// English version of the page: a translation of content.ts, which is the reference. Same structure; each fact appears only once.
 // Items marked "TO CONFIRM" must be checked before going live.
 
 import type { Cure, CureKey, Faq, GlossaryEntry, HotelQuery, Lang, NavItem, ProgrammeDay, Rating } from './types'
@@ -13,9 +13,8 @@ export const locale: string = 'en-GB'
 export const site = {
   ...siteFr,
   url: 'https://offer.dakhlaclub.com/dc-thermes/en',
-  contactMail: mail('DC Therme programmes: a question'),
-  contactLink: mail('DC Therme programmes: a question'),
-  giftMail: mail('DC Therme gift voucher'),
+  contactMail: mail('DC Luxury Thermes programmes: a question'),
+  giftMail: mail('DC Luxury Thermes gift voucher'),
   address: ['Dakhla Club', 'Point de Dragon, PK 28', 'Dakhla, Morocco'],
   hotel: (q: HotelQuery) => siteFr.hotel(q).replace('locale=fr', 'locale=en'),
   brochure: 'https://offer.dakhlaclub.com/brochure/BROCHURE-EN.pdf',
@@ -23,88 +22,91 @@ export const site = {
 }
 
 export const meta = {
-  title: 'Thalassotherapy in Dakhla · 3, 5 or 7-day programmes | DC Therme',
-  description: 'Thalassotherapy programmes at Dakhla Club, between desert and ocean. Marine treatments, 32 °C thermal water, ten guests per session. From 4,950 MAD.',
-  ogTitle: 'DC Therme · Thalassotherapy in Dakhla',
-  ogDescription: 'Release the stress, restore your energy. Programmes of 3, 5 or 7 days, 32 °C thermal water.',
+  title: 'Wellness programmes in Dakhla, Morocco | DC Luxury Thermes',
+  description: 'Discover DC Luxury Thermes in Dakhla, Morocco: holistic programmes of 3, 5 or 7 days, marine treatments, Moroccan hammam and full-board stays.',
+  ogTitle: 'DC Luxury Thermes · Holistic centre in Dakhla, Morocco',
+  ogDescription: 'Facing the Dakhla lagoon, programmes of 3, 5 or 7 days shaped by marine treatments, massages and the Moroccan hammam ritual.',
   canonical: 'https://offer.dakhlaclub.com/dc-thermes/en',
   ogLocale: 'en_GB',
-  bookingTitle: 'Book your programme · DC Therme',
-  leadTitle: 'Request your programme · DC Therme',
+  bookingTitle: 'Book your programme · DC Luxury Thermes',
+  leadTitle: 'Request your programme · DC Luxury Thermes',
 }
 
 export const nav: NavItem[] = [
   ['cures', 'Programmes'],
   ['programme', 'Treatments'],
+  ['hotel', 'The hotel', 'https://dakhlaclub.com/en'],
   ['offrir', 'Gift'],
-  ['hotel', 'Dakhla Club', 'https://dakhlaclub.com/en'],
 ]
 
 export const hero = {
-  eyebrow: '',
-  em: 'Release the stress,',
-  caps: 'restore your energy',
-  lead: 'Thalassotherapy programmes of 3, 5 or 7 days, between desert and ocean. Marine treatments, thermal rituals and real rest, to calm the nervous system, deepen sleep and restore vitality.',
-  cta: 'Discover the programmes',
+  eyebrow: 'DC Luxury Thermes · Holistic centre',
+  em: '',
+  caps: 'Here, the place is part of the treatment.',
+  lead: 'Facing the Dakhla lagoon, enjoy a 3, 5 or 7-day break shaped by marine treatments, massages and the ancestral ritual of the Moroccan hammam. A stay to slow down and recover your energy and serenity.',
+  cta: 'Discover our programmes',
 }
 
 export const intro = {
-  guide: [] as string[][],
   em: '',
-  caps: 'What if you finally took time for yourself?',
-  text: 'Tiredness lingers after the weekend. Nights feel less restful. Tension settles in. You feel the need to stop for a few days and take care of yourself.',
+  caps: 'If these signs sound familiar',
+  text: 'Lasting fatigue, unrefreshing sleep, muscle tension: when the body struggles to recover, a few days of supervised treatments help it find its balance again.',
   signs: [
-    ['Fatigue', 'Tiredness that lingers, even after rest.'],
-    ['Restless nights', 'Light, broken, unrefreshing sleep.'],
-    ['Nervous system', 'Always on alert, never truly at rest.'],
-    ['Tension', 'Emotional tension that builds up and never releases.'],
-    ['The need to slow down', 'A deep need to breathe and truly recover.'],
+    ['Persistent fatigue', 'A feeling of exhaustion, even after several days of rest.'],
+    ['Unrefreshing sleep', 'Disturbed nights and waking in the night, without ever feeling truly rested.'],
+    ['A mind on alert', 'Finding it hard to switch off and release the pressure, even on holiday.'],
+    ['Built-up tension', 'Stress that settles in, emotions that are hard to calm and a constant feeling of pressure.'],
+    ['The need to slow down', 'The wish to take a real break, far from everyday obligations.'],
   ],
-  after: 'A programme gives you that time. Our therapists welcome you, adjust the programme when you arrive and stay with you throughout your stay.',
+  after: '“Many of our guests arrive exhausted, without always knowing why. Our role is to listen to them, then adjust each treatment to what their body is telling us.”',
   link: 'Discover the programmes',
+  // Which programme for which need: text, card id, link
+  guide: [
+    ['Passing fatigue, the wish to catch your breath:', 'vitalite', 'Vitalité · 3 days'],
+    ['Settled fatigue, tension that lingers:', 'regeneration', 'Régénération · 5 days'],
+    ['The need to stop completely:', 'renaissance', 'Renaissance · 7 days'],
+  ],
 }
 
 const g = (key: string, name: string, text: string): GlossaryEntry => [name, text, glossaryFr[key][2], glossaryFr[key][3]]
 export const glossary: Record<string, GlossaryEntry> = {
-  bol: g('bol', 'Bol d’air Jacquier', 'A few minutes of breathing over a diffuser of pine resin essence. The ritual that opens every morning.'),
-  piscine: g('piscine', 'Thermal pool', 'Warm water and a circuit of jets for the neck, back and legs. Open to you throughout your stay.'),
-  jet: g('jet', 'Jet shower', 'The therapist guides a powerful jet of water from your feet up to your neck. Invigorating, it wakes the body in minutes.'),
-  hydro: g('hydro', 'Hydromassage bath', 'A warm bath alive with bubbles and jets, massaging the body from the soles of the feet to the shoulders.'),
-  affusion: g('affusion', 'Affusion massage', 'Lying down, you receive a gentle rain of warm water while the therapist massages your back and legs.'),
-  hammamDesert: g('hammamDesert', 'Desert Secret hammam', 'Steam, black soap, then a kessa-glove scrub in the Moroccan tradition. Skin comes out soft, the mind lighter.'),
+  bol: g('bol', 'Bol d’air Jacquier', 'A few minutes of breathing air enriched with pine resin essence. A gentle oxygenation method that opens each morning, for a feeling of relaxation and calm.'),
+  piscine: g('piscine', 'Thermal pool', 'A heated pool and its circuit of jets, which target the neck, back and legs. Free access throughout your programme.'),
+  jet: g('jet', 'Jet shower', 'A high-pressure jet of water, directed by the hydrotherapist from the feet up to the neck. An invigorating treatment that stimulates circulation and relaxes the muscles.'),
+  hydro: g('hydro', 'Hydromassage bath', 'Immersed in warm water, the body is swept by underwater jets, from the soles of the feet to the neck. A relaxing hydromassage that helps the body absorb the mineral salts of the seawater.'),
+  affusion: g('affusion', 'Affusion massage', 'Lying down, you are massaged from the feet to the neck under a fine rain of warm seawater. Massage and hydrotherapy combined, deeply relaxing.'),
+  hammamDesert: g('hammamDesert', 'Desert Secret hammam', 'The ancestral ritual of the Moroccan hammam: steam, black soap, then a kessa-glove scrub. The skin is purified, soft and ready for the treatments to come.'),
   // TO CONFIRM with the treatment team: exact sequence
-  hammam1001: g('hammam1001', 'Thousand and One Nights hammam', 'The hammam at its most generous: steam, black soap, scrub, then a scented moment of rest.'),
-  gommageSel: g('gommageSel', 'Himalayan salt scrub', 'Salt and oils smooth the skin of the whole body, leaving it soft and ready for the massage that follows.'),
-  sauna: g('sauna', 'Sauna', 'A few minutes of dry heat to relax the muscles and prepare the body for the treatments ahead.'),
-  froid: g('froid', 'Cold bath', 'A brief immersion in cold water, always with the team beside you. The shock lasts seconds, the freshness far longer.'),
-  algues: g('algues', 'Seaweed wrap', 'A warm preparation of marine algae applied to the body, then you rest, wrapped and still.'),
-  relaxant: g('relaxant', 'Relaxing massage', 'A slow full-body massage with oils, to release accumulated tension.'),
-  tonique: g('tonique', 'Toning massage', 'Firmer, rhythmic movements to loosen the muscles and restore energy.'),
-  kite: g('kite', 'After-kite massage', 'Designed for the lagoon’s kite riders: shoulders, forearms and legs, wherever effort settles.'),
+  hammam1001: g('hammam1001', 'Thousand and One Nights hammam', 'The most generous version of the ritual: steam, black soap and a kessa-glove scrub, followed by a scented moment of rest.'),
+  gommageSel: g('gommageSel', 'Himalayan salt scrub', 'A body exfoliation with salt crystals and oils that removes dead skin cells, refines the skin and prepares it for the massage.'),
+  sauna: g('sauna', 'Sauna', 'A few minutes of dry heat that encourage sweating, relax the body and prepare the muscles for the treatments that follow.'),
+  froid: g('froid', 'Cold bath', 'A brief immersion in cold water, always supervised by the team. After the heat of the sauna or hammam, the cold tightens the blood vessels and tones the body.'),
+  algues: g('algues', 'Seaweed wrap', 'The body is covered with a preparation of marine seaweed applied warm, followed by a moment of rest. A remineralising treatment that purifies, soothes and recharges the body.'),
+  relaxant: g('relaxant', 'Relaxing massage', 'Gentle, flowing movements combined with gliding pressure, to release tension and help you let go.'),
+  tonique: g('tonique', 'Toning massage', 'Firm, rhythmic movements that loosen the muscles and restore tone to the body.'),
+  kite: g('kite', 'After-kite massage', 'A recovery massage focused on the shoulders, arms and legs, originally designed for the lagoon’s athletes.'),
   // TO CONFIRM with the treatment team: exact sequence
-  massageSel: g('massageSel', 'Himalayan salt massage', 'An oil massage that follows on from the scrub, with Himalayan salt.'),
-  pochons: g('pochons', 'Warm herbal poultice massage', 'Pouches of warmed herbs and spices pressed and rolled over the body. The heat goes deep and melts tension.'),
-  cupDos: g('cupDos', 'Back cupping', 'Cups placed on the back create a gentle suction that releases the muscles in depth.'),
-  cupFeu: g('cupFeu', 'Cupping and hot towel', 'Cupping, followed by a very warm towel laid over the back to prolong the heat and the release.'),
-  argan: g('argan', 'Argan oil face massage', 'A massage of the face, neck and scalp with Moroccan argan oil.'),
-  hyalu: g('hyalu', 'Hyalu-Procollagen plumping facial', 'A hyaluronic acid facial for plumper skin and smoother features.'),
-  silicium: g('silicium', 'Silicium Lift firming facial', 'A silicium facial for firmer skin and a clearer complexion.'),
-  spiruline: g('spiruline', 'Spirulina smoothing facial', 'A facial with spirulina, a nutrient-rich micro-alga. The complexion comes out fresh and luminous.'),
-  pieds: g('pieds', 'Foot care', 'Soak, scrub and care for feet and nails. Welcome after days barefoot between the pools and the beach.'),
+  massageSel: g('massageSel', 'Himalayan salt massage', 'An oil massage that follows the Himalayan salt scrub, for soft skin and a relaxed body.'),
+  pochons: g('pochons', 'Warm herbal poultice massage', 'Heated pouches of herbs and spices, applied to the body with pressing and rolling movements. Their spreading warmth releases tension.'),
+  cupDos: g('cupDos', 'Back cupping', 'Placed on the back, the cups create a light suction that relaxes the muscles and stimulates circulation.'),
+  cupFeu: g('cupFeu', 'Cupping and hot towel', 'A cupping session, followed by a hot towel laid on the back to deepen the relaxation.'),
+  argan: g('argan', 'Argan oil face massage', 'This complete ritual brings total relaxation from the head to the shoulders. It uses pure Moroccan argan oil, known for its highly nourishing and soothing properties.'),
+  hyalu: g('hyalu', 'Hyalu-Procollagen plumping facial', 'Combining hyaluronic acid and procollagen with targeted massage techniques, this exceptional treatment deeply hydrates and plumps the skin while visibly smoothing the features.'),
+  silicium: g('silicium', 'Silicium Lift firming facial', 'This facial combines marine silicium with a lifting massage. The skin becomes firmer, the contours of the face look redefined and the features appear more rested.'),
+  spiruline: g('spiruline', 'Spirulina smoothing facial', 'A facial with spirulina, a micro-alga rich in vitamins and antioxidants. Combined with a gentle draining massage, for a fresh, radiant complexion.'),
+  pieds: g('pieds', 'Foot care', 'Soak, scrub, nail care and a soothing massage: a ritual that softens skin dried by salt, sand and sun, and leaves the feet feeling light.'),
 }
 
 export const benefits = {
   em: '',
-  caps: 'A few days to reconnect with yourself',
-  lead: 'Your programme is built around treatments and rest. For a few days, you can slow down and devote time to your wellbeing.',
+  caps: 'What you take home',
+  lead: 'A programme does not end with the last treatment. With the support of our therapists, the body finds its balance again, and the benefits last long after you return home.',
   items: [
-    ['Switch off', 'Set everyday life aside and make room for rest.'],
-    ['Let go', 'Enjoy massages, baths and the warmth of the hammam to relax the body.'],
-    ['Rest', 'Take breaks between treatments and enjoy quiet evenings.'],
-    ['Take care of yourself', 'Find a treatment programme prepared for you, every day.'],
-    ['Escape', 'Discover the Dakhla Club baths, between the lagoon and the desert.'],
+    ['A relaxed body', 'Massages, the warmth of the hammam and hydrotherapy release muscle tension.'],
+    ['More peaceful nights', 'Days shaped by treatments, away from screens, for calmer nights.'],
+    ['A calm mind', 'With no schedule or obligations, the mind sheds the weight of everyday life and regains its clarity.'],
   ],
-  after: 'From three to seven days, choose the length that lets you make the most of this pause.',
+  after: 'A few days entirely devoted to your wellbeing, without having to organise every moment.',
   caption: 'Dakhla Club, between lagoon and desert',
   alt: 'Aerial view of Dakhla Club: the pool, the bungalows and the Dakhla lagoon at the foot of the dunes',
 }
@@ -112,18 +114,24 @@ export const benefits = {
 const cure = (key: CureKey, extra: Partial<Cure>): Cure => ({ ...curesFr.find((c) => c.key === key)!, ...extra })
 export const cures: Cure[] = [
   cure('vitalite', {
-    for: 'Three days to pause and discover the baths. From the Desert Secret hammam to the argan face massage, enjoy a 14-treatment programme combining baths, massages and facials.',
+    for: 'Away from everyday life, three days entirely devoted to your wellbeing, to catch your breath and leave with renewed energy. The warmth of the hammam, the seaweed wrap and the massages follow one another to release tension and bring a pleasant feeling of lightness.',
+    tagline: 'Vitalité · Energy and radiance',
+    promise: 'A first getaway to breathe and take care of yourself.',
     includes: ['Desert Secret hammam', 'Marine seaweed wrap', 'Argan oil face massage', 'Free access to the baths'],
     alt: 'A guest relaxing in the stone lounge of the thermal baths',
   }),
   cure('regeneration', {
-    for: 'Five days to give yourself a real break. The Thousand and One Nights hammam, a seaweed wrap, a Himalayan salt massage and warm herbal poultices make up a 29-treatment programme, with 16 hours devoted to your wellbeing.',
+    for: 'Five days to recover your drive and give yourself a revitalising break. This fitness protocol alternates hot and cold, invigorating hydrotherapy and targeted massages to relax the muscles and restore the body’s balance.',
+    tagline: 'Régénération · Recovery and tone',
+    promise: 'A restorative break to slow down and recover gently.',
     includes: ['Thousand and One Nights hammam', 'Himalayan salt scrub and massage', 'Warm herbal poultice massage', 'Free access to the baths'],
-    label: 'Most chosen', // TO CONFIRM
+    label: 'Most popular', // TO CONFIRM
     alt: 'A guest in a bathrobe beside the thermal pool',
   }),
   cure('renaissance', {
-    for: 'A whole week to take your time at the baths. This 33-treatment programme combines baths, hammam, massages and argan and spirulina facials, with 21 hours of treatments spread over seven days.',
+    for: 'For one week, body and mind adopt a different rhythm. Seven days for deep recovery and a serenity that grows day after day.',
+    tagline: 'Renaissance · Serenity and fulfilment',
+    promise: 'A complete break to let go and find yourself again.',
     includes: ['Hammam, salt scrub and massage', 'Sauna and cold bath', 'Two facials, argan and spirulina', 'Free access to the baths'],
     alt: 'Two guests in bathrobes in the relaxation lounge, over tea',
   }),
@@ -131,9 +139,9 @@ export const cures: Cure[] = [
 
 export const curesHead = {
   em: '',
-  caps: 'Our thalasso programmes',
-  sub: 'Three lengths, of 3, 5 or 7 days, for a restorative experience at your own pace. Explore our treatment programmes and choose the wellness retreat that meets your wishes and your needs.',
-  note: 'Price per person, accommodation optional. Pay online in full or with a 50% deposit, plus a 2.97% CMI fee. Ten guests at most per session.',
+  caps: 'DC Luxury Thermes · Holistic centre',
+  sub: 'Programmes of 3, 5 or 7 days where the benefits of the sea and hydrotherapy come together with the art of massage and the Moroccan hammam ritual. Discover the treatments day by day and choose how much time you want to give yourself.',
+  note: 'Prices per person. Secure online payment, in full or with a 50% deposit, free cancellation up to 30 days before arrival. To preserve the quality of care, each session welcomes ten guests at most.',
 }
 
 const reviewLinks = {
@@ -145,7 +153,8 @@ const reviewLinks = {
 
 export const proof = {
   em: '',
-  caps: 'They share their experience',
+  caps: 'In our guests’ words',
+  sub: 'Their stay, filmed by themselves. Hover for a preview, click to turn on the sound.',
   // Tripadvisor reviews about the spa, translated from French
   quotes: [
     ['We came with 12 friends for a thalasso stay. Special mention to Nisrine, Imane and the whole spa team for their kindness and the quality of their treatments.', 'Isabelle D.', 'October 2026'],
@@ -154,7 +163,6 @@ export const proof = {
     ['Top-quality spa treatments in Fatima’s hands.', 'Ghislaine D.', 'October 2026'],
     ['Great massage and spa with jacuzzi. Special mention to Nisrine and her team!', 'amaurysolenn', 'October 2026'],
   ],
-  sub: '',
   quotesLink: reviewLinks.tripadvisor,
   videos: proofFr.videos.map((v, i) => ({ ...v, label: ['Friends at the baths', 'A day of treatments', 'Sauna and bath', 'The wrap', 'The magnesium bath'][i] })),
   ratings: <Rating[]>[
@@ -177,8 +185,8 @@ export const programmes = Object.fromEntries(
 
 export const programme = {
   em: '',
-  caps: 'every treatment',
-  sub: 'Discover the treatments planned for each day and open their description to see how they unfold. Every morning begins with the Bol d’air Jacquier and the thermal pool. Our therapists adjust the programme when you arrive.',
+  caps: 'The treatment journey',
+  sub: 'An escape, a journey through time. Protocols that bring together the hammam ritual, marine hydrotherapy, hands-on and beauty treatments, working in synergy to rebalance the body and release tension. Complete letting go, for body and mind alike.',
 }
 
 export const booking = {
@@ -191,114 +199,114 @@ export const why = {
   em: '',
   caps: 'A structured approach',
   items: [
-    ['Certified therapists', 'An attentive team that looks after you from the first treatment to the last.'],
-    ['A setting to slow down', 'The pools beneath the glass roof, the stone arches and the relaxation areas are part of the pleasure of your stay.'],
-    ['Sea and ritual', 'Modern marine treatments and ancestral Moroccan rituals, brought together in one programme.'],
-    ['A programme organised day by day', 'Treatments vary over your stay: baths, hammam, wraps, massages and facials are spread out according to the programme you choose.'],
+    ['A qualified team', 'Experienced hydrotherapists and practitioners look after you from the first treatment to the last.'],
+    ['An exceptional setting', 'Pools, hammam and relaxation rooms, facing the Dakhla lagoon.'],
+    ['The sea and tradition', 'Marine hydrotherapy and the Moroccan hammam ritual, brought together in every protocol.'],
+    ['Ten guests at most', 'A deliberately limited number of places, for attentive care.'],
   ],
 }
 
 export const gift = {
   em: '',
   caps: 'Give a programme',
-  text: 'The programme of your choice, on the dates that suit the person receiving it. A gift voucher sent by email, ready to print, with a few words from you.',
-  validity: 'Valid for 12 months', // TO CONFIRM
-  cta: 'Give a programme',
+  text: 'Give the person of your choice a few days of treatments facing the Dakhla lagoon. The gift voucher, with your message, is sent to them by email or handed over in person.',
+  validity: 'Valid for 12 months from the date of purchase',
+  cta: 'Give the experience',
 }
 
 export const faq: Faq = {
   em: '',
   caps: 'Your questions',
+  // One answer = a list of blocks: text = paragraph, { ul: [...] } = bullet list, { ol: [...] } = numbered steps.
   items: [
-    ['What is a thalasso stay at Dakhla Club?', [
-      'A structured wellness experience that draws on seawater, marine treatments and hydrotherapy to ease stress, improve sleep and restore energy.',
-      'Unlike a simple spa visit, our programmes unfold over several days, so the body can gradually let go of tension and find a better physical and mental balance.',
-      'Choose the length that suits your needs and continue to booking.',
+    ['What is a programme at the Dakhla Club holistic centre?', [
+      'A stay of three, five or seven days, each day shaped by a treatment protocol combining marine hydrotherapy, the Moroccan hammam ritual, massages and facials. The centre is located within Dakhla Club Hotel & Spa, in Dakhla, in southern Morocco, where you stay on a full-board basis.',
     ]],
     ['What is the difference between the 3, 5 and 7-day programmes?', [
-      'The three programmes differ in length and content:',
+      // TO CONFIRM: the copy proposal gives 15 and 27 treatments; the cards show 14 and 29 (see cures)
       { ul: [
-        ['Vitalité:', '3 days, 14 treatments and 7 hours of care. For a first experience of the baths or a short break.'],
-        ['Régénération:', '5 days, 29 treatments and 16 hours of care. To spend more time on baths, massages and hammam rituals.'],
-        ['Renaissance:', '7 days, 33 treatments and 21 hours of care. To spend a week at the baths, including argan and spirulina facials.'],
+        ['Vitalité · Energy and radiance:', '3 days of treatments, 4 nights, 14 treatments.'],
+        ['Régénération · Strength and balance:', '5 days of treatments, 6 nights, 29 treatments, built around alternating hot and cold.'],
+        ['Renaissance · Serenity and fulfilment:', '7 days of treatments, 8 nights, 33 treatments, for a complete recharge.'],
       ] },
-      'See the day-by-day programme to compare the treatments included. Accommodation is available as an option for all three programmes.',
+      'Each programme can be booked with or without accommodation.',
     ]],
     ['Which treatments are included?', [
-      'The programmes combine thalassotherapy and hydrotherapy:',
-      { ul: ['marine treatments', 'therapeutic baths and showers', 'body wraps', 'targeted massages', 'access to the wellness facilities: pool, hammam, relaxation areas'] },
-      'Treatments follow your rhythm, never overloaded, to support natural recovery. The day-by-day detail of each programme is shown above.',
+      'All the treatments in the protocol, a Bol d’air Jacquier session every morning and free access to the pool, hammam and relaxation rooms throughout your programme. The day-by-day detail is shown in the treatments section.',
     ]],
-    ['Is it suitable if I have never tried thalassotherapy?', [
-      'Absolutely. Our stays are designed to be accessible, even for a first experience.',
-      'Guidance is gradual, treatments are adapted and our team is on hand throughout your stay. No particular fitness is required.',
+    ['Can I do a programme if I have never tried thalasso?', [
+      'Yes. Our protocols are suited to a first experience, and the team adapts the intensity of each treatment to how you feel.',
     ]],
-    ['Who is this stay for?', [
-      'For anyone who:',
-      { ul: ['feels stressed or tired', 'sleeps badly or struggles to recover', 'needs a physical and mental break', 'wants to take care of themselves in a calm, structured setting'] },
-      'It suits busy professionals as much as people in a period of transition or rest. You do not need a medical condition to benefit.',
+    ['Who are our programmes for?', [
+      'Anyone who wants to take a break: persistent fatigue, less restful sleep, built-up tension, or simply the wish to take time for yourself. Treatments are open to anyone aged 18 and over.',
     ]],
-    ['Where will I stay during my thalasso stay in Dakhla?', [
-      'The thalasso stay is offered in partnership with Dakhla Club Hotel & Spa.',
-      'Once your programme is booked, our team helps you reserve your accommodation, so that treatments and rest time fit together smoothly.',
-      'Accommodation is booked separately.',
+    ['Can I stay at the hotel during my programme?', [
+      'Yes, and it is the option we recommend. The centre is located within Dakhla Club Hotel & Spa, a hundred metres from the shore. Six types of accommodation, from the Medina room to the private villa, are offered on a full-board basis, with transfer from Dakhla airport. If you stay elsewhere, a shuttle runs every day.',
     ]],
     ['How do booking and payment work?', [
-      'Booking takes a few simple steps:',
-      { ol: ['Choose your programme (3, 5 or 7 days)', 'Pay securely online', 'Receive confirmation of your stay', 'Our team contacts you to prepare your arrival'] },
-      'Payment is 100% secure and your booking is confirmed immediately.',
+      'You choose your programme, your dates and your option, then pay online, in full or with a 50% deposit. Your booking confirmation is sent by email, and an advisor contacts you to prepare your arrival. Cancellation is free up to 30 days before arrival.',
     ]],
     ['Why are places limited?', [
-      'To protect the quality of care and keep every guest personally looked after, numbers are deliberately limited for each session. The atmosphere stays calm, unhurried and respectful of everyone’s pace.',
-      'We recommend booking ahead.',
+      'Each session welcomes ten guests at most, so that everyone receives attentive care and the centre stays calm. We recommend booking ahead.',
     ]],
-    ['What should I prepare before arriving?', [
-      'Once your booking is confirmed, our team sends you everything you need: what to wear, timings, how the stay is organised. Simply bring:',
-      { ul: ['comfortable clothes', 'a swimsuit', 'a willingness to let go'] },
+    ['What should I bring?', [
+      // TO CONFIRM: the copy proposal added towels and sandals; the brochure confirms bathrobe and slippers
+      'A swimsuit is all you need: bathrobe and slippers are provided. A medical certificate confirming there is no contraindication is recommended. Timings and the details of your transfer are sent to you as soon as your booking is confirmed.',
     ]],
-    ['Can I ask a question before booking?', [
-      'Of course. Our team will answer your questions and help you choose the programme that suits you best.',
-      'Message us directly, or continue your booking online.',
+    ['Are there any contraindications?', [
+      'A medical certificate confirming there is no contraindication is recommended. The programmes are not advised during pregnancy. Please tell us about any health issue when you book.',
+    ]],
+    ['What are the cancellation terms?', [
+      'Free cancellation up to 30 days before arrival; after that, the deposit is not refunded. Changes are possible up to 30 days before arrival.',
+    ]],
+    ['Where is Dakhla and how do I get there?', [
+      'In southern Morocco, on the Atlantic coast. Direct flights connect Dakhla with Casablanca, Rabat, Marrakech, Agadir, Laâyoune, Paris-Orly and Las Palmas, as well as Marseille and Madrid from October to March.',
+    ]],
+    ['Is the airport transfer included?', [
+      'Yes, the return transfer is free for any stay at the hotel.',
+    ]],
+    ['How much does a complete stay cost?', [
+      'The Vitalité programme with 4 nights in a Medina room, full board, costs 8,902 MAD per person in a double room (low season 2026). The brochure details all the prices.',
     ]],
   ],
-  contact: 'Our team knows every treatment. They will help you choose the programme, the dates and the room.',
+  contact: 'A question before booking? Our team will help you choose the programme, the dates and the accommodation.',
 }
 
 export const ui = {
   skip: 'Skip to programmes',
   navLabel: 'Sections',
   home: 'Back to top',
-  logoAlt: 'DC Therme, Luxury Thermes Spa',
+  logoAlt: 'DC Luxury Thermes',
   book: 'Book',
   switchLabel: 'Français',
   switchShort: 'FR',
-  heroAlt: 'The DC Therme thermal pool beneath the glass roof, between stone arches',
+  heroAlt: 'The DC Luxury Thermes thermal pool beneath the glass roof, between stone arches',
   scrollNext: 'Scroll to continue',
   days: 'days',
   daysShort: 'd',
   perPerson: 'per person',
   included: 'What’s included',
-  lodging: 'Accommodation optional',
+  lodging: 'Programme only or a full-board stay',
   compareLabel: 'The three programmes at a glance',
-  mobileNav: [['cures', 'Programmes'], ['programme', 'Treatments'], ['questions', 'FAQ']],
+  mobileNav: [['cures', 'Programmes'], ['programme', 'Treatments'], ['questions', 'Questions']],
   treatments: 'treatments',
   hoursOf: 'of treatments',
-  reserve: (name: string) => `Book ${name}`,
-  seeProgramme: 'See the day-by-day programme',
-  introAlt: 'The stone arches and thermal pool of DC Therme',
-  filmLabel: 'Film: a day of treatments at DC Therme',
+  reserve: (() => 'Book this programme') as (name: string) => string,
+  seeProgramme: 'Discover the programme',
+  introAlt: 'The stone arches and thermal pool of DC Luxury Thermes',
+  filmLabel: 'Film: a day of treatments at DC Luxury Thermes',
   giftAlt: 'A guest in a DC bathrobe, sitting at the edge of the thermal pool',
-  byEmail: 'Sent by email',
-  writeUs: 'Email us',
-  call: '',
-  footerTag: 'The thermal baths of Dakhla Club. Thalassotherapy programmes between desert and ocean.',
+  byEmail: 'Sent by email or WhatsApp',
+  writeUs: 'Message us on WhatsApp',
+  call: 'Call',
+  footerTag: 'DC Luxury Thermes, the holistic centre of Dakhla Club Hotel & Spa · Dakhla, Morocco',
   footerNav: 'Navigation',
   footerCures: 'Programmes',
   footerContact: 'Contact',
-  footerPay: '100% secure payment',
+  footerPay: 'Secure payment',
   footerFollow: 'Follow us',
   brochure: 'Download the brochure',
-  copyright: '© 2026 Dakhla Club · Luxury Fitness, Health & Wellness Retreat',
+  copyright: '© 2026 DC Luxury Thermes · Dakhla Club Hotel & Spa',
   terms: 'Terms and conditions',
   termsUrl: 'https://offer.dakhlaclub.com/en/legal/cgv',
   privacy: 'Privacy policy',
@@ -323,11 +331,11 @@ export const ui = {
   full: 'Full payment',
   fullMeta: 'Everything is paid today',
   deposit: '50% deposit',
-  depositMeta: 'The balance is paid at the baths on arrival',
-  roomTitle: 'Add a room at Dakhla Club',
-  roomOn: 'Arrival the day before your first treatment, departure the day after the last. Programme and room are booked together on Direct-Book, the hotel’s booking site.',
-  roomOff: 'Without a room, our shuttle takes you from Dakhla to the baths every day.',
-  arrival: 'Hotel arrival',
+  depositMeta: 'The balance is paid at the baths, on arrival',
+  roomTitle: 'Stay at Dakhla Club Hotel & Spa · full board, free airport transfer',
+  roomOn: 'Arrival the day before your first treatment, from 3 pm. Our driver meets you at Dakhla airport.',
+  roomOff: 'Without accommodation, a shuttle runs every day between Dakhla and the baths.',
+  arrival: 'Arrival',
   firstTreatment: 'First treatment',
   lastTreatment: 'Last treatment',
   dates: 'Dates',
@@ -341,12 +349,12 @@ export const ui = {
   ctaFull: 'Book and pay in full',
   ctaLead: 'Request my booking',
   departure: 'Hotel departure',
-  packRow: (n: number) => `Programme and room, ${n} nights`,
+  packRow: (n: number) => `Programme and full-board accommodation, ${n} nights`,
   packPrice: 'Price on Direct-Book',
-  packNote: 'The package price, programme and room included, appears at the next step for the room you choose. If no room is free on these dates, Direct-Book tells you: pick another first day, or book the programme only.',
+  packNote: 'The package price, programme and room included, appears at the next step for the room you choose. If no room is free on these dates, Direct-Book tells you: choose another first day, or book the programme only.',
   packCta: 'Choose my room and see the price',
-  packTicketNote: 'Booking and payment on Direct-Book, Dakhla Club’s official booking site · Instant email confirmation',
-  ticketNote: 'Secure CMI payment · Instant email confirmation',
+  packTicketNote: 'Your accommodation is booked together with your programme on Direct-Book, Dakhla Club’s official site · Booking confirmation by email',
+  ticketNote: 'Secure CMI payment · Booking confirmation by email · Free cancellation up to 30 days before arrival',
   leadTicketNote: 'No commitment, no online payment · Our team calls you to confirm your dates',
   reviewsLabel: 'Guest reviews',
   reviewN: (n: number, total: number) => `Review ${n} of ${total}`,
@@ -361,19 +369,19 @@ export const ui = {
 }
 
 export const giftPage = {
-  title: 'Give a programme · DC Therme',
+  title: 'Give a programme · DC Luxury Thermes',
   back: 'Back to the programmes',
   help: 'A question? +212 652 881 921',
   em: '',
   caps: 'Give a programme',
-  intro: 'A few days entirely their own, between desert and ocean. Choose the programme, add your words: we prepare a gift voucher worthy of the moment.',
-  steps: ['Compose the voucher', 'Send the request', 'Pay, and it is sent'],
+  intro: 'Give a few days of treatments facing the Dakhla lagoon. Choose the programme, add your message: we prepare the gift voucher.',
+  steps: ['Compose the voucher', 'Send the request', 'Pay and receive the voucher'],
   stepsLabel: 'Steps',
-  cureGroup: 'The programme',
+  cureGroup: 'The programme you are giving',
   guests: 'Number of people',
   forGroup: 'Who is it for?',
   roomTitle: 'Add accommodation at Dakhla Club',
-  roomOn: (n: number) => `${n} nights, from the evening before the first treatment to the last day. The room rate is shared with you at payment.`,
+  roomOn: (n: number) => `${n} nights, from the evening before the first treatment to the last day. The room rate is sent to you with the payment details.`,
   roomOff: 'Without accommodation, they stay wherever they like: a shuttle takes them to the baths every day.',
   voucherRoom: (n: number) => `Accommodation included · ${n} nights at Dakhla Club`,
   roomRow: (n: number) => `Accommodation · ${n} nights`,
@@ -387,10 +395,10 @@ export const giftPage = {
   otherOccasionLabel: 'Describe the occasion',
   otherOccasionPh: 'E.g. retirement, Valentine’s Day…',
   message: 'Your words, printed on the voucher',
-  messagePh: 'So that you finally take time to breathe…',
-  deliveryGroup: 'Delivery',
+  messagePh: 'To finally give you some time just for you…',
+  deliveryGroup: 'Sending the voucher',
   delivery: [
-    ['moi', 'To me', 'I’ll hand it over myself'],
+    ['moi', 'To me', 'I’ll hand it over in person'],
     ['destinataire', 'Straight to them', 'By email, on the date you choose'],
   ],
   recipientEmail: 'Their email',
@@ -400,7 +408,7 @@ export const giftPage = {
   sendWhatsapp: 'Send via WhatsApp',
   or: 'or',
   note: 'No payment at this stage. Our team contacts you within 24 hours for secure payment, then sends you the voucher.', // TO CONFIRM: timing
-  sentTitle: 'Thank you, almost there',
+  sentTitle: 'Thank you, your request is ready',
   sentText: 'Your email app has opened with the request already written: all that’s left is to send it. Our team will contact you within 24 hours.',
   sentWhatsapp: 'WhatsApp has opened with your request already written: all that’s left is to send it. Our team will reply within 24 hours.',
   sentPosted: 'We have received your request. Our team will contact you within 24 hours to finalise the voucher.',
@@ -414,10 +422,10 @@ export const giftPage = {
   you: 'you',
   value: 'Voucher value',
   persons: (n: number) => `${n} ${n > 1 ? 'people' : 'person'}`,
-  trust: ['An elegant voucher, to print or to send', 'Valid for 12 months, on the dates they choose', 'Room and shuttle available as extras'], // TO CONFIRM: validity
+  trust: ['An elegant gift voucher, to print or to send', 'Valid for 12 months, on the dates they choose', 'Accommodation and shuttle available as extras'],
   mail: {
-    subject: 'DC Therme gift voucher',
-    hello: 'Hello, I would like to give a DC Therme programme as a gift.',
+    subject: 'DC Luxury Thermes gift voucher',
+    hello: 'Hello, I would like to give a DC Luxury Thermes programme as a gift.',
     cure: 'Programme',
     for: 'For',
     occasion: 'Occasion',
@@ -426,10 +434,10 @@ export const giftPage = {
     roomNo: 'no, the programme only',
     message: 'Message on the voucher',
     delivery: 'Delivery',
-    toMe: 'to me, I’ll hand it over myself',
+    toMe: 'to me, I’ll hand it over in person',
     toThem: (email: string, date: string) => `straight to ${email}${date ? `, on ${date}` : ''}`,
     from: 'From',
-    thanks: 'Please contact me for payment.',
+    thanks: 'Please contact me about payment.',
   },
 }
 
@@ -438,14 +446,14 @@ export const bookingPage = {
   help: 'A question? +212 652 881 921',
   em: '',
   caps: 'Final step',
-  intro: 'Your details, then payment on the secure CMI platform, and your place is reserved.',
+  intro: 'Enter your details, then pay on the secure CMI platform. Your place is reserved as soon as you pay.',
   introPack: 'With a room, your booking is completed on Direct-Book, the hotel’s site: choose the room there, see the package price and availability, then pay online.',
   steps: ['Your details', 'Secure payment', 'Confirmation'],
   stepsLabel: 'Steps',
   yourCure: 'Your programme',
-  roomTitle: 'I would also like a room at Dakhla Club',
-  roomOn: 'Arrival the day before your first treatment, departure the day after the last. Programme and room are booked together on Direct-Book, where your details and payment are taken.',
-  roomOff: 'Without a room, a shuttle takes you from Dakhla to the baths every day.',
+  roomTitle: 'I’m staying at Dakhla Club Hotel & Spa',
+  roomOn: 'Arrival the day before from 3 pm, full board, free airport transfer.',
+  roomOff: 'A shuttle takes you from Dakhla to the baths every day.',
   details: 'Your details',
   firstName: 'First name',
   lastName: 'Last name',
@@ -455,30 +463,30 @@ export const bookingPage = {
   dial: 'Country code',
   phoneLabel: 'Phone number',
   otherCountry: 'Other',
-  phoneInvalid: (dial: string, example: string) => dial ? `This number looks incomplete or incorrect for ${dial}. Example: ${example}` : `Enter the full number, with the country code. Example: ${example}`,
-  note: 'A request, a contraindication?',
+  phoneInvalid: (dial: string, example: string) => dial ? `This number is incomplete or incorrect for ${dial}. Example: ${example}` : `Enter the full number, with the country code. Example: ${example}`,
+  note: 'A request or a contraindication to tell us about?',
   optional: 'Optional',
   notePh: 'Pregnancy, back problems, arrival time…',
   cgv: ['I have read and accept the ', 'terms and conditions', '.'],
-  offers: 'I would like to receive offers and news from DC Therme and Dakhla Club.',
-  pay: (amount: string) => `Pay ${amount} securely`,
+  offers: 'I would like to receive news from DC Luxury Thermes and Dakhla Club Hotel & Spa.',
+  pay: (amount: string) => `Pay ${amount}`,
   sending: 'Redirecting to payment…',
-  secure: 'You will be redirected to the official CMI platform. Your card details never pass through our site.',
+  secure: 'Secure CMI payment. You are redirected to the official CMI platform. Your card details never pass through our site.',
   payError: `The payment could not start. Please try again, or call us on ${site.phone}.`,
   leadCaps: 'Your request',
   leadIntro: 'Leave your details: our team will call you to confirm your dates, answer your questions and arrange payment. No payment is taken at this stage.',
   leadSteps: ['Your request', 'Our call', 'Confirmation'],
   leadSubmit: 'Send my request',
   leadSending: 'Sending…',
-  leadNote: 'No commitment. Your details are used to contact you about your programme.',
+  leadNote: 'No commitment. Your details are only used to contact you about your programme.',
   leadTrust: ['No commitment, no online payment', 'An advisor calls you to set your dates', 'Ten guests at most per session'],
   leadDone: 'Request sent',
   leadDoneText: `Thank you. Our team will call you to confirm your dates and arrange payment. Any question in the meantime: ${site.phone}.`,
   leadError: `Your request could not be sent. Please try again, or call us on ${site.phone}.`,
   summary: 'Summary',
-  access: 'access to the baths',
+  access: 'programme and access to the baths',
   times: (price: string, n: number) => `${price} × ${n}`,
-  trust: ['Instant confirmation by email', 'An advisor calls you before you arrive', 'Ten guests at most per session'],
+  trust: ['Instant confirmation by email', 'An advisor calls you before you arrive', 'Ten guests at most per session', 'Free cancellation up to 30 days before arrival'],
   countries: [['GB', 'United Kingdom'], ['US', 'United States'], ['CA', 'Canada'], ['FR', 'France'], ['MA', 'Morocco'], ['ES', 'Spain'], ['DE', 'Germany'], ['IT', 'Italy'], ['BE', 'Belgium'], ['NL', 'Netherlands'], ['SA', 'Saudi Arabia'], ['AE', 'United Arab Emirates'], ['other', 'Other country']] as [CountryKey, string][],
 }
 
