@@ -12,11 +12,15 @@ import { ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack
 // /dc-thermes/merci (paid) ou /dc-thermes/paiement-echoue. /api/payment/success et /api/payment/fail y renvoient.
 // La réservation vient du navigateur (order.ts) : langue, dates, montants. Sans elle, la cure se lit dans le numéro.
 
+const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 const parse = (s: string) => {
   const [y, m, d] = s.split('-').map(Number)
   return new Date(y, m - 1, d)
 }
 const addDays = (d: Date, n: number) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n)
+
+// Photo de la carte « Prochaine étape », jusqu'aux bords de la carte (même marge que bkGroup)
+const hotelImg = '-mx-[clamp(22px,2.6vw,36px)] -mt-[clamp(22px,2.6vw,36px)] aspect-[21/9] overflow-hidden'
 
 export default function Confirmation({ paid }: { paid: boolean }) {
   const q = new URLSearchParams(window.location.search)
@@ -36,6 +40,14 @@ export default function Confirmation({ paid }: { paid: boolean }) {
     const title = window.setTimeout(() => (document.title = paid ? c.title : c.failTitle), 0)
     return () => window.clearTimeout(title)
   }, [])
+
+  // Hôtel : arrivée la veille du premier soin, départ le lendemain du dernier, comme le pack de la page de réservation.
+  // Sans la réservation en mémoire, Direct-Book demande les dates.
+  const checkIn = first && cure ? addDays(first, -1) : null
+  const checkOut = checkIn && cure ? addDays(checkIn, site.nights(cure.days)) : null
+  const hotelHref = checkIn && checkOut && order
+    ? site.hotel({ checkIn: iso(checkIn), checkOut: iso(checkOut), adults: order.guests })
+    : site.hotel({ adults: 2 })
 
   // Réessayer : la page de réservation reprend la cure, les dates et le règlement choisis
   const retryHref = bookingHref('main', lang, order
@@ -57,6 +69,24 @@ export default function Confirmation({ paid }: { paid: boolean }) {
           <ol className={bkSteps} aria-label={b.stepsLabel}>
             {b.steps.map((step, i) => <li key={step} className={bkStep(i === (paid ? 2 : 1))}>{step}</li>)}
           </ol>
+
+          {paid && (
+            <section className={cx(bkGroup('gap-5'), 'mt-4 overflow-hidden')} aria-labelledby="ok-hotel">
+              <figure className={hotelImg}><img className="w-full h-full object-cover" src="/images/dc-thermes/dakhla-club-lagune.webp" width="1800" height="1013" alt="" /></figure>
+              <h2 className={bkLegend} id="ok-hotel">{c.hotelTitle}</h2>
+              <p className="text-muted">{c.hotelText}</p>
+              {checkIn && checkOut && (
+                <>
+                  <dl className={ticketRows}>
+                    <div className={ticketRow()}><dt>{ui.arrival}</dt><dd>{ld(t, checkIn)}</dd></div>
+                    <div className={ticketRow()}><dt>{ui.departure}</dt><dd>{ld(t, checkOut)}</dd></div>
+                  </dl>
+                  <p className="text-sm text-muted">{c.hotelDates}</p>
+                </>
+              )}
+              <a className={cx(pill('dark'), 'w-fit')} href={hotelHref} target="_blank" rel="noopener">{c.hotelCta}</a>
+            </section>
+          )}
 
           {paid ? (
             <section className={cx(bkGroup('gap-5'), 'mt-4')} aria-labelledby="ok-next">

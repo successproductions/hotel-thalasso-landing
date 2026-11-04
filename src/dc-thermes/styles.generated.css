@@ -606,6 +606,10 @@
     margin: calc(var(--spacing) * 0);
   }
 
+  .-mx-\[clamp\(22px\,2\.6vw\,36px\)\] {
+    margin-inline: calc(-1 * clamp(22px, 2.6vw, 36px));
+  }
+
   .mx-0 {
     margin-inline: calc(var(--spacing) * 0);
   }
@@ -624,6 +628,10 @@
 
   .-mt-\[6px\] {
     margin-top: -6px;
+  }
+
+  .-mt-\[clamp\(22px\,2\.6vw\,36px\)\] {
+    margin-top: calc(-1 * clamp(22px, 2.6vw, 36px));
   }
 
   .mt-0\.5 {
@@ -784,6 +792,10 @@
 
   .aspect-\[9\/16\] {
     aspect-ratio: 9 / 16;
+  }
+
+  .aspect-\[21\/9\] {
+    aspect-ratio: 21 / 9;
   }
 
   .aspect-video {

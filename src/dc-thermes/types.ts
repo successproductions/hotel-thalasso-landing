@@ -47,4 +47,4 @@ export type Rating = {
 }
 export type Video = { src: string; poster: string; label: string }
 
-export type HotelQuery = { checkIn: string; checkOut: string; adults: number; rateId?: number }
+export type HotelQuery = { checkIn?: string; checkOut?: string; adults: number; rateId?: number }

@@ -28,8 +28,9 @@ export const site = {
   // Direct-Book affiche le prix selon la chambre choisie, ou indique qu'aucune chambre n'est libre.
   packRateId: 999765,
   nights: (days: number) => days + 1, // arrivée la veille du premier soin, départ le lendemain du dernier
+  // Sans dates (page de confirmation sans la réservation en mémoire), Direct-Book les demande
   hotel: ({ checkIn, checkOut, adults, rateId }: HotelQuery) =>
-    `https://direct-book.com/properties/DakhlaClubDIRECT?locale=fr&items[0][adults]=${adults}&items[0][children]=0&items[0][infants]=0${rateId ? `&items[0][rateId]=${rateId}` : ''}&currency=MAD&checkInDate=${checkIn}&checkOutDate=${checkOut}&trackPage=yes${rateId ? '&selected=0' : ''}`,
+    `https://direct-book.com/properties/DakhlaClubDIRECT?locale=fr&items[0][adults]=${adults}&items[0][children]=0&items[0][infants]=0${rateId ? `&items[0][rateId]=${rateId}` : ''}&currency=MAD${checkIn && checkOut ? `&checkInDate=${checkIn}&checkOutDate=${checkOut}` : ''}&trackPage=yes${rateId ? '&selected=0' : ''}`,
   cmiFee: 0.0297, // frais de transaction CMI ajoutés au paiement en ligne, comme sur les paniers des cures
   // Page « Offrir » : la demande part par e-mail à l'équipe, ou par WhatsApp
   giftPage: (q: Record<string, string> = {}) => '/dc-thermes/offrir' + (Object.keys(q).length ? '?' + new URLSearchParams(q).toString() : ''),
@@ -593,11 +594,16 @@ export const confirmPage = {
   em: 'Merci',
   caps: 'Votre cure est réservée',
   intro: (firstName: string) => `${firstName ? `${firstName}, votre` : 'Votre'} paiement est confirmé. Nous avons hâte de vous accueillir aux thermes.`,
+  // Le paiement CMI règle la cure seule : l'hébergement se réserve ensuite sur Direct-Book
+  hotelTitle: 'Prolongez votre expérience à Dakhla',
+  hotelText: 'Votre cure est confirmée. Pour profiter pleinement de votre escapade bien-être, choisissez dès maintenant votre hébergement au Dakhla Club Hotel & Spa.',
+  hotelDates: 'Arrivée la veille du premier soin, départ le lendemain du dernier : ces dates sont déjà choisies sur Direct-Book.',
+  hotelCta: 'Découvrir les hébergements',
   nextTitle: 'Et maintenant ?',
   next: ['Un e-mail de confirmation vous a été envoyé, avec votre référence.', 'Une conseillère vous appelle avant votre arrivée pour préparer votre cure.'],
   balanceNext: (amount: string) => `Le solde de ${amount} se règle aux thermes, à l’arrivée.`,
   question: 'Une question avant votre venue ?',
-  whatsapp: 'Écrire sur WhatsApp',
+  whatsapp: 'Nous contacter sur WhatsApp',
   reference: 'Référence',
   paid: 'Réglé aujourd’hui',
   failCaps: 'Paiement non abouti',
