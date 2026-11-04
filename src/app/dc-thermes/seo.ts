@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import * as fr from '@/dc-thermes/content';
 import * as en from '@/dc-thermes/content.en';
-import type { FaqBlock, Lang } from '@/dc-thermes/types';
+import { bookingHref } from '@/dc-thermes/funnel';
+import type { FaqBlock, Funnel, Lang } from '@/dc-thermes/types';
 
 const SITE_URL = 'https://offer.dakhlaclub.com';
 const OG_IMAGE = `${SITE_URL}/images/dc-thermes/piscine-thermale.webp`;
@@ -24,8 +25,13 @@ export const landingViewport: Viewport = {
 
 export const formViewport: Viewport = { ...landingViewport, themeColor: '#f3f2ef' };
 
-export function landingMetadata(lang: Lang): Metadata {
+export function landingMetadata(lang: Lang, funnel: Funnel = 'main'): Metadata {
   const { meta } = packs[lang];
+
+  // The payment and contact versions repeat the main page, so they stay out of search results
+  if (funnel !== 'main') {
+    return { ...baseMetadata, title: meta.title, description: meta.description, robots: { index: false } };
+  }
 
   return {
     ...baseMetadata,
@@ -54,12 +60,18 @@ export type LangSearchParams = Promise<{ lang?: string }>;
 const fromSearchParams = async (searchParams: LangSearchParams): Promise<Lang> =>
   (await searchParams).lang === 'en' ? 'en' : 'fr';
 
-export async function reservationMetadata(searchParams: LangSearchParams): Promise<Metadata> {
+export async function reservationMetadata(
+  searchParams: LangSearchParams,
+  funnel: Funnel = 'main'
+): Promise<Metadata> {
   const lang = await fromSearchParams(searchParams);
+  const lead = funnel === 'lead';
   return {
     ...baseMetadata,
-    title: packs[lang].meta.bookingTitle,
-    description: 'Dernière étape avant le paiement sécurisé de votre cure DC Luxury Thermes.',
+    title: lead ? packs[lang].meta.leadTitle : packs[lang].meta.bookingTitle,
+    description: lead
+      ? 'Demandez votre cure DC Luxury Thermes : notre équipe vous rappelle, sans paiement en ligne.'
+      : 'Dernière étape avant le paiement sécurisé de votre cure DC Luxury Thermes.',
     robots: { index: false },
   };
 }
@@ -109,7 +121,7 @@ export function landingStructuredData(lang: Lang) {
         description: c.for,
         price: c.price,
         priceCurrency: 'MAD',
-        url: t.site.checkout(c.key),
+        url: SITE_URL + bookingHref('main', lang, { cure: c.key }),
       })),
     },
     {

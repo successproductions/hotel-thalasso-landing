@@ -2,6 +2,7 @@
 // Les éléments marqués « À CONFIRMER » doivent être vérifiés avant la mise en ligne.
 
 import type { Cure, CureKey, Faq, GlossaryEntry, HotelQuery, Lang, NavItem, ProgrammeDay, Rating } from './types'
+import type { CountryKey } from './phone'
 
 const mail = (subject: string) => 'mailto:reservation@dakhlaclub.com?subject=' + encodeURIComponent(subject)
 
@@ -22,8 +23,6 @@ export const site = {
     ['YouTube', 'https://youtube.com/@dakhlaclub1745'],
   ],
   address: ['Dakhla Club', 'Point de Dragon, PK 28', 'Dakhla, Maroc'],
-  // Paiement des cures : tunnel CMI existant, un panier par cure
-  checkout: (key: string) => `https://offer.dakhlaclub.com/fr/panier/${key}`,
   // Cure avec chambre : moteur Direct-Book du Dakhla Club, tarif « pack thalasso » présélectionné.
   // Un seul tarif pour les trois cures : la durée du séjour choisit le pack (4 nuits = 3 jours, 6 = 5, 8 = 7).
   // Direct-Book affiche le prix selon la chambre choisie, ou indique qu'aucune chambre n'est libre.
@@ -31,14 +30,12 @@ export const site = {
   nights: (days: number) => days + 1, // arrivée la veille du premier soin, départ le lendemain du dernier
   hotel: ({ checkIn, checkOut, adults, rateId }: HotelQuery) =>
     `https://direct-book.com/properties/DakhlaClubDIRECT?locale=fr&items[0][adults]=${adults}&items[0][children]=0&items[0][infants]=0${rateId ? `&items[0][rateId]=${rateId}` : ''}&currency=MAD&checkInDate=${checkIn}&checkOutDate=${checkOut}&trackPage=yes${rateId ? '&selected=0' : ''}`,
-  cmiFee: 0.0297, // frais de transaction CMI ajoutés au paiement en ligne, comme sur le panier actuel
+  cmiFee: 0.0297, // frais de transaction CMI ajoutés au paiement en ligne, comme sur les paniers des cures
   // Page « Offrir » : la demande part par e-mail à l'équipe, ou par WhatsApp
   giftPage: (q: Record<string, string> = {}) => '/dc-thermes/offrir' + (Object.keys(q).length ? '?' + new URLSearchParams(q).toString() : ''),
   whatsappNumber: '212652881921',
   // À BRANCHER (facultatif) : adresse d'un service d'envoi de formulaire. Vide = la messagerie du visiteur s'ouvre.
   giftEndpoint: '',
-  // Page de réservation de cette landing page (étape avant le paiement CMI)
-  booking: (q: Record<string, string>) => '/dc-thermes/reservation?' + new URLSearchParams(q).toString(),
 }
 
 export const nav: NavItem[] = [
@@ -358,6 +355,7 @@ export const meta = {
   canonical: 'https://offer.dakhlaclub.com/dc-thermes',
   ogLocale: 'fr_FR',
   bookingTitle: 'Réserver votre cure · DC Luxury Thermes',
+  leadTitle: 'Demander votre cure · DC Luxury Thermes',
 }
 
 export const ui = {
@@ -368,7 +366,6 @@ export const ui = {
   book: 'Réserver',
   switchLabel: 'English',
   switchShort: 'EN',
-  switchHref: '/dc-thermes/en',
   heroAlt: 'La piscine thermale de DC Luxury Thermes, sous la verrière, entre les arches de pierre',
   scrollNext: 'Défiler vers la suite',
   days: 'jours',
@@ -438,6 +435,8 @@ export const ui = {
   balance: 'Solde aux thermes, à l’arrivée',
   ctaDeposit: 'Réserver avec un acompte de 50 %',
   ctaFull: 'Réserver et régler la totalité',
+  // Version « contact » : pas de paiement, la demande part à l'équipe
+  ctaLead: 'Demander ma réservation',
   departure: 'Départ de l’hôtel',
   packRow: (n: number) => `Cure et hébergement en pension complète, ${n} nuits`,
   packPrice: 'Prix sur Direct-Book',
@@ -445,6 +444,7 @@ export const ui = {
   packCta: 'Choisir ma chambre et voir le prix',
   packTicketNote: 'Votre hébergement est réservé en même temps que votre cure, sur Direct-Book, le site officiel du Dakhla Club · Confirmation de réservation par e-mail',
   ticketNote: 'Paiement sécurisé CMI · Confirmation de réservation par e-mail · Annulation sans frais jusqu’à 30 jours avant l’arrivée',
+  leadTicketNote: 'Sans engagement ni paiement en ligne · Notre équipe vous rappelle pour confirmer vos dates',
   // Avis
   reviewsLabel: 'Avis de nos hôtes',
   reviewN: (n: number, total: number) => `Avis ${n} sur ${total}`,
@@ -555,7 +555,8 @@ export const bookingPage = {
   phone: 'Téléphone',
   dial: 'Indicatif du pays',
   phoneLabel: 'Numéro de téléphone',
-  phonePh: '6 12 34 56 78',
+  otherCountry: 'Autre',
+  phoneInvalid: (dial: string, example: string) => dial ? `Numéro incomplet ou incorrect pour l’indicatif ${dial}. Exemple : ${example}` : `Écrivez le numéro complet, avec l’indicatif du pays. Exemple : ${example}`,
   note: 'Un souhait, une contre-indication à nous signaler ?',
   optional: 'Facultatif',
   notePh: 'Grossesse, problème de dos, heure d’arrivée…',
@@ -564,9 +565,22 @@ export const bookingPage = {
   pay: (amount: string) => `Payer ${amount}`,
   sending: 'Redirection vers le paiement…',
   secure: 'Paiement sécurisé CMI. Vous êtes redirigé(e) vers la plateforme officielle CMI. Vos données bancaires ne transitent jamais par notre site.',
+  payError: `Le paiement n’a pas pu démarrer. Réessayez, ou appelez-nous au ${site.phone}.`,
+  // Version « contact » : demande sans paiement
+  leadCaps: 'Votre demande',
+  leadIntro: 'Laissez vos coordonnées : notre équipe vous rappelle pour confirmer vos dates, répondre à vos questions et organiser le règlement. Aucun paiement n’est demandé à cette étape.',
+  leadSteps: ['Votre demande', 'Notre appel', 'Confirmation'],
+  leadSubmit: 'Envoyer ma demande',
+  leadSending: 'Envoi en cours…',
+  leadNote: 'Sans engagement. Vos coordonnées servent à vous recontacter au sujet de votre cure.',
+  leadTrust: ['Sans engagement, sans paiement en ligne', 'Une conseillère vous rappelle pour fixer vos dates', 'Dix curistes au maximum par session'],
+  leadDone: 'Demande envoyée',
+  leadDoneText: `Merci. Notre équipe vous rappelle pour confirmer vos dates et organiser le règlement. Une question d’ici là : ${site.phone}.`,
+  leadError: `L’envoi n’a pas abouti. Réessayez, ou appelez-nous au ${site.phone}.`,
   summary: 'Récapitulatif',
   access: 'cure et accès aux thermes',
   times: (price: string, n: number) => `${price} × ${n}`,
   trust: ['Confirmation immédiate par e-mail', 'Une conseillère vous appelle avant votre arrivée', 'Dix curistes au maximum par session', 'Annulation sans frais jusqu’à 30 jours avant l’arrivée'],
-  dialCodes: [['+212', 'Maroc'], ['+33', 'France'], ['+34', 'Espagne'], ['+1', 'États-Unis, Canada'], ['+44', 'Royaume-Uni'], ['+49', 'Allemagne'], ['+39', 'Italie'], ['+32', 'Belgique'], ['+31', 'Pays-Bas'], ['+966', 'Arabie saoudite'], ['+971', 'Émirats arabes unis']],
+  // Pays du téléphone, dans l'ordre de la liste (indicatif, drapeau et règle du numéro dans phone.ts)
+  countries: [['MA', 'Maroc'], ['FR', 'France'], ['ES', 'Espagne'], ['US', 'États-Unis'], ['CA', 'Canada'], ['GB', 'Royaume-Uni'], ['DE', 'Allemagne'], ['IT', 'Italie'], ['BE', 'Belgique'], ['NL', 'Pays-Bas'], ['SA', 'Arabie saoudite'], ['AE', 'Émirats arabes unis'], ['other', 'Autre pays']] as [CountryKey, string][],
 }

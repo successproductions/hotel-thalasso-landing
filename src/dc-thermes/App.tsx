@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { MouseEvent as ReactMouseEvent, ReactNode } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -12,7 +12,9 @@ import { Title } from './Title'
 import { useSmoothScroll, scrollToId } from './motion'
 import { packs, LangContext, number } from './i18n'
 import { cx, pill, link, arrow, logo, blockHead } from './ui'
-import type { CureKey, Lang } from './types'
+import { landingHref } from './funnel'
+import { captureAttribution } from '@/lib/metaTracking'
+import type { CureKey, Funnel, Lang } from './types'
 
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger, useGSAP)
 
@@ -85,7 +87,7 @@ function Logo({ light, alt, className }: { light?: boolean; alt: string; classNa
   return <img className={cx(logo(light), className)} src="/images/dc-thermes/logo-dc.webp" width="600" height="296" alt={alt} />
 }
 
-export default function App({ lang = 'fr' }: { lang?: Lang }) {
+export default function App({ lang = 'fr', funnel = 'main' }: { lang?: Lang; funnel?: Funnel }) {
   const t = packs[lang] || packs.fr
   const { site, nav, hero, intro, benefits, cures, curesHead, booking, why, gift, faq, ui } = t
   const mad = (n: number) => number(t, n)
@@ -93,6 +95,9 @@ export default function App({ lang = 'fr' }: { lang?: Lang }) {
   // Deux choix indépendants : la cure affichée dans le programme, et celle du formulaire de réservation
   const [progKey, setProgKey] = useState<CureKey>('regeneration')
   const [bookKey, setBookKey] = useState<CureKey>('regeneration')
+
+  // Publicité Meta : fbclid et utm_* du lien d'arrivée sont gardés pour la page de réservation
+  useEffect(() => captureAttribution(), [])
   // Téléphone : la liste « ce qui est inclus » se déplie à la demande
   const [openOffer, setOpenOffer] = useState<CureKey | null>(null)
   useSmoothScroll()
@@ -268,7 +273,7 @@ export default function App({ lang = 'fr' }: { lang?: Lang }) {
           <Logo alt={ui.logoAlt} className="hidden" />
         </a>
         <div className={cx(pillGroup, 'pointer-events-auto justify-self-end max-md:in-[.is-scrolled]:opacity-0 max-md:in-[.is-scrolled]:pointer-events-none')}>
-          <a className={pillGroupLink} href={ui.switchHref} hrefLang={lang === 'fr' ? 'en' : 'fr'} lang={lang === 'fr' ? 'en' : 'fr'} aria-label={ui.switchLabel}>{ui.switchShort}</a>
+          <a className={pillGroupLink} href={landingHref(funnel, lang === 'fr' ? 'en' : 'fr')} hrefLang={lang === 'fr' ? 'en' : 'fr'} lang={lang === 'fr' ? 'en' : 'fr'} aria-label={ui.switchLabel}>{ui.switchShort}</a>
           <a className={pill('dark', { small: true })} href="#reserver" onClick={go('reserver')}>{ui.book}</a>
         </div>
       </header>
@@ -393,7 +398,7 @@ export default function App({ lang = 'fr' }: { lang?: Lang }) {
             <Title id="booking-title" em={booking.em} caps={booking.caps} center />
             <p data-reveal>{booking.sub}</p>
           </div>
-          <Planner cureKey={bookKey} onCureChange={setBookKey} />
+          <Planner cureKey={bookKey} onCureChange={setBookKey} funnel={funnel} />
         </section>
 
         {/* Ce qui fait la différence : le film à gauche */}

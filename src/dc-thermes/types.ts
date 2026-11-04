@@ -2,6 +2,8 @@
 
 export type Lang = 'fr' | 'en'
 export type CureKey = 'vitalite' | 'regeneration' | 'renaissance'
+// Version de la page : seule la fin du parcours change (voir funnel.ts)
+export type Funnel = 'main' | 'cmi' | 'lead'
 
 // Identifiant de section, libellé, et lien externe s'il y en a un
 export type NavItem = [id: string, label: string, url?: string]

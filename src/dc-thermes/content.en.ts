@@ -2,6 +2,7 @@
 // Items marked "TO CONFIRM" must be checked before going live.
 
 import type { Cure, CureKey, Faq, GlossaryEntry, HotelQuery, Lang, NavItem, ProgrammeDay, Rating } from './types'
+import type { CountryKey } from './phone'
 import { cures as curesFr, glossary as glossaryFr, programmes as programmesFr, site as siteFr, proof as proofFr } from './content'
 
 const mail = (subject: string) => 'mailto:reservation@dakhlaclub.com?subject=' + encodeURIComponent(subject)
@@ -16,10 +17,7 @@ export const site = {
   contactLink: mail('DC Therme programmes: a question'),
   giftMail: mail('DC Therme gift voucher'),
   address: ['Dakhla Club', 'Point de Dragon, PK 28', 'Dakhla, Morocco'],
-  // TO CONFIRM: English version of the existing CMI basket
-  checkout: (key: string) => `https://offer.dakhlaclub.com/en/panier/${key}`,
   hotel: (q: HotelQuery) => siteFr.hotel(q).replace('locale=fr', 'locale=en'),
-  booking: (q: Record<string, string>) => '/dc-thermes/reservation?' + new URLSearchParams({ lang: 'en', ...q }).toString(),
   brochure: 'https://offer.dakhlaclub.com/brochure/BROCHURE-EN.pdf',
   giftPage: (q: Record<string, string> = {}) => '/dc-thermes/offrir?' + new URLSearchParams({ lang: 'en', ...q }).toString(),
 }
@@ -32,6 +30,7 @@ export const meta = {
   canonical: 'https://offer.dakhlaclub.com/dc-thermes/en',
   ogLocale: 'en_GB',
   bookingTitle: 'Book your programme · DC Therme',
+  leadTitle: 'Request your programme · DC Therme',
 }
 
 export const nav: NavItem[] = [
@@ -273,7 +272,6 @@ export const ui = {
   book: 'Book',
   switchLabel: 'Français',
   switchShort: 'FR',
-  switchHref: '/dc-thermes',
   heroAlt: 'The DC Therme thermal pool beneath the glass roof, between stone arches',
   scrollNext: 'Scroll to continue',
   days: 'days',
@@ -341,6 +339,7 @@ export const ui = {
   balance: 'Balance at the baths, on arrival',
   ctaDeposit: 'Book with a 50% deposit',
   ctaFull: 'Book and pay in full',
+  ctaLead: 'Request my booking',
   departure: 'Hotel departure',
   packRow: (n: number) => `Programme and room, ${n} nights`,
   packPrice: 'Price on Direct-Book',
@@ -348,6 +347,7 @@ export const ui = {
   packCta: 'Choose my room and see the price',
   packTicketNote: 'Booking and payment on Direct-Book, Dakhla Club’s official booking site · Instant email confirmation',
   ticketNote: 'Secure CMI payment · Instant email confirmation',
+  leadTicketNote: 'No commitment, no online payment · Our team calls you to confirm your dates',
   reviewsLabel: 'Guest reviews',
   reviewN: (n: number, total: number) => `Review ${n} of ${total}`,
   tripadvisorReview: 'Tripadvisor review',
@@ -454,7 +454,8 @@ export const bookingPage = {
   phone: 'Phone',
   dial: 'Country code',
   phoneLabel: 'Phone number',
-  phonePh: '7700 900123',
+  otherCountry: 'Other',
+  phoneInvalid: (dial: string, example: string) => dial ? `This number looks incomplete or incorrect for ${dial}. Example: ${example}` : `Enter the full number, with the country code. Example: ${example}`,
   note: 'A request, a contraindication?',
   optional: 'Optional',
   notePh: 'Pregnancy, back problems, arrival time…',
@@ -463,9 +464,20 @@ export const bookingPage = {
   pay: (amount: string) => `Pay ${amount} securely`,
   sending: 'Redirecting to payment…',
   secure: 'You will be redirected to the official CMI platform. Your card details never pass through our site.',
+  payError: `The payment could not start. Please try again, or call us on ${site.phone}.`,
+  leadCaps: 'Your request',
+  leadIntro: 'Leave your details: our team will call you to confirm your dates, answer your questions and arrange payment. No payment is taken at this stage.',
+  leadSteps: ['Your request', 'Our call', 'Confirmation'],
+  leadSubmit: 'Send my request',
+  leadSending: 'Sending…',
+  leadNote: 'No commitment. Your details are used to contact you about your programme.',
+  leadTrust: ['No commitment, no online payment', 'An advisor calls you to set your dates', 'Ten guests at most per session'],
+  leadDone: 'Request sent',
+  leadDoneText: `Thank you. Our team will call you to confirm your dates and arrange payment. Any question in the meantime: ${site.phone}.`,
+  leadError: `Your request could not be sent. Please try again, or call us on ${site.phone}.`,
   summary: 'Summary',
   access: 'access to the baths',
   times: (price: string, n: number) => `${price} × ${n}`,
   trust: ['Instant confirmation by email', 'An advisor calls you before you arrive', 'Ten guests at most per session'],
-  dialCodes: [['+44', 'United Kingdom'], ['+1', 'United States, Canada'], ['+33', 'France'], ['+212', 'Morocco'], ['+34', 'Spain'], ['+49', 'Germany'], ['+39', 'Italy'], ['+32', 'Belgium'], ['+31', 'Netherlands'], ['+966', 'Saudi Arabia'], ['+971', 'United Arab Emirates']],
+  countries: [['GB', 'United Kingdom'], ['US', 'United States'], ['CA', 'Canada'], ['FR', 'France'], ['MA', 'Morocco'], ['ES', 'Spain'], ['DE', 'Germany'], ['IT', 'Italy'], ['BE', 'Belgium'], ['NL', 'Netherlands'], ['SA', 'Saudi Arabia'], ['AE', 'United Arab Emirates'], ['other', 'Other country']] as [CountryKey, string][],
 }

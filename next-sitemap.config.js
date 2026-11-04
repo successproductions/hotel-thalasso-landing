@@ -4,7 +4,11 @@ module.exports = {
   generateRobotsTxt: true,
   generateIndexSitemap: false,
 
-  exclude: ['/api/*', '/admin/*', '/_next/*', '/404', '/500', '/fr', '/en', '/'],
+  exclude: [
+    '/api/*', '/admin/*', '/_next/*', '/404', '/500', '/fr', '/en', '/',
+    // Payment and contact versions of /dc-thermes (noindex)
+    '/dc-thermes/paiement', '/dc-thermes/contact', '/dc-thermes/en/paiement', '/dc-thermes/en/contact',
+  ],
 
   transform: async (config, path) => {
     // Handle Halloween special event (highest priority)

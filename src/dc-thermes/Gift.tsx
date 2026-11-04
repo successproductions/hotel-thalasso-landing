@@ -6,7 +6,8 @@ import { packs, money, longDate as ld } from './i18n'
 import { Title } from './Title'
 import { cx, pill, arrow, logo } from './ui'
 import type { CureKey } from './types'
-import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkHelp, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, tel, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem, chip } from './forms'
+import { PhoneField } from './PhoneField'
+import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkHelp, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem, chip } from './forms'
 
 // Page « Offrir une cure » : on compose le bon, l'aperçu se met à jour en direct,
 // puis la demande part à l'équipe par e-mail (ou par WhatsApp). Le règlement se fait ensuite avec l'équipe.
@@ -73,7 +74,7 @@ export default function Gift() {
       `${m.delivery} : ${delivery === 'moi' ? m.toMe : m.toThem(String(f.get('email_destinataire')), date)}`,
       '',
       `${m.from} : ${f.get('prenom')} ${f.get('nom')}`,
-      `${f.get('email')} · ${f.get('indicatif')} ${f.get('telephone')}`,
+      `${f.get('email')} · ${f.get('telephone_complet')}`,
       f.get('precision') ? `\n${f.get('precision')}` : null,
       '',
       m.thanks,
@@ -210,15 +211,7 @@ export default function Gift() {
                 <label className={pf} htmlFor="gift-last"><span className={pfLabel}>{b.lastName}</span><input className={pfInput({ inGroup: true })} id="gift-last" name="nom" autoComplete="family-name" required /></label>
               </div>
               <label className={pf} htmlFor="gift-mail"><span className={pfLabel}>{b.email}</span><input className={pfInput({ inGroup: true })} id="gift-mail" name="email" type="email" autoComplete="email" required /></label>
-              <div className={pf}>
-                <span className={pfLabel} id="gift-tel-label">{b.phone}</span>
-                <div className={tel} role="group" aria-labelledby="gift-tel-label">
-                  <select className={pfInput({ inGroup: true })} name="indicatif" aria-label={b.dial} defaultValue={b.dialCodes[0][0]}>
-                    {b.dialCodes.map(([code, country]) => <option key={code} value={code}>{code} {country}</option>)}
-                  </select>
-                  <input className={pfInput({ inGroup: true })} name="telephone" type="tel" autoComplete="tel-national" required inputMode="tel" aria-label={b.phoneLabel} placeholder={b.phonePh} />
-                </div>
-              </div>
+              <PhoneField id="gift-tel" b={b} />
               <label className={pf} htmlFor="gift-note"><span className={pfLabel}>{b.note} <em className={pfOptional}>{b.optional}</em></span><textarea className={pfInput({ inGroup: true, area: true })} id="gift-note" name="precision" rows={2} /></label>
             </fieldset>
 

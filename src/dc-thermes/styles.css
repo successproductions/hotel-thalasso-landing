@@ -33,6 +33,7 @@
   --color-on-dark: #f3f1ec;
   --color-on-dark-muted: #c4bdb3;
   --color-line-dark: rgb(243 241 236 / 0.16);
+  --color-error: #9f3a2c;
 
   --font-serif: var(--font-dc-serif), Georgia, 'Times New Roman', serif;
   --font-sans: var(--font-dc-sans), 'Futura', 'Helvetica Neue', Arial, sans-serif;

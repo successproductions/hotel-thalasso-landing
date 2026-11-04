@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useT, money, longDate as ld } from './i18n'
 import { pill } from './ui'
-import type { CureKey } from './types'
+import { amounts, bookingHref } from './funnel'
+import type { CureKey, Funnel } from './types'
 import { pf, pfRow, pfLabel, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow } from './forms'
 
 // Le composeur de cure : cure, premier jour, nombre de curistes, acompte ou totalité, chambre en option.
 // Il calcule les dates de soins et ce qui est réglé aujourd'hui puis à l'arrivée.
 // Avec une chambre, cure et chambre se réservent ensemble sur Direct-Book (tarif pack, prix et disponibilités affichés là-bas).
+// Version « contact » (lead) : pas de choix de règlement, seulement le prix de la cure et le lien vers la demande.
 
 const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 const parse = (s: string) => {
@@ -18,9 +20,10 @@ const addDays = (d: Date, n: number) => new Date(d.getFullYear(), d.getMonth(), 
 type PlannerProps = {
   cureKey: CureKey
   onCureChange: (key: CureKey) => void
+  funnel: Funnel
 }
 
-export default function Planner({ cureKey, onCureChange }: PlannerProps) {
+export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps) {
   const t = useT()
   const { cures, site, ui } = t
   const mad = (n: number) => money(t, n)
@@ -39,11 +42,8 @@ export default function Planner({ cureKey, onCureChange }: PlannerProps) {
   }, [])
 
   const cure = cures.find((c) => c.key === cureKey) || cures[1]
-  const total = cure.price * guests
-  const base = deposit ? total / 2 : total
-  const fee = Math.round(base * site.cmiFee)
-  const now = base + fee
-  const balance = total - base
+  const lead = funnel === 'lead'
+  const { total, base, fee, now, balance } = amounts(cure.price, guests, deposit && !lead, site.cmiFee)
   const nights = site.nights(cure.days)
 
   const plan = useMemo(() => {
@@ -101,7 +101,7 @@ export default function Planner({ cureKey, onCureChange }: PlannerProps) {
           </label>
         </fieldset>
 
-        {!room && <fieldset className={pf}>
+        {!room && !lead && <fieldset className={pf}>
           <legend className={pfLabel}>{ui.payment}</legend>
           <div className={choice()}>
             <label className={choiceItem({ on: !deposit })}>
@@ -145,18 +145,20 @@ export default function Planner({ cureKey, onCureChange }: PlannerProps) {
         ) : (
           <>
         <dl className={ticketRows}>
-          <div className={ticketRow({ money: true })}><dt>{ui.total}</dt><dd>{mad(total)}</dd></div>
+          <div className={ticketRow({ money: true, due: lead })}><dt>{ui.total}</dt><dd>{mad(total)}</dd></div>
+          {!lead && <>
           {deposit && <div className={ticketRow({ money: true })}><dt>{ui.balance}</dt><dd>{mad(balance)}</dd></div>}
           {deposit && <div className={ticketRow({ money: true })}><dt>{ui.depositLine}</dt><dd>{mad(base)}</dd></div>}
           <div className={ticketRow({ money: true })}><dt>{ui.fee}</dt><dd>{mad(fee)}</dd></div>
           <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{mad(now)}</dd></div>
+          </>}
         </dl>
-        <a className={pill('dark', { block: true })} href={site.booking({ cure: cure.key, debut: start, curistes: String(guests), paiement: deposit ? 'acompte' : 'total', chambre: room ? '1' : '0' })}>
-          {deposit ? ui.ctaDeposit : ui.ctaFull}
+        <a className={pill('dark', { block: true })} href={bookingHref(funnel, t.lang, { cure: cure.key, debut: start, curistes: String(guests), paiement: deposit && !lead ? 'acompte' : 'total', chambre: room ? '1' : '0' })}>
+          {lead ? ui.ctaLead : deposit ? ui.ctaDeposit : ui.ctaFull}
         </a>
           </>
         )}
-        <p className="text-[0.8125rem] text-soft">{room ? ui.packTicketNote : ui.ticketNote}</p>
+        <p className="text-[0.8125rem] text-soft">{room ? ui.packTicketNote : lead ? ui.leadTicketNote : ui.ticketNote}</p>
       </aside>
     </div>
   )

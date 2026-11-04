@@ -26,6 +26,7 @@ interface PaymentRequest {
   selectedOffer: string;
   pageSlug?: string;
   orderId?: string; // optional pre-generated orderId from the panier page
+  paymentPlan?: 'acompte' | 'total'; // /dc-thermes/paiement: 'acompte' charges a 50% deposit, the balance is paid at the baths
 }
 
 // Page slug → order ID prefix mapping
@@ -96,7 +97,7 @@ function generateHash(params: Record<string, string>, storeKey: string): string 
 export async function POST(request: NextRequest) {
   try {
     const body: PaymentRequest = await request.json();
-    const { fullName, email, phone, selectedOffer, arrivalDate, numberOfPeople, pageSlug } = body;
+    const { fullName, email, phone, selectedOffer, arrivalDate, numberOfPeople, pageSlug, paymentPlan } = body;
 
     // Get EUR price for selected offer
     const eurPrice = OFFER_PRICES_EUR[selectedOffer];
@@ -109,7 +110,8 @@ export async function POST(request: NextRequest) {
     if (isNaN(count) || count < 1) {
       return NextResponse.json({ error: 'Invalid number of people' }, { status: 400 });
     }
-    const pricePerPersonMAD = Math.floor(eurPrice * (1 + CMI_FEE_RATE));
+    const payable = paymentPlan === 'acompte' ? eurPrice / 2 : eurPrice;
+    const pricePerPersonMAD = Math.floor(payable * (1 + CMI_FEE_RATE));
     const amount = pricePerPersonMAD * count;
 
     // Generate unique order ID and random string

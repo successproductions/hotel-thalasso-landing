@@ -5,13 +5,17 @@ import type { FormEvent } from 'react'
 import { packs, money, longDate as ld } from './i18n'
 import { Title } from './Title'
 import { cx, pill, arrow, logo } from './ui'
-import type { CureKey } from './types'
-import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkHelp, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, tel, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem } from './forms'
+import { amounts, landingHref } from './funnel'
+import { captureAttribution, getAttribution } from '@/lib/metaTracking'
+import type { CureKey, Funnel } from './types'
+import { PhoneField } from './PhoneField'
+import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkHelp, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem } from './forms'
 
 // Page de réservation : dernière étape avant le paiement CMI.
-// Reprend les champs du panier actuel (nom, e-mail, téléphone, date, personnes, CGV, offres)
+// Reprend les champs des paniers des cures (nom, e-mail, téléphone, date, personnes, CGV, offres)
 // et les choix faits sur la page (cure, premier jour, curistes, totalité ou acompte, chambre).
 // Avec une chambre, la réservation continue sur Direct-Book (tarif pack) : coordonnées et paiement y sont demandés.
+// Selon la version de la page (funnel.ts) : paiement CMI direct (main, cmi) ou demande sans paiement (lead).
 
 const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 const parse = (s: string) => {
@@ -23,9 +27,15 @@ const addDays = (d: Date, n: number) => new Date(d.getFullYear(), d.getMonth(), 
 // Cases à cocher natives (CGV, offres)
 const check = 'flex gap-3 items-start text-[0.9375rem] text-muted cursor-pointer'
 const checkInput = 'flex-none size-[18px] mt-[3px] mx-0 mb-0 accent-ink'
+const doneText = 'max-w-[52ch] text-muted'
+
+// Préfixe des commandes CMI : après le paiement, il renvoie vers la page de remerciement de la cure
+const orderPrefix: Record<CureKey, string> = { vitalite: 'VIT', regeneration: 'REG', renaissance: 'REN' }
+const postJson = (url: string, body: object) =>
+  fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
 
 
-export default function Booking() {
+export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
   // La langue vient du lien : /dc-thermes/reservation?lang=en pour l'anglais
   const lang = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'fr'
   const t = packs[lang]
@@ -39,11 +49,14 @@ export default function Booking() {
   const [deposit, setDeposit] = useState(false)
   const [room, setRoom] = useState(false)
   const [sent, setSent] = useState(false)
+  const [done, setDone] = useState(false)
+  const [error, setError] = useState('')
+  const lead = funnel === 'lead'
 
   // Reprend les choix faits sur la page des cures
   useEffect(() => {
     document.documentElement.lang = lang
-    document.title = t.meta.bookingTitle
+    document.title = lead ? t.meta.leadTitle : t.meta.bookingTitle
     const q = new URLSearchParams(window.location.search)
     const today = new Date()
     setMinDate(iso(addDays(today, 2)))
@@ -53,16 +66,17 @@ export default function Booking() {
     setStart(debut && /^\d{4}-\d{2}-\d{2}$/.test(debut) ? debut : iso(addDays(today, 14)))
     const g = Number(q.get('curistes'))
     if (Number.isInteger(g) && g >= 1) setGuests(g)
-    setDeposit(q.get('paiement') === 'acompte')
+    setDeposit(!lead && q.get('paiement') === 'acompte')
     setRoom(q.get('chambre') === '1')
+    captureAttribution()
+    // Retour depuis la page de paiement : le bouton redevient actif
+    const reset = (e: PageTransitionEvent) => e.persisted && setSent(false)
+    window.addEventListener('pageshow', reset)
+    return () => window.removeEventListener('pageshow', reset)
   }, [])
 
   const cure = cures.find((c) => c.key === cureKey) || cures[1]
-  const total = cure.price * guests
-  const base = deposit ? total / 2 : total
-  const fee = Math.round(base * site.cmiFee)
-  const now = base + fee
-  const balance = total - base
+  const { total, base, fee, now, balance } = amounts(cure.price, guests, deposit, site.cmiFee)
   const nights = site.nights(cure.days)
 
   const plan = useMemo(() => {
@@ -75,34 +89,95 @@ export default function Booking() {
 
   const hotelUrl = plan ? site.hotel({ checkIn: iso(plan.checkIn), checkOut: iso(plan.checkOut), adults: guests, rateId: site.packRateId }) : null
 
-  const submit = (e: FormEvent<HTMLFormElement>) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
     if (!form.reportValidity()) return
     setSent(true)
-    // À BRANCHER par le développeur du site : transmettre ces informations au tunnel CMI existant.
-    // En attendant, la réservation continue sur le panier actuel de la cure choisie.
-    window.location.href = site.checkout(cure.key)
+    setError('')
+
+    const f = new FormData(form)
+    const field = (name: string) => String(f.get(name) || '').trim()
+    const contact = {
+      fullName: `${field('prenom')} ${field('nom')}`,
+      email: field('email'),
+      // Vérifié selon le pays par PhoneField : « +212 612345678 »
+      phone: field('telephone_complet'),
+      numberOfPeople: String(guests),
+      arrivalDate: start,
+      optIn: f.get('offres') === 'on',
+    }
+
+    // Enregistrée dans le Google Sheet (un onglet par version) et dans Brevo, avec les 8 champs d'attribution Meta.
+    // Événement Meta : Lead pour une demande, InitiateCheckout pour une réservation qui part au paiement.
+    const meta = getAttribution(field('pays'))
+    const booking = { ...contact, cure: cure.key, message: field('message'), lang, ...meta, event_name: lead ? meta.event_name : 'InitiateCheckout' }
+
+    try {
+      // Demande sans paiement : l'équipe rappelle
+      if (lead) {
+        const res = await postJson('/api/dc-thermes/reservation', { ...booking, funnel: 'lead' })
+        if (!res.ok) throw new Error(await res.text())
+        setDone(true)
+        window.scrollTo(0, 0)
+        return
+      }
+
+      // Paiement direct : la réservation est enregistrée « En attente », puis le formulaire CMI est envoyé.
+      // Le numéro de commande suit le format des paniers ; ACOMPTE signale à l'équipe que le solde reste dû.
+      const orderId = `${orderPrefix[cure.key]}${cure.days}-${deposit ? 'ACOMPTE-' : ''}${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`.toUpperCase()
+      const paymentPlan = deposit ? 'acompte' : 'total'
+      const saved = await postJson('/api/dc-thermes/reservation', { ...booking, funnel: 'cmi', orderId, paymentPlan })
+      if (!saved.ok) console.error('Réservation non enregistrée :', await saved.text())
+      const res = await postJson('/api/payment/initiate', { ...contact, selectedOffer: String(cure.days), pageSlug: cure.key, orderId, paymentPlan })
+      if (!res.ok) throw new Error(await res.text())
+      const payment = await res.json()
+      if (!payment.success) throw new Error('Réponse de paiement invalide')
+      sessionStorage.setItem('bookingInfo', JSON.stringify(payment.bookingInfo))
+      const cmi = document.createElement('form')
+      cmi.method = 'POST'
+      cmi.action = payment.gatewayUrl
+      for (const [name, value] of Object.entries(payment.params as Record<string, string>)) {
+        const input = document.createElement('input')
+        input.type = 'hidden'
+        input.name = name
+        input.value = value
+        cmi.appendChild(input)
+      }
+      document.body.appendChild(cmi)
+      cmi.submit()
+    } catch (err) {
+      console.error(err)
+      setSent(false)
+      setError(lead ? b.leadError : b.payError)
+    }
   }
 
   return (
     <div className={bkPage}>
       <header className={bkHeader}>
-        <a href={lang === 'en' ? '/dc-thermes/en' : '/dc-thermes'} className={bkBack}><span className={cx(arrow(true), bkBackArrow)} aria-hidden="true" /> {b.back}</a>
-        <a className={bkLogoLink} href={lang === 'en' ? '/dc-thermes/en' : '/dc-thermes'} aria-label={ui.logoAlt}><img className={cx(logo(), bkLogo)} src="/images/dc-thermes/logo-dc.webp" width="600" height="296" alt={ui.logoAlt} /></a>
+        <a href={landingHref(funnel, lang)} className={bkBack}><span className={cx(arrow(true), bkBackArrow)} aria-hidden="true" /> {b.back}</a>
+        <a className={bkLogoLink} href={landingHref(funnel, lang)} aria-label={ui.logoAlt}><img className={cx(logo(), bkLogo)} src="/images/dc-thermes/logo-dc.webp" width="600" height="296" alt={ui.logoAlt} /></a>
         <a className={bkHelp} href={site.tel}>{b.help}</a>
       </header>
 
       <main className={bkMain}>
         <div className={bkIntro}>
-          <Title as="h1" id="bk-title" em={b.em} caps={b.caps} />
-          <p className={bkIntroText}>{room ? b.introPack : b.intro}</p>
+          <Title as="h1" id="bk-title" em={b.em} caps={lead ? b.leadCaps : b.caps} />
+          <p className={bkIntroText}>{room ? b.introPack : lead ? b.leadIntro : b.intro}</p>
           {!room && <ol className={bkSteps} aria-label={b.stepsLabel}>
-            {b.steps.map((step, i) => <li key={step} className={bkStep(i === 0)}>{step}</li>)}
+            {(lead ? b.leadSteps : b.steps).map((step, i) => <li key={step} className={bkStep(i === (done ? 1 : 0))}>{step}</li>)}
           </ol>}
+          {/* Demande envoyée : la confirmation prend la place du formulaire, juste sous les étapes */}
+          {done && (
+            <div className={cx(bkGroup('gap-[14px]'), 'mt-4')} role="status">
+              <p className="max-w-[52ch] font-sans font-normal text-[1.5rem] leading-[1.2] tracking-[0.08em] uppercase text-ink">{b.leadDone}</p>
+              <p className={doneText}>{b.leadDoneText}</p>
+            </div>
+          )}
         </div>
 
-        <form className={bkForm} onSubmit={submit} noValidate={false} aria-labelledby="bk-title">
+        <form className={bkForm} onSubmit={submit} noValidate={false} aria-labelledby="bk-title" hidden={done}>
           <fieldset className={bkGroup()}>
             <legend className={bkLegend}>{b.yourCure}</legend>
             <div className={choice(3)}>
@@ -128,7 +203,7 @@ export default function Booking() {
                 </div>
               </div>
             </div>
-            {!room && <div className={choice()}>
+            {!room && !lead && <div className={choice()}>
               <label className={choiceItem({ on: !deposit, inGroup: true })}>
                 <input className={hiddenInput} type="radio" name="paiement" checked={!deposit} onChange={() => setDeposit(false)} />
                 <span className={choiceTitle}>{ui.full}</span>
@@ -164,27 +239,22 @@ export default function Booking() {
               <label className={pf} htmlFor="bk-last"><span className={pfLabel}>{b.lastName}</span><input className={pfInput({ inGroup: true })} id="bk-last" name="nom" autoComplete="family-name" required /></label>
             </div>
             <label className={pf} htmlFor="bk-mail"><span className={pfLabel}>{b.email}</span><input className={pfInput({ inGroup: true })} id="bk-mail" name="email" type="email" autoComplete="email" required placeholder={b.emailPh} /></label>
-            <div className={pf}>
-              <span className={pfLabel} id="bk-tel-label">{b.phone}</span>
-              <div className={tel} role="group" aria-labelledby="bk-tel-label">
-                <select className={pfInput({ inGroup: true })} name="indicatif" aria-label={b.dial} defaultValue={b.dialCodes[0][0]}>
-                  {b.dialCodes.map(([code, country]) => <option key={code} value={code}>{code} {country}</option>)}
-                </select>
-                <input className={pfInput({ inGroup: true })} id="bk-tel" name="telephone" type="tel" autoComplete="tel-national" required inputMode="tel" aria-label={b.phoneLabel} placeholder={b.phonePh} />
-              </div>
-            </div>
+            <PhoneField id="bk-tel" b={b} />
             <label className={pf} htmlFor="bk-note"><span className={pfLabel}>{b.note} <em className={pfOptional}>{b.optional}</em></span><textarea className={pfInput({ inGroup: true, area: true })} id="bk-note" name="message" rows={3} placeholder={b.notePh} /></label>
           </fieldset>
 
           <div className="grid gap-[14px] px-1">
-            <label className={check}><input className={checkInput} type="checkbox" name="cgv" required /><span>{b.cgv[0]}<a className="text-ink underline underline-offset-3" href={ui.termsUrl} target="_blank" rel="noopener">{b.cgv[1]}</a>{b.cgv[2]}</span></label>
+            {!lead && <label className={check}><input className={checkInput} type="checkbox" name="cgv" required /><span>{b.cgv[0]}<a className="text-ink underline underline-offset-3" href={ui.termsUrl} target="_blank" rel="noopener">{b.cgv[1]}</a>{b.cgv[2]}</span></label>}
             <label className={check}><input className={checkInput} type="checkbox" name="offres" /><span>{b.offers}</span></label>
           </div>
 
+          {error && <p className="px-1 text-[0.9375rem] text-ink" role="alert">{error}</p>}
           <button className={cx(pill('dark', { block: true }), bkPay)} type="submit" disabled={sent}>
-            {sent ? b.sending : b.pay(mad(now))}
+            {lead ? (sent ? b.leadSending : b.leadSubmit) : sent ? b.sending : b.pay(mad(now))}
           </button>
-          <p className={bkSecure}><span className={lock} aria-hidden="true" />{b.secure}</p>
+          {lead
+            ? <p className={bkSecure}>{b.leadNote}</p>
+            : <p className={bkSecure}><span className={lock} aria-hidden="true" />{b.secure}</p>}
           </>
           )}
         </form>
@@ -208,6 +278,11 @@ export default function Booking() {
                 </dl>
                 <p className="text-[0.875rem] text-muted">{ui.packNote}</p>
               </>
+            ) : lead ? (
+            <dl className={ticketRows}>
+              <div className={ticketRow({ money: true })}><dt>{b.times(mad(cure.price), guests)}</dt><dd>{mad(total)}</dd></div>
+              <div className={ticketRow({ money: true, due: true })}><dt>{ui.total}</dt><dd>{mad(total)}</dd></div>
+            </dl>
             ) : (
             <dl className={ticketRows}>
               <div className={ticketRow({ money: true })}><dt>{b.times(mad(cure.price), guests)}</dt><dd>{mad(total)}</dd></div>
@@ -218,9 +293,9 @@ export default function Booking() {
             </dl>
             )}
             <ul className={bkTrust}>
-              {b.trust.map((x) => <li key={x} className={bkTrustItem}>{x}</li>)}
+              {(lead ? b.leadTrust : b.trust).map((x) => <li key={x} className={bkTrustItem}>{x}</li>)}
             </ul>
-            {!room && <ul className="flex flex-wrap gap-[18px] items-center list-none m-0 p-0" aria-label={ui.footerPay}>
+            {!room && !lead && <ul className="flex flex-wrap gap-[18px] items-center list-none m-0 p-0" aria-label={ui.footerPay}>
               <li><img className="h-6 w-auto" src="/images/dc-thermes/cmi.webp" alt="CMI" width="160" height="126" /></li>
               <li><img className="h-6 w-auto" src="/images/dc-thermes/visa.webp" alt="Verified by Visa" width="200" height="88" /></li>
               <li><img className="h-6 w-auto" src="/images/dc-thermes/mastercard.webp" alt="Mastercard SecureCode" width="200" height="92" /></li>
