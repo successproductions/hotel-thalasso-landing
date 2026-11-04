@@ -8,6 +8,13 @@ function getPageFromOrderId(orderId: string): string {
   return 'evasion';
 }
 
+// Error page. DC Luxury Thermes orders (DCT-…, from /dc-thermes) have their own, in that site's style.
+function errorPath(orderId: string, errorCode: string, locale: string): string {
+  const query = `?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
+  if (orderId.startsWith('DCT-')) return `/dc-thermes/paiement-echoue${query}`;
+  return `/${locale}/${getPageFromOrderId(orderId)}/payment-error${query}`;
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Parse form data from CMI failUrl redirect
@@ -29,8 +36,7 @@ export async function POST(request: NextRequest) {
     const baseUrl = `${protocol}://${host}`;
     
     // Construct safe redirect URL
-    const page = getPageFromOrderId(orderId);
-    const targetUrl = `${baseUrl}/${locale}/${page}/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
+    const targetUrl = `${baseUrl}${errorPath(orderId, errorCode, locale)}`;
     return NextResponse.redirect(targetUrl, { status: 302 });
 
   } catch (error) {
@@ -54,7 +60,6 @@ export async function GET(request: NextRequest) {
   const protocol = host.includes('localhost') ? 'http' : 'https';
   const baseUrl = `${protocol}://${host}`;
 
-  const page = getPageFromOrderId(orderId);
-  const targetUrl = `${baseUrl}/${locale}/${page}/payment-error?order=${encodeURIComponent(orderId)}&code=${encodeURIComponent(errorCode)}`;
+  const targetUrl = `${baseUrl}${errorPath(orderId, errorCode, locale)}`;
   return NextResponse.redirect(targetUrl, { status: 302 });
 }

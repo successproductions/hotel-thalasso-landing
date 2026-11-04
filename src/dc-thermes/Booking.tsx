@@ -9,6 +9,8 @@ import { amounts, landingHref } from './funnel'
 import { captureAttribution, getAttribution } from '@/lib/metaTracking'
 import type { CureKey, Funnel } from './types'
 import { PhoneField } from './PhoneField'
+import { orderStorageKey } from './order'
+import type { ConfirmedOrder } from './order'
 import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkHelp, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem } from './forms'
 
 // Page de réservation : dernière étape avant le paiement CMI.
@@ -124,8 +126,9 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
       }
 
       // Paiement direct : la réservation est enregistrée « En attente », puis le formulaire CMI est envoyé.
-      // Le numéro de commande suit le format des paniers ; ACOMPTE signale à l'équipe que le solde reste dû.
-      const orderId = `${orderPrefix[cure.key]}${cure.days}-${deposit ? 'ACOMPTE-' : ''}${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`.toUpperCase()
+      // Numéro de commande : DCT- (après le paiement, CMI ramène sur les pages de /dc-thermes, voir Confirmation.tsx),
+      // puis le format des paniers, qui donne le nom de la cure dans les e-mails ; ACOMPTE : le solde reste dû.
+      const orderId = `DCT-${orderPrefix[cure.key]}${cure.days}-${deposit ? 'ACOMPTE-' : ''}${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`.toUpperCase()
       const paymentPlan = deposit ? 'acompte' : 'total'
       const saved = await postJson('/api/dc-thermes/reservation', { ...booking, funnel: 'cmi', orderId, paymentPlan })
       if (!saved.ok) console.error('Réservation non enregistrée :', await saved.text())
@@ -134,6 +137,9 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
       const payment = await res.json()
       if (!payment.success) throw new Error('Réponse de paiement invalide')
       sessionStorage.setItem('bookingInfo', JSON.stringify(payment.bookingInfo))
+      // Pour la page de confirmation, dans la langue de la réservation
+      const order: ConfirmedOrder = { orderId, lang, cure: cure.key, start, guests, firstName: field('prenom'), paid: now, balance: deposit ? balance : 0 }
+      sessionStorage.setItem(orderStorageKey, JSON.stringify(order))
       const cmi = document.createElement('form')
       cmi.method = 'POST'
       cmi.action = payment.gatewayUrl

@@ -8,6 +8,8 @@ module.exports = {
     '/api/*', '/admin/*', '/_next/*', '/404', '/500', '/fr', '/en', '/',
     // Payment and contact versions of /dc-thermes (noindex)
     '/dc-thermes/paiement', '/dc-thermes/contact', '/dc-thermes/en/paiement', '/dc-thermes/en/contact',
+    // Pages after the CMI payment (noindex)
+    '/dc-thermes/merci', '/dc-thermes/paiement-echoue',
   ],
 
   transform: async (config, path) => {

@@ -76,6 +76,14 @@ export async function reservationMetadata(
   };
 }
 
+// Pages after the CMI payment. Static: the language follows the booking, read in the browser,
+// which then sets the title (a title streamed from the URL would arrive after it and overwrite it)
+export const confirmationMetadata = (paid: boolean): Metadata => ({
+  ...baseMetadata,
+  title: paid ? packs.fr.confirmPage.title : packs.fr.confirmPage.failTitle,
+  robots: { index: false, follow: false },
+});
+
 export async function offrirMetadata(searchParams: LangSearchParams): Promise<Metadata> {
   const lang = await fromSearchParams(searchParams);
   return {

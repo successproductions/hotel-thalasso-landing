@@ -584,3 +584,23 @@ export const bookingPage = {
   // Pays du téléphone, dans l'ordre de la liste (indicatif, drapeau et règle du numéro dans phone.ts)
   countries: [['MA', 'Maroc'], ['FR', 'France'], ['ES', 'Espagne'], ['US', 'États-Unis'], ['CA', 'Canada'], ['GB', 'Royaume-Uni'], ['DE', 'Allemagne'], ['IT', 'Italie'], ['BE', 'Belgique'], ['NL', 'Pays-Bas'], ['SA', 'Arabie saoudite'], ['AE', 'Émirats arabes unis'], ['other', 'Autre pays']] as [CountryKey, string][],
 }
+
+// Retour du paiement CMI (Confirmation.tsx) : /dc-thermes/merci, ou /dc-thermes/paiement-echoue si la banque refuse
+export const confirmPage = {
+  title: 'Paiement confirmé · DC Luxury Thermes',
+  failTitle: 'Paiement non abouti · DC Luxury Thermes',
+  back: 'Retour au site',
+  em: 'Merci',
+  caps: 'Votre cure est réservée',
+  intro: (firstName: string) => `${firstName ? `${firstName}, votre` : 'Votre'} paiement est confirmé. Nous avons hâte de vous accueillir aux thermes.`,
+  nextTitle: 'Et maintenant ?',
+  next: ['Un e-mail de confirmation vous a été envoyé, avec votre référence.', 'Une conseillère vous appelle avant votre arrivée pour préparer votre cure.'],
+  balanceNext: (amount: string) => `Le solde de ${amount} se règle aux thermes, à l’arrivée.`,
+  question: 'Une question avant votre venue ?',
+  whatsapp: 'Écrire sur WhatsApp',
+  reference: 'Référence',
+  paid: 'Réglé aujourd’hui',
+  failCaps: 'Paiement non abouti',
+  failIntro: `Le paiement n’a pas été validé : votre cure n’est pas encore réservée. Vous pouvez réessayer, avec la même carte ou une autre, ou nous appeler au ${site.phone}.`,
+  retry: 'Réessayer le paiement',
+}

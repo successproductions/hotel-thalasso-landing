@@ -481,3 +481,23 @@ export const bookingPage = {
   trust: ['Instant confirmation by email', 'An advisor calls you before you arrive', 'Ten guests at most per session'],
   countries: [['GB', 'United Kingdom'], ['US', 'United States'], ['CA', 'Canada'], ['FR', 'France'], ['MA', 'Morocco'], ['ES', 'Spain'], ['DE', 'Germany'], ['IT', 'Italy'], ['BE', 'Belgium'], ['NL', 'Netherlands'], ['SA', 'Saudi Arabia'], ['AE', 'United Arab Emirates'], ['other', 'Other country']] as [CountryKey, string][],
 }
+
+// Back from the CMI payment (Confirmation.tsx): /dc-thermes/merci, or /dc-thermes/paiement-echoue if the bank declines
+export const confirmPage = {
+  title: 'Payment confirmed · DC Luxury Thermes',
+  failTitle: 'Payment not completed · DC Luxury Thermes',
+  back: 'Back to the site',
+  em: 'Thank you',
+  caps: 'Your programme is booked',
+  intro: (firstName: string) => `${firstName ? `${firstName}, your` : 'Your'} payment is confirmed. We look forward to welcoming you to the baths.`,
+  nextTitle: 'What happens next',
+  next: ['A confirmation email has been sent to you, with your reference.', 'An advisor will call you before you arrive to prepare your programme.'],
+  balanceNext: (amount: string) => `The balance of ${amount} is paid at the baths, on arrival.`,
+  question: 'A question before you come?',
+  whatsapp: 'Message us on WhatsApp',
+  reference: 'Reference',
+  paid: 'Paid today',
+  failCaps: 'Payment not completed',
+  failIntro: `The payment was not approved, so your programme is not booked yet. You can try again, with the same card or another one, or call us on ${site.phone}.`,
+  retry: 'Try the payment again',
+}

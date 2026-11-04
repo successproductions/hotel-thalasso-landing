@@ -18,8 +18,8 @@ const CURES: Record<string, { days: string; programme: string }> = {
   renaissance: { days: '7', programme: 'Thalasso Renaissance 7 Jours' },
 };
 
-// Order IDs built on the reservation page: VIT3-..., REG5-ACOMPTE-...
-const ORDER_ID = /^(VIT3|REG5|REN7)-(ACOMPTE-)?[A-Z0-9]{6,24}$/;
+// Order IDs built on the reservation page: DCT-VIT3-..., DCT-REG5-ACOMPTE-...
+const ORDER_ID = /^DCT-(VIT3|REG5|REN7)-(ACOMPTE-)?[A-Z0-9]{6,24}$/;
 
 // Meta attribution columns of the sheet, passed through as strings ('' when unavailable)
 const META_FIELDS = ['fbclid', 'fbp', 'utm_source', 'utm_campaign', 'country', 'event_time', 'event_name', 'event_id'];
