@@ -5,11 +5,13 @@ import { cx } from './ui'
 // Chaque ligne monte depuis derrière sa ligne de base quand elle entre à l'écran.
 // title__mask, title__em et title__caps servent de repères aux animations (App.tsx).
 // size remplace la taille des lignes (premier écran, sections texte + photo).
+// Premier écran sur mobile : la taille suit la largeur de l'écran pour que « Ici, le lieu fait partie du soin. » tienne sur une ligne
+// (la phrase mesure 16,9 fois la taille du texte ; 40 px de marges).
 const line = 'block font-sans font-normal leading-[1.05] tracking-[0.06em] uppercase text-balance'
 const sizes = {
   base: 'text-[clamp(1.875rem,1.2rem+2.2vw,3.25rem)]',
   split: 'text-[clamp(1.875rem,1.2rem+2vw,2.625rem)]',
-  hero: 'text-[clamp(2.5rem,1.2rem+4.4vw,5.5rem)] tracking-[0.05em]',
+  hero: 'text-[clamp(2.5rem,1.2rem+4.4vw,5.5rem)] tracking-[0.05em] max-sm:text-[calc((100vw_-_40px)_/_18)]',
 }
 
 type TitleProps = {

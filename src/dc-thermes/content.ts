@@ -47,7 +47,7 @@ export const nav: NavItem[] = [
 
 // Titres : courts, en capitales espacées (em = première ligne, facultative)
 export const hero = {
-  eyebrow: 'DC Luxury Thermes · Centre holistique',
+  eyebrow: '', // « DC Luxury Thermes · Centre holistique » retiré du premier écran à la demande du client (4 nov. 2026)
   em: '',
   caps: 'Ici, le lieu fait partie du soin.',
   lead: 'Face à la lagune de Dakhla, vivez une parenthèse de 3, 5 ou 7 jours au rythme des soins marins, des massages et du rituel ancestral du hammam marocain. Un séjour pour ralentir et retrouver énergie et sérénité.',

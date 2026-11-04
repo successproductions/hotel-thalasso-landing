@@ -40,7 +40,7 @@ export const nav: NavItem[] = [
 ]
 
 export const hero = {
-  eyebrow: 'DC Luxury Thermes · Holistic centre',
+  eyebrow: '',
   em: '',
   caps: 'Here, the place is part of the treatment.',
   lead: 'Facing the Dakhla lagoon, enjoy a 3, 5 or 7-day break shaped by marine treatments, massages and the ancestral ritual of the Moroccan hammam. A stay to slow down and recover your energy and serenity.',
