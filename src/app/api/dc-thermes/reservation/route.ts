@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { upsertBrevoContact } from '@/lib/brevo';
+import { isDcThermesTest } from '@/lib/dcThermesTest';
 
 // Saves the bookings of the two /dc-thermes versions, then creates the contact in Brevo:
 // - /dc-thermes/paiement (funnel "cmi"): saved before CMI with status "En attente",
@@ -37,7 +38,8 @@ export async function POST(request: NextRequest) {
     const reservation = {
       source: cmi ? 'dc-thermes/paiement' : 'dc-thermes/contact',
       timestamp: new Date().toISOString(),
-      programme: cure?.programme || '',
+      // TEMPORARY: a 1 MAD test booking is marked in the sheet so nobody treats it as a real one
+      programme: cure ? `${cmi && isDcThermesTest(data.testCode) ? '[TEST 1 MAD] ' : ''}${cure.programme}` : '',
       fullName: text(data.fullName, 120),
       email: text(data.email, 160),
       phone: text(data.phone, 40),

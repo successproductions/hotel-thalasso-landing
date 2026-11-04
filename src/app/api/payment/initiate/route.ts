@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
+import { DC_THERMES_TEST_AMOUNT, isDcThermesTest } from '@/lib/dcThermesTest';
 
 // CMI Configuration
 const CMI_CONFIG = {
@@ -27,6 +28,7 @@ interface PaymentRequest {
   pageSlug?: string;
   orderId?: string; // optional pre-generated orderId from the panier page
   paymentPlan?: 'acompte' | 'total'; // /dc-thermes/paiement: 'acompte' charges a 50% deposit, the balance is paid at the baths
+  testCode?: string; // TEMPORARY: 1 MAD production test of /dc-thermes/paiement (src/lib/dcThermesTest.ts)
 }
 
 // Page slug → order ID prefix mapping
@@ -112,7 +114,7 @@ export async function POST(request: NextRequest) {
     }
     const payable = paymentPlan === 'acompte' ? eurPrice / 2 : eurPrice;
     const pricePerPersonMAD = Math.floor(payable * (1 + CMI_FEE_RATE));
-    const amount = pricePerPersonMAD * count;
+    const amount = isDcThermesTest(body.testCode) ? DC_THERMES_TEST_AMOUNT : pricePerPersonMAD * count;
 
     // Generate unique order ID and random string
     const orderId = body.orderId || generateOrderId(selectedOffer, pageSlug);

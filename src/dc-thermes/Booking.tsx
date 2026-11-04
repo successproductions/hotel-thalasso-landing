@@ -35,7 +35,8 @@ const postJson = (url: string, body: object) =>
   fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
 
 
-export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
+// testCode : TEMPORAIRE, lien de test à 1 MAD de /dc-thermes/paiement, vérifié par le serveur (src/lib/dcThermesTest.ts)
+export default function Booking({ funnel = 'main', testCode }: { funnel?: Funnel; testCode?: string }) {
   // La langue vient du lien : /dc-thermes/reservation?lang=en pour l'anglais
   const lang = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'fr'
   const t = packs[lang]
@@ -76,7 +77,9 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
   }, [])
 
   const cure = cures.find((c) => c.key === cureKey) || cures[1]
-  const { total, base, fee, now, balance } = amounts(cure.price, guests, deposit, site.cmiFee)
+  const real = amounts(cure.price, guests, deposit, site.cmiFee)
+  // Test : 1 MAD pour toute la réservation, comme le calcule /api/payment/initiate
+  const { total, base, fee, now, balance } = testCode ? { ...real, now: 1 } : real
   const nights = site.nights(cure.days)
 
   const plan = useMemo(() => {
@@ -127,9 +130,9 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
       // Le numéro de commande suit le format des paniers ; ACOMPTE signale à l'équipe que le solde reste dû.
       const orderId = `${orderPrefix[cure.key]}${cure.days}-${deposit ? 'ACOMPTE-' : ''}${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`.toUpperCase()
       const paymentPlan = deposit ? 'acompte' : 'total'
-      const saved = await postJson('/api/dc-thermes/reservation', { ...booking, funnel: 'cmi', orderId, paymentPlan })
+      const saved = await postJson('/api/dc-thermes/reservation', { ...booking, funnel: 'cmi', orderId, paymentPlan, testCode })
       if (!saved.ok) console.error('Réservation non enregistrée :', await saved.text())
-      const res = await postJson('/api/payment/initiate', { ...contact, selectedOffer: String(cure.days), pageSlug: cure.key, orderId, paymentPlan })
+      const res = await postJson('/api/payment/initiate', { ...contact, selectedOffer: String(cure.days), pageSlug: cure.key, orderId, paymentPlan, testCode })
       if (!res.ok) throw new Error(await res.text())
       const payment = await res.json()
       if (!payment.success) throw new Error('Réponse de paiement invalide')
@@ -286,10 +289,10 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
             ) : (
             <dl className={ticketRows}>
               <div className={ticketRow({ money: true })}><dt>{b.times(mad(cure.price), guests)}</dt><dd>{mad(total)}</dd></div>
-              {deposit && <div className={ticketRow({ money: true })}><dt>{ui.depositLine}</dt><dd>{mad(base)}</dd></div>}
-              <div className={ticketRow({ money: true })}><dt>{ui.fee}</dt><dd>{mad(fee)}</dd></div>
-              <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{mad(now)}</dd></div>
-              {deposit && <div className={ticketRow({ money: true })}><dt>{ui.balance}</dt><dd>{mad(balance)}</dd></div>}
+              {!testCode && deposit && <div className={ticketRow({ money: true })}><dt>{ui.depositLine}</dt><dd>{mad(base)}</dd></div>}
+              {!testCode && <div className={ticketRow({ money: true })}><dt>{ui.fee}</dt><dd>{mad(fee)}</dd></div>}
+              <div className={ticketRow({ money: true, due: true })}><dt>{testCode ? 'Test · débité aujourd’hui' : ui.due}</dt><dd>{mad(now)}</dd></div>
+              {!testCode && deposit && <div className={ticketRow({ money: true })}><dt>{ui.balance}</dt><dd>{mad(balance)}</dd></div>}
             </dl>
             )}
             <ul className={bkTrust}>
