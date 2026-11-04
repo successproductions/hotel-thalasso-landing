@@ -90,7 +90,7 @@ const getClientEmailTemplate = (data: ReservationData) => `
     <div class="footer">
       <p style="margin: 5px 0; font-weight: 600; color: #111;">Dakhla Club - DC Thermes</p>
       <p style="margin: 5px 0;">POINT DE DRAGON PK 28, Dakhla 73000, Maroc</p>
-      <p style="margin: 5px 0;"><a href="tel:+212701127318" style="color: #6b7280; text-decoration: none;">+212 701127318</a></p>
+      <p style="margin: 5px 0;"><a href="tel:+212701127318" style="color: #6b7280; text-decoration: none;">+212 663680425</a></p>
       <p style="margin-top: 20px; opacity: 0.8;">© 2026 Dakhla Club</p>
     </div>
   </div>
