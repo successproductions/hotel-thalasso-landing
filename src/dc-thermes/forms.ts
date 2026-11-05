@@ -89,12 +89,14 @@ export const bkMain = cx(
 )
 export const bkPage = 'min-h-screen bg-page'
 export const bkHeader =
-  'grid grid-cols-[1fr_auto_1fr] items-center gap-4 pt-[calc(env(safe-area-inset-top,0px)+18px)] px-m pb-[18px] border-b border-line bg-page max-sm:grid-cols-[auto_1fr]'
+  'grid grid-cols-[1fr_auto_1fr] items-center gap-4 pt-[calc(env(safe-area-inset-top,0px)+18px)] px-m pb-[18px] border-b border-line bg-page max-sm:grid-cols-[auto_1fr_auto]'
 export const bkBack = 'inline-flex items-center gap-[10px] w-fit text-[0.9375rem] no-underline max-sm:justify-self-end max-sm:text-[0.875rem]'
 export const bkBackArrow = 'size-[7px]!'
 export const bkLogoLink = 'max-sm:-order-1'
 export const bkLogo = 'h-[46px] max-sm:h-[38px]'
-export const bkHelp = 'justify-self-end text-[0.9375rem] underline underline-offset-3 max-sm:hidden'
+// Icône WhatsApp de l'en-tête (WhatsAppHelp.tsx), aussi sur téléphone
+export const bkHelp =
+  'justify-self-end grid place-items-center size-11 rounded-full transition-[background-color] duration-300 hover:bg-white focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2 max-sm:size-10'
 export const bkIntro = 'col-[1] grid gap-[18px] max-lg:order-0'
 export const bkIntroText = 'text-muted max-w-[52ch]'
 export const bkSteps = 'flex flex-wrap gap-2 p-0 mt-2 mx-0 mb-0 list-none [counter-reset:step]'

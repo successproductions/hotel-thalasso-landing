@@ -365,6 +365,9 @@ export const ui = {
   navLabel: 'Sections',
   home: 'Haut de page',
   logoAlt: 'DC Luxury Thermes',
+  // Icône WhatsApp de l'en-tête des pages de réservation : libellé et premier message de la conversation
+  whatsappHelp: 'Une question ? Écrivez-nous sur WhatsApp',
+  whatsappMessage: 'Bonjour, j’ai une question sur les cures DC Luxury Thermes.',
   book: 'Réserver',
   switchLabel: 'English',
   switchShort: 'EN',
@@ -468,7 +471,6 @@ export const ui = {
 export const giftPage = {
   title: 'Offrir une cure · DC Luxury Thermes',
   back: 'Retour aux cures',
-  help: `Une question ? ${site.phone}`,
   em: '',
   caps: 'Offrir une cure',
   intro: 'Offrez quelques jours de soins face à la lagune de Dakhla. Choisissez la cure, ajoutez votre message : nous préparons le bon cadeau.',
@@ -542,7 +544,6 @@ export const giftPage = {
 // Page de réservation
 export const bookingPage = {
   back: 'Retour aux cures',
-  help: `Une question ? ${site.phone}`,
   em: '',
   caps: 'Dernière étape',
   intro: 'Renseignez vos coordonnées, puis réglez sur la plateforme sécurisée CMI. Votre place est réservée dès le paiement.',

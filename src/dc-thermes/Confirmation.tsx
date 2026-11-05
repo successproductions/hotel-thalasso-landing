@@ -3,10 +3,11 @@
 import { useEffect } from 'react'
 import { packs, money, longDate as ld } from './i18n'
 import { Title } from './Title'
+import { WhatsAppHelp } from './WhatsAppHelp'
 import { cx, pill, arrow, logo } from './ui'
 import { bookingHref, landingHref } from './funnel'
 import { cureFromOrderId, readOrder } from './order'
-import { ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkHelp, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkGroup, bkLegend, bkSummary, bkCard, bkTrustItem } from './forms'
+import { ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkGroup, bkLegend, bkSummary, bkCard, bkTrustItem } from './forms'
 
 // Retour du paiement CMI pour les commandes DC Thermes (numéro DCT-…), à la place des pages des paniers :
 // /dc-thermes/merci (paid) ou /dc-thermes/paiement-echoue. /api/payment/success et /api/payment/fail y renvoient.
@@ -62,7 +63,7 @@ export default function Confirmation({ paid }: { paid: boolean }) {
       <header className={bkHeader}>
         <a href={landingHref('main', lang)} className={bkBack}><span className={cx(arrow(true), bkBackArrow)} aria-hidden="true" /> {c.back}</a>
         <a className={bkLogoLink} href={landingHref('main', lang)} aria-label={ui.logoAlt}><img className={cx(logo(), bkLogo)} src="/images/dc-thermes/logo-dc.webp" width="600" height="296" alt={ui.logoAlt} /></a>
-        <a className={bkHelp} href={site.tel}>{b.help}</a>
+        <WhatsAppHelp t={t} />
       </header>
 
       <main className={bkMain}>

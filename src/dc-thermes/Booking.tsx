@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
 import { packs, money, longDate as ld, shortDate } from './i18n'
 import { Title } from './Title'
+import { WhatsAppHelp } from './WhatsAppHelp'
 import { cx, pill, arrow, logo } from './ui'
 import { amounts, landingHref } from './funnel'
 import { captureAttribution, getAttribution } from '@/lib/metaTracking'
@@ -12,7 +13,7 @@ import { PhoneField } from './PhoneField'
 import { RoomGallery } from './RoomGallery'
 import { orderStorageKey } from './order'
 import type { ConfirmedOrder } from './order'
-import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkHelp, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem } from './forms'
+import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem } from './forms'
 
 // Page de réservation : dernière étape avant le paiement CMI.
 // Reprend les champs des paniers des cures (nom, e-mail, téléphone, date, personnes, CGV, offres)
@@ -270,7 +271,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
       <header className={bkHeader}>
         <a href={landingHref(funnel, lang)} className={bkBack}><span className={cx(arrow(true), bkBackArrow)} aria-hidden="true" /> {b.back}</a>
         <a className={bkLogoLink} href={landingHref(funnel, lang)} aria-label={ui.logoAlt}><img className={cx(logo(), bkLogo)} src="/images/dc-thermes/logo-dc.webp" width="600" height="296" alt={ui.logoAlt} /></a>
-        <a className={bkHelp} href={site.tel}>{b.help}</a>
+        <WhatsAppHelp t={t} />
       </header>
 
       <main className={bkMain}>

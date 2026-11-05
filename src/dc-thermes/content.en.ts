@@ -279,6 +279,8 @@ export const ui = {
   navLabel: 'Sections',
   home: 'Back to top',
   logoAlt: 'DC Luxury Thermes',
+  whatsappHelp: 'A question? Message us on WhatsApp',
+  whatsappMessage: 'Hello, I have a question about the DC Luxury Thermes programmes.',
   book: 'Book',
   switchLabel: 'Français',
   switchShort: 'FR',
@@ -376,7 +378,6 @@ export const ui = {
 export const giftPage = {
   title: 'Give a programme · DC Luxury Thermes',
   back: 'Back to the programmes',
-  help: 'A question? +212 663 680 425',
   em: '',
   caps: 'Give a programme',
   intro: 'Give a few days of treatments facing the Dakhla lagoon. Choose the programme, add your message: we prepare the gift voucher.',
@@ -448,7 +449,6 @@ export const giftPage = {
 
 export const bookingPage = {
   back: 'Back to the programmes',
-  help: 'A question? +212 663 680 425',
   em: '',
   caps: 'Final step',
   intro: 'Enter your details, then pay on the secure CMI platform. Your place is reserved as soon as you pay.',

@@ -4,10 +4,11 @@ import { useEffect, useState } from 'react'
 import type { FormEvent, MouseEvent } from 'react'
 import { packs, money, longDate as ld } from './i18n'
 import { Title } from './Title'
+import { WhatsAppHelp } from './WhatsAppHelp'
 import { cx, pill, arrow, logo } from './ui'
 import type { CureKey } from './types'
 import { PhoneField } from './PhoneField'
-import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkHelp, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem, chip } from './forms'
+import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem, chip } from './forms'
 
 // Page « Offrir une cure » : on compose le bon, l'aperçu se met à jour en direct,
 // puis la demande part à l'équipe par e-mail (ou par WhatsApp). Le règlement se fait ensuite avec l'équipe.
@@ -108,7 +109,7 @@ export default function Gift() {
       <header className={bkHeader}>
         <a href={lang === 'en' ? '/dc-thermes/en#offrir' : '/dc-thermes#offrir'} className={bkBack}><span className={cx(arrow(true), bkBackArrow)} aria-hidden="true" /> {g.back}</a>
         <a className={bkLogoLink} href={lang === 'en' ? '/dc-thermes/en' : '/dc-thermes'} aria-label={ui.logoAlt}><img className={cx(logo(), bkLogo)} src="/images/dc-thermes/logo-dc.webp" width="600" height="296" alt={ui.logoAlt} /></a>
-        <a className={bkHelp} href={site.tel}>{g.help}</a>
+        <WhatsAppHelp t={t} />
       </header>
 
       <main className={bkMain}>
