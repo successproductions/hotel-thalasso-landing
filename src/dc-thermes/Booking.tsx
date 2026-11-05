@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import type { FormEvent } from 'react'
+import type { FormEvent, SelectHTMLAttributes } from 'react'
 import { packs, money, longDate as ld } from './i18n'
 import { Title } from './Title'
 import { cx, pill, arrow, logo } from './ui'
@@ -10,13 +10,16 @@ import { captureAttribution, getAttribution } from '@/lib/metaTracking'
 import type { CureKey, Funnel } from './types'
 import { PhoneField } from './PhoneField'
 import { orderStorageKey } from './order'
+import { regions, regionFr } from './regions'
 import type { ConfirmedOrder } from './order'
 import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkHelp, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem } from './forms'
 
 // Page de réservation : dernière étape avant le paiement CMI.
 // Reprend les champs des paniers des cures (nom, e-mail, téléphone, date, personnes, CGV, offres)
 // et les choix faits sur la page (cure, date d'arrivée, curistes, totalité ou acompte, chambre).
-// Avec une chambre, la réservation continue sur Direct-Book (tarif pack) : coordonnées et paiement y sont demandés.
+// Avec une chambre : sur /dc-thermes/paiement (cmi), les packs de SiteMinder (cure + chambre en pension complète)
+// s'affichent ici avec leur prix en direct (/api/dc-thermes/rooms) et se paient sur CMI ; ailleurs, la réservation
+// continue sur Direct-Book (tarif pack), où coordonnées et paiement sont demandés.
 // Selon la version de la page (funnel.ts) : paiement CMI direct (main, cmi) ou demande sans paiement (lead).
 
 const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
@@ -33,8 +36,31 @@ const doneText = 'max-w-[52ch] text-muted'
 
 // Préfixe des commandes CMI : après le paiement, il renvoie vers la page de remerciement de la cure
 const orderPrefix: Record<CureKey, string> = { vitalite: 'VIT', regeneration: 'REG', renaissance: 'REN' }
+// Une chambre proposée par /api/dc-thermes/rooms (prix SiteMinder ; pay = ce que CMI encaisse, frais compris)
+type Offer = { roomRateUuid: string; room: string; plan: string; size: string; photo: string | null; available: number; gross: number; pay: number }
+const roomCard = (on: boolean) =>
+  cx(choiceItem({ on, inGroup: true }), 'grid-cols-[96px_minmax(0,1fr)_auto] items-center gap-x-4 py-3 pl-3 max-sm:grid-cols-[72px_minmax(0,1fr)]')
+
 const postJson = (url: string, body: object) =>
   fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+
+// Heure d'arrivée : par tranche d'une heure, comme sur Direct-Book
+const pad = (h: number) => String(h % 24).padStart(2, '0')
+const arrivalSlots = Array.from({ length: 24 }, (_, h) => `${pad(h)}:00 – ${pad(h + 1)}:00`)
+
+// Liste déroulante native à la forme des champs, flèche dessinée comme celle de l'indicatif du téléphone.
+// La première option invite à choisir : tant qu'elle reste, le champ est vide (required bloque l'envoi).
+function Select({ options, placeholder, ...props }: { options: [string, string][]; placeholder: string } & SelectHTMLAttributes<HTMLSelectElement>) {
+  return (
+    <span className="relative grid">
+      <select className={cx(pfInput({ inGroup: true }), 'appearance-none pr-12! cursor-pointer invalid:text-soft [&_option]:text-ink')} defaultValue="" {...props}>
+        <option value="" disabled>{placeholder}</option>
+        {options.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+      </select>
+      <span className="pointer-events-none absolute right-5 top-1/2 size-[7px] -translate-y-[70%] rotate-45 border-r-[1.5px] border-b-[1.5px] border-current" aria-hidden="true" />
+    </span>
+  )
+}
 
 
 export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
@@ -53,7 +79,15 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
   const [sent, setSent] = useState(false)
   const [done, setDone] = useState(false)
   const [error, setError] = useState('')
+  const [offers, setOffers] = useState<Offer[]>([])
+  const [roomsState, setRoomsState] = useState<'loading' | 'ready' | 'error'>('loading')
+  const [roomRate, setRoomRate] = useState('')
+  const [roomsReload, setRoomsReload] = useState(0)
   const lead = funnel === 'lead'
+  // /dc-thermes/paiement : la chambre se choisit et se paie ici (packs SiteMinder), sans passer par Direct-Book
+  const live = funnel === 'cmi'
+  // Ses coordonnées demandent aussi ville, code postal, pays, provenance et heure d'arrivée, comme Direct-Book
+  const countries = useMemo(() => (live ? regions(t.locale) : []), [live, t.locale])
 
   // Reprend les choix faits sur la page des cures
   useEffect(() => {
@@ -94,6 +128,36 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
 
   const hotelUrl = plan ? site.hotel({ checkIn: iso(plan.checkIn), checkOut: iso(plan.checkOut), adults: guests }) : null
 
+  // Packs de la cure pour ces dates et ce nombre de personnes, en direct de SiteMinder (une chambre par réservation, 4 personnes au plus)
+  const pack = live && room
+  useEffect(() => {
+    if (!pack || !arrival) return
+    if (guests > 4) {
+      setOffers([])
+      setRoomsState('ready')
+      return
+    }
+    const abort = new AbortController()
+    setRoomsState('loading')
+    const wait = window.setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/dc-thermes/rooms?${new URLSearchParams({ cure: cure.key, arrival, guests: String(guests) })}`, { signal: abort.signal })
+        if (!res.ok) throw new Error(String(res.status))
+        const data = (await res.json()) as { offers: Offer[] }
+        setOffers(data.offers)
+        setRoomRate((current) => (data.offers.some((o) => o.roomRateUuid === current) ? current : ''))
+        setRoomsState('ready')
+      } catch {
+        if (!abort.signal.aborted) setRoomsState('error')
+      }
+    }, 250)
+    return () => {
+      abort.abort()
+      window.clearTimeout(wait)
+    }
+  }, [pack, cure.key, arrival, guests, roomsReload])
+  const offer = pack ? offers.find((o) => o.roomRateUuid === roomRate) : undefined
+
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
@@ -116,7 +180,18 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
     // Enregistrée dans le Google Sheet (un onglet par version) et dans Brevo, avec les 8 champs d'attribution Meta.
     // Événement Meta : Lead pour une demande, InitiateCheckout pour une réservation qui part au paiement.
     const meta = getAttribution(field('pays'))
-    const booking = { ...contact, cure: cure.key, message: field('message'), lang, ...meta, event_name: lead ? meta.event_name : 'InitiateCheckout' }
+    // Questions de /dc-thermes/paiement, envoyées en français pour l'équipe (Google Sheet, e-mail)
+    const time = field('heure_arrivee')
+    const guest = live
+      ? {
+          city: field('ville'),
+          postalCode: field('code_postal'),
+          residenceCountry: regionFr(field('pays_residence')),
+          heardFrom: packs.fr.bookingPage.heardOptions.find(([key]) => key === field('connu_par'))?.[1] || '',
+          arrivalTime: time === 'inconnue' ? packs.fr.bookingPage.arrivalUnknown : arrivalSlots.includes(time) ? time : '',
+        }
+      : {}
+    const booking = { ...contact, ...guest, cure: cure.key, message: field('message'), lang, ...meta, event_name: lead ? meta.event_name : 'InitiateCheckout' }
 
     try {
       // Demande sans paiement : l'équipe rappelle
@@ -131,17 +206,30 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
       // Paiement direct : la réservation est enregistrée « En attente », puis le formulaire CMI est envoyé.
       // Numéro de commande : DCT- (après le paiement, CMI ramène sur les pages de /dc-thermes, voir Confirmation.tsx),
       // puis le format des paniers, qui donne le nom de la cure dans les e-mails ; ACOMPTE : le solde reste dû.
-      const orderId = `DCT-${orderPrefix[cure.key]}${cure.days}-${deposit ? 'ACOMPTE-' : ''}${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`.toUpperCase()
-      const paymentPlan = deposit ? 'acompte' : 'total'
-      const saved = await postJson('/api/dc-thermes/reservation', { ...booking, funnel: 'cmi', orderId, paymentPlan })
+      // PACK : cure + chambre SiteMinder, réglés en totalité ; le serveur reprend le prix de la chambre chez SiteMinder.
+      if (pack && !offer) throw new Error('Aucune chambre choisie')
+      const orderId = `DCT-${orderPrefix[cure.key]}${cure.days}-${pack ? 'PACK-' : deposit ? 'ACOMPTE-' : ''}${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`.toUpperCase()
+      const paymentPlan = deposit && !pack ? 'acompte' : 'total'
+      const roomRateUuid = offer?.roomRateUuid
+      const saved = await postJson('/api/dc-thermes/reservation', { ...booking, funnel: 'cmi', orderId, paymentPlan, roomRateUuid })
       if (!saved.ok) console.error('Réservation non enregistrée :', await saved.text())
-      const res = await postJson('/api/payment/initiate', { ...contact, selectedOffer: String(cure.days), pageSlug: cure.key, orderId, paymentPlan })
+      const res = await postJson('/api/payment/initiate', { ...contact, selectedOffer: String(cure.days), pageSlug: cure.key, orderId, paymentPlan, roomRateUuid })
+      // La chambre vient d'être prise : la liste est rechargée et le client en choisit une autre
+      if (res.status === 409) {
+        setSent(false)
+        setRoomRate('')
+        setRoomsReload((n) => n + 1)
+        setError(b.roomTaken)
+        return
+      }
       if (!res.ok) throw new Error(await res.text())
       const payment = await res.json()
       if (!payment.success) throw new Error('Réponse de paiement invalide')
       sessionStorage.setItem('bookingInfo', JSON.stringify(payment.bookingInfo))
       // Pour la page de confirmation, dans la langue de la réservation
-      const order: ConfirmedOrder = { orderId, lang, cure: cure.key, arrival, guests, firstName: field('prenom'), paid: now, balance: deposit ? balance : 0 }
+      const order: ConfirmedOrder = offer
+        ? { orderId, lang, cure: cure.key, arrival, guests, firstName: field('prenom'), paid: offer.pay, balance: 0, room: offer.room }
+        : { orderId, lang, cure: cure.key, arrival, guests, firstName: field('prenom'), paid: now, balance: deposit ? balance : 0 }
       sessionStorage.setItem(orderStorageKey, JSON.stringify(order))
       const cmi = document.createElement('form')
       cmi.method = 'POST'
@@ -173,8 +261,8 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
       <main className={bkMain}>
         <div className={bkIntro}>
           <Title as="h1" id="bk-title" em={b.em} caps={lead ? b.leadCaps : b.caps} />
-          <p className={bkIntroText}>{room ? b.introPack : lead ? b.leadIntro : b.intro}</p>
-          {!room && <ol className={bkSteps} aria-label={b.stepsLabel}>
+          <p className={bkIntroText}>{pack ? b.introRooms : room ? b.introPack : lead ? b.leadIntro : b.intro}</p>
+          {(!room || live) && <ol className={bkSteps} aria-label={b.stepsLabel}>
             {(lead ? b.leadSteps : b.steps).map((step, i) => <li key={step} className={bkStep(i === (done ? 1 : 0))}>{step}</li>)}
           </ol>}
           {/* Demande envoyée : la confirmation prend la place du formulaire, juste sous les étapes */}
@@ -234,7 +322,39 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
             </label>
           </fieldset>
 
-          {room ? (
+          {pack && (
+            <fieldset className={bkGroup()} aria-busy={roomsState === 'loading'}>
+              <legend className={bkLegend}>{b.roomsTitle}</legend>
+              {guests > 4 ? (
+                <p className="text-muted">{b.roomsTooMany}</p>
+              ) : roomsState === 'loading' ? (
+                <p className="text-muted" role="status">{b.roomsLoading}</p>
+              ) : roomsState === 'error' ? (
+                <p className="text-ink" role="alert">{b.roomsError}</p>
+              ) : offers.length === 0 ? (
+                <p className="text-muted" role="status">{b.roomsEmpty}</p>
+              ) : (
+                <div className="grid gap-3">
+                  {offers.map((o) => (
+                    <label key={o.roomRateUuid} className={roomCard(o.roomRateUuid === roomRate)}>
+                      <input className={hiddenInput} type="radio" name="chambre" value={o.roomRateUuid} checked={o.roomRateUuid === roomRate} onChange={() => setRoomRate(o.roomRateUuid)} required />
+                      <span className="row-span-2 aspect-[4/3] overflow-hidden rounded-[8px] bg-panel max-sm:row-span-3 max-sm:self-start max-sm:mt-1">
+                        {o.photo && <img className="w-full h-full object-cover" src={o.photo} alt="" loading="lazy" />}
+                      </span>
+                      <span className="grid gap-1 min-w-0">
+                        <span className={choiceTitle}>{o.room}</span>
+                        <span className={choiceMeta}>{[o.size, b.roomsIncl(nights)].filter(Boolean).join(' · ')}</span>
+                        {o.available <= 3 && <span className="text-[0.8125rem] text-ink">{b.roomsLeft(o.available)}</span>}
+                      </span>
+                      <span className="text-right text-[1.125rem] whitespace-nowrap max-sm:col-start-2 max-sm:text-left">{mad(o.gross)}</span>
+                    </label>
+                  ))}
+                </div>
+              )}
+            </fieldset>
+          )}
+
+          {room && !live ? (
             <>
               <a className={cx(pill('dark', { block: true }), bkPay)} href={hotelUrl || undefined}>{ui.packCta}</a>
               <p className={bkSecure}><span className={lock} aria-hidden="true" />{ui.packTicketNote}</p>
@@ -249,7 +369,22 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
             </div>
             <label className={pf} htmlFor="bk-mail"><span className={pfLabel}>{b.email}</span><input className={pfInput({ inGroup: true })} id="bk-mail" name="email" type="email" autoComplete="email" required placeholder={b.emailPh} /></label>
             <PhoneField id="bk-tel" b={b} />
-            <label className={pf} htmlFor="bk-note"><span className={pfLabel}>{b.note} <em className={pfOptional}>{b.optional}</em></span><textarea className={pfInput({ inGroup: true, area: true })} id="bk-note" name="message" rows={3} placeholder={b.notePh} /></label>
+            {live && (
+              <>
+                <div className={pfRow}>
+                  <label className={pf} htmlFor="bk-city"><span className={pfLabel}>{b.city}</span><input className={pfInput({ inGroup: true })} id="bk-city" name="ville" autoComplete="address-level2" required /></label>
+                  <label className={pf} htmlFor="bk-zip"><span className={pfLabel}>{b.postcode} <em className={pfOptional}>{b.optional}</em></span><input className={pfInput({ inGroup: true })} id="bk-zip" name="code_postal" autoComplete="postal-code" /></label>
+                </div>
+                <label className={pf} htmlFor="bk-country"><span className={pfLabel}>{b.residence}</span><Select id="bk-country" name="pays_residence" autoComplete="country" required placeholder={b.residencePh} options={countries} /></label>
+                <label className={pf} htmlFor="bk-heard"><span className={pfLabel}>{b.heard}</span><Select id="bk-heard" name="connu_par" required placeholder={b.heardPh} options={b.heardOptions} /></label>
+                <label className={pf} htmlFor="bk-time">
+                  <span className={pfLabel}>{b.arrivalTime}</span>
+                  <span className="-mt-1 text-[0.9375rem] text-muted" id="bk-time-hint">{b.arrivalTimeHint}</span>
+                  <Select id="bk-time" name="heure_arrivee" required aria-describedby="bk-time-hint" placeholder={b.arrivalTimePh} options={[['inconnue', b.arrivalUnknown], ...arrivalSlots.map((x): [string, string] => [x, x])]} />
+                </label>
+              </>
+            )}
+            <label className={pf} htmlFor="bk-note"><span className={pfLabel}>{b.note} <em className={pfOptional}>{b.optional}</em></span><textarea className={pfInput({ inGroup: true, area: true })} id="bk-note" name="message" rows={3} placeholder={live ? b.notePhPaid : b.notePh} /></label>
           </fieldset>
 
           <div className="grid gap-[14px] px-1">
@@ -258,8 +393,8 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
           </div>
 
           {error && <p className="px-1 text-[0.9375rem] text-ink" role="alert">{error}</p>}
-          <button className={cx(pill('dark', { block: true }), bkPay)} type="submit" disabled={sent}>
-            {lead ? (sent ? b.leadSending : b.leadSubmit) : sent ? b.sending : b.pay(mad(now))}
+          <button className={cx(pill('dark', { block: true }), bkPay)} type="submit" disabled={sent || (pack && !offer)}>
+            {lead ? (sent ? b.leadSending : b.leadSubmit) : sent ? b.sending : pack ? (offer ? b.pay(mad(offer.pay)) : b.roomsPick) : b.pay(mad(now))}
           </button>
           {lead
             ? <p className={bkSecure}>{b.leadNote}</p>
@@ -280,7 +415,19 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
               {plan && room && <div className={ticketRow()}><dt>{ui.departure}</dt><dd>{longDate(plan.checkOut)}</dd></div>}
               <div className={ticketRow()}><dt>{ui.guests}</dt><dd>{guests}</dd></div>
             </dl>
-            {room ? (
+            {pack ? (
+              offer ? (
+                <dl className={ticketRows}>
+                  <div className={ticketRow({ money: true })}><dt>{b.packLine(offer.room, nights)}</dt><dd>{mad(offer.gross)}</dd></div>
+                  <div className={ticketRow({ money: true })}><dt>{ui.fee}</dt><dd>{mad(offer.pay - offer.gross)}</dd></div>
+                  <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{mad(offer.pay)}</dd></div>
+                </dl>
+              ) : (
+                <dl className={ticketRows}>
+                  <div className={ticketRow({ money: true })}><dt>{ui.packRow(nights)}</dt><dd>{ui.packLive}</dd></div>
+                </dl>
+              )
+            ) : room ? (
               <>
                 <dl className={ticketRows}>
                   <div className={ticketRow({ money: true })}><dt>{ui.packRow(nights)}</dt><dd>{ui.packPrice}</dd></div>
@@ -304,7 +451,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
             <ul className={bkTrust}>
               {(lead ? b.leadTrust : b.trust).map((x) => <li key={x} className={bkTrustItem}>{x}</li>)}
             </ul>
-            {!room && !lead && <ul className="flex flex-wrap gap-[18px] items-center list-none m-0 p-0" aria-label={ui.footerPay}>
+            {(!room || live) && !lead && <ul className="flex flex-wrap gap-[18px] items-center list-none m-0 p-0" aria-label={ui.footerPay}>
               <li><img className="h-6 w-auto" src="/images/dc-thermes/cmi.webp" alt="CMI" width="160" height="126" /></li>
               <li><img className="h-6 w-auto" src="/images/dc-thermes/visa.webp" alt="Verified by Visa" width="200" height="88" /></li>
               <li><img className="h-6 w-auto" src="/images/dc-thermes/mastercard.webp" alt="Mastercard SecureCode" width="200" height="92" /></li>

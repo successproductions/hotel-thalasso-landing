@@ -50,9 +50,11 @@ export default function Confirmation({ paid }: { paid: boolean }) {
     : site.hotel({ adults: 2 })
 
   // Réessayer : la page de réservation reprend la cure, les dates et le règlement choisis
-  const retryHref = bookingHref('main', lang, order
-    ? { cure: order.cure, debut: order.arrival, curistes: String(order.guests), paiement: order.balance ? 'acompte' : 'total' }
-    : cure ? { cure: cure.key } : {})
+  // Un pack (chambre SiteMinder) se reprend sur /dc-thermes/paiement, où la liste des chambres s'affiche
+  const packOrder = !!order?.room || orderId.includes('-PACK-')
+  const retryHref = bookingHref(packOrder ? 'cmi' : 'main', lang, order
+    ? { cure: order.cure, debut: order.arrival, curistes: String(order.guests), paiement: order.balance ? 'acompte' : 'total', ...(packOrder ? { chambre: '1' } : {}) }
+    : cure ? { cure: cure.key, ...(packOrder ? { chambre: '1' } : {}) } : {})
 
   return (
     <div className={bkPage}>
@@ -70,7 +72,8 @@ export default function Confirmation({ paid }: { paid: boolean }) {
             {b.steps.map((step, i) => <li key={step} className={bkStep(i === (paid ? 2 : 1))}>{step}</li>)}
           </ol>
 
-          {paid && (
+          {/* Pack (chambre comprise) : rien à réserver en plus */}
+          {paid && !packOrder && (
             <section className={cx(bkGroup('gap-5'), 'mt-4 overflow-hidden')} aria-labelledby="ok-hotel">
               <figure className={hotelImg}><img className="w-full h-full object-cover" src="/images/dc-thermes/dakhla-club-lagune.webp" width="1800" height="1013" alt="" /></figure>
               <h2 className={bkLegend} id="ok-hotel">{c.hotelTitle}</h2>
@@ -120,6 +123,7 @@ export default function Confirmation({ paid }: { paid: boolean }) {
                 {first && <div className={ticketRow()}><dt>{ui.firstTreatment}</dt><dd>{ld(t, first)}</dd></div>}
                 {first && <div className={ticketRow()}><dt>{ui.lastTreatment}</dt><dd>{ld(t, addDays(first, cure.days - 1))}</dd></div>}
                 {order && <div className={ticketRow()}><dt>{ui.guests}</dt><dd>{order.guests}</dd></div>}
+                {order?.room && <div className={ticketRow()}><dt>{ui.lodgingField}</dt><dd className="text-right">{order.room}</dd></div>}
               </dl>
               {paid && order && (
                 <dl className={ticketRows}>

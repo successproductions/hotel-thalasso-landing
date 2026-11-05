@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { upsertBrevoContact } from '@/lib/brevo';
+import { packOffers, packStay } from '@/lib/siteminder';
+import { rememberGuest } from '@/lib/paymentEmails';
 
 // Saves the bookings of the two /dc-thermes versions, then creates the contact in Brevo:
 // - /dc-thermes/paiement (funnel "cmi"): saved before CMI with status "En attente",
@@ -18,8 +20,8 @@ const CURES: Record<string, { days: string; programme: string }> = {
   renaissance: { days: '7', programme: 'Thalasso Renaissance 7 Jours' },
 };
 
-// Order IDs built on the reservation page: DCT-VIT3-..., DCT-REG5-ACOMPTE-...
-const ORDER_ID = /^DCT-(VIT3|REG5|REN7)-(ACOMPTE-)?[A-Z0-9]{6,24}$/;
+// Order IDs built on the reservation page: DCT-VIT3-..., DCT-REG5-ACOMPTE-..., DCT-REN7-PACK-... (cure + room)
+const ORDER_ID = /^DCT-(VIT3|REG5|REN7)-(ACOMPTE-|PACK-)?[A-Z0-9]{6,24}$/;
 
 // Meta attribution columns of the sheet, passed through as strings ('' when unavailable)
 const META_FIELDS = ['fbclid', 'fbp', 'utm_source', 'utm_campaign', 'country', 'event_time', 'event_name', 'event_id'];
@@ -54,6 +56,23 @@ export async function POST(request: NextRequest) {
       ...Object.fromEntries(META_FIELDS.map((field) => [field, text(data[field], 500)])),
     };
 
+    // /dc-thermes/paiement also asks for city, postcode, country, how they heard of us and arrival time (in French).
+    // Sent as their own fields, and written in the note too, which the sheet already shows.
+    const guest = {
+      city: cmi ? text(data.city, 80) : '',
+      postalCode: cmi ? text(data.postalCode, 20) : '',
+      country: cmi ? text(data.residenceCountry, 80) : '',
+      heardFrom: cmi ? text(data.heardFrom, 80) : '',
+      arrivalTime: cmi ? text(data.arrivalTime, 40) : '',
+    };
+    const guestNote = [
+      guest.city && `Ville : ${guest.city}`,
+      guest.postalCode && `Code postal : ${guest.postalCode}`,
+      guest.country && `Pays : ${guest.country}`,
+      guest.heardFrom && `Nous a connus par : ${guest.heardFrom}`,
+      guest.arrivalTime && `Heure d'arrivée : ${guest.arrivalTime}`,
+    ].filter(Boolean).join(' · ');
+
     if (
       !cure ||
       !reservation.fullName ||
@@ -63,6 +82,25 @@ export async function POST(request: NextRequest) {
     ) {
       return NextResponse.json({ success: false, error: 'Missing or invalid fields' }, { status: 400 });
     }
+
+    // Pack (cure + room): the room is entered in SiteMinder by the team, so the note starts with what they need,
+    // priced here from SiteMinder rather than taken from the browser
+    const notes: string[] = [];
+    if (cmi && typeof data.roomRateUuid === 'string') {
+      const stay = packStay(data.cure, reservation.arrivalDate, Number(reservation.numberOfPeople));
+      const pack = stay && (await packOffers(stay).catch(() => [])).find((o) => o.roomRateUuid === data.roomRateUuid);
+      const room = pack
+        ? `${pack.room} · ${pack.plan} · du ${stay.checkIn} au ${stay.checkOut} · ${stay.guests} pers. · ${pack.gross} MAD`
+        : `chambre ${text(data.roomRateUuid, 60)} (prix non confirmé par SiteMinder)`;
+      notes.push(`[Hébergement à saisir dans SiteMinder] ${room}`);
+    }
+    if (guestNote) {
+      notes.push(`[Client] ${guestNote}`);
+      Object.assign(reservation, { city: guest.city, postalCode: guest.postalCode, residenceCountry: guest.country, heardFrom: guest.heardFrom, arrivalTime: guest.arrivalTime });
+      // For the team's email once CMI confirms the payment
+      rememberGuest(reservation.orderId, guest);
+    }
+    if (notes.length) reservation.message = [...notes, reservation.message].filter(Boolean).join(' | ');
 
     if (GOOGLE_APPS_SCRIPT_URL) {
       try {

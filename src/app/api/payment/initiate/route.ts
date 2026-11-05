@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
+import { packAmount, packQuote, packStay } from '@/lib/siteminder';
+import { rememberPack } from '@/lib/paymentEmails';
 
 // CMI Configuration
 const CMI_CONFIG = {
@@ -27,6 +29,7 @@ interface PaymentRequest {
   pageSlug?: string;
   orderId?: string; // optional pre-generated orderId from the panier page
   paymentPlan?: 'acompte' | 'total'; // /dc-thermes/paiement: 'acompte' charges a 50% deposit, the balance is paid at the baths
+  roomRateUuid?: string; // /dc-thermes/paiement with a room: the SiteMinder pack rate chosen by the client (cure + room)
 }
 
 // Page slug → order ID prefix mapping
@@ -110,12 +113,32 @@ export async function POST(request: NextRequest) {
     if (isNaN(count) || count < 1) {
       return NextResponse.json({ error: 'Invalid number of people' }, { status: 400 });
     }
-    const payable = paymentPlan === 'acompte' ? eurPrice / 2 : eurPrice;
-    const pricePerPersonMAD = Math.floor(payable * (1 + CMI_FEE_RATE));
-    const amount = pricePerPersonMAD * count;
-
-    // Generate unique order ID and random string
+    // Generate unique order ID
     const orderId = body.orderId || generateOrderId(selectedOffer, pageSlug);
+
+    let amount: number;
+    if (body.roomRateUuid) {
+      // DC Thermes pack (cure + room on full board): priced again on SiteMinder now, never taken from the browser.
+      // Paid in full, CMI fee added. Not available any more → the page asks the client to choose another room.
+      const stay = packStay(pageSlug || '', arrivalDate, count);
+      if (!stay || String(stay.days) !== selectedOffer || !/^DCT-[A-Z]{3}\d-PACK-/.test(orderId)) {
+        return NextResponse.json({ error: 'Invalid pack request' }, { status: 400 });
+      }
+      const pack = await packQuote({ ...stay, roomRateUuid: body.roomRateUuid }).catch((error) => {
+        console.error('SiteMinder quote error:', error);
+        return undefined;
+      });
+      if (pack === undefined) return NextResponse.json({ error: 'pack-unavailable' }, { status: 502 });
+      if (!pack) return NextResponse.json({ error: 'room-unavailable' }, { status: 409 });
+      amount = packAmount(pack.gross);
+      rememberPack(orderId, { room: pack.room, plan: pack.plan, checkIn: stay.checkIn, checkOut: stay.checkOut, guests: count, gross: pack.gross });
+    } else {
+      const payable = paymentPlan === 'acompte' ? eurPrice / 2 : eurPrice;
+      const pricePerPersonMAD = Math.floor(payable * (1 + CMI_FEE_RATE));
+      amount = pricePerPersonMAD * count;
+    }
+
+    // Generate random string
     const rnd = generateRnd();
 
     // Get base URL for callbacks

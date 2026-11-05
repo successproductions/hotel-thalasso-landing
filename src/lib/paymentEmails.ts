@@ -19,8 +19,53 @@ export function programmeFromOrderId(orderId: string): string {
 // other skips, so the client and the admin each get one email. Kept in memory for a day: the site runs
 // as a single PM2 process, and globalThis keeps one list even if each route bundles its own copy.
 const DAY = 24 * 60 * 60 * 1000;
-const store = globalThis as typeof globalThis & { cmiEmailsSent?: Map<string, number> };
+type Kept<T> = Map<string, { at: number; value: T }>;
+const store = globalThis as typeof globalThis & {
+  cmiEmailsSent?: Map<string, number>;
+  cmiPacks?: Kept<PackStay>;
+  cmiGuests?: Kept<GuestDetails>;
+};
 const sent = (store.cmiEmailsSent ??= new Map<string, number>());
+
+function keep<T>(list: Kept<T>, orderId: string, value: T) {
+  const now = Date.now();
+  for (const [id, item] of list) if (now - item.at > DAY) list.delete(id);
+  list.set(orderId, { at: now, value });
+}
+
+// Typed by the client: escaped before going into the email
+const esc = (s: string) =>
+  s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] || c);
+
+// Packs paid on /dc-thermes/paiement (cure + room, order IDs DCT-…-PACK-…): the room is not booked in SiteMinder by the site
+// (its API is read-only), so the admin email carries what the team needs to enter it. Kept by /api/payment/initiate,
+// in memory like the list above: after a restart, the email points to the sheet, where the note has the same details.
+export type PackStay = { room: string; plan: string; checkIn: string; checkOut: string; guests: number; gross: number };
+const packs: Kept<PackStay> = (store.cmiPacks ??= new Map());
+export const rememberPack = (orderId: string, stay: PackStay) => keep(packs, orderId, stay);
+
+// The extra questions of /dc-thermes/paiement (city, postcode, country, how they heard of us, arrival time), in French.
+// Kept by /api/dc-thermes/reservation for the admin email; the sheet note has them too.
+export type GuestDetails = { city: string; postalCode: string; country: string; heardFrom: string; arrivalTime: string };
+const guests: Kept<GuestDetails> = (store.cmiGuests ??= new Map());
+export const rememberGuest = (orderId: string, details: GuestDetails) => keep(guests, orderId, details);
+
+const GUEST_ROWS: [keyof GuestDetails, string][] = [
+  ['city', 'Ville'],
+  ['postalCode', 'Code postal'],
+  ['country', 'Pays'],
+  ['heardFrom', 'Nous a connus par'],
+  ['arrivalTime', "Heure d'arrivée"],
+];
+const guestRows = (details?: GuestDetails) =>
+  (details ? GUEST_ROWS.filter(([key]) => details[key]) : [])
+    .map(([key, label]) => `<div class="info-row">
+          <span class="info-label">${label}</span>
+          <span class="info-value">${esc(details![key])}</span>
+        </div>`)
+    .join('\n        ');
+
+const frDate = (iso: string) => iso.split('-').reverse().join('/');
 
 export function firstConfirmation(orderId: string | undefined): boolean {
   const now = Date.now();
@@ -31,8 +76,25 @@ export function firstConfirmation(orderId: string | undefined): boolean {
   return true;
 }
 
+// Pack orders: the room is part of the booking, so the client email shows it instead of inviting to book one
+const clientStayBox = (orderId: string, stay?: PackStay) => {
+  if (!/-PACK-/.test(orderId)) {
+    return `<div class="hotel-box">
+        <h3>Hébergement</h3>
+        <p>Pour parfaire votre expérience, réservez votre séjour au Dakhla Club.</p>
+        <a href="https://direct-book.com/properties/DakhlaClubDIRECT" class="button">
+          Réserver une chambre
+        </a>
+      </div>`;
+  }
+  return `<div class="hotel-box">
+        <h3>Votre hébergement</h3>
+        <p>${stay ? `${stay.room} · pension complète<br>Du ${frDate(stay.checkIn)} au ${frDate(stay.checkOut)} · ${stay.guests} personne${stay.guests > 1 ? 's' : ''}` : 'Votre chambre en pension complète est comprise dans votre pack.'}</p>
+      </div>`;
+};
+
 // Client email template
-const getPaymentConfirmationEmail = (customerName: string, orderId: string, packType: string, amount: string) => `
+const getPaymentConfirmationEmail = (customerName: string, orderId: string, packType: string, amount: string, stay?: PackStay) => `
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,13 +156,7 @@ const getPaymentConfirmationEmail = (customerName: string, orderId: string, pack
         </div>
       </div>
 
-      <div class="hotel-box">
-        <h3>Hébergement</h3>
-        <p>Pour parfaire votre expérience, réservez votre séjour au Dakhla Club.</p>
-        <a href="https://direct-book.com/properties/DakhlaClubDIRECT" class="button">
-          Réserver une chambre
-        </a>
-      </div>
+      ${clientStayBox(orderId, stay)}
 
       <div style="border-top: 1px solid #eee; padding-top: 20px; margin-top: 40px; font-size: 13px; color: #666;">
         <strong style="color: #000; text-transform: uppercase; font-size: 11px; letter-spacing: 1px;">Besoin d'assistance ?</strong>
@@ -131,6 +187,9 @@ export async function sendPaymentEmails(params: Record<string, string>) {
 
   // Determine pack type
   const packType = programmeFromOrderId(orderId || '');
+  const stay = orderId ? packs.get(orderId)?.value : undefined;
+  const guest = orderId ? guests.get(orderId)?.value : undefined;
+  const isPack = /-PACK-/.test(orderId || '');
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -149,7 +208,7 @@ export async function sendPaymentEmails(params: Record<string, string>) {
         from: `"Dakhla Club - DC Thermes" <${process.env.EMAIL_USER}>`,
         to: customerEmail,
         subject: `✅ Confirmation Réservation - ${packType}`,
-        html: getPaymentConfirmationEmail(customerName, orderId, packType, amount),
+        html: getPaymentConfirmationEmail(customerName, orderId, packType, amount, stay),
       });
 
     } catch (error) {
@@ -214,6 +273,37 @@ export async function sendPaymentEmails(params: Record<string, string>) {
         </div>
       </div>
 
+      ${isPack ? `<div class="info-section">
+        <h2>Hébergement · à saisir dans SiteMinder</h2>
+        ${stay ? `<div class="info-row">
+          <span class="info-label">Chambre</span>
+          <span class="info-value">${stay.room}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Tarif</span>
+          <span class="info-value">${stay.plan}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Arrivée</span>
+          <span class="info-value">${frDate(stay.checkIn)}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Départ</span>
+          <span class="info-value">${frDate(stay.checkOut)}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Personnes</span>
+          <span class="info-value">${stay.guests}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Prix SiteMinder</span>
+          <span class="info-value">${stay.gross} MAD (payé avec les frais CMI)</span>
+        </div>` : `<div class="info-row">
+          <span class="info-label">Détails</span>
+          <span class="info-value">Voir la note de la commande dans le Google Sheet</span>
+        </div>`}
+      </div>` : ''}
+
       <div class="info-section">
         <h2>Client</h2>
         <div class="info-row">
@@ -224,6 +314,7 @@ export async function sendPaymentEmails(params: Record<string, string>) {
           <span class="info-label">Email</span>
           <span class="info-value"><a href="mailto:${customerEmail}" style="color: #000; text-decoration: none;">${customerEmail}</a></span>
         </div>
+        ${guestRows(guest)}
       </div>
 
       <div style="text-align: center; margin: 40px 0;">

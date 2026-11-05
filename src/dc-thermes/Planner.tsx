@@ -7,7 +7,8 @@ import { pf, pfRow, pfLabel, pfInput, choice, choiceItem, hiddenInput, choiceTit
 
 // Le composeur de cure : cure, date d'arrivée, nombre de curistes, acompte ou totalité, chambre en option.
 // Il calcule les dates de soins et ce qui est réglé aujourd'hui puis à l'arrivée.
-// Avec une chambre, cure et chambre se réservent ensemble sur Direct-Book (tarif pack, prix et disponibilités affichés là-bas).
+// Avec une chambre, cure et chambre se réservent ensemble sur Direct-Book (tarif pack, prix et disponibilités affichés là-bas),
+// sauf sur /dc-thermes/paiement (cmi) : la chambre se choisit sur la page de réservation, prix SiteMinder en direct, paiement CMI.
 // Version « contact » (lead) : pas de choix de règlement, seulement le prix de la cure et le lien vers la demande.
 
 const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
@@ -44,6 +45,7 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
 
   const cure = cures.find((c) => c.key === cureKey) || cures[1]
   const lead = funnel === 'lead'
+  const live = funnel === 'cmi'
   const { total, base, fee, now, balance } = amounts(cure.price, guests, deposit && !lead, site.cmiFee)
   const nights = site.nights(cure.days)
 
@@ -139,10 +141,12 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
         {room ? (
           <>
             <dl className={ticketRows}>
-              <div className={ticketRow({ money: true })}><dt>{ui.packRow(nights)}</dt><dd>{ui.packPrice}</dd></div>
+              <div className={ticketRow({ money: true })}><dt>{ui.packRow(nights)}</dt><dd>{live ? ui.packLive : ui.packPrice}</dd></div>
             </dl>
-            <p className="text-[0.875rem] text-muted">{ui.packNote}</p>
-            <a className={pill('dark', { block: true })} href={hotelUrl || undefined}>{ui.packCta}</a>
+            <p className="text-[0.875rem] text-muted">{live ? ui.packNoteLive : ui.packNote}</p>
+            {live
+              ? <a className={pill('dark', { block: true })} href={bookingHref(funnel, t.lang, { cure: cure.key, debut: arrival, curistes: String(guests), paiement: 'total', chambre: '1' })}>{ui.packCtaLive}</a>
+              : <a className={pill('dark', { block: true })} href={hotelUrl || undefined}>{ui.packCta}</a>}
           </>
         ) : (
           <>
@@ -160,7 +164,7 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
         </a>
           </>
         )}
-        <p className="text-[0.8125rem] text-soft">{room ? ui.packTicketNote : lead ? ui.leadTicketNote : ui.ticketNote}</p>
+        <p className="text-[0.8125rem] text-soft">{room && !live ? ui.packTicketNote : lead ? ui.leadTicketNote : ui.ticketNote}</p>
       </aside>
     </div>
   )

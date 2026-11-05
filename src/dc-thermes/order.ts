@@ -13,6 +13,7 @@ export type ConfirmedOrder = {
   firstName: string
   paid: number
   balance: number
+  room?: string // pack payé sur /dc-thermes/paiement : chambre SiteMinder comprise
 }
 
 // Sans réservation en mémoire (autre onglet, autre appareil), la cure se lit dans le numéro : DCT-REG5-…

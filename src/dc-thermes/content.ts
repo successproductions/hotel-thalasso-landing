@@ -295,11 +295,13 @@ export const faq: Faq = {
     ]],
     ['Quelle différence entre les cures de 3, 5 et 7 jours ?', [
       // À CONFIRMER : la proposition donne 15 et 27 soins ; les cartes affichent 14 et 29 (voir cures)
-      { ul: [
-        ['Vitalité · Énergie et éclat :', '3 jours de soins, 4 nuits, 14 soins.'],
-        ['Régénération · Force et équilibre :', '5 jours de soins, 6 nuits, 29 soins, autour de l’alternance du chaud et du froid.'],
-        ['Renaissance · Sérénité et plénitude :', '7 jours de soins, 8 nuits, 33 soins, pour un ressourcement complet.'],
-      ] },
+      {
+        ul: [
+          ['Vitalité · Énergie et éclat :', '3 jours de soins, 4 nuits, 14 soins.'],
+          ['Régénération · Force et équilibre :', '5 jours de soins, 6 nuits, 29 soins, autour de l’alternance du chaud et du froid.'],
+          ['Renaissance · Sérénité et plénitude :', '7 jours de soins, 8 nuits, 33 soins, pour un ressourcement complet.'],
+        ]
+      },
       'Chaque cure se réserve avec ou sans hébergement.',
     ]],
     ['Quels soins sont inclus ?', [
@@ -430,7 +432,7 @@ export const ui = {
   pickDay: 'Choisissez votre date d’arrivée',
   total: 'Total de la cure',
   depositLine: 'Acompte de 50 %',
-  fee: 'Frais de paiement CMI (2,97 %)',
+  fee: 'Frais de paiement',
   due: 'À régler aujourd’hui',
   balance: 'Solde aux thermes, à l’arrivée',
   ctaDeposit: 'Réserver avec un acompte de 50 %',
@@ -442,6 +444,10 @@ export const ui = {
   packPrice: 'Prix sur Direct-Book',
   packNote: 'Le prix du pack, cure et chambre comprises, s’affiche à l’étape suivante selon la chambre choisie. Si aucune chambre n’est libre à ces dates, Direct-Book vous l’indique : choisissez une autre date d’arrivée, ou réservez la cure seule.',
   packCta: 'Choisir ma chambre et voir le prix',
+  // /dc-thermes/paiement : la chambre se choisit sur la page de réservation, prix SiteMinder en direct, paiement CMI
+  packLive: 'Selon la chambre',
+  packNoteLive: 'À l’étape suivante, choisissez votre chambre : prix et disponibilités en direct, puis paiement sécurisé CMI.',
+  packCtaLive: 'Choisir ma chambre',
   packTicketNote: 'Votre hébergement est réservé en même temps que votre cure, sur Direct-Book, le site officiel du Dakhla Club · Confirmation de réservation par e-mail',
   ticketNote: 'Paiement sécurisé CMI · Confirmation de réservation par e-mail · Annulation sans frais jusqu’à 30 jours avant l’arrivée',
   leadTicketNote: 'Sans engagement ni paiement en ligne · Notre équipe vous rappelle pour confirmer vos dates',
@@ -541,6 +547,18 @@ export const bookingPage = {
   caps: 'Dernière étape',
   intro: 'Renseignez vos coordonnées, puis réglez sur la plateforme sécurisée CMI. Votre place est réservée dès le paiement.',
   introPack: 'Avec une chambre, la réservation se termine sur Direct-Book, le site de l’hôtel : vous y choisissez la chambre, voyez le prix du pack et les disponibilités, puis réglez en ligne.',
+  // /dc-thermes/paiement avec une chambre : les packs de SiteMinder (cure + chambre en pension complète), payés sur CMI
+  introRooms: 'Choisissez votre chambre : le prix du pack, cure et hébergement en pension complète, s’affiche en direct selon les disponibilités de l’hôtel. Vous réglez le tout sur la plateforme sécurisée CMI.',
+  roomsTitle: 'Votre chambre',
+  roomsLoading: 'Recherche des chambres disponibles…',
+  roomsEmpty: 'Aucune chambre n’est disponible pour ces dates. Choisissez une autre date d’arrivée, ou réservez la cure seule.',
+  roomsError: `Les chambres ne s’affichent pas pour le moment. Réessayez dans un instant, réservez la cure seule ou appelez-nous au ${site.phone}.`,
+  roomsTooMany: `Les packs accueillent jusqu’à 4 personnes par chambre. Pour un groupe, appelez-nous au ${site.phone}.`,
+  roomsLeft: (n: number) => (n === 1 ? 'Dernière chambre disponible' : `Plus que ${n} chambres`),
+  roomsIncl: (n: number) => `Cure, pension complète et taxe de séjour, ${n} nuits`,
+  roomsPick: 'Choisissez une chambre pour continuer',
+  roomTaken: 'Cette chambre vient d’être réservée. Choisissez-en une autre.',
+  packLine: (room: string, n: number) => `Pack ${room}, ${n} nuits`,
   steps: ['Vos coordonnées', 'Paiement sécurisé', 'Confirmation'],
   stepsLabel: 'Étapes',
   yourCure: 'Votre cure',
@@ -557,9 +575,23 @@ export const bookingPage = {
   phoneLabel: 'Numéro de téléphone',
   otherCountry: 'Autre',
   phoneInvalid: (dial: string, example: string) => dial ? `Numéro incomplet ou incorrect pour l’indicatif ${dial}. Exemple : ${example}` : `Écrivez le numéro complet, avec l’indicatif du pays. Exemple : ${example}`,
+  // /dc-thermes/paiement : les questions du formulaire de l’hôtel (Direct-Book), pour saisir la réservation dans SiteMinder
+  city: 'Ville',
+  postcode: 'Code postal',
+  residence: 'Pays / Zone géographique',
+  residencePh: 'Choisir un pays',
+  heard: 'Comment avez-vous entendu parler de nous ?',
+  heardPh: 'Choisir une réponse',
+  heardOptions: [['instagram', 'Instagram'], ['facebook', 'Facebook'], ['tiktok', 'TikTok'], ['google', 'Recherche Google'], ['proche', 'Recommandation d’un proche'], ['client', 'Déjà client(e) du Dakhla Club'], ['agence', 'Agence de voyage'], ['presse', 'Presse, magazine'], ['autre', 'Autre']] as [string, string][],
+  arrivalTime: 'Heure d’arrivée prévue',
+  arrivalTimeHint: 'Pour nous permettre de vous accueillir de la meilleure manière qui soit, indiquez-nous l’heure à laquelle vous prévoyez d’arriver.',
+  arrivalTimePh: 'Choisir une heure',
+  arrivalUnknown: 'Je ne sais pas encore',
   note: 'Un souhait, une contre-indication à nous signaler ?',
   optional: 'Facultatif',
   notePh: 'Grossesse, problème de dos, heure d’arrivée…',
+  // /dc-thermes/paiement : l’heure d’arrivée a son propre champ
+  notePhPaid: 'Grossesse, problème de dos…',
   cgv: ['J’ai lu et j’accepte les ', 'conditions générales de vente', '.'],
   offers: 'Je souhaite recevoir les actualités de DC Luxury Thermes et du Dakhla Club Hotel & Spa.',
   pay: (amount: string) => `Payer ${amount}`,
