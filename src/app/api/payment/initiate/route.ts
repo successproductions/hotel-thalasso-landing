@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
-import { packAmount, packQuote, packStay } from '@/lib/siteminder';
+import { CURE_DAYS, hotelStay, roomAmount, roomQuote } from '@/lib/siteminder';
 import { rememberPack } from '@/lib/paymentEmails';
 
 // CMI Configuration
@@ -29,7 +29,11 @@ interface PaymentRequest {
   pageSlug?: string;
   orderId?: string; // optional pre-generated orderId from the panier page
   paymentPlan?: 'acompte' | 'total'; // /dc-thermes/paiement: 'acompte' charges a 50% deposit, the balance is paid at the baths
-  roomRateUuid?: string; // /dc-thermes/paiement with a room: the SiteMinder pack rate chosen by the client (cure + room)
+  // /dc-thermes/paiement/reservation with the hotel: the SiteMinder room rate chosen by the client, for these dates
+  // and this many people in the room (participants, who may differ from numberOfPeople, the people taking the cure)
+  roomRateUuid?: string;
+  departureDate?: string;
+  participants?: number;
 }
 
 // Page slug → order ID prefix mapping
@@ -116,26 +120,30 @@ export async function POST(request: NextRequest) {
     // Generate unique order ID
     const orderId = body.orderId || generateOrderId(selectedOffer, pageSlug);
 
+    // The cure: price per person with the CMI fee, rounded down, × the number of people taking it
+    const cureAmount = (plan?: 'acompte' | 'total') =>
+      Math.floor((plan === 'acompte' ? eurPrice / 2 : eurPrice) * (1 + CMI_FEE_RATE)) * count;
+
     let amount: number;
     if (body.roomRateUuid) {
-      // DC Thermes pack (cure + room on full board): priced again on SiteMinder now, never taken from the browser.
-      // Paid in full, CMI fee added. Not available any more → the page asks the client to choose another room.
-      const stay = packStay(pageSlug || '', arrivalDate, count);
-      if (!stay || String(stay.days) !== selectedOffer || !/^DCT-[A-Z]{3}\d-PACK-/.test(orderId)) {
-        return NextResponse.json({ error: 'Invalid pack request' }, { status: 400 });
+      // DC Thermes with the hotel: the cure plus the room priced again on SiteMinder now (never taken from the browser),
+      // each with the CMI fee. Paid in full or 50 % of both today (the hotel's Public Rate also asks for 50 % "arrhes"),
+      // the room's half rounded up. Not available any more → the page asks the client to choose another room.
+      const stay = hotelStay(pageSlug || '', arrivalDate, body.departureDate || '', Number(body.participants));
+      if (!stay || String(CURE_DAYS[pageSlug || '']) !== selectedOffer || count > 10 || !/^DCT-[A-Z]{3}\d-PACK-/.test(orderId)) {
+        return NextResponse.json({ error: 'Invalid hotel request' }, { status: 400 });
       }
-      const pack = await packQuote({ ...stay, roomRateUuid: body.roomRateUuid }).catch((error) => {
+      const room = await roomQuote({ ...stay, roomRateUuid: body.roomRateUuid }).catch((error) => {
         console.error('SiteMinder quote error:', error);
         return undefined;
       });
-      if (pack === undefined) return NextResponse.json({ error: 'pack-unavailable' }, { status: 502 });
-      if (!pack) return NextResponse.json({ error: 'room-unavailable' }, { status: 409 });
-      amount = packAmount(pack.gross);
-      rememberPack(orderId, { room: pack.room, plan: pack.plan, checkIn: stay.checkIn, checkOut: stay.checkOut, guests: count, gross: pack.gross });
+      if (room === undefined) return NextResponse.json({ error: 'room-quote-unavailable' }, { status: 502 });
+      if (!room) return NextResponse.json({ error: 'room-unavailable' }, { status: 409 });
+      const deposit = paymentPlan === 'acompte';
+      amount = cureAmount(paymentPlan) + roomAmount(deposit ? Math.ceil(room.gross / 2) : room.gross);
+      rememberPack(orderId, { room: room.room, plan: room.plan, checkIn: stay.checkIn, checkOut: stay.checkOut, guests: stay.guests, gross: room.gross, curistes: count, deposit });
     } else {
-      const payable = paymentPlan === 'acompte' ? eurPrice / 2 : eurPrice;
-      const pricePerPersonMAD = Math.floor(payable * (1 + CMI_FEE_RATE));
-      amount = pricePerPersonMAD * count;
+      amount = cureAmount(paymentPlan);
     }
 
     // Generate random string

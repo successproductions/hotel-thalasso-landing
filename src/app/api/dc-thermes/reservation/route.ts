@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { upsertBrevoContact } from '@/lib/brevo';
-import { packOffers, packStay } from '@/lib/siteminder';
-import { rememberGuest } from '@/lib/paymentEmails';
+import { hotelStay, roomOffers } from '@/lib/siteminder';
 
 // Saves the bookings of the two /dc-thermes versions, then creates the contact in Brevo:
 // - /dc-thermes/paiement (funnel "cmi"): saved before CMI with status "En attente",
@@ -20,7 +19,7 @@ const CURES: Record<string, { days: string; programme: string }> = {
   renaissance: { days: '7', programme: 'Thalasso Renaissance 7 Jours' },
 };
 
-// Order IDs built on the reservation page: DCT-VIT3-..., DCT-REG5-ACOMPTE-..., DCT-REN7-PACK-... (cure + room)
+// Order IDs built on the reservation page: DCT-VIT3-..., DCT-REG5-ACOMPTE-..., DCT-REN7-PACK-... (cure + hotel room)
 const ORDER_ID = /^DCT-(VIT3|REG5|REN7)-(ACOMPTE-|PACK-)?[A-Z0-9]{6,24}$/;
 
 // Meta attribution columns of the sheet, passed through as strings ('' when unavailable)
@@ -29,12 +28,23 @@ const META_FIELDS = ['fbclid', 'fbp', 'utm_source', 'utm_campaign', 'country', '
 const text = (value: unknown, max: number) =>
   typeof value === 'string' ? value.trim().slice(0, max) : '';
 
+const addDays = (iso: string, n: number) => {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+};
+
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
     const cmi = data.funnel === 'cmi';
     const cure = CURES[data.cure];
     const guests = Number(data.numberOfPeople);
+    const arrivalDate = /^\d{4}-\d{2}-\d{2}$/.test(data.arrivalDate) ? data.arrivalDate : '';
+    // With the hotel (/dc-thermes/paiement/reservation), the client chooses the departure and the people in the room
+    const stay = cmi && typeof data.roomRateUuid === 'string'
+      ? hotelStay(data.cure, arrivalDate, String(data.departureDate || ''), Number(data.participants))
+      : null;
 
     const reservation = {
       source: cmi ? 'dc-thermes/paiement' : 'dc-thermes/contact',
@@ -44,7 +54,9 @@ export async function POST(request: NextRequest) {
       email: text(data.email, 160),
       phone: text(data.phone, 40),
       numberOfPeople: String(Number.isInteger(guests) && guests >= 1 && guests <= 50 ? guests : 1),
-      arrivalDate: /^\d{4}-\d{2}-\d{2}$/.test(data.arrivalDate) ? data.arrivalDate : '',
+      arrivalDate,
+      // Chosen with the hotel; otherwise the day after the last treatment (arrival the day before the first one)
+      departureDate: stay ? stay.checkOut : arrivalDate && cure ? addDays(arrivalDate, Number(cure.days) + 1) : '',
       paymentPlan: cmi ? (data.paymentPlan === 'acompte' ? 'acompte' : 'total') : '',
       message: text(data.message, 1000),
       optIn: data.optIn === true ? 'Oui' : 'Non',
@@ -56,23 +68,6 @@ export async function POST(request: NextRequest) {
       ...Object.fromEntries(META_FIELDS.map((field) => [field, text(data[field], 500)])),
     };
 
-    // /dc-thermes/paiement also asks for city, postcode, country, how they heard of us and arrival time (in French).
-    // Sent as their own fields, and written in the note too, which the sheet already shows.
-    const guest = {
-      city: cmi ? text(data.city, 80) : '',
-      postalCode: cmi ? text(data.postalCode, 20) : '',
-      country: cmi ? text(data.residenceCountry, 80) : '',
-      heardFrom: cmi ? text(data.heardFrom, 80) : '',
-      arrivalTime: cmi ? text(data.arrivalTime, 40) : '',
-    };
-    const guestNote = [
-      guest.city && `Ville : ${guest.city}`,
-      guest.postalCode && `Code postal : ${guest.postalCode}`,
-      guest.country && `Pays : ${guest.country}`,
-      guest.heardFrom && `Nous a connus par : ${guest.heardFrom}`,
-      guest.arrivalTime && `Heure d'arrivée : ${guest.arrivalTime}`,
-    ].filter(Boolean).join(' · ');
-
     if (
       !cure ||
       !reservation.fullName ||
@@ -83,24 +78,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: 'Missing or invalid fields' }, { status: 400 });
     }
 
-    // Pack (cure + room): the room is entered in SiteMinder by the team, so the note starts with what they need,
-    // priced here from SiteMinder rather than taken from the browser
-    const notes: string[] = [];
-    if (cmi && typeof data.roomRateUuid === 'string') {
-      const stay = packStay(data.cure, reservation.arrivalDate, Number(reservation.numberOfPeople));
-      const pack = stay && (await packOffers(stay).catch(() => [])).find((o) => o.roomRateUuid === data.roomRateUuid);
-      const room = pack
-        ? `${pack.room} · ${pack.plan} · du ${stay.checkIn} au ${stay.checkOut} · ${stay.guests} pers. · ${pack.gross} MAD`
-        : `chambre ${text(data.roomRateUuid, 60)} (prix non confirmé par SiteMinder)`;
-      notes.push(`[Hébergement à saisir dans SiteMinder] ${room}`);
+    if (cmi) {
+      // Cure + hotel: the team enters the room in SiteMinder (dates in the arrival and departure columns).
+      // Room and price come from SiteMinder here, not from the browser. numberOfPeople is the number of curistes,
+      // the room's own number of people (participants) is written with it.
+      let room = 'Sans hébergement';
+      let roomPrice = '';
+      if (typeof data.roomRateUuid === 'string') {
+        const offer = stay && (await roomOffers(stay).catch(() => [])).find((o) => o.roomRateUuid === data.roomRateUuid);
+        const people = stay ? ` · ${stay.guests} participant${stay.guests > 1 ? 's' : ''}` : '';
+        room = offer ? `${offer.room} · ${offer.plan}${people}` : `Chambre non confirmée par SiteMinder (${text(data.roomRateUuid, 60)})${people}`;
+        roomPrice = offer ? String(offer.gross) : '';
+      }
+      // Their own columns in the "DC Thermes Paiement" tab (the Apps Script adds a missing column on the right)
+      Object.assign(reservation, { room, roomPrice });
     }
-    if (guestNote) {
-      notes.push(`[Client] ${guestNote}`);
-      Object.assign(reservation, { city: guest.city, postalCode: guest.postalCode, residenceCountry: guest.country, heardFrom: guest.heardFrom, arrivalTime: guest.arrivalTime });
-      // For the team's email once CMI confirms the payment
-      rememberGuest(reservation.orderId, guest);
-    }
-    if (notes.length) reservation.message = [...notes, reservation.message].filter(Boolean).join(' | ');
 
     if (GOOGLE_APPS_SCRIPT_URL) {
       try {

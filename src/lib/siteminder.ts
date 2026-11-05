@@ -1,5 +1,6 @@
-// SiteMinder Direct Booking API: rooms, rates and live prices of the DC Thermes packs, for /dc-thermes/paiement.
-// The API is read-only: it cannot create a reservation. A pack paid through CMI is entered in SiteMinder by the team
+// SiteMinder Direct Booking API: hotel rooms and their live prices, for /dc-thermes/paiement/reservation.
+// The client books the cure (priced by the site) and, if they wish, a room for the dates and number of people they choose.
+// The API is read-only: it cannot create a reservation. A room paid through CMI is entered in SiteMinder by the team
 // (the admin email says so). Server-side only: the key must never reach the browser (SiteMinder's integration rules).
 // Docs: https://developer.siteminder.com/direct-booking-api
 
@@ -9,7 +10,7 @@ const PROPERTY = process.env.SITEMINDER_PROPERTY_UUID || '';
 
 // Same rate as /api/payment/initiate: the CMI fee is added to what the client pays
 const CMI_FEE_RATE = 0.0297;
-export const packAmount = (gross: number) => Math.floor(gross * (1 + CMI_FEE_RATE));
+export const roomAmount = (gross: number) => Math.floor(gross * (1 + CMI_FEE_RATE));
 
 type Page<T> = { page: number; totalPages: number; results: T[] };
 type RoomType = { uuid: string; name: string; description: string | null; roomSize: number | null; roomSizeUnit: string | null };
@@ -23,15 +24,16 @@ type Quote = {
   price: { gross: number; net: number; tax: number; currency: string };
 };
 
-export type PackOffer = {
+export type RoomOffer = {
   roomRateUuid: string;
   room: string;
   plan: string;
   size: string;
-  photo: string | null;
+  photo: string | null; // first photo, sized for the room card
+  photos: string[]; // every photo of the room (imgix URLs without size), for the gallery
   available: number;
-  gross: number; // SiteMinder price: cure, room on full board and taxe de séjour
-  pay: number; // what CMI charges: gross + CMI fee, rounded down
+  gross: number; // SiteMinder price for the whole stay: room on full board and taxe de séjour
+  pay: number; // what CMI charges for it: gross + CMI fee, rounded down
   currency: string;
 };
 
@@ -69,51 +71,54 @@ const HOUR = 60 * 60 * 1000;
 const roomTypes = () => cached('room-types', HOUR, () => all<RoomType>('/room-types'));
 const roomRates = () => cached('room-rates', 10 * 60 * 1000, () => all<RoomRate>('/room-rates'));
 const ratePlan = (uuid: string) => cached(`rate-plan:${uuid}`, HOUR, () => get<RatePlan>(`/rate-plans/${uuid}`));
-const firstPhoto = (roomTypeUuid: string) =>
-  cached(`photo:${roomTypeUuid}`, HOUR, async () => {
+// The room's photos in the hotel's order (6 to 21 per room in SiteMinder)
+const roomPhotos = (roomTypeUuid: string) =>
+  cached(`photos:${roomTypeUuid}`, HOUR, async () => {
     const photos = await get<Photo[]>(`/room-types/${roomTypeUuid}/photos`).catch(() => []);
-    const url = [...photos].sort((a, b) => (a.sortOrder ?? 99) - (b.sortOrder ?? 99))[0]?.url;
-    return url ? `${url}?w=640&h=420&fit=crop&auto=format` : null;
+    return [...photos].sort((a, b) => (a.sortOrder ?? 99) - (b.sortOrder ?? 99)).map((p) => p.url);
   });
 const quotes = (checkIn: string, checkOut: string, guests: number, fresh: boolean) => {
   const load = () => get<Quote[]>(`/quotes?checkIn=${checkIn}&checkOut=${checkOut}&adults=${guests}`);
   return fresh ? load() : cached(`quotes:${checkIn}:${checkOut}:${guests}`, 60 * 1000, load);
 };
 
-// The packs are SiteMinder rate plans named "Programme 3 Jours – Vitalité", "Programme 5 Jours – Régénération"…
-// Each has one rate per room and number of guests (Single, Double, Triple, Quadruple). The API quotes every rate
-// for any stay, so the pack is chosen here: the plan of the cure's length, the rate for exactly this many guests.
-async function packRates(days: number, guests: number) {
+// The room is priced on the "Public Rate" plan: full board, one rate per room and number of guests (Single, Double,
+// Triple, Quadruple). SiteMinder's "Programme N Jours" packs are this rate plus the cure, which the site prices itself.
+// The API quotes every rate for any stay, so the rate is chosen here: Public Rate, for exactly this many guests.
+const ROOM_PLAN = /^public rate$/i;
+
+async function roomRatesFor(guests: number) {
   const rates = await roomRates();
   const plans = await Promise.all([...new Set(rates.map((r) => r.ratePlanUuid))].map(ratePlan));
-  const pack = plans.filter((p) => Number(p.name.match(/(\d+)\s*jours/i)?.[1]) === days);
-  if (!pack.length) console.error(`SiteMinder: no rate plan named "Programme ${days} Jours"`);
-  const names = new Map(pack.map((p) => [p.uuid, p.name]));
+  const plan = plans.find((p) => ROOM_PLAN.test(p.name.trim()));
+  if (!plan) console.error('SiteMinder: no rate plan named "Public Rate"');
   return new Map(
     rates
-      .filter((r) => names.has(r.ratePlanUuid) && r.includedOccupancy === guests)
-      .map((r) => [r.uuid, { rate: r, plan: names.get(r.ratePlanUuid)! }]),
+      .filter((r) => r.ratePlanUuid === plan?.uuid && r.includedOccupancy === guests)
+      .map((r) => [r.uuid, plan!.name.trim()]),
   );
 }
 
-type Stay = { days: number; checkIn: string; checkOut: string; guests: number };
+export type HotelStay = { checkIn: string; checkOut: string; guests: number; nights: number };
 
-async function offers({ days, checkIn, checkOut, guests }: Stay, fresh: boolean): Promise<PackOffer[]> {
-  const [rates, types, prices] = await Promise.all([packRates(days, guests), roomTypes(), quotes(checkIn, checkOut, guests, fresh)]);
+async function offers({ checkIn, checkOut, guests }: HotelStay, fresh: boolean): Promise<RoomOffer[]> {
+  const [rates, types, prices] = await Promise.all([roomRatesFor(guests), roomTypes(), quotes(checkIn, checkOut, guests, fresh)]);
   const typeById = new Map(types.map((t) => [t.uuid, t]));
   const found = prices.filter((q) => rates.has(q.roomRateUuid) && q.availability > 0);
   return Promise.all(
     found.map(async (q) => {
       const type = typeById.get(q.roomTypeUuid);
+      const photos = await roomPhotos(q.roomTypeUuid);
       return {
         roomRateUuid: q.roomRateUuid,
         room: type?.name || '',
-        plan: rates.get(q.roomRateUuid)!.plan,
+        plan: rates.get(q.roomRateUuid)!,
         size: type?.roomSize ? `${type.roomSize} ${(type.roomSizeUnit || 'm^2').replace('m^2', 'm²')}` : '',
-        photo: await firstPhoto(q.roomTypeUuid),
+        photo: photos[0] ? `${photos[0]}?w=640&h=420&fit=crop&auto=format` : null,
+        photos,
         available: q.availability,
         gross: q.price.gross,
-        pay: packAmount(q.price.gross),
+        pay: roomAmount(q.price.gross),
         currency: q.price.currency,
       };
     }),
@@ -121,18 +126,25 @@ async function offers({ days, checkIn, checkOut, guests }: Stay, fresh: boolean)
 }
 
 // Rooms shown on the reservation page (prices cached for a minute)
-export const packOffers = (stay: Stay) => offers(stay, false);
+export const roomOffers = (stay: HotelStay) => offers(stay, false);
 
 // The room chosen by the client, priced again just before the payment: null if it is no longer available
-export async function packQuote(stay: Stay & { roomRateUuid: string }): Promise<PackOffer | null> {
+export async function roomQuote(stay: HotelStay & { roomRateUuid: string }): Promise<RoomOffer | null> {
   return (await offers(stay, true)).find((o) => o.roomRateUuid === stay.roomRateUuid) || null;
 }
 
-// Arrival the day before the first treatment, departure the day after the last (same rule as the page)
-export function packStay(cure: string, arrival: string, guests: number): Stay | null {
-  const days = ({ vitalite: 3, regeneration: 5, renaissance: 7 } as Record<string, number>)[cure];
-  if (!days || !/^\d{4}-\d{2}-\d{2}$/.test(arrival) || !Number.isInteger(guests) || guests < 1 || guests > 4) return null;
-  const [y, m, d] = arrival.split('-').map(Number);
-  const out = new Date(Date.UTC(y, m - 1, d + days + 1));
-  return { days, checkIn: arrival, checkOut: out.toISOString().slice(0, 10), guests };
+// Cure length in days. The hotel stay lasts at least one night more than the cure (arrival the day before the
+// first treatment, departure the day after the last): Vitalité 4 nights, Régénération 6, Renaissance 8.
+export const CURE_DAYS: Record<string, number> = { vitalite: 3, regeneration: 5, renaissance: 7 };
+export const MAX_NIGHTS = 30; // SiteMinder quotes up to 31 nights
+const DAY = 24 * 60 * 60 * 1000;
+
+// The stay chosen on the page, checked: dates, minimum nights for the cure, 1 to 4 guests in the room
+export function hotelStay(cure: string, arrival: string, departure: string, guests: number): HotelStay | null {
+  const days = CURE_DAYS[cure];
+  const iso = /^\d{4}-\d{2}-\d{2}$/;
+  if (!days || !iso.test(arrival) || !iso.test(departure) || !Number.isInteger(guests) || guests < 1 || guests > 4) return null;
+  const nights = Math.round((Date.parse(`${departure}T00:00:00Z`) - Date.parse(`${arrival}T00:00:00Z`)) / DAY);
+  if (!(nights >= days + 1 && nights <= MAX_NIGHTS)) return null;
+  return { checkIn: arrival, checkOut: departure, guests, nights };
 }

@@ -50,10 +50,11 @@ export default function Confirmation({ paid }: { paid: boolean }) {
     : site.hotel({ adults: 2 })
 
   // Réessayer : la page de réservation reprend la cure, les dates et le règlement choisis
-  // Un pack (chambre SiteMinder) se reprend sur /dc-thermes/paiement, où la liste des chambres s'affiche
+  // Cure + chambre (SiteMinder) : se reprend sur /dc-thermes/paiement, avec les mêmes dates et participants
   const packOrder = !!order?.room || orderId.includes('-PACK-')
+  const stay: Record<string, string> = packOrder && order?.departure ? { depart: order.departure, participants: String(order.participants || order.guests) } : {}
   const retryHref = bookingHref(packOrder ? 'cmi' : 'main', lang, order
-    ? { cure: order.cure, debut: order.arrival, curistes: String(order.guests), paiement: order.balance ? 'acompte' : 'total', ...(packOrder ? { chambre: '1' } : {}) }
+    ? { cure: order.cure, debut: order.arrival, curistes: String(order.guests), paiement: order.balance ? 'acompte' : 'total', ...(packOrder ? { chambre: '1', ...stay } : {}) }
     : cure ? { cure: cure.key, ...(packOrder ? { chambre: '1' } : {}) } : {})
 
   return (
@@ -122,8 +123,10 @@ export default function Confirmation({ paid }: { paid: boolean }) {
                 {orderId && <div className={ticketRow()}><dt>{c.reference}</dt><dd className="break-all text-right">{orderId}</dd></div>}
                 {first && <div className={ticketRow()}><dt>{ui.firstTreatment}</dt><dd>{ld(t, first)}</dd></div>}
                 {first && <div className={ticketRow()}><dt>{ui.lastTreatment}</dt><dd>{ld(t, addDays(first, cure.days - 1))}</dd></div>}
-                {order && <div className={ticketRow()}><dt>{ui.guests}</dt><dd>{order.guests}</dd></div>}
+                {order?.departure && <div className={ticketRow()}><dt>{ui.departure}</dt><dd>{ld(t, parse(order.departure))}</dd></div>}
+                {order && <div className={ticketRow()}><dt>{order.participants ? b.curistes : ui.guests}</dt><dd>{order.guests}</dd></div>}
                 {order?.room && <div className={ticketRow()}><dt>{ui.lodgingField}</dt><dd className="text-right">{order.room}</dd></div>}
+                {order?.participants && <div className={ticketRow()}><dt>{b.participants}</dt><dd>{order.participants}</dd></div>}
               </dl>
               {paid && order && (
                 <dl className={ticketRows}>
