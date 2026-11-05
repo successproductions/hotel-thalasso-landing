@@ -366,7 +366,7 @@ export const ui = {
   home: 'Haut de page',
   logoAlt: 'DC Luxury Thermes',
   // Icône WhatsApp de l'en-tête des pages de réservation : libellé et premier message de la conversation
-  whatsappHelp: 'Une question ? Écrivez-nous sur WhatsApp',
+  whatsappHelp: 'Nous écrire sur WhatsApp',
   whatsappMessage: 'Bonjour, j’ai une question sur les cures DC Luxury Thermes.',
   book: 'Réserver',
   switchLabel: 'English',

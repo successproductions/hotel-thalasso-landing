@@ -279,7 +279,7 @@ export const ui = {
   navLabel: 'Sections',
   home: 'Back to top',
   logoAlt: 'DC Luxury Thermes',
-  whatsappHelp: 'A question? Message us on WhatsApp',
+  whatsappHelp: 'Message us on WhatsApp',
   whatsappMessage: 'Hello, I have a question about the DC Luxury Thermes programmes.',
   book: 'Book',
   switchLabel: 'Français',
