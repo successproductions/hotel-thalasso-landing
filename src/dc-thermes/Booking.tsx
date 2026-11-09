@@ -21,7 +21,8 @@ import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInpu
 // Sur /dc-thermes/paiement (cmi) : la cure (nombre de curistes), puis, si le client coche l'hôtel, son séjour :
 // date de départ (au moins les nuits de la cure), nombre de participants dans la chambre et chambre choisie parmi
 // celles de SiteMinder, prix en direct (/api/dc-thermes/rooms, tarif Public Rate). Cure et chambre se paient sur CMI.
-// Ailleurs, avec une chambre, la réservation continue sur Direct-Book (tarif pack), où coordonnées et paiement sont demandés.
+// Même parcours sur /dc-thermes/contact (lead), sans paiement : la chambre y est facultative et part avec la demande.
+// Sur /dc-thermes (main), avec une chambre, la réservation continue sur Direct-Book (tarif pack).
 // Selon la version de la page (funnel.ts) : paiement CMI direct (main, cmi) ou demande sans paiement (lead).
 
 const iso = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
@@ -81,6 +82,8 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
   const lead = funnel === 'lead'
   // /dc-thermes/paiement : la chambre se choisit et se paie ici (packs SiteMinder), sans passer par Direct-Book
   const live = funnel === 'cmi'
+  // Cure puis séjour à l'hôtel (chambres SiteMinder) : /dc-thermes/paiement et /dc-thermes/contact
+  const hotelFlow = live || lead
 
   // Reprend les choix faits sur la page des cures
   useEffect(() => {
@@ -97,7 +100,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
     const start = debut && /^\d{4}-\d{2}-\d{2}$/.test(debut) ? debut : iso(addDays(today, 14))
     setArrival(start)
     const g = Number(q.get('curistes'))
-    const curistes = Number.isInteger(g) && g >= 1 ? (live ? Math.min(g, MAX_CURISTES) : g) : 1
+    const curistes = Number.isInteger(g) && g >= 1 ? (hotelFlow ? Math.min(g, MAX_CURISTES) : g) : 1
     setGuests(curistes)
     setDeposit(!lead && q.get('paiement') === 'acompte')
     setRoom(q.get('chambre') === '1')
@@ -118,7 +121,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
   const payDeposit = deposit && (live || !room)
   const { total, base, fee, now, balance } = amounts(cure.price, guests, payDeposit, site.cmiFee)
   const nights = site.nights(cure.days)
-  const pack = live && room
+  const pack = hotelFlow && room
   // Nuits à l'hôtel : choisies par le client sur /dc-thermes/paiement, sinon celles de la cure
   const stayNights = pack ? chosenNights ?? nights : nights
 
@@ -211,7 +214,9 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
     try {
       // Demande sans paiement : l'équipe rappelle
       if (lead) {
-        const res = await postJson('/api/dc-thermes/reservation', { ...booking, funnel: 'lead' })
+        // Avec l'hôtel : dates, participants et chambre choisie (ou « hôtel souhaité » si aucune chambre n'est choisie)
+        const stay = pack ? { departureDate: departure, participants, hotel: true, ...(offer ? { roomRateUuid: offer.roomRateUuid } : {}) } : {}
+        const res = await postJson('/api/dc-thermes/reservation', { ...booking, ...stay, funnel: 'lead' })
         if (!res.ok) throw new Error(await res.text())
         setDone(true)
         window.scrollTo(0, 0)
@@ -277,8 +282,8 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
       <main className={bkMain}>
         <div className={bkIntro}>
           <Title as="h1" id="bk-title" em={b.em} caps={lead ? b.leadCaps : b.caps} />
-          <p className={bkIntroText}>{pack ? b.introRooms : room ? b.introPack : lead ? b.leadIntro : b.intro}</p>
-          {(!room || live) && <ol className={bkSteps} aria-label={b.stepsLabel}>
+          <p className={bkIntroText}>{pack ? (lead ? b.leadIntroRooms : b.introRooms) : room ? b.introPack : lead ? b.leadIntro : b.intro}</p>
+          {(!room || hotelFlow) && <ol className={bkSteps} aria-label={b.stepsLabel}>
             {(lead ? b.leadSteps : b.steps).map((step, i) => <li key={step} className={bkStep(i === (done ? 1 : 0))}>{step}</li>)}
           </ol>}
           {/* Demande envoyée : la confirmation prend la place du formulaire, juste sous les étapes */}
@@ -312,15 +317,15 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
                 <input className={pfInput({ inGroup: true })} id="bk-start" name="debut" type="date" required value={arrival} min={minDate} onChange={(e) => e.target.value && setArrival(e.target.value)} />
               </label>
               <div className={pf}>
-                <span className={pfLabel} id="bk-guests">{live ? b.curistes : ui.guests}</span>
+                <span className={pfLabel} id="bk-guests">{hotelFlow ? b.curistes : ui.guests}</span>
                 <div className={stepper(true)} role="group" aria-labelledby="bk-guests">
-                  <button className={stepperBtn} type="button" onClick={() => setGuests((g) => Math.max(1, g - 1))} disabled={guests <= 1} aria-label={live ? b.lessCuriste : ui.lessGuest}>−</button>
-                  <output className={stepperOut} aria-live="polite">{live ? b.curiste(guests) : ui.person(guests)}</output>
-                  <button className={stepperBtn} type="button" onClick={() => setGuests((g) => (live ? Math.min(MAX_CURISTES, g + 1) : g + 1))} disabled={live && guests >= MAX_CURISTES} aria-label={live ? b.moreCuriste : ui.moreGuest}>+</button>
+                  <button className={stepperBtn} type="button" onClick={() => setGuests((g) => Math.max(1, g - 1))} disabled={guests <= 1} aria-label={hotelFlow ? b.lessCuriste : ui.lessGuest}>−</button>
+                  <output className={stepperOut} aria-live="polite">{hotelFlow ? b.curiste(guests) : ui.person(guests)}</output>
+                  <button className={stepperBtn} type="button" onClick={() => setGuests((g) => (hotelFlow ? Math.min(MAX_CURISTES, g + 1) : g + 1))} disabled={hotelFlow && guests >= MAX_CURISTES} aria-label={hotelFlow ? b.moreCuriste : ui.moreGuest}>+</button>
                 </div>
               </div>
             </div>
-            {live && guests >= MAX_CURISTES && <p className="-mt-2 text-[0.875rem] text-muted">{b.curistesMax}</p>}
+            {hotelFlow && guests >= MAX_CURISTES && <p className="-mt-2 text-[0.875rem] text-muted">{b.curistesMax}</p>}
             {(!room || live) && !lead && <div className={choice()}>
               <label className={choiceItem({ on: !deposit, inGroup: true })}>
                 <input className={hiddenInput} type="radio" name="paiement" checked={!deposit} onChange={() => setDeposit(false)} />
@@ -337,12 +342,12 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
               <input className={hiddenInput} type="checkbox" checked={room} onChange={(e) => {
                 setRoom(e.target.checked)
                 // Par défaut, autant de personnes dans la chambre que de curistes (4 au plus)
-                if (e.target.checked && live) setParticipants(Math.min(guests, 4))
+                if (e.target.checked && hotelFlow) setParticipants(Math.min(guests, 4))
               }} />
               <span className={addonBox(room)} aria-hidden="true" />
               <span>
-                <span className={addonTitle}>{live ? b.stayTitle : b.roomTitle}</span>
-                <span className={addonMeta}>{live ? (room ? b.stayOn : b.stayOff) : room ? b.roomOn : b.roomOff}</span>
+                <span className={addonTitle}>{hotelFlow ? b.stayTitle : b.roomTitle}</span>
+                <span className={addonMeta}>{hotelFlow ? (room ? b.stayOn : b.stayOff) : room ? b.roomOn : b.roomOff}</span>
               </span>
             </label>
           </fieldset>
@@ -393,11 +398,11 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
                   ) : roomsState === 'error' ? (
                     <p className="text-ink" role="alert">{b.roomsError}</p>
                   ) : offers.length === 0 ? (
-                    <p className="text-muted" role="status">{b.roomsEmpty}</p>
+                    <p className="text-muted" role="status">{lead ? b.leadRoomsEmpty : b.roomsEmpty}</p>
                   ) : (
                     offers.map((o) => (
                       <label key={o.roomRateUuid} className={roomCard(o.roomRateUuid === roomRate)}>
-                        <input className={hiddenInput} type="radio" name="chambre" value={o.roomRateUuid} checked={o.roomRateUuid === roomRate} onChange={() => setRoomRate(o.roomRateUuid)} required />
+                        <input className={hiddenInput} type="radio" name="chambre" value={o.roomRateUuid} checked={o.roomRateUuid === roomRate} onChange={() => setRoomRate(o.roomRateUuid)} required={live} />
                         {/* La photo et le lien ouvrent la galerie (au-dessus du bouton radio, ils ne choisissent pas la chambre) */}
                         <button
                           type="button"
@@ -428,7 +433,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
             </fieldset>
           )}
 
-          {room && !live ? (
+          {room && !hotelFlow ? (
             <>
               <a className={cx(pill('dark', { block: true }), bkPay)} href={hotelUrl || undefined}>{ui.packCta}</a>
               <p className={bkSecure}><span className={lock} aria-hidden="true" />{ui.packTicketNote}</p>
@@ -452,7 +457,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
           </div>
 
           {error && <p className="px-1 text-[0.9375rem] text-ink" role="alert">{error}</p>}
-          <button className={cx(pill('dark', { block: true }), bkPay)} type="submit" disabled={sent || (pack && (!offer || !!stayError))}>
+          <button className={cx(pill('dark', { block: true }), bkPay)} type="submit" disabled={sent || (pack && (lead ? !!stayError : !offer || !!stayError))}>
             {lead ? (sent ? b.leadSending : b.leadSubmit) : sent ? b.sending : pack ? (offer && !stayError ? b.pay(mad(due)) : b.roomsPick) : b.pay(mad(now))}
           </button>
           {lead
@@ -480,7 +485,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
           <div className={bkCard()}>
             <p className={cx(ticketTitle, 'text-ink')}>{cure.name}</p>
             <p className={ticketSub}>{cure.days} {ui.days} · {cure.treatments} {ui.treatments} · {cure.hours} {ui.hoursShort} · {b.access}</p>
-            {live ? (
+            {hotelFlow ? (
               <>
                 <dl className={ticketRows}>
                   {plan && <div className={ticketRow()}><dt>{ui.arrival}</dt><dd>{longDate(plan.checkIn)}</dd></div>}
@@ -507,7 +512,12 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
                   )}
                 </dl>
                 {pack && !offer ? (
-                  <p className="text-[0.875rem] text-muted">{b.cartTotalLater}</p>
+                  <p className="text-[0.875rem] text-muted">{lead ? b.leadTotalLater : b.cartTotalLater}</p>
+                ) : lead ? (
+                  // Demande sans paiement : le total seulement, ni frais bancaires ni montant du jour
+                  <dl className={ticketRows}>
+                    <div className={ticketRow({ money: true, due: true })}><dt>{pack ? b.cartTotalStay : ui.total}</dt><dd>{mad(totalAll)}</dd></div>
+                  </dl>
                 ) : (
                   <dl className={ticketRows}>
                     <div className={ticketRow({ money: true })}><dt>{pack ? b.cartTotalStay : ui.total}</dt><dd>{mad(totalAll)}</dd></div>
@@ -534,11 +544,6 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
                 </dl>
                 <p className="text-[0.875rem] text-muted">{ui.packNote}</p>
               </>
-            ) : lead ? (
-            <dl className={ticketRows}>
-              <div className={ticketRow({ money: true })}><dt>{b.times(mad(cure.price), guests)}</dt><dd>{mad(total)}</dd></div>
-              <div className={ticketRow({ money: true, due: true })}><dt>{ui.total}</dt><dd>{mad(total)}</dd></div>
-            </dl>
             ) : (
             <dl className={ticketRows}>
               <div className={ticketRow({ money: true })}><dt>{b.times(mad(cure.price), guests)}</dt><dd>{mad(total)}</dd></div>

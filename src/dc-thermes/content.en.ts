@@ -186,7 +186,7 @@ export const programmes = Object.fromEntries(
 export const programme = {
   em: '',
   caps: 'The treatment journey',
-  sub: 'An escape, a journey through time. Protocols that bring together the hammam ritual, marine hydrotherapy, hands-on and beauty treatments, working in synergy to rebalance the body and release tension. Complete letting go, for body and mind alike.',
+  sub: 'An escape, a journey through time. Protocols that bring together the hammam ritual, marine hydrotherapy, hands-on and beauty treatments, working in synergy to rebalance the body and release tension. Each day includes a Bol d’Air Jacquier session, for optimal oxygenation of the body. Complete letting go, for body and mind alike.',
 }
 
 export const booking = {
@@ -359,6 +359,7 @@ export const ui = {
   packCta: 'Choose my room and see the price',
   packLive: 'Depends on the room',
   packNoteLive: 'At the next step, choose your room: live prices and availability, then secure CMI payment.',
+  packNoteLead: 'At the next step, choose your room: photos, prices and availability shown live. You then send your request, with no online payment: our team will call you back.',
   packCtaLive: 'Choose my room',
   packTicketNote: 'Your accommodation is booked together with your programme on Direct-Book, Dakhla Club’s official site · Booking confirmation by email',
   ticketNote: 'Secure CMI payment · Booking confirmation by email · Free cancellation up to 30 days before arrival',
@@ -487,6 +488,9 @@ export const bookingPage = {
   cartTotalStay: 'Total, programme and stay',
   cartTotalLater: 'The total appears as soon as you choose a room.',
   bankFee: 'Bank fees',
+  leadIntroRooms: 'Choose your programme, then your dates and your room at Dakhla Club Hotel & Spa: photos, prices and availability shown live. No payment at this stage: our team will call you to confirm your stay and arrange payment.',
+  leadRoomsEmpty: 'No room is available online for these dates and this number of people. Send your request anyway: our team will suggest a solution.',
+  leadTotalLater: 'Choose a room to see the total, or send your request: our team will suggest a room.',
   depositMetaStay: 'The balance is paid on arrival',
   balanceStay: 'Balance due on arrival',
   photosLink: (n: number) => `See the ${n} photos`,

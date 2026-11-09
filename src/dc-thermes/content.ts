@@ -256,7 +256,7 @@ export const programmes: Record<CureKey, ProgrammeDay[]> = {
 export const programme = {
   em: '',
   caps: 'Le parcours de soins',
-  sub: 'Une évasion, un voyage dans le temps. Des protocoles qui conjuguent et associent en synergie le rituel du hammam, l’hydrothérapie marine, les soins manuels et esthétiques pour rééquilibrer l’organisme et dénouer les tensions. Un lâcher-prise complet, pour le corps comme pour l’esprit.',
+  sub: 'Une évasion, un voyage dans le temps. Des protocoles qui conjuguent et associent en synergie le rituel du hammam, l’hydrothérapie marine, les soins manuels et esthétiques pour rééquilibrer l’organisme et dénouer les tensions. Chaque journée intègre une séance de Bol d’Air Jacquier, pour une oxygénation optimale de l’organisme. Un lâcher-prise complet, pour le corps comme pour l’esprit.',
 }
 
 export const booking = {
@@ -450,6 +450,7 @@ export const ui = {
   // /dc-thermes/paiement : la chambre se choisit sur la page de réservation, prix SiteMinder en direct, paiement CMI
   packLive: 'Selon la chambre',
   packNoteLive: 'À l’étape suivante, choisissez votre chambre : prix et disponibilités en direct, puis paiement sécurisé CMI.',
+  packNoteLead: 'À l’étape suivante, choisissez votre chambre : photos, prix et disponibilités en direct. Vous envoyez ensuite votre demande, sans paiement en ligne : notre équipe vous rappelle.',
   packCtaLive: 'Choisir ma chambre',
   packTicketNote: 'Votre hébergement est réservé en même temps que votre cure, sur Direct-Book, le site officiel du Dakhla Club · Confirmation de réservation par e-mail',
   ticketNote: 'Paiement sécurisé CMI · Confirmation de réservation par e-mail · Annulation sans frais jusqu’à 30 jours avant l’arrivée',
@@ -585,6 +586,10 @@ export const bookingPage = {
   cartTotalStay: 'Total cure et hébergement',
   cartTotalLater: 'Le total s’affiche dès que vous choisissez une chambre.',
   bankFee: 'Frais bancaires',
+  // /dc-thermes/contact/reservation : la même chambre, sans paiement, part avec la demande
+  leadIntroRooms: 'Choisissez votre cure, puis vos dates et votre chambre au Dakhla Club Hotel & Spa : photos, prix et disponibilités en direct. Aucun paiement à cette étape : notre équipe vous rappelle pour confirmer votre séjour et organiser le règlement.',
+  leadRoomsEmpty: 'Aucune chambre n’est disponible en ligne pour ces dates et ce nombre de participants. Envoyez quand même votre demande : notre équipe vous propose une solution.',
+  leadTotalLater: 'Choisissez une chambre pour voir le total, ou envoyez votre demande : notre équipe vous propose une chambre.',
   // Acompte avec l'hôtel : 50 % de la cure et de la chambre aujourd'hui, le reste à l'arrivée
   depositMetaStay: 'Le solde se règle à l’arrivée',
   balanceStay: 'Solde à régler à l’arrivée',

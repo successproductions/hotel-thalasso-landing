@@ -41,10 +41,10 @@ export async function POST(request: NextRequest) {
     const cure = CURES[data.cure];
     const guests = Number(data.numberOfPeople);
     const arrivalDate = /^\d{4}-\d{2}-\d{2}$/.test(data.arrivalDate) ? data.arrivalDate : '';
-    // With the hotel (/dc-thermes/paiement/reservation), the client chooses the departure and the people in the room
-    const stay = cmi && typeof data.roomRateUuid === 'string'
-      ? hotelStay(data.cure, arrivalDate, String(data.departureDate || ''), Number(data.participants))
-      : null;
+    // With the hotel (/dc-thermes/paiement and /dc-thermes/contact), the client chooses the departure and the people
+    // in the room. On the contact page the room itself is optional (hotel: true without roomRateUuid).
+    const wantsHotel = typeof data.roomRateUuid === 'string' || data.hotel === true;
+    const stay = wantsHotel ? hotelStay(data.cure, arrivalDate, String(data.departureDate || ''), Number(data.participants)) : null;
 
     const reservation = {
       source: cmi ? 'dc-thermes/paiement' : 'dc-thermes/contact',
@@ -78,21 +78,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: 'Missing or invalid fields' }, { status: 400 });
     }
 
-    if (cmi) {
-      // Cure + hotel: the team enters the room in SiteMinder (dates in the arrival and departure columns).
-      // Room and price come from SiteMinder here, not from the browser. numberOfPeople is the number of curistes,
-      // the room's own number of people (participants) is written with it.
-      let room = 'Sans hébergement';
-      let roomPrice = '';
-      if (typeof data.roomRateUuid === 'string') {
-        const offer = stay && (await roomOffers(stay).catch(() => [])).find((o) => o.roomRateUuid === data.roomRateUuid);
-        const people = stay ? ` · ${stay.guests} participant${stay.guests > 1 ? 's' : ''}` : '';
-        room = offer ? `${offer.room} · ${offer.plan}${people}` : `Chambre non confirmée par SiteMinder (${text(data.roomRateUuid, 60)})${people}`;
-        roomPrice = offer ? String(offer.gross) : '';
-      }
-      // Their own columns in the "DC Thermes Paiement" tab (the Apps Script adds a missing column on the right)
-      Object.assign(reservation, { room, roomPrice });
+    // Cure + hotel, both tabs: the team enters the room in SiteMinder (Public Rate, dates in the arrival and departure
+    // columns). Room and price come from SiteMinder here, not from the browser. numberOfPeople is the number of
+    // curistes; participants, the people in the room. Each has its own column (the Apps Script adds a missing one).
+    let room = 'Sans hébergement';
+    let roomPrice = '';
+    if (typeof data.roomRateUuid === 'string') {
+      const offer = stay && (await roomOffers(stay).catch(() => [])).find((o) => o.roomRateUuid === data.roomRateUuid);
+      room = offer ? offer.room : `Chambre non confirmée par SiteMinder (${text(data.roomRateUuid, 60)})`;
+      roomPrice = offer ? String(offer.gross) : '';
+    } else if (wantsHotel) {
+      room = 'Hôtel souhaité, chambre à choisir avec l’équipe';
     }
+    Object.assign(reservation, { room, participants: stay ? String(stay.guests) : '', roomPrice });
 
     if (GOOGLE_APPS_SCRIPT_URL) {
       try {

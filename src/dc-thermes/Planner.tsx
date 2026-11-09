@@ -46,6 +46,9 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
   const cure = cures.find((c) => c.key === cureKey) || cures[1]
   const lead = funnel === 'lead'
   const live = funnel === 'cmi'
+  // /dc-thermes/paiement et /dc-thermes/contact : la chambre se choisit sur la page de réservation (chambres SiteMinder),
+  // sans passer par Direct-Book ; sur /dc-thermes, Direct-Book
+  const hotelFlow = live || lead
   const { total, base, fee, now, balance } = amounts(cure.price, guests, deposit && !lead, site.cmiFee)
   const nights = site.nights(cure.days)
 
@@ -141,10 +144,10 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
         {room ? (
           <>
             <dl className={ticketRows}>
-              <div className={ticketRow({ money: true })}><dt>{ui.packRow(nights)}</dt><dd>{live ? ui.packLive : ui.packPrice}</dd></div>
+              <div className={ticketRow({ money: true })}><dt>{ui.packRow(nights)}</dt><dd>{hotelFlow ? ui.packLive : ui.packPrice}</dd></div>
             </dl>
-            <p className="text-[0.875rem] text-muted">{live ? ui.packNoteLive : ui.packNote}</p>
-            {live
+            <p className="text-[0.875rem] text-muted">{live ? ui.packNoteLive : lead ? ui.packNoteLead : ui.packNote}</p>
+            {hotelFlow
               ? <a className={pill('dark', { block: true })} href={bookingHref(funnel, t.lang, { cure: cure.key, debut: arrival, curistes: String(guests), paiement: 'total', chambre: '1' })}>{ui.packCtaLive}</a>
               : <a className={pill('dark', { block: true })} href={hotelUrl || undefined}>{ui.packCta}</a>}
           </>
@@ -164,7 +167,7 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
         </a>
           </>
         )}
-        <p className="text-[0.8125rem] text-soft">{room && !live ? ui.packTicketNote : lead ? ui.leadTicketNote : ui.ticketNote}</p>
+        <p className="text-[0.8125rem] text-soft">{room && !hotelFlow ? ui.packTicketNote : lead ? ui.leadTicketNote : ui.ticketNote}</p>
       </aside>
     </div>
   )
