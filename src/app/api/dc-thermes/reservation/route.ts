@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { upsertBrevoContact } from '@/lib/brevo';
 import { hotelStay, roomOffers } from '@/lib/siteminder';
+import { cures } from '@/dc-thermes/content';
 
 // Saves the bookings of the two /dc-thermes versions, then creates the contact in Brevo:
 // - /dc-thermes/paiement (funnel "cmi"): saved before CMI with status "En attente",
@@ -90,7 +91,18 @@ export async function POST(request: NextRequest) {
     } else if (wantsHotel) {
       room = 'Hôtel souhaité, chambre à choisir avec l’équipe';
     }
-    Object.assign(reservation, { room, participants: stay ? String(stay.guests) : '', roomPrice });
+    // Prices without the bank fees, as on the cart's "Total" line: the pack is the cure × the curistes (prices of the
+    // page, never taken from the browser), the total adds the room. Total left empty while the room price is unknown.
+    const curePrice = cures.find((c) => c.key === data.cure)?.price || 0;
+    const packPrice = curePrice * Number(reservation.numberOfPeople);
+    const totalPrice = wantsHotel && !roomPrice ? '' : String(packPrice + Number(roomPrice || 0));
+    Object.assign(reservation, {
+      room,
+      participants: stay ? String(stay.guests) : '',
+      roomPrice,
+      packPrice: packPrice ? String(packPrice) : '',
+      totalPrice,
+    });
 
     if (GOOGLE_APPS_SCRIPT_URL) {
       try {
