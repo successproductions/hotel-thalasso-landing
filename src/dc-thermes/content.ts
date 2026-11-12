@@ -654,11 +654,6 @@ export const confirmPage = {
   em: 'Merci',
   caps: 'Votre cure est réservée',
   intro: (firstName: string) => `${firstName ? `${firstName}, votre` : 'Votre'} paiement est confirmé. Nous avons hâte de vous accueillir aux thermes.`,
-  // Le paiement CMI règle la cure seule : l'hébergement se réserve ensuite sur Direct-Book
-  hotelTitle: 'Prolongez votre expérience à Dakhla',
-  hotelText: 'Votre cure est confirmée. Pour profiter pleinement de votre escapade bien-être, choisissez dès maintenant votre hébergement au Dakhla Club Hotel & Spa.',
-  hotelDates: 'Arrivée la veille du premier soin, départ le lendemain du dernier : ces dates sont déjà choisies sur Direct-Book.',
-  hotelCta: 'Découvrir les hébergements',
   nextTitle: 'Et maintenant ?',
   next: ['Un e-mail de confirmation vous a été envoyé, avec votre référence.', 'Une conseillère vous appelle avant votre arrivée pour préparer votre cure.'],
   balanceNext: (amount: string) => `Le solde de ${amount} se règle aux thermes, à l’arrivée.`,
