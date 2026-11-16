@@ -665,3 +665,67 @@ export const confirmPage = {
   failIntro: `Le paiement n’a pas été validé : votre cure n’est pas encore réservée. Vous pouvez réessayer, avec la même carte ou une autre, ou nous appeler au ${site.phone}.`,
   retry: 'Réessayer le paiement',
 }
+
+// Assistant des pages /dc-thermes/paiement et /dc-thermes/contact (ChatBot.tsx) : le parcours de l'assistant de /evasion,
+// aux prix de cette page (cures ci-dessus). Les réponses suivent des boutons, sans saisie libre.
+export const chat = {
+  open: 'Ouvrir l’assistant DC Luxury Thermes',
+  close: 'Fermer l’assistant',
+  title: 'Assistant',
+  subtitle: 'DC Luxury Thermes',
+  typing: 'L’assistant écrit…',
+  newMessage: 'Un nouveau message',
+  welcome: 'Bienvenue aux DC Luxury Thermes. Des cures conçues pour relâcher, régénérer et transformer le corps et l’esprit.\nDites-moi ce que vous souhaitez faire, je vous guide.',
+  relance: 'Je me permets de revenir vers vous.\nVous avez consulté nos cures au Dakhla Club, mais vous n’avez pas encore finalisé votre réservation.\nSi vous hésitez entre plusieurs programmes ou si vous avez une question, je suis là pour vous aider à faire le bon choix, simplement.',
+  programs: 'Découvrir les programmes',
+  prices: 'Voir les tarifs',
+  faqLabel: 'Questions fréquentes',
+  book: 'Réserver mon séjour',
+  programsText: 'Nous avons conçu trois cures, selon le temps dont vous disposez et le niveau de transformation recherché.\nSélectionnez celle qui vous correspond le plus :',
+  cureLabel: (name: string, days: number) => `${name} · ${days} jours`,
+  menu: 'Retour au menu',
+  backPrograms: 'Retour aux programmes',
+  choose: 'Souhaitez-vous que je vous accompagne jusqu’à la réservation ou vous envoyer les informations détaillées sur nos cures ?',
+  getWhatsapp: 'Recevoir les infos par WhatsApp',
+  seeDetails: 'Voir les détails maintenant',
+  details: {
+    vitalite: {
+      intro: 'Idéal si vous manquez de temps mais ressentez le besoin de souffler, dénouer les tensions et relancer votre énergie.',
+      results: ['Corps détendu', 'Esprit apaisé', 'Sensation de légèreté immédiate'],
+      care: 'Bol d’Air Jacquier, piscine thermale, hammam, massage relaxant, enveloppement aux algues, bain magnésium, cupping et serviette de feu…',
+    },
+    regeneration: {
+      intro: 'Une cure progressive pour défatiguer en profondeur, relancer les fonctions vitales et retrouver un équilibre durable.',
+      results: ['Récupération physique complète', 'Stress fortement réduit', 'Énergie plus stable au quotidien'],
+      care: 'Morning Flow, ice bath, massages détox, gommage au sel de l’Himalaya, spiruline, bain magnésium, cupping et serviette de feu…',
+    },
+    renaissance: {
+      intro: 'Une immersion complète pour remettre les compteurs à zéro. Ici, on ne fait pas une pause : on se transforme.',
+      results: ['Corps régénéré', 'Énergie renouvelée', 'Clarté mentale et ancrage durable'],
+      care: 'Coaching sportif, Morning Flow, marche méditative marine, massages ciblés, ice bath, soins du visage, spiruline, bains thérapeutiques…',
+    },
+  } as Record<CureKey, { intro: string; results: string[]; care: string }>,
+  resultsTitle: 'Résultat recherché',
+  careTitle: (n: number) => `${n} soins inclus, dont`,
+  bookThis: 'Réserver cette cure',
+  advisor: 'Être conseillé(e)',
+  pricesText: 'Voici les tarifs de nos cures, par personne :',
+  pricesNote: 'Les soins et l’accès aux thermes sont inclus. Vous pouvez ajouter une chambre au Dakhla Club Hotel & Spa à l’étape de réservation : photos, prix et disponibilités en direct.',
+  bookNow: 'Réserver maintenant',
+  talk: 'Parler à un conseiller',
+  faq: [
+    ['Qu’est-ce qu’une cure aux DC Luxury Thermes ?', 'Une expérience complète combinant eau de mer, soins marins et accompagnement bien-être pour relancer le corps et apaiser l’esprit.'],
+    ['Quelle durée choisir ?', '3 jours pour décompresser, 5 jours pour récupérer en profondeur, 7 jours pour une transformation globale.'],
+    ['En combien de temps puis-je ressentir les effets du programme ?', 'Certain(e)s client(e)s perçoivent un apaisement dès les premiers jours, notamment grâce au cadre, aux soins et au rythme du séjour. Le programme est conçu pour accompagner progressivement la détente et la récupération tout au long de votre expérience.'],
+  ] as [string, string][],
+  howToBook: 'Comment réserver ?',
+  // /dc-thermes/paiement : paiement CMI ; /dc-thermes/contact : demande sans paiement, l'équipe rappelle
+  howToBookAnswer: {
+    cmi: 'Choisissez votre programme et vos dates, ajoutez une chambre si vous le souhaitez, puis réglez en ligne sur la plateforme sécurisée CMI. Vous recevez aussitôt votre confirmation.',
+    lead: 'Choisissez votre programme et vos dates, ajoutez une chambre si vous le souhaitez, puis envoyez votre demande, sans paiement en ligne : notre équipe vous rappelle pour confirmer votre séjour.',
+  },
+  toBooking: 'Je vous emmène au formulaire de réservation.',
+  toWhatsapp: 'Je vous ouvre WhatsApp.',
+  whatsappCure: (name: string, days: number) => `Bonjour, je suis intéressé(e) par la cure ${name} ${days} jours. Pouvez-vous m’envoyer plus d’informations ?`,
+  whatsappAdvisor: 'Bonjour, je souhaite être conseillé(e) pour une cure aux DC Luxury Thermes.',
+}

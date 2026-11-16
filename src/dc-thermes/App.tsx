@@ -8,6 +8,7 @@ import { useGSAP } from '@gsap/react'
 import Planner from './Planner'
 import Programme from './Programme'
 import Reviews from './Reviews'
+import { ChatBot } from './ChatBot'
 import { Title } from './Title'
 import { useSmoothScroll, scrollToId } from './motion'
 import { packs, LangContext, number } from './i18n'
@@ -535,6 +536,18 @@ export default function App({ lang = 'fr', funnel = 'main' }: { lang?: Lang; fun
         {ui.mobileNav.map(([id, label]) => <a key={id} className="p-2.5 text-[0.875rem] no-underline text-ink rounded-full whitespace-nowrap active:bg-panel" href={`#${id}`} onClick={go(id)}>{label}</a>)}
         <a className={cx(pill('dark', { small: true }), 'ml-auto')} href="#reserver" onClick={go('reserver')}>{ui.book}</a>
       </nav>
+
+      {/* Assistant sur /dc-thermes/paiement et /dc-thermes/contact : « Réserver » choisit la cure du formulaire et y descend */}
+      {funnel !== 'main' && (
+        <ChatBot
+          t={t}
+          funnel={funnel}
+          onBook={(key) => {
+            if (key) setBookKey(key)
+            scrollToId('reserver')
+          }}
+        />
+      )}
     </div>
     </LangContext.Provider>
   )
