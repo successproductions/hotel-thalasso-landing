@@ -8,12 +8,12 @@ const mail = (subject: string) => 'mailto:reservation@dakhlaclub.com?subject=' +
 
 export const site = {
   url: 'https://offer.dakhlaclub.com/dc-thermes',
-  // À CONFIRMER : la proposition de copywriting donne le +212 6 63 68 04 25. Pour en changer, modifier phone, tel et whatsappNumber.
+  // Un seul numéro partout (texte, appel, WhatsApp, données Google) : pour en changer, modifier phone, tel, contactLink et whatsappNumber.
   phone: '+212 663 680 425',
-  tel: 'tel:+212652881921',
+  tel: 'tel:+212663680425',
   email: 'reservation@dakhlaclub.com',
   contactMail: mail('Cures DC Luxury Thermes : une question'),
-  contactLink: 'https://wa.me/212652881921',
+  contactLink: 'https://wa.me/212663680425',
   giftMail: mail('Bon cadeau DC Luxury Thermes'),
   // Repris du pied de page du site actuel
   brochure: 'https://offer.dakhlaclub.com/brochure/BROCHURE_CH_NUMERIQUE_FR_compressed.pdf',
@@ -33,7 +33,7 @@ export const site = {
   cmiFee: 0.0297, // frais de transaction CMI ajoutés au paiement en ligne, comme sur les paniers des cures
   // Page « Offrir » : la demande part par e-mail à l'équipe, ou par WhatsApp
   giftPage: (q: Record<string, string> = {}) => '/dc-thermes/offrir' + (Object.keys(q).length ? '?' + new URLSearchParams(q).toString() : ''),
-  whatsappNumber: '212652881921',
+  whatsappNumber: '212663680425',
   // À BRANCHER (facultatif) : adresse d'un service d'envoi de formulaire. Vide = la messagerie du visiteur s'ouvre.
   giftEndpoint: '',
 }
@@ -119,6 +119,10 @@ export const benefits = {
   alt: 'Vue aérienne du Dakhla Club : la piscine, les bungalows et la lagune de Dakhla au pied des dunes',
 }
 
+// Prix en euros, à titre indicatif : estimation à 10,8 MAD pour 1 €, arrondie à l’euro (le paiement se fait en MAD)
+const EUR_RATE = 10.8
+const eur = (mad: number) => Math.round(mad / EUR_RATE)
+
 export const cures: Cure[] = [
   {
     key: 'vitalite',
@@ -131,7 +135,7 @@ export const cures: Cure[] = [
     promise: 'Une première escapade pour respirer et prendre soin de soi.',
     includes: ['Hammam Secret du Désert', 'Enveloppement aux algues marines', 'Massage du visage à l’huile d’argan', 'Accès libre aux thermes'],
     price: 4950,
-    euro: 495,
+    euro: eur(4950),
     img: '/images/dc-thermes/cure-vitalite.webp',
     alt: 'Un curiste détendu dans le salon de pierre des thermes',
     imgPos: '50% 40%',
@@ -147,7 +151,7 @@ export const cures: Cure[] = [
     promise: 'Une pause réparatrice pour se poser et récupérer en douceur.',
     includes: ['Hammam des Mille et Une Nuits', 'Gommage et massage au sel de l’Himalaya', 'Massage aux pochons chauds', 'Accès libre aux thermes'],
     price: 9270,
-    euro: 927,
+    euro: eur(9270),
     label: 'La plus choisie', // À CONFIRMER
     img: '/images/dc-thermes/cure-regeneration.webp',
     alt: 'Une curiste en peignoir au bord de la piscine thermale',
@@ -164,7 +168,7 @@ export const cures: Cure[] = [
     promise: 'Une coupure complète pour lâcher prise et se retrouver.',
     includes: ['Hammam, gommage et massage au sel', 'Sauna et bain froid', 'Deux soins du visage, argan et spiruline', 'Accès libre aux thermes'],
     price: 10620,
-    euro: 1062,
+    euro: eur(10620),
     img: '/images/dc-thermes/cure-renaissance.webp',
     alt: 'Deux curistes en peignoir au salon de repos, autour d’un thé',
     imgPos: '50% 50%',
@@ -314,7 +318,7 @@ export const faq: Faq = {
       'À toute personne qui souhaite s’accorder une pause : fatigue persistante, sommeil moins réparateur, tensions accumulées, ou simplement l’envie de prendre du temps pour soi. Les soins sont accessibles à partir de 18 ans.',
     ]],
     ['Puis-je séjourner à l’hôtel pendant ma cure ?', [
-      'Oui, c’est la formule que nous recommandons. Le centre se trouve au sein du Dakhla Club Hotel & Spa, à cent mètres du rivage. Six hébergements, de la chambre Medina à la villa privée, vous sont proposés en pension complète, avec le transfert depuis l’aéroport de Dakhla. Si vous logez ailleurs, une navette assure chaque jour le trajet.',
+      'Oui, c’est la formule que nous recommandons. Le centre se trouve au sein du Dakhla Club Hotel & Spa, à cent mètres du rivage. De la chambre Medina à la villa privée, tous nos hébergements vous sont proposés en pension complète, avec le transfert depuis l’aéroport de Dakhla. Si vous logez ailleurs, une navette assure chaque jour le trajet.',
     ]],
     ['Comment se déroulent la réservation et le paiement ?', [
       'Vous choisissez votre cure, vos dates et votre formule, puis réglez en ligne, en totalité ou par un acompte de 50 %. La confirmation de réservation vous est adressée par e-mail, et une conseillère vous contacte pour préparer votre arrivée. L’annulation est sans frais jusqu’à 30 jours avant l’arrivée.',
@@ -330,7 +334,7 @@ export const faq: Faq = {
       'Un certificat médical de non-contre-indication est recommandé. Les cures sont déconseillées pendant la grossesse. Signalez-nous tout problème de santé lors de la réservation.',
     ]],
     ['Quelles sont les conditions d’annulation ?', [
-      'Annulation sans frais jusqu’à 30 jours avant l’arrivée ; au-delà, l’acompte n’est pas remboursé. Modifications possibles jusqu’à 30 jours avant l’arrivée.',
+      'Annulation sans frais jusqu’à 30 jours avant l’arrivée ; au-delà, le montant réglé, acompte ou totalité, n’est pas remboursé. Modifications possibles jusqu’à 30 jours avant l’arrivée.',
     ]],
     ['Où se trouve Dakhla et comment s’y rendre ?', [
       'Au sud du Maroc, sur la côte atlantique. Des vols directs relient Dakhla à Casablanca, Rabat, Marrakech, Agadir, Laâyoune, Paris-Orly et Las Palmas, ainsi qu’à Marseille et Madrid d’octobre à mars.',

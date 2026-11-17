@@ -243,7 +243,7 @@ export const faq: Faq = {
       'Anyone who wants to take a break: persistent fatigue, less restful sleep, built-up tension, or simply the wish to take time for yourself. Treatments are open to anyone aged 18 and over.',
     ]],
     ['Can I stay at the hotel during my programme?', [
-      'Yes, and it is the option we recommend. The centre is located within Dakhla Club Hotel & Spa, a hundred metres from the shore. Six types of accommodation, from the Medina room to the private villa, are offered on a full-board basis, with transfer from Dakhla airport. If you stay elsewhere, a shuttle runs every day.',
+      'Yes, and it is the option we recommend. The centre is located within Dakhla Club Hotel & Spa, a hundred metres from the shore. From the Medina room to the private villa, all our accommodation is offered on a full-board basis, with transfer from Dakhla airport. If you stay elsewhere, a shuttle runs every day.',
     ]],
     ['How do booking and payment work?', [
       'You choose your programme, your dates and your option, then pay online, in full or with a 50% deposit. Your booking confirmation is sent by email, and an advisor contacts you to prepare your arrival. Cancellation is free up to 30 days before arrival.',
@@ -259,7 +259,7 @@ export const faq: Faq = {
       'A medical certificate confirming there is no contraindication is recommended. The programmes are not advised during pregnancy. Please tell us about any health issue when you book.',
     ]],
     ['What are the cancellation terms?', [
-      'Free cancellation up to 30 days before arrival; after that, the deposit is not refunded. Changes are possible up to 30 days before arrival.',
+      'Free cancellation up to 30 days before arrival; after that, the amount paid, whether the deposit or the full price, is not refunded. Changes are possible up to 30 days before arrival.',
     ]],
     ['Where is Dakhla and how do I get there?', [
       'In southern Morocco, on the Atlantic coast. Direct flights connect Dakhla with Casablanca, Rabat, Marrakech, Agadir, Laâyoune, Paris-Orly and Las Palmas, as well as Marseille and Madrid from October to March.',

@@ -108,18 +108,20 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
           </label>
         </fieldset>
 
-        {!room && !lead && <fieldset className={pf}>
+        {/* Sur /dc-thermes/paiement, le choix reste avec l'hôtel : l'acompte de 50 % vaut aussi pour la chambre (page de réservation).
+            Sur /dc-thermes, la chambre se règle sur Direct-Book, sans acompte ; sur /dc-thermes/contact, pas de paiement. */}
+        {(!room || live) && !lead && <fieldset className={pf}>
           <legend className={pfLabel}>{ui.payment}</legend>
           <div className={choice()}>
             <label className={choiceItem({ on: !deposit })}>
               <input className={hiddenInput} type="radio" name="deposit" checked={!deposit} onChange={() => setDeposit(false)} />
               <span className={choiceTitle}>{ui.full}</span>
-              <span className={choiceMeta}>{ui.fullMeta}</span>
+              {!room && <span className={choiceMeta}>{ui.fullMeta}</span>}
             </label>
             <label className={choiceItem({ on: deposit })}>
               <input className={hiddenInput} type="radio" name="deposit" checked={deposit} onChange={() => setDeposit(true)} />
               <span className={choiceTitle}>{ui.deposit}</span>
-              <span className={choiceMeta}>{ui.depositMeta}</span>
+              <span className={choiceMeta}>{room ? t.bookingPage.depositMetaStay : ui.depositMeta}</span>
             </label>
           </div>
         </fieldset>}
@@ -148,7 +150,7 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
             </dl>
             <p className="text-[0.875rem] text-muted">{live ? ui.packNoteLive : lead ? ui.packNoteLead : ui.packNote}</p>
             {hotelFlow
-              ? <a className={pill('dark', { block: true })} href={bookingHref(funnel, t.lang, { cure: cure.key, debut: arrival, curistes: String(guests), paiement: 'total', chambre: '1' })}>{ui.packCtaLive}</a>
+              ? <a className={pill('dark', { block: true })} href={bookingHref(funnel, t.lang, { cure: cure.key, debut: arrival, curistes: String(guests), paiement: live && deposit ? 'acompte' : 'total', chambre: '1' })}>{ui.packCtaLive}</a>
               : <a className={pill('dark', { block: true })} href={hotelUrl || undefined}>{ui.packCta}</a>}
           </>
         ) : (
