@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { FormEvent } from 'react'
-import { packs, money, longDate as ld, shortDate } from './i18n'
+import { packs, money, euros, longDate as ld, shortDate } from './i18n'
 import { Title } from './Title'
 import { WhatsAppHelp } from './WhatsAppHelp'
 import { cx, pill, arrow, logo } from './ui'
@@ -13,7 +13,7 @@ import { PhoneField } from './PhoneField'
 import { RoomGallery } from './RoomGallery'
 import { orderStorageKey } from './order'
 import type { ConfirmedOrder } from './order'
-import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem } from './forms'
+import { pf, pfRow, pfLabel, pfOptional, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow, ticketEuro, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkForm, bkGroup, bkLegend, bkPay, bkSecure, lock, bkSummary, bkCard, bkTrust, bkTrustItem } from './forms'
 
 // Page de réservation : dernière étape avant le paiement CMI.
 // Reprend les champs des paniers des cures (nom, e-mail, téléphone, date, personnes, CGV, offres)
@@ -59,6 +59,8 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
   const t = packs[lang]
   const { cures, site, ui, bookingPage: b } = t
   const mad = (n: number) => money(t, n)
+  // Montant en MAD, puis son équivalent en euros dessous (taux fixe site.eurRate). due : la grande ligne « à régler aujourd'hui »
+  const both = (n: number, due?: boolean) => <>{mad(n)}<span className={ticketEuro(due)}>{euros(t, n)}</span></>
   const longDate = (d: Date) => ld(t, d)
   const [cureKey, setCureKey] = useState<CureKey>('regeneration')
   const [arrival, setArrival] = useState('')
@@ -424,7 +426,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
                             </button>
                           )}
                         </span>
-                        <span className="text-right text-[1.125rem] whitespace-nowrap max-sm:col-start-2 max-sm:text-left">{mad(o.gross)}</span>
+                        <span className="text-right text-[1.125rem] whitespace-nowrap max-sm:col-start-2 max-sm:text-left">{both(o.gross)}</span>
                       </label>
                     ))
                   )}
@@ -471,7 +473,7 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
           <RoomGallery
             room={gallery.room}
             meta={[gallery.size, b.roomsIncl(stayNights)].filter(Boolean).join(' · ')}
-            price={mad(gallery.gross)}
+            price={`${mad(gallery.gross)} · ${euros(t, gallery.gross)}`}
             photos={gallery.photos}
             chosen={gallery.roomRateUuid === roomRate}
             b={b}
@@ -495,14 +497,14 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
                 </dl>
                 {/* Panier : la cure, puis l'hébergement (ou « Sans hébergement »), puis total, frais bancaires et montant du jour */}
                 <dl className={ticketRows}>
-                  <div className={ticketRow({ money: true })}><dt><span className="block text-ink">{cure.name} · {b.curiste(guests)}</span></dt><dd>{mad(total)}</dd></div>
+                  <div className={ticketRow({ money: true })}><dt><span className="block text-ink">{cure.name} · {b.curiste(guests)}</span></dt><dd>{both(total)}</dd></div>
                   {pack ? (
                     <div className={ticketRow({ money: true })}>
                       <dt>
                         <span className="block text-ink">{offer ? offer.room : b.cartStayPick} · {b.participant(participants)}</span>
                         {!stayError && <span className="block">{stayText}</span>}
                       </dt>
-                      <dd>{offer ? mad(offer.gross) : b.cartStayPickPrice}</dd>
+                      <dd>{offer ? both(offer.gross) : b.cartStayPickPrice}</dd>
                     </div>
                   ) : (
                     <div className={ticketRow({ money: true })}>
@@ -516,15 +518,15 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
                 ) : lead ? (
                   // Demande sans paiement : le total seulement, ni frais bancaires ni montant du jour
                   <dl className={ticketRows}>
-                    <div className={ticketRow({ money: true, due: true })}><dt>{pack ? b.cartTotalStay : ui.total}</dt><dd>{mad(totalAll)}</dd></div>
+                    <div className={ticketRow({ money: true, due: true })}><dt>{pack ? b.cartTotalStay : ui.total}</dt><dd>{both(totalAll, true)}</dd></div>
                   </dl>
                 ) : (
                   <dl className={ticketRows}>
-                    <div className={ticketRow({ money: true })}><dt>{pack ? b.cartTotalStay : ui.total}</dt><dd>{mad(totalAll)}</dd></div>
-                    {payDeposit && <div className={ticketRow({ money: true })}><dt>{ui.depositLine}</dt><dd>{mad(baseAll)}</dd></div>}
-                    <div className={ticketRow({ money: true })}><dt>{b.bankFee}</dt><dd>{mad(feeAll)}</dd></div>
-                    <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{mad(due)}</dd></div>
-                    {payDeposit && <div className={ticketRow({ money: true })}><dt>{pack ? b.balanceStay : ui.balance}</dt><dd>{mad(balanceAll)}</dd></div>}
+                    <div className={ticketRow({ money: true })}><dt>{pack ? b.cartTotalStay : ui.total}</dt><dd>{both(totalAll)}</dd></div>
+                    {payDeposit && <div className={ticketRow({ money: true })}><dt>{ui.depositLine}</dt><dd>{both(baseAll)}</dd></div>}
+                    <div className={ticketRow({ money: true })}><dt>{b.bankFee}</dt><dd>{both(feeAll)}</dd></div>
+                    <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{both(due, true)}</dd></div>
+                    {payDeposit && <div className={ticketRow({ money: true })}><dt>{pack ? b.balanceStay : ui.balance}</dt><dd>{both(balanceAll)}</dd></div>}
                   </dl>
                 )}
               </>
@@ -546,11 +548,11 @@ export default function Booking({ funnel = 'main' }: { funnel?: Funnel }) {
               </>
             ) : (
             <dl className={ticketRows}>
-              <div className={ticketRow({ money: true })}><dt>{b.times(mad(cure.price), guests)}</dt><dd>{mad(total)}</dd></div>
-              {deposit && <div className={ticketRow({ money: true })}><dt>{ui.depositLine}</dt><dd>{mad(base)}</dd></div>}
-              <div className={ticketRow({ money: true })}><dt>{ui.fee}</dt><dd>{mad(fee)}</dd></div>
-              <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{mad(now)}</dd></div>
-              {deposit && <div className={ticketRow({ money: true })}><dt>{ui.balance}</dt><dd>{mad(balance)}</dd></div>}
+              <div className={ticketRow({ money: true })}><dt>{b.times(mad(cure.price), guests)}</dt><dd>{both(total)}</dd></div>
+              {deposit && <div className={ticketRow({ money: true })}><dt>{ui.depositLine}</dt><dd>{both(base)}</dd></div>}
+              <div className={ticketRow({ money: true })}><dt>{ui.fee}</dt><dd>{both(fee)}</dd></div>
+              <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{both(now, true)}</dd></div>
+              {deposit && <div className={ticketRow({ money: true })}><dt>{ui.balance}</dt><dd>{both(balance)}</dd></div>}
             </dl>
             )}
             </>

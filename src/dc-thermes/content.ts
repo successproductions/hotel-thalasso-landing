@@ -31,6 +31,8 @@ export const site = {
   hotel: ({ checkIn, checkOut, adults }: HotelQuery) =>
     `https://direct-book.com/properties/DakhlaClubDIRECT?locale=fr&currency=MAD${checkIn && checkOut ? `&checkInDate=${checkIn}&checkOutDate=${checkOut}` : ''}&trackPage=yes&selected=0&items[0][adults]=${adults}&items[0][children]=0&items[0][infants]=0`,
   cmiFee: 0.0297, // frais de transaction CMI ajoutés au paiement en ligne, comme sur les paniers des cures
+  // Taux fixe des montants affichés en euros (prix des cures, « À régler aujourd'hui ») : 1 € = 10,80 MAD. Le paiement se fait en MAD.
+  eurRate: 10.8,
   // Page « Offrir » : la demande part par e-mail à l'équipe, ou par WhatsApp
   giftPage: (q: Record<string, string> = {}) => '/dc-thermes/offrir' + (Object.keys(q).length ? '?' + new URLSearchParams(q).toString() : ''),
   whatsappNumber: '212663680425',
@@ -119,9 +121,8 @@ export const benefits = {
   alt: 'Vue aérienne du Dakhla Club : la piscine, les bungalows et la lagune de Dakhla au pied des dunes',
 }
 
-// Prix en euros, à titre indicatif : estimation à 10,8 MAD pour 1 €, arrondie à l’euro (le paiement se fait en MAD)
-const EUR_RATE = 10.8
-const eur = (mad: number) => Math.round(mad / EUR_RATE)
+// Prix en euros, au taux fixe de site.eurRate, arrondis à l’euro
+const eur = (mad: number) => Math.round(mad / site.eurRate)
 
 export const cures: Cure[] = [
   {

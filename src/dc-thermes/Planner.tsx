@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useT, money, longDate as ld } from './i18n'
+import { useT, money, euros, longDate as ld } from './i18n'
 import { pill } from './ui'
 import { amounts, bookingHref } from './funnel'
 import type { CureKey, Funnel } from './types'
-import { pf, pfRow, pfLabel, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow } from './forms'
+import { pf, pfRow, pfLabel, pfInput, choice, choiceItem, hiddenInput, choiceTitle, choiceMeta, stepper, stepperBtn, stepperOut, addon, addonBox, addonTitle, addonMeta, ticketTitle, ticketSub, ticketRows, ticketRow, ticketEuro } from './forms'
 
 // Le composeur de cure : cure, date d'arrivée, nombre de curistes, acompte ou totalité, chambre en option.
 // Il calcule les dates de soins et ce qui est réglé aujourd'hui puis à l'arrivée.
@@ -28,6 +28,8 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
   const t = useT()
   const { cures, site, ui } = t
   const mad = (n: number) => money(t, n)
+  // Montant en MAD, puis son équivalent en euros dessous (taux fixe site.eurRate). due : la grande ligne « à régler aujourd'hui »
+  const both = (n: number, due?: boolean) => <>{mad(n)}<span className={ticketEuro(due)}>{euros(t, n)}</span></>
   const longDate = (d: Date) => ld(t, d)
   const [arrival, setArrival] = useState('')
   const [minDate, setMinDate] = useState('')
@@ -156,12 +158,12 @@ export default function Planner({ cureKey, onCureChange, funnel }: PlannerProps)
         ) : (
           <>
         <dl className={ticketRows}>
-          <div className={ticketRow({ money: true, due: lead })}><dt>{ui.total}</dt><dd>{mad(total)}</dd></div>
+          <div className={ticketRow({ money: true, due: lead })}><dt>{ui.total}</dt><dd>{both(total, lead)}</dd></div>
           {!lead && <>
-          {deposit && <div className={ticketRow({ money: true })}><dt>{ui.balance}</dt><dd>{mad(balance)}</dd></div>}
-          {deposit && <div className={ticketRow({ money: true })}><dt>{ui.depositLine}</dt><dd>{mad(base)}</dd></div>}
-          <div className={ticketRow({ money: true })}><dt>{ui.fee}</dt><dd>{mad(fee)}</dd></div>
-          <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{mad(now)}</dd></div>
+          {deposit && <div className={ticketRow({ money: true })}><dt>{ui.balance}</dt><dd>{both(balance)}</dd></div>}
+          {deposit && <div className={ticketRow({ money: true })}><dt>{ui.depositLine}</dt><dd>{both(base)}</dd></div>}
+          <div className={ticketRow({ money: true })}><dt>{ui.fee}</dt><dd>{both(fee)}</dd></div>
+          <div className={ticketRow({ money: true, due: true })}><dt>{ui.due}</dt><dd>{both(now, true)}</dd></div>
           </>}
         </dl>
         <a className={pill('dark', { block: true })} href={bookingHref(funnel, t.lang, { cure: cure.key, debut: arrival, curistes: String(guests), paiement: deposit && !lead ? 'acompte' : 'total', chambre: room ? '1' : '0' })}>

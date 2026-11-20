@@ -12,5 +12,7 @@ export const useT = () => packs[useContext(LangContext)] || fr
 // Montants et dates au format de la langue : « 4 950 MAD » en français, « 4,950 MAD » en anglais
 export const money = (t: Pack, n: number) => new Intl.NumberFormat(t.locale).format(n).replace(/ /g, ' ') + ' MAD'
 export const number = (t: Pack, n: number) => new Intl.NumberFormat(t.locale).format(n).replace(/ /g, ' ')
+// Équivalent en euros d'un montant en MAD, au taux fixe de site.eurRate (1 € = 10,80 MAD) : « ≈ 884 € »
+export const euros = (t: Pack, mad: number) => `≈ ${number(t, Math.round(mad / t.site.eurRate))} €`
 export const longDate = (t: Pack, d: Date) => d.toLocaleDateString(t.locale, { weekday: 'long', day: 'numeric', month: 'long' })
 export const shortDate = (t: Pack, d: Date) => d.toLocaleDateString(t.locale, { day: 'numeric', month: 'long' })

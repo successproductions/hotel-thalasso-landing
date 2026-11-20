@@ -1,13 +1,13 @@
 'use client'
 
 import { useEffect } from 'react'
-import { packs, money, longDate as ld } from './i18n'
+import { packs, money, euros, longDate as ld } from './i18n'
 import { Title } from './Title'
 import { WhatsAppHelp } from './WhatsAppHelp'
 import { cx, pill, arrow, logo } from './ui'
 import { bookingHref, landingHref } from './funnel'
 import { cureFromOrderId, readOrder } from './order'
-import { ticketTitle, ticketSub, ticketRows, ticketRow, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkGroup, bkLegend, bkSummary, bkCard, bkTrustItem } from './forms'
+import { ticketTitle, ticketSub, ticketRows, ticketRow, ticketEuro, bkPage, bkHeader, bkBack, bkBackArrow, bkLogoLink, bkLogo, bkMain, bkIntro, bkIntroText, bkSteps, bkStep, bkGroup, bkLegend, bkSummary, bkCard, bkTrustItem } from './forms'
 
 // Retour du paiement CMI pour les commandes DC Thermes (numéro DCT-…), à la place des pages des paniers :
 // /dc-thermes/merci (paid) ou /dc-thermes/paiement-echoue. /api/payment/success et /api/payment/fail y renvoient.
@@ -28,6 +28,8 @@ export default function Confirmation({ paid }: { paid: boolean }) {
   const { cures, site, ui, bookingPage: b, confirmPage: c } = t
   const cure = cures.find((x) => x.key === (order?.cure || cureFromOrderId(orderId)))
   const mad = (n: number) => money(t, n)
+  // Montant en MAD, puis son équivalent en euros dessous (taux fixe site.eurRate). due : la grande ligne « à régler aujourd'hui »
+  const both = (n: number, due?: boolean) => <>{mad(n)}<span className={ticketEuro(due)}>{euros(t, n)}</span></>
   const first = order?.arrival ? addDays(parse(order.arrival), 1) : null
 
   useEffect(() => {
@@ -100,8 +102,8 @@ export default function Confirmation({ paid }: { paid: boolean }) {
               </dl>
               {paid && order && (
                 <dl className={ticketRows}>
-                  <div className={ticketRow({ money: true, due: true })}><dt>{c.paid}</dt><dd>{mad(order.paid)}</dd></div>
-                  {order.balance > 0 && <div className={ticketRow({ money: true })}><dt>{ui.balance}</dt><dd>{mad(order.balance)}</dd></div>}
+                  <div className={ticketRow({ money: true, due: true })}><dt>{c.paid}</dt><dd>{both(order.paid, true)}</dd></div>
+                  {order.balance > 0 && <div className={ticketRow({ money: true })}><dt>{ui.balance}</dt><dd>{both(order.balance)}</dd></div>}
                 </dl>
               )}
             </div>

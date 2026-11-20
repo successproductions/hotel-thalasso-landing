@@ -70,6 +70,9 @@ export const addonMeta = 'block mt-[2px] text-[0.875rem] text-muted'
 export const ticketTitle = 'font-sans font-normal text-[1.75rem] leading-[1.1] tracking-[0.08em] uppercase'
 export const ticketSub = '-mt-3 text-[0.875rem] text-muted'
 export const ticketRows = 'grid gap-[10px] pt-[18px] border-t border-line'
+// L'équivalent en euros, sous chaque montant du ticket (plus grand sous le montant « à régler aujourd'hui »)
+export const ticketEuro = (due?: boolean) =>
+  cx('block font-sans not-italic leading-none text-soft tabular-nums', due ? 'mt-2 text-[0.875rem]' : 'mt-1 text-[0.75rem]')
 // Une ligne du ticket. money : montants (chiffres tabulaires) ; due : « à régler aujourd'hui »
 export const ticketRow = ({ money, due }: { money?: boolean; due?: boolean } = {}) =>
   cx(
