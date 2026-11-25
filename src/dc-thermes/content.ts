@@ -681,7 +681,7 @@ export const chat = {
   typing: 'L’assistant écrit…',
   newMessage: 'Un nouveau message',
   welcome: 'Bienvenue aux DC Luxury Thermes. Des cures conçues pour relâcher, régénérer et transformer le corps et l’esprit.\nDites-moi ce que vous souhaitez faire, je vous guide.',
-  relance: 'Je me permets de revenir vers vous.\nVous avez consulté nos cures au Dakhla Club, mais vous n’avez pas encore finalisé votre réservation.\nSi vous hésitez entre plusieurs programmes ou si vous avez une question, je suis là pour vous aider à faire le bon choix, simplement.',
+  relance: 'Je me permets de.\nVous avez consulté nos cures au Dakhla Club, mais vous n’avez pas encore finalisé votre réservation.\nSi vous hésitez entre plusieurs programmes ou si vous avez une question, je suis là pour vous aider à faire le bon choix, simplement.',
   programs: 'Découvrir les programmes',
   prices: 'Voir les tarifs',
   faqLabel: 'Questions fréquentes',
