@@ -1,11 +1,8 @@
 import { NextRequest, NextResponse, after } from 'next/server';
 import crypto from 'crypto';
 import { firstConfirmation, sendPaymentEmails } from '@/lib/paymentEmails';
-
-// CMI Configuration
-const CMI_CONFIG = {
-  storeKey: process.env.CMI_STORE_KEY_PROD || 'TEST1234',
-};
+// CMI store of the order (DC Thermes with a hotel room, or the main one): its key checks the hash
+import { cmiStore } from '@/lib/cmiStore';
 
 // Decode HTML entities (equivalent to PHP html_entity_decode)
 function decodeHtmlEntities(str: string): string {
@@ -94,11 +91,11 @@ export async function POST(request: NextRequest) {
     const receivedHash = params['HASH'] || params['hash'];
     
     // Generate our own hash for verification
-    const calculatedHash = generateHash(params, CMI_CONFIG.storeKey);
+    const calculatedHash = generateHash(params, cmiStore(params['oid'] || '').storeKey);
 
     // Verify hash
     if (receivedHash !== calculatedHash) {
-      console.error('❌ CMI Callback Hash Mismatch!', { receivedHash, calculatedHash, storeKeyUsed: CMI_CONFIG.storeKey });
+      console.error('❌ CMI Callback Hash Mismatch!', { receivedHash, calculatedHash, store: cmiStore(params['oid'] || '').name });
       // Temporary bypass for testing to confirm if it's ONLY a hash issue
       // return new NextResponse('FAILURE', { status: 200, headers: { 'Content-Type': 'text/plain' } });
       console.warn('⚠️ TEMPORARILY IGNORING HASH MISMATCH FOR DEBUGGING');

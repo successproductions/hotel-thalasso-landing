@@ -1,11 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { firstConfirmation, sendPaymentEmails } from '@/lib/paymentEmails';
-
-// CMI Configuration (must match initiate/callback)
-const CMI_CONFIG = {
-  storeKey: process.env.CMI_STORE_KEY_PROD || 'TEST1234',
-};
+// CMI store of the order (DC Thermes with a hotel room, or the main one): its key checks the hash
+import { cmiStore } from '@/lib/cmiStore';
 
 // Generate hash for verification (Exact same function as in callback)
 function generateHash(params: Record<string, string>, storeKey: string): string {
@@ -100,7 +97,7 @@ export async function POST(request: NextRequest) {
 
       // Verify Hash
       const receivedHash = params['HASH'] || params['hash'];
-      const calculatedHash = generateHash(params, CMI_CONFIG.storeKey);
+      const calculatedHash = generateHash(params, cmiStore(params['oid'] || '').storeKey);
 
       if (receivedHash === calculatedHash) {
           // Hash verified, proceed with emails sending asynchronously (don't block redirect too long, but ideally wait just a bit)
@@ -132,7 +129,7 @@ export async function POST(request: NextRequest) {
           console.error('❌ [Success Route] Hash verification failed. Emails not sent.', {
             receivedHash,
             calculatedHash,
-            storeKeyUsed: CMI_CONFIG.storeKey
+            store: cmiStore(params['oid'] || '').name
           });
       }
       

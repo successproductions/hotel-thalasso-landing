@@ -2,15 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { CURE_DAYS, hotelStay, roomAmount, roomQuote } from '@/lib/siteminder';
 import { rememberPack } from '@/lib/paymentEmails';
-
-// CMI Configuration
-const CMI_CONFIG = {
-  clientId: process.env.CMI_CLIENT_ID_PROD || '900010002',
-  storeKey: process.env.CMI_STORE_KEY_PROD || 'TEST1234',
-  gatewayUrl:
-    process.env.CMI_GATEWAY_URL_PROD || 'https://test-alfilahicash.cmi.co.ma/fim/est3Dgate',
-  currency: process.env.CMI_CURRENCY_PROD || '504',
-};
+import { cmiStore, isHotelOrder } from '@/lib/cmiStore';
 
 const OFFER_PRICES_EUR: Record<string, number> = {
   '3': 4950,   // Math.floor(495  × 1.027 ) = 5595 MAD
@@ -143,8 +135,13 @@ export async function POST(request: NextRequest) {
       amount = cureAmount(paymentPlan) + roomAmount(deposit ? Math.ceil(room.gross / 2) : room.gross);
       rememberPack(orderId, { room: room.room, plan: room.plan, checkIn: stay.checkIn, checkOut: stay.checkOut, guests: stay.guests, gross: room.gross, curistes: count, deposit });
     } else {
+      // A hotel order ID (…-PACK-…) always comes with its room: it is paid in the DC Thermes store, see cmiStore
+      if (isHotelOrder(orderId)) return NextResponse.json({ error: 'Invalid hotel request' }, { status: 400 });
       amount = cureAmount(paymentPlan);
     }
+
+    // CMI store: DC Thermes for a cure with a hotel room, the main store for everything else
+    const store = cmiStore(orderId);
 
     // Generate random string
     const rnd = generateRnd();
@@ -164,9 +161,9 @@ export async function POST(request: NextRequest) {
     // Build payment parameters - exact names from CMI documentation
     const params: Record<string, string> = {
       // Required fields
-      clientid: CMI_CONFIG.clientId,
+      clientid: store.clientId,
       amount: amount.toFixed(2),
-      currency: CMI_CONFIG.currency,
+      currency: store.currency,
       oid: orderId,
       rnd: rnd,
       lang: 'fr',
@@ -199,7 +196,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Generate hash
-    const hash = generateHash(params, CMI_CONFIG.storeKey);
+    const hash = generateHash(params, store.storeKey);
 
     // Add hash to params
     const paramsWithHash = {
@@ -210,7 +207,7 @@ export async function POST(request: NextRequest) {
     // Return payment data for form submission
     return NextResponse.json({
       success: true,
-      gatewayUrl: CMI_CONFIG.gatewayUrl,
+      gatewayUrl: store.gatewayUrl,
       orderId: orderId,
       params: paramsWithHash,
       bookingInfo: {
